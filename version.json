@@ -1,0 +1,7 @@
+{
+  "product": "Alpha Analytical Engine",
+  "version": "1.0.0",
+  "mode": "standalone",
+  "status": "deterministic_analytical_foundation",
+  "note": "Consumes ADC and Knowledge Engine outputs. External LLM reasoning is not enabled in v1.0."
+}
