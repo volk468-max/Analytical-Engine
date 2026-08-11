@@ -35,3 +35,27 @@ class AnalysisResult(BaseModel):
     conclusion: str
     what_changes_the_view: list[str]
     source_status: dict[str, Any]
+    
+class CompanyAnalysisResult(BaseModel):
+    symbol: str
+    company_name: str
+
+    created_at: str = Field(
+        default_factory=lambda: datetime.now(
+            timezone.utc
+        ).isoformat()
+    )
+
+    fundamental_score: float
+
+    growth_score: float
+    valuation_score: float
+    quality_score: float
+    balance_sheet_score: float
+
+    fundamentals: dict[str, Any]
+
+    supporting_factors: list[str]
+    opposing_factors: list[str]
+
+    conclusion: str
