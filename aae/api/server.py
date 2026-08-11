@@ -8,8 +8,12 @@ from fastapi import (
     Query,
 )
 
+from aae.connectors.adc import ADCConnector
 from aae.core.orchestrator import (
     AnalyticalOrchestrator,
+)
+from aae.engines.company_analysis import (
+    CompanyAnalysisEngine,
 )
 from aae.storage.database import Database
 from aae.storage.repository import (
@@ -19,7 +23,7 @@ from aae.storage.repository import (
 
 app = FastAPI(
     title="Alpha Analytical Engine",
-    version="1.1.0",
+    version="1.2.0",
 )
 
 DB_PATH = os.environ.get(
@@ -28,10 +32,22 @@ DB_PATH = os.environ.get(
 )
 
 
-def orchestrator():
+def get_adc_url() -> str:
     adc_url = os.environ.get(
         "ADC_BASE_URL"
     )
+
+    if not adc_url:
+        raise HTTPException(
+            status_code=500,
+            detail="ADC_BASE_URL must be configured.",
+        )
+
+    return adc_url
+
+
+def orchestrator():
+    adc_url = get_adc_url()
 
     knowledge_url = os.environ.get(
         "KNOWLEDGE_BASE_URL"
@@ -41,11 +57,10 @@ def orchestrator():
         "HYPOTHESIS_TRACKER_URL"
     )
 
-    if not adc_url or not knowledge_url:
+    if not knowledge_url:
         raise HTTPException(
             status_code=500,
             detail=(
-                "ADC_BASE_URL and "
                 "KNOWLEDGE_BASE_URL "
                 "must be configured."
             ),
@@ -66,12 +81,13 @@ def root():
     return {
         "service": "Alpha Analytical Engine",
         "status": "ok",
-        "version": "1.1.0",
+        "version": "1.2.0",
         "hypothesis_tracking": bool(
             os.environ.get(
                 "HYPOTHESIS_TRACKER_URL"
             )
         ),
+        "company_analysis": True,
     }
 
 
@@ -92,12 +108,50 @@ def health():
                 "HYPOTHESIS_TRACKER_URL"
             )
         ),
+        "company_analysis": True,
     }
 
 
 @app.post("/analysis/run")
 async def run_analysis():
     result = await orchestrator().run()
+
+    return result.model_dump()
+
+
+@app.post("/company/analyze/{symbol}")
+async def analyze_company(symbol: str):
+    symbol = symbol.strip().upper()
+
+    if not symbol:
+        raise HTTPException(
+            status_code=400,
+            detail="Symbol is required.",
+        )
+
+    adc = ADCConnector(
+        get_adc_url()
+    )
+
+    try:
+        fundamentals = await adc.fundamentals(
+            symbol
+        )
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=502,
+            detail=(
+                f"Unable to obtain fundamentals "
+                f"for {symbol}: {exc}"
+            ),
+        ) from exc
+
+    engine = CompanyAnalysisEngine()
+
+    result = engine.evaluate(
+        fundamentals
+    )
 
     return result.model_dump()
 
