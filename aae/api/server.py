@@ -1,3 +1,4 @@
+import asyncio
 import json
 import os
 from pathlib import Path
@@ -23,13 +24,42 @@ from aae.storage.repository import (
 
 app = FastAPI(
     title="Alpha Analytical Engine",
-    version="1.2.0",
+    version="1.3.0",
 )
 
 DB_PATH = os.environ.get(
     "ANALYSIS_DB_PATH",
     "data/analysis.sqlite3",
 )
+
+
+CORE_PORTFOLIO = [
+    "NVDA",
+    "AMD",
+    "AVGO",
+    "TSM",
+    "ASML",
+    "AMAT",
+    "LRCX",
+    "KLAC",
+    "MU",
+    "MRVL",
+    "VRT",
+    "ETN",
+    "ANET",
+    "CRWV",
+    "SNOW",
+    "PLTR",
+    "META",
+    "AMZN",
+    "GOOGL",
+    "MSFT",
+    "TSLA",
+    "WIX",
+    "ARM",
+    "ORCL",
+    "GEV",
+]
 
 
 def get_adc_url() -> str:
@@ -81,13 +111,14 @@ def root():
     return {
         "service": "Alpha Analytical Engine",
         "status": "ok",
-        "version": "1.2.0",
+        "version": "1.3.0",
         "hypothesis_tracking": bool(
             os.environ.get(
                 "HYPOTHESIS_TRACKER_URL"
             )
         ),
         "company_analysis": True,
+        "company_ranking": True,
     }
 
 
@@ -109,6 +140,7 @@ def health():
             )
         ),
         "company_analysis": True,
+        "company_ranking": True,
     }
 
 
@@ -154,6 +186,97 @@ async def analyze_company(symbol: str):
     )
 
     return result.model_dump()
+
+
+@app.get("/company/ranking")
+async def company_ranking():
+    adc = ADCConnector(
+        get_adc_url()
+    )
+
+    engine = CompanyAnalysisEngine()
+
+    async def analyze_symbol(symbol: str):
+        try:
+            fundamentals = await adc.fundamentals(
+                symbol
+            )
+
+            result = engine.evaluate(
+                fundamentals
+            )
+
+            return {
+                "symbol": result.symbol,
+                "company_name": (
+                    result.company_name
+                ),
+                "fundamental_score": (
+                    result.fundamental_score
+                ),
+                "growth_score": (
+                    result.growth_score
+                ),
+                "valuation_score": (
+                    result.valuation_score
+                ),
+                "quality_score": (
+                    result.quality_score
+                ),
+                "balance_sheet_score": (
+                    result.balance_sheet_score
+                ),
+                "conclusion": (
+                    result.conclusion
+                ),
+                "status": "ok",
+            }
+
+        except Exception as exc:
+            return {
+                "symbol": symbol,
+                "status": "error",
+                "error": str(exc),
+            }
+
+    results = await asyncio.gather(
+        *[
+            analyze_symbol(symbol)
+            for symbol in CORE_PORTFOLIO
+        ]
+    )
+
+    successful = [
+        result
+        for result in results
+        if result.get("status") == "ok"
+    ]
+
+    errors = [
+        result
+        for result in results
+        if result.get("status") == "error"
+    ]
+
+    successful.sort(
+        key=lambda item: item[
+            "fundamental_score"
+        ],
+        reverse=True,
+    )
+
+    for rank, item in enumerate(
+        successful,
+        start=1,
+    ):
+        item["rank"] = rank
+
+    return {
+        "count": len(successful),
+        "errors_count": len(errors),
+        "ranking": successful,
+        "errors": errors,
+    }
 
 
 @app.get("/analysis/latest")
