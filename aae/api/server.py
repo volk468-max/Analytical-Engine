@@ -331,6 +331,116 @@ async def company_ranking():
         "errors": errors,
     }
 
+@app.get("/company/technical-ranking")
+async def technical_ranking():
+    adc = ADCConnector(
+        get_adc_url()
+    )
+
+    engine = TechnicalAnalysisEngine()
+
+    async def analyze_symbol(symbol: str):
+        try:
+            history = await adc.history(
+                symbol,
+                limit=500,
+            )
+
+            result = engine.evaluate(
+                history
+            )
+
+            return {
+                "symbol": symbol,
+                "technical_score": (
+                    result["technical_score"]
+                ),
+                "trend_score": (
+                    result["trend_score"]
+                ),
+                "momentum_score": (
+                    result["momentum_score"]
+                ),
+                "rsi_score": (
+                    result["rsi_score"]
+                ),
+                "position_52w_score": (
+                    result["position_52w_score"]
+                ),
+                "current_price": (
+                    result["current_price"]
+                ),
+                "ma50": result["ma50"],
+                "ma200": result["ma200"],
+                "rsi14": result["rsi14"],
+                "momentum_1m": (
+                    result["momentum_1m"]
+                ),
+                "momentum_3m": (
+                    result["momentum_3m"]
+                ),
+                "momentum_6m": (
+                    result["momentum_6m"]
+                ),
+                "momentum_1y": (
+                    result["momentum_1y"]
+                ),
+                "distance_from_52w_high": (
+                    result[
+                        "distance_from_52w_high"
+                    ]
+                ),
+                "conclusion": (
+                    result["conclusion"]
+                ),
+                "status": "ok",
+            }
+
+        except Exception as exc:
+            return {
+                "symbol": symbol,
+                "status": "error",
+                "error": str(exc),
+            }
+
+    results = await asyncio.gather(
+        *[
+            analyze_symbol(symbol)
+            for symbol in CORE_PORTFOLIO
+        ]
+    )
+
+    successful = [
+        result
+        for result in results
+        if result.get("status") == "ok"
+    ]
+
+    errors = [
+        result
+        for result in results
+        if result.get("status") == "error"
+    ]
+
+    successful.sort(
+        key=lambda item: item[
+            "technical_score"
+        ],
+        reverse=True,
+    )
+
+    for rank, item in enumerate(
+        successful,
+        start=1,
+    ):
+        item["rank"] = rank
+
+    return {
+        "count": len(successful),
+        "errors_count": len(errors),
+        "ranking": successful,
+        "errors": errors,
+    }
 
 @app.get("/analysis/latest")
 def latest():
