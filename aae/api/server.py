@@ -27,7 +27,7 @@ from aae.storage.repository import (
 
 app = FastAPI(
     title="Alpha Analytical Engine",
-    version="1.4.0",
+    version="1.5.0",
 )
 
 DB_PATH = os.environ.get(
@@ -114,7 +114,7 @@ def root():
     return {
         "service": "Alpha Analytical Engine",
         "status": "ok",
-        "version": "1.4.0",
+        "version": "1.5.0",
         "hypothesis_tracking": bool(
             os.environ.get(
                 "HYPOTHESIS_TRACKER_URL"
@@ -124,6 +124,7 @@ def root():
         "company_ranking": True,
         "technical_analysis": True,
         "technical_ranking": True,
+        "alpha_ranking": True,
     }
 
 
@@ -148,6 +149,7 @@ def health():
         "company_ranking": True,
         "technical_analysis": True,
         "technical_ranking": True,
+        "alpha_ranking": True,
     }
 
 
@@ -441,6 +443,201 @@ async def technical_ranking():
         "count": len(successful),
         "errors_count": len(errors),
         "ranking": successful,
+        "errors": errors,
+    }
+@app.get("/company/alpha-ranking")
+async def alpha_ranking():
+    adc = ADCConnector(
+        get_adc_url()
+    )
+
+    fundamental_engine = (
+        CompanyAnalysisEngine()
+    )
+
+    technical_engine = (
+        TechnicalAnalysisEngine()
+    )
+
+    async def analyze_symbol(symbol: str):
+        try:
+            fundamentals, history = await asyncio.gather(
+                adc.fundamentals(symbol),
+                adc.history(
+                    symbol,
+                    limit=500,
+                ),
+            )
+
+            fundamental_result = (
+                fundamental_engine.evaluate(
+                    fundamentals
+                )
+            )
+
+            technical_result = (
+                technical_engine.evaluate(
+                    history
+                )
+            )
+
+            fundamental_score = (
+                fundamental_result.fundamental_score
+            )
+
+            technical_score = (
+                technical_result[
+                    "technical_score"
+                ]
+            )
+
+            alpha_score = round(
+                fundamental_score * 0.60
+                + technical_score * 0.40,
+                1,
+            )
+
+            return {
+                "symbol": symbol,
+                "company_name": (
+                    fundamental_result.company_name
+                ),
+                "fundamental_score": (
+                    fundamental_score
+                ),
+                "technical_score": (
+                    technical_score
+                ),
+                "alpha_score": (
+                    alpha_score
+                ),
+                "growth_score": (
+                    fundamental_result.growth_score
+                ),
+                "valuation_score": (
+                    fundamental_result.valuation_score
+                ),
+                "quality_score": (
+                    fundamental_result.quality_score
+                ),
+                "balance_sheet_score": (
+                    fundamental_result.balance_sheet_score
+                ),
+                "trend_score": (
+                    technical_result[
+                        "trend_score"
+                    ]
+                ),
+                "momentum_score": (
+                    technical_result[
+                        "momentum_score"
+                    ]
+                ),
+                "rsi_score": (
+                    technical_result[
+                        "rsi_score"
+                    ]
+                ),
+                "position_52w_score": (
+                    technical_result[
+                        "position_52w_score"
+                    ]
+                ),
+                "status": "ok",
+            }
+
+        except Exception as exc:
+            return {
+                "symbol": symbol,
+                "status": "error",
+                "error": str(exc),
+            }
+
+    results = await asyncio.gather(
+        *[
+            analyze_symbol(symbol)
+            for symbol in CORE_PORTFOLIO
+        ]
+    )
+
+    successful = [
+        result
+        for result in results
+        if result.get("status") == "ok"
+    ]
+
+    errors = [
+        result
+        for result in results
+        if result.get("status") == "error"
+    ]
+
+    fundamental_sorted = sorted(
+        successful,
+        key=lambda item: item[
+            "fundamental_score"
+        ],
+        reverse=True,
+    )
+
+    technical_sorted = sorted(
+        successful,
+        key=lambda item: item[
+            "technical_score"
+        ],
+        reverse=True,
+    )
+
+    alpha_sorted = sorted(
+        successful,
+        key=lambda item: item[
+            "alpha_score"
+        ],
+        reverse=True,
+    )
+
+    fundamental_ranks = {
+        item["symbol"]: rank
+        for rank, item in enumerate(
+            fundamental_sorted,
+            start=1,
+        )
+    }
+
+    technical_ranks = {
+        item["symbol"]: rank
+        for rank, item in enumerate(
+            technical_sorted,
+            start=1,
+        )
+    }
+
+    for rank, item in enumerate(
+        alpha_sorted,
+        start=1,
+    ):
+        item["fundamental_rank"] = (
+            fundamental_ranks[
+                item["symbol"]
+            ]
+        )
+
+        item["technical_rank"] = (
+            technical_ranks[
+                item["symbol"]
+            ]
+        )
+
+        item["alpha_rank"] = rank
+
+    return {
+        "count": len(alpha_sorted),
+        "errors_count": len(errors),
+        "weights": {
+            "fundamental": 0.60,
+            "technical": 0.40,
+        },
+        "ranking": alpha_sorted,
         "errors": errors,
     }
 
