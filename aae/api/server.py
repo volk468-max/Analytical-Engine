@@ -123,6 +123,7 @@ def root():
         "company_analysis": True,
         "company_ranking": True,
         "technical_analysis": True,
+        "technical_ranking": True,
     }
 
 
@@ -146,6 +147,7 @@ def health():
         "company_analysis": True,
         "company_ranking": True,
         "technical_analysis": True,
+        "technical_ranking": True,
     }
 
 
