@@ -9,14 +9,17 @@ from fastapi import (
     Query,
 )
 
-from aae.connectors.adc import ADCConnector
+from aae.connectors.adc import ADCConnector 
 from aae.core.orchestrator import (
     AnalyticalOrchestrator,
 )
 from aae.engines.company_analysis import (
     CompanyAnalysisEngine,
 )
-from aae.storage.database import Database
+from aae.engines.technical_analysis import (
+    TechnicalAnalysisEngine,
+)
+from aae.storage.database import Database 
 from aae.storage.repository import (
     AnalysisRepository,
 )
@@ -24,7 +27,7 @@ from aae.storage.repository import (
 
 app = FastAPI(
     title="Alpha Analytical Engine",
-    version="1.3.0",
+    version="1.4.0",
 )
 
 DB_PATH = os.environ.get(
@@ -111,7 +114,7 @@ def root():
     return {
         "service": "Alpha Analytical Engine",
         "status": "ok",
-        "version": "1.3.0",
+        "version": "1.4.0",
         "hypothesis_tracking": bool(
             os.environ.get(
                 "HYPOTHESIS_TRACKER_URL"
@@ -119,6 +122,7 @@ def root():
         ),
         "company_analysis": True,
         "company_ranking": True,
+        "technical_analysis": True,
     }
 
 
@@ -141,6 +145,7 @@ def health():
         ),
         "company_analysis": True,
         "company_ranking": True,
+        "technical_analysis": True,
     }
 
 
@@ -186,6 +191,54 @@ async def analyze_company(symbol: str):
     )
 
     return result.model_dump()
+
+
+@app.post("/company/technical/{symbol}")
+async def technical_company(symbol: str):
+    symbol = symbol.strip().upper()
+
+    if not symbol:
+        raise HTTPException(
+            status_code=400,
+            detail="Symbol is required.",
+        )
+
+    adc = ADCConnector(
+        get_adc_url()
+    )
+
+    try:
+        history = await adc.history(
+            symbol,
+            limit=500,
+        )
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=502,
+            detail=(
+                f"Unable to obtain market history "
+                f"for {symbol}: {exc}"
+            ),
+        ) from exc
+
+    engine = TechnicalAnalysisEngine()
+
+    try:
+        result = engine.evaluate(
+            history
+        )
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=422,
+            detail=(
+                f"Unable to calculate technical "
+                f"analysis for {symbol}: {exc}"
+            ),
+        ) from exc
+
+    return result
 
 
 @app.get("/company/ranking")
