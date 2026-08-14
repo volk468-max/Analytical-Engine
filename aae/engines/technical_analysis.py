@@ -1,4 +1,4 @@
- from statistics import mean
+from statistics import mean
 
 
 class TechnicalAnalysisEngine:
