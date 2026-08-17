@@ -154,6 +154,8 @@ def health():
         "technical_analysis": True,
         "technical_ranking": True,
         "alpha_ranking": True,
+        "risk_analysis": True,
+        "risk_ranking": True, 
     }
 
 
