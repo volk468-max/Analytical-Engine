@@ -805,6 +805,215 @@ async def risk_ranking():
         "ranking": successful,
         "errors": errors,
     }
+@app.get("/company/alpha-ranking-v2")
+async def alpha_ranking_v2():
+    adc = ADCConnector(
+        get_adc_url()
+    )
+
+    fundamental_engine = CompanyAnalysisEngine()
+    technical_engine = TechnicalAnalysisEngine()
+    risk_engine = CompanyRiskEngine()
+
+    def risk_penalty(
+        risk_score: float,
+    ) -> float:
+        if risk_score <= 45:
+            return 0.0
+
+        if risk_score <= 60:
+            return round(
+                (risk_score - 45) * 0.10,
+                1,
+            )
+
+        if risk_score <= 75:
+            return round(
+                1.5
+                + (risk_score - 60) * 0.30,
+                1,
+            )
+
+        return round(
+            6.0
+            + (risk_score - 75) * 0.40,
+            1,
+        )
+
+    async def analyze_symbol(symbol: str):
+        try:
+            fundamentals, history = await asyncio.gather(
+                adc.fundamentals(symbol),
+                adc.history(
+                    symbol,
+                    limit=500,
+                ),
+            )
+
+            fundamental_result = (
+                fundamental_engine.evaluate(
+                    fundamentals
+                )
+            )
+
+            technical_result = (
+                technical_engine.evaluate(
+                    history
+                )
+            )
+
+            risk_result = (
+                risk_engine.evaluate(
+                    fundamentals,
+                    history,
+                )
+            )
+
+            fundamental_score = (
+                fundamental_result.fundamental_score
+            )
+
+            technical_score = (
+                technical_result[
+                    "technical_score"
+                ]
+            )
+
+            risk_score = (
+                risk_result[
+                    "risk_score"
+                ]
+            )
+
+            base_alpha = round(
+                fundamental_score * 0.60
+                + technical_score * 0.40,
+                1,
+            )
+
+            penalty = risk_penalty(
+                risk_score
+            )
+
+            alpha_score_v2 = round(
+                max(
+                    0.0,
+                    base_alpha - penalty,
+                ),
+                1,
+            )
+
+            return {
+                "symbol": symbol,
+                "company_name": (
+                    fundamental_result.company_name
+                ),
+                "fundamental_score": (
+                    fundamental_score
+                ),
+                "technical_score": (
+                    technical_score
+                ),
+                "base_alpha": (
+                    base_alpha
+                ),
+                "risk_score": (
+                    risk_score
+                ),
+                "risk_level": (
+                    risk_result[
+                        "risk_level"
+                    ]
+                ),
+                "risk_penalty": (
+                    penalty
+                ),
+                "alpha_score_v2": (
+                    alpha_score_v2
+                ),
+                "status": "ok",
+            }
+
+        except Exception as exc:
+            return {
+                "symbol": symbol,
+                "status": "error",
+                "error": str(exc),
+            }
+
+    results = await asyncio.gather(
+        *[
+            analyze_symbol(symbol)
+            for symbol in CORE_PORTFOLIO
+        ]
+    )
+
+    successful = [
+        result
+        for result in results
+        if result.get("status") == "ok"
+    ]
+
+    errors = [
+        result
+        for result in results
+        if result.get("status") == "error"
+    ]
+
+    v1_sorted = sorted(
+        successful,
+        key=lambda item: item[
+            "base_alpha"
+        ],
+        reverse=True,
+    )
+
+    v2_sorted = sorted(
+        successful,
+        key=lambda item: item[
+            "alpha_score_v2"
+        ],
+        reverse=True,
+    )
+
+    v1_ranks = {
+        item["symbol"]: rank
+        for rank, item in enumerate(
+            v1_sorted,
+            start=1,
+        )
+    }
+
+    for rank, item in enumerate(
+        v2_sorted,
+        start=1,
+    ):
+        item["alpha_rank_v1"] = (
+            v1_ranks[
+                item["symbol"]
+            ]
+        )
+
+        item["alpha_rank_v2"] = rank
+
+        item["rank_change"] = (
+            item["alpha_rank_v1"]
+            - item["alpha_rank_v2"]
+        )
+
+    return {
+        "count": len(v2_sorted),
+        "errors_count": len(errors),
+        "base_weights": {
+            "fundamental": 0.60,
+            "technical": 0.40,
+        },
+        "risk_adjustment": (
+            "nonlinear_penalty"
+        ),
+        "ranking": v2_sorted,
+        "errors": errors,
+    }
 
 @app.get("/analysis/latest")
 def latest():
