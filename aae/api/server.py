@@ -23,7 +23,9 @@ from aae.storage.database import Database
 from aae.storage.repository import (
     AnalysisRepository,
 )
-
+from aae.engines.company_risk import (
+    CompanyRiskEngine,
+)
 
 app = FastAPI(
     title="Alpha Analytical Engine",
@@ -239,6 +241,56 @@ async def technical_company(symbol: str):
             detail=(
                 f"Unable to calculate technical "
                 f"analysis for {symbol}: {exc}"
+            ),
+        ) from exc
+
+    return result
+@app.post("/company/risk/{symbol}")
+async def company_risk(symbol: str):
+    symbol = symbol.strip().upper()
+
+    if not symbol:
+        raise HTTPException(
+            status_code=400,
+            detail="Symbol is required.",
+        )
+
+    adc = ADCConnector(
+        get_adc_url()
+    )
+
+    try:
+        fundamentals, history = await asyncio.gather(
+            adc.fundamentals(symbol),
+            adc.history(
+                symbol,
+                limit=500,
+            ),
+        )
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=502,
+            detail=(
+                f"Unable to obtain data "
+                f"for {symbol}: {exc}"
+            ),
+        ) from exc
+
+    engine = CompanyRiskEngine()
+
+    try:
+        result = engine.evaluate(
+            fundamentals,
+            history,
+        )
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=422,
+            detail=(
+                f"Unable to calculate risk "
+                f"for {symbol}: {exc}"
             ),
         ) from exc
 
