@@ -692,6 +692,115 @@ async def alpha_ranking():
         "ranking": alpha_sorted,
         "errors": errors,
     }
+@app.get("/company/risk-ranking")
+async def risk_ranking():
+    adc = ADCConnector(
+        get_adc_url()
+    )
+
+    engine = CompanyRiskEngine()
+
+    async def analyze_symbol(symbol: str):
+        try:
+            fundamentals, history = await asyncio.gather(
+                adc.fundamentals(symbol),
+                adc.history(
+                    symbol,
+                    limit=500,
+                ),
+            )
+
+            result = engine.evaluate(
+                fundamentals,
+                history,
+            )
+
+            return {
+                "symbol": symbol,
+                "risk_score": (
+                    result["risk_score"]
+                ),
+                "risk_level": (
+                    result["risk_level"]
+                ),
+                "volatility_risk": (
+                    result["volatility_risk"]
+                ),
+                "drawdown_risk": (
+                    result["drawdown_risk"]
+                ),
+                "balance_sheet_risk": (
+                    result["balance_sheet_risk"]
+                ),
+                "valuation_risk": (
+                    result["valuation_risk"]
+                ),
+                "trend_risk": (
+                    result["trend_risk"]
+                ),
+                "cash_flow_risk": (
+                    result["cash_flow_risk"]
+                ),
+                "annualized_volatility": (
+                    result[
+                        "annualized_volatility"
+                    ]
+                ),
+                "max_drawdown": (
+                    result[
+                        "max_drawdown"
+                    ]
+                ),
+                "status": "ok",
+            }
+
+        except Exception as exc:
+            return {
+                "symbol": symbol,
+                "status": "error",
+                "error": str(exc),
+            }
+
+    results = await asyncio.gather(
+        *[
+            analyze_symbol(symbol)
+            for symbol in CORE_PORTFOLIO
+        ]
+    )
+
+    successful = [
+        result
+        for result in results
+        if result.get("status") == "ok"
+    ]
+
+    errors = [
+        result
+        for result in results
+        if result.get("status") == "error"
+    ]
+
+    successful.sort(
+        key=lambda item: item[
+            "risk_score"
+        ]
+    )
+
+    for rank, item in enumerate(
+        successful,
+        start=1,
+    ):
+        item["risk_rank"] = rank
+
+    return {
+        "count": len(successful),
+        "errors_count": len(errors),
+        "ranking_direction": (
+            "lowest_risk_first"
+        ),
+        "ranking": successful,
+        "errors": errors,
+    }
 
 @app.get("/analysis/latest")
 def latest():
