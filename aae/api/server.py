@@ -129,6 +129,7 @@ def root():
         "alpha_ranking": True,
         "risk_analysis": True,
         "risk_ranking": True,
+        "alpha_ranking_v2": True,
     }
 
 
@@ -155,7 +156,8 @@ def health():
         "technical_ranking": True,
         "alpha_ranking": True,
         "risk_analysis": True,
-        "risk_ranking": True, 
+        "risk_ranking": True,
+        "alpha_ranking_v2": True,
     }
 
 
