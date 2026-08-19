@@ -55,7 +55,7 @@ class ADCConnector:
             response.raise_for_status()
 
             return response.json()
-async def revisions(
+    async def revisions(
         self,
         symbol: str,
     ) -> dict:
