@@ -26,6 +26,9 @@ from aae.storage.repository import (
 from aae.engines.company_risk import (
     CompanyRiskEngine,
 )
+from aae.engines.revision_analysis import (
+    RevisionAnalysisEngine,
+)
 
 app = FastAPI(
     title="Alpha Analytical Engine",
@@ -296,6 +299,51 @@ async def company_risk(symbol: str):
             status_code=422,
             detail=(
                 f"Unable to calculate risk "
+                f"for {symbol}: {exc}"
+            ),
+        ) from exc
+
+    return result
+@app.post("/company/revisions/{symbol}")
+async def company_revisions(symbol: str):
+    symbol = symbol.strip().upper()
+
+    if not symbol:
+        raise HTTPException(
+            status_code=400,
+            detail="Symbol is required.",
+        )
+
+    adc = ADCConnector(
+        get_adc_url()
+    )
+
+    try:
+        revisions = await adc.revisions(
+            symbol
+        )
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=502,
+            detail=(
+                f"Unable to obtain revisions "
+                f"for {symbol}: {exc}"
+            ),
+        ) from exc
+
+    engine = RevisionAnalysisEngine()
+
+    try:
+        result = engine.evaluate(
+            revisions
+        )
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=422,
+            detail=(
+                f"Unable to calculate revisions "
                 f"for {symbol}: {exc}"
             ),
         ) from exc
