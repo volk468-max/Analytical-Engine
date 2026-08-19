@@ -466,6 +466,249 @@ async def revision_ranking():
         "errors": errors,
     }
 
+@app.get("/company/divergence-ranking")
+async def divergence_ranking():
+    adc = ADCConnector(
+        get_adc_url()
+    )
+
+    fundamental_engine = CompanyAnalysisEngine()
+    technical_engine = TechnicalAnalysisEngine()
+    risk_engine = CompanyRiskEngine()
+    revision_engine = RevisionAnalysisEngine()
+
+    async def analyze_symbol(symbol: str):
+        try:
+            fundamentals, history, revisions = await asyncio.gather(
+                adc.fundamentals(symbol),
+                adc.history(
+                    symbol,
+                    limit=500,
+                ),
+                adc.revisions(symbol),
+            )
+
+            fundamental = fundamental_engine.evaluate(
+                fundamentals
+            )
+
+            technical = technical_engine.evaluate(
+                history
+            )
+
+            risk = risk_engine.evaluate(
+                fundamentals,
+                history,
+            )
+
+            revision = revision_engine.evaluate(
+                revisions
+            )
+
+            base_alpha = round(
+                fundamental.fundamental_score * 0.60
+                + technical["technical_score"] * 0.40,
+                1,
+            )
+
+            return {
+                "symbol": symbol,
+                "fundamental_score": (
+                    fundamental.fundamental_score
+                ),
+                "technical_score": (
+                    technical["technical_score"]
+                ),
+                "risk_score": (
+                    risk["risk_score"]
+                ),
+                "revision_score": (
+                    revision["revision_score"]
+                ),
+                "base_alpha": base_alpha,
+                "status": "ok",
+            }
+
+        except Exception as exc:
+            return {
+                "symbol": symbol,
+                "status": "error",
+                "error": str(exc),
+            }
+
+    results = await asyncio.gather(
+        *[
+            analyze_symbol(symbol)
+            for symbol in CORE_PORTFOLIO
+        ]
+    )
+
+    successful = [
+        item
+        for item in results
+        if item.get("status") == "ok"
+    ]
+
+    errors = [
+        item
+        for item in results
+        if item.get("status") == "error"
+    ]
+
+    def build_ranks(
+        key: str,
+        reverse: bool = True,
+    ):
+        ordered = sorted(
+            successful,
+            key=lambda item: item[key],
+            reverse=reverse,
+        )
+
+        return {
+            item["symbol"]: rank
+            for rank, item in enumerate(
+                ordered,
+                start=1,
+            )
+        }
+
+    fundamental_ranks = build_ranks(
+        "fundamental_score"
+    )
+
+    technical_ranks = build_ranks(
+        "technical_score"
+    )
+
+    revision_ranks = build_ranks(
+        "revision_score"
+    )
+
+    alpha_ranks = build_ranks(
+        "base_alpha"
+    )
+
+    risk_ranks = build_ranks(
+        "risk_score",
+        reverse=False,
+    )
+
+    output = []
+
+    for item in successful:
+        symbol = item["symbol"]
+
+        fundamental_rank = (
+            fundamental_ranks[symbol]
+        )
+
+        technical_rank = (
+            technical_ranks[symbol]
+        )
+
+        revision_rank = (
+            revision_ranks[symbol]
+        )
+
+        alpha_rank = (
+            alpha_ranks[symbol]
+        )
+
+        risk_rank = (
+            risk_ranks[symbol]
+        )
+
+        revision_vs_alpha = (
+            alpha_rank - revision_rank
+        )
+
+        signal = "NEUTRAL"
+
+        if revision_vs_alpha >= 8:
+            signal = (
+                "POSITIVE_REVISION_DIVERGENCE"
+            )
+
+        elif revision_vs_alpha <= -8:
+            signal = (
+                "NEGATIVE_REVISION_DIVERGENCE"
+            )
+
+        elif (
+            fundamental_rank <= 7
+            and technical_rank <= 7
+            and revision_rank <= 7
+            and risk_rank <= 12
+        ):
+            signal = (
+                "MULTI_FACTOR_CONFIRMATION"
+            )
+
+        output.append(
+            {
+                **item,
+                "fundamental_rank": (
+                    fundamental_rank
+                ),
+                "technical_rank": (
+                    technical_rank
+                ),
+                "risk_rank": (
+                    risk_rank
+                ),
+                "revision_rank": (
+                    revision_rank
+                ),
+                "alpha_rank": (
+                    alpha_rank
+                ),
+                "revision_vs_alpha": (
+                    revision_vs_alpha
+                ),
+                "divergence_signal": (
+                    signal
+                ),
+            }
+        )
+
+    signal_priority = {
+        "MULTI_FACTOR_CONFIRMATION": 1,
+        "POSITIVE_REVISION_DIVERGENCE": 2,
+        "NEGATIVE_REVISION_DIVERGENCE": 3,
+        "NEUTRAL": 4,
+    }
+
+    output.sort(
+        key=lambda item: (
+            signal_priority[
+                item["divergence_signal"]
+            ],
+            item["revision_rank"],
+        )
+    )
+
+    return {
+        "count": len(output),
+        "errors_count": len(errors),
+        "rules": {
+            "positive_divergence": (
+                "revision rank is at least "
+                "8 places stronger than alpha rank"
+            ),
+            "negative_divergence": (
+                "revision rank is at least "
+                "8 places weaker than alpha rank"
+            ),
+            "multi_factor_confirmation": (
+                "fundamental, technical and "
+                "revision ranks are all top 7 "
+                "and risk rank is top 12"
+            ),
+        },
+        "signals": output,
+        "errors": errors,
+    }
 
 @app.get("/company/ranking")
 async def company_ranking():
