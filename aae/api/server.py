@@ -349,6 +349,122 @@ async def company_revisions(symbol: str):
         ) from exc
 
     return result
+@app.get("/company/revision-ranking")
+async def revision_ranking():
+    adc = ADCConnector(
+        get_adc_url()
+    )
+
+    engine = RevisionAnalysisEngine()
+
+    async def analyze_symbol(symbol: str):
+        try:
+            revisions = await adc.revisions(
+                symbol
+            )
+
+            result = engine.evaluate(
+                revisions
+            )
+
+            return {
+                "symbol": symbol,
+                "revision_score": (
+                    result["revision_score"]
+                ),
+                "forward_growth_score": (
+                    result[
+                        "forward_growth_score"
+                    ]
+                ),
+                "revision_breadth_score": (
+                    result[
+                        "revision_breadth_score"
+                    ]
+                ),
+                "estimate_trend_score": (
+                    result[
+                        "estimate_trend_score"
+                    ]
+                ),
+                "analyst_coverage_score": (
+                    result[
+                        "analyst_coverage_score"
+                    ]
+                ),
+                "forward_eps_growth": (
+                    result[
+                        "forward_eps_growth"
+                    ]
+                ),
+                "estimate_change_30d": (
+                    result[
+                        "estimate_change_30d"
+                    ]
+                ),
+                "up_7d": result["up_7d"],
+                "down_7d": result["down_7d"],
+                "up_30d": result["up_30d"],
+                "down_30d": result["down_30d"],
+                "number_of_analysts": (
+                    result[
+                        "number_of_analysts"
+                    ]
+                ),
+                "conclusion": (
+                    result["conclusion"]
+                ),
+                "status": "ok",
+            }
+
+        except Exception as exc:
+            return {
+                "symbol": symbol,
+                "status": "error",
+                "error": str(exc),
+            }
+
+    results = await asyncio.gather(
+        *[
+            analyze_symbol(symbol)
+            for symbol in CORE_PORTFOLIO
+        ]
+    )
+
+    successful = [
+        result
+        for result in results
+        if result.get("status") == "ok"
+    ]
+
+    errors = [
+        result
+        for result in results
+        if result.get("status") == "error"
+    ]
+
+    successful.sort(
+        key=lambda item: item[
+            "revision_score"
+        ],
+        reverse=True,
+    )
+
+    for rank, item in enumerate(
+        successful,
+        start=1,
+    ):
+        item["revision_rank"] = rank
+
+    return {
+        "count": len(successful),
+        "errors_count": len(errors),
+        "ranking_direction": (
+            "strongest_revisions_first"
+        ),
+        "ranking": successful,
+        "errors": errors,
+    }
 
 
 @app.get("/company/ranking")
