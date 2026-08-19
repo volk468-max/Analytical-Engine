@@ -55,3 +55,18 @@ class ADCConnector:
             response.raise_for_status()
 
             return response.json()
+async def revisions(
+        self,
+        symbol: str,
+    ) -> dict:
+        async with httpx.AsyncClient(
+            timeout=30
+        ) as client:
+            response = await client.get(
+                f"{self.base_url}/revisions/"
+                f"{symbol.upper()}"
+            )
+
+            response.raise_for_status()
+
+            return response.json()
