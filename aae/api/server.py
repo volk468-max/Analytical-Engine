@@ -534,6 +534,238 @@ async def company_snapshot(symbol: str):
             status_code=500,
             detail=f"Snapshot failed for {symbol}: {exc}",
         )
+@app.get("/company/hypothesis-candidate/{symbol}")
+async def hypothesis_candidate(symbol: str):
+    symbol = symbol.upper()
+
+    snapshot = await company_snapshot(symbol)
+
+    fundamental = snapshot["fundamental"]
+    technical = snapshot["technical"]
+    risk = snapshot["risk"]
+    revisions = snapshot["revisions"]
+    market = snapshot["market"]
+
+    f_score = float(fundamental["fundamental_score"])
+    t_score = float(technical["technical_score"])
+    r_score = float(risk["risk_score"])
+    rev_score = float(revisions["revision_score"])
+
+    price = technical.get("current_price")
+    ma50 = technical.get("ma50")
+    ma200 = technical.get("ma200")
+    rsi = technical.get("rsi14")
+
+    momentum_1m = technical.get("momentum_1m")
+    momentum_3m = technical.get("momentum_3m")
+
+    estimate_change_30d = revisions.get("estimate_change_30d")
+    up_30d = revisions.get("up_30d") or 0
+    down_30d = revisions.get("down_30d") or 0
+
+    market_trend = market.get("market_trend")
+    breadth = market.get("breadth_proxy")
+    vix = market.get("vix")
+
+    direction = "NEUTRAL"
+    probability = 50
+    regime = "MIXED"
+    confirmation_threshold_pct = 5
+    max_drawdown_limit_pct = 12
+
+    thesis = (
+        "Signals are mixed and do not currently support a "
+        "high-conviction directional hypothesis."
+    )
+
+    supporting_factors = []
+    opposing_factors = []
+
+    # ---------------------------------------------------------
+    # 1. Revision-divergence / mean-reversion
+    # ---------------------------------------------------------
+    if (
+        rev_score >= 90
+        and rsi is not None
+        and rsi <= 35
+        and price is not None
+        and ma200 is not None
+        and price > ma200
+    ):
+        direction = "UP"
+        probability = 67
+        regime = "REVISION_DRIVEN_MEAN_REVERSION"
+        confirmation_threshold_pct = 10
+        max_drawdown_limit_pct = 15
+
+        thesis = (
+            "Very strong earnings revisions coincide with a "
+            "short-term technical correction while the long-term "
+            "trend remains intact. This may create a bullish "
+            "mean-reversion opportunity."
+        )
+
+    # ---------------------------------------------------------
+    # 2. Strong momentum + strong revisions
+    # ---------------------------------------------------------
+    elif (
+        rev_score >= 90
+        and t_score >= 80
+        and momentum_1m is not None
+        and momentum_1m >= 10
+    ):
+        direction = "UP"
+        probability = 64
+        regime = "BULLISH_MOMENTUM_CONTINUATION"
+        confirmation_threshold_pct = 10
+        max_drawdown_limit_pct = 18
+
+        thesis = (
+            "Strong technical momentum and very strong earnings "
+            "revisions may support continuation of the current "
+            "uptrend, although momentum reversal remains a risk."
+        )
+
+    # ---------------------------------------------------------
+    # 3. High-quality bullish consolidation
+    # ---------------------------------------------------------
+    elif (
+        f_score >= 85
+        and rev_score >= 80
+        and price is not None
+        and ma200 is not None
+        and price > ma200
+    ):
+        direction = "UP"
+        probability = 69
+        regime = "QUALITY_BULLISH_CONSOLIDATION"
+        confirmation_threshold_pct = 8
+        max_drawdown_limit_pct = 12
+
+        if r_score <= 45:
+            probability = 71
+
+        thesis = (
+            "Strong fundamentals, positive earnings revisions "
+            "and an intact long-term trend support a bullish "
+            "hypothesis despite short-term consolidation."
+        )
+
+    # ---------------------------------------------------------
+    # 4. Fundamental quality but deteriorating expectations
+    # ---------------------------------------------------------
+    elif (
+        f_score >= 70
+        and rev_score < 55
+        and t_score < 50
+        and price is not None
+        and ma200 is not None
+        and price < ma200
+    ):
+        direction = "DOWN"
+        probability = 62
+        regime = "FUNDAMENTALLY_STRONG_BUT_DETERIORATING"
+        confirmation_threshold_pct = 8
+
+        # Do not apply portfolio drawdown constraint yet to
+        # bearish hypotheses. Tracker currently measures
+        # drawdown correctly only for long/UP hypotheses.
+        max_drawdown_limit_pct = None
+
+        thesis = (
+            "The company retains reasonable fundamental quality, "
+            "but weak technical structure and deteriorating "
+            "earnings revisions increase the probability of "
+            "continued underperformance."
+        )
+
+    # ---------------------------------------------------------
+    # Supporting / opposing evidence
+    # ---------------------------------------------------------
+    if f_score >= 80:
+        supporting_factors.append(
+            f"Strong fundamental score: {f_score:.1f}."
+        )
+
+    if rev_score >= 85:
+        supporting_factors.append(
+            f"Strong revision score: {rev_score:.1f}."
+        )
+
+    if up_30d > down_30d:
+        supporting_factors.append(
+            f"Positive 30-day revision breadth: "
+            f"{up_30d} up vs {down_30d} down."
+        )
+
+    if market_trend == "BULLISH":
+        supporting_factors.append(
+            "Broad market regime is bullish."
+        )
+
+    if t_score < 50:
+        opposing_factors.append(
+            f"Weak technical score: {t_score:.1f}."
+        )
+
+    if rev_score < 55:
+        opposing_factors.append(
+            f"Weak revision score: {rev_score:.1f}."
+        )
+
+    if estimate_change_30d is not None and estimate_change_30d < 0:
+        opposing_factors.append(
+            f"Consensus EPS estimate changed "
+            f"{estimate_change_30d:.2f}% over 30 days."
+        )
+
+    if price is not None and ma200 is not None and price < ma200:
+        opposing_factors.append(
+            "Price is below MA200."
+        )
+
+    if r_score >= 60:
+        opposing_factors.append(
+            f"Elevated risk score: {r_score:.1f}."
+        )
+
+    return {
+        "symbol": symbol,
+        "direction": direction,
+        "probability": probability,
+        "horizon_days": 90,
+        "regime": regime,
+        "confirmation_threshold_pct": confirmation_threshold_pct,
+        "max_drawdown_limit_pct": max_drawdown_limit_pct,
+        "thesis": thesis,
+        "supporting_factors": supporting_factors,
+        "opposing_factors": opposing_factors,
+        "invalidation_conditions": [
+            "Material deterioration in earnings revisions",
+            "Material change in the long-term technical regime",
+            "Broad market or sector regime changes materially",
+            "Material deterioration in company guidance or fundamentals"
+        ],
+        "inputs": {
+            "fundamental_score": f_score,
+            "technical_score": t_score,
+            "risk_score": r_score,
+            "revision_score": rev_score,
+            "current_price": price,
+            "ma50": ma50,
+            "ma200": ma200,
+            "rsi14": rsi,
+            "momentum_1m_pct": momentum_1m,
+            "momentum_3m_pct": momentum_3m,
+            "estimate_change_30d_pct": estimate_change_30d,
+            "up_revisions_30d": up_30d,
+            "down_revisions_30d": down_30d,
+            "market_trend": market_trend,
+            "market_breadth": breadth,
+            "vix": vix
+        },
+        "status": "DRAFT"
+    }
 
 @app.get("/company/divergence-ranking")
 async def divergence_ranking():
