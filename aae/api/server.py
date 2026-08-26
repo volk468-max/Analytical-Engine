@@ -465,6 +465,75 @@ async def revision_ranking():
         "ranking": successful,
         "errors": errors,
     }
+@app.get("/company/snapshot/{symbol}")
+async def company_snapshot(symbol: str):
+    symbol = symbol.upper()
+
+    adc = ADCConnector(
+        get_adc_url()
+    )
+
+    fundamental_engine = CompanyAnalysisEngine()
+    technical_engine = TechnicalAnalysisEngine()
+    risk_engine = CompanyRiskEngine()
+    revision_engine = RevisionAnalysisEngine()
+
+    try:
+        fundamentals, history, revisions, market_summary = await asyncio.gather(
+            adc.fundamentals(symbol),
+            adc.history(
+                symbol,
+                limit=500,
+            ),
+            adc.revisions(symbol),
+            adc.market_summary(),
+        )
+
+        fundamental = fundamental_engine.evaluate(
+            fundamentals
+        )
+
+        technical = technical_engine.evaluate(
+            history
+        )
+
+        risk = risk_engine.evaluate(
+            fundamentals,
+            history,
+        )
+
+        revision = revision_engine.evaluate(
+            revisions
+        )
+
+        base_alpha = round(
+            fundamental.fundamental_score * 0.60
+            + technical["technical_score"] * 0.40,
+            1,
+        )
+
+        fundamental_data = (
+            fundamental.model_dump()
+            if hasattr(fundamental, "model_dump")
+            else fundamental
+        )
+
+        return {
+            "symbol": symbol,
+            "base_alpha": base_alpha,
+            "fundamental": fundamental_data,
+            "technical": technical,
+            "risk": risk,
+            "revisions": revision,
+            "market": market_summary,
+            "status": "ok",
+        }
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Snapshot failed for {symbol}: {exc}",
+        )
 
 @app.get("/company/divergence-ranking")
 async def divergence_ranking():
