@@ -29,6 +29,8 @@ from aae.engines.company_risk import (
 from aae.engines.revision_analysis import (
     RevisionAnalysisEngine,
 )
+from datetime import datetime, timezone
+from aae.connectors.hypothesis_tracker import HypothesisTrackerConnector
 
 app = FastAPI(
     title="Alpha Analytical Engine",
@@ -79,6 +81,16 @@ def get_adc_url() -> str:
         raise HTTPException(
             status_code=500,
             detail="ADC_BASE_URL must be configured.",
+        )
+def get_hypothesis_tracker_url() -> str:
+    tracker_url = os.environ.get(
+        "HYPOTHESIS_TRACKER_URL"
+    )
+
+    if not tracker_url:
+        raise HTTPException(
+            status_code=500,
+            detail="HYPOTHESIS_TRACKER_URL must be configured.",
         )
 
     return adc_url
@@ -765,6 +777,142 @@ async def hypothesis_candidate(symbol: str):
             "vix": vix
         },
         "status": "DRAFT"
+    }
+@app.post("/company/hypothesis-register/{symbol}")
+async def hypothesis_register(symbol: str):
+    symbol = symbol.upper()
+
+    candidate = await hypothesis_candidate(symbol)
+
+    if candidate.get("status") != "DRAFT":
+        raise HTTPException(
+            status_code=400,
+            detail="Candidate is not in DRAFT status.",
+        )
+
+    direction = candidate.get("direction")
+
+    if direction == "NEUTRAL":
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                f"No directional hypothesis for {symbol}. "
+                "Candidate direction is NEUTRAL."
+            ),
+        )
+
+    regime = candidate.get("regime", "UNKNOWN")
+    horizon_days = int(
+        candidate.get("horizon_days", 90)
+    )
+
+    probability = int(
+        candidate.get("probability", 50)
+    )
+
+    threshold = float(
+        candidate.get(
+            "confirmation_threshold_pct",
+            5,
+        )
+    )
+
+    max_drawdown = candidate.get(
+        "max_drawdown_limit_pct"
+    )
+
+    thesis = candidate.get(
+        "thesis",
+        "Automatically generated hypothesis.",
+    )
+
+    today = datetime.now(
+        timezone.utc
+    ).date().isoformat()
+
+    direction_label = (
+        "bullish"
+        if direction == "UP"
+        else "bearish"
+    )
+
+    regime_label = (
+        regime
+        .lower()
+        .replace("_", "-")
+    )
+
+    title = (
+        f"{symbol} 3M {direction_label} "
+        f"{regime_label}"
+    )
+
+    payload = {
+        "title": title,
+        "description": thesis,
+        "probability": probability,
+        "symbol": symbol,
+        "horizon_days": horizon_days,
+        "direction": direction,
+        "confirmation_threshold_pct": threshold,
+        "max_drawdown_limit_pct": max_drawdown,
+        "source_analysis_id": (
+            f"{symbol}-3M-{today}-AUTO"
+        ),
+        "source_engine_version": "Alpha-OS-v1",
+        "tags": [
+            symbol,
+            direction_label,
+            regime_label,
+            "auto-generated",
+        ],
+        "metadata": {
+            **candidate.get("inputs", {}),
+            "regime": regime,
+            "thesis": thesis,
+            "supporting_factors": candidate.get(
+                "supporting_factors",
+                [],
+            ),
+            "opposing_factors": candidate.get(
+                "opposing_factors",
+                [],
+            ),
+            "invalidation_conditions": candidate.get(
+                "invalidation_conditions",
+                [],
+            ),
+            "candidate_probability": probability,
+            "candidate_status": candidate.get(
+                "status"
+            ),
+            "generated_automatically": True,
+        },
+    }
+
+    tracker = HypothesisTrackerConnector(
+        get_hypothesis_tracker_url()
+    )
+
+    try:
+        registered = await tracker.register(
+            payload
+        )
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=502,
+            detail=(
+                f"Failed to register hypothesis "
+                f"for {symbol}: {exc}"
+            ),
+        )
+
+    return {
+        "symbol": symbol,
+        "candidate": candidate,
+        "registered_hypothesis": registered,
+        "status": "REGISTERED",
     }
 
 @app.get("/company/divergence-ranking")
