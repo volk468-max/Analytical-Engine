@@ -673,28 +673,28 @@ async def hypothesis_candidate(symbol: str):
     # ---------------------------------------------------------
     
     elif (
-    f_score < 70
-    and t_score < 50
-    and rev_score < 55
-    and r_score >= 60
-    and price is not None
-    and ma200 is not None
-    and price < ma200
-    and estimate_change_30d is not None
-    and estimate_change_30d < -5
-):
-    direction = "DOWN"
-    probability = 66
-    regime = "MULTI_FACTOR_BEARISH_DETERIORATION"
-    confirmation_threshold_pct = 10
-    max_drawdown_limit_pct = 15
+        f_score < 70
+        and t_score < 50
+        and rev_score < 55
+        and r_score >= 60
+        and price is not None
+        and ma200 is not None
+        and price < ma200
+        and estimate_change_30d is not None
+        and estimate_change_30d < -5
+    ):
+        direction = "DOWN"
+        probability = 66
+        regime = "MULTI_FACTOR_BEARISH_DETERIORATION"
+        confirmation_threshold_pct = 10
+        max_drawdown_limit_pct = 15
 
-    thesis = (
-        "Weak fundamentals, weak technical structure, "
-        "deteriorating earnings revisions and elevated risk "
-        "create a multi-factor bearish setup. The probability "
-        "of further downside or material underperformance is "
-        "elevated despite a constructive broader market."
+        thesis = (
+            "Weak fundamentals, weak technical structure, "
+            "deteriorating earnings revisions and elevated risk "
+            "create a multi-factor bearish setup. The probability "
+            "of further downside or material underperformance is "
+            "elevated despite a constructive broader market."
     )
 
     elif (
