@@ -671,6 +671,7 @@ async def hypothesis_candidate(symbol: str):
     # ---------------------------------------------------------
     # 4. Fundamental quality but deteriorating expectations
     # ---------------------------------------------------------
+    
     elif (
     f_score < 70
     and t_score < 50
