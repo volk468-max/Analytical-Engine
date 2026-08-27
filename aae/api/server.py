@@ -82,6 +82,10 @@ def get_adc_url() -> str:
             status_code=500,
             detail="ADC_BASE_URL must be configured.",
         )
+
+    return adc_url
+
+
 def get_hypothesis_tracker_url() -> str:
     tracker_url = os.environ.get(
         "HYPOTHESIS_TRACKER_URL"
@@ -93,7 +97,8 @@ def get_hypothesis_tracker_url() -> str:
             detail="HYPOTHESIS_TRACKER_URL must be configured.",
         )
 
-    return adc_url
+    return tracker_url
+
 
 
 def orchestrator():
