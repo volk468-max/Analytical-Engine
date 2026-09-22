@@ -570,11 +570,10 @@ async def company_decision(
     symbol,
     limit=180,
 )
-
-if isinstance(history, dict):
+    if isinstance(history, dict):
     history = history.get("records", [])
 
-engine = DecisionEngine()
+    engine = DecisionEngine()
 
     engine = DecisionEngine()
 
