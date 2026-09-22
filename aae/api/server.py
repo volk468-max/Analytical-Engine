@@ -567,9 +567,14 @@ async def company_decision(
     )
 
     history = await adc.history(
-        symbol,
-        limit=180,
-    )
+    symbol,
+    limit=180,
+)
+
+if isinstance(history, dict):
+    history = history.get("records", [])
+
+engine = DecisionEngine()
 
     engine = DecisionEngine()
 
