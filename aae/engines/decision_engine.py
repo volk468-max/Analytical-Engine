@@ -149,21 +149,21 @@ class DecisionEngine:
         near_resistance = (
             range_position_pct >= 85
             or upside_to_resistance_pct <= 4
-)
+        )
 
         near_support = (
             range_position_pct <= 25
             or downside_to_support_pct >= -6
-)
+        )
         confirmed_breakout = (
             resistance is not None
             and price > resistance * 1.05
-)
+        )
 
         breakout_candidate = (
             resistance is not None
             and price > resistance * 1.03
-)
+        )
 
 
         strong_revisions = (
