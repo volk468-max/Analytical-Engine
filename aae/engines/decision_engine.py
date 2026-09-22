@@ -252,36 +252,36 @@ class DecisionEngine:
             if overextended:
                 action = "TRIM"
 
-        reason.append(
-            "Former resistance has been decisively broken."
+                reason.append(
+                    "Former resistance has been decisively broken."
+                )
+
+                reason.append(
+                    "The long-term trend remains strong, but the stock "
+                    "is short-term overextended."
         )
 
-        reason.append(
-            "The long-term trend remains strong, but the stock "
-            "is short-term overextended."
+                trigger = (
+                    "Retain the core position. Consider adding again "
+                    "after consolidation or a successful retest of the "
+                    "former resistance zone."
         )
 
-        trigger = (
-            "Retain the core position. Consider adding again "
-            "after consolidation or a successful retest of the "
-            "former resistance zone."
+            else:
+                action = "HOLD"
+
+                reason.append(
+                    "Former resistance has been decisively broken."
         )
 
-        else:
-        action = "HOLD"
-
-        reason.append(
-            "Former resistance has been decisively broken."
+                reason.append(
+                    "Technical structure and earnings revisions "
+                    "support the breakout."
         )
 
-        reason.append(
-            "Technical structure and earnings revisions "
-            "support the breakout."
-        )
-
-        trigger = (
-            "Consider ADD after the breakout is confirmed "
-            "by consolidation above the former resistance."
+                trigger = (
+                    "Consider ADD after the breakout is confirmed "
+                    "by consolidation above the former resistance."
         )
 
         # TRIM:
