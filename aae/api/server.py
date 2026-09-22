@@ -2,7 +2,7 @@ import asyncio
 import json
 import os
 from pathlib import Path
-
+from aae.engines.decision_engine import DecisionEngine
 from fastapi import (
     FastAPI,
     HTTPException,
@@ -551,6 +551,45 @@ async def company_snapshot(symbol: str):
             status_code=500,
             detail=f"Snapshot failed for {symbol}: {exc}",
         )
+@app.get("/company/decision/{symbol}")
+async def company_decision(
+    symbol: str,
+    current_weight_pct: float | None = None,
+    support: float | None = None,
+    resistance: float | None = None,
+):
+    symbol = symbol.upper()
+
+    snapshot = await company_snapshot(symbol)
+
+    adc = ADCConnector(
+        get_adc_url()
+    )
+
+    history = await adc.history(
+        symbol,
+        limit=180,
+    )
+
+    engine = DecisionEngine()
+
+    try:
+        return engine.evaluate(
+            snapshot=snapshot,
+            history=history,
+            current_weight_pct=current_weight_pct,
+            manual_support=support,
+            manual_resistance=resistance,
+        )
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500,
+            detail=(
+                f"Decision failed for {symbol}: {exc}"
+            ),
+        )
+        
 @app.get("/company/hypothesis-candidate/{symbol}")
 async def hypothesis_candidate(symbol: str):
     symbol = symbol.upper()
