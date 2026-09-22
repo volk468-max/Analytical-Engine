@@ -501,6 +501,8 @@ class DecisionEngine:
                 "overextended": overextended,
                 "oversold": oversold,
                 "high_risk": high_risk,
+                "breakout_candidate": breakout_candidate,
+                "confirmed_breakout": confirmed_breakout,
             },
 
             "reason": reason,
