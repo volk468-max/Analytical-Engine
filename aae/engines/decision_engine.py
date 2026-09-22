@@ -267,7 +267,7 @@ class DecisionEngine:
             "former resistance zone."
         )
 
-    else:
+        else:
         action = "HOLD"
 
         reason.append(
