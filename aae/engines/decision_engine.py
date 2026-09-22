@@ -242,6 +242,47 @@ class DecisionEngine:
             reason.append(
                 "Earnings revisions are deteriorating."
             )
+        # CONFIRMED BREAKOUT:
+        # old resistance is no longer treated as a ceiling 
+        elif (
+            confirmed_breakout
+            and strong_revisions
+            and strong_technical
+        ):
+            if overextended:
+                action = "TRIM"
+
+        reason.append(
+            "Former resistance has been decisively broken."
+        )
+
+        reason.append(
+            "The long-term trend remains strong, but the stock "
+            "is short-term overextended."
+        )
+
+        trigger = (
+            "Retain the core position. Consider adding again "
+            "after consolidation or a successful retest of the "
+            "former resistance zone."
+        )
+
+    else:
+        action = "HOLD"
+
+        reason.append(
+            "Former resistance has been decisively broken."
+        )
+
+        reason.append(
+            "Technical structure and earnings revisions "
+            "support the breakout."
+        )
+
+        trigger = (
+            "Consider ADD after the breakout is confirmed "
+            "by consolidation above the former resistance."
+        )
 
         # TRIM:
         # near resistance with poor asymmetry
