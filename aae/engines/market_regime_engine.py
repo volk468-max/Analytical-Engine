@@ -345,24 +345,7 @@ class MarketRegimeEngine:
 
             stance = "STAY_INVESTED"
 
-        elif (
-            long_term_intact
-            and breadth_50 >= 55
-            and vix < 22
-        ):
-            regime = "BULLISH"
-            confidence = 75
-
-            reasons.append(
-                "Long-term market trend remains intact."
-            )
-
-            reasons.append(
-                "Breadth remains constructive."
-            )
-
-            stance = "STAY_INVESTED_SELECTIVELY"
-
+        
         elif (
             long_term_intact
             and short_term_weakness
@@ -386,6 +369,23 @@ class MarketRegimeEngine:
             stance = (
                 "KEEP_CORE_WATCH_SUPPORTS_SELECTIVE_ADD"
             )
+        elif (
+            long_term_intact
+            and breadth_50 >= 55
+            and vix < 22
+        ):
+            regime = "BULLISH"
+            confidence = 75
+
+            reasons.append(
+                "Long-term market trend remains intact."
+            )
+
+            reasons.append(
+                "Breadth remains constructive."
+            )
+
+            stance = "STAY_INVESTED_SELECTIVELY"
 
         elif (
             broad_selloff
