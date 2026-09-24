@@ -9,6 +9,7 @@ class DecisionEngine:
         current_weight_pct: float | None = None,
         manual_support: float | None = None,
         manual_resistance: float | None = None,
+        market_regime: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
 
         symbol = snapshot["symbol"]
@@ -18,6 +19,15 @@ class DecisionEngine:
         risk = snapshot["risk"]
         revisions = snapshot["revisions"]
         market = snapshot["market"]
+        regime_name = None
+        regime_confidence = None
+        regime_stance = None
+
+        if isinstance(market_regime, dict):
+            regime_name = market_regime.get("regime")
+            regime_confidence = market_regime.get("confidence_pct")
+            regime_stance = market_regime.get("portfolio_stance")
+
 
         price = float(technical["current_price"])
 
@@ -433,6 +443,12 @@ class DecisionEngine:
             "symbol": symbol,
             "action": action,
             "current_price": round(price, 4),
+            "market_regime": {
+                "regime": regime_name,
+                "confidence_pct": regime_confidence,
+                "portfolio_stance": regime_stance,
+            },
+
 
             "current_weight_pct": current_weight_pct,
             "position_multiplier": position_multiplier,
