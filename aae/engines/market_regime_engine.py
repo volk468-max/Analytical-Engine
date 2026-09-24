@@ -29,10 +29,10 @@ async def market_regime():
         "ORCL",
         "GEV",
         "NBIS", 
-        “GS”,
-        “GOOG”,
-        “CRWD”,
-        “SMSN.IL”,
+        "GS",
+        "GOOG",
+        "CRWD",
+        "SMSN.IL",
     ]
 
     try:
