@@ -562,6 +562,7 @@ async def company_decision(
     symbol = symbol.upper()
 
     snapshot = await company_snapshot(symbol)
+    regime_data = await market_regime()
 
     adc = ADCConnector(
         get_adc_url()
@@ -583,6 +584,7 @@ async def company_decision(
             current_weight_pct=current_weight_pct,
             manual_support=support,
             manual_resistance=resistance,
+            market_regime=regime_data,
         )
 
     except Exception as exc:
