@@ -330,6 +330,7 @@ class MarketRegimeEngine:
             and qqq_above_50
             and breadth_50 >= 70
             and vix < 18
+            and not short_term_weakness
         ):
             regime = "STRONG_BULL"
             confidence = 80
