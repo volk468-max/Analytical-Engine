@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 from aae.engines.decision_engine import DecisionEngine
 from aae.engines.market_regime_engine import MarketRegimeEngine
+from aae.engines.long_term_thesis_engine import LongTermThesisEngine
 from fastapi import (
     FastAPI,
     HTTPException,
@@ -2071,6 +2072,24 @@ async def market_regime():
         raise HTTPException(
             status_code=500,
             detail=f"Market regime analysis failed: {exc}",
+        )
+@app.get("/company/long-term-thesis/{symbol}")
+async def company_long_term_thesis(
+    symbol: str,
+    current_weight_pct: float | None = None,
+):
+    engine = LongTermThesisEngine()
+
+    try:
+        return engine.evaluate(
+            symbol=symbol,
+            current_weight_pct=current_weight_pct,
+        )
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Long-term thesis failed for {symbol}: {exc}",
         )
 
 
