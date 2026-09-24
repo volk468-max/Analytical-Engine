@@ -3,7 +3,7 @@ import json
 import os
 from pathlib import Path
 from aae.engines.decision_engine import DecisionEngine
-from aae.engines.market_regime_engine import MarketRegimeEnginne
+from aae.engines.market_regime_engine import MarketRegimeEngine
 from fastapi import (
     FastAPI,
     HTTPException,
