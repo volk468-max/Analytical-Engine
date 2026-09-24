@@ -11,12 +11,24 @@ class MarketRegimeEngine:
         if not isinstance(history, list):
             return []
 
-        return [
+        records = [
             row
             for row in history
             if isinstance(row, dict)
             and row.get("close") is not None
         ]
+
+        def get_date(row: dict):
+            return (
+                row.get("trade_date")
+                or row.get("date")
+                or row.get("timestamp")
+                or ""
+            )
+
+        records.sort(key=get_date)
+
+        return records
 
     def _close(self, row: dict) -> float | None:
         try:
