@@ -5,6 +5,7 @@ from pathlib import Path
 from aae.engines.decision_engine import DecisionEngine
 from aae.engines.market_regime_engine import MarketRegimeEngine
 from aae.engines.long_term_thesis_engine import LongTermThesisEngine
+from aae.engines.data_freshness_engine import DataFreshnessEngine
 from fastapi import (
     FastAPI,
     HTTPException,
@@ -540,6 +541,13 @@ async def company_snapshot(symbol: str):
             fundamental.model_dump()
             if hasattr(fundamental, "model_dump")
             else fundamental
+        )
+        freshness_engine = DataFreshnessEngine()
+
+        freshness = freshness_engine.evaluate(
+            fundamentals=fundamentals,
+            history=history,
+            revisions=revisions,
         )
 
         return {
