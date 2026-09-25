@@ -10,6 +10,7 @@ class DecisionEngine:
         manual_support: float | None = None,
         manual_resistance: float | None = None,
         market_regime: dict[str, Any] | None = None,
+        long_term_thesis: dict[str, Any] | None = None
     ) -> dict[str, Any]:
 
         symbol = snapshot["symbol"]
@@ -22,11 +23,26 @@ class DecisionEngine:
         regime_name = None
         regime_confidence = None
         regime_stance = None
-
         if isinstance(market_regime, dict):
             regime_name = market_regime.get("regime")
             regime_confidence = market_regime.get("confidence_pct")
             regime_stance = market_regime.get("portfolio_stance")
+        long_term_view = None
+        long_term_confidence = None
+        strategic_target_weight_pct = None
+        strategic_weight_status = None
+        strategic_role = None
+
+        if isinstance(long_term_thesis, dict):
+            long_term_view = long_term_thesis.get("long_term_view")
+            long_term_confidence = long_term_thesis.get("confidence_pct")
+            strategic_target_weight_pct = long_term_thesis.get(
+                "strategic_target_weight_pct"
+            )
+            strategic_weight_status = long_term_thesis.get(
+                "weight_status"
+            )
+            strategic_role = long_term_thesis.get("role")
 
 
         price = float(technical["current_price"])
