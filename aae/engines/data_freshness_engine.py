@@ -8,6 +8,7 @@ class DataFreshnessEngine:
     HISTORY_MAX_HOURS = 36
     REVISIONS_MAX_HOURS = 72
     FUNDAMENTALS_MAX_HOURS = 24 * 14
+    MARKET_MAX_HOURS = 24
 
     def _parse_datetime(
         self,
@@ -103,15 +104,17 @@ class DataFreshnessEngine:
         fundamentals: dict | None,
         history: Any,
         revisions: dict | None,
+        market_summary: dict | None = None,
     ) -> dict[str, Any]:
 
         now = datetime.now(timezone.utc)
 
         fundamentals = fundamentals or {}
         revisions = revisions or {}
+        market_summary = market_summary or {}
 
-        latest_history = (
-            self._latest_history_record(history)
+        latest_history = self._latest_history_record(
+            history
         )
 
         history_created_at = None
@@ -137,6 +140,15 @@ class DataFreshnessEngine:
             or revisions.get("created_at")
         )
 
+        market_time = (
+            market_summary.get("snapshot_time")
+            or market_summary.get("created_at")
+        )
+
+        market_trade_date = (
+            market_summary.get("trade_date")
+        )
+
         fundamentals_age = self._age_hours(
             fundamentals_time,
             now,
@@ -149,6 +161,11 @@ class DataFreshnessEngine:
 
         revisions_age = self._age_hours(
             revisions_time,
+            now,
+        )
+
+        market_age = self._age_hours(
+            market_time,
             now,
         )
 
@@ -167,10 +184,37 @@ class DataFreshnessEngine:
             self.REVISIONS_MAX_HOURS,
         )
 
+        market_status = self._status(
+            market_age,
+            self.MARKET_MAX_HOURS,
+        )
+
+        history_trade_date_warning = False
+
+        if history_trade_date:
+            try:
+                trade_date_obj = datetime.fromisoformat(
+                    history_trade_date
+                ).date()
+
+                today_utc = now.date()
+
+                calendar_gap_days = (
+                    today_utc - trade_date_obj
+                ).days
+
+                if calendar_gap_days > 1:
+                    history_trade_date_warning = True
+                    history_status = "STALE"
+
+            except ValueError:
+                pass
+
         statuses = [
             fundamentals_status,
             history_status,
             revisions_status,
+            market_status,
         ]
 
         if all(
@@ -205,6 +249,16 @@ class DataFreshnessEngine:
                 "Fundamental snapshot may be stale."
             )
 
+        if market_status == "STALE":
+            warnings.append(
+                "Market snapshot may be stale."
+            )
+
+        if history_trade_date_warning:
+            warnings.append(
+                "Latest market history trade date may be stale."
+            )
+
         return {
             "overall_status": overall_status,
 
@@ -225,6 +279,13 @@ class DataFreshnessEngine:
                 "status": revisions_status,
                 "age_hours": revisions_age,
                 "snapshot_time": revisions_time,
+            },
+
+            "market": {
+                "status": market_status,
+                "age_hours": market_age,
+                "trade_date": market_trade_date,
+                "snapshot_time": market_time,
             },
 
             "warnings": warnings,
