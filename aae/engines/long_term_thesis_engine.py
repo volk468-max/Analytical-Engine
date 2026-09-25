@@ -288,4 +288,4 @@ class LongTermThesisEngine:
             "key_risks": thesis["key_risks"],
             "engine_version": self.VERSION,
             "status": "LONG_TERM_THESIS_READY",
-        }=
+        }
