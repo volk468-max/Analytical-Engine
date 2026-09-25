@@ -71,7 +71,7 @@ CORE_PORTFOLIO = [
     "ARM",
     "ORCL",
     "GEV",
-    "GS',
+    "GS",
     "GOOG",
     "CRWD",
     "SMSN.IL",
