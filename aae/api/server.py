@@ -1,6 +1,7 @@
 import asyncio
 import json
 import os
+import httpx
 from pathlib import Path
 from aae.engines.decision_engine import DecisionEngine
 from aae.engines.market_regime_engine import MarketRegimeEngine
@@ -2113,5 +2114,175 @@ async def company_long_term_thesis(
             status_code=500,
             detail=f"Long-term thesis failed for {symbol}: {exc}",
         )
+@app.post("/company/refresh-and-decision/{symbol}")
+async def refresh_and_decision(
+    symbol: str,
+    current_weight_pct: float | None = None,
+    support: float | None = None,
+    resistance: float | None = None,
+):
+    symbol = symbol.upper()
+
+    adc_url = get_adc_url().rstrip("/")
+
+    # ---------------------------------------------------------
+    # 1. Check current freshness
+    # ---------------------------------------------------------
+
+    initial_snapshot = await company_snapshot(symbol)
+
+    freshness = initial_snapshot.get(
+        "data_freshness",
+        {},
+    )
+
+    refresh_log = []
+
+    history_status = (
+        freshness.get("history", {})
+        .get("status")
+    )
+
+    market_status = (
+        freshness.get("market", {})
+        .get("status")
+    )
+
+    revisions_status = (
+        freshness.get("revisions", {})
+        .get("status")
+    )
+
+    fundamentals_status = (
+        freshness.get("fundamentals", {})
+        .get("status")
+    )
+
+    # ---------------------------------------------------------
+    # 2. Helper for Data Collector refresh
+    # ---------------------------------------------------------
+
+    async def run_refresh(
+        endpoint: str,
+        params: dict | None = None,
+    ):
+        async with httpx.AsyncClient(
+            timeout=180.0
+        ) as client:
+
+            response = await client.post(
+                f"{adc_url}{endpoint}",
+                params=params,
+            )
+
+            response.raise_for_status()
+
+            try:
+                result = response.json()
+            except Exception:
+                result = {
+                    "status_code": response.status_code
+                }
+
+            return result
+
+    # ---------------------------------------------------------
+    # 3. Refresh only stale sources
+    # ---------------------------------------------------------
+
+    if market_status != "FRESH":
+        result = await run_refresh(
+            "/collect/market"
+        )
+
+        refresh_log.append({
+            "source": "market",
+            "action": "REFRESHED",
+            "result": result,
+        })
+
+    else:
+        refresh_log.append({
+            "source": "market",
+            "action": "SKIPPED_FRESH",
+        })
+
+    if history_status != "FRESH":
+        result = await run_refresh(
+            "/collect/history",
+            params={
+                "period": "2y",
+            },
+        )
+
+        refresh_log.append({
+            "source": "history",
+            "action": "REFRESHED",
+            "result": result,
+        })
+
+    else:
+        refresh_log.append({
+            "source": "history",
+            "action": "SKIPPED_FRESH",
+        })
+
+    if revisions_status != "FRESH":
+        result = await run_refresh(
+            "/collect/revisions"
+        )
+
+        refresh_log.append({
+            "source": "revisions",
+            "action": "REFRESHED",
+            "result": result,
+        })
+
+    else:
+        refresh_log.append({
+            "source": "revisions",
+            "action": "SKIPPED_FRESH",
+        })
+
+    if fundamentals_status != "FRESH":
+        result = await run_refresh(
+            "/collect/fundamentals"
+        )
+
+        refresh_log.append({
+            "source": "fundamentals",
+            "action": "REFRESHED",
+            "result": result,
+        })
+
+    else:
+        refresh_log.append({
+            "source": "fundamentals",
+            "action": "SKIPPED_FRESH",
+        })
+
+    # ---------------------------------------------------------
+    # 4. Recalculate everything after refresh
+    # ---------------------------------------------------------
+
+    final_decision = await company_decision(
+        symbol=symbol,
+        current_weight_pct=current_weight_pct,
+        support=support,
+        resistance=resistance,
+    )
+
+    return {
+        "symbol": symbol,
+
+        "refresh": {
+            "initial_freshness": freshness,
+            "actions": refresh_log,
+        },
+
+        "decision": final_decision,
+
+        "status": "REFRESH_AND_DECISION_READY",
+    }
 
 
