@@ -548,6 +548,7 @@ async def company_snapshot(symbol: str):
             fundamentals=fundamentals,
             history=history,
             revisions=revisions,
+            market_summary=market_summary,
         )
 
         return {
