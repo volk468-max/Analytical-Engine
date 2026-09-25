@@ -2284,5 +2284,378 @@ async def refresh_and_decision(
 
         "status": "REFRESH_AND_DECISION_READY",
     }
+@app.post("/portfolio/refresh-and-decide")
+async def portfolio_refresh_and_decide(
+    weights: dict[str, float],
+):
+    if not weights:
+        raise HTTPException(
+            status_code=400,
+            detail="Portfolio weights are required.",
+        )
+
+    weights = {
+        symbol.upper(): float(weight)
+        for symbol, weight in weights.items()
+    }
+
+    adc = ADCConnector(get_adc_url())
+    adc_url = get_adc_url().rstrip("/")
+
+    symbols = list(weights.keys())
+
+    # ---------------------------------------------------------
+    # 1. Load initial snapshots and check freshness
+    # ---------------------------------------------------------
+
+    snapshot_results = await asyncio.gather(
+        *[
+            company_snapshot(symbol)
+            for symbol in symbols
+        ],
+        return_exceptions=True,
+    )
+
+    initial_snapshots = {}
+    snapshot_errors = {}
+
+    for symbol, result in zip(
+        symbols,
+        snapshot_results,
+    ):
+        if isinstance(result, Exception):
+            snapshot_errors[symbol] = str(result)
+            continue
+
+        initial_snapshots[symbol] = result
+
+    refresh_needed = {
+        "market": False,
+        "history": False,
+        "revisions": False,
+        "fundamentals": False,
+    }
+
+    freshness_before = {}
+
+    for symbol, snapshot in initial_snapshots.items():
+        freshness = snapshot.get(
+            "data_freshness",
+            {},
+        )
+
+        freshness_before[symbol] = freshness
+
+        for source in refresh_needed:
+            source_status = (
+                freshness.get(source, {})
+                .get("status")
+            )
+
+            if source_status != "FRESH":
+                refresh_needed[source] = True
+
+    # ---------------------------------------------------------
+    # 2. Helper for Data Collector refresh
+    # ---------------------------------------------------------
+
+    async def run_refresh(
+        endpoint: str,
+        params: dict | None = None,
+    ):
+        async with httpx.AsyncClient(
+            timeout=180.0
+        ) as client:
+
+            response = await client.post(
+                f"{adc_url}{endpoint}",
+                params=params,
+            )
+
+            response.raise_for_status()
+
+            try:
+                return response.json()
+
+            except Exception:
+                return {
+                    "status_code": response.status_code
+                }
+
+    # ---------------------------------------------------------
+    # 3. Refresh stale sources once for whole portfolio
+    # ---------------------------------------------------------
+
+    refresh_actions = []
+
+    if refresh_needed["market"]:
+        result = await run_refresh(
+            "/collect/market"
+        )
+
+        refresh_actions.append({
+            "source": "market",
+            "action": "REFRESHED",
+            "result": result,
+        })
+
+    else:
+        refresh_actions.append({
+            "source": "market",
+            "action": "SKIPPED_FRESH",
+        })
+
+    if refresh_needed["history"]:
+        result = await run_refresh(
+            "/collect/history",
+            params={
+                "period": "2y",
+            },
+        )
+
+        refresh_actions.append({
+            "source": "history",
+            "action": "REFRESHED",
+            "result": result,
+        })
+
+    else:
+        refresh_actions.append({
+            "source": "history",
+            "action": "SKIPPED_FRESH",
+        })
+
+    if refresh_needed["revisions"]:
+        result = await run_refresh(
+            "/collect/revisions"
+        )
+
+        refresh_actions.append({
+            "source": "revisions",
+            "action": "REFRESHED",
+            "result": result,
+        })
+
+    else:
+        refresh_actions.append({
+            "source": "revisions",
+            "action": "SKIPPED_FRESH",
+        })
+
+    if refresh_needed["fundamentals"]:
+        result = await run_refresh(
+            "/collect/fundamentals"
+        )
+
+        refresh_actions.append({
+            "source": "fundamentals",
+            "action": "REFRESHED",
+            "result": result,
+        })
+
+    else:
+        refresh_actions.append({
+            "source": "fundamentals",
+            "action": "SKIPPED_FRESH",
+        })
+
+    # ---------------------------------------------------------
+    # 4. Calculate market regime once
+    # ---------------------------------------------------------
+
+    regime_data = await market_regime()
+
+    # ---------------------------------------------------------
+    # 5. Recalculate every company after refresh
+    # ---------------------------------------------------------
+
+    decisions = []
+    decision_errors = {}
+
+    for symbol in symbols:
+        try:
+            snapshot = await company_snapshot(
+                symbol
+            )
+
+            history = await adc.history(
+                symbol,
+                limit=180,
+            )
+
+            if isinstance(history, dict):
+                history_records = history.get(
+                    "records",
+                    [],
+                )
+            else:
+                history_records = history
+
+            long_term_engine = (
+                LongTermThesisEngine()
+            )
+
+            long_term_data = (
+                long_term_engine.evaluate(
+                    symbol=symbol,
+                    current_weight_pct=weights[
+                        symbol
+                    ],
+                )
+            )
+
+            decision_engine = DecisionEngine()
+
+            decision = decision_engine.evaluate(
+                snapshot=snapshot,
+                history=history_records,
+                current_weight_pct=weights[
+                    symbol
+                ],
+                market_regime=regime_data,
+                long_term_thesis=long_term_data,
+            )
+
+            decisions.append(decision)
+
+        except Exception as exc:
+            decision_errors[symbol] = str(exc)
+
+    # ---------------------------------------------------------
+    # 6. Portfolio summary
+    # ---------------------------------------------------------
+
+    action_counts = {
+        "ADD": 0,
+        "HOLD": 0,
+        "TRIM": 0,
+        "SELL": 0,
+    }
+
+    reliability_counts = {
+        "HIGH": 0,
+        "LIMITED": 0,
+        "UNKNOWN": 0,
+    }
+
+    current_total_weight = 0.0
+    target_total_weight = 0.0
+
+    attention = []
+
+    for decision in decisions:
+        action = decision.get(
+            "action",
+            "HOLD",
+        )
+
+        reliability = decision.get(
+            "decision_reliability",
+            "UNKNOWN",
+        )
+
+        if action in action_counts:
+            action_counts[action] += 1
+
+        if reliability in reliability_counts:
+            reliability_counts[
+                reliability
+            ] += 1
+
+        current_weight = decision.get(
+            "current_weight_pct"
+        )
+
+        target_weight = decision.get(
+            "target_weight_pct"
+        )
+
+        if current_weight is not None:
+            current_total_weight += float(
+                current_weight
+            )
+
+        if target_weight is not None:
+            target_total_weight += float(
+                target_weight
+            )
+
+        if action in [
+            "TRIM",
+            "SELL",
+            "ADD",
+        ]:
+            attention.append({
+                "symbol": decision.get(
+                    "symbol"
+                ),
+                "action": action,
+                "current_weight_pct": (
+                    current_weight
+                ),
+                "target_weight_pct": (
+                    target_weight
+                ),
+                "long_term_view": (
+                    decision.get(
+                        "long_term_thesis",
+                        {},
+                    ).get("view")
+                ),
+                "reliability": reliability,
+            })
+
+    # ---------------------------------------------------------
+    # 7. Final portfolio response
+    # ---------------------------------------------------------
+
+    return {
+        "portfolio": {
+            "positions": len(
+                decisions
+            ),
+            "current_total_weight_pct": round(
+                current_total_weight,
+                2,
+            ),
+            "raw_target_total_weight_pct": round(
+                target_total_weight,
+                2,
+            ),
+        },
+
+        "market_regime": regime_data,
+
+        "summary": {
+            "actions": action_counts,
+            "reliability": (
+                reliability_counts
+            ),
+            "attention_required": attention,
+        },
+
+        "refresh": {
+            "required": refresh_needed,
+            "actions": refresh_actions,
+            "freshness_before": (
+                freshness_before
+            ),
+        },
+
+        "decisions": decisions,
+
+        "errors": {
+            "initial_snapshot_errors": (
+                snapshot_errors
+            ),
+            "decision_errors": (
+                decision_errors
+            ),
+        },
+
+        "status": (
+            "PORTFOLIO_DECISION_READY"
+        ),
+    }
 
 
