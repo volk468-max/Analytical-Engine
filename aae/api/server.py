@@ -558,6 +558,7 @@ async def company_snapshot(symbol: str):
             "risk": risk,
             "revisions": revision,
             "market": market_summary,
+            "data_freshness": freshness,
             "status": "ok",
         }
 
