@@ -569,6 +569,12 @@ async def company_decision(
 
     snapshot = await company_snapshot(symbol)
     regime_data = await market_regime()
+    long_term_engine = LongTermThesisEngine()
+
+    long_term_data = long_term_engine.evaluate(
+        symbol=symbol,
+        current_weight_pct=current_weight_pct,
+    )
 
     adc = ADCConnector(
         get_adc_url()
