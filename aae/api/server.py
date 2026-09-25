@@ -597,6 +597,7 @@ async def company_decision(
             manual_support=support,
             manual_resistance=resistance,
             market_regime=regime_data,
+            long_term_thesis=long_term_data,
         )
 
     except Exception as exc:
