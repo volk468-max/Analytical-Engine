@@ -464,6 +464,13 @@ class DecisionEngine:
                 "confidence_pct": regime_confidence,
                 "portfolio_stance": regime_stance,
             },
+            "long_term_thesis": {
+                "view": long_term_view,
+                "confidence_pct": long_term_confidence,
+                "role": strategic_role,
+                "strategic_target_weight_pct": strategic_target_weight_pct,
+                "weight_status": strategic_weight_status,
+            },
 
 
             "current_weight_pct": current_weight_pct,
