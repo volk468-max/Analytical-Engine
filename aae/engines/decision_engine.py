@@ -3,7 +3,7 @@ from typing import Any
 
 
 class DecisionEngine:
-    VERSION = "Decision-Engine-v1"
+    VERSION = "Decision-Engine-v1.1"
 
     def evaluate(
         self,
@@ -382,17 +382,18 @@ class DecisionEngine:
             and rsi <= 35
         )
 
-        # Additional SELL safeguards for fundamentally strong stocks.
         strong_fundamental = (
             f_score >= 70
         )
 
+        # Support is considered crossed as soon as price
+        # falls below the selected level.
         support_broken = (
-            price < support * 0.97
+            price < support
         )
 
         support_holding = (
-            price >= support * 0.97
+            price >= support
         )
 
         high_risk = (
@@ -416,9 +417,44 @@ class DecisionEngine:
         reason = []
         trigger = None
 
-        # SELL / TRIM / HOLD:
-        # consider fundamental strength, oversold status and support.
+        # REVIEW:
+        # support broken, fundamentals strong,
+        # technical structure weak.
         if (
+            strong_fundamental
+            and support_broken
+            and weak_technical
+        ):
+            action = "REVIEW"
+
+            reason.append(
+                "Price has fallen below the selected support level."
+            )
+
+            reason.append(
+                "The fundamental score remains strong, but "
+                "the technical structure is weak."
+            )
+
+            if deteriorating_revisions:
+                reason.append(
+                    "Earnings revisions are deteriorating."
+                )
+
+            if long_term_view is None:
+                reason.append(
+                    "No verified long-term thesis is available."
+                )
+
+            trigger = (
+                "Review the investment thesis, earnings revisions, "
+                "and support-break confirmation before changing "
+                "the position. REVIEW is not an automatic exit."
+            )
+
+        # SELL / TRIM / HOLD:
+        # consider fundamentals, oversold status and support.
+        elif (
             weak_technical
             and deteriorating_revisions
             and rev_score < 55
@@ -483,7 +519,7 @@ class DecisionEngine:
                     )
 
         # CONFIRMED BREAKOUT:
-        # former resistance is no longer treated as ceiling
+        # former resistance is no longer treated as ceiling.
         elif (
             confirmed_breakout
             and strong_revisions
@@ -525,7 +561,7 @@ class DecisionEngine:
                     "by consolidation above the former resistance."
                 )
 
-        # Near resistance with poor asymmetry
+        # Near resistance with poor asymmetry.
         elif (
             near_resistance
             and (
@@ -546,7 +582,7 @@ class DecisionEngine:
                 "Upside/downside asymmetry has deteriorated."
             )
 
-        # Near resistance but strong structure
+        # Near resistance but strong structure.
         elif (
             near_resistance
             and strong_revisions
@@ -564,7 +600,7 @@ class DecisionEngine:
                 "above resistance."
             )
 
-        # ADD near support
+        # ADD near support.
         elif (
             near_support
             and strong_revisions
@@ -583,7 +619,7 @@ class DecisionEngine:
                 "remain constructive."
             )
 
-        # TRIM if revisions deteriorate
+        # TRIM if revisions deteriorate.
         elif (
             deteriorating_revisions
             and t_score < 55
@@ -631,6 +667,7 @@ class DecisionEngine:
         position_multiplier = {
             "ADD": 1.25,
             "HOLD": 1.0,
+            "REVIEW": 1.0,
             "TRIM": 0.75,
             "SELL": 0.0,
         }.get(
@@ -778,6 +815,9 @@ class DecisionEngine:
                 "weak_technical": weak_technical,
                 "overextended": overextended,
                 "oversold": oversold,
+                "strong_fundamental": strong_fundamental,
+                "support_broken": support_broken,
+                "review_required": action == "REVIEW",
                 "high_risk": high_risk,
                 "breakout_candidate": (
                     breakout_candidate
