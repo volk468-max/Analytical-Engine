@@ -405,20 +405,69 @@ class DecisionEngine:
         # SELL:
         # weak technical structure +
         # deteriorating earnings expectations
-        if (
+                if (
             weak_technical
             and deteriorating_revisions
             and rev_score < 55
         ):
-            action = "SELL"
 
-            reason.append(
-                "Technical structure is weak."
-            )
+            if (
+                strong_fundamental
+                and oversold
+                and support_holding
+            ):
+                action = "HOLD"
 
-            reason.append(
-                "Earnings revisions are deteriorating."
-            )
+                reason.append(
+                    "Fundamentals remain strong despite "
+                    "weak technical conditions."
+                )
+
+                reason.append(
+                    "The stock is oversold and has not "
+                    "confirmed a support breakdown."
+                )
+
+                trigger = (
+                    "Reassess if support breaks or "
+                    "fundamentals deteriorate."
+                )
+
+            elif (
+                strong_fundamental
+                and support_holding
+            ):
+                action = "TRIM"
+
+                reason.append(
+                    "Earnings revisions and technical "
+                    "structure are deteriorating."
+                )
+
+                reason.append(
+                    "Strong fundamentals do not yet "
+                    "justify a full exit."
+                )
+
+            else:
+                action = "SELL"
+
+                reason.append(
+                    "Weak technical structure and "
+                    "deteriorating earnings revisions "
+                    "justify an exit."
+                )
+
+                if support_broken:
+                    reason.append(
+                        "Price has broken below support."
+                    )
+
+                if not strong_fundamental:
+                    reason.append(
+                        "Fundamental strength is insufficient "
+                        "to offset the negative signals."
+                    )
 
         # CONFIRMED BREAKOUT:
         # former resistance is no longer treated as ceiling
