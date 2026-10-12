@@ -1,3 +1,4 @@
+
 from typing import Any
 
 
@@ -381,6 +382,19 @@ class DecisionEngine:
             and rsi <= 35
         )
 
+        # Additional SELL safeguards for fundamentally strong stocks.
+        strong_fundamental = (
+            f_score >= 70
+        )
+
+        support_broken = (
+            price < support * 0.97
+        )
+
+        support_holding = (
+            price >= support * 0.97
+        )
+
         high_risk = (
             r_score >= 60
         )
@@ -402,10 +416,9 @@ class DecisionEngine:
         reason = []
         trigger = None
 
-        # SELL:
-        # weak technical structure +
-        # deteriorating earnings expectations
-                if (
+        # SELL / TRIM / HOLD:
+        # consider fundamental strength, oversold status and support.
+        if (
             weak_technical
             and deteriorating_revisions
             and rev_score < 55
@@ -750,7 +763,7 @@ class DecisionEngine:
                 "market_breadth": market_breadth,
                 "vix": round(
                     vix,
-                    2,
+                    2
                 ),
             },
 
