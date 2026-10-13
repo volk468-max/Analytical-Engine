@@ -6,6 +6,7 @@ from pathlib import Path
 from aae.engines.decision_engine import DecisionEngine
 from aae.engines.market_regime_engine import MarketRegimeEngine
 from aae.engines.long_term_thesis_engine import LongTermThesisEngine
+from aae.storage.investment_memory import save_investment_decision
 from aae.engines.data_freshness_engine import DataFreshnessEngine
 from fastapi import (
     FastAPI,
@@ -612,8 +613,9 @@ async def company_decision(
 
     engine = DecisionEngine()
 
+     
     try:
-        return engine.evaluate(
+        decision = engine.evaluate(
             snapshot=snapshot,
             history=history,
             current_weight_pct=current_weight_pct,
@@ -622,14 +624,22 @@ async def company_decision(
             market_regime=regime_data,
             long_term_thesis=long_term_data,
         )
-
     except Exception as exc:
         raise HTTPException(
             status_code=500,
-            detail=(
-                f"Decision failed for {symbol}: {exc}"
-            ),
+            detail=f"Decision failed for {symbol}: {exc}",
         )
+
+    save_investment_decision(
+        symbol=symbol,
+        decision=decision,
+        snapshot=snapshot,
+        market_regime=regime_data,
+        long_term_thesis=long_term_data,
+    )
+
+    return decision
+    
         
 @app.get("/company/hypothesis-candidate/{symbol}")
 async def hypothesis_candidate(symbol: str):
