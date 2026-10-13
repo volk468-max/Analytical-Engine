@@ -6,6 +6,7 @@ from pathlib import Path
 from aae.engines.decision_engine import DecisionEngine
 from aae.engines.market_regime_engine import MarketRegimeEngine
 from aae.engines.long_term_thesis_engine import LongTermThesisEngine
+from aae.engines.strategy_engine import StrategyEngine
 from aae.storage.investment_memory import save_investment_decision
 from aae.engines.data_freshness_engine import DataFreshnessEngine
 from fastapi import (
@@ -630,6 +631,24 @@ async def company_decision(
             detail=f"Decision failed for {symbol}: {exc}",
         )
 
+    
+    # Generate investment strategies
+    strategy_engine = StrategyEngine()
+
+    try:
+        strategy_report = strategy_engine.evaluate(
+            decision=decision,
+            snapshot=snapshot,
+            market_regime=regime_data,
+            long_term_thesis=long_term_data,
+        )
+
+        decision["strategy_report"] = strategy_report
+
+    except Exception as exc:
+        decision["strategy_error"] = str(exc)
+
+    # Save decision and strategies to PostgreSQL
     save_investment_decision(
         symbol=symbol,
         decision=decision,
@@ -639,6 +658,7 @@ async def company_decision(
     )
 
     return decision
+
     
         
 @app.get("/company/hypothesis-candidate/{symbol}")
