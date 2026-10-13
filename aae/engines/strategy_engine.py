@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 
 
 class StrategyEngine:
-    VERSION = "Strategy-Engine-v1"
+    VERSION = "Strategy-Engine-v1.1"
 
     @staticmethod
     def _number(value, default=None):
@@ -41,12 +41,24 @@ class StrategyEngine:
         risk = snapshot.get("risk") or {}
         revisions = snapshot.get("revisions") or {}
 
-        symbol = decision.get("symbol") or snapshot.get("symbol")
-        price = self._number(decision.get("current_price"))
+        symbol = (
+            decision.get("symbol")
+            or snapshot.get("symbol")
+        )
 
-        rsi = self._number(technical.get("rsi14"))
-        ma50 = self._number(technical.get("ma50"))
-        ma200 = self._number(technical.get("ma200"))
+        price = self._number(
+            decision.get("current_price")
+        )
+
+        rsi = self._number(
+            technical.get("rsi14")
+        )
+        ma50 = self._number(
+            technical.get("ma50")
+        )
+        ma200 = self._number(
+            technical.get("ma200")
+        )
 
         fundamental_score = self._number(
             fundamental.get("fundamental_score"), 0
@@ -62,38 +74,160 @@ class StrategyEngine:
         )
 
         range_data = decision.get("range") or {}
-        support = self._number(range_data.get("support"))
-        resistance = self._number(range_data.get("resistance"))
-
-        regime = market_regime.get("regime", "UNKNOWN")
-        thesis_view = long_term_thesis.get("view")
-        strategic_weight = self._number(
-            long_term_thesis.get("strategic_target_weight_pct")
+        support = self._number(
+            range_data.get("support")
         )
+        resistance = self._number(
+            range_data.get("resistance")
+        )
+
+        # ----------------------------------
+        # MARKET REGIME
+        # ----------------------------------
+
+        decision_market = (
+            decision.get("market_regime") or {}
+        )
+
+        if not isinstance(decision_market, dict):
+            decision_market = {}
+
+        if not isinstance(market_regime, dict):
+            market_regime = {}
+
+        regime = (
+            decision_market.get("regime")
+            or market_regime.get("regime")
+            or "UNKNOWN"
+        )
+
+        # ----------------------------------
+        # LONG-TERM THESIS
+        # ----------------------------------
+
+        decision_thesis = (
+            decision.get("long_term_thesis") or {}
+        )
+
+        if not isinstance(decision_thesis, dict):
+            decision_thesis = {}
+
+        if not isinstance(long_term_thesis, dict):
+            long_term_thesis = {}
+
+        thesis_view = (
+            decision_thesis.get("view")
+            or long_term_thesis.get("view")
+        )
+
+        thesis_confidence = self._number(
+            decision_thesis.get("confidence_pct")
+        )
+
+        if thesis_confidence is None:
+            thesis_confidence = self._number(
+                long_term_thesis.get("confidence_pct")
+            )
+
+        strategic_weight = self._number(
+            decision_thesis.get(
+                "strategic_target_weight_pct"
+            )
+        )
+
+        if strategic_weight is None:
+            strategic_weight = self._number(
+                long_term_thesis.get(
+                    "strategic_target_weight_pct"
+                )
+            )
 
         current_weight = self._number(
             decision.get("current_weight_pct")
         )
 
         # ----------------------------------
-        # MARKET CONTEXT
+        # DATA QUALITY
+        # ----------------------------------
+
+        freshness = (
+            decision.get("data_freshness") or {}
+        )
+
+        if not isinstance(freshness, dict):
+            freshness = {}
+
+        freshness_status = freshness.get(
+            "overall_status", "UNKNOWN"
+        )
+
+        reliability = decision.get(
+            "decision_reliability", "UNKNOWN"
+        )
+
+        decision_action = decision.get(
+            "action", "UNKNOWN"
+        )
+
+        data_warnings = freshness.get(
+            "warnings") or []
+
+        if not isinstance(data_warnings, list):
+            data_warnings = [str(data_warnings)]
+
+        warnings = list(data_warnings)
+
+        data_limited = (
+            freshness_status != "FRESH"
+            or reliability != "HIGH"
+        )
+
+        if data_limited:
+            warnings.append(
+                "Investment strategy is based on "
+                "incomplete, stale or unverified data."
+            )
+
+        review_required = (
+            decision_action == "REVIEW"
+            or bool(
+                self._get(
+                    decision,
+                    "conditions",
+                    "review_required",
+                    default=False,
+                )
+            )
+        )
+
+        if review_required:
+            warnings.append(
+                "Decision Engine requires an investment review."
+            )
+
+        # ----------------------------------
+        # MARKET SUMMARY
         # ----------------------------------
 
         if regime == "CORRECTION_WITHIN_BULL_TREND":
             market_summary = (
-                "The market is correcting within a broader bull trend. "
-                "Maintain core positions and add selectively."
+                "The market is correcting within a broader "
+                "bull trend. Maintain core positions and "
+                "add selectively when conditions permit."
             )
+
         elif regime in ("BEAR_MARKET", "RISK_OFF"):
             market_summary = (
                 "Market conditions are defensive. "
                 "Prioritize capital preservation."
             )
+
         elif regime in ("BULL_MARKET", "STRONG_BULL"):
             market_summary = (
                 "Market conditions favor growth exposure, "
                 "subject to valuation and risk."
             )
+
         else:
             market_summary = (
                 "Market conditions are mixed or uncertain. "
@@ -107,10 +241,18 @@ class StrategyEngine:
         short_action = "WAIT"
         short_reasons = []
 
-        if decision.get("action") == "REVIEW":
+        if review_required:
             short_action = "REVIEW"
             short_reasons.append(
-                "The decision engine requires a thesis review."
+                "The investment thesis requires review "
+                "before changing exposure."
+            )
+
+        elif data_limited:
+            short_action = "WAIT_FOR_FRESH_DATA"
+            short_reasons.append(
+                "Fresh and reliable market data are required "
+                "before making a new entry decision."
             )
 
         elif (
@@ -118,12 +260,15 @@ class StrategyEngine:
             and revision_score >= 70
             and rsi is not None
             and 40 <= rsi <= 65
-            and regime not in ("BEAR_MARKET", "RISK_OFF")
+            and regime not in (
+                "BEAR_MARKET",
+                "RISK_OFF",
+            )
         ):
             short_action = "HOLD_OR_SELECTIVE_ADD"
             short_reasons.append(
-                "Technical conditions and analyst revisions "
-                "are supportive."
+                "Technical conditions and analyst "
+                "revisions are supportive."
             )
 
         elif (
@@ -145,7 +290,8 @@ class StrategyEngine:
 
         else:
             short_reasons.append(
-                "There is no sufficiently strong short-term entry signal."
+                "There is no sufficiently strong "
+                "short-term entry signal."
             )
 
         # ----------------------------------
@@ -155,15 +301,29 @@ class StrategyEngine:
         medium_action = "HOLD"
         medium_reasons = []
 
-        if (
+        if review_required:
+            medium_action = "REVIEW"
+            medium_reasons.append(
+                "Review the investment thesis and risk "
+                "before increasing exposure."
+            )
+
+        elif data_limited:
+            medium_action = "HOLD_PENDING_DATA"
+            medium_reasons.append(
+                "Do not increase exposure until data "
+                "reliability is restored."
+            )
+
+        elif (
             fundamental_score >= 70
             and revision_score >= 70
             and technical_score >= 60
         ):
             medium_action = "ACCUMULATE_ON_PULLBACKS"
             medium_reasons.append(
-                "Fundamentals, earnings revisions and trend "
-                "support a constructive medium-term outlook."
+                "Fundamentals, earnings revisions and "
+                "trend support a constructive outlook."
             )
 
         elif (
@@ -172,8 +332,8 @@ class StrategyEngine:
         ):
             medium_action = "REDUCE_EXPOSURE"
             medium_reasons.append(
-                "Fundamental quality and earnings revisions "
-                "are both weak."
+                "Fundamental quality and earnings "
+                "revisions are both weak."
             )
 
         else:
@@ -194,11 +354,10 @@ class StrategyEngine:
         long_action = "HOLD_AND_MONITOR"
         long_reasons = []
 
-        if thesis_view == "BULLISH" and fundamental_score >= 70:
-            long_action = "MAINTAIN_CORE_POSITION"
+        if review_required:
+            long_action = "REASSESS_LONG_TERM_EXPOSURE"
             long_reasons.append(
-                "The long-term thesis is bullish and "
-                "fundamental strength is supportive."
+                "The investment thesis requires review."
             )
 
         elif thesis_view == "BEARISH":
@@ -213,19 +372,36 @@ class StrategyEngine:
                 "A verified long-term thesis is unavailable."
             )
 
+        elif (
+            thesis_view == "BULLISH"
+            and fundamental_score >= 70
+        ):
+            long_action = "MAINTAIN_CORE_POSITION"
+            long_reasons.append(
+                "The long-term thesis is bullish and "
+                "fundamental strength is supportive."
+            )
+
         else:
             long_reasons.append(
-                "Monitor the long-term thesis and business performance."
+                "Monitor the long-term thesis "
+                "and business performance."
+            )
+
+        if data_limited:
+            long_reasons.append(
+                "Refresh market data before implementing "
+                "any increase in portfolio exposure."
             )
 
         # ----------------------------------
-        # RISK AND MONITORING
+        # REFERENCE LEVELS AND WARNINGS
         # ----------------------------------
 
-        warnings = []
-
         if price is None:
-            warnings.append("Current price is missing.")
+            warnings.append(
+                "Current price is missing."
+            )
 
         if support is None or resistance is None:
             warnings.append(
@@ -241,27 +417,26 @@ class StrategyEngine:
                 "Support and resistance are inconsistent."
             )
 
-        if risk_score >= 65:
-            warnings.append(
-                "The risk score is elevated."
-            )
-
         if (
             price is not None
             and ma50 is not None
             and price < ma50
         ):
-            warnings.append("Price is below MA50.")
+            warnings.append(
+                "Price is below MA50."
+            )
 
         if (
             price is not None
             and ma200 is not None
             and price < ma200
         ):
-            warnings.append("Price is below MA200.")
+            warnings.append(
+                "Price is below MA200."
+            )
 
         # ----------------------------------
-        # RESULT
+        # FINAL REPORT
         # ----------------------------------
 
         return {
@@ -270,21 +445,37 @@ class StrategyEngine:
             "created_at_utc": datetime.now(
                 timezone.utc
             ).isoformat(),
+
+            "data_quality": {
+                "freshness_status": freshness_status,
+                "decision_reliability": reliability,
+                "limited": data_limited,
+                "review_required": review_required,
+            },
+
             "market_summary": {
                 "regime": regime,
                 "summary": market_summary,
             },
+
+            "long_term_thesis": {
+                "view": thesis_view,
+                "confidence_pct": thesis_confidence,
+            },
+
             "strategies": {
                 "short_term": {
                     "horizon": "1-4 weeks",
                     "action": short_action,
                     "reasons": short_reasons,
                 },
+
                 "medium_term": {
                     "horizon": "1-6 months",
                     "action": medium_action,
                     "reasons": medium_reasons,
                 },
+
                 "long_term": {
                     "horizon": "1-5 years",
                     "action": long_action,
@@ -293,6 +484,7 @@ class StrategyEngine:
                     "current_weight_pct": current_weight,
                 },
             },
+
             "reference_levels": {
                 "current_price": price,
                 "support": support,
@@ -301,6 +493,7 @@ class StrategyEngine:
                 "ma200": ma200,
                 "rsi14": rsi,
             },
+
             "warnings": warnings,
             "status": "STRATEGY_READY",
         }
