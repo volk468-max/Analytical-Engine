@@ -2785,12 +2785,15 @@ async def company_investment_return(
             if not math.isfinite(close) or close <= 0:
                 continue
 
+            
             date_value = (
-                record.get("date")
+                record.get("trade_date")
+                or record.get("date")
                 or record.get("datetime")
                 or record.get("timestamp")
                 or record.get("trading_date")
             )
+
 
             if date_value is not None:
                 valid_records.append(
