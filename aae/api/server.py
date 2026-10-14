@@ -14,7 +14,7 @@ from fastapi import (
     HTTPException,
     Query,
 )
-
+import math 
 from aae.connectors.adc import ADCConnector 
 from aae.core.orchestrator import (
     AnalyticalOrchestrator,
@@ -2712,4 +2712,138 @@ async def portfolio_refresh_and_decide(
         ),
     }
 
+
+@app.get("/company/investment-return/{symbol}")
+async def company_investment_return(
+    symbol: str,
+    years: int = 5,
+    target_cagr_pct: float = 30.0,
+):
+    from aae.engines.investment_return import (
+        InvestmentReturnEngine,
+    )
+
+    symbol = symbol.strip().upper()
+
+    if not symbol:
+        raise HTTPException(
+            status_code=400,
+            detail="Symbol is required.",
+        )
+
+    if not 1 <= years <= 10:
+        raise HTTPException(
+            status_code=400,
+            detail="Years must be between 1 and 10.",
+        )
+
+    if not -99 < target_cagr_pct <= 1000:
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid target CAGR.",
+        )
+
+    adc = ADCConnector(get_adc_url())
+
+    try:
+        fundamentals, revisions, history = (
+            await asyncio.gather(
+                adc.fundamentals(symbol),
+                adc.revisions(symbol),
+                adc.history(symbol, limit=10),
+            )
+        )
+
+        if not isinstance(fundamentals, dict):
+            raise ValueError(
+                "Invalid fundamentals response."
+            )
+
+        if not isinstance(revisions, dict):
+            raise ValueError(
+                "Invalid revisions response."
+            )
+
+        if isinstance(history, dict):
+            records = history.get("records", [])
+        elif isinstance(history, list):
+            records = history
+        else:
+            records = []
+
+        valid_records = []
+
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+
+            try:
+                close = float(record.get("close"))
+            except (TypeError, ValueError):
+                continue
+
+            if not math.isfinite(close) or close <= 0:
+                continue
+
+            date_value = (
+                record.get("date")
+                or record.get("datetime")
+                or record.get("timestamp")
+                or record.get("trading_date")
+            )
+
+            if date_value is not None:
+                valid_records.append(
+                    (str(date_value), close)
+                )
+
+        if not valid_records:
+            raise ValueError(
+                "No dated historical closing prices "
+                "available for this symbol."
+            )
+
+        latest_date, current_price = max(
+            valid_records,
+            key=lambda item: item[0],
+        )
+
+        engine = InvestmentReturnEngine()
+
+        report = engine.evaluate(
+            symbol=symbol,
+            current_price=current_price,
+            fundamentals=fundamentals,
+            revisions=revisions,
+            years=years,
+            target_cagr=target_cagr_pct / 100.0,
+        )
+
+        report["price_source"] = (
+            "ADC historical close"
+        )
+        report["price_date"] = latest_date
+        report["fundamentals_snapshot_time"] = (
+            fundamentals.get("snapshot_time")
+        )
+        report["revisions_snapshot_time"] = (
+            revisions.get("snapshot_time")
+        )
+
+        report.setdefault("warnings", []).append(
+            "Historical close may be intraday or "
+            "delayed. It is not a verified "
+            "real-time executable price."
+        )
+
+        return report
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500,
+            detail=(
+                f"Investment return calculation "
+                f"failed for {symbol}: {exc}"
+            ),
+        )
 
