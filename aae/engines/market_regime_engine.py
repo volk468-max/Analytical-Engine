@@ -350,6 +350,7 @@ class MarketRegimeEngine:
             long_term_intact
             and short_term_weakness
             and not stress
+            and not broad_selloff
         ):
             regime = "CORRECTION_WITHIN_BULL_TREND"
             confidence = 72
