@@ -5,6 +5,7 @@ import httpx
 from pathlib import Path
 from aae.engines.decision_engine import DecisionEngine
 from aae.engines.market_regime_engine import MarketRegimeEngine
+from aae.core.universe import get_universe_symbols
 from aae.engines.long_term_thesis_engine import LongTermThesisEngine
 from aae.engines.strategy_engine import StrategyEngine
 from aae.storage.investment_memory import save_investment_decision
@@ -48,52 +49,7 @@ DB_PATH = os.environ.get(
     "data/analysis.sqlite3",
 )
 
-
-CORE_PORTFOLIO = [
-    "NVDA",
-    "AMD",
-    "AVGO",
-    "TSM",
-    "ASML",
-    "AMAT",
-    "LRCX",
-    "KLAC",
-    "MU",
-    "MRVL",
-    "ARM",
-    "ANET",
-    "MSFT",
-    "GOOGL",
-    "GOOG",
-    "META",
-    "AMZN",
-    "ORCL",
-    "VRT",
-    "ETN",
-    "GEV",
-    "CRWV",
-    "NBIS",
-    "PLTR",
-    "SNOW",
-    "NET",
-    "CRWD",
-    "WIX",
-    "ALAB",
-    "CRDO",
-    "COHR",
-    "LITE",
-    "CLS",
-    "APLD",
-    "SOUN",
-    "WDC",
-    "STX",
-    "ONTO",
-    "CAMT",
-    "ACLS",
-    "PDFS",
-    "TSLA",
-    "GS",
-]
+CORE_PORTFOLIO = get_universe_symbols()
 
 def get_adc_url() -> str:
     adc_url = os.environ.get(
