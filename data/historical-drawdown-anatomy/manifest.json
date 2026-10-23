@@ -1,0 +1,1408 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+  "cutoff": "2026-10-22",
+  "sources": [
+    {
+      "symbol": "AVGO",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "AVGO-source.json",
+      "raw_sha256": "5bc67d721be4d203b4db9ce9cd167d76d70273669ec073fea9fa97d7ff45af5f",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {
+        "dividends": {
+          "1584711000": {
+            "amount": 0.325,
+            "date": 1584711000
+          },
+          "1592573400": {
+            "amount": 0.325,
+            "date": 1592573400
+          },
+          "1600695000": {
+            "amount": 0.325,
+            "date": 1600695000
+          },
+          "1608301800": {
+            "amount": 0.36,
+            "date": 1608301800
+          },
+          "1616160600": {
+            "amount": 0.36,
+            "date": 1616160600
+          },
+          "1624282200": {
+            "amount": 0.36,
+            "date": 1624282200
+          },
+          "1632231000": {
+            "amount": 0.36,
+            "date": 1632231000
+          },
+          "1640097000": {
+            "amount": 0.41,
+            "date": 1640097000
+          },
+          "1647869400": {
+            "amount": 0.41,
+            "date": 1647869400
+          },
+          "1655818200": {
+            "amount": 0.41,
+            "date": 1655818200
+          },
+          "1663767000": {
+            "amount": 0.41,
+            "date": 1663767000
+          },
+          "1671460200": {
+            "amount": 0.46,
+            "date": 1671460200
+          },
+          "1679405400": {
+            "amount": 0.46,
+            "date": 1679405400
+          },
+          "1687354200": {
+            "amount": 0.46,
+            "date": 1687354200
+          },
+          "1695216600": {
+            "amount": 0.46,
+            "date": 1695216600
+          },
+          "1702996200": {
+            "amount": 0.525,
+            "date": 1702996200
+          },
+          "1710941400": {
+            "amount": 0.525,
+            "date": 1710941400
+          },
+          "1719235800": {
+            "amount": 0.525,
+            "date": 1719235800
+          },
+          "1726752600": {
+            "amount": 0.53,
+            "date": 1726752600
+          },
+          "1734964200": {
+            "amount": 0.59,
+            "date": 1734964200
+          },
+          "1742477400": {
+            "amount": 0.59,
+            "date": 1742477400
+          },
+          "1750426200": {
+            "amount": 0.59,
+            "date": 1750426200
+          },
+          "1758547800": {
+            "amount": 0.59,
+            "date": 1758547800
+          },
+          "1766413800": {
+            "amount": 0.65,
+            "date": 1766413800
+          },
+          "1774272600": {
+            "amount": 0.65,
+            "date": 1774272600
+          },
+          "1782135000": {
+            "amount": 0.65,
+            "date": 1782135000
+          },
+          "1789997400": {
+            "amount": 0.65,
+            "date": 1789997400
+          }
+        },
+        "splits": {
+          "1721050200": {
+            "date": 1721050200,
+            "numerator": 10.0,
+            "denominator": 1.0,
+            "splitRatio": "10:1"
+          }
+        }
+      }
+    },
+    {
+      "symbol": "AMAT",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMAT?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "AMAT-source.json",
+      "raw_sha256": "13137c5f1dec86711e36389a7cdcf3285c60c6432f1765e616949f3802066937",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {
+        "dividends": {
+          "1582036200": {
+            "amount": 0.21,
+            "date": 1582036200
+          },
+          "1589981400": {
+            "amount": 0.22,
+            "date": 1589981400
+          },
+          "1597843800": {
+            "amount": 0.22,
+            "date": 1597843800
+          },
+          "1605709800": {
+            "amount": 0.22,
+            "date": 1605709800
+          },
+          "1614177000": {
+            "amount": 0.22,
+            "date": 1614177000
+          },
+          "1622035800": {
+            "amount": 0.24,
+            "date": 1622035800
+          },
+          "1629898200": {
+            "amount": 0.24,
+            "date": 1629898200
+          },
+          "1637764200": {
+            "amount": 0.24,
+            "date": 1637764200
+          },
+          "1645540200": {
+            "amount": 0.24,
+            "date": 1645540200
+          },
+          "1653485400": {
+            "amount": 0.26,
+            "date": 1653485400
+          },
+          "1661347800": {
+            "amount": 0.26,
+            "date": 1661347800
+          },
+          "1669213800": {
+            "amount": 0.26,
+            "date": 1669213800
+          },
+          "1677076200": {
+            "amount": 0.26,
+            "date": 1677076200
+          },
+          "1684935000": {
+            "amount": 0.32,
+            "date": 1684935000
+          },
+          "1692797400": {
+            "amount": 0.32,
+            "date": 1692797400
+          },
+          "1700663400": {
+            "amount": 0.32,
+            "date": 1700663400
+          },
+          "1708525800": {
+            "amount": 0.32,
+            "date": 1708525800
+          },
+          "1716384600": {
+            "amount": 0.4,
+            "date": 1716384600
+          },
+          "1724333400": {
+            "amount": 0.4,
+            "date": 1724333400
+          },
+          "1732199400": {
+            "amount": 0.4,
+            "date": 1732199400
+          },
+          "1740061800": {
+            "amount": 0.4,
+            "date": 1740061800
+          },
+          "1747920600": {
+            "amount": 0.46,
+            "date": 1747920600
+          },
+          "1755783000": {
+            "amount": 0.46,
+            "date": 1755783000
+          },
+          "1763649000": {
+            "amount": 0.46,
+            "date": 1763649000
+          },
+          "1771511400": {
+            "amount": 0.46,
+            "date": 1771511400
+          },
+          "1779370200": {
+            "amount": 0.53,
+            "date": 1779370200
+          },
+          "1787232600": {
+            "amount": 0.53,
+            "date": 1787232600
+          }
+        }
+      }
+    },
+    {
+      "symbol": "LRCX",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/LRCX?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "LRCX-source.json",
+      "raw_sha256": "70799c96bc96109ee4786c68ce70286f6c6a77eed30d234d5c60bf89b944a21c",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {
+        "dividends": {
+          "1585056600": {
+            "amount": 0.115,
+            "date": 1585056600
+          },
+          "1592314200": {
+            "amount": 0.115,
+            "date": 1592314200
+          },
+          "1601386200": {
+            "amount": 0.13,
+            "date": 1601386200
+          },
+          "1607437800": {
+            "amount": 0.13,
+            "date": 1607437800
+          },
+          "1615901400": {
+            "amount": 0.13,
+            "date": 1615901400
+          },
+          "1623763800": {
+            "amount": 0.13,
+            "date": 1623763800
+          },
+          "1632749400": {
+            "amount": 0.15,
+            "date": 1632749400
+          },
+          "1639492200": {
+            "amount": 0.15,
+            "date": 1639492200
+          },
+          "1647351000": {
+            "amount": 0.15,
+            "date": 1647351000
+          },
+          "1655213400": {
+            "amount": 0.15,
+            "date": 1655213400
+          },
+          "1663075800": {
+            "amount": 0.1725,
+            "date": 1663075800
+          },
+          "1670941800": {
+            "amount": 0.1725,
+            "date": 1670941800
+          },
+          "1678800600": {
+            "amount": 0.1725,
+            "date": 1678800600
+          },
+          "1686663000": {
+            "amount": 0.1725,
+            "date": 1686663000
+          },
+          "1694525400": {
+            "amount": 0.2,
+            "date": 1694525400
+          },
+          "1702391400": {
+            "amount": 0.2,
+            "date": 1702391400
+          },
+          "1710250200": {
+            "amount": 0.2,
+            "date": 1710250200
+          },
+          "1718717400": {
+            "amount": 0.2,
+            "date": 1718717400
+          },
+          "1726579800": {
+            "amount": 0.23,
+            "date": 1726579800
+          },
+          "1733927400": {
+            "amount": 0.23,
+            "date": 1733927400
+          },
+          "1741185000": {
+            "amount": 0.23,
+            "date": 1741185000
+          },
+          "1750253400": {
+            "amount": 0.23,
+            "date": 1750253400
+          },
+          "1758720600": {
+            "amount": 0.26,
+            "date": 1758720600
+          },
+          "1764772200": {
+            "amount": 0.26,
+            "date": 1764772200
+          },
+          "1772634600": {
+            "amount": 0.26,
+            "date": 1772634600
+          },
+          "1781703000": {
+            "amount": 0.26,
+            "date": 1781703000
+          },
+          "1790170200": {
+            "amount": 0.33,
+            "date": 1790170200
+          }
+        },
+        "splits": {
+          "1727962200": {
+            "date": 1727962200,
+            "numerator": 10.0,
+            "denominator": 1.0,
+            "splitRatio": "10:1"
+          }
+        }
+      }
+    },
+    {
+      "symbol": "TSM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "TSM-source.json",
+      "raw_sha256": "8f978168e2ceb24785884d7cc87541cd2ae0f295668bd484c89cd1616616203b",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {
+        "dividends": {
+          "1584624600": {
+            "amount": 0.417,
+            "date": 1584624600
+          },
+          "1592487000": {
+            "amount": 0.42,
+            "date": 1592487000
+          },
+          "1600349400": {
+            "amount": 0.427,
+            "date": 1600349400
+          },
+          "1608215400": {
+            "amount": 0.442,
+            "date": 1608215400
+          },
+          "1615987800": {
+            "amount": 0.448,
+            "date": 1615987800
+          },
+          "1623936600": {
+            "amount": 0.451,
+            "date": 1623936600
+          },
+          "1631799000": {
+            "amount": 0.497,
+            "date": 1631799000
+          },
+          "1639665000": {
+            "amount": 0.496,
+            "date": 1639665000
+          },
+          "1647437400": {
+            "amount": 0.49,
+            "date": 1647437400
+          },
+          "1655386200": {
+            "amount": 0.467,
+            "date": 1655386200
+          },
+          "1663248600": {
+            "amount": 0.448,
+            "date": 1663248600
+          },
+          "1671114600": {
+            "amount": 0.451,
+            "date": 1671114600
+          },
+          "1678973400": {
+            "amount": 0.449,
+            "date": 1678973400
+          },
+          "1686835800": {
+            "amount": 0.448,
+            "date": 1686835800
+          },
+          "1694698200": {
+            "amount": 0.471,
+            "date": 1694698200
+          },
+          "1702564200": {
+            "amount": 0.479,
+            "date": 1702564200
+          },
+          "1710768600": {
+            "amount": 0.554,
+            "date": 1710768600
+          },
+          "1718285400": {
+            "amount": 0.544,
+            "date": 1718285400
+          },
+          "1726147800": {
+            "amount": 0.626,
+            "date": 1726147800
+          },
+          "1734013800": {
+            "amount": 0.616,
+            "date": 1734013800
+          },
+          "1742304600": {
+            "amount": 0.684,
+            "date": 1742304600
+          },
+          "1749735000": {
+            "amount": 0.78,
+            "date": 1749735000
+          },
+          "1758029400": {
+            "amount": 0.822,
+            "date": 1758029400
+          },
+          "1765463400": {
+            "amount": 0.835,
+            "date": 1765463400
+          },
+          "1773754200": {
+            "amount": 0.956,
+            "date": 1773754200
+          },
+          "1781184600": {
+            "amount": 0.955,
+            "date": 1781184600
+          },
+          "1789565400": {
+            "amount": 1.107,
+            "date": 1789565400
+          }
+        }
+      }
+    },
+    {
+      "symbol": "MRVL",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MRVL?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "MRVL-source.json",
+      "raw_sha256": "910d35a2e4f017977d440d3a5d4e5657a85fd9e31c602d61be3fd87b8905f6e9",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {
+        "dividends": {
+          "1585834200": {
+            "amount": 0.06,
+            "date": 1585834200
+          },
+          "1594387800": {
+            "amount": 0.06,
+            "date": 1594387800
+          },
+          "1602163800": {
+            "amount": 0.06,
+            "date": 1602163800
+          },
+          "1608647400": {
+            "amount": 0.06,
+            "date": 1608647400
+          },
+          "1617888600": {
+            "amount": 0.06,
+            "date": 1617888600
+          },
+          "1625751000": {
+            "amount": 0.06,
+            "date": 1625751000
+          },
+          "1633613400": {
+            "amount": 0.06,
+            "date": 1633613400
+          },
+          "1641479400": {
+            "amount": 0.06,
+            "date": 1641479400
+          },
+          "1649338200": {
+            "amount": 0.06,
+            "date": 1649338200
+          },
+          "1657200600": {
+            "amount": 0.06,
+            "date": 1657200600
+          },
+          "1665063000": {
+            "amount": 0.06,
+            "date": 1665063000
+          },
+          "1672929000": {
+            "amount": 0.06,
+            "date": 1672929000
+          },
+          "1680701400": {
+            "amount": 0.06,
+            "date": 1680701400
+          },
+          "1688650200": {
+            "amount": 0.06,
+            "date": 1688650200
+          },
+          "1696512600": {
+            "amount": 0.06,
+            "date": 1696512600
+          },
+          "1704378600": {
+            "amount": 0.06,
+            "date": 1704378600
+          },
+          "1712842200": {
+            "amount": 0.06,
+            "date": 1712842200
+          },
+          "1720791000": {
+            "amount": 0.06,
+            "date": 1720791000
+          },
+          "1728653400": {
+            "amount": 0.06,
+            "date": 1728653400
+          },
+          "1736519400": {
+            "amount": 0.06,
+            "date": 1736519400
+          },
+          "1744378200": {
+            "amount": 0.06,
+            "date": 1744378200
+          },
+          "1752240600": {
+            "amount": 0.06,
+            "date": 1752240600
+          },
+          "1760103000": {
+            "amount": 0.06,
+            "date": 1760103000
+          },
+          "1767969000": {
+            "amount": 0.06,
+            "date": 1767969000
+          },
+          "1775827800": {
+            "amount": 0.06,
+            "date": 1775827800
+          },
+          "1783690200": {
+            "amount": 0.06,
+            "date": 1783690200
+          },
+          "1791552600": {
+            "amount": 0.06,
+            "date": 1791552600
+          }
+        }
+      }
+    },
+    {
+      "symbol": "INTC",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "INTC-source.json",
+      "raw_sha256": "256cf907f9464aad2e0a3dbb4b28b2de75640a3614038f32311185fcf84a397f",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {
+        "dividends": {
+          "1580999400": {
+            "amount": 0.33,
+            "date": 1580999400
+          },
+          "1588771800": {
+            "amount": 0.33,
+            "date": 1588771800
+          },
+          "1596720600": {
+            "amount": 0.33,
+            "date": 1596720600
+          },
+          "1604586600": {
+            "amount": 0.33,
+            "date": 1604586600
+          },
+          "1612449000": {
+            "amount": 0.348,
+            "date": 1612449000
+          },
+          "1620307800": {
+            "amount": 0.348,
+            "date": 1620307800
+          },
+          "1628170200": {
+            "amount": 0.348,
+            "date": 1628170200
+          },
+          "1636032600": {
+            "amount": 0.348,
+            "date": 1636032600
+          },
+          "1643985000": {
+            "amount": 0.365,
+            "date": 1643985000
+          },
+          "1651757400": {
+            "amount": 0.365,
+            "date": 1651757400
+          },
+          "1659619800": {
+            "amount": 0.365,
+            "date": 1659619800
+          },
+          "1667568600": {
+            "amount": 0.365,
+            "date": 1667568600
+          },
+          "1675693800": {
+            "amount": 0.365,
+            "date": 1675693800
+          },
+          "1683207000": {
+            "amount": 0.125,
+            "date": 1683207000
+          },
+          "1691155800": {
+            "amount": 0.125,
+            "date": 1691155800
+          },
+          "1699281000": {
+            "amount": 0.125,
+            "date": 1699281000
+          },
+          "1707229800": {
+            "amount": 0.125,
+            "date": 1707229800
+          },
+          "1715002200": {
+            "amount": 0.125,
+            "date": 1715002200
+          },
+          "1723037400": {
+            "amount": 0.125,
+            "date": 1723037400
+          }
+        }
+      }
+    },
+    {
+      "symbol": "QCOM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/QCOM?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "QCOM-source.json",
+      "raw_sha256": "db0fb0a8ddba08f6bd40dde90c9abb1302f9815cf3d90819c513ec46e53459d9",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {
+        "dividends": {
+          "1583332200": {
+            "amount": 0.62,
+            "date": 1583332200
+          },
+          "1591191000": {
+            "amount": 0.65,
+            "date": 1591191000
+          },
+          "1599053400": {
+            "amount": 0.65,
+            "date": 1599053400
+          },
+          "1606919400": {
+            "amount": 0.65,
+            "date": 1606919400
+          },
+          "1614781800": {
+            "amount": 0.65,
+            "date": 1614781800
+          },
+          "1622640600": {
+            "amount": 0.68,
+            "date": 1622640600
+          },
+          "1630503000": {
+            "amount": 0.68,
+            "date": 1630503000
+          },
+          "1638369000": {
+            "amount": 0.68,
+            "date": 1638369000
+          },
+          "1646231400": {
+            "amount": 0.68,
+            "date": 1646231400
+          },
+          "1654090200": {
+            "amount": 0.75,
+            "date": 1654090200
+          },
+          "1661952600": {
+            "amount": 0.75,
+            "date": 1661952600
+          },
+          "1669818600": {
+            "amount": 0.75,
+            "date": 1669818600
+          },
+          "1677681000": {
+            "amount": 0.75,
+            "date": 1677681000
+          },
+          "1685539800": {
+            "amount": 0.8,
+            "date": 1685539800
+          },
+          "1693402200": {
+            "amount": 0.8,
+            "date": 1693402200
+          },
+          "1701268200": {
+            "amount": 0.8,
+            "date": 1701268200
+          },
+          "1709130600": {
+            "amount": 0.8,
+            "date": 1709130600
+          },
+          "1717075800": {
+            "amount": 0.85,
+            "date": 1717075800
+          },
+          "1725543000": {
+            "amount": 0.85,
+            "date": 1725543000
+          },
+          "1733409000": {
+            "amount": 0.85,
+            "date": 1733409000
+          },
+          "1741271400": {
+            "amount": 0.85,
+            "date": 1741271400
+          },
+          "1749130200": {
+            "amount": 0.89,
+            "date": 1749130200
+          },
+          "1756992600": {
+            "amount": 0.89,
+            "date": 1756992600
+          },
+          "1764858600": {
+            "amount": 0.89,
+            "date": 1764858600
+          },
+          "1772721000": {
+            "amount": 0.89,
+            "date": 1772721000
+          },
+          "1780579800": {
+            "amount": 0.92,
+            "date": 1780579800
+          },
+          "1788442200": {
+            "amount": 0.92,
+            "date": 1788442200
+          }
+        }
+      }
+    },
+    {
+      "symbol": "TXN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TXN?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "TXN-source.json",
+      "raw_sha256": "77e985e9d250afa01dd8cbe9b21c468bf5e778f8fa0a1fbbca40af5832008991",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {
+        "dividends": {
+          "1580394600": {
+            "amount": 0.9,
+            "date": 1580394600
+          },
+          "1588339800": {
+            "amount": 0.9,
+            "date": 1588339800
+          },
+          "1596115800": {
+            "amount": 0.9,
+            "date": 1596115800
+          },
+          "1603978200": {
+            "amount": 1.02,
+            "date": 1603978200
+          },
+          "1611930600": {
+            "amount": 1.02,
+            "date": 1611930600
+          },
+          "1619789400": {
+            "amount": 1.02,
+            "date": 1619789400
+          },
+          "1627047000": {
+            "amount": 1.02,
+            "date": 1627047000
+          },
+          "1635514200": {
+            "amount": 1.15,
+            "date": 1635514200
+          },
+          "1643380200": {
+            "amount": 1.15,
+            "date": 1643380200
+          },
+          "1651843800": {
+            "amount": 1.15,
+            "date": 1651843800
+          },
+          "1659101400": {
+            "amount": 1.15,
+            "date": 1659101400
+          },
+          "1666963800": {
+            "amount": 1.24,
+            "date": 1666963800
+          },
+          "1675089000": {
+            "amount": 1.24,
+            "date": 1675089000
+          },
+          "1683293400": {
+            "amount": 1.24,
+            "date": 1683293400
+          },
+          "1690551000": {
+            "amount": 1.24,
+            "date": 1690551000
+          },
+          "1698672600": {
+            "amount": 1.3,
+            "date": 1698672600
+          },
+          "1706625000": {
+            "amount": 1.3,
+            "date": 1706625000
+          },
+          "1715088600": {
+            "amount": 1.3,
+            "date": 1715088600
+          },
+          "1722432600": {
+            "amount": 1.3,
+            "date": 1722432600
+          },
+          "1730381400": {
+            "amount": 1.36,
+            "date": 1730381400
+          },
+          "1738333800": {
+            "amount": 1.36,
+            "date": 1738333800
+          },
+          "1746019800": {
+            "amount": 1.36,
+            "date": 1746019800
+          },
+          "1753968600": {
+            "amount": 1.36,
+            "date": 1753968600
+          },
+          "1761917400": {
+            "amount": 1.42,
+            "date": 1761917400
+          },
+          "1769783400": {
+            "amount": 1.42,
+            "date": 1769783400
+          },
+          "1777987800": {
+            "amount": 1.42,
+            "date": 1777987800
+          },
+          "1785504600": {
+            "amount": 1.42,
+            "date": 1785504600
+          }
+        }
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "AMZN-source.json",
+      "raw_sha256": "eb287a5edc74ed3c993409aa5ac75be080324661eb7d0df74e46601d64546153",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {
+        "splits": {
+          "1654522200": {
+            "date": 1654522200,
+            "numerator": 20.0,
+            "denominator": 1.0,
+            "splitRatio": "20:1"
+          }
+        }
+      }
+    },
+    {
+      "symbol": "META",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/META?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "META-source.json",
+      "raw_sha256": "fcd00870d270db4fd034d665a3e9fbe2e7d2a452940adf5cd9b5585fab7363b8",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {
+        "dividends": {
+          "1708525800": {
+            "amount": 0.5,
+            "date": 1708525800
+          },
+          "1718371800": {
+            "amount": 0.5,
+            "date": 1718371800
+          },
+          "1726493400": {
+            "amount": 0.5,
+            "date": 1726493400
+          },
+          "1734359400": {
+            "amount": 0.5,
+            "date": 1734359400
+          },
+          "1741959000": {
+            "amount": 0.525,
+            "date": 1741959000
+          },
+          "1750080600": {
+            "amount": 0.525,
+            "date": 1750080600
+          },
+          "1758547800": {
+            "amount": 0.525,
+            "date": 1758547800
+          },
+          "1765809000": {
+            "amount": 0.525,
+            "date": 1765809000
+          },
+          "1773667800": {
+            "amount": 0.525,
+            "date": 1773667800
+          },
+          "1781530200": {
+            "amount": 0.525,
+            "date": 1781530200
+          },
+          "1789997400": {
+            "amount": 0.525,
+            "date": 1789997400
+          }
+        }
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "MSFT-source.json",
+      "raw_sha256": "3f08dc6a19cbd954c7cdaa72db090a17c7b06f7f66bac608037c6b03644761ae",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {
+        "dividends": {
+          "1582122600": {
+            "amount": 0.51,
+            "date": 1582122600
+          },
+          "1589981400": {
+            "amount": 0.51,
+            "date": 1589981400
+          },
+          "1597843800": {
+            "amount": 0.51,
+            "date": 1597843800
+          },
+          "1605709800": {
+            "amount": 0.56,
+            "date": 1605709800
+          },
+          "1613572200": {
+            "amount": 0.56,
+            "date": 1613572200
+          },
+          "1621431000": {
+            "amount": 0.56,
+            "date": 1621431000
+          },
+          "1629293400": {
+            "amount": 0.56,
+            "date": 1629293400
+          },
+          "1637159400": {
+            "amount": 0.62,
+            "date": 1637159400
+          },
+          "1645021800": {
+            "amount": 0.62,
+            "date": 1645021800
+          },
+          "1652880600": {
+            "amount": 0.62,
+            "date": 1652880600
+          },
+          "1660743000": {
+            "amount": 0.62,
+            "date": 1660743000
+          },
+          "1668609000": {
+            "amount": 0.68,
+            "date": 1668609000
+          },
+          "1676471400": {
+            "amount": 0.68,
+            "date": 1676471400
+          },
+          "1684330200": {
+            "amount": 0.68,
+            "date": 1684330200
+          },
+          "1692192600": {
+            "amount": 0.68,
+            "date": 1692192600
+          },
+          "1700058600": {
+            "amount": 0.75,
+            "date": 1700058600
+          },
+          "1707921000": {
+            "amount": 0.75,
+            "date": 1707921000
+          },
+          "1715779800": {
+            "amount": 0.75,
+            "date": 1715779800
+          },
+          "1723728600": {
+            "amount": 0.75,
+            "date": 1723728600
+          },
+          "1732199400": {
+            "amount": 0.83,
+            "date": 1732199400
+          },
+          "1740061800": {
+            "amount": 0.83,
+            "date": 1740061800
+          },
+          "1747315800": {
+            "amount": 0.83,
+            "date": 1747315800
+          },
+          "1755783000": {
+            "amount": 0.83,
+            "date": 1755783000
+          },
+          "1763649000": {
+            "amount": 0.91,
+            "date": 1763649000
+          },
+          "1771511400": {
+            "amount": 0.91,
+            "date": 1771511400
+          },
+          "1779370200": {
+            "amount": 0.91,
+            "date": 1779370200
+          },
+          "1787232600": {
+            "amount": 0.91,
+            "date": 1787232600
+          }
+        }
+      }
+    },
+    {
+      "symbol": "GOOGL",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "GOOGL-source.json",
+      "raw_sha256": "fe55b6aa2dec0dda5f63999d0f8c6823a9afaab9f477b9eacf3a9a9b09fd88e5",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {
+        "dividends": {
+          "1718026200": {
+            "amount": 0.2,
+            "date": 1718026200
+          },
+          "1725888600": {
+            "amount": 0.2,
+            "date": 1725888600
+          },
+          "1733754600": {
+            "amount": 0.2,
+            "date": 1733754600
+          },
+          "1741613400": {
+            "amount": 0.2,
+            "date": 1741613400
+          },
+          "1749475800": {
+            "amount": 0.21,
+            "date": 1749475800
+          },
+          "1757338200": {
+            "amount": 0.21,
+            "date": 1757338200
+          },
+          "1765204200": {
+            "amount": 0.21,
+            "date": 1765204200
+          },
+          "1773063000": {
+            "amount": 0.21,
+            "date": 1773063000
+          },
+          "1780925400": {
+            "amount": 0.22,
+            "date": 1780925400
+          },
+          "1788528600": {
+            "amount": 0.22,
+            "date": 1788528600
+          }
+        },
+        "splits": {
+          "1658151000": {
+            "date": 1658151000,
+            "numerator": 20.0,
+            "denominator": 1.0,
+            "splitRatio": "20:1"
+          }
+        }
+      }
+    },
+    {
+      "symbol": "PLTR",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1523,
+      "raw_file": "PLTR-source.json",
+      "raw_sha256": "50796d2136c53ca53e678a0835718c398ce0df6df5041a0a0b97bf46b4b96d76",
+      "first": "2020-09-30T13:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {}
+    },
+    {
+      "symbol": "CRM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/CRM?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "CRM-source.json",
+      "raw_sha256": "e7b219d7dc3b542584d28ed75f88b5efb4e1891f0b9613db082c28149daefa7b",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {
+        "dividends": {
+          "1710336600": {
+            "amount": 0.4,
+            "date": 1710336600
+          },
+          "1720531800": {
+            "amount": 0.4,
+            "date": 1720531800
+          },
+          "1726666200": {
+            "amount": 0.4,
+            "date": 1726666200
+          },
+          "1734532200": {
+            "amount": 0.4,
+            "date": 1734532200
+          },
+          "1744291800": {
+            "amount": 0.416,
+            "date": 1744291800
+          },
+          "1750253400": {
+            "amount": 0.416,
+            "date": 1750253400
+          },
+          "1758115800": {
+            "amount": 0.416,
+            "date": 1758115800
+          },
+          "1766068200": {
+            "amount": 0.416,
+            "date": 1766068200
+          },
+          "1775741400": {
+            "amount": 0.44,
+            "date": 1775741400
+          },
+          "1781184600": {
+            "amount": 0.44,
+            "date": 1781184600
+          },
+          "1789651800": {
+            "amount": 0.44,
+            "date": 1789651800
+          }
+        }
+      }
+    },
+    {
+      "symbol": "ADBE",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?period1=1577836800&period2=1792800000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "price_basis": "provider_split_adjusted_ohlc",
+      "publication_assumption": "next UTC midnight; not independently attested vintage",
+      "status": "DOWNLOADED",
+      "rows": 1711,
+      "raw_file": "ADBE-source.json",
+      "raw_sha256": "6a426a731c13f00c4d8a5897f3e1141f4b2797c445fe1acd68078bc94c712e84",
+      "first": "2020-01-02T14:30:00+00:00",
+      "last": "2026-10-22T13:30:00+00:00",
+      "missing_rows": [],
+      "corporate_actions": {}
+    },
+    {
+      "symbol": "DGS10",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2020-01-01&coed=2026-10-22",
+      "retrieved_at": "2026-10-23T20:21:29.685742+00:00",
+      "publication_assumption": "two subsequent QQQ sessions, next midnight; retrospective, not ALFRED vintages",
+      "status": "DOWNLOADED",
+      "rows": 1703,
+      "raw_file": "DGS10-source.csv.gz",
+      "raw_sha256": "1bf8daca4167dffd38cfddfa0a66cc9bd7d4a86ba898d78fd50e02a441235cc3"
+    }
+  ],
+  "inherited_source_manifest": "data/risk-signal-v3/manifest.json",
+  "inherited_manifest_sha256": "b75c2103938aca640648ecce2a466b3883daf5c43c354f9b8016ad3f9f832109",
+  "limitations": [
+    "Retrospective provider responses, no original publication vintages.",
+    "A fixed surviving-company universe is not survivorship-free historical sector membership.",
+    "Price OHLC split-adjusted, not dividend-adjusted; no double split application.",
+    "Shorter histories and missing warmup are flagged, not fabricated. Early close times conservatively delayed.",
+    "DGS10 if obtained is a retrospective FRED series with an assumed conservative publication lag."
+  ],
+  "artifact_sha256": {
+    "MSFT-source.json": "3f08dc6a19cbd954c7cdaa72db090a17c7b06f7f66bac608037c6b03644761ae",
+    "DGS10-source.csv.gz": "8429b2378b091c98e6a80a76ed4aad30a3ea141e9f348755e268e93b6a73ff77",
+    "MRVL-source.json": "910d35a2e4f017977d440d3a5d4e5657a85fd9e31c602d61be3fd87b8905f6e9",
+    "TXN-source.json": "77e985e9d250afa01dd8cbe9b21c468bf5e778f8fa0a1fbbca40af5832008991",
+    "bars.csv": "8414031e65adf1331dda9e55fdf6d9675f16c2027148eb6aaa9b1e8ae7df5b9f",
+    "META-source.json": "fcd00870d270db4fd034d665a3e9fbe2e7d2a452940adf5cd9b5585fab7363b8",
+    "AMAT-source.json": "13137c5f1dec86711e36389a7cdcf3285c60c6432f1765e616949f3802066937",
+    "INTC-source.json": "256cf907f9464aad2e0a3dbb4b28b2de75640a3614038f32311185fcf84a397f",
+    "GOOGL-source.json": "fe55b6aa2dec0dda5f63999d0f8c6823a9afaab9f477b9eacf3a9a9b09fd88e5",
+    "AVGO-source.json": "5bc67d721be4d203b4db9ce9cd167d76d70273669ec073fea9fa97d7ff45af5f",
+    "rates.json": "9e8ee05a6541ac22ef4e01d5cb3724bb073ff57e3947f4d11de1803385bbb470",
+    "PLTR-source.json": "50796d2136c53ca53e678a0835718c398ce0df6df5041a0a0b97bf46b4b96d76",
+    "AMZN-source.json": "eb287a5edc74ed3c993409aa5ac75be080324661eb7d0df74e46601d64546153",
+    "LRCX-source.json": "70799c96bc96109ee4786c68ce70286f6c6a77eed30d234d5c60bf89b944a21c",
+    "TSM-source.json": "8f978168e2ceb24785884d7cc87541cd2ae0f295668bd484c89cd1616616203b",
+    "CRM-source.json": "e7b219d7dc3b542584d28ed75f88b5efb4e1891f0b9613db082c28149daefa7b",
+    "ADBE-source.json": "6a426a731c13f00c4d8a5897f3e1141f4b2797c445fe1acd68078bc94c712e84",
+    "QCOM-source.json": "db0fb0a8ddba08f6bd40dde90c9abb1302f9815cf3d90819c513ec46e53459d9"
+  }
+}
