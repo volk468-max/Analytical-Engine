@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "research_only": true,
+  "recommendation_from_training_only": {
+    "variant": "C",
+    "configuration": "sensitive",
+    "training_end": "2025-12-31"
+  },
+  "source_sha256": {
+    "/workspace/Analytical-Engine/aae/research/risk_v3_study.py": "310dd6d18d1975f00f8d064dbffbfc615023fe4a6371afb7226cb4d0478497d0",
+    "aae/research/risk_signal_v3.py": "3d6235f0d71efe0c2e0f2095f1eb8406cd9fa0140f90796df0760fcaa54bb69c",
+    "aae/research/risk_v3_features.py": "214bcb0aa1566c7d50fb263e8d7c9c60a2d0139cefc9e6b42445d28ee8df3cea",
+    "aae/research/risk_v3_evaluation.py": "c0bdbe0fb7eb0963d6625ebd56d87af4b458ccfdb36f73529e6147c435b54efb",
+    "aae/backtest/diagnostics.py": "1e1e88d704ca2d6d660931d05ef684fe8b13ff05b2d709222523998802f4170a",
+    "scripts/fetch_risk_v3_data.py": "533e1c287801b19f3f4a8254064261e6862c4ade7ee712d36e1ebc5f0684428d",
+    "data/risk-signal-v3/manifest.json": "b75c2103938aca640648ecce2a466b3883daf5c43c354f9b8016ad3f9f832109"
+  },
+  "output_sha256": {
+    "report.md": "30de2404a6a5fa7a3351f2d891c3948f9459141c24f9fc78bd2b4f5034e4d46f",
+    "training-candidates.csv": "f3ee8a17e9a316a00cd898423cb8c708acdbca049d7af85381d0e0110532b87c",
+    "validation.md": "f55aa51856f65a688421a8dc31215215d280d03b36bfc3ba5118c728f9525108",
+    "diagnostic-SepOct.csv": "767be9c50f92b9ba1d3dbb3d33b762b40ed22e39105fb04231f5dc321ee241bb",
+    "regime-metrics.csv": "adf84c1e78e297d9a0bf77df63dfeb65eee884b534be9ed9435aa954e1344efc",
+    "catalogue.json": "10b0e871061172aaf7192357003d37ab98d65916df6928175fa3f0e25092379a",
+    "annual-metrics.csv": "a1fceeb993e3f4c30ea024418eda2e4b451414d5bba1d1deefee3f07f2fb2c11",
+    "fold-selection.csv": "12837cda1c5654f9ee2930b9f4afb1d2975652abde5b8318be08e95ee644cebe",
+    "entry-outcomes.csv": "236fca536471edd988f8b575993f5d63dc2847ea75085741caff9f97771e2963",
+    "events.csv": "14b601ae892db83d6d80ea0a327a53ad51a924a8d353043ef5333582e92022ef",
+    "daily-signals.jsonl.gz": "dc530daa8e4e53ad50f0e70b2ab0105e0fe8cb205cd4c6ffba28700c5c1be7b9",
+    "summary.csv": "9477f553775ad5f2d7767362ab036e508d00e26cab3c9829973605a922f9d8e2",
+    "daily-signals.csv": "87b482859199ef1fbe5ed4535e71e1eaa0953772b4f23750e4b100ea6b0cf501"
+  },
+  "daily_rows": 21717,
+  "event_rows": 444,
+  "entry_outcomes": 933,
+  "folds": 12
+}

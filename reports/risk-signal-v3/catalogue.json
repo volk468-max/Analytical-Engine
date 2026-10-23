@@ -1,0 +1,53 @@
+{
+  "sensitive": {
+    "name": "sensitive",
+    "watch_dd": 4,
+    "reduce_dd": 6,
+    "critical_dd": 18,
+    "fast_drop": 5,
+    "relative_weak": 3,
+    "rsi_weak": 45,
+    "rv_ratio": 1.25,
+    "vix_stress": 25,
+    "score_watch": 2,
+    "score_reduce": 5,
+    "score_critical": 8,
+    "max_quote_age_hours": 96,
+    "max_benchmark_age_hours": 96,
+    "max_vix_age_hours": 36
+  },
+  "balanced": {
+    "name": "balanced",
+    "watch_dd": 5,
+    "reduce_dd": 8,
+    "critical_dd": 20,
+    "fast_drop": 7,
+    "relative_weak": 3,
+    "rsi_weak": 45,
+    "rv_ratio": 1.25,
+    "vix_stress": 25,
+    "score_watch": 3,
+    "score_reduce": 6,
+    "score_critical": 9,
+    "max_quote_age_hours": 96,
+    "max_benchmark_age_hours": 96,
+    "max_vix_age_hours": 36
+  },
+  "conservative": {
+    "name": "conservative",
+    "watch_dd": 6,
+    "reduce_dd": 10,
+    "critical_dd": 25,
+    "fast_drop": 9,
+    "relative_weak": 3,
+    "rsi_weak": 45,
+    "rv_ratio": 1.25,
+    "vix_stress": 25,
+    "score_watch": 4,
+    "score_reduce": 7,
+    "score_critical": 10,
+    "max_quote_age_hours": 96,
+    "max_benchmark_age_hours": 96,
+    "max_vix_age_hours": 36
+  }
+}
