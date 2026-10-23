@@ -1,10 +1,13 @@
 from statistics import mean
+from datetime import datetime, timezone
+from .tactical_risk_overlay import timestamp
 
 
 class TechnicalAnalysisEngine:
     def evaluate(
         self,
         history: dict,
+        as_of: datetime | None = None,
     ) -> dict:
         symbol = str(
             history.get("symbol", "")
@@ -14,6 +17,14 @@ class TechnicalAnalysisEngine:
             "records",
             [],
         )
+
+        cutoff = timestamp(as_of or datetime.now(timezone.utc))
+        if cutoff is None:
+            raise ValueError("Invalid evaluation time")
+        records = [row for row in records if isinstance(row, dict)
+                   and timestamp(row.get("trade_date")) is not None
+                   and timestamp(row["trade_date"]) <= cutoff
+                   and row.get("close") is not None]
 
         if len(records) < 200:
             raise ValueError(
@@ -202,6 +213,7 @@ class TechnicalAnalysisEngine:
 
         return {
             "symbol": symbol,
+            "price_as_of": records[-1]["trade_date"],
             "technical_score": technical_score,
             "trend_score": trend_score,
             "momentum_score": momentum_score,

@@ -188,17 +188,11 @@ class StrategyEngine:
                 "incomplete, stale or unverified data."
             )
 
-        review_required = (
-            decision_action == "REVIEW"
-            or bool(
-                self._get(
-                    decision,
-                    "conditions",
-                    "review_required",
-                    default=False,
-                )
-            )
-        )
+        review_required = bool(self._get(
+            decision, "conditions", "thesis_review_required",
+            default=self._get(decision, "conditions", "review_required",
+                              default=(decision_action == "REVIEW")),
+        ))
 
         if review_required:
             warnings.append(
@@ -435,12 +429,23 @@ class StrategyEngine:
                 "Price is below MA200."
             )
 
+        tactical = decision.get("tactical_risk") or {}
+        if tactical.get("action") in {"TRIM", "REVIEW"}:
+            market_summary = "Tactical risk requires " + tactical["action"] + ": " + " ".join(tactical.get("reasons") or [])
+            short_action = tactical["action"]
+            short_reasons = list(tactical.get("reasons") or [])
+            medium_action = "REVIEW" if tactical["action"] == "REVIEW" else "TRIM_TACTICAL_EXPOSURE"
+            medium_reasons = list(short_reasons)
+        if tactical and not tactical.get("actionable", False):
+            warnings.append("Trading is blocked until market data and levels are verified.")
+
         # ----------------------------------
         # FINAL REPORT
         # ----------------------------------
 
         return {
             "symbol": symbol,
+            "tactical_risk": tactical,
             "engine_version": self.VERSION,
             "created_at_utc": datetime.now(
                 timezone.utc

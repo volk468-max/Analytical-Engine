@@ -1,9 +1,14 @@
 
 from typing import Any
+from datetime import datetime, timezone
+from .tactical_risk_overlay import (TacticalRiskConfig, TacticalRiskOverlay, historical_levels, timestamp, number)
 
 
 class DecisionEngine:
-    VERSION = "Decision-Engine-v1.1"
+    VERSION = "Decision-Engine-v2"
+
+    def __init__(self, risk_config: TacticalRiskConfig | None = None):
+        self.risk_config = risk_config or TacticalRiskConfig.from_env()
 
     def evaluate(
         self,
@@ -14,8 +19,12 @@ class DecisionEngine:
         manual_resistance: float | None = None,
         market_regime: dict[str, Any] | None = None,
         long_term_thesis: dict[str, Any] | None = None,
+        now: datetime | None = None,
     ) -> dict[str, Any]:
 
+        now = timestamp(now or datetime.now(timezone.utc))
+        if now is None:
+            raise ValueError("Invalid evaluation time")
         symbol = snapshot["symbol"]
 
         fundamental = snapshot["fundamental"]
@@ -112,6 +121,9 @@ class DecisionEngine:
             technical["current_price"]
         )
 
+        if number(price) is None or price <= 0:
+            raise ValueError("Current price must be finite and positive")
+
         f_score = float(
             fundamental["fundamental_score"]
         )
@@ -186,65 +198,20 @@ class DecisionEngine:
         if not isinstance(history, list):
             history = []
 
-        usable_history = [
-            row
-            for row in history
-            if isinstance(row, dict)
-            and row.get("close") is not None
-        ]
-
-        def history_date(row: dict):
-            return (
-                row.get("trade_date")
-                or row.get("date")
-                or row.get("timestamp")
-                or ""
-            )
-
-        usable_history.sort(
-            key=history_date
-        )
-
-        recent_history = usable_history[-120:]
-
-        lows = []
-        highs = []
-
-        for row in recent_history:
-            try:
-                low = row.get("low")
-
-                if low is not None:
-                    lows.append(float(low))
-
-                high = row.get("high")
-
-                if high is not None:
-                    highs.append(float(high))
-
-            except (TypeError, ValueError):
-                continue
-
-        auto_support = (
-            min(lows)
-            if lows
-            else price
-        )
-
-        auto_resistance = (
-            max(highs)
-            if highs
-            else price
+        price_as_of = technical.get("price_as_of")
+        # Unstamped technical snapshots cannot safely be matched to another history fetch.
+        auto_support, auto_resistance = historical_levels(
+            history, price_as_of, self.risk_config.support_lookback
         )
 
         support = (
-            float(manual_support)
+            number(manual_support)
             if manual_support is not None
             else auto_support
         )
 
         resistance = (
-            float(manual_resistance)
+            number(manual_resistance)
             if manual_resistance is not None
             else auto_resistance
         )
@@ -258,7 +225,9 @@ class DecisionEngine:
             else "AUTO"
         )
 
-        range_width = resistance - support
+        levels_valid = (support is not None and resistance is not None
+                        and 0 < support < resistance)
+        range_width = resistance - support if levels_valid else 0
 
         if range_width > 0:
             range_position_pct = (
@@ -278,12 +247,12 @@ class DecisionEngine:
         )
 
         upside_to_resistance_pct = (
-            (resistance / price - 1)
+            ((resistance / price - 1) if levels_valid else 0)
             * 100
         )
 
         downside_to_support_pct = (
-            (support / price - 1)
+            ((support / price - 1) if levels_valid else 0)
             * 100
         )
 
@@ -316,13 +285,13 @@ class DecisionEngine:
         )
 
         near_resistance = (
-            range_position_pct >= 85
-            or upside_to_resistance_pct <= 4
+            levels_valid and (range_position_pct >= 85
+            or upside_to_resistance_pct <= 4)
         )
 
         near_support = (
-            range_position_pct <= 25
-            or downside_to_support_pct >= -6
+            levels_valid and (range_position_pct <= 25
+            or downside_to_support_pct >= -6)
         )
 
         confirmed_breakout = (
@@ -389,11 +358,11 @@ class DecisionEngine:
         # Support is considered crossed as soon as price
         # falls below the selected level.
         support_broken = (
-            price < support
+            levels_valid and price < support
         )
 
         support_holding = (
-            price >= support
+            levels_valid and price >= support
         )
 
         high_risk = (
@@ -660,6 +629,26 @@ class DecisionEngine:
                 "conditions are unfavorable."
             )
 
+        thesis_review_required = action == "REVIEW"
+        tactical = TacticalRiskOverlay(self.risk_config).evaluate(
+            price=price, support=support if levels_valid else None,
+            price_as_of=price_as_of, market=market,
+            market_regime=market_regime, now=now,
+        )
+        if not tactical["actionable"] or not levels_valid:
+            action = "REVIEW"
+            reason = list(tactical["reasons"])
+            trigger = "Refresh and verify market data and historical levels before trading."
+            decision_reliability = "LIMITED"
+        elif tactical["action"] == "TRIM" and action != "SELL":
+            action = "TRIM"
+            reason.extend(tactical["reasons"])
+            trigger = "Consider reducing tactical exposure; retain a separately assessed core position."
+        elif tactical["action"] == "REVIEW" and action in {"ADD", "HOLD"}:
+            action = "REVIEW"
+            reason.extend(tactical["reasons"])
+            trigger = "Review tactical risk before changing exposure."
+
         # ---------------------------------------------------------
         # 9. Position sizing
         # ---------------------------------------------------------
@@ -668,7 +657,7 @@ class DecisionEngine:
             "ADD": 1.25,
             "HOLD": 1.0,
             "REVIEW": 1.0,
-            "TRIM": 0.75,
+            "TRIM": 1 - self.risk_config.trim_fraction,
             "SELL": 0.0,
         }.get(
             action,
@@ -691,6 +680,8 @@ class DecisionEngine:
         return {
             "symbol": symbol,
             "action": action,
+            "tactical_risk": tactical,
+            "price_as_of": price_as_of,
             "current_price": round(
                 price,
                 4,
@@ -734,14 +725,8 @@ class DecisionEngine:
             ),
 
             "range": {
-                "support": round(
-                    support,
-                    4,
-                ),
-                "resistance": round(
-                    resistance,
-                    4,
-                ),
+                "support": round(support, 4) if support is not None else None,
+                "resistance": round(resistance, 4) if resistance is not None else None,
                 "position_in_range_pct": round(
                     range_position_pct,
                     1,
@@ -763,6 +748,9 @@ class DecisionEngine:
                     else None
                 ),
                 "source": range_source,
+                "valid": levels_valid,
+                "lookback": self.risk_config.support_lookback,
+                "historical_before": price_as_of,
             },
 
             "signals": {
@@ -818,6 +806,7 @@ class DecisionEngine:
                 "strong_fundamental": strong_fundamental,
                 "support_broken": support_broken,
                 "review_required": action == "REVIEW",
+                "thesis_review_required": thesis_review_required,
                 "high_risk": high_risk,
                 "breakout_candidate": (
                     breakout_candidate
@@ -830,5 +819,5 @@ class DecisionEngine:
             "reason": reason,
             "trigger": trigger,
             "engine_version": self.VERSION,
-            "status": "DECISION_READY",
+            "status": "DECISION_READY" if tactical["actionable"] else "DATA_REVIEW_REQUIRED",
         }
