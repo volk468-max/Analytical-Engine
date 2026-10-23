@@ -1,0 +1,53 @@
+[
+  {
+    "symbol": "AMD",
+    "bars": 1711,
+    "signals": 955,
+    "dividends": 0,
+    "splits": [],
+    "raw_ohlcv_reconciled": true,
+    "opens_checked_new_york": true,
+    "payment_dates_available": false,
+    "early_closes": "Original PR5 +6.5h close assumption retained; early-close availability conservatively delayed",
+    "independent_price_or_dividend_vintage_verified": false
+  },
+  {
+    "symbol": "NVDA",
+    "bars": 1711,
+    "signals": 955,
+    "dividends": 27,
+    "splits": [
+      {
+        "date": "2021-07-20",
+        "split_ratio": "4:1",
+        "adjusted_open_to_previous_close": 0.99735080181816,
+        "share_multiplier_applied": 1,
+        "check": "No obvious split-sized discontinuity; not independent verification"
+      },
+      {
+        "date": "2024-06-10",
+        "split_ratio": "10:1",
+        "adjusted_open_to_previous_close": 0.9957150607206094,
+        "share_multiplier_applied": 1,
+        "check": "No obvious split-sized discontinuity; not independent verification"
+      }
+    ],
+    "raw_ohlcv_reconciled": true,
+    "opens_checked_new_york": true,
+    "payment_dates_available": false,
+    "early_closes": "Original PR5 +6.5h close assumption retained; early-close availability conservatively delayed",
+    "independent_price_or_dividend_vintage_verified": false
+  },
+  {
+    "symbol": "MU",
+    "bars": 1711,
+    "signals": 955,
+    "dividends": 21,
+    "splits": [],
+    "raw_ohlcv_reconciled": true,
+    "opens_checked_new_york": true,
+    "payment_dates_available": false,
+    "early_closes": "Original PR5 +6.5h close assumption retained; early-close availability conservatively delayed",
+    "independent_price_or_dividend_vintage_verified": false
+  }
+]

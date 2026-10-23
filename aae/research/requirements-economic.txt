@@ -1,0 +1,2 @@
+# Optional, offline report plotting only; not production application requirements.
+matplotlib>=3.6,<4
