@@ -1,0 +1,89 @@
+symbol,strategy,window,status,reason,start,end,return_pct,max_drawdown_pct,trades,false_signals,censored_false_signals,missed_recovery_dollars,pending_at_end,validation
+AMD,alpha_v1,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AMD,risk_v2,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AMD,buy_hold,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,10.33081240598348,-21.787132203775972,1,0,0,0.0,False,assumed_availability_price_replay
+AMD,risk_overlay_only,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,10.33081240598348,-21.787132203775972,1,0,0,0.0,False,assumed_availability_price_replay
+AMD,alpha_v1,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AMD,risk_v2,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AMD,buy_hold,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,251.69285255747113,-63.00028513679348,1,0,0,0.0,False,assumed_availability_price_replay
+AMD,risk_overlay_only,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,236.7217025283634,-61.82987359364513,7,3,0,1497.370711176061,False,assumed_availability_price_replay
+NVDA,alpha_v1,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+NVDA,risk_v2,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+NVDA,buy_hold,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-2.192407954500719,-11.298277110292576,1,0,0,0.0,False,assumed_availability_price_replay
+NVDA,risk_overlay_only,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-2.192407954500719,-11.298277110292576,1,0,0,0.0,False,assumed_availability_price_replay
+NVDA,alpha_v1,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+NVDA,risk_v2,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+NVDA,buy_hold,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,330.50515391128937,-36.88683518628119,1,0,0,0.0,False,assumed_availability_price_replay
+NVDA,risk_overlay_only,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,303.55295139629226,-36.13378676093587,7,3,0,2658.671294212591,False,assumed_availability_price_replay
+MU,alpha_v1,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+MU,risk_v2,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+MU,buy_hold,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-9.084383906111093,-21.952088245603175,1,0,0,0.0,False,assumed_availability_price_replay
+MU,risk_overlay_only,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-9.084383906111093,-21.952088245603175,1,0,0,0.0,False,assumed_availability_price_replay
+MU,alpha_v1,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+MU,risk_v2,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+MU,buy_hold,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,918.6120740281618,-57.82339360845161,1,0,0,0.0,False,assumed_availability_price_replay
+MU,risk_overlay_only,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,862.2241609627035,-57.71675121523088,7,2,0,5631.352535829972,False,assumed_availability_price_replay
+TSM,alpha_v1,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+TSM,risk_v2,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+TSM,buy_hold,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-1.4030691264651396,-15.119387306521514,1,0,0,0.0,False,assumed_availability_price_replay
+TSM,risk_overlay_only,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-1.4030691264651396,-15.119387306521514,1,0,0,0.0,False,assumed_availability_price_replay
+TSM,alpha_v1,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+TSM,risk_v2,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+TSM,buy_hold,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,302.8733155539075,-37.06259540989095,1,0,0,0.0,False,assumed_availability_price_replay
+TSM,risk_overlay_only,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,272.6643317609089,-36.01981736260679,7,3,0,2991.4762564811745,False,assumed_availability_price_replay
+AVGO,alpha_v1,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AVGO,risk_v2,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AVGO,buy_hold,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-11.347428273818982,-14.148367413766827,1,0,0,0.0,False,assumed_availability_price_replay
+AVGO,risk_overlay_only,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-11.347428273818982,-14.148367413766827,1,0,0,0.0,False,assumed_availability_price_replay
+AVGO,alpha_v1,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AVGO,risk_v2,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AVGO,buy_hold,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,195.67904485593508,-41.48400268554687,1,0,0,0.0,False,assumed_availability_price_replay
+AVGO,risk_overlay_only,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,165.29611329127056,-41.31081549283257,7,3,0,3012.570782883096,False,assumed_availability_price_replay
+AMAT,alpha_v1,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AMAT,risk_v2,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AMAT,buy_hold,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-16.754373653969502,-30.740583041708934,1,0,0,0.0,False,assumed_availability_price_replay
+AMAT,risk_overlay_only,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-16.754373653969502,-30.740583041708934,1,0,0,0.0,False,assumed_availability_price_replay
+AMAT,alpha_v1,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AMAT,risk_v2,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AMAT,buy_hold,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,134.50293005188163,-50.20983004257285,1,0,0,0.0,False,assumed_availability_price_replay
+AMAT,risk_overlay_only,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,120.68146855703566,-50.868679809716234,7,3,0,1395.0570326627155,False,assumed_availability_price_replay
+AMZN,alpha_v1,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AMZN,risk_v2,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AMZN,buy_hold,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-1.8444411016993234,-4.99806391953449,1,0,0,0.0,False,assumed_availability_price_replay
+AMZN,risk_overlay_only,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-1.8444411016993234,-4.99806391953449,1,0,0,0.0,False,assumed_availability_price_replay
+AMZN,alpha_v1,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AMZN,risk_v2,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+AMZN,buy_hold,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,65.05861397626876,-30.876638431876057,1,0,0,0.0,False,assumed_availability_price_replay
+AMZN,risk_overlay_only,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,56.31930894196775,-30.911456414765905,7,3,0,856.794556972713,False,assumed_availability_price_replay
+META,alpha_v1,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+META,risk_v2,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+META,buy_hold,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,16.0923507238238,-16.55628889559565,1,0,0,0.0,False,assumed_availability_price_replay
+META,risk_overlay_only,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,16.0923507238238,-16.55628889559565,1,0,0,0.0,False,assumed_availability_price_replay
+META,alpha_v1,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+META,risk_v2,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+META,buy_hold,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,84.50461072813668,-34.20934544563651,1,0,0,0.0,False,assumed_availability_price_replay
+META,risk_overlay_only,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,72.19812423947806,-33.48128883234107,7,3,0,1209.5286172865092,False,assumed_availability_price_replay
+PLTR,alpha_v1,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+PLTR,risk_v2,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+PLTR,buy_hold,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,7.112233063592344,-11.01172156728527,1,0,0,0.0,False,assumed_availability_price_replay
+PLTR,risk_overlay_only,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,7.112233063592344,-11.01172156728527,1,0,0,0.0,False,assumed_availability_price_replay
+PLTR,alpha_v1,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+PLTR,risk_v2,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+PLTR,buy_hold,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,1056.3064935782568,-48.22376656276136,1,0,0,0.0,False,assumed_availability_price_replay
+PLTR,risk_overlay_only,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,930.1328188716815,-48.567302295905414,7,3,0,12548.55759937103,False,assumed_availability_price_replay
+LRCX,alpha_v1,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+LRCX,risk_v2,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+LRCX,buy_hold,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-21.944589114024325,-33.767878107437625,1,0,0,0.0,False,assumed_availability_price_replay
+LRCX,risk_overlay_only,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-21.944589114024325,-33.767878107437625,1,0,0,0.0,False,assumed_availability_price_replay
+LRCX,alpha_v1,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+LRCX,risk_v2,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+LRCX,buy_hold,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,199.08294816270597,-47.58272119846124,1,0,0,0.0,False,assumed_availability_price_replay
+LRCX,risk_overlay_only,extended_2024_2026,LIMITED_REPLAY,,2024-01-02T14:30:00+00:00,2026-10-22T20:00:00+00:00,182.1446121604402,-47.515024861418674,7,3,0,1676.9803950140379,False,assumed_availability_price_replay
+NBIS,alpha_v1,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+NBIS,risk_v2,requested,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+NBIS,buy_hold,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-20.458734152442815,-36.29887490320895,1,0,0,0.0,False,assumed_availability_price_replay
+NBIS,risk_overlay_only,requested,LIMITED_REPLAY,,2026-09-01T13:30:00+00:00,2026-10-22T20:00:00+00:00,-20.458734152442815,-36.29887490320895,1,0,0,0.0,False,assumed_availability_price_replay
+NBIS,alpha_v1,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+NBIS,risk_v2,extended_2024_2026,UNAVAILABLE,No verified historical fundamentals/revisions/decision input archive,,,,,,,,,,
+NBIS,buy_hold,extended_2024_2026,LIMITED_REPLAY,,2024-10-21T13:30:00+00:00,2026-10-22T20:00:00+00:00,1012.7428124087993,-58.26919160953879,1,0,0,0.0,False,assumed_availability_price_replay
+NBIS,risk_overlay_only,extended_2024_2026,LIMITED_REPLAY,,2024-10-21T13:30:00+00:00,2026-10-22T20:00:00+00:00,946.200652296436,-58.26919160953879,5,2,0,6612.780801501078,False,assumed_availability_price_replay

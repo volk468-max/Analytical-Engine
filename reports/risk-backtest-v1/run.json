@@ -1,0 +1,35 @@
+{
+  "start": "2026-09-01T00:00:00+00:00",
+  "end": "2026-10-24T00:00:00+00:00",
+  "extended": true,
+  "assumed_availability": true,
+  "execution": {
+    "initial_cash": 10000,
+    "commission_bps": 5,
+    "slippage_bps": 5,
+    "delay_sessions": 1,
+    "restore_hold_sessions": 3,
+    "repeat_trim": "once_per_episode",
+    "min_weight": 0.25,
+    "false_signal_horizon": 5
+  },
+  "risk_config": {
+    "support_lookback": 120,
+    "support_break_buffer_pct": 1.0,
+    "stress_vix": 25.0,
+    "severe_vix": 30.0,
+    "trim_fraction": 0.25,
+    "max_quote_age_hours": 96.0,
+    "max_market_age_hours": 36.0
+  },
+  "input_manifest": "data/backtest/manifest.json",
+  "source_sha256": {
+    "/workspace/Analytical-Engine/aae/backtest/cli.py": "07465b569cb195b7c6060ac6a9cc75208c79c11cb090c9ba54774201fb83cad6",
+    "/workspace/Analytical-Engine/aae/backtest/simulator.py": "c8aae90715ad9bc4a2bd4dc9f4d58dcf9b3a8e1eaa896a732435d2f16b837d8b",
+    "/workspace/Analytical-Engine/aae/backtest/legacy_decision_engine.py": "0b960a1dd4eac92c55050290c5554e9150f1eabfa0e6bb20ec09471768f87ec5",
+    "aae/engines/tactical_risk_overlay.py": "84ea8f3af17e8076a429b5ef161508affb45a2b05239a2bc84e82c0a597b7dde",
+    "aae/engines/decision_engine.py": "aa3b22ceed810a48cf0c3da71926240e1ede60eabb285109b3bd2aa47d313de8",
+    "data/backtest/bars.csv": "86d69556fcc93d59dff98bfd935766d7ee9329b779f1303823330303b6a35182",
+    "data/backtest/markets.json": "d7728789e673e1c8cc4e0b0594433b774d0d26b880a490b93c96325279454bdb"
+  }
+}

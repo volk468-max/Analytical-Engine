@@ -1,0 +1,593 @@
+{
+  "retrieved_at": "2026-10-23T16:03:22.635264+00:00",
+  "sources": [
+    {
+      "symbol": "AMD",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?period1=1672531200&period2=1792800000&interval=1d&events=div%2Csplits",
+      "raw_sha256": "41e9b474340ce464ab5668ba1fa787c06f2b80f2014673bef3343d8a19f55998",
+      "status": "downloaded",
+      "rows": 955,
+      "excluded_incomplete": 1,
+      "first": "2023-01-03T21:00:00+00:00",
+      "last": "2026-10-22T20:00:00+00:00",
+      "corporate_actions": {}
+    },
+    {
+      "symbol": "NVDA",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?period1=1672531200&period2=1792800000&interval=1d&events=div%2Csplits",
+      "raw_sha256": "1b2fa2ce51bb019e3e7572313d49b417dfb0bf5e556fda97a58ea79b5ddfa1ab",
+      "status": "downloaded",
+      "rows": 955,
+      "excluded_incomplete": 1,
+      "first": "2023-01-03T21:00:00+00:00",
+      "last": "2026-10-22T20:00:00+00:00",
+      "corporate_actions": {
+        "dividends": {
+          "1678199400": {
+            "amount": 0.004,
+            "date": 1678199400
+          },
+          "1686144600": {
+            "amount": 0.004,
+            "date": 1686144600
+          },
+          "1694007000": {
+            "amount": 0.004,
+            "date": 1694007000
+          },
+          "1701786600": {
+            "amount": 0.004,
+            "date": 1701786600
+          },
+          "1709649000": {
+            "amount": 0.004,
+            "date": 1709649000
+          },
+          "1718112600": {
+            "amount": 0.01,
+            "date": 1718112600
+          },
+          "1726147800": {
+            "amount": 0.01,
+            "date": 1726147800
+          },
+          "1733409000": {
+            "amount": 0.01,
+            "date": 1733409000
+          },
+          "1741786200": {
+            "amount": 0.01,
+            "date": 1741786200
+          },
+          "1749648600": {
+            "amount": 0.01,
+            "date": 1749648600
+          },
+          "1757597400": {
+            "amount": 0.01,
+            "date": 1757597400
+          },
+          "1764858600": {
+            "amount": 0.01,
+            "date": 1764858600
+          },
+          "1773235800": {
+            "amount": 0.01,
+            "date": 1773235800
+          },
+          "1780579800": {
+            "amount": 0.25,
+            "date": 1780579800
+          },
+          "1789047000": {
+            "amount": 0.25,
+            "date": 1789047000
+          }
+        },
+        "splits": {
+          "1718026200": {
+            "date": 1718026200,
+            "numerator": 10.0,
+            "denominator": 1.0,
+            "splitRatio": "10:1"
+          }
+        }
+      }
+    },
+    {
+      "symbol": "MU",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?period1=1672531200&period2=1792800000&interval=1d&events=div%2Csplits",
+      "raw_sha256": "1060225a48d9fcf6862f7dbf2cc96c05d1bcfa059899e796e908f32493e1783e",
+      "status": "downloaded",
+      "rows": 955,
+      "excluded_incomplete": 1,
+      "first": "2023-01-03T21:00:00+00:00",
+      "last": "2026-10-22T20:00:00+00:00",
+      "corporate_actions": {
+        "dividends": {
+          "1680787800": {
+            "amount": 0.115,
+            "date": 1680787800
+          },
+          "1688736600": {
+            "amount": 0.115,
+            "date": 1688736600
+          },
+          "1696599000": {
+            "amount": 0.115,
+            "date": 1696599000
+          },
+          "1703860200": {
+            "amount": 0.115,
+            "date": 1703860200
+          },
+          "1711632600": {
+            "amount": 0.115,
+            "date": 1711632600
+          },
+          "1720445400": {
+            "amount": 0.115,
+            "date": 1720445400
+          },
+          "1728307800": {
+            "amount": 0.115,
+            "date": 1728307800
+          },
+          "1735569000": {
+            "amount": 0.115,
+            "date": 1735569000
+          },
+          "1743427800": {
+            "amount": 0.115,
+            "date": 1743427800
+          },
+          "1751895000": {
+            "amount": 0.115,
+            "date": 1751895000
+          },
+          "1759498200": {
+            "amount": 0.115,
+            "date": 1759498200
+          },
+          "1767018600": {
+            "amount": 0.115,
+            "date": 1767018600
+          },
+          "1774877400": {
+            "amount": 0.15,
+            "date": 1774877400
+          },
+          "1783344600": {
+            "amount": 0.15,
+            "date": 1783344600
+          },
+          "1791984600": {
+            "amount": 0.15,
+            "date": 1791984600
+          }
+        }
+      }
+    },
+    {
+      "symbol": "TSM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?period1=1672531200&period2=1792800000&interval=1d&events=div%2Csplits",
+      "raw_sha256": "117cf96748bfa1d35bf012b5d4b9c90e0265e4ef9d89ca46c4d4c74184aca56b",
+      "status": "downloaded",
+      "rows": 955,
+      "excluded_incomplete": 1,
+      "first": "2023-01-03T21:00:00+00:00",
+      "last": "2026-10-22T20:00:00+00:00",
+      "corporate_actions": {
+        "dividends": {
+          "1678973400": {
+            "amount": 0.449,
+            "date": 1678973400
+          },
+          "1686835800": {
+            "amount": 0.448,
+            "date": 1686835800
+          },
+          "1694698200": {
+            "amount": 0.471,
+            "date": 1694698200
+          },
+          "1702564200": {
+            "amount": 0.479,
+            "date": 1702564200
+          },
+          "1710768600": {
+            "amount": 0.554,
+            "date": 1710768600
+          },
+          "1718285400": {
+            "amount": 0.544,
+            "date": 1718285400
+          },
+          "1726147800": {
+            "amount": 0.626,
+            "date": 1726147800
+          },
+          "1734013800": {
+            "amount": 0.616,
+            "date": 1734013800
+          },
+          "1742304600": {
+            "amount": 0.684,
+            "date": 1742304600
+          },
+          "1749735000": {
+            "amount": 0.78,
+            "date": 1749735000
+          },
+          "1758029400": {
+            "amount": 0.822,
+            "date": 1758029400
+          },
+          "1765463400": {
+            "amount": 0.835,
+            "date": 1765463400
+          },
+          "1773754200": {
+            "amount": 0.956,
+            "date": 1773754200
+          },
+          "1781184600": {
+            "amount": 0.955,
+            "date": 1781184600
+          },
+          "1789565400": {
+            "amount": 1.107,
+            "date": 1789565400
+          }
+        }
+      }
+    },
+    {
+      "symbol": "AVGO",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?period1=1672531200&period2=1792800000&interval=1d&events=div%2Csplits",
+      "raw_sha256": "d9a620d3b900de950c4a33a141567966b55117f4d31367be4bd0f201ba69ad61",
+      "status": "downloaded",
+      "rows": 955,
+      "excluded_incomplete": 1,
+      "first": "2023-01-03T21:00:00+00:00",
+      "last": "2026-10-22T20:00:00+00:00",
+      "corporate_actions": {
+        "dividends": {
+          "1679405400": {
+            "amount": 0.46,
+            "date": 1679405400
+          },
+          "1687354200": {
+            "amount": 0.46,
+            "date": 1687354200
+          },
+          "1695216600": {
+            "amount": 0.46,
+            "date": 1695216600
+          },
+          "1702996200": {
+            "amount": 0.525,
+            "date": 1702996200
+          },
+          "1710941400": {
+            "amount": 0.525,
+            "date": 1710941400
+          },
+          "1719235800": {
+            "amount": 0.525,
+            "date": 1719235800
+          },
+          "1726752600": {
+            "amount": 0.53,
+            "date": 1726752600
+          },
+          "1734964200": {
+            "amount": 0.59,
+            "date": 1734964200
+          },
+          "1742477400": {
+            "amount": 0.59,
+            "date": 1742477400
+          },
+          "1750426200": {
+            "amount": 0.59,
+            "date": 1750426200
+          },
+          "1758547800": {
+            "amount": 0.59,
+            "date": 1758547800
+          },
+          "1766413800": {
+            "amount": 0.65,
+            "date": 1766413800
+          },
+          "1774272600": {
+            "amount": 0.65,
+            "date": 1774272600
+          },
+          "1782135000": {
+            "amount": 0.65,
+            "date": 1782135000
+          },
+          "1789997400": {
+            "amount": 0.65,
+            "date": 1789997400
+          }
+        },
+        "splits": {
+          "1721050200": {
+            "date": 1721050200,
+            "numerator": 10.0,
+            "denominator": 1.0,
+            "splitRatio": "10:1"
+          }
+        }
+      }
+    },
+    {
+      "symbol": "AMAT",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMAT?period1=1672531200&period2=1792800000&interval=1d&events=div%2Csplits",
+      "raw_sha256": "5a9d3739d9321c6ae4cb0b28b7333c8f4bff2c5cc597f350a8a39a6a19157754",
+      "status": "downloaded",
+      "rows": 955,
+      "excluded_incomplete": 1,
+      "first": "2023-01-03T21:00:00+00:00",
+      "last": "2026-10-22T20:00:00+00:00",
+      "corporate_actions": {
+        "dividends": {
+          "1677076200": {
+            "amount": 0.26,
+            "date": 1677076200
+          },
+          "1684935000": {
+            "amount": 0.32,
+            "date": 1684935000
+          },
+          "1692797400": {
+            "amount": 0.32,
+            "date": 1692797400
+          },
+          "1700663400": {
+            "amount": 0.32,
+            "date": 1700663400
+          },
+          "1708525800": {
+            "amount": 0.32,
+            "date": 1708525800
+          },
+          "1716384600": {
+            "amount": 0.4,
+            "date": 1716384600
+          },
+          "1724333400": {
+            "amount": 0.4,
+            "date": 1724333400
+          },
+          "1732199400": {
+            "amount": 0.4,
+            "date": 1732199400
+          },
+          "1740061800": {
+            "amount": 0.4,
+            "date": 1740061800
+          },
+          "1747920600": {
+            "amount": 0.46,
+            "date": 1747920600
+          },
+          "1755783000": {
+            "amount": 0.46,
+            "date": 1755783000
+          },
+          "1763649000": {
+            "amount": 0.46,
+            "date": 1763649000
+          },
+          "1771511400": {
+            "amount": 0.46,
+            "date": 1771511400
+          },
+          "1779370200": {
+            "amount": 0.53,
+            "date": 1779370200
+          },
+          "1787232600": {
+            "amount": 0.53,
+            "date": 1787232600
+          }
+        }
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?period1=1672531200&period2=1792800000&interval=1d&events=div%2Csplits",
+      "raw_sha256": "346fc77a33331b4b1f4c846a64b03fd81535ab6292e18b60a892b75bc4e71599",
+      "status": "downloaded",
+      "rows": 955,
+      "excluded_incomplete": 1,
+      "first": "2023-01-03T21:00:00+00:00",
+      "last": "2026-10-22T20:00:00+00:00",
+      "corporate_actions": {}
+    },
+    {
+      "symbol": "META",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/META?period1=1672531200&period2=1792800000&interval=1d&events=div%2Csplits",
+      "raw_sha256": "d603f62a3a133082114171250cd4c69d4214db2ed89872f511d3f46690dec116",
+      "status": "downloaded",
+      "rows": 955,
+      "excluded_incomplete": 1,
+      "first": "2023-01-03T21:00:00+00:00",
+      "last": "2026-10-22T20:00:00+00:00",
+      "corporate_actions": {
+        "dividends": {
+          "1708525800": {
+            "amount": 0.5,
+            "date": 1708525800
+          },
+          "1718371800": {
+            "amount": 0.5,
+            "date": 1718371800
+          },
+          "1726493400": {
+            "amount": 0.5,
+            "date": 1726493400
+          },
+          "1734359400": {
+            "amount": 0.5,
+            "date": 1734359400
+          },
+          "1741959000": {
+            "amount": 0.525,
+            "date": 1741959000
+          },
+          "1750080600": {
+            "amount": 0.525,
+            "date": 1750080600
+          },
+          "1758547800": {
+            "amount": 0.525,
+            "date": 1758547800
+          },
+          "1765809000": {
+            "amount": 0.525,
+            "date": 1765809000
+          },
+          "1773667800": {
+            "amount": 0.525,
+            "date": 1773667800
+          },
+          "1781530200": {
+            "amount": 0.525,
+            "date": 1781530200
+          },
+          "1789997400": {
+            "amount": 0.525,
+            "date": 1789997400
+          }
+        }
+      }
+    },
+    {
+      "symbol": "PLTR",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?period1=1672531200&period2=1792800000&interval=1d&events=div%2Csplits",
+      "raw_sha256": "99819c11f6428bff090c7f0fa1f55b5637d1ddbecc686c233fdb134a4da5106e",
+      "status": "downloaded",
+      "rows": 955,
+      "excluded_incomplete": 1,
+      "first": "2023-01-03T21:00:00+00:00",
+      "last": "2026-10-22T20:00:00+00:00",
+      "corporate_actions": {}
+    },
+    {
+      "symbol": "LRCX",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/LRCX?period1=1672531200&period2=1792800000&interval=1d&events=div%2Csplits",
+      "raw_sha256": "9294495dc9e000cb7a37751db4df36298d46980761094a73bc444a645b595a9c",
+      "status": "downloaded",
+      "rows": 955,
+      "excluded_incomplete": 1,
+      "first": "2023-01-03T21:00:00+00:00",
+      "last": "2026-10-22T20:00:00+00:00",
+      "corporate_actions": {
+        "dividends": {
+          "1678800600": {
+            "amount": 0.1725,
+            "date": 1678800600
+          },
+          "1686663000": {
+            "amount": 0.1725,
+            "date": 1686663000
+          },
+          "1694525400": {
+            "amount": 0.2,
+            "date": 1694525400
+          },
+          "1702391400": {
+            "amount": 0.2,
+            "date": 1702391400
+          },
+          "1710250200": {
+            "amount": 0.2,
+            "date": 1710250200
+          },
+          "1718717400": {
+            "amount": 0.2,
+            "date": 1718717400
+          },
+          "1726579800": {
+            "amount": 0.23,
+            "date": 1726579800
+          },
+          "1733927400": {
+            "amount": 0.23,
+            "date": 1733927400
+          },
+          "1741185000": {
+            "amount": 0.23,
+            "date": 1741185000
+          },
+          "1750253400": {
+            "amount": 0.23,
+            "date": 1750253400
+          },
+          "1758720600": {
+            "amount": 0.26,
+            "date": 1758720600
+          },
+          "1764772200": {
+            "amount": 0.26,
+            "date": 1764772200
+          },
+          "1772634600": {
+            "amount": 0.26,
+            "date": 1772634600
+          },
+          "1781703000": {
+            "amount": 0.26,
+            "date": 1781703000
+          },
+          "1790170200": {
+            "amount": 0.33,
+            "date": 1790170200
+          }
+        },
+        "splits": {
+          "1727962200": {
+            "date": 1727962200,
+            "numerator": 10.0,
+            "denominator": 1.0,
+            "splitRatio": "10:1"
+          }
+        }
+      }
+    },
+    {
+      "symbol": "NBIS",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NBIS?period1=1672531200&period2=1792800000&interval=1d&events=div%2Csplits",
+      "raw_sha256": "f8c9d7062196693bd006c58f4ea20ae153b4ecf8676f3edfb755f8b537345703",
+      "status": "downloaded",
+      "rows": 503,
+      "excluded_incomplete": 1,
+      "first": "2024-10-21T20:00:00+00:00",
+      "last": "2026-10-22T20:00:00+00:00",
+      "corporate_actions": {}
+    },
+    {
+      "symbol": "VIX",
+      "url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
+      "status": "downloaded",
+      "raw_sha256": "079811c437a089a4a5674b2531f6302f8e3721efdd070b0b9d68b423f56e403e",
+      "rows": 983,
+      "last": "2026-10-22T20:15:00+00:00"
+    }
+  ],
+  "limitations": [
+    "Retrospective prices, not verified historical vintages.",
+    "Yahoo OHLC may be split-adjusted to retrieval vintage; no dividend or corporate-action ledger.",
+    "Publication times inferred conservatively as next UTC midnight, not provider-attested.",
+    "Uncompleted/unpublished sessions at retrieval are excluded."
+  ],
+  "artifact_sha256": {
+    "bars.csv": "86d69556fcc93d59dff98bfd935766d7ee9329b779f1303823330303b6a35182",
+    "markets.json": "d7728789e673e1c8cc4e0b0594433b774d0d26b880a490b93c96325279454bdb"
+  }
+}
