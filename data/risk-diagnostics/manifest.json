@@ -1,0 +1,12 @@
+{
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?period1=1672531200&period2=1792800000&interval=1d",
+  "retrieved_at": "2026-10-23T16:22:58.503256+00:00",
+  "raw_sha256": "c68608fefdd8eefc972a8362c748791f325bd6ae86a5652788b47f75ccfd9342",
+  "rows": 955,
+  "first": "2023-01-03T21:00:00+00:00",
+  "last": "2026-10-22T20:00:00+00:00",
+  "artifact_sha256": {
+    "qqq.csv": "79a38a086980ca77bc437f75ea68d7971790d13e77d7831cd00ab8a238f87b21"
+  },
+  "limitations": "Retrospective provider prices; availability inferred next UTC midnight; not verified PIT."
+}
