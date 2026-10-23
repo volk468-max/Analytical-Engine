@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "symbol": "AMD",
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?period1=1609459200&period2=1792800000&interval=1d&events=div%2Csplits",
+  "retrieved_at": "2026-10-23T16:41:37.107583+00:00",
+  "first": "2021-01-04",
+  "last": "2026-10-22",
+  "rows": 1458,
+  "excluded_sessions": [
+    "2026-10-23"
+  ],
+  "adjustment_max_abs_difference": 0.0,
+  "reported_splits": 0,
+  "reported_dividends": 0,
+  "artifact_sha256": {
+    "amd-source.json": "24ecbd52bea720cd0dd4fcb8cd0c24d3286537d0a6b7f7547ebd4271ae9c5054",
+    "amd.csv": "1a6dad30c4a7adfaa92ca266de26276f39ef0ca969a421e27e0c7107c2893a46",
+    "corporate-actions.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+  },
+  "limitations": [
+    "Retrospective provider vintage; not an independently verified publication archive.",
+    "OHLC used consistently; adjusted closes used only to check for in-window adjustments.",
+    "No reported splits/dividends in requested window; provider action completeness is not independently attested.",
+    "Bar availability inferred next UTC midnight; early closes conservatively delayed.",
+    "Session 2026-10-23 is excluded even if later revised to complete."
+  ],
+  "dataset_version": "amd-2021-2026-asof-2026-10-23-v1"
+}

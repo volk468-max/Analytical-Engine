@@ -29,3 +29,7 @@ This v1.0 is a deterministic analytical foundation. It does not yet call an exte
 Offline historical simulator and data limitations: [Risk backtest v1](docs/risk-backtest-v1.md).
 The committed [research report](reports/risk-backtest-v1/report.md) distinguishes
 limited public-price replay from unavailable full Alpha OS historical comparisons.
+
+AMD Core + Tactical Ladder (isolated, quantity-based research):
+[report and charts](reports/core-tactical-ladder/report.md).
+Reproduce offline with `python -m aae.backtest.ladder_research`.
