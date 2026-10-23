@@ -1,0 +1,12 @@
+symbol,rows,first,last,verified_bars,archived_snapshots,completeness
+AMD,955,2023-01-03T21:00:00+00:00,2026-10-22T20:00:00+00:00,False,0,See source manifest; missing sessions are not synthesized
+NVDA,955,2023-01-03T21:00:00+00:00,2026-10-22T20:00:00+00:00,False,0,See source manifest; missing sessions are not synthesized
+MU,955,2023-01-03T21:00:00+00:00,2026-10-22T20:00:00+00:00,False,0,See source manifest; missing sessions are not synthesized
+TSM,955,2023-01-03T21:00:00+00:00,2026-10-22T20:00:00+00:00,False,0,See source manifest; missing sessions are not synthesized
+AVGO,955,2023-01-03T21:00:00+00:00,2026-10-22T20:00:00+00:00,False,0,See source manifest; missing sessions are not synthesized
+AMAT,955,2023-01-03T21:00:00+00:00,2026-10-22T20:00:00+00:00,False,0,See source manifest; missing sessions are not synthesized
+AMZN,955,2023-01-03T21:00:00+00:00,2026-10-22T20:00:00+00:00,False,0,See source manifest; missing sessions are not synthesized
+META,955,2023-01-03T21:00:00+00:00,2026-10-22T20:00:00+00:00,False,0,See source manifest; missing sessions are not synthesized
+PLTR,955,2023-01-03T21:00:00+00:00,2026-10-22T20:00:00+00:00,False,0,See source manifest; missing sessions are not synthesized
+LRCX,955,2023-01-03T21:00:00+00:00,2026-10-22T20:00:00+00:00,False,0,See source manifest; missing sessions are not synthesized
+NBIS,503,2024-10-21T20:00:00+00:00,2026-10-22T20:00:00+00:00,False,0,See source manifest; missing sessions are not synthesized

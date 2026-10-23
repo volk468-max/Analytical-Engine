@@ -25,3 +25,7 @@ python -m uvicorn aae.api.server:app --host 0.0.0.0 --port 8080
 - `GET /version`
 
 This v1.0 is a deterministic analytical foundation. It does not yet call an external LLM.
+
+Offline historical simulator and data limitations: [Risk backtest v1](docs/risk-backtest-v1.md).
+The committed [research report](reports/risk-backtest-v1/report.md) distinguishes
+limited public-price replay from unavailable full Alpha OS historical comparisons.
