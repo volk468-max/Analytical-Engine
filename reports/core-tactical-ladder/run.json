@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "python_version": "3.12.14",
+  "matplotlib_version": "3.10.8",
+  "config": {
+    "sell_step": 0.02,
+    "trade_fraction": 0.05,
+    "min_fraction": 0.5,
+    "buy_step": 0.02,
+    "capital": 100000,
+    "commission_bps": 5,
+    "slippage_bps": 5,
+    "delay_sessions": 1,
+    "lot_size": null,
+    "fill_fraction": 1,
+    "partial_cash": true
+  },
+  "development": "2021-2023",
+  "chronological_validation": "2024-2026",
+  "completed_cycles": 7,
+  "source_sha256": {
+    "/workspace/Analytical-Engine/aae/backtest/ladder_research.py": "800753ca44f3d1f7f2581704bedda72d68508cfe29aa9db3c56efabdeda83123",
+    "aae/backtest/ladder.py": "2b78ea9449a4dd9cea459185d909581a2eee114cf9e8f19ecc0be6b73d6b310e",
+    "aae/backtest/simulator.py": "c8aae90715ad9bc4a2bd4dc9f4d58dcf9b3a8e1eaa896a732435d2f16b837d8b",
+    "aae/backtest/cli.py": "07465b569cb195b7c6060ac6a9cc75208c79c11cb090c9ba54774201fb83cad6",
+    "scripts/fetch_ladder_data.py": "8188d21c5b31c572c097ee7b92f1d5e75bb42ddad02c24088f3873612744028c",
+    "data/core-tactical-ladder/manifest.json": "de1ec35f03faad292f797ea89a85257ef656c1c725343ee910179ec3fdb48d36",
+    "data/core-tactical-ladder/amd.csv": "1a6dad30c4a7adfaa92ca266de26276f39ef0ca969a421e27e0c7107c2893a46"
+  },
+  "output_sha256": {
+    "sensitivity.csv": "3528c234c10ea1b29a21f650f6062f8ebb968ad3a0ef7bd7ac71a4a90899c4cd",
+    "cash-impact.csv": "37cd0cb274c5597337038eb581c1ada7c562ecb7b4e6a66175d95a0f7fe77073",
+    "capital-drawdown-position.png": "b0dab48b7df6bea45aa1a3d3fa4f6094c302321c2e0e03a3f73bbfbabb40643a",
+    "report.md": "861a94389577d86a10b8304eb37836e79e1e268b717c3a0f8bbc86cb90dfccb4",
+    "validation.md": "dd52334300c230bcd7cb18a4578eec3f7f18f56f4160798a38ec45ca3ef6963e",
+    "capital-drawdown-position.svg": "1a9b3835e5fc640573e5e13466b792d45abc554c6cb62d13ab0cde4e69b086b6",
+    "regime-summary.csv": "1d08dd80abcc6e3746a144f5c18371e9c41065b3ebc8196a30495e250b4c7e84",
+    "episodes.csv": "fb71237866fbc2776e9edb616e38668bd26789523764d69c9f1b619c293dd3f5",
+    "daily-equity.csv": "261bc120c3c9f3768368ebc456760797ba8b09f365066ddc723bb4b1bd78f561",
+    "events.csv": "d88ab75ae627df1f73550931c7a38e01221cef8dbafa0bbc342e38028e2cbb7c",
+    "summary.csv": "1270e8fbeb96533a7effe6cf1fbd1dfed40c65b1df00a4f384aa805e1d5d4e65",
+    "position-history.csv": "408d9b494954f6107a3735940b2defe1636bf5c0f5f113c60fe24a7bfb0ee0a1",
+    "trades.csv": "a3e0e9710a33c9d5270ae971b9627986cb1398e7e5d978d3ede2a073ac5ba3b9"
+  }
+}
