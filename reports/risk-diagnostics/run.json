@@ -1,0 +1,37 @@
+{
+  "overlay_config": {
+    "support_lookback": 120,
+    "support_break_buffer_pct": 1.0,
+    "stress_vix": 25.0,
+    "severe_vix": 30.0,
+    "trim_fraction": 0.25,
+    "max_quote_age_hours": 96.0,
+    "max_market_age_hours": 36.0
+  },
+  "source_sha256": {
+    "data/backtest/bars.csv": "86d69556fcc93d59dff98bfd935766d7ee9329b779f1303823330303b6a35182",
+    "data/backtest/markets.json": "d7728789e673e1c8cc4e0b0594433b774d0d26b880a490b93c96325279454bdb",
+    "data/risk-diagnostics/qqq.csv": "79a38a086980ca77bc437f75ea68d7971790d13e77d7831cd00ab8a238f87b21",
+    "data/backtest/manifest.json": "a7d72eb6989a97fb6cf3e20a321524b315feb35a78aa4ca9e215bea709f77488",
+    "data/risk-diagnostics/manifest.json": "ba1315b1dffdbfb8a257292d877ad2df2031f248c2a93d3e10155f333a4b7835",
+    "/workspace/Analytical-Engine/aae/backtest/diagnostics.py": "1e1e88d704ca2d6d660931d05ef684fe8b13ff05b2d709222523998802f4170a",
+    "scripts/fetch_diagnostics_benchmark.py": "27df462e58d95a407caedb3b8a7091e2fbd8aa6a8392a03c2685bc43a84adb47",
+    "aae/engines/tactical_risk_overlay.py": "84ea8f3af17e8076a429b5ef161508affb45a2b05239a2bc84e82c0a597b7dde",
+    "aae/engines/technical_analysis.py": "dcaf73a741ef80f9f3b6dbf4a2da27cd1d27863e5f9a3a9307d5f2da4fe079d9",
+    "aae/backtest/simulator.py": "c8aae90715ad9bc4a2bd4dc9f4d58dcf9b3a8e1eaa896a732435d2f16b837d8b"
+  },
+  "output_sha256": {
+    "report.md": "9b37d5fa4a1fcb5cbbecd6f12efec73b592d387b4869928dd9cfcef7a087c904",
+    "validation.md": "b13544aa948e6b21a39cd1c57cd52b4171d48cd2ac796107c0be064cebd80c88",
+    "drawdown-events.csv": "c126f4015755d273e602963331694f26c0a927ebaa3bd15f88c860f4177d9319",
+    "recovery-analysis.csv": "76f8cd0e3a57c1d562ece41ff734fc5a545e5951f0b6288083e34a502cba7e37",
+    "indicator-evaluation.csv": "bcdcea63f271ac392e02bd1b823fded4541f8feebc71509c2e4789576c591097",
+    "daily-signals.csv": "7ccec49e1f04ece5c1ffeed9a5704d8f94f80459a5b21f027bc81988bf4a9a30"
+  },
+  "counts": {
+    "daily": 111,
+    "events": 18,
+    "recoveries": 9,
+    "indicator_groups": 96
+  }
+}

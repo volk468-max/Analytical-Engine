@@ -29,3 +29,7 @@ This v1.0 is a deterministic analytical foundation. It does not yet call an exte
 Offline historical simulator and data limitations: [Risk backtest v1](docs/risk-backtest-v1.md).
 The committed [research report](reports/risk-backtest-v1/report.md) distinguishes
 limited public-price replay from unavailable full Alpha OS historical comparisons.
+
+Signal and restoration diagnostics for AMD/NVDA/MU:
+[research report](reports/risk-diagnostics/report.md), reproduced with
+`python -m aae.backtest.diagnostics`.
