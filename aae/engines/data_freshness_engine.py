@@ -5,10 +5,18 @@ from typing import Any
 class DataFreshnessEngine:
     VERSION = "Data-Freshness-Engine-v1"
 
-    HISTORY_MAX_HOURS = 36
+    HISTORY_MAX_HOURS = 96
     REVISIONS_MAX_HOURS = 72
     FUNDAMENTALS_MAX_HOURS = 24 * 14
-    MARKET_MAX_HOURS = 24
+    MARKET_MAX_HOURS = 36
+
+    def __init__(self, history_max_hours=None, market_max_hours=None):
+        for name, value in (("HISTORY_MAX_HOURS", history_max_hours), ("MARKET_MAX_HOURS", market_max_hours)):
+            if value is not None:
+                from math import isfinite
+                if not isfinite(value) or value <= 0:
+                    raise ValueError("Freshness limits must be finite and positive")
+                setattr(self, name, value)
 
     def _parse_datetime(
         self,
@@ -49,10 +57,7 @@ class DataFreshnessEngine:
 
         age = now - parsed
 
-        return round(
-            age.total_seconds() / 3600,
-            1,
-        )
+        return age.total_seconds() / 3600
 
     def _status(
         self,
@@ -61,6 +66,9 @@ class DataFreshnessEngine:
     ) -> str:
         if age_hours is None:
             return "UNKNOWN"
+
+        if age_hours < 0:
+            return "INVALID"
 
         if age_hours <= max_hours:
             return "FRESH"
@@ -92,6 +100,7 @@ class DataFreshnessEngine:
             key=lambda row: (
                 row.get("trade_date")
                 or row.get("date")
+                or row.get("timestamp")
                 or ""
             ),
             reverse=True,
@@ -105,9 +114,10 @@ class DataFreshnessEngine:
         history: Any,
         revisions: dict | None,
         market_summary: dict | None = None,
+        now: datetime | None = None,
     ) -> dict[str, Any]:
 
-        now = datetime.now(timezone.utc)
+        now = now or datetime.now(timezone.utc)
 
         fundamentals = fundamentals or {}
         revisions = revisions or {}
@@ -128,6 +138,7 @@ class DataFreshnessEngine:
             history_trade_date = (
                 latest_history.get("trade_date")
                 or latest_history.get("date")
+                or latest_history.get("timestamp")
             )
 
         fundamentals_time = (
@@ -155,7 +166,7 @@ class DataFreshnessEngine:
         )
 
         history_age = self._age_hours(
-            history_created_at,
+            history_trade_date,
             now,
         )
 
@@ -165,7 +176,7 @@ class DataFreshnessEngine:
         )
 
         market_age = self._age_hours(
-            market_time,
+            market_trade_date or market_summary.get("snapshot_time"),
             now,
         )
 
@@ -189,27 +200,6 @@ class DataFreshnessEngine:
             self.MARKET_MAX_HOURS,
         )
 
-        history_trade_date_warning = False
-
-        if history_trade_date:
-            try:
-                trade_date_obj = datetime.fromisoformat(
-                    history_trade_date
-                ).date()
-
-                today_utc = now.date()
-
-                calendar_gap_days = (
-                    today_utc - trade_date_obj
-                ).days
-
-                if calendar_gap_days > 1:
-                    history_trade_date_warning = True
-                    history_status = "STALE"
-
-            except ValueError:
-                pass
-
         statuses = [
             fundamentals_status,
             history_status,
@@ -224,7 +214,7 @@ class DataFreshnessEngine:
             overall_status = "FRESH"
 
         elif any(
-            status == "STALE"
+            status in {"STALE", "INVALID"}
             for status in statuses
         ):
             overall_status = "PARTIALLY_STALE"
@@ -254,10 +244,9 @@ class DataFreshnessEngine:
                 "Market snapshot may be stale."
             )
 
-        if history_trade_date_warning:
-            warnings.append(
-                "Latest market history trade date may be stale."
-            )
+        for label, status in (("History", history_status), ("Market", market_status)):
+            if status in {"UNKNOWN", "INVALID"}:
+                warnings.append(f"{label} observation timestamp is missing, invalid or future-dated.")
 
         return {
             "overall_status": overall_status,

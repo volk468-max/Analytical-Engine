@@ -1,8 +1,15 @@
 from typing import Any
+from datetime import datetime, timezone
+from .data_freshness_engine import DataFreshnessEngine
+from .tactical_risk_overlay import TacticalRiskConfig
 
 
 class MarketRegimeEngine:
-    VERSION = "Market-Regime-Engine-v1"
+    VERSION = "Market-Regime-Engine-v2"
+
+    def __init__(self, risk_config=None):
+        self.risk_config = risk_config or TacticalRiskConfig.from_env()
+
 
     def _records(self, history: Any) -> list:
         if isinstance(history, dict):
@@ -144,6 +151,7 @@ class MarketRegimeEngine:
     def _portfolio_breadth(
         self,
         portfolio_histories: dict,
+        now: datetime | None = None,
     ) -> dict:
         total = 0
         above_ma50 = 0
@@ -232,7 +240,28 @@ class MarketRegimeEngine:
         spy_history: Any,
         qqq_history: Any,
         portfolio_histories: dict,
+        now: datetime | None = None,
     ) -> dict:
+
+        now = now or datetime.now(timezone.utc)
+        checker = DataFreshnessEngine(self.risk_config.max_quote_age_hours,
+                                      self.risk_config.max_market_age_hours)
+        sources = {"SPY": spy_history, "QQQ": qqq_history, **{
+            f"portfolio:{symbol}": history for symbol, history in portfolio_histories.items()
+        }}
+        invalid = []
+        for label, history in sources.items():
+            quality = checker.evaluate(None, history, None, market_summary, now=now)
+            if (quality["history"]["status"] != "FRESH"
+                    or quality["market"]["status"] != "FRESH"
+                    or self._ma(self._records(history), 200) is None):
+                invalid.append(label)
+        if invalid or not portfolio_histories:
+            return {"regime": "UNKNOWN", "confidence_pct": 0,
+                    "portfolio_stance": "REVIEW_DATA", "conditions": {},
+                    "data_freshness": {"status": "UNVERIFIED", "invalid_sources": invalid},
+                    "warnings": ["Fresh, sufficient index and breadth histories are required."],
+                    "engine_version": self.VERSION, "status": "REGIME_UNAVAILABLE"}
 
         spy = self._index_state(spy_history)
         qqq = self._index_state(qqq_history)
@@ -460,6 +489,7 @@ class MarketRegimeEngine:
 
         return {
             "regime": regime,
+            "data_freshness": {"status": "FRESH", "evaluated_at": now.isoformat()},
             "confidence_pct": confidence,
             "portfolio_stance": stance,
 
@@ -490,4 +520,3 @@ class MarketRegimeEngine:
             "engine_version": self.VERSION,
             "status": "REGIME_READY",
         }
-
