@@ -57,3 +57,13 @@ def test_model_portfolio_equal_initial_sleeves():
 def test_missing_macro_not_fabricated():
     for s in ['DGS2','DGS10','BAMLC0A0CM','BAMLH0A0HYM2']:
         r=next(x for x in rows('data-coverage.csv') if x['series']==s);assert '2026-11-02' in r['missing_equity_sessions']
+def test_fed_release_not_used_before_publication():
+    for r in rows('market-chronology.csv'):
+        if r['last_known_fed_release']:assert datetime.fromisoformat(r['last_known_fed_release'])<=datetime.fromisoformat(r['available_at'])
+def test_macro_assumed_release_gate_is_enforced():
+    xs=read('macro-availability.json')
+    for r in rows('market-chronology.csv'):
+        for s in ['DGS2','DGS10','BAMLC0A0CM','BAMLH0A0HYM2']:
+            if r[s+'_observation_date']:
+                x=next(x for x in xs if x['series']==s and x['date']==r[s+'_observation_date'])
+                assert datetime.fromisoformat(x['available_at_assumed'])<=datetime.fromisoformat(r['available_at'])

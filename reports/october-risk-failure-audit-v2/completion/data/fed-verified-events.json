@@ -1,0 +1,28 @@
+[
+  {
+    "date": "2026-09-16",
+    "published_at": "2026-09-16T18:00:00Z",
+    "provider": "Federal Reserve Board",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+    "retrieved_at": "2026-11-03T12:29:06.416Z",
+    "retrieval_method": "web connector; direct urllib returned403",
+    "policy_action": "RAISE_25_BP",
+    "target_lower_pct": 3.75,
+    "target_upper_pct": 4,
+    "description_ru": "Ставка повышена на 25 б.п.; решение опубликовано в 14:00 EDT.",
+    "source_is_current_page_not_immutable_original_archive": true
+  },
+  {
+    "date": "2026-10-28",
+    "published_at": "2026-10-28T18:00:00Z",
+    "provider": "Federal Reserve Board",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+    "retrieved_at": "2026-11-03T12:29:06.416Z",
+    "retrieval_method": "web connector; direct urllib returned403",
+    "policy_action": "UNCHANGED",
+    "target_lower_pct": 3.75,
+    "target_upper_pct": 4,
+    "description_ru": "Диапазон ставки сохранён; два участника предпочли повышение на 25 б.п.",
+    "source_is_current_page_not_immutable_original_archive": true
+  }
+]
