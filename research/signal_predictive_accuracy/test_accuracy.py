@@ -65,3 +65,28 @@ def test_baseline_match_never_conditions_on_future_labels():
 def test_missed_event_matching_never_same_close_warning():
     for x in rows(R/'missed-falls.csv'):
         if x['warning_date']:assert x['warning_date']<x['threshold_date'] and int(x['signal_lead_sessions'])>=1 and int(x['execution_lead_sessions'])>=0
+def test_confidence_adjusts_two_primary_comparisons():
+    xs=rows(R/'baseline-confidence.csv');p=[x for x in xs if x['cohort']=='STOCK' and x['model']!='DRAWDOWN_MATCHED_RANDOM']
+    assert len(p)==6 and all(float(x['marginal_confidence'])==.975 and int(x['resamples'])==1999 for x in p)
+def test_all_control_panels_match_prespecified_cells_and_frequency():
+    import io,collections
+    cache={x['date']:x for x in json.loads((R/'control-cache.json').read_text())};counts=collections.Counter()
+    with gzip.open(R/'matched-control-panels.csv.gz','rt') as f:
+        for x in csv.DictReader(f):
+            a=cache[x['warning_date']];b=cache[x['control_date']]
+            assert a['quarter']==b['quarter'] and a['regime']==b['regime'] and a['eligible_signature']==b['eligible_signature']
+            if x['model']=='MECHANICAL_QQQ_R5':assert b['mechanical']
+            else:assert not b['sector_warning']
+            if x['model']=='DRAWDOWN_MATCHED_RANDOM':assert a['dd_bin']==b['dd_bin']
+            counts[x['model'],int(x['panel'])]+=1
+    matches={x['model']:int(x['matched_warning_dates']) for x in rows(R/'baseline-comparison.csv') if x['cohort']=='STOCK'}
+    assert len(counts)==1500 and all(n==matches[model] for (model,panel),n in counts.items())
+def test_primary_event_catalogue_has_no_nested_overlaps():
+    xs=rows(R/'drawdown-events.csv')
+    for s in STOCKS:
+        es=sorted((x for x in xs if x['symbol']==s),key=lambda x:x['start_date'])
+        for a,b in zip(es,es[1:]):assert a['recovery_date'] and a['recovery_date']<b['start_date']
+def test_missing_prehistory_not_counted_as_zero_drawdown():
+    xs=[x for x in rows(R/'signals.csv') if x['cohort']=='STOCK' and x['anchor']=='OPEN' and x['complete_10']=='True'];known=[x for x in xs if x['known_drawdown_20_pct']!='']
+    stat=next(x for x in rows(R/'statistics.csv') if x['cohort']=='STOCK' and x['anchor']=='OPEN' and x['group']=='ALL');assert int(stat['known_dd20_rows'])==len(known)
+    assert abs(float(stat['already_down5_fraction'])-sum(float(x['known_drawdown_20_pct'])>=5 for x in known)/len(known))<1e-12
