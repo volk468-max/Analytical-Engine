@@ -1,0 +1,14 @@
+{
+  "gate_passed": true,
+  "source_commit": "ef1a3a76c1c0d455f48a9d787f1c04961c244b91",
+  "source_files_verified": 37,
+  "signal_dates": [
+    "2026-09-01",
+    "2026-09-14",
+    "2026-10-08",
+    "2026-11-02"
+  ],
+  "sector_daily_rows_equal": 44,
+  "exact_PR10_generated_files_equal": 15,
+  "long_economics_authorized_only_after_this_gate": true
+}

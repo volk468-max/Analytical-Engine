@@ -1,0 +1,13 @@
+{
+  "verified_published_commit": "1e05312abc873e107a6b1a1b39da66bcd4813e10",
+  "clean_GitHub_worktree_reproduction": true,
+  "git_diff_empty": true,
+  "python_passed": 43,
+  "python_failed": 0,
+  "environment_warnings": 1,
+  "archived_Node_prior_policy_replay_matched": true,
+  "source_commit": "7135c2bdc0653986d93dfcfc66b202a6fb2f741e",
+  "source_snapshots_unchanged": true,
+  "production_signals_confirmed": false,
+  "long_history_completed": false
+}
