@@ -16,7 +16,7 @@ def main():
     ROOT.mkdir(parents=True,exist_ok=True);stamp=datetime.now(timezone.utc).isoformat()
     begin=int(datetime(2025,1,1,tzinfo=timezone.utc).timestamp());end=int(datetime(2026,11,3,tzinfo=timezone.utc).timestamp())
     def stock(symbol):
-        url=f'https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?period1={begin}&period2={end}&interval=1d&events=div%2Csplits'
+        url=f'https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?period1={begin}&period2={end}&interval=1d&includePrePost=false&events=div%2Csplits'
         entry=dict(symbol=symbol,source='Yahoo chart',url=url,retrieved_at=stamp);rows=[]
         try:
             with urlopen(Request(url,headers={'User-Agent':'AlphaOS Stage1 audit/1.0'}),timeout=25) as response:raw=response.read()

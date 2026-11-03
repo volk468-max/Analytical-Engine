@@ -1,0 +1,23 @@
+[
+  {
+    "case": "strict_prior",
+    "support": 99.0,
+    "support_broken": true,
+    "synthetic_action": "REVIEW",
+    "warning": "Synthetic fundamentals; not a historical decision replay"
+  },
+  {
+    "case": "include_current",
+    "support": 89.0,
+    "support_broken": false,
+    "synthetic_action": "TRIM",
+    "warning": "Synthetic fundamentals; not a historical decision replay"
+  },
+  {
+    "case": "include_future",
+    "support": 1.0,
+    "support_broken": false,
+    "synthetic_action": "TRIM",
+    "warning": "Synthetic fundamentals; not a historical decision replay"
+  }
+]
