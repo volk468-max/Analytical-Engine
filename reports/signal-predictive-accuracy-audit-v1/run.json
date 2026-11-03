@@ -1,0 +1,14 @@
+{
+  "original_production_payloads": 0,
+  "unique_warning_dates": 134,
+  "complete10_warning_dates": 133,
+  "nonoverlapping10_window_subset": 79,
+  "nonoverlap_is_not_proof_of_independence": true,
+  "calendar60_blocks": 25,
+  "signal_rows": 4646,
+  "stock_rows": 2770,
+  "market_rows": 1876,
+  "primary_event_definition": "DOWN5_BEFORE_UP5_IN10_SESSIONS_FROM_NEXT_OPEN_INCLUDING_EXECUTION_SESSION",
+  "full_windows_only_for_precision": true,
+  "formula_unchanged": true
+}
