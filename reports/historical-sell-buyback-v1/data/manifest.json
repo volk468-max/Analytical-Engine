@@ -1,0 +1,1548 @@
+{
+  "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+  "window": "2020 warmup through2026-11-02",
+  "sources": [
+    {
+      "symbol": "AMD",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "AMD.json",
+      "raw_sha256": "646c68b8757c43c4aadbf57cd63b972889c711bf58f941ce00b8276f035fd6d7",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 322151400,
+      "corporate_actions": {},
+      "meta_instrument_type": "EQUITY"
+    },
+    {
+      "symbol": "NVDA",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "NVDA.json",
+      "raw_sha256": "84f4e365d6dc949c4248e381fa630fac45d9171ea8ae7083b1eefe6508bf6a6e",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 917015400,
+      "corporate_actions": {
+        "dividends": {
+          "1582813800": {
+            "amount": 0.004,
+            "date": 1582813800
+          },
+          "1591277400": {
+            "amount": 0.004,
+            "date": 1591277400
+          },
+          "1598967000": {
+            "amount": 0.004,
+            "date": 1598967000
+          },
+          "1607005800": {
+            "amount": 0.004,
+            "date": 1607005800
+          },
+          "1615300200": {
+            "amount": 0.004,
+            "date": 1615300200
+          },
+          "1623245400": {
+            "amount": 0.004,
+            "date": 1623245400
+          },
+          "1630416600": {
+            "amount": 0.004,
+            "date": 1630416600
+          },
+          "1638369000": {
+            "amount": 0.004,
+            "date": 1638369000
+          },
+          "1646231400": {
+            "amount": 0.004,
+            "date": 1646231400
+          },
+          "1654695000": {
+            "amount": 0.004,
+            "date": 1654695000
+          },
+          "1662557400": {
+            "amount": 0.004,
+            "date": 1662557400
+          },
+          "1669818600": {
+            "amount": 0.004,
+            "date": 1669818600
+          },
+          "1678199400": {
+            "amount": 0.004,
+            "date": 1678199400
+          },
+          "1686144600": {
+            "amount": 0.004,
+            "date": 1686144600
+          },
+          "1694007000": {
+            "amount": 0.004,
+            "date": 1694007000
+          },
+          "1701786600": {
+            "amount": 0.004,
+            "date": 1701786600
+          },
+          "1709649000": {
+            "amount": 0.004,
+            "date": 1709649000
+          },
+          "1718112600": {
+            "amount": 0.01,
+            "date": 1718112600
+          },
+          "1726147800": {
+            "amount": 0.01,
+            "date": 1726147800
+          },
+          "1733409000": {
+            "amount": 0.01,
+            "date": 1733409000
+          },
+          "1741786200": {
+            "amount": 0.01,
+            "date": 1741786200
+          },
+          "1749648600": {
+            "amount": 0.01,
+            "date": 1749648600
+          },
+          "1757597400": {
+            "amount": 0.01,
+            "date": 1757597400
+          },
+          "1764858600": {
+            "amount": 0.01,
+            "date": 1764858600
+          },
+          "1773235800": {
+            "amount": 0.01,
+            "date": 1773235800
+          },
+          "1780579800": {
+            "amount": 0.25,
+            "date": 1780579800
+          },
+          "1789047000": {
+            "amount": 0.25,
+            "date": 1789047000
+          }
+        },
+        "splits": {
+          "1626787800": {
+            "date": 1626787800,
+            "numerator": 4.0,
+            "denominator": 1.0,
+            "splitRatio": "4:1"
+          },
+          "1718026200": {
+            "date": 1718026200,
+            "numerator": 10.0,
+            "denominator": 1.0,
+            "splitRatio": "10:1"
+          }
+        }
+      },
+      "meta_instrument_type": "EQUITY"
+    },
+    {
+      "symbol": "MU",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "MU.json",
+      "raw_sha256": "ae35fdc6db9e95102256bc383709438708abed873523dda8eff1a6720f369b11",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 454944600,
+      "corporate_actions": {
+        "dividends": {
+          "1633008600": {
+            "amount": 0.1,
+            "date": 1633008600
+          },
+          "1640961000": {
+            "amount": 0.1,
+            "date": 1640961000
+          },
+          "1649424600": {
+            "amount": 0.1,
+            "date": 1649424600
+          },
+          "1657287000": {
+            "amount": 0.115,
+            "date": 1657287000
+          },
+          "1665149400": {
+            "amount": 0.115,
+            "date": 1665149400
+          },
+          "1672410600": {
+            "amount": 0.115,
+            "date": 1672410600
+          },
+          "1680787800": {
+            "amount": 0.115,
+            "date": 1680787800
+          },
+          "1688736600": {
+            "amount": 0.115,
+            "date": 1688736600
+          },
+          "1696599000": {
+            "amount": 0.115,
+            "date": 1696599000
+          },
+          "1703860200": {
+            "amount": 0.115,
+            "date": 1703860200
+          },
+          "1711632600": {
+            "amount": 0.115,
+            "date": 1711632600
+          },
+          "1720445400": {
+            "amount": 0.115,
+            "date": 1720445400
+          },
+          "1728307800": {
+            "amount": 0.115,
+            "date": 1728307800
+          },
+          "1735569000": {
+            "amount": 0.115,
+            "date": 1735569000
+          },
+          "1743427800": {
+            "amount": 0.115,
+            "date": 1743427800
+          },
+          "1751895000": {
+            "amount": 0.115,
+            "date": 1751895000
+          },
+          "1759498200": {
+            "amount": 0.115,
+            "date": 1759498200
+          },
+          "1767018600": {
+            "amount": 0.115,
+            "date": 1767018600
+          },
+          "1774877400": {
+            "amount": 0.15,
+            "date": 1774877400
+          },
+          "1783344600": {
+            "amount": 0.15,
+            "date": 1783344600
+          },
+          "1791984600": {
+            "amount": 0.15,
+            "date": 1791984600
+          }
+        }
+      },
+      "meta_instrument_type": "EQUITY"
+    },
+    {
+      "symbol": "TSM",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "TSM.json",
+      "raw_sha256": "e20c8cfd3b592feac8c8c978ce68d0e5e6cc6c8a07a07216beb49fdac6caa78a",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 876403800,
+      "corporate_actions": {
+        "dividends": {
+          "1584624600": {
+            "amount": 0.417,
+            "date": 1584624600
+          },
+          "1592487000": {
+            "amount": 0.42,
+            "date": 1592487000
+          },
+          "1600349400": {
+            "amount": 0.427,
+            "date": 1600349400
+          },
+          "1608215400": {
+            "amount": 0.442,
+            "date": 1608215400
+          },
+          "1615987800": {
+            "amount": 0.448,
+            "date": 1615987800
+          },
+          "1623936600": {
+            "amount": 0.451,
+            "date": 1623936600
+          },
+          "1631799000": {
+            "amount": 0.497,
+            "date": 1631799000
+          },
+          "1639665000": {
+            "amount": 0.496,
+            "date": 1639665000
+          },
+          "1647437400": {
+            "amount": 0.49,
+            "date": 1647437400
+          },
+          "1655386200": {
+            "amount": 0.467,
+            "date": 1655386200
+          },
+          "1663248600": {
+            "amount": 0.448,
+            "date": 1663248600
+          },
+          "1671114600": {
+            "amount": 0.451,
+            "date": 1671114600
+          },
+          "1678973400": {
+            "amount": 0.449,
+            "date": 1678973400
+          },
+          "1686835800": {
+            "amount": 0.448,
+            "date": 1686835800
+          },
+          "1694698200": {
+            "amount": 0.471,
+            "date": 1694698200
+          },
+          "1702564200": {
+            "amount": 0.479,
+            "date": 1702564200
+          },
+          "1710768600": {
+            "amount": 0.554,
+            "date": 1710768600
+          },
+          "1718285400": {
+            "amount": 0.544,
+            "date": 1718285400
+          },
+          "1726147800": {
+            "amount": 0.626,
+            "date": 1726147800
+          },
+          "1734013800": {
+            "amount": 0.616,
+            "date": 1734013800
+          },
+          "1742304600": {
+            "amount": 0.684,
+            "date": 1742304600
+          },
+          "1749735000": {
+            "amount": 0.78,
+            "date": 1749735000
+          },
+          "1758029400": {
+            "amount": 0.822,
+            "date": 1758029400
+          },
+          "1765463400": {
+            "amount": 0.835,
+            "date": 1765463400
+          },
+          "1773754200": {
+            "amount": 0.956,
+            "date": 1773754200
+          },
+          "1781184600": {
+            "amount": 0.955,
+            "date": 1781184600
+          },
+          "1789565400": {
+            "amount": 1.107,
+            "date": 1789565400
+          }
+        }
+      },
+      "meta_instrument_type": "EQUITY"
+    },
+    {
+      "symbol": "AVGO",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "AVGO.json",
+      "raw_sha256": "6618029ca8c0dbaf366bda46bb1a725d1500a21670ed083bd6ae8f78006012e4",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 1249565400,
+      "corporate_actions": {
+        "dividends": {
+          "1584711000": {
+            "amount": 0.325,
+            "date": 1584711000
+          },
+          "1592573400": {
+            "amount": 0.325,
+            "date": 1592573400
+          },
+          "1600695000": {
+            "amount": 0.325,
+            "date": 1600695000
+          },
+          "1608301800": {
+            "amount": 0.36,
+            "date": 1608301800
+          },
+          "1616160600": {
+            "amount": 0.36,
+            "date": 1616160600
+          },
+          "1624282200": {
+            "amount": 0.36,
+            "date": 1624282200
+          },
+          "1632231000": {
+            "amount": 0.36,
+            "date": 1632231000
+          },
+          "1640097000": {
+            "amount": 0.41,
+            "date": 1640097000
+          },
+          "1647869400": {
+            "amount": 0.41,
+            "date": 1647869400
+          },
+          "1655818200": {
+            "amount": 0.41,
+            "date": 1655818200
+          },
+          "1663767000": {
+            "amount": 0.41,
+            "date": 1663767000
+          },
+          "1671460200": {
+            "amount": 0.46,
+            "date": 1671460200
+          },
+          "1679405400": {
+            "amount": 0.46,
+            "date": 1679405400
+          },
+          "1687354200": {
+            "amount": 0.46,
+            "date": 1687354200
+          },
+          "1695216600": {
+            "amount": 0.46,
+            "date": 1695216600
+          },
+          "1702996200": {
+            "amount": 0.525,
+            "date": 1702996200
+          },
+          "1710941400": {
+            "amount": 0.525,
+            "date": 1710941400
+          },
+          "1719235800": {
+            "amount": 0.525,
+            "date": 1719235800
+          },
+          "1726752600": {
+            "amount": 0.53,
+            "date": 1726752600
+          },
+          "1734964200": {
+            "amount": 0.59,
+            "date": 1734964200
+          },
+          "1742477400": {
+            "amount": 0.59,
+            "date": 1742477400
+          },
+          "1750426200": {
+            "amount": 0.59,
+            "date": 1750426200
+          },
+          "1758547800": {
+            "amount": 0.59,
+            "date": 1758547800
+          },
+          "1766413800": {
+            "amount": 0.65,
+            "date": 1766413800
+          },
+          "1774272600": {
+            "amount": 0.65,
+            "date": 1774272600
+          },
+          "1782135000": {
+            "amount": 0.65,
+            "date": 1782135000
+          },
+          "1789997400": {
+            "amount": 0.65,
+            "date": 1789997400
+          }
+        },
+        "splits": {
+          "1721050200": {
+            "date": 1721050200,
+            "numerator": 10.0,
+            "denominator": 1.0,
+            "splitRatio": "10:1"
+          }
+        }
+      },
+      "meta_instrument_type": "EQUITY"
+    },
+    {
+      "symbol": "AMAT",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMAT?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "AMAT.json",
+      "raw_sha256": "5b2669a6518db12b48666dc0acc8b83d537ce5fd36356bb0ba6080525c2a7210",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 322151400,
+      "corporate_actions": {
+        "dividends": {
+          "1582036200": {
+            "amount": 0.21,
+            "date": 1582036200
+          },
+          "1589981400": {
+            "amount": 0.22,
+            "date": 1589981400
+          },
+          "1597843800": {
+            "amount": 0.22,
+            "date": 1597843800
+          },
+          "1605709800": {
+            "amount": 0.22,
+            "date": 1605709800
+          },
+          "1614177000": {
+            "amount": 0.22,
+            "date": 1614177000
+          },
+          "1622035800": {
+            "amount": 0.24,
+            "date": 1622035800
+          },
+          "1629898200": {
+            "amount": 0.24,
+            "date": 1629898200
+          },
+          "1637764200": {
+            "amount": 0.24,
+            "date": 1637764200
+          },
+          "1645540200": {
+            "amount": 0.24,
+            "date": 1645540200
+          },
+          "1653485400": {
+            "amount": 0.26,
+            "date": 1653485400
+          },
+          "1661347800": {
+            "amount": 0.26,
+            "date": 1661347800
+          },
+          "1669213800": {
+            "amount": 0.26,
+            "date": 1669213800
+          },
+          "1677076200": {
+            "amount": 0.26,
+            "date": 1677076200
+          },
+          "1684935000": {
+            "amount": 0.32,
+            "date": 1684935000
+          },
+          "1692797400": {
+            "amount": 0.32,
+            "date": 1692797400
+          },
+          "1700663400": {
+            "amount": 0.32,
+            "date": 1700663400
+          },
+          "1708525800": {
+            "amount": 0.32,
+            "date": 1708525800
+          },
+          "1716384600": {
+            "amount": 0.4,
+            "date": 1716384600
+          },
+          "1724333400": {
+            "amount": 0.4,
+            "date": 1724333400
+          },
+          "1732199400": {
+            "amount": 0.4,
+            "date": 1732199400
+          },
+          "1740061800": {
+            "amount": 0.4,
+            "date": 1740061800
+          },
+          "1747920600": {
+            "amount": 0.46,
+            "date": 1747920600
+          },
+          "1755783000": {
+            "amount": 0.46,
+            "date": 1755783000
+          },
+          "1763649000": {
+            "amount": 0.46,
+            "date": 1763649000
+          },
+          "1771511400": {
+            "amount": 0.46,
+            "date": 1771511400
+          },
+          "1779370200": {
+            "amount": 0.53,
+            "date": 1779370200
+          },
+          "1787232600": {
+            "amount": 0.53,
+            "date": 1787232600
+          }
+        }
+      },
+      "meta_instrument_type": "EQUITY"
+    },
+    {
+      "symbol": "AMZN",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "AMZN.json",
+      "raw_sha256": "b8698534923673e214526f7ab2712c9fbe6a543769cfd4bbe84a4ad92d1b9656",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 863703000,
+      "corporate_actions": {
+        "splits": {
+          "1654522200": {
+            "date": 1654522200,
+            "numerator": 20.0,
+            "denominator": 1.0,
+            "splitRatio": "20:1"
+          }
+        }
+      },
+      "meta_instrument_type": "EQUITY"
+    },
+    {
+      "symbol": "META",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/META?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "META.json",
+      "raw_sha256": "ee1769be4b2b2dcd12d05c87ed4c4e71d5c380b24a154b3aa5893fa3cd620124",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 1337347800,
+      "corporate_actions": {
+        "dividends": {
+          "1708525800": {
+            "amount": 0.5,
+            "date": 1708525800
+          },
+          "1718371800": {
+            "amount": 0.5,
+            "date": 1718371800
+          },
+          "1726493400": {
+            "amount": 0.5,
+            "date": 1726493400
+          },
+          "1734359400": {
+            "amount": 0.5,
+            "date": 1734359400
+          },
+          "1741959000": {
+            "amount": 0.525,
+            "date": 1741959000
+          },
+          "1750080600": {
+            "amount": 0.525,
+            "date": 1750080600
+          },
+          "1758547800": {
+            "amount": 0.525,
+            "date": 1758547800
+          },
+          "1765809000": {
+            "amount": 0.525,
+            "date": 1765809000
+          },
+          "1773667800": {
+            "amount": 0.525,
+            "date": 1773667800
+          },
+          "1781530200": {
+            "amount": 0.525,
+            "date": 1781530200
+          },
+          "1789997400": {
+            "amount": 0.525,
+            "date": 1789997400
+          }
+        }
+      },
+      "meta_instrument_type": "EQUITY"
+    },
+    {
+      "symbol": "PLTR",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "PLTR.json",
+      "raw_sha256": "6193fdaa6b2cf0c87a5953443ad460883a499da884a475b2ba67c9a93b0db5ef",
+      "first": "2020-09-30",
+      "last": "2026-11-02",
+      "rows": 1530,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 1601472600,
+      "corporate_actions": {},
+      "meta_instrument_type": "EQUITY"
+    },
+    {
+      "symbol": "LRCX",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/LRCX?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "LRCX.json",
+      "raw_sha256": "36b53292ea497d64bc0552ec77143bc0fbb3aaaab4b0cbe824c4155caa5e901e",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 452525400,
+      "corporate_actions": {
+        "dividends": {
+          "1585056600": {
+            "amount": 0.115,
+            "date": 1585056600
+          },
+          "1592314200": {
+            "amount": 0.115,
+            "date": 1592314200
+          },
+          "1601386200": {
+            "amount": 0.13,
+            "date": 1601386200
+          },
+          "1607437800": {
+            "amount": 0.13,
+            "date": 1607437800
+          },
+          "1615901400": {
+            "amount": 0.13,
+            "date": 1615901400
+          },
+          "1623763800": {
+            "amount": 0.13,
+            "date": 1623763800
+          },
+          "1632749400": {
+            "amount": 0.15,
+            "date": 1632749400
+          },
+          "1639492200": {
+            "amount": 0.15,
+            "date": 1639492200
+          },
+          "1647351000": {
+            "amount": 0.15,
+            "date": 1647351000
+          },
+          "1655213400": {
+            "amount": 0.15,
+            "date": 1655213400
+          },
+          "1663075800": {
+            "amount": 0.1725,
+            "date": 1663075800
+          },
+          "1670941800": {
+            "amount": 0.1725,
+            "date": 1670941800
+          },
+          "1678800600": {
+            "amount": 0.1725,
+            "date": 1678800600
+          },
+          "1686663000": {
+            "amount": 0.1725,
+            "date": 1686663000
+          },
+          "1694525400": {
+            "amount": 0.2,
+            "date": 1694525400
+          },
+          "1702391400": {
+            "amount": 0.2,
+            "date": 1702391400
+          },
+          "1710250200": {
+            "amount": 0.2,
+            "date": 1710250200
+          },
+          "1718717400": {
+            "amount": 0.2,
+            "date": 1718717400
+          },
+          "1726579800": {
+            "amount": 0.23,
+            "date": 1726579800
+          },
+          "1733927400": {
+            "amount": 0.23,
+            "date": 1733927400
+          },
+          "1741185000": {
+            "amount": 0.23,
+            "date": 1741185000
+          },
+          "1750253400": {
+            "amount": 0.23,
+            "date": 1750253400
+          },
+          "1758720600": {
+            "amount": 0.26,
+            "date": 1758720600
+          },
+          "1764772200": {
+            "amount": 0.26,
+            "date": 1764772200
+          },
+          "1772634600": {
+            "amount": 0.26,
+            "date": 1772634600
+          },
+          "1781703000": {
+            "amount": 0.26,
+            "date": 1781703000
+          },
+          "1790170200": {
+            "amount": 0.33,
+            "date": 1790170200
+          }
+        },
+        "splits": {
+          "1727962200": {
+            "date": 1727962200,
+            "numerator": 10.0,
+            "denominator": 1.0,
+            "splitRatio": "10:1"
+          }
+        }
+      },
+      "meta_instrument_type": "EQUITY"
+    },
+    {
+      "symbol": "NBIS",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NBIS?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "NBIS.json",
+      "raw_sha256": "f9ea60cd95a8c2232c4eee5be22ac65f0173a09c74934e64175d47ce317f67dd",
+      "first": "2024-10-21",
+      "last": "2026-11-02",
+      "rows": 510,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 1729517400,
+      "corporate_actions": {},
+      "meta_instrument_type": "EQUITY"
+    },
+    {
+      "symbol": "QQQ",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "QQQ.json",
+      "raw_sha256": "dec95a87c1de22f07fdde3f12d5ae81cb67c3b9653c663f2308d8a822be42cac",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 921076200,
+      "corporate_actions": {
+        "dividends": {
+          "1584970200": {
+            "amount": 0.363,
+            "date": 1584970200
+          },
+          "1592832600": {
+            "amount": 0.424,
+            "date": 1592832600
+          },
+          "1608561000": {
+            "amount": 0.561,
+            "date": 1608561000
+          },
+          "1616419800": {
+            "amount": 0.395,
+            "date": 1616419800
+          },
+          "1624282200": {
+            "amount": 0.397,
+            "date": 1624282200
+          },
+          "1632144600": {
+            "amount": 0.414,
+            "date": 1632144600
+          },
+          "1640010600": {
+            "amount": 0.491,
+            "date": 1640010600
+          },
+          "1647869400": {
+            "amount": 0.434,
+            "date": 1647869400
+          },
+          "1655818200": {
+            "amount": 0.527,
+            "date": 1655818200
+          },
+          "1663594200": {
+            "amount": 0.519,
+            "date": 1663594200
+          },
+          "1671460200": {
+            "amount": 0.655,
+            "date": 1671460200
+          },
+          "1679319000": {
+            "amount": 0.472,
+            "date": 1679319000
+          },
+          "1687267800": {
+            "amount": 0.504,
+            "date": 1687267800
+          },
+          "1695043800": {
+            "amount": 0.536,
+            "date": 1695043800
+          },
+          "1702909800": {
+            "amount": 0.808,
+            "date": 1702909800
+          },
+          "1703687400": {
+            "amount": 0.216,
+            "date": 1703687400
+          },
+          "1710768600": {
+            "amount": 0.573,
+            "date": 1710768600
+          },
+          "1719235800": {
+            "amount": 0.762,
+            "date": 1719235800
+          },
+          "1727098200": {
+            "amount": 0.677,
+            "date": 1727098200
+          },
+          "1734964200": {
+            "amount": 0.835,
+            "date": 1734964200
+          },
+          "1742823000": {
+            "amount": 0.716,
+            "date": 1742823000
+          },
+          "1750685400": {
+            "amount": 0.591,
+            "date": 1750685400
+          },
+          "1758547800": {
+            "amount": 0.694,
+            "date": 1758547800
+          },
+          "1766413800": {
+            "amount": 0.794,
+            "date": 1766413800
+          },
+          "1774272600": {
+            "amount": 0.733,
+            "date": 1774272600
+          },
+          "1782135000": {
+            "amount": 0.813,
+            "date": 1782135000
+          },
+          "1789997400": {
+            "amount": 0.751,
+            "date": 1789997400
+          }
+        }
+      },
+      "meta_instrument_type": "ETF"
+    },
+    {
+      "symbol": "SPY",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "SPY.json",
+      "raw_sha256": "341f583f2251598219d7eea481ea5d0484652141d87d44a7590afe4373006c76",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 728317800,
+      "corporate_actions": {
+        "dividends": {
+          "1584711000": {
+            "amount": 1.406,
+            "date": 1584711000
+          },
+          "1592573400": {
+            "amount": 1.366,
+            "date": 1592573400
+          },
+          "1600435800": {
+            "amount": 1.339,
+            "date": 1600435800
+          },
+          "1608301800": {
+            "amount": 1.58,
+            "date": 1608301800
+          },
+          "1616160600": {
+            "amount": 1.278,
+            "date": 1616160600
+          },
+          "1624023000": {
+            "amount": 1.376,
+            "date": 1624023000
+          },
+          "1631885400": {
+            "amount": 1.428,
+            "date": 1631885400
+          },
+          "1639751400": {
+            "amount": 1.633,
+            "date": 1639751400
+          },
+          "1647610200": {
+            "amount": 1.366,
+            "date": 1647610200
+          },
+          "1655472600": {
+            "amount": 1.577,
+            "date": 1655472600
+          },
+          "1663335000": {
+            "amount": 1.596,
+            "date": 1663335000
+          },
+          "1671201000": {
+            "amount": 1.781,
+            "date": 1671201000
+          },
+          "1679059800": {
+            "amount": 1.506,
+            "date": 1679059800
+          },
+          "1686922200": {
+            "amount": 1.638,
+            "date": 1686922200
+          },
+          "1694784600": {
+            "amount": 1.583,
+            "date": 1694784600
+          },
+          "1702650600": {
+            "amount": 1.906,
+            "date": 1702650600
+          },
+          "1710509400": {
+            "amount": 1.595,
+            "date": 1710509400
+          },
+          "1718976600": {
+            "amount": 1.759,
+            "date": 1718976600
+          },
+          "1726839000": {
+            "amount": 1.746,
+            "date": 1726839000
+          },
+          "1734705000": {
+            "amount": 1.966,
+            "date": 1734705000
+          },
+          "1742563800": {
+            "amount": 1.696,
+            "date": 1742563800
+          },
+          "1750426200": {
+            "amount": 1.761,
+            "date": 1750426200
+          },
+          "1758288600": {
+            "amount": 1.831,
+            "date": 1758288600
+          },
+          "1766154600": {
+            "amount": 1.993,
+            "date": 1766154600
+          },
+          "1774013400": {
+            "amount": 1.797,
+            "date": 1774013400
+          },
+          "1781789400": {
+            "amount": 1.904,
+            "date": 1781789400
+          },
+          "1789738200": {
+            "amount": 1.889,
+            "date": 1789738200
+          }
+        }
+      },
+      "meta_instrument_type": "ETF"
+    },
+    {
+      "symbol": "^GSPC",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/^GSPC?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "INDEX-GSPC.json",
+      "raw_sha256": "152cf542d6855acaeb5ec4bab24bf3a5b535c25b47d0f95276df992217ac14b5",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": -1325583000,
+      "corporate_actions": {},
+      "meta_instrument_type": "INDEX"
+    },
+    {
+      "symbol": "^IXIC",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/^IXIC?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "INDEX-IXIC.json",
+      "raw_sha256": "6646ad49bac279d435747dc61ba0f68a229f9e4068da89c5857ae9f1788be2fb",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 34612200,
+      "corporate_actions": {},
+      "meta_instrument_type": "INDEX"
+    },
+    {
+      "symbol": "^SOX",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/^SOX?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "INDEX-SOX.json",
+      "raw_sha256": "b8f110c31b10e2aaf977c18cf3d5f69daa6830b726f7049b708af05d0ec06a62",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 768058200,
+      "corporate_actions": {},
+      "meta_instrument_type": "INDEX"
+    },
+    {
+      "symbol": "SOXX",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SOXX?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "SOXX.json",
+      "raw_sha256": "20fcbc3196105c7acf6eccc2d8f390974338dddb59e3bf6814be37ff2bd7af02",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 995031000,
+      "corporate_actions": {
+        "dividends": {
+          "1585143000": {
+            "amount": 0.232,
+            "date": 1585143000
+          },
+          "1592227800": {
+            "amount": 0.187667,
+            "date": 1592227800
+          },
+          "1600867800": {
+            "amount": 0.356333,
+            "date": 1600867800
+          },
+          "1607956200": {
+            "amount": 0.249,
+            "date": 1607956200
+          },
+          "1616679000": {
+            "amount": 0.252,
+            "date": 1616679000
+          },
+          "1623331800": {
+            "amount": 0.170667,
+            "date": 1623331800
+          },
+          "1632490200": {
+            "amount": 0.385667,
+            "date": 1632490200
+          },
+          "1639405800": {
+            "amount": 0.291,
+            "date": 1639405800
+          },
+          "1640874600": {
+            "amount": 0.051667,
+            "date": 1640874600
+          },
+          "1648128600": {
+            "amount": 0.291667,
+            "date": 1648128600
+          },
+          "1654781400": {
+            "amount": 0.209333,
+            "date": 1654781400
+          },
+          "1664199000": {
+            "amount": 0.600667,
+            "date": 1664199000
+          },
+          "1670941800": {
+            "amount": 0.354,
+            "date": 1670941800
+          },
+          "1679578200": {
+            "amount": 0.357333,
+            "date": 1679578200
+          },
+          "1686144600": {
+            "amount": 0.217,
+            "date": 1686144600
+          },
+          "1695735000": {
+            "amount": 0.555333,
+            "date": 1695735000
+          },
+          "1703082600": {
+            "amount": 0.374333,
+            "date": 1703082600
+          },
+          "1711027800": {
+            "amount": 0.225,
+            "date": 1711027800
+          },
+          "1718112600": {
+            "amount": 0.31,
+            "date": 1718112600
+          },
+          "1727271000": {
+            "amount": 0.552,
+            "date": 1727271000
+          },
+          "1734445800": {
+            "amount": 0.358,
+            "date": 1734445800
+          },
+          "1742304600": {
+            "amount": 0.261,
+            "date": 1742304600
+          },
+          "1750080600": {
+            "amount": 0.483,
+            "date": 1750080600
+          },
+          "1758029400": {
+            "amount": 0.541,
+            "date": 1758029400
+          },
+          "1765895400": {
+            "amount": 0.436,
+            "date": 1765895400
+          },
+          "1773754200": {
+            "amount": 0.208,
+            "date": 1773754200
+          },
+          "1781530200": {
+            "amount": 0.283,
+            "date": 1781530200
+          },
+          "1789479000": {
+            "amount": 0.325,
+            "date": 1789479000
+          }
+        },
+        "splits": {
+          "1709821800": {
+            "date": 1709821800,
+            "numerator": 3.0,
+            "denominator": 1.0,
+            "splitRatio": "3:1"
+          }
+        }
+      },
+      "meta_instrument_type": "ETF"
+    },
+    {
+      "symbol": "SMH",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SMH?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "SMH.json",
+      "raw_sha256": "e1bd6f6f1b667ebbf7814cc54f059d5c0b5f367bc2e1e41382df13042aa2fed8",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1718,
+      "missing_rows": [],
+      "exchange_timezone": "America/New_York",
+      "first_trade_timestamp": 960211800,
+      "corporate_actions": {
+        "dividends": {
+          "1608561000": {
+            "amount": 0.751,
+            "date": 1608561000
+          },
+          "1640010600": {
+            "amount": 0.7865,
+            "date": 1640010600
+          },
+          "1671460200": {
+            "amount": 1.2005,
+            "date": 1671460200
+          },
+          "1702909800": {
+            "amount": 1.043,
+            "date": 1702909800
+          },
+          "1734964200": {
+            "amount": 1.071,
+            "date": 1734964200
+          },
+          "1766413800": {
+            "amount": 1.105,
+            "date": 1766413800
+          }
+        },
+        "splits": {
+          "1683293400": {
+            "date": 1683293400,
+            "numerator": 2.0,
+            "denominator": 1.0,
+            "splitRatio": "2:1"
+          }
+        }
+      },
+      "meta_instrument_type": "ETF"
+    },
+    {
+      "symbol": "^VIX",
+      "provider": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/^VIX?period1=1577836800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T14:55:40.445377+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "raw_file": "INDEX-VIX.json",
+      "raw_sha256": "b8d1bf942c4303c5f0442d48afead62d2e6f8512468f62f7e3bf34bf6c791626",
+      "first": "2020-01-02",
+      "last": "2026-11-02",
+      "rows": 1720,
+      "missing_rows": [
+        "2020-01-20",
+        "2020-02-17",
+        "2020-04-10",
+        "2020-05-25",
+        "2020-07-03",
+        "2020-09-07",
+        "2020-11-26",
+        "2020-12-25",
+        "2021-01-01",
+        "2021-01-18",
+        "2021-02-15",
+        "2021-04-02",
+        "2021-05-31",
+        "2021-07-05",
+        "2021-09-06",
+        "2021-11-25",
+        "2021-12-24",
+        "2022-01-17",
+        "2022-02-21",
+        "2022-04-15",
+        "2022-05-30",
+        "2022-06-20",
+        "2022-07-04",
+        "2022-09-05",
+        "2022-11-24",
+        "2022-12-26",
+        "2023-01-02",
+        "2023-01-16",
+        "2023-02-20",
+        "2023-04-07",
+        "2023-05-29",
+        "2023-06-19",
+        "2023-07-04",
+        "2023-09-04",
+        "2023-11-23",
+        "2023-12-25",
+        "2024-01-01",
+        "2024-01-15",
+        "2024-02-19",
+        "2024-03-29",
+        "2024-05-27",
+        "2024-06-19",
+        "2024-07-04",
+        "2024-09-02",
+        "2024-11-28",
+        "2024-12-25",
+        "2025-01-01",
+        "2025-01-09",
+        "2025-01-20",
+        "2025-02-17",
+        "2025-04-18",
+        "2025-05-26",
+        "2025-06-19",
+        "2025-07-04",
+        "2025-09-01",
+        "2025-11-27",
+        "2025-12-25",
+        "2026-01-01",
+        "2026-01-19",
+        "2026-02-16",
+        "2026-04-03",
+        "2026-06-19",
+        "2026-07-03"
+      ],
+      "exchange_timezone": "America/Chicago",
+      "first_trade_timestamp": 631267200,
+      "corporate_actions": {},
+      "meta_instrument_type": "INDEX"
+    }
+  ],
+  "limitations": [
+    "Original publication timestamps/vintages not independently archived",
+    "Fixed current survivors; no historical neutral universe",
+    "Provider OHLC/actions use split-adjusted terminal share units; nominal views reconstructed explicitly",
+    "NBIS pre-resumption YNDX/suspension history excluded from investable universe"
+  ],
+  "artifact_sha256": {
+    "AMZN.json": "b8698534923673e214526f7ab2712c9fbe6a543769cfd4bbe84a4ad92d1b9656",
+    "META.json": "ee1769be4b2b2dcd12d05c87ed4c4e71d5c380b24a154b3aa5893fa3cd620124",
+    "prices.csv": "3c7cabc90b9a2dff083ec0abbfbf360e5fd9be54fcfc058700a4d772a58169c3",
+    "INDEX-SOX.json": "b8f110c31b10e2aaf977c18cf3d5f69daa6830b726f7049b708af05d0ec06a62",
+    "QQQ.json": "dec95a87c1de22f07fdde3f12d5ae81cb67c3b9653c663f2308d8a822be42cac",
+    "TSM.json": "e20c8cfd3b592feac8c8c978ce68d0e5e6cc6c8a07a07216beb49fdac6caa78a",
+    "SOXX.json": "20fcbc3196105c7acf6eccc2d8f390974338dddb59e3bf6814be37ff2bd7af02",
+    "MU.json": "ae35fdc6db9e95102256bc383709438708abed873523dda8eff1a6720f369b11",
+    "NVDA.json": "84f4e365d6dc949c4248e381fa630fac45d9171ea8ae7083b1eefe6508bf6a6e",
+    "INDEX-VIX.json": "b8d1bf942c4303c5f0442d48afead62d2e6f8512468f62f7e3bf34bf6c791626",
+    "AVGO.json": "6618029ca8c0dbaf366bda46bb1a725d1500a21670ed083bd6ae8f78006012e4",
+    "INDEX-GSPC.json": "152cf542d6855acaeb5ec4bab24bf3a5b535c25b47d0f95276df992217ac14b5",
+    "PLTR.json": "6193fdaa6b2cf0c87a5953443ad460883a499da884a475b2ba67c9a93b0db5ef",
+    "SPY.json": "341f583f2251598219d7eea481ea5d0484652141d87d44a7590afe4373006c76",
+    "AMD.json": "646c68b8757c43c4aadbf57cd63b972889c711bf58f941ce00b8276f035fd6d7",
+    "SMH.json": "e1bd6f6f1b667ebbf7814cc54f059d5c0b5f367bc2e1e41382df13042aa2fed8",
+    "NBIS.json": "f9ea60cd95a8c2232c4eee5be22ac65f0173a09c74934e64175d47ce317f67dd",
+    "LRCX.json": "36b53292ea497d64bc0552ec77143bc0fbb3aaaab4b0cbe824c4155caa5e901e",
+    "AMAT.json": "5b2669a6518db12b48666dc0acc8b83d537ce5fd36356bb0ba6080525c2a7210",
+    "INDEX-IXIC.json": "6646ad49bac279d435747dc61ba0f68a229f9e4068da89c5857ae9f1788be2fb"
+  }
+}
