@@ -1,0 +1,7 @@
+{
+  "source": "PR9 frozen source from PR10 snapshot",
+  "only_source_change": "Study start2026-09-01 ->2021-01-01; no rule/threshold changes",
+  "full_original_fundamental_engine_replayed": false,
+  "policy_only": true,
+  "vix_and_rates_do_not_enter_sale_or_recovery_rules": true
+}

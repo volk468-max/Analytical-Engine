@@ -1,0 +1,76 @@
+{
+  "read_only_snapshots": [
+    {
+      "local": "reports/fixed-5pct-buyback-v1/inputs/inputs.json",
+      "source_commit": "7135c2bdc0653986d93dfcfc66b202a6fb2f741e",
+      "source_path": "reports/october-risk-failure-audit-v2/completion/inputs.json",
+      "sha256": "234e098739e672dae976309e4993f682f4957fa8bac087e7849a54060d935cd6",
+      "bytes": 592771
+    },
+    {
+      "local": "reports/fixed-5pct-buyback-v1/inputs/warning-timeline.csv",
+      "source_commit": "7135c2bdc0653986d93dfcfc66b202a6fb2f741e",
+      "source_path": "reports/october-risk-failure-audit-v2/completion/warning-timeline.csv",
+      "sha256": "62df820ba3d307efcb0c5db2c0b70ba807a10ee7c74d052554f1834901aa4e28",
+      "bytes": 3347
+    },
+    {
+      "local": "reports/fixed-5pct-buyback-v1/inputs/session-calendar.csv",
+      "source_commit": "7135c2bdc0653986d93dfcfc66b202a6fb2f741e",
+      "source_path": "reports/october-risk-failure-audit-v2/completion/session-calendar.csv",
+      "sha256": "537acf38ae25d7955af0f81ba7ca5dddfdfedca4d0cde661a035b230ba44ae6b",
+      "bytes": 5074
+    },
+    {
+      "local": "reports/fixed-5pct-buyback-v1/inputs/strategy-economics.csv",
+      "source_commit": "7135c2bdc0653986d93dfcfc66b202a6fb2f741e",
+      "source_path": "reports/october-risk-failure-audit-v2/completion/strategy-economics.csv",
+      "sha256": "46b72cac2c4ffe32fd43dbad07544f7caf37e9f978621eac622da8a93363731f",
+      "bytes": 19142
+    },
+    {
+      "local": "reports/fixed-5pct-buyback-v1/inputs/daily-equity.csv",
+      "source_commit": "7135c2bdc0653986d93dfcfc66b202a6fb2f741e",
+      "source_path": "reports/october-risk-failure-audit-v2/completion/daily-equity.csv",
+      "sha256": "1de6e3d7b21776fcb3b1e0057837c94be7a3b3b437195a18191b28456ce3204e",
+      "bytes": 304946
+    },
+    {
+      "local": "reports/fixed-5pct-buyback-v1/inputs/trades.csv",
+      "source_commit": "7135c2bdc0653986d93dfcfc66b202a6fb2f741e",
+      "source_path": "reports/october-risk-failure-audit-v2/completion/trades.csv",
+      "sha256": "5ab5c79e900dcb0aca4a1adfa25da754edbade06603b8c5a7aecb6ed61754c24",
+      "bytes": 27327
+    },
+    {
+      "local": "reports/fixed-5pct-buyback-v1/inputs/data-coverage.csv",
+      "source_commit": "7135c2bdc0653986d93dfcfc66b202a6fb2f741e",
+      "source_path": "reports/october-risk-failure-audit-v2/completion/data-coverage.csv",
+      "sha256": "11c5486cc18715ee8fd65dae6b65980521b0808d72aa424fb865a3ec5e1abcfc",
+      "bytes": 2772
+    },
+    {
+      "local": "reports/fixed-5pct-buyback-v1/inputs/data-coverage.md",
+      "source_commit": "7135c2bdc0653986d93dfcfc66b202a6fb2f741e",
+      "source_path": "reports/october-risk-failure-audit-v2/completion/data-coverage.md",
+      "sha256": "bb6eabd486a2b7ba42037ec9bc844a2d7c3efbbd2f255360f808f928a87a3a7e",
+      "bytes": 5384
+    },
+    {
+      "local": "reports/fixed-5pct-buyback-v1/inputs/data/manifest.json",
+      "source_commit": "7135c2bdc0653986d93dfcfc66b202a6fb2f741e",
+      "source_path": "reports/october-risk-failure-audit-v2/completion/data/manifest.json",
+      "sha256": "68cc3812038e60377c0f00a3e4049ebadb6ec419e52d6d6b9853407672a6488d",
+      "bytes": 31060
+    },
+    {
+      "local": "reports/fixed-5pct-buyback-v1/inputs/pr9-audit.cjs",
+      "source_commit": "7135c2bdc0653986d93dfcfc66b202a6fb2f741e",
+      "source_path": "research/october-risk-failure-audit-v2/audit.cjs",
+      "sha256": "4c54ac17cdcc14267c892bb266ca6b53880fc927a966364f98a4c9d2732c4b0b",
+      "bytes": 9844
+    }
+  ],
+  "original_production_signals": false,
+  "long_history_signals": "NOT_AVAILABLE_IN_THIS_FROZEN_PACK"
+}

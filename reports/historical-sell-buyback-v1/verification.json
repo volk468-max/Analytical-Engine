@@ -1,0 +1,24 @@
+{
+  "verified_published_commit": "17666c64cc173be726365da905e63b10c95e2c4c",
+  "verified_published_tree_sha": "123f6a299b068534f71c9d0b4db68524eb40043d",
+  "verification_method": "GitHub API uploaded blob SHAs and full tree SHA matched the local immutable Git tree;8critical source files read back through GitHub API;fresh independent materialization of that exact tree reran the full offline pipeline",
+  "critical_GitHub_source_readbacks": 8,
+  "reproduced_files_byte_identical": 107,
+  "python_tests_passed": 54,
+  "python_tests_failed": 0,
+  "environment_deprecation_warnings": 1,
+  "control_sector_states_equal": 44,
+  "control_signal_dates_equal": 4,
+  "control_PR10_generated_files_byte_identical": 15,
+  "adapted_PR10_engine_cases_equal": 66,
+  "long_signal_count": 134,
+  "trading_sessions": 1465,
+  "parameter_optimization": false,
+  "original_production_signals_confirmed": false,
+  "limitations": [
+    "Original publication timestamps and corporate vintages not independently attested",
+    "Fixed current survivors;delisted historical panel unavailable",
+    "Daily OHLC fill assumptions and queue/volume uncertainty",
+    "Gross ex-date dividend receivable;actual payment dates/taxes/ADRfees unavailable"
+  ]
+}
