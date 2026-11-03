@@ -1,0 +1,339 @@
+{
+  "checkpoint": "5f354a2400766027cc3e7e4874ff6d3205460094",
+  "scope": "PARTIAL_AUDIT_NOT_COMPLETE_TO_NOV2",
+  "verification": {
+    "remoteFilesReread": 6,
+    "remotePureTestsPassed": 29,
+    "regeneratedFilesEqual": 21,
+    "missingProbabilityFields": 0
+  },
+  "expected_content_blob_checks": [
+    {
+      "path": "reports/october-risk-failure-audit-v2/daily-market-chronology.csv",
+      "git_blob_sha1": "78f931880a7496a9ea8f4665a209fdbb0db3152e",
+      "bytes": 12943,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/daily-stock-chronology.csv",
+      "git_blob_sha1": "2fd282ca12c9e8b486c6e7c333d3fddd8dd25275",
+      "bytes": 93778,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/drawdown-events.csv",
+      "git_blob_sha1": "4bd465cf1d0f45304b3945b05c7d030ff68e743f",
+      "bytes": 2433,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/october-local-events.csv",
+      "git_blob_sha1": "3f1dd9818e55140dfcbdaa83e890d18404a43005",
+      "bytes": 2190,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/stock-audit.csv",
+      "git_blob_sha1": "426002f829a6faba34df1bcd0ca89472b993a3b9",
+      "bytes": 2711,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/warning-catalog.csv",
+      "git_blob_sha1": "06e96b486cb4e3a948a6044b7451bd01c9b0dc2b",
+      "bytes": 59479,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/warning-outcomes.csv",
+      "git_blob_sha1": "73cd9fe394a2803890e26921dbc149ec5a983962",
+      "bytes": 16126,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/false-warnings.csv",
+      "git_blob_sha1": "0285ea333200da1faa5b9d54e4dd42d505167e52",
+      "bytes": 988,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/strategy-comparison.csv",
+      "git_blob_sha1": "38def2fe6e828a206f73775a2b4b8892ae19c6f7",
+      "bytes": 14789,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/october-independent-comparison.csv",
+      "git_blob_sha1": "c7cac7c9bb298e7399a902766f71d00b69a5c151",
+      "bytes": 10119,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/trades.csv",
+      "git_blob_sha1": "e444cc65b6cbdef777919d308779b2e4fde3e4fb",
+      "bytes": 23388,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/daily-equity.csv",
+      "git_blob_sha1": "56285cabd080309d34b8f6c7639177e3ce668844",
+      "bytes": 255339,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/recovery-analysis.csv",
+      "git_blob_sha1": "16acf8dad2a52c22b2818a8c3893e27551c40dbe",
+      "bytes": 11100,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/hypothesis-checks.csv",
+      "git_blob_sha1": "6ad27c50bd8ddfd81fb51a6bedc5e8d8c3aa5f27",
+      "bytes": 367,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/data-coverage.csv",
+      "git_blob_sha1": "ca223d519817ce3b7c420a8891d35bfa6172fc41",
+      "bytes": 2413,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/test-results.json",
+      "git_blob_sha1": "96d85b99b7eca18b328495b9ecafa9ccef7106bf",
+      "bytes": 2955,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/executive-summary-ru.md",
+      "git_blob_sha1": "ecc0ec9039269584dda713327d2f2c86e267c154",
+      "bytes": 3486,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/report.md",
+      "git_blob_sha1": "13fab10d95910e477770af78360f5c86c090ba4c",
+      "bytes": 12184,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/auto-support.md",
+      "git_blob_sha1": "ee1e1800f798ff2d67850bc08b714f19f8959ef0",
+      "bytes": 1564,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/validation.md",
+      "git_blob_sha1": "b1330c582b6d042ec9069deba2cd035eaaebbbdf",
+      "bytes": 2843,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/run-metadata.json",
+      "git_blob_sha1": "3aec5d1ee93daaa8280b9c1337c6025fec544690",
+      "bytes": 1065,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/protocol.md",
+      "git_blob_sha1": "4c1a2601ee0810546eb05cde041228e0b178de26",
+      "bytes": 4131,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/inputs.json",
+      "git_blob_sha1": "36c5f52d73334de1b7b0de76ca08c2a5b33f9d82",
+      "bytes": 572772,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/sources.json",
+      "git_blob_sha1": "01d2a1d50ce2bcb3fc15b144aedb987806f80cf0",
+      "bytes": 88874,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/saved-research-signals.json",
+      "git_blob_sha1": "2127d17fc1ef72d9fffce61cce6812c2dd72d7ac",
+      "bytes": 63593,
+      "remote_match": true
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/source-overlap.json",
+      "git_blob_sha1": "4ad0b46c1d4ba322127914f5768861b3ea8dba83",
+      "bytes": 45948,
+      "remote_match": true
+    },
+    {
+      "path": "research/october-risk-failure-audit-v2/audit.cjs",
+      "git_blob_sha1": "72aa18f9c2e858bd58240be36ebcc77f9f91a587",
+      "bytes": 9844,
+      "remote_match": true
+    },
+    {
+      "path": "research/october-risk-failure-audit-v2/test.cjs",
+      "git_blob_sha1": "dff3ef592674e2583f35e707ac763d1cb857fd4e",
+      "bytes": 7634,
+      "remote_match": true
+    },
+    {
+      "path": "research/october-risk-failure-audit-v2/build.cjs",
+      "git_blob_sha1": "7249e520e63b7fa654e8da85b0db98fbe5697c10",
+      "bytes": 25842,
+      "remote_match": true
+    }
+  ],
+  "files": [
+    {
+      "path": "reports/october-risk-failure-audit-v2/auto-support.md",
+      "git_blob_sha1": "ee1e1800f798ff2d67850bc08b714f19f8959ef0",
+      "bytes": 1564
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/daily-equity.csv",
+      "git_blob_sha1": "56285cabd080309d34b8f6c7639177e3ce668844",
+      "bytes": 255339
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/daily-market-chronology.csv",
+      "git_blob_sha1": "78f931880a7496a9ea8f4665a209fdbb0db3152e",
+      "bytes": 12943
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/daily-stock-chronology.csv",
+      "git_blob_sha1": "2fd282ca12c9e8b486c6e7c333d3fddd8dd25275",
+      "bytes": 93778
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/data-coverage.csv",
+      "git_blob_sha1": "ca223d519817ce3b7c420a8891d35bfa6172fc41",
+      "bytes": 2413
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/drawdown-events.csv",
+      "git_blob_sha1": "4bd465cf1d0f45304b3945b05c7d030ff68e743f",
+      "bytes": 2433
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/executive-summary-ru.md",
+      "git_blob_sha1": "ecc0ec9039269584dda713327d2f2c86e267c154",
+      "bytes": 3486
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/false-warnings.csv",
+      "git_blob_sha1": "0285ea333200da1faa5b9d54e4dd42d505167e52",
+      "bytes": 988
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/hypothesis-checks.csv",
+      "git_blob_sha1": "6ad27c50bd8ddfd81fb51a6bedc5e8d8c3aa5f27",
+      "bytes": 367
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/inputs.json",
+      "git_blob_sha1": "36c5f52d73334de1b7b0de76ca08c2a5b33f9d82",
+      "bytes": 572772
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/october-independent-comparison.csv",
+      "git_blob_sha1": "c7cac7c9bb298e7399a902766f71d00b69a5c151",
+      "bytes": 10119
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/october-local-events.csv",
+      "git_blob_sha1": "3f1dd9818e55140dfcbdaa83e890d18404a43005",
+      "bytes": 2190
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/protocol.md",
+      "git_blob_sha1": "4c1a2601ee0810546eb05cde041228e0b178de26",
+      "bytes": 4131
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/recovery-analysis.csv",
+      "git_blob_sha1": "16acf8dad2a52c22b2818a8c3893e27551c40dbe",
+      "bytes": 11100
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/report.md",
+      "git_blob_sha1": "13fab10d95910e477770af78360f5c86c090ba4c",
+      "bytes": 12184
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/run-metadata.json",
+      "git_blob_sha1": "3aec5d1ee93daaa8280b9c1337c6025fec544690",
+      "bytes": 1065
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/saved-research-signals.json",
+      "git_blob_sha1": "2127d17fc1ef72d9fffce61cce6812c2dd72d7ac",
+      "bytes": 63593
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/source-overlap.json",
+      "git_blob_sha1": "4ad0b46c1d4ba322127914f5768861b3ea8dba83",
+      "bytes": 45948
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/sources.json",
+      "git_blob_sha1": "01d2a1d50ce2bcb3fc15b144aedb987806f80cf0",
+      "bytes": 88874
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/stock-audit.csv",
+      "git_blob_sha1": "426002f829a6faba34df1bcd0ca89472b993a3b9",
+      "bytes": 2711
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/strategy-comparison.csv",
+      "git_blob_sha1": "38def2fe6e828a206f73775a2b4b8892ae19c6f7",
+      "bytes": 14789
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/test-results.json",
+      "git_blob_sha1": "96d85b99b7eca18b328495b9ecafa9ccef7106bf",
+      "bytes": 2955
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/trades.csv",
+      "git_blob_sha1": "e444cc65b6cbdef777919d308779b2e4fde3e4fb",
+      "bytes": 23388
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/validation.md",
+      "git_blob_sha1": "b1330c582b6d042ec9069deba2cd035eaaebbbdf",
+      "bytes": 2843
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/warning-catalog.csv",
+      "git_blob_sha1": "06e96b486cb4e3a948a6044b7451bd01c9b0dc2b",
+      "bytes": 59479
+    },
+    {
+      "path": "reports/october-risk-failure-audit-v2/warning-outcomes.csv",
+      "git_blob_sha1": "73cd9fe394a2803890e26921dbc149ec5a983962",
+      "bytes": 16126
+    },
+    {
+      "path": "research/october-risk-failure-audit-v2/audit.cjs",
+      "git_blob_sha1": "72aa18f9c2e858bd58240be36ebcc77f9f91a587",
+      "bytes": 9844
+    },
+    {
+      "path": "research/october-risk-failure-audit-v2/build.cjs",
+      "git_blob_sha1": "7249e520e63b7fa654e8da85b0db98fbe5697c10",
+      "bytes": 25842
+    },
+    {
+      "path": "research/october-risk-failure-audit-v2/run.cjs",
+      "git_blob_sha1": "5602b4af83741fde59084241cb9a9e6a4338f7f6",
+      "bytes": 868
+    },
+    {
+      "path": "research/october-risk-failure-audit-v2/test.cjs",
+      "git_blob_sha1": "dff3ef592674e2583f35e707ac763d1cb857fd4e",
+      "bytes": 7634
+    }
+  ],
+  "self_exclusion": "This manifest describes the preceding checkpoint; its own hash is the Git blob in the final commit."
+}
