@@ -1,5 +1,5 @@
 "use strict";
-function runTests(A){
+function runTests(A,input){
  const checks=[];function test(name,fn){try{fn();checks.push({name,passed:true});}catch(e){checks.push({name,passed:false,error:String(e)});}}
  function ok(x,msg="assertion failed"){if(!x)throw Error(msg);}
  function near(x,y,t=1e-7){ok(Math.abs(x-y)<t,"not close: "+x+" / "+y);}
@@ -27,9 +27,17 @@ function runTests(A){
  test("target is low hit within horizon not terminal return",()=>{let f=fixture([100,94,110],[false,false,false]),r=A.outcomes(f.bars,[{date:f.bars[0].date}],2);ok(r[0].down5_hit&&r[0].terminal_return_pct>0);});
  test("duplicate sessions rejected",()=>{let f=fixture([100],[false]),threw=false;try{A.group([...f.bars,...f.bars]);}catch{threw=true;}ok(threw);});
  test("zero-delay execution rejected",()=>{let f=fixture([100],[false]),threw=false;try{A.simulate(f.bars,f.market,[],.1,0);}catch{threw=true;}ok(threw);});
+ if(input){
+ test("archived prices obey OHLC and unique-date invariants",()=>{const g=A.group(input.prices);for(const rows of Object.values(g))for(const r of rows)ok(r.low<=Math.min(r.open,r.close)&&r.high>=Math.max(r.open,r.close)&&r.available_at.slice(0,10)>r.date);});
+ test("VIX unavailable by decision is withheld",()=>{const copy=JSON.parse(JSON.stringify(input));for(const r of copy.vix)r.available_at="2027-01-01T00:00:00Z";ok(A.market(copy).rows.every(r=>r.vix===null&&r.vix_change_flag===null));});
+ test("later prices cannot change earlier market calculations",()=>{const a=A.market(input).rows.filter(r=>r.date<="2026-09-30"),copy=JSON.parse(JSON.stringify(input));copy.prices=copy.prices.filter(r=>r.date<="2026-09-30");copy.vix=copy.vix.filter(r=>r.date<="2026-09-30");const b=A.market(copy).rows;ok(JSON.stringify(a)===JSON.stringify(b));});
+ test("macro observation dates never exceed calculation dates",()=>{ok(A.market(input).rows.every(r=>r.dgs10_observation_date===null||r.dgs10_observation_date<=r.date));});
+ test("research output never labels an original production action",()=>{const r=A.run(input);ok(r.stock.every(x=>x.actual_production_action===null&&x.production_status==="UNKNOWN_NOT_ACCESSED"));ok(r.market.every(x=>!x.confirmed_trade_signal));});
+ test("no corporate split occurs inside available audit window",()=>{ok(!input.actions.some(a=>a.kind==="splits"&&a.date>=A.START&&a.date<=input.data_end));});
+ }
  return checks;
 }
 if(typeof module!=="undefined"){
  module.exports=runTests;
- if(require.main===module){const r=runTests(require("./audit.cjs"));console.log(JSON.stringify(r,null,2));if(r.some(x=>!x.passed))process.exitCode=1;}
+ if(require.main===module){const r=runTests(require("./audit.cjs"),require("../../reports/october-risk-failure-audit-v2/inputs.json"));console.log(JSON.stringify(r,null,2));if(r.some(x=>!x.passed))process.exitCode=1;}
 }
