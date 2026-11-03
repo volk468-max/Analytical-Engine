@@ -1,0 +1,54 @@
+{
+  "gate": {
+    "gate_passed": true,
+    "source_commit": "ef1a3a76c1c0d455f48a9d787f1c04961c244b91",
+    "source_files_verified": 37,
+    "signal_dates": [
+      "2026-09-01",
+      "2026-09-14",
+      "2026-10-08",
+      "2026-11-02"
+    ],
+    "sector_daily_rows_equal": 44,
+    "exact_PR10_generated_files_equal": 15,
+    "adapted_engine_control_cases_equal": 66,
+    "long_economics_authorized_only_after_this_gate": true
+  },
+  "scenarios": 74,
+  "variants": {
+    "RESERVED11": [
+      "AMD",
+      "NVDA",
+      "MU",
+      "TSM",
+      "AVGO",
+      "AMAT",
+      "AMZN",
+      "META",
+      "PLTR",
+      "LRCX",
+      "NBIS"
+    ],
+    "COMPARABLE10": [
+      "AMD",
+      "NVDA",
+      "MU",
+      "TSM",
+      "AVGO",
+      "AMAT",
+      "AMZN",
+      "META",
+      "PLTR",
+      "LRCX"
+    ]
+  },
+  "primary_configs": 5,
+  "source_snapshot": "Yahoo2020warmup..2026-11-02",
+  "sectors_reconstructed_not_production": true,
+  "full_period_days": 1465,
+  "signal_count": 134,
+  "parameter_optimization": false,
+  "risk_free_rate": 0,
+  "corporate_ledger": "CONSTANT_SPLIT_UNITS_WITH_EXPLICIT_CONTEMPORANEOUS_NOMINAL_REPORTS",
+  "prior_strategy_status": "OPTIONAL_NOT_YET_INCLUDED"
+}
