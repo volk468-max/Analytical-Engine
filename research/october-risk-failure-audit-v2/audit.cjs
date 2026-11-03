@@ -15,10 +15,11 @@ function market(input){
  const ds=g.QQQ.map(r=>r.date);
  const rates=input.rates.map(r=>{const k=ds.findIndex(d=>d>=r.date);const pub=ds[k+2];return {...r,available_at:k>=0&&pub?new Date(Date.parse(pub+"T00:00:00Z")+86400000).toISOString():null};});
  const all=ds.map(date=>{
-  const q=lookup.QQQ[date],v=vm[date],ss=SEMIS.map(s=>lookup[s]?.[date]);
+  const q=lookup.QQQ[date],candidate=vm[date],ss=SEMIS.map(s=>lookup[s]?.[date]);
   const complete=ss.every(x=>x&&x.ret5!==null),neg=complete?ss.filter(x=>x.ret5<0).length:null;
   const sectorRet=complete?avg(ss.map(x=>x.ret5)):null;
   const available_at=new Date(Date.parse(date+"T00:00:00Z")+86400000).toISOString();
+  const v=candidate&&candidate.available_at<=available_at?candidate:null;
   const known=rates.filter(r=>r.available_at&&r.available_at<=available_at&&r.date<=date).at(-1);
   return {date,available_at,publication_status:"ASSUMED_TIMES_NOT_VERIFIED",qqq_close:q.close,qqq_ret5:q.ret5,qqq_ma20:q.ma20,
    sox_close:lookup.SOX?.[date]?.close??null,sector_negative_7:neg,sector_ret5:sectorRet,
@@ -98,7 +99,7 @@ function simulate(a,marketRows,actions,fraction,delay=1){
   daily.push({symbol:r.symbol,date:r.date,fraction,delay,shares,cash,dividend_receivable:receivable,equity,stock_value:shares*r.close,drawdown_pct:100*(equity/peak-1),shares_fraction:shares/original,sector_flag:market.sector_flag,pending:pending?.side??null});
  }
  const last=daily.at(-1);
- return {daily,trades,summary:{symbol:bars[0].symbol,fraction,delay,initial_capital:capital,last_valued_date:last.date,requested_end:END,coverage:"TRUNCATED_OCT22_NOT_NOV2",final_equity:last.equity,return_pct:100*(last.equity/capital-1),maximum_drawdown_pct:100*dd,fees:totalFees,slippage:totalSlip,sales:trades.filter(t=>t.kind==="SELL").length,rebuys:trades.filter(t=>t.kind==="BUY").length,shares_deficit:original-shares,shares_deficit_pct:100*(1-shares/original),cash,dividend_receivable:receivable,unfilled_order:pending?.side??null,cycles,restore_status:shares<original-1e-7?"INCOMPLETE_OR_UNAFFORDABLE":"FULL_SHARES",validated_production_signal:false}};
+ return {daily,trades,summary:{symbol:bars[0].symbol,fraction,delay,initial_capital:capital,last_valued_date:last.date,initial_date:bars[0].date,requested_end:END,coverage:"TRUNCATED_OCT22_NOT_NOV2",final_equity:last.equity,return_pct:100*(last.equity/capital-1),maximum_drawdown_pct:100*dd,fees:totalFees,slippage:totalSlip,sales:trades.filter(t=>t.kind==="SELL").length,rebuys:trades.filter(t=>t.kind==="BUY").length,shares_deficit:original-shares,shares_deficit_pct:100*(1-shares/original),cash,dividend_receivable:receivable,unfilled_order:pending?.side??null,cycles,restore_status:shares<original-1e-7?"INCOMPLETE_OR_UNAFFORDABLE":"FULL_SHARES",validated_production_signal:false}};
 }
 function run(input){
  const m=market(input),ws=warnings(m),catalog=STOCKS.flatMap(s=>outcomes(m.g[s],ws)),ev=STOCKS.flatMap(s=>events(m.g[s]));
