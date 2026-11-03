@@ -58,10 +58,13 @@ def simulate(bars, signals, calendar, fraction=0, threshold=.05, mode='limit', d
             lot[f'max_drop_{n}_pct']=lot[f'observed_max_drop_{n}_pct'] if len(future)==n else None
             hit=next((b for b in future if b['low']<=lot['sale_price']*.95),None);lot[f'down5_{n}']=bool(hit) if len(future)==n else None
         hit=next((b for b in after if b['low']<=lot['sale_price']*.95),None);lot['down5_observed_date']=hit['date'] if hit else None;lot['down5_wait_sessions']=dates.index(hit['date'])-i if hit else None
+        lot['sale_session_low_drop_pct']=100*max(0,1-bars[i]['low']/lot['sale_price'])
+        lot['sale_session_low5_hit']=bars[i]['low']<=lot['sale_price']*.95
+        lot['first_down5_including_sale_session']=lot['sale_date'] if lot['sale_session_low5_hit'] else lot['down5_observed_date']
         lot['terminal10_return_pct']=100*(after[9]['close']/lot['sale_price']-1) if len(after)>=10 else None
         lot['false_sale_10']=not lot['down5_10'] if lot['horizon_10_complete'] else None
-        lot['runup_before_fill_day_pct']=100*(max([lot['sale_price']]+[b['high'] for b in until])/lot['sale_price']-1)
-        lot['runup_possible_including_fill_day_pct']=100*(max([lot['sale_price']]+[b['high'] for b in inclusive])/lot['sale_price']-1)
+        lot['runup_before_fill_day_pct']=100*(max([lot['sale_price'],bars[i]['high']]+[b['high'] for b in until])/lot['sale_price']-1)
+        lot['runup_possible_including_fill_day_pct']=100*(max([lot['sale_price'],bars[i]['high']]+[b['high'] for b in inclusive])/lot['sale_price']-1)
         lot['intraday_order_unknown']=lot.get('fill_kind')=='INTRADAY_TOUCH'
         lot['gross_savings']=lot['quantity']*(lot['sale_price']-lot['buy_price']) if lot['buy_date'] else None
         lot['realized_net_cash_surplus']=lot['gross_savings']-lot['sale_fee']-lot['buy_fee'] if lot['buy_date'] else None

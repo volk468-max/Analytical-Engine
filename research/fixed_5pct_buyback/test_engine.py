@@ -59,7 +59,7 @@ def test_incomplete_horizon_not_false_sale():
 def test_horizon_uses_low_not_final_close():
     l=run([100,100]+[(100,110,111,80)]+[110]*10)['lots'][0];assert l['down5_10'] and l['terminal10_return_pct']>0
 def test_open_gap_runup_does_not_count_after_buy_high():
-    l=run([100,100,(80,120,150,79)])['lots'][0];assert l['runup_possible_including_fill_day_pct']==0
+    l=run([100,100,(80,120,150,79)])['lots'][0];assert math.isclose(l['runup_possible_including_fill_day_pct'],100*(101/l['sale_price']-1))
 def test_intraday_fill_high_order_is_marked_unknown():assert run([100,100,(100,100,150,90)])['lots'][0]['intraday_order_unknown']
 def test_ex_dividend_sale_day_held_preopen():
     b,s,c=fixture([100,100,90]);b[1]['dividend']=1;r=simulate(b,s,c,fraction=.1);assert math.isclose(r['summary']['dividend_receivable'],r['summary']['original_shares'])
