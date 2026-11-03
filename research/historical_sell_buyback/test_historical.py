@@ -76,3 +76,16 @@ def test_limit_corporate_unit_conversion():
         assert abs(float(l['limit_price'])-float(l['sale_price'])*.95)<1e-8
         if l['buy_price']:assert float(l['buy_price'])<=float(l['limit_price'])+1e-9
 def test_signal_quality_not_production():assert all(x['original_production_signal']=='False' for x in rows('signal-quality.csv'))
+def test_prior_adapter_only_changes_study_start():
+    raw=(R/'control/pr10/reports/fixed-5pct-buyback-v1/inputs/pr9-audit.cjs').read_text()
+    assert (R/'prior-period-only.cjs').read_text()==raw.replace('const START="2026-09-01"','const START="2021-01-01"',1)
+def test_prior_ledger_reconciles():
+    for x in rows('prior-daily.csv'):assert abs(float(x['equity'])-float(x['cash'])-float(x['stock_value'])-float(x['dividend_receivable']))<1e-6
+def test_all_eligible_cohort_kept_separate_from_actual_trades():
+    q=rows('signal-quality-all-eligible.csv');assert all(x['cohort'].startswith('HYPOTHETICAL_') for x in q)
+    assert sum(x['execution_status']=='OUTSIDE_WINDOW_NO_PRICE' for x in q)==11
+def test_terminal_delta_from_realized_open_and_dividends():
+    for x in rows('portfolio-comparison.csv'):
+        if x['mode']=='PR9_ORIGINAL':continue
+        delta=float(x['realized_savings'])+float(x['open_marked_benefit'])-float(x['missed_dividends'])
+        assert abs(delta-float(x['excess_vs_buyhold']))<1e-5

@@ -50,5 +50,7 @@
   "parameter_optimization": false,
   "risk_free_rate": 0,
   "corporate_ledger": "CONSTANT_SPLIT_UNITS_WITH_EXPLICIT_CONTEMPORANEOUS_NOMINAL_REPORTS",
-  "prior_strategy_status": "OPTIONAL_NOT_YET_INCLUDED"
+  "prior_strategy_status": "UNCHANGED_POLICY_PERIOD_ONLY_ADAPTER_REPLAYED",
+  "prior_source_sha256": "4c54ac17cdcc14267c892bb266ca6b53880fc927a966364f98a4c9d2732c4b0b",
+  "prior_adapter_sha256": "02d917e2fc353fad6fed08c39f9b3431af34e4f8486f8f810bc1b12b5a996efe"
 }
