@@ -1,0 +1,6 @@
+portfolio,fraction,delay,initial_capital,final_equity,maximum_drawdown_pct,weights,cash,excess_vs_buyhold
+MODEL_EQUAL11,0,1,100000,90888.5551146726,21.517524131553188,11 equal initial capital sleeves; no rebalancing; all per-stock quantities scaled1/11,0,0
+MODEL_EQUAL11,0.05,1,100000,90701.12220321584,21.452716638682666,11 equal initial capital sleeves; no rebalancing; all per-stock quantities scaled1/11,462.43327820193883,-187.4329114567663
+MODEL_EQUAL11,0.1,1,100000,90513.68929175907,21.38753295741711,11 equal initial capital sleeves; no rebalancing; all per-stock quantities scaled1/11,924.8665564038787,-374.8658229135326
+MODEL_EQUAL11,0.05,2,100000,90633.67884662644,21.474879011674254,11 equal initial capital sleeves; no rebalancing; all per-stock quantities scaled1/11,472.08593055512375,-254.87626804616593
+MODEL_EQUAL11,0.1,2,100000,90378.80257858027,21.431946603089635,11 equal initial capital sleeves; no rebalancing; all per-stock quantities scaled1/11,944.1718611102461,-509.75253609233187
