@@ -1,0 +1,123 @@
+{
+  "runtime": "JavaScript V8 functions.exec pure functions; not Node CLI or pytest",
+  "passed": 29,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "initial buy includes fee and adverse slippage",
+      "passed": true
+    },
+    {
+      "name": "signal cannot fill same session",
+      "passed": true
+    },
+    {
+      "name": "persistent warning causes one sale",
+      "passed": true
+    },
+    {
+      "name": "adverse sell slippage and fee",
+      "passed": true
+    },
+    {
+      "name": "additional session delay changes fill date",
+      "passed": true
+    },
+    {
+      "name": "end-of-history order remains unfilled",
+      "passed": true
+    },
+    {
+      "name": "gap executes one order at actual next open",
+      "passed": true
+    },
+    {
+      "name": "three clear closes plus trend required for restoration",
+      "passed": true
+    },
+    {
+      "name": "clear signals without above-MA20 do not restore",
+      "passed": true
+    },
+    {
+      "name": "expensive restoration caps shares to available cash",
+      "passed": true
+    },
+    {
+      "name": "cash-limited incomplete restoration blocks next cycle under frozen rule",
+      "passed": true
+    },
+    {
+      "name": "no short position or borrowing",
+      "passed": true
+    },
+    {
+      "name": "dividend belongs to pre-open shares on sale ex-day",
+      "passed": true
+    },
+    {
+      "name": "NAV reconciles cash stock and dividend receivable",
+      "passed": true
+    },
+    {
+      "name": "future suffix does not change executed prefix",
+      "passed": true
+    },
+    {
+      "name": "prior support excludes current and later bars",
+      "passed": true
+    },
+    {
+      "name": "conditional main AUTO-support self-inclusion masks breach",
+      "passed": true
+    },
+    {
+      "name": "nested declines form one event until recovery",
+      "passed": true
+    },
+    {
+      "name": "unfinished event has no fabricated recovery",
+      "passed": true
+    },
+    {
+      "name": "short outcome horizon is not a false warning",
+      "passed": true
+    },
+    {
+      "name": "target is low hit within horizon not terminal return",
+      "passed": true
+    },
+    {
+      "name": "duplicate sessions rejected",
+      "passed": true
+    },
+    {
+      "name": "zero-delay execution rejected",
+      "passed": true
+    },
+    {
+      "name": "archived prices obey OHLC and unique-date invariants",
+      "passed": true
+    },
+    {
+      "name": "VIX unavailable by decision is withheld",
+      "passed": true
+    },
+    {
+      "name": "later prices cannot change earlier market calculations",
+      "passed": true
+    },
+    {
+      "name": "macro observation dates never exceed calculation dates",
+      "passed": true
+    },
+    {
+      "name": "research output never labels an original production action",
+      "passed": true
+    },
+    {
+      "name": "no corporate split occurs inside available audit window",
+      "passed": true
+    }
+  ]
+}
