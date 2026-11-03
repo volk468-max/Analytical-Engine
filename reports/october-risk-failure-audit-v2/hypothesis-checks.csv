@@ -1,0 +1,4 @@
+hypothesis,flag,first_window,first_october,source_status,production_signal
+sector_Oct8,sector_flag,2026-09-01,2026-10-08,ARCHIVED_RETROSPECTIVE_NOT_PROVIDER_VERIFIED,false
+broad_Oct14,broad_flag,2026-09-01,2026-10-14,ARCHIVED_RETROSPECTIVE_NOT_PROVIDER_VERIFIED,false
+VIX_Oct16,vix_change_flag,2026-09-10,2026-10-16,ARCHIVED_RETROSPECTIVE_NOT_PROVIDER_VERIFIED,false
