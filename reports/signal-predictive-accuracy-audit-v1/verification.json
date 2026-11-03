@@ -1,0 +1,31 @@
+{
+  "verified_published_commit": "12703192b494e394eb782c5992b25d71798d9152",
+  "verified_tree_sha": "702b810695fcc2a82d95f3c2316e2f6efb40de79",
+  "method": "GitHub uploaded blob identities/full tree matched immutable local tree;6critical source files actually read back via GitHub API;fresh independent materialization reran run/baselines/report/tests",
+  "published_files_byte_identical_after_reproduction": 50,
+  "python_passed": 37,
+  "python_failed": 0,
+  "environment_deprecation_warnings": 1,
+  "sector_formula_unchanged": true,
+  "unique_warning_dates": 134,
+  "original_production_payloads_obtained": 0,
+  "primary_stock_counts": {
+    "true_positive": 571,
+    "false_positive": 799,
+    "unknown": 4,
+    "unresolved": 11
+  },
+  "blocks": {
+    "primary": 60,
+    "sensitivity": [
+      20,
+      120
+    ],
+    "resamples": 1999
+  },
+  "source_GitHub_blob_checks": {
+    "PR11": 10,
+    "PR9": 2
+  },
+  "no_trading_or_production_changes": true
+}
