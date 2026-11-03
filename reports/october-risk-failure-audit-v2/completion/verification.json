@@ -1,0 +1,22 @@
+{
+  "verified_published_commit": "dfab255cdbdb0302e4a25cf5f4ecb7baa9f5f051",
+  "verified_published_completion_files": 70,
+  "byte_identical_after_clean_GitHub_worktree_reproduction": true,
+  "git_diff_empty_after_reproduction": true,
+  "python_tests_passed": 20,
+  "python_tests_failed": 0,
+  "javascript_original_checks_passed": 29,
+  "javascript_extended_checks_passed": 29,
+  "raw_source_sha256_checks_passed": 27,
+  "original_checkpoint_unchanged": "1ee2c0958b12c821723c1923ddc69bd23a454a55",
+  "scope": "Prices through Nov2; original production payloads and certified macro vintages unavailable; not full causal attribution",
+  "model_portfolio": {
+    "initial": 100000,
+    "buy_hold_final": 90888.5551146726,
+    "trim5_final": 90701.12220321584,
+    "trim10_final": 90513.68929175907,
+    "buy_hold_maxdd_pct": 21.517524131553188,
+    "trim5_maxdd_pct": 21.452716638682666,
+    "trim10_maxdd_pct": 21.38753295741711
+  }
+}
