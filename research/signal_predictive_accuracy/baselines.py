@@ -70,12 +70,13 @@ def main():
         for s in STOCKS if cohort=='STOCK' else MARKETS:assets[cohort,s]=[x['stock_scores'].get(s) if x['sector_warning'] and x['complete10'] else None for x in data]
     source_values={cohort:[x['score'] if x['sector_warning'] and x['complete10'] else None for x in data] for cohort,data in data_by_cohort.items()}
     missed=rows(R/'missed-falls.csv');eventsets={}
-    for threshold in [5,10,15]:
-        for h in [5,10,20]:
-            xs=[x for x in missed if int(x['threshold_pct'])==threshold and int(x['lookback'])==h and x['lookback_complete']=='True'];counts=collections.Counter();hits=collections.Counter()
-            for x in xs:
-                i=next(i for i,c in enumerate(cache) if c['date']==x['threshold_date']);counts[i]+=1;hits[i]+=x['warning_present']=='True'
-            eventsets[threshold,h]=(xs,counts,hits)
+    for cohort in ['STOCK','MARKET']:
+        for threshold in [5,10,15]:
+            for h in [5,10,20]:
+                xs=[x for x in missed if x['cohort']==cohort and int(x['threshold_pct'])==threshold and int(x['lookback'])==h and x['lookback_complete']=='True'];counts=collections.Counter();hits=collections.Counter()
+                for x in xs:
+                    i=next(i for i,c in enumerate(cache) if c['date']==x['threshold_date']);counts[i]+=1;hits[i]+=x['warning_present']=='True'
+                eventsets[cohort,threshold,h]=(xs,counts,hits)
     intervals=[];assetci=[];dateci=[];recallci=[]
     for length in [20,60,120]:
         rng=random.Random(SEED+length);boot=[[] for _ in designs];ab={k:[] for k in assets};sb={k:[] for k in source_values};fb={k:[] for k in eventsets}
@@ -101,7 +102,7 @@ def main():
             for (cohort,s),v in ab.items():assetci.append(dict(cohort=cohort,symbol=s,block_length=60,ci_low=quantile(v,.025),ci_high=quantile(v,.975),resamples=len(v)))
             for cohort,v in sb.items():dateci.append(dict(cohort=cohort,precision_date_weighted=weighted_values(source_values[cohort],[1]*n),ci_low=quantile(v,.025),ci_high=quantile(v,.975),block_length=60,resamples=len(v)))
             for k,v in fb.items():
-                xs,counts,hits=eventsets[k];total=sum(counts.values());covered=sum(hits.values());recallci.append(dict(threshold_pct=k[0],lookback=k[1],events=total,threshold_date_clusters=len(counts),covered=covered,missed=total-covered,recall=covered/total if total else None,ci_low=quantile(v,.025) if v else None,ci_high=quantile(v,.975) if v else None,block_length=60))
+                xs,counts,hits=eventsets[k];total=sum(counts.values());covered=sum(hits.values());recallci.append(dict(cohort=k[0],threshold_pct=k[1],lookback=k[2],events=total,threshold_date_clusters=len(counts),covered=covered,missed=total-covered,recall=covered/total if total else None,ci_low=quantile(v,.025) if v else None,ci_high=quantile(v,.975) if v else None,block_length=60))
         print('bootstrap finished',length,flush=True)
     write('baseline-comparison.csv',result);write('baseline-confidence.csv',intervals);write('asset-confidence.csv',assetci);write('date-confidence.csv',dateci);write('false-negative-summary.csv',recallci)
     (R/'bootstrap.json').write_text(json.dumps(dict(seed=SEED,replicates=REPS,primary_block=60,sensitivity_blocks=[20,120],stocks_resampled_synchronously=True,controls_and_signals_reweighted_together=True,primary_marginal_confidence=.975,primary_familywise_confidence=.95,secondary_exploratory=True),indent=2)+'\n');print(json.dumps(result))

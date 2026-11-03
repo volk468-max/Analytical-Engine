@@ -61,10 +61,10 @@ def main():
     write('control-date-scores.csv',[dict(x,stock_scores=json.dumps(x['stock_scores'],sort_keys=True)) for x in cache]);(R/'control-cache.json').write_text(json.dumps(cache,separators=(',',':'))+'\n')
     catalogue=[];missed=[];sensitivity=[]
     for seed,recovery in [(20,1.),(60,1.),(20,.98)]:
-        for s in STOCKS:
+        for s in STOCKS+MARKETS:
             start=max('2021-01-01',p['eligible'][s]);es=episodes(bs[s],start,'2026-11-02',seed,recovery)
             for n,e in enumerate(es):
-                event=dict(symbol=s,event_id=s+'_'+str(seed)+'_'+str(recovery)+'_'+str(n),seed=seed,recovery_fraction=recovery,**e)
+                event=dict(symbol=s,cohort='STOCK' if s in STOCKS else 'MARKET',event_id=s+'_'+str(seed)+'_'+str(recovery)+'_'+str(n),seed=seed,recovery_fraction=recovery,**e)
                 if seed==20 and recovery==1:catalogue.append(event)
                 for threshold in [5,10,15]:
                     hit=e.get('hit_'+str(threshold))

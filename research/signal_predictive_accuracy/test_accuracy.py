@@ -90,3 +90,6 @@ def test_missing_prehistory_not_counted_as_zero_drawdown():
     xs=[x for x in rows(R/'signals.csv') if x['cohort']=='STOCK' and x['anchor']=='OPEN' and x['complete_10']=='True'];known=[x for x in xs if x['known_drawdown_20_pct']!='']
     stat=next(x for x in rows(R/'statistics.csv') if x['cohort']=='STOCK' and x['anchor']=='OPEN' and x['group']=='ALL');assert int(stat['known_dd20_rows'])==len(known)
     assert abs(float(stat['already_down5_fraction'])-sum(float(x['known_drawdown_20_pct'])>=5 for x in known)/len(known))<1e-12
+def test_stock_and_market_recall_never_pooled():
+    xs=rows(R/'false-negative-summary.csv');assert len(xs)==18 and {x['cohort'] for x in xs}=={'STOCK','MARKET'}
+    x=next(x for x in xs if x['cohort']=='STOCK' and x['threshold_pct']=='5' and x['lookback']=='10');assert int(x['events'])==204 and int(x['missed'])==87

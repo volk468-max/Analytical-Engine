@@ -16,7 +16,8 @@ def main():
     assets=[x for x in stats if x['group']=='symbol' and x['anchor']=='OPEN'];asset_table=table(['Актив','TP','FP','UNKNOWN','UNRESOLVED','TP/(TP+FP)','95% clustered CI','Средняя max-потеря10%'],[(x['value'],x['true_positive'],x['false_positive'],x['unknown'],x['unresolved'],pct(x['precision']),pct(ac[x['value']]['ci_low'])+'…'+pct(ac[x['value']]['ci_high']),num(x['mean_max_drop10'])) for x in assets])
     years=table(['Год','TP','FP','UNKNOWN','Доля TP'],[(x['value'],x['true_positive'],x['false_positive'],x['unknown'],pct(x['precision'])) for x in stats if x['group']=='year' and x['cohort']=='STOCK' and x['anchor']=='OPEN'])
     regimes=table(['Режим на signal-close','Строк','TP доля','Средняя предшествующая DD20%'],[(x['value'],x['rows'],pct(x['precision']),num(x['mean_known_dd20'])) for x in stats if x['group']=='regime' and x['cohort']=='STOCK' and x['anchor']=='OPEN'])
-    fn_table=table(['Closing падение','Lookback','Событий','Предупреждено','Пропущено','Recall','95% clustered CI'],[(x['threshold_pct']+'%',x['lookback'],x['events'],x['covered'],x['missed'],pct(x['recall']),pct(x['ci_low'])+'…'+pct(x['ci_high'])) for x in fn])
+    fn_table=table(['Closing падение','Lookback','Событий','Предупреждено','Пропущено','Recall','95% clustered CI'],[(x['threshold_pct']+'%',x['lookback'],x['events'],x['covered'],x['missed'],pct(x['recall']),pct(x['ci_low'])+'…'+pct(x['ci_high'])) for x in fn if x['cohort']=='STOCK'])
+    fn_market=table(['Closing падение рынка','Lookback','Событий','Предупреждено','Пропущено','Recall'],[(x['threshold_pct']+'%',x['lookback'],x['events'],x['covered'],x['missed'],pct(x['recall'])) for x in fn if x['cohort']=='MARKET'])
     examples=[]
     for s in ['AMD','NVDA','MU']:
         for state in ['TRUE_POSITIVE','FALSE_POSITIVE']:
@@ -60,7 +61,7 @@ Primary CI97.5% на каждый из двухконтрастов даёт fam
 
 ## Пропущенные падения
 
-'''+fn_table+'''
+'''+fn_table+'\nРынки и индексы отдельной когортой; перекрывающиесяиндексы/ETF не независимыеактивы:\n\n'+fn_market+'''
 Например, для−5% и предыдущих10сессий87из204эпизодов не имели доступного нового предупреждения. В32из87 sector активировался на том же closing threshold-дне — слишком поздно для предшествующего предупреждения; оставшиеся55имели False state на threshold-close. Ни один из этих статусов не доказывает production HOLD.
 
 20-session recall высокий отчасти потому, что предупреждения частые: это не доказательство дополнительной предсказательной силы. Episode recall и основной competing-barrier precision имеют разные события/единицы: нельзя складывать их в одну confusion matrix или вычислять F1. Знаменатели меняются при неполных начальных lookback windows и показаны явно.
@@ -111,7 +112,7 @@ Current main risk.py и investment_memory.py доступны как код с S
 ''')
     (R/'validation.md').write_text('''# Validation and reproducibility
 
-Фактически36Python tests passed:2existing main +34audit checks;0failures. Final readback record inverification.json. Проверки охватывают competing-barrier order/UNKNOWN, partial vs complete, nextopen vsclose anchor, execution-session inclusion, exacttouch, future-prefix invariance, split-unit invariance, nested/unfinished episodes, shared bootstrap weights, unmatched cells, mechanical overlaps, source hashes, eligibility, censoring, baseline cell/frequency invariants, nonoverlap and missing-history denominator. Final actual pass count иповторный прогон после публикации фиксируются отдельно.
+Фактически37Python tests passed:2existing main +35audit checks;0failures. Final readback record inverification.json. Проверки охватывают competing-barrier order/UNKNOWN, partial vs complete, nextopen vsclose anchor, execution-session inclusion, exacttouch, future-prefix invariance, split-unit invariance, nested/unfinished episodes, shared bootstrap weights, unmatched cells, mechanical overlaps, source hashes, eligibility, censoring, baseline cell/frequency invariants, nonoverlap, separate stock/market recall and missing-history denominator. Final actual pass count иповторный прогон после публикации фиксируются отдельно.
 
 Source:18price series с2020warmup,1465sessions2021–2November2026.11stocks,7market/context series не независимые активы. NBIS только21October2024 onward; PLTR available atstudy start. Compact gzip source fields проверены SHA256; archivedGitblob identity сверена. Frozen sector formula exactly reproduces134dates иdaily states. Predictor features считают onlycurrent/past data; extrema, minima, barrierorder and retrospective peaks — labels, неinputs.
 
