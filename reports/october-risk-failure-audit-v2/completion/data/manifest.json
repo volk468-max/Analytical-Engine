@@ -1,0 +1,921 @@
+{
+  "schema_version": 1,
+  "dataset_version": "october-stage1-asof-2026-11-03",
+  "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+  "cutoff": "2026-11-02",
+  "sources": [
+    {
+      "symbol": "AMD",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "AMD-source.json",
+      "raw_sha256": "1086371f631cd3676d4c1b2eedaaacda1244d937006d51c31342452713fc1393",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {},
+      "publication_verified": false
+    },
+    {
+      "symbol": "NVDA",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "NVDA-source.json",
+      "raw_sha256": "595ffc01a7df89297c28173d176d3f02504a6ff28168c289c68991b60ebb7a72",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {
+        "dividends": {
+          "1741786200": {
+            "amount": 0.01,
+            "date": 1741786200
+          },
+          "1749648600": {
+            "amount": 0.01,
+            "date": 1749648600
+          },
+          "1757597400": {
+            "amount": 0.01,
+            "date": 1757597400
+          },
+          "1764858600": {
+            "amount": 0.01,
+            "date": 1764858600
+          },
+          "1773235800": {
+            "amount": 0.01,
+            "date": 1773235800
+          },
+          "1780579800": {
+            "amount": 0.25,
+            "date": 1780579800
+          },
+          "1789047000": {
+            "amount": 0.25,
+            "date": 1789047000
+          }
+        }
+      },
+      "publication_verified": false
+    },
+    {
+      "symbol": "MU",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "MU-source.json",
+      "raw_sha256": "407f6e58a44a1ef543836b4a7eddc975c2f4eda86fe7e046ed2d0f94a7e66b67",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {
+        "dividends": {
+          "1743427800": {
+            "amount": 0.115,
+            "date": 1743427800
+          },
+          "1751895000": {
+            "amount": 0.115,
+            "date": 1751895000
+          },
+          "1759498200": {
+            "amount": 0.115,
+            "date": 1759498200
+          },
+          "1767018600": {
+            "amount": 0.115,
+            "date": 1767018600
+          },
+          "1774877400": {
+            "amount": 0.15,
+            "date": 1774877400
+          },
+          "1783344600": {
+            "amount": 0.15,
+            "date": 1783344600
+          },
+          "1791984600": {
+            "amount": 0.15,
+            "date": 1791984600
+          }
+        }
+      },
+      "publication_verified": false
+    },
+    {
+      "symbol": "TSM",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TSM?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "TSM-source.json",
+      "raw_sha256": "a758c59c3be8a0ffbbbdf380a587778436c8e8717e80c6c23dc44c5af6d04b17",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {
+        "dividends": {
+          "1742304600": {
+            "amount": 0.684,
+            "date": 1742304600
+          },
+          "1749735000": {
+            "amount": 0.78,
+            "date": 1749735000
+          },
+          "1758029400": {
+            "amount": 0.822,
+            "date": 1758029400
+          },
+          "1765463400": {
+            "amount": 0.835,
+            "date": 1765463400
+          },
+          "1773754200": {
+            "amount": 0.956,
+            "date": 1773754200
+          },
+          "1781184600": {
+            "amount": 0.955,
+            "date": 1781184600
+          },
+          "1789565400": {
+            "amount": 1.107,
+            "date": 1789565400
+          }
+        }
+      },
+      "publication_verified": false
+    },
+    {
+      "symbol": "AVGO",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AVGO?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "AVGO-source.json",
+      "raw_sha256": "197b916acaac960a027afba901389973a8a935ff69a86bc6af781841f62a5678",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {
+        "dividends": {
+          "1742477400": {
+            "amount": 0.59,
+            "date": 1742477400
+          },
+          "1750426200": {
+            "amount": 0.59,
+            "date": 1750426200
+          },
+          "1758547800": {
+            "amount": 0.59,
+            "date": 1758547800
+          },
+          "1766413800": {
+            "amount": 0.65,
+            "date": 1766413800
+          },
+          "1774272600": {
+            "amount": 0.65,
+            "date": 1774272600
+          },
+          "1782135000": {
+            "amount": 0.65,
+            "date": 1782135000
+          },
+          "1789997400": {
+            "amount": 0.65,
+            "date": 1789997400
+          }
+        }
+      },
+      "publication_verified": false
+    },
+    {
+      "symbol": "AMAT",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMAT?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "AMAT-source.json",
+      "raw_sha256": "369b31498095673263bb9895e1e13b723d1d8fdfc848ab3cf74a1e8078e86b2a",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {
+        "dividends": {
+          "1740061800": {
+            "amount": 0.4,
+            "date": 1740061800
+          },
+          "1747920600": {
+            "amount": 0.46,
+            "date": 1747920600
+          },
+          "1755783000": {
+            "amount": 0.46,
+            "date": 1755783000
+          },
+          "1763649000": {
+            "amount": 0.46,
+            "date": 1763649000
+          },
+          "1771511400": {
+            "amount": 0.46,
+            "date": 1771511400
+          },
+          "1779370200": {
+            "amount": 0.53,
+            "date": 1779370200
+          },
+          "1787232600": {
+            "amount": 0.53,
+            "date": 1787232600
+          }
+        }
+      },
+      "publication_verified": false
+    },
+    {
+      "symbol": "AMZN",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "AMZN-source.json",
+      "raw_sha256": "7e72a9f3f733801de6bdde8f6effec19145db163c214c6ec51b79f0d6fff2af2",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {},
+      "publication_verified": false
+    },
+    {
+      "symbol": "META",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/META?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "META-source.json",
+      "raw_sha256": "af0dad08c90ba7c289854c9741ac90845d9dfaa32439a37612fce816ccbf60a0",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {
+        "dividends": {
+          "1741959000": {
+            "amount": 0.525,
+            "date": 1741959000
+          },
+          "1750080600": {
+            "amount": 0.525,
+            "date": 1750080600
+          },
+          "1758547800": {
+            "amount": 0.525,
+            "date": 1758547800
+          },
+          "1765809000": {
+            "amount": 0.525,
+            "date": 1765809000
+          },
+          "1773667800": {
+            "amount": 0.525,
+            "date": 1773667800
+          },
+          "1781530200": {
+            "amount": 0.525,
+            "date": 1781530200
+          },
+          "1789997400": {
+            "amount": 0.525,
+            "date": 1789997400
+          }
+        }
+      },
+      "publication_verified": false
+    },
+    {
+      "symbol": "PLTR",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "PLTR-source.json",
+      "raw_sha256": "49f4d8742462c1c4b8e109aaaf435d25cf391ccb321f8a11528c66965e0f512f",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {},
+      "publication_verified": false
+    },
+    {
+      "symbol": "LRCX",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/LRCX?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "LRCX-source.json",
+      "raw_sha256": "e36951df0ce48a81502ff09e3135cd4a38a550fd766dbca83a60af22b164666c",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {
+        "dividends": {
+          "1741185000": {
+            "amount": 0.23,
+            "date": 1741185000
+          },
+          "1750253400": {
+            "amount": 0.23,
+            "date": 1750253400
+          },
+          "1758720600": {
+            "amount": 0.26,
+            "date": 1758720600
+          },
+          "1764772200": {
+            "amount": 0.26,
+            "date": 1764772200
+          },
+          "1772634600": {
+            "amount": 0.26,
+            "date": 1772634600
+          },
+          "1781703000": {
+            "amount": 0.26,
+            "date": 1781703000
+          },
+          "1790170200": {
+            "amount": 0.33,
+            "date": 1790170200
+          }
+        }
+      },
+      "publication_verified": false
+    },
+    {
+      "symbol": "NBIS",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NBIS?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "NBIS-source.json",
+      "raw_sha256": "829fb2252c37daafa0f328c31438a79eec4eea7523e39e3915f87b9b790c563d",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {},
+      "publication_verified": false
+    },
+    {
+      "symbol": "^GSPC",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/^GSPC?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "INDEX-GSPC-source.json",
+      "raw_sha256": "3c0a278c6d7623b48941a0146fdd7577ad983b58d6651f8030ff77909d97508c",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {},
+      "publication_verified": false
+    },
+    {
+      "symbol": "^IXIC",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/^IXIC?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "INDEX-IXIC-source.json",
+      "raw_sha256": "cab2c78b50d255a9b85c18f1f7560a19788c83c7642cefd463254b37058a5232",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {},
+      "publication_verified": false
+    },
+    {
+      "symbol": "^NDX",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/^NDX?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "INDEX-NDX-source.json",
+      "raw_sha256": "ac25f58c7a1fbe636a0420b52b82cee4140dc4205aa13284d9fcf8e152ea1caf",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {},
+      "publication_verified": false
+    },
+    {
+      "symbol": "^RUT",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/^RUT?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "INDEX-RUT-source.json",
+      "raw_sha256": "a32da91aaea1357387a33d34c6d03cc1bb1a46b57f732d03370e626861c01e3e",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {},
+      "publication_verified": false
+    },
+    {
+      "symbol": "^SOX",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/^SOX?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "INDEX-SOX-source.json",
+      "raw_sha256": "c5408c76537f6e57232507207a18b42c647f53b5aa514b51ffdf4ed4dbf42b12",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {},
+      "publication_verified": false
+    },
+    {
+      "symbol": "^VIX",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/^VIX?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 462,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "INDEX-VIX-source.json",
+      "raw_sha256": "0a89a7772b15f15d2f6e0b890132650a597e82360b523819920bdfe47a195246",
+      "missing": [
+        "2025-01-09",
+        "2025-01-20",
+        "2025-02-17",
+        "2025-04-18",
+        "2025-05-26",
+        "2025-06-19",
+        "2025-07-04",
+        "2025-09-01",
+        "2025-11-27",
+        "2025-12-25",
+        "2026-01-01",
+        "2026-01-19",
+        "2026-02-16",
+        "2026-04-03",
+        "2026-06-19",
+        "2026-07-03"
+      ],
+      "exchange_timezone": "America/Chicago",
+      "corporate_actions": {},
+      "publication_verified": false
+    },
+    {
+      "symbol": "DX-Y.NYB",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 462,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "DX-Y.NYB-source.json",
+      "raw_sha256": "71c00202c36267394324dcaa11ffc79548bef5fd4d45b654c5140473e0ccde94",
+      "missing": [
+        "2025-01-05",
+        "2025-01-12",
+        "2025-01-19",
+        "2025-01-26",
+        "2025-02-02",
+        "2025-02-09",
+        "2025-02-16",
+        "2025-02-23",
+        "2025-03-02",
+        "2025-03-09",
+        "2025-03-16",
+        "2025-03-23",
+        "2025-03-30",
+        "2025-04-06",
+        "2025-04-13",
+        "2025-04-20",
+        "2025-04-27",
+        "2025-05-04",
+        "2025-05-11",
+        "2025-05-18",
+        "2025-05-25",
+        "2025-06-01",
+        "2025-06-08",
+        "2025-06-15",
+        "2025-06-19",
+        "2025-06-22",
+        "2025-06-29",
+        "2025-07-04",
+        "2025-07-06",
+        "2025-07-13",
+        "2025-07-20",
+        "2025-07-27",
+        "2025-08-03",
+        "2025-08-10",
+        "2025-08-17",
+        "2025-08-24",
+        "2025-08-31",
+        "2025-09-07",
+        "2025-09-14",
+        "2025-09-21",
+        "2025-09-28",
+        "2025-10-05",
+        "2025-10-12",
+        "2025-10-19",
+        "2025-10-26",
+        "2025-11-02",
+        "2025-11-09",
+        "2025-11-16",
+        "2025-11-23",
+        "2025-11-30",
+        "2025-12-07",
+        "2025-12-14",
+        "2025-12-21",
+        "2025-12-28",
+        "2026-01-04",
+        "2026-01-11",
+        "2026-01-18",
+        "2026-01-25",
+        "2026-02-01",
+        "2026-02-08",
+        "2026-02-15",
+        "2026-02-22",
+        "2026-03-01",
+        "2026-03-08",
+        "2026-03-15",
+        "2026-03-22",
+        "2026-03-29",
+        "2026-04-05",
+        "2026-04-12",
+        "2026-04-19",
+        "2026-04-26",
+        "2026-05-03",
+        "2026-05-10",
+        "2026-05-17",
+        "2026-05-24",
+        "2026-05-31",
+        "2026-06-07",
+        "2026-06-14",
+        "2026-06-21",
+        "2026-06-28",
+        "2026-07-05",
+        "2026-07-12",
+        "2026-07-19",
+        "2026-07-26",
+        "2026-08-02",
+        "2026-08-09",
+        "2026-08-16",
+        "2026-08-23",
+        "2026-08-30",
+        "2026-09-06",
+        "2026-09-13",
+        "2026-09-20",
+        "2026-09-27",
+        "2026-10-04",
+        "2026-10-11",
+        "2026-10-18",
+        "2026-10-25",
+        "2026-11-01"
+      ],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {},
+      "publication_verified": false
+    },
+    {
+      "symbol": "QQQ",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "QQQ-source.json",
+      "raw_sha256": "3b315804e3f36c7d3698da0e8ce724f3e2eb1bd8d138b0c56661022ffa79c576",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {
+        "dividends": {
+          "1742823000": {
+            "amount": 0.716,
+            "date": 1742823000
+          },
+          "1750685400": {
+            "amount": 0.591,
+            "date": 1750685400
+          },
+          "1758547800": {
+            "amount": 0.694,
+            "date": 1758547800
+          },
+          "1766413800": {
+            "amount": 0.794,
+            "date": 1766413800
+          },
+          "1774272600": {
+            "amount": 0.733,
+            "date": 1774272600
+          },
+          "1782135000": {
+            "amount": 0.813,
+            "date": 1782135000
+          },
+          "1789997400": {
+            "amount": 0.751,
+            "date": 1789997400
+          }
+        }
+      },
+      "publication_verified": false
+    },
+    {
+      "symbol": "SPY",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "SPY-source.json",
+      "raw_sha256": "b9f83503ed8704e582b6fa54e7bb21c8195d356237407b036d7c734d72506f6b",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {
+        "dividends": {
+          "1742563800": {
+            "amount": 1.696,
+            "date": 1742563800
+          },
+          "1750426200": {
+            "amount": 1.761,
+            "date": 1750426200
+          },
+          "1758288600": {
+            "amount": 1.831,
+            "date": 1758288600
+          },
+          "1766154600": {
+            "amount": 1.993,
+            "date": 1766154600
+          },
+          "1774013400": {
+            "amount": 1.797,
+            "date": 1774013400
+          },
+          "1781789400": {
+            "amount": 1.904,
+            "date": 1781789400
+          },
+          "1789738200": {
+            "amount": 1.889,
+            "date": 1789738200
+          }
+        }
+      },
+      "publication_verified": false
+    },
+    {
+      "symbol": "IWM",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IWM?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "IWM-source.json",
+      "raw_sha256": "23885fae38484fe40323ea1b418c817a267b19fadd2a679c02301bed3c005ea8",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {
+        "dividends": {
+          "1742304600": {
+            "amount": 0.46,
+            "date": 1742304600
+          },
+          "1750080600": {
+            "amount": 0.576,
+            "date": 1750080600
+          },
+          "1758029400": {
+            "amount": 0.677,
+            "date": 1758029400
+          },
+          "1765895400": {
+            "amount": 0.842,
+            "date": 1765895400
+          },
+          "1773754200": {
+            "amount": 0.442,
+            "date": 1773754200
+          },
+          "1781530200": {
+            "amount": 0.695,
+            "date": 1781530200
+          },
+          "1789479000": {
+            "amount": 0.75,
+            "date": 1789479000
+          }
+        }
+      },
+      "publication_verified": false
+    },
+    {
+      "symbol": "SMH",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SMH?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "SMH-source.json",
+      "raw_sha256": "cebbae0975f3b05c0b8f56dc94aca8a2c3b6a17abdda10b3fe8855831b921685",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {
+        "dividends": {
+          "1766413800": {
+            "amount": 1.105,
+            "date": 1766413800
+          }
+        }
+      },
+      "publication_verified": false
+    },
+    {
+      "symbol": "SOXX",
+      "source": "Yahoo chart",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SOXX?period1=1735689600&period2=1793664000&interval=1d&events=div%2Csplits",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "status": "DOWNLOADED",
+      "rows": 460,
+      "first": "2025-01-02",
+      "last": "2026-11-02",
+      "raw_file": "SOXX-source.json",
+      "raw_sha256": "794475d670b8cd2df59c67a8c73bf5eb85d8afcd07a3c94343ae4f1b30fd9be9",
+      "missing": [],
+      "exchange_timezone": "America/New_York",
+      "corporate_actions": {
+        "dividends": {
+          "1742304600": {
+            "amount": 0.261,
+            "date": 1742304600
+          },
+          "1750080600": {
+            "amount": 0.483,
+            "date": 1750080600
+          },
+          "1758029400": {
+            "amount": 0.541,
+            "date": 1758029400
+          },
+          "1765895400": {
+            "amount": 0.436,
+            "date": 1765895400
+          },
+          "1773754200": {
+            "amount": 0.208,
+            "date": 1773754200
+          },
+          "1781530200": {
+            "amount": 0.283,
+            "date": 1781530200
+          },
+          "1789479000": {
+            "amount": 0.325,
+            "date": 1789479000
+          }
+        }
+      },
+      "publication_verified": false
+    },
+    {
+      "symbol": "DGS2",
+      "source": "FRED retrospective daily series",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2&cosd=2025-01-01&coed=2026-11-02",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "rows": 458,
+      "raw_file": "DGS2-source.csv.gz",
+      "raw_sha256": "ec60bcc5965c35e6afef9a206b28566a8c0408c787de8ce9994bd88aefd365a5"
+    },
+    {
+      "symbol": "DGS10",
+      "source": "FRED retrospective daily series",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2025-01-01&coed=2026-11-02",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "rows": 458,
+      "raw_file": "DGS10-source.csv.gz",
+      "raw_sha256": "21fcd61ce3450c6f1e5789b0a144f4a27d201f224de3744f7b9d07fd19c19b8d"
+    },
+    {
+      "symbol": "BAMLC0A0CM",
+      "source": "FRED retrospective daily series",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLC0A0CM&cosd=2025-01-01&coed=2026-11-02",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "rows": 480,
+      "raw_file": "BAMLC0A0CM-source.csv.gz",
+      "raw_sha256": "1e338bb7f40eb54ec41b6b1898131a01a8b8489afa3a33e924246f7ef308b166"
+    },
+    {
+      "symbol": "BAMLH0A0HYM2",
+      "source": "FRED retrospective daily series",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2&cosd=2025-01-01&coed=2026-11-02",
+      "retrieved_at": "2026-11-03T12:19:38.403004+00:00",
+      "publication_verified": false,
+      "status": "DOWNLOADED",
+      "rows": 480,
+      "raw_file": "BAMLH0A0HYM2-source.csv.gz",
+      "raw_sha256": "50a8bdb94130fac6fa6be7ea0e48d75ee204feb3df2e463a8501d45e5967ad4b"
+    }
+  ],
+  "limitations": [
+    "No original historical publication vintages; conservative assumed lags.",
+    "No splicing with prior packs; compare overlapping price vintages explicitly.",
+    "NBIS historical identity/legacy suspension is not extrapolated into an uninterrupted old series.",
+    "Whole-market breadth and actual positions/trades/decision payloads not supplied by these sources."
+  ],
+  "artifact_sha256": {
+    "DX-Y.NYB-source.json": "71c00202c36267394324dcaa11ffc79548bef5fd4d45b654c5140473e0ccde94",
+    "SMH-source.json": "cebbae0975f3b05c0b8f56dc94aca8a2c3b6a17abdda10b3fe8855831b921685",
+    "prices.csv": "f0c3cde3891cfec4d19f949211717010f1b1cb2b8e12083ae6665b9ffc5daaf0",
+    "AMD-source.json": "1086371f631cd3676d4c1b2eedaaacda1244d937006d51c31342452713fc1393",
+    "INDEX-NDX-source.json": "ac25f58c7a1fbe636a0420b52b82cee4140dc4205aa13284d9fcf8e152ea1caf",
+    "SPY-source.json": "b9f83503ed8704e582b6fa54e7bb21c8195d356237407b036d7c734d72506f6b",
+    "INDEX-IXIC-source.json": "cab2c78b50d255a9b85c18f1f7560a19788c83c7642cefd463254b37058a5232",
+    "NBIS-source.json": "829fb2252c37daafa0f328c31438a79eec4eea7523e39e3915f87b9b790c563d",
+    "AVGO-source.json": "197b916acaac960a027afba901389973a8a935ff69a86bc6af781841f62a5678",
+    "DGS10-source.csv.gz": "d582147f751b9d84dd7cfc81276c7d5aed9e846aba0521130cd594980ba0b097",
+    "AMZN-source.json": "7e72a9f3f733801de6bdde8f6effec19145db163c214c6ec51b79f0d6fff2af2",
+    "SOXX-source.json": "794475d670b8cd2df59c67a8c73bf5eb85d8afcd07a3c94343ae4f1b30fd9be9",
+    "TSM-source.json": "a758c59c3be8a0ffbbbdf380a587778436c8e8717e80c6c23dc44c5af6d04b17",
+    "PLTR-source.json": "49f4d8742462c1c4b8e109aaaf435d25cf391ccb321f8a11528c66965e0f512f",
+    "NVDA-source.json": "595ffc01a7df89297c28173d176d3f02504a6ff28168c289c68991b60ebb7a72",
+    "META-source.json": "af0dad08c90ba7c289854c9741ac90845d9dfaa32439a37612fce816ccbf60a0",
+    "INDEX-RUT-source.json": "a32da91aaea1357387a33d34c6d03cc1bb1a46b57f732d03370e626861c01e3e",
+    "QQQ-source.json": "3b315804e3f36c7d3698da0e8ce724f3e2eb1bd8d138b0c56661022ffa79c576",
+    "BAMLH0A0HYM2-source.csv.gz": "c402cd43a4b9fb26f501755213ab78b9617dfe94a832f0e327da3856bead0307",
+    "INDEX-GSPC-source.json": "3c0a278c6d7623b48941a0146fdd7577ad983b58d6651f8030ff77909d97508c",
+    "DGS2-source.csv.gz": "c143484723b8fc5f58fb4fb5d8d4a1e4ba80029a7da23fb9985958cc57a76aa3",
+    "AMAT-source.json": "369b31498095673263bb9895e1e13b723d1d8fdfc848ab3cf74a1e8078e86b2a",
+    "BAMLC0A0CM-source.csv.gz": "82de7f80c15f84c6a9d9b95cb58556dbd1960c96e337292b23111eef8d6f5631",
+    "macro.json": "c1a7a7870c265978136dd3dd8c7da66842d1b91d39f1876c01c59bf42019a25c",
+    "MU-source.json": "407f6e58a44a1ef543836b4a7eddc975c2f4eda86fe7e046ed2d0f94a7e66b67",
+    "INDEX-VIX-source.json": "0a89a7772b15f15d2f6e0b890132650a597e82360b523819920bdfe47a195246",
+    "LRCX-source.json": "e36951df0ce48a81502ff09e3135cd4a38a550fd766dbca83a60af22b164666c",
+    "INDEX-SOX-source.json": "c5408c76537f6e57232507207a18b42c647f53b5aa514b51ffdf4ed4dbf42b12",
+    "IWM-source.json": "23885fae38484fe40323ea1b418c817a267b19fadd2a679c02301bed3c005ea8"
+  }
+}
