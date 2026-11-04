@@ -1,0 +1,36 @@
+{
+  "automated_tests": {
+    "passed": 30,
+    "failed": 0,
+    "new": 28,
+    "existing": 2,
+    "warning": "anyio PytestRemovedIn10Warning"
+  },
+  "deterministic_reproduction": {
+    "status": "PASSED",
+    "files": {
+      "reports/breadth-data-audit-v1/breadth-prototype.csv": "b5b01321b741255741d902419ca0d9a337f0adba27be46b412e0928624adf0bf",
+      "reports/breadth-data-audit-v1/run.json": "9fe89780be990e9f416a087c9768310b3cfd8586820c2d1dd644c9883bb07096",
+      "reports/breadth-data-audit-v1/input-manifest.json": "a5fcfd8bb2dbcc5659eba1633c773fdce59146cc16079acd8f7e93755541d155",
+      "reports/breadth-data-audit-v1/inputs/membership-proxies.json": "ed70b0277ce5c5d185972edaa4217f82f35687ce62e91724d368dbb0962ef390"
+    }
+  },
+  "not_performed": [
+    {
+      "check": "2010\u20132026 full PIT index breadth",
+      "reason": "No licensed full index membership and constituent price archive acquired"
+    },
+    {
+      "check": "Production Redis/Postgres/SQLite row coverage",
+      "reason": "Metadata only; no isolated read-only connection/export; ADCGET initializer writes DDL"
+    },
+    {
+      "check": "StockCharts numeric comparison",
+      "reason": "No authorized exported same-universe series"
+    },
+    {
+      "check": "Predictive event study",
+      "reason": "All prototype observations fail historical eligibility; outside this prototype validation"
+    }
+  ]
+}
