@@ -1,0 +1,158 @@
+{
+  "checked_at": "2026-11-04",
+  "source": "Railway read-only MCP",
+  "environment": "production",
+  "services": [
+    {
+      "name": "Knowledge-engine",
+      "source": {
+        "image": null,
+        "repo": "volk468-max/Knowledge-engine",
+        "branch": "main"
+      },
+      "status": "SUCCESS",
+      "latest_deployment_at": "2026-07-10T12:45:52.298Z",
+      "volume_mounts": []
+    },
+    {
+      "name": "Redis",
+      "source": {
+        "image": "redis:8.2.9",
+        "repo": null,
+        "branch": null
+      },
+      "status": "SUCCESS",
+      "latest_deployment_at": "2026-09-05T10:26:07.267Z",
+      "volume_mounts": [
+        "/data"
+      ]
+    },
+    {
+      "name": "Alpha-Hypothesis-Traker",
+      "source": {
+        "image": null,
+        "repo": "volk468-max/Alpha-Hypothesis-Traker",
+        "branch": "main"
+      },
+      "status": "SUCCESS",
+      "latest_deployment_at": "2026-09-16T18:17:56.282Z",
+      "volume_mounts": [
+        "/app/data"
+      ]
+    },
+    {
+      "name": "Alpha-5",
+      "source": {
+        "image": null,
+        "repo": "volk468-max/Alpha-5",
+        "branch": "main"
+      },
+      "status": "SUCCESS",
+      "latest_deployment_at": "2026-07-08T12:29:11.663Z",
+      "volume_mounts": []
+    },
+    {
+      "name": "Analytical 2.0",
+      "source": {
+        "image": null,
+        "repo": "volk468-max/Analytical-Engine",
+        "branch": "main"
+      },
+      "status": "SUCCESS",
+      "latest_deployment_at": "2026-10-15T12:12:09.621Z",
+      "volume_mounts": []
+    },
+    {
+      "name": "Data-collector-1.0",
+      "source": {
+        "image": null,
+        "repo": "volk468-max/Data-collector-1.0",
+        "branch": "main"
+      },
+      "status": "SUCCESS",
+      "latest_deployment_at": "2026-10-14T14:08:02.321Z",
+      "volume_mounts": [
+        "/app/data"
+      ]
+    },
+    {
+      "name": "Postgres",
+      "source": {
+        "image": "ghcr.io/railwayapp-templates/postgres-ssl:18",
+        "repo": null,
+        "branch": null
+      },
+      "status": "SUCCESS",
+      "latest_deployment_at": "2026-08-23T07:42:39.268Z",
+      "volume_mounts": [
+        "/var/lib/postgresql/data"
+      ]
+    }
+  ],
+  "volumes": [
+    {
+      "name": "redis-volume",
+      "sizeMB": 500,
+      "mountPath": "/data"
+    },
+    {
+      "name": "postgres-volume",
+      "sizeMB": 500,
+      "mountPath": "/var/lib/postgresql/data"
+    },
+    {
+      "name": "data-collector-1.0-volume",
+      "sizeMB": 5000,
+      "mountPath": "/app/data"
+    },
+    {
+      "name": "alpha-hypothesis-tracker-volume",
+      "sizeMB": 500,
+      "mountPath": "/app/data"
+    }
+  ],
+  "buckets": [
+    {
+      "name": "storage"
+    }
+  ],
+  "application_config": {
+    "service": {
+      "id": "7b7e4837-bc4a-4f88-8d1c-6210f064897e",
+      "name": "Analytical 2.0",
+      "state": "live"
+    },
+    "variableNames": [
+      "ADC_BASE_URL",
+      "DATABASE_URL",
+      "HYPOTHESIS_TRACKER_URL",
+      "KNOWLEDGE_BASE_URL"
+    ],
+    "volumeCount": 0,
+    "latestDeployment": {
+      "id": "00126943-461f-429c-bf93-bafc244bdf8f",
+      "status": "SUCCESS",
+      "createdAt": "2026-10-15T12:12:09.621Z",
+      "url": null
+    }
+  },
+  "collector_config": {
+    "service": {
+      "id": "2e3d1cec-aa01-4a23-affe-5e6ab28704d1",
+      "name": "Data-collector-1.0",
+      "state": "live"
+    },
+    "variableNames": [
+      "ADC_DB_PATH"
+    ],
+    "volumeCount": 1,
+    "latestDeployment": {
+      "id": "fedc438f-375d-42e5-8b11-e3eab5605460",
+      "status": "SUCCESS",
+      "createdAt": "2026-10-14T14:08:02.321Z",
+      "url": null
+    }
+  },
+  "storage_contents_verified": false,
+  "secret_values_read": false
+}
