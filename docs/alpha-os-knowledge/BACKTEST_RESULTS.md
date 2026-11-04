@@ -1,0 +1,18 @@
+# Исторические результаты
+
+Все значения ниже — опубликованные модельные результаты при допущениях соответствующих источников, не реальные сделки.
+
+| Источник / период | Эксперимент | Результат |
+|---|---|---|
+| R02 / Sep–Oct22 2026 | Limited overlay, 11 names | 403 HOLD, 4 REVIEW, 0 TRIM; full v1/v2 сравнения недоступны |
+| R04 / 2021–Oct22 2026 | AMD ladder, $100000 | B&H 550887.46 vs ladder 494460.40 USD; MaxDD -65.45 vs -63.00% |
+| R06 / 2023–Oct22 2026 | Independent $100000 stock accounts, HOLD3+CRITICAL | Delta NAV AMD -206016.49, NVDA -485737.42, MU -516095.63 USD |
+| R09 / Sep1–Nov2 2026 | Continuous 11-sleeve $100000 | B&H 90888.56, old trim5 90701.12, trim10 90513.69 USD |
+| R10 / same short window | Independent buyback lots | fixed5 91568.52, fixed10 92248.48 USD; relative improvement при absolute loss |
+| R11 / 2021–Nov2 2026 | COMPARABLE10 $100000 | B&H 631370.19, fixed5 283298.73, fixed10 133841.05 USD |
+
+Источники и SHA: [R02](research/R02-v1.md), [R04](research/R04-v1.md), [R06](research/R06-v1.md), [R09](research/R09-v1.md), [R10](research/R10-v1.md), [R11](research/R11-v1.md). Короткий положительный relative результат R10 не заменяет отрицательный длинный результат R11 и не опровергается им как арифметическая ошибка: отличаются периоды и continuous state. Сохранять оба.
+
+R07 forecasting: 0/18 primary incremental tests; R08 anatomy: 0/4 testable hypotheses; R12 sector precision SOX 42.86% и незначимый any-down5 uplift. Это predictive metrics, не returns. R13 эффективность не тестировал.
+
+Нельзя смешивать reset/inherited accounts, realized/open marks, gross proceeds/profit, stock/portfolio capital, price-only/total return, same-bar ambiguity/confirmed fills. Общие ограничения: retrospective provider vintages, repeated history, survivor bias, отсутствующая реальная execution/PIT evidence. Новые расчёты добавлять с новым ID и sources; старые результаты не переписывать.
