@@ -1,0 +1,10 @@
+{
+  "source_commit": "5d5092b5d03e16f03241c1b5a5d5a19c1816c9c7",
+  "source_path": "reports/historical-sell-buyback-v1/prepared.json",
+  "source_sha256": "d6a46d2ceede3be5bc0c58a667256225d1f445d73c7087dc93679ebc27cd5857",
+  "transformation": "lossless selected14symbols high/low/close/availability, gzipmtime0; exclude unused volume/O for breadth; no new quotes",
+  "prepared_rows": 31248,
+  "selected_rows": 22656,
+  "publication_verified": false,
+  "membership_available": false
+}
