@@ -1,0 +1,20 @@
+{
+  "FIXED_ELEVEN_CURRENT_SURVIVORS_PROXY": {
+    "rows": 1465,
+    "first": "2021-01-04",
+    "last": "2026-11-02",
+    "historical_eligible": 0,
+    "ma50_available": 1416,
+    "ma200_available": 1132,
+    "extrema_available": 1026
+  },
+  "FIXED_SEVEN_SEMIS_PROXY": {
+    "rows": 1465,
+    "first": "2021-01-04",
+    "last": "2026-11-02",
+    "historical_eligible": 0,
+    "ma50_available": 1465,
+    "ma200_available": 1465,
+    "extrema_available": 1465
+  }
+}
