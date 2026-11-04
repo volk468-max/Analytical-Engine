@@ -1,0 +1,80 @@
+{
+  "checked_at_utc": "2026-11-04T12:54:03+00:00",
+  "access": "Official public documentation via web search/open; not market-data scraping",
+  "entitlements_tested": false,
+  "purchases": 0,
+  "sources": [
+    {
+      "url": "https://chartschool.stockcharts.com/table-of-contents/index-and-market-indicator-catalog/stockcharts-percent-above-moving-average",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://eodhd.com/financial-apis/stock-etfs-fundamental-data-feeds",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://eodhd.com/help/plans",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://eodhd.com/marketplace/unicornbay/spglobal",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://eodhd.com/pricing",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://help.stockcharts.com/data-and-ticker-symbols/data-availability/historical-data/how-do-i-download-data-to-excel",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://help.stockcharts.com/learning-more/policies-and-limitations/terms-of-service",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://massive.com/blog/announcing-massive-etf-global-partnership-constituents-fund-flows-analytics-profiles-and-taxonomies-2",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://massive.com/docs/rest/partners/etf-global/constituents",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://massive.com/docs/rest/stocks/aggregates/daily-market-summary",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://massive.com/legal/market-data-terms-of-service",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://massive.com/pricing?product=stocks",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://norgatedata.com/accessibility.php",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://norgatedata.com/data-content-tables.php",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://norgatedata.com/faq.php",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://norgatedata.com/stockmarketpackages.php",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://norgatedata.com/subscribe/eula.php",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    },
+    {
+      "url": "https://stockcharts.com/pricing/",
+      "verification": "OFFICIAL_DOCS_ONLY; dates/prices/missing details in provider-comparison.csv"
+    }
+  ]
+}
