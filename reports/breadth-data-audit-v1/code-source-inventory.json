@@ -1,0 +1,44 @@
+[
+  {
+    "repository": "volk468-max/Data-collector-1.0",
+    "commit": "ef80df85b5faead5068854afbf9517f97cf9ba00",
+    "path": "adc/history/collector.py",
+    "git_blob_sha": "8c251f15db40d1f376426dc1396693f0060f6eea",
+    "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/adc/history/collector.py"
+  },
+  {
+    "repository": "volk468-max/Data-collector-1.0",
+    "commit": "ef80df85b5faead5068854afbf9517f97cf9ba00",
+    "path": "adc/storage/database.py",
+    "git_blob_sha": "53f8d22169669346d012af1569a3eaabb0d73b5c",
+    "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/adc/storage/database.py"
+  },
+  {
+    "repository": "volk468-max/Data-collector-1.0",
+    "commit": "ef80df85b5faead5068854afbf9517f97cf9ba00",
+    "path": "adc/storage/repository.py",
+    "git_blob_sha": "5b9b51bceb7b51fe69a35fa99befc0b53b83c41f",
+    "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/adc/storage/repository.py"
+  },
+  {
+    "repository": "volk468-max/Data-collector-1.0",
+    "commit": "ef80df85b5faead5068854afbf9517f97cf9ba00",
+    "path": "adc/providers/yahoo.py",
+    "git_blob_sha": "8f8b41720726e0feca4cbc1aa6edec6f14ac9374",
+    "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/adc/providers/yahoo.py"
+  },
+  {
+    "repository": "volk468-max/Data-collector-1.0",
+    "commit": "ef80df85b5faead5068854afbf9517f97cf9ba00",
+    "path": "adc/config/market_sources.json",
+    "git_blob_sha": "d18ee8307acf61fb245056a296b0b80aaba03608",
+    "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/adc/config/market_sources.json"
+  },
+  {
+    "repository": "volk468-max/Data-collector-1.0",
+    "commit": "ef80df85b5faead5068854afbf9517f97cf9ba00",
+    "path": "adc/api/server.py",
+    "git_blob_sha": "7bf211e832102d08dee7518b3f99c126dfcb96ac",
+    "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/adc/api/server.py"
+  }
+]

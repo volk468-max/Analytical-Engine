@@ -1,0 +1,54 @@
+[
+  {
+    "universe": "FIXED_SEVEN_SEMIS_PROXY",
+    "effective_date": "2021-01-04",
+    "available_at": "2021-01-04T00:00:00+00:00",
+    "members": [
+      "AMAT",
+      "AMD",
+      "AVGO",
+      "LRCX",
+      "MU",
+      "NVDA",
+      "TSM"
+    ],
+    "pit_verified": false
+  },
+  {
+    "universe": "FIXED_ELEVEN_CURRENT_SURVIVORS_PROXY",
+    "effective_date": "2021-01-04",
+    "available_at": "2021-01-04T00:00:00+00:00",
+    "members": [
+      "AMAT",
+      "AMD",
+      "AMZN",
+      "AVGO",
+      "LRCX",
+      "META",
+      "MU",
+      "NVDA",
+      "PLTR",
+      "TSM"
+    ],
+    "pit_verified": false
+  },
+  {
+    "universe": "FIXED_ELEVEN_CURRENT_SURVIVORS_PROXY",
+    "effective_date": "2024-10-21",
+    "available_at": "2024-10-21T00:00:00+00:00",
+    "members": [
+      "AMAT",
+      "AMD",
+      "AMZN",
+      "AVGO",
+      "LRCX",
+      "META",
+      "MU",
+      "NBIS",
+      "NVDA",
+      "PLTR",
+      "TSM"
+    ],
+    "pit_verified": false
+  }
+]

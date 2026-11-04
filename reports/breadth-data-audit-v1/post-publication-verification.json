@@ -1,0 +1,23 @@
+{
+  "validated_commit": "c56b903a8c635479eba93c6f7060bfcceb96f38f",
+  "validated_tree": "3c0d2a4f8efb3ab5cfaf4937f19f22fdc01ae601",
+  "method": "Main a14ebf9 materialized in separate /workspace/alpha-breadth-repro; 10 code/input/manifest files read back via GitHub blob API, not copied from working edits. Run prototype and tests independently.",
+  "published_payload_files_verified_by_git_blob_sha": 26,
+  "downloaded_files": 10,
+  "materialized_or_generated_files_matching_sha256_manifest": 11,
+  "regenerated_identical": [
+    "reports/breadth-data-audit-v1/breadth-prototype.csv",
+    "reports/breadth-data-audit-v1/run.json",
+    "reports/breadth-data-audit-v1/input-manifest.json",
+    "reports/breadth-data-audit-v1/inputs/membership-proxies.json"
+  ],
+  "fresh_tests": {
+    "passed": 30,
+    "failed": 0,
+    "warning": "Environment anyio PytestRemovedIn10Warning"
+  },
+  "prototype_rows": 2930,
+  "historical_backtest_eligible_rows": 0,
+  "scope_verification": "GitHub compare to main:26 files; only reports/breadth-data-audit-v1 and research/breadth_data_audit",
+  "note": "This verification appendix is outside the frozen payload manifest to avoid self-reference. No research payload changed after verification."
+}
