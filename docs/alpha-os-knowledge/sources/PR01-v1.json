@@ -1,0 +1,15 @@
+{
+  "number": 1,
+  "title": "Fix causal support/resistance and add independent tactical risk overlay",
+  "url": "https://github.com/volk468-max/Analytical-Engine/pull/1",
+  "body": "Current candles previously participated in historical support/resistance, which could hide their own breakdown. Levels now use strictly prior dated candles; technical analysis filters future rows and carries the price observation timestamp into decisions.\n\nAdds an independent configurable Tactical Risk Overlay with HOLD/REVIEW/TRIM and explanations. Strong fundamentals do not suppress tactical risk reduction. Decision and Strategy Engine expose the overlay separately; stale, missing or future-dated market observations force REVIEW and suppress target exposure changes. Market regime inputs are checked for freshness and sufficient history. Thresholds, age limits and trim fraction are configurable through ALPHA_RISK_* environment variables.\n\nValidation: full offline pytest suite: 27 passed, 12 subtests passed. Python compileall and git diff --check passed. No failing tests. No production endpoints, databases, deployments or merge operations were invoked.\n\nRisks and limitations: defaults are illustrative policy, not fitted to October or historically validated. ISO/UTC daily timestamps and fixed age windows do not model exchange sessions or holidays. Market producers must expose observation dates; created_at alone no longer proves freshness. Existing legacy decision/classification rules remain; overlay HOLD does not cancel a legacy TRIM/SELL. Manual levels require operator point-in-time provenance. Synthetic tests do not establish strategy effectiveness. Point-in-time walk-forward backtesting, adjusted prices, transaction costs and execution validation remain necessary.\n\nSee docs/risk-engine-v2.md for configuration, time/data contracts and limitations.",
+  "head": "fix/risk-engine-v2",
+  "head_sha": "b3800965bac2e3fa6068e757ed2265b1c00463c0",
+  "base": "main",
+  "base_sha": "a14ebf9c268bea5cb01de962edfb98b8df94652a",
+  "state": "open",
+  "draft": false,
+  "merged": false,
+  "merged_at": null,
+  "updated_at": "2026-10-23T15:55:30Z"
+}
