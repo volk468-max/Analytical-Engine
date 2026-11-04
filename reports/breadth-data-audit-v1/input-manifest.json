@@ -1,0 +1,7 @@
+{
+  "reports/breadth-data-audit-v1/inputs/calendar.json": "a7e3a84eaa10bd74d7ec30fea2ea6205fd0e34849c780c1e66440b645d8578f9",
+  "reports/breadth-data-audit-v1/inputs/membership-proxies.json": "ed70b0277ce5c5d185972edaa4217f82f35687ce62e91724d368dbb0962ef390",
+  "reports/breadth-data-audit-v1/inputs/prices.json.gz.b64": "3e39c3ee4505425a11b81502428746b644f07ffdfecbb57d5b2b69d79a49a050",
+  "reports/breadth-data-audit-v1/inputs/source.json": "6a366a7684c41894d5f113153b7d54525d321f999bbf11f8820c9ed1e5d08714",
+  "reports/breadth-data-audit-v1/inputs/upstream-manifest.json": "1f33e4378c6c3e8bf0aab0b5a5b8e8262a42ecb12c6689ababc47a0673962e53"
+}
