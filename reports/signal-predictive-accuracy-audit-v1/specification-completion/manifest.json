@@ -1,0 +1,39 @@
+{
+  "source_commit": "5d5092b5d03e16f03241c1b5a5d5a19c1816c9c7",
+  "parameters": {
+    "horizons": [
+      5,
+      10,
+      20
+    ],
+    "lower_thresholds": [
+      3,
+      5,
+      10,
+      15
+    ],
+    "upper_threshold": 5,
+    "bootstrap_block": 60,
+    "replicates": 499,
+    "seed": 20261104
+  },
+  "sha256": {
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/annual-accuracy.csv": "bc29bddf71ed92b497e6b4e7ab721bd1253b39b06470d0b953a24218ac5257a5",
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/baseline-comparison.csv": "7dfadcf7f0600bf73223bab2ecdb2cab307a3acc2baad4e76ee2d2a0bf601b2e",
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/executive-summary-ru.md": "56ad3aff8c6367c116114088fd0e44aab55a26f065bb157a675be84d1037b25a",
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/false-signals.csv": "c053e07f7280bbb7e17696cd0d2c7de334db21727fead7433a897005b1ca04ee",
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/missed-drawdowns.csv": "5cb5b20a5523b33c77a81c07ca09f3103ba02f91dd8ae287f58aa7adb980424c",
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/protocol.md": "41803565d532b0b1c5b4328471bcb3b76e270738b26ba1967b6041b42a65ddb4",
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/regime-accuracy.csv": "6c2099de75109c0c09e69aeec957e8e545df416a57acef94df37fd45b55cc260",
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/sector-signals.csv": "4cf9ddce1064bf174e7e7c1ad3f2e06e133f35817e279a94336979627938b096",
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/sector-vs-stock.csv": "a51550806e6abed539e5c264d003678d6feb8370228a14280e0464493659ed2b",
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/signal-accuracy.csv": "a51550806e6abed539e5c264d003678d6feb8370228a14280e0464493659ed2b",
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/signal-outcomes.csv": "2c7d9fd75db14e70ff697379badd078b1026f2ee6b43925c2bc517d7b5931d28",
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/signal-timing.csv": "5b67487542ef2dc57564a3b5a6cecc720bc4b13877bf0fe164104d5279232045",
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/threshold-sensitivity.csv": "7b0a25980b04831fec2cb27d8f882b404e1c24b1647f0675af5f91e03e2b5ba1",
+    "reports/signal-predictive-accuracy-audit-v1/specification-completion/validation.md": "b0dd105a7e9c4da1b501809d41ac1c4c047111c465d2beadc9adb4b88ea4ff0e",
+    "research/signal_predictive_accuracy/completion.py": "0d5202fdb580d3d81f2a3f9f1b978c0b4a2f871fb05b7ce23feb7dd80f3b872f",
+    "research/signal_predictive_accuracy/completion_report.py": "aaae3e741aa64a2ecac5998c5053a51f40d0864e49d289ba799fe16ee49cb8a8",
+    "research/signal_predictive_accuracy/test_completion.py": "ab1817ac848404cec16c03e3ca3a7103656111e5c371ce62578b28b478b613ce"
+  }
+}

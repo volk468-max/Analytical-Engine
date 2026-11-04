@@ -1,0 +1,20 @@
+{
+  "read_only": true,
+  "service_repo": "volk468-max/Analytical-Engine",
+  "service_branch": "main",
+  "latest_deployment_created_at": "2026-10-15T12:12:09.621Z",
+  "latest_deployment_status": "SUCCESS",
+  "database_url_configured": true,
+  "database_credentials_requested": false,
+  "database_payloads_accessed": false,
+  "log_query": {
+    "start": "2026-09-01T00:00:00Z",
+    "end": "2026-11-03T00:00:00Z",
+    "filter": "\"Investment Memory\"",
+    "limit": 200,
+    "returned_entries": 0,
+    "retention_completeness": "UNKNOWN"
+  },
+  "original_production_actions": "UNKNOWN_NOT_HOLD",
+  "production_http_endpoints_invoked": false
+}

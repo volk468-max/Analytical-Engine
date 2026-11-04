@@ -1,0 +1,14 @@
+{
+  "seed": 20261103,
+  "replicates": 1999,
+  "primary_block": 60,
+  "sensitivity_blocks": [
+    20,
+    120
+  ],
+  "stocks_resampled_synchronously": true,
+  "controls_and_signals_reweighted_together": true,
+  "primary_marginal_confidence": 0.975,
+  "primary_familywise_confidence": 0.95,
+  "secondary_exploratory": true
+}

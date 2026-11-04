@@ -1,0 +1,21 @@
+# Методика и файлы
+
+Протокол опубликован до вычислений. Источники immutable PR11@5d5092b5d03e16f03241c1b5a5d5a19c1816c9c7, PR10@ef1a3a76c1c0d455f48a9d787f1c04961c244b91, PR9@7135c2bdc0653986d93dfcfc66b202a6fb2f741e.10PR11 и2PR9 исходных blob-путей сверены с GitHub; local compact prices — lossless выбранные поля с указанным исходным blob/SHA256, не восстановленный утраченный v1.
+
+Signal rule unchanged: mean R5 семиAMD/NVDA/MU/TSM/AVGO/AMAT/LRCX нижеQQQ R5,>=4negative, false/nottrue→true. Только доступный past/current close. Сохранённые134dates проверены повторным запуском frozen_sector_formula.py,1465daily states совпали. Не добавлены новые факторы.
+
+Основные anchors:OPEN=next regular open после sourceavailable_at, CLOSE=signal close отдельно. Evaluation bars одинаковы: следующие1/3/5/10/20сессий после signal-date; первый bar — execution-session, return1=open→close этого дня. Для CLOSE return1=signal-close→next-close. В PR11 quality использовала последующие полные сессии после sale,5bp adverse fill и цель without competing upper barrier: проценты разных аудитов нельзя напрямую приравнивать.
+
+Both price touches first in same bar→UNKNOWN, включаяgap: сознательно консервативно по заданию. TP/FP иногда логически известны в частичном окне, но primary precision иконтроли используют только полные10bars. Неизвестный порядок и недостаточное будущее не FP. Отдельно сохраняются maxdrop/maxrise за5/10/20, low/high20dates, terminalreturns иdown3/5/10/15hit+latency. Secondary matrix использует fixedup5 для всех down thresholds; это не новая основная цель.
+
+Minimum/maximum цены в terminal split-normalized units, а contemporaneous nominal prices на соответствующих датах показаны отдельно. Пороговые отношения единично-инвариантны; не сравнивать nominal значения до/послеsplit без conversion. Цена не total-return wealth: dividends не реинвестируются и не исправляют price targets. Quote timing nextUTCmidnight — исходное предположение, не реальная production attestation.
+
+Statistics:pooled stock precision vs equal-date mean раздельно,Нет фиктивного независимого N. Уникальных кластеров134, полных133; временная зависимость остаётся. CI synchronous moving calendar blocks60,1999resamples, seed20261103; sensitivity20/120. Одни и те же calendar weights действуют на все акции, actual dates и reused controls. Частота ошибок не получает наивный binomialCI по1374строкам. Stocks/markets separate.
+
+Random controls matchcalendar quarter/knownQQQregime/eligibility signature, actual sector dates excluded. MechanicalQQQR5negative rising edge сохраняет естественные совпадения сsector; empty cells не расширяются задним числом. Point estimate exact candidate mean.500seeded panels сreplacement отражают контрольную выборку, а не создают новые независимые истории; unique control count/reuseявно в control-panel-summary.csv. При недостатке кандидатов даты остаются unmatched. Ретроспективное сравнение внутриquarter не объявляется доступной вреальномвремени forecast probability.
+
+Primary two contrasts имеют97.5%marginal CI для family95%; вторичный DD20-bin matching exploratory. Матрицыthreshold/year/ticker/regime тоже exploratory без выбора победителя. Market cohort повторяет benchmark comparison отдельно, без объединения перекрывающихсяETF/индексов.
+
+Episodes: knownclose peak seededprior20 atstudy/eligible start, update onnewhigh, merge untilfullclosing recovery; thresholds5/10/15 close. No newwarning inprior5/10/20 значитfalse negative поэтому окну, не HOLD/stateFalse. Сам closing threshold-day сигнал не prior; earliest nextopen долженбыть доthreshold close. Signal lead иexecution lead отдельные: lead1signal можетозначать0полныхднейисполнения. Неполный начальный lookback не считается FN. Sameevent thresholds не независимы. Seed60/recovery98% sensitivity не оптимизируется.
+
+Файлы:signals.csv полныйwide outcome catalogue;classification.csv четыре статуса;statistics/stock/year/regime tables;threshold-matrix.csv;drawdown-events/missed-falls/episode-sensitivity;baseline-comparison/confidence;asset/date-confidence;control-date-scores/cells и matched-control-panels.csv.gz; examples.csv — earliest chronological TP/FP illustrative, нечастоты. Evidence-inventory иproduction-evidence отделяют архивы. Нет portfolio/trade PnL или нового engine.
