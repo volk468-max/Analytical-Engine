@@ -1,0 +1,74 @@
+{
+  "study_start": "2010-01-04",
+  "study_end": "2026-11-03",
+  "sessions": 4235,
+  "daily_source_rows": 16940,
+  "annual_rows": 68,
+  "source_ticker_inventory_rows": 2819,
+  "disagreement_intervals": 847,
+  "sp500_disagreement_pair_days": 6915,
+  "sp500_any_disagreement_days": 3408,
+  "lawcal_effective_vs_helper_days": 4216,
+  "lawcal_records": 1005,
+  "lawcal_issuer_ciks": 898,
+  "lawcal_repeated_symbols": 33,
+  "archived_price_rows": 31248,
+  "archived_symbols": [
+    "AMAT",
+    "AMD",
+    "AMZN",
+    "AVGO",
+    "LRCX",
+    "META",
+    "MU",
+    "NBIS",
+    "NVDA",
+    "PLTR",
+    "QQQ",
+    "SMH",
+    "SOXX",
+    "SPY",
+    "TSM",
+    "^GSPC",
+    "^IXIC",
+    "^SOX",
+    "^VIX"
+  ],
+  "full_membership_verified": false,
+  "historical_backtest_eligible": false,
+  "live_provider_all_symbols_queried": false,
+  "source_totals": [
+    {
+      "source": "fja_sp500",
+      "candidate_member_observations": 2126329,
+      "archived_quote_observations": 13660,
+      "source_unique_tickers": 848,
+      "departed_source_tickers": 345,
+      "departed_quote_observations": 0
+    },
+    {
+      "source": "thuning_sp500",
+      "candidate_member_observations": 2126328,
+      "archived_quote_observations": 13660,
+      "source_unique_tickers": 841,
+      "departed_source_tickers": 338,
+      "departed_quote_observations": 0
+    },
+    {
+      "source": "thuning_ndx",
+      "candidate_member_observations": 435613,
+      "archived_quote_observations": 13596,
+      "source_unique_tickers": 241,
+      "departed_source_tickers": 140,
+      "departed_quote_observations": 0
+    },
+    {
+      "source": "lawcal_sp500",
+      "candidate_member_observations": 2116199,
+      "archived_quote_observations": 13661,
+      "source_unique_tickers": 889,
+      "departed_source_tickers": 386,
+      "departed_quote_observations": 0
+    }
+  ]
+}

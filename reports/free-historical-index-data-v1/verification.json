@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-04",
+  "offline_unit_tests_passed": 10,
+  "offline_unit_tests_failed": 0,
+  "reproduction_output_count": 10,
+  "byte_identical": {
+    "daily-source-disagreements.csv.gz.b64": true,
+    "summary.json": true,
+    "lawcal-date-semantics.csv": true,
+    "source-statistics.csv": true,
+    "issuer-security-records.csv": true,
+    "daily-membership.csv.gz.b64": true,
+    "delisted-price-coverage.csv": true,
+    "membership-changes.csv": true,
+    "source-disagreements.csv": true,
+    "historical-membership-coverage.csv": true
+  },
+  "primary_checks": 8,
+  "published_readback": "performed separately before Draft PR creation; see final response",
+  "limits": "No all-symbol live quote retrieval or independent full PIT certification. Original backtests not rerun."
+}
