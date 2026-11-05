@@ -393,6 +393,29 @@
       ],
       "report_path": "reports/risk-forecast-v2-predictive-validation/README.md",
       "report_blob": "703d6da7a8567090782ee5d46417cdc100d3b94b"
+    },
+    {
+      "id": "R18-v1",
+      "pr": 18,
+      "title": "Ensemble Risk Forecast v1",
+      "branch": "research/ensemble-risk-forecast-v1",
+      "sha": "43886c0516b35bcfd61afce583b17112ce94bce0",
+      "base_branch": "research/risk-forecast-v2-predictive-validation",
+      "base_sha": "7fe91ab87dcda3607863a19074e6d7b2400503e8",
+      "goal": "Ensemble risk forecasting comparison",
+      "hypothesis": "Consensus and weighted ensembles add predictive value",
+      "data_period": "PR17 frozen prices; reused2021–2026; test2024–26",
+      "method": "Purged meta/cal/test,9999date-block draws,Holm162, separate fixed economic ledger",
+      "results": "0/162primary contrasts;RESEARCH ONLY;66tests/18byte-identical numeric outputs per source",
+      "limitations": "No original PIT/untouched holdout; correlated models and sparse patterns",
+      "decisions": "Research only; no approved production deployment",
+      "open_questions": "Independent prospective predictive/PIT validation",
+      "sources": [
+        "https://github.com/volk468-max/Analytical-Engine/pull/18",
+        "https://github.com/volk468-max/Analytical-Engine/blob/43886c0516b35bcfd61afce583b17112ce94bce0/reports/ensemble-risk-forecast-v1/report-ru.md"
+      ],
+      "report_path": "reports/ensemble-risk-forecast-v1/report-ru.md",
+      "report_blob": "514117a6fdd773b30f71e01777605e6b822b916c"
     }
   ],
   "draft_work": [
@@ -425,6 +448,19 @@
       "classification": "RESEARCH ONLY",
       "real_calculation": true,
       "independent_holdout": false
+    },
+    {
+      "id": "Q004-v1",
+      "title": "Market drawdown precursors v1 / Issue19",
+      "branch": "research/market-drawdown-precursors-v1",
+      "card": "research/Q004-v1.md",
+      "issue": 19,
+      "pr_reference": "This separate Draft PR; final SHA in Git history",
+      "protocol_commit": "ee6e4de04a60b969fccb699b8697adf2b3d4d61d",
+      "classification": "RESEARCH-ONLY",
+      "real_calculation": true,
+      "independent_holdout": false,
+      "PIT_certified": false
     }
   ]
 }

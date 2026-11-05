@@ -1,0 +1,8 @@
+{
+  "primary_family": 33,
+  "testable_primary": 33,
+  "primary_pass": 0,
+  "conclusion": "RESEARCH-ONLY",
+  "PIT_core_gate": "NO-GO",
+  "independent_holdout": false
+}

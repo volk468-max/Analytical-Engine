@@ -26,3 +26,10 @@ R07 forecasting: 0/18 primary incremental tests; R08 anatomy: 0/4 testable hypot
 0/162primary contrasts; TOUCH10/20 Brier B0.228306/C0.236401 vs QQQ0.226822.
 3+голосов48.37%, same-date baseline44.55%, uplift95%CI[-0.34,+9.35]pp.
 RESEARCH ONLY, без подтверждённого экономического превосходства. [Отчёт](../../reports/ensemble-risk-forecast-v1/report-ru.md).
+
+## Q004 / Issue19 — forecast evaluation, не trading backtest
+
+0/33primary TOUCH5/10 contrasts. SPY/QQQ/SOXX MINIMAL Brier0.089373/0.132410/0.208918
+противREGIME0.084913/0.127060/0.207483. Дополнительная прогностическая сила не
+установлена. NVDA secondary vspuremarket не лучше простойREGIME. No NAV/B&H study.
+[Отчёт](../../reports/market-drawdown-precursors-v1/executive-summary-ru.md).

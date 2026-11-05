@@ -41,3 +41,14 @@ Q002 новая исследовательская работа в текуще�
 Текущая Q003 основана на Draft PR17, не main; Draft не deployment.0/162ensemble
 contrasts meet criteria, RESEARCH ONLY; NO-GO для confirmed advantage/live integration.
 Main и deployed статус выше не переопределяются. [Q003](research/Q003-v1.md).
+
+## Q004 / Issue19 market precursors,2026-11-05
+
+| PR | State | Draft | Merged |
+|---|---|---|---|
+| [#18](https://github.com/volk468-max/Analytical-Engine/pull/18) | open | true | false |
+
+Q004 текущая новая research-ветка отDraftPR18.0/33primary contrasts;RESEARCH-ONLY,
+NO-GO validated core/deployment. Frozen free2000–2026 source расширен, но original
+PIT gate FAIL.87market proxy episodes/25overlap clusters не независимые trials.
+Market и stock labels разделены; экономика не тестировалась. [Q004](research/Q004-v1.md).

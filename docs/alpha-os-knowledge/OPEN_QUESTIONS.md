@@ -26,3 +26,10 @@
 Нет надёжно подтверждённого лучшего сочетания. Сколько независимых market episodes
 и original PIT logs будет доступно в будущем? Как обеспечить prospective power
 без повторного выбора по старой истории? Sparse pattern CI может быть NA.
+
+## Q004
+
+Как получить original price publication/vintage evidence и квалифицированные PIT
+breadth/holdings/H4 estimate revisions без подмены survivor proxies? Есть ли
+достаточный prospective power budget для33-wayHolm и1%Brier gain? Независимое
+число market events UNKNOWN; positive secondary NVDA не является новым core.
