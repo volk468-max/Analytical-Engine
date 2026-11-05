@@ -18,3 +18,10 @@ Owner-approved scope only: выполнить Breadth PIT Data Qualification v1 
 ## D004:2026-11-05
 
 Owner-approved scope only: независимая predictive validation v1, новый research protocol/code и Draft PR без изменения предыдущих исследований/production. Источник — текущее задание чата, permalink отсутствует. RESEARCH ONLY и рекомендация не внедрять fixed estimator — вывод Codex, не новое утверждённое торговое решение владельца.
+
+## D005 / 2026-11-05
+
+Owner-approved scope only: Ensemble Risk Forecast v1, расчёты/код/тесты/русский отчёт
+и отдельный Draft PR без merge/deploy/trading. Источник — текущее задание чата,
+GitHub permalink отсутствует. RESEARCH ONLY/prospective plan — вывод/предложение
+Codex, не утверждённое решение владельца об изменении торговых алгоритмов.

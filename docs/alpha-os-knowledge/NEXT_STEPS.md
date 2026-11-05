@@ -17,3 +17,10 @@
 ## После Q002
 
 Не заявлять live forecast advantage текущего estimator:0/27newcriteria. Для дальнейшего predictive research — independent prospective log, actual original availability evidence, заранее определённая минимальная полезная loss improvement и power budget. Untouched period отсутствует; не делать feature search на том же2021–2026. Ничего не покупать/не интегрировать автоматически. [Q002](research/Q002-v1.md).
+
+## После Q003
+
+Не выбирать лучший ансамбль на старой истории. Рекомендация: prospective timestamped
+logging после публикации, минимум2года и30 de-overlapped market episodes плюс blinded
+power check для1%Brier gain; прежняя Holm family, PIT и отдельный economic gate.
+Independent event count сейчас UNKNOWN. Ничего не внедрять/покупать автоматически.
