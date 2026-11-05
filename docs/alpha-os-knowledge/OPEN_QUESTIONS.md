@@ -12,3 +12,7 @@
 - GitHub permalink исходной команды владельца отсутствует; scope записан в D001.
 
 Связанные первоисточники закреплены в [каталоге](RESEARCH_INDEX.md). Рекомендация: отсутствие данных фиксировать UNKNOWN/UNAVAILABLE; не заменять текущими значениями и не делать вывод HOLD из пустых логов.
+
+## Дополнительные блокеры Q001
+
+Неизвестны actual trial/API compatibility, original membership/price publication vintages, полные ticker/security histories и corporate-action ratios, независимый denominator. Двухлетний trial не проверяет2010–2026. Личное/коммерческое назначение, account/Windows readiness и cloud deletion доказательства требуют решения владельца. Источники/контракт: [Q001](research/Q001-v1.md).

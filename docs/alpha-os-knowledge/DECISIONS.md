@@ -10,3 +10,7 @@
 Утверждённых решений владельца о внедрении Overlay/v3/Forecast/buyback/Breadth в доступных источниках не установлено. Ограничения frozen research protocols — методика исследований, не доказательство owner approval. R01–R13.
 
 Предложение PR13 о Breadth PIT Data Qualification и предпочтении поставщика — рекомендация исследования; закупка и следующий PR не одобрены автоматически.
+
+## 2026-11-05 / D003
+
+Owner-approved scope only: выполнить Breadth PIT Data Qualification v1 и отдельный Draft PR с обновлением памяти. Источник — задание текущего чата, GitHub permalink отсутствует. Покупка, trial activation, коммерческая лицензия и внедрение не утверждены. Q001-рекомендации — proposed, не owner-approved.

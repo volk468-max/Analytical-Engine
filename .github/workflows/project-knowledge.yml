@@ -21,3 +21,5 @@ jobs:
         run: python3 scripts/validate_project_knowledge.py --online --base-ref "$BASE_SHA"
       - name: Validator regression checks
         run: python3 -m unittest discover -s tests/knowledge -v
+      - name: Synthetic PIT qualification gates (no vendor access)
+        run: python3 -m unittest discover -s research/breadth_pit_qualification -v

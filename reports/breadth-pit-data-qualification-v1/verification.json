@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-05",
+  "qualification_tests_passed": 30,
+  "knowledge_regression_tests_passed": 9,
+  "failed_tests": 0,
+  "knowledge_online_and_base_ref_validation": "PASSED against f9288b42e0d58f521b57c420d79477d5aeb10459 using actual Git clone and live GitHub API",
+  "real_norgate_data_received": false,
+  "norgate_api_executed": false,
+  "trial_activated": false,
+  "subscriptions_purchased": false,
+  "synthetic_only": true,
+  "production_changes": false,
+  "existing_research_cards_and_records_preserved": true,
+  "ci_result": "Not claimed; workflow includes synthetic checks",
+  "source_receipts": "sources.json distinguishes shell responses from web-reference review"
+}

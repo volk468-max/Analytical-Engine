@@ -13,3 +13,7 @@
 Источники каждой строки: соответствующие [карточки и pinned отчёты](RESEARCH_INDEX.md). Dataset hashes/retrieval timestamps находятся в оригинальных manifests отчётов, а не заменены хешем PR. Единой действующей production data version восстановить нельзя.
 
 Рекомендация: до нового backtest фиксировать dataset manifest, provider URL, retrieval/available/effective timestamps, adjustment basis, missing sessions, licence, SHA256. SHA256 данных не является Git commit SHA. Условия поставщиков меняются; исторические цены и licensing candidates в R13 не являются разрешением купить или передать raw данные. В knowledge не копировать credentials, персональные позиции, payloads или лицензионно ограниченные raw exports.
+
+## 2026-11-05: последующие источники
+
+R15 добавил Kaggle survivor-selected2018 archive: acquired candidate coverage около26%, а не verified PIT. Q001 Norgate exports отсутствуют; test bundle synthetic. Ни AssetID rows, ни цены поставщика не копируются в knowledge/public GitHub. Документационные HTTP receipts — sources.json проекта, не real market dataset.

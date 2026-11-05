@@ -1,0 +1,286 @@
+{
+  "manifest": {
+    "schema_version": 1,
+    "data_kind": "synthetic",
+    "purpose": "personal_research",
+    "private_processing": true,
+    "licence_reviewed": true,
+    "history_basis": "historical_all_members",
+    "entitlement_expires_at": "2099-01-01T00:00:00Z",
+    "security_master_reviewed": true,
+    "actions_reconciled": true,
+    "retrieved_at": "2025-01-07T00:00:00Z",
+    "start": "2025-01-02",
+    "end": "2025-01-06",
+    "payload_sha256": "3cb60d7bfc54dd1f1e5989eb213c975ce6de2bcd88f3ad1d2e5458de8a81c201"
+  },
+  "payload": {
+    "provenance": [
+      {
+        "id": "invented",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "reviewed": true
+      }
+    ],
+    "calendar": [
+      {
+        "session": "2025-01-02",
+        "open_at": "2025-01-02T14:30:00Z",
+        "close_at": "2025-01-02T21:00:00Z",
+        "decision_at": "2025-01-02T22:00:00Z",
+        "source_id": "invented"
+      },
+      {
+        "session": "2025-01-03",
+        "open_at": "2025-01-03T14:30:00Z",
+        "close_at": "2025-01-03T21:00:00Z",
+        "decision_at": "2025-01-03T22:00:00Z",
+        "source_id": "invented"
+      },
+      {
+        "session": "2025-01-06",
+        "open_at": "2025-01-06T14:30:00Z",
+        "close_at": "2025-01-06T21:00:00Z",
+        "decision_at": "2025-01-06T22:00:00Z",
+        "source_id": "invented"
+      }
+    ],
+    "securities": [
+      {
+        "security_id": "SYNTH:A",
+        "issuer_id": "SYNTH:ISSUER",
+        "exit_type": "acquired",
+        "from": "2025-01-01",
+        "to": "2025-01-06",
+        "source_id": "invented"
+      },
+      {
+        "security_id": "SYNTH:B",
+        "issuer_id": "SYNTH:ISSUER",
+        "exit_type": "active",
+        "from": "2025-01-01",
+        "to": "",
+        "source_id": "invented"
+      }
+    ],
+    "tickers": [
+      {
+        "security_id": "SYNTH:A",
+        "symbol": "A",
+        "exchange": "SYNTH",
+        "from": "2025-01-01",
+        "to": "2025-01-06",
+        "source_id": "invented"
+      },
+      {
+        "security_id": "SYNTH:B",
+        "symbol": "B",
+        "exchange": "SYNTH",
+        "from": "2025-01-01",
+        "to": "",
+        "source_id": "invented"
+      }
+    ],
+    "memberships": [
+      {
+        "index": "SP500",
+        "security_id": "SYNTH:A",
+        "available_at": "2024-12-31T00:00:00Z",
+        "availability_verified": true,
+        "from": "2025-01-02",
+        "to": "2025-01-06",
+        "source_id": "invented"
+      },
+      {
+        "index": "NDX100",
+        "security_id": "SYNTH:A",
+        "available_at": "2024-12-31T00:00:00Z",
+        "availability_verified": true,
+        "from": "2025-01-02",
+        "to": "2025-01-06",
+        "source_id": "invented"
+      },
+      {
+        "index": "SP500",
+        "security_id": "SYNTH:B",
+        "available_at": "2024-12-31T00:00:00Z",
+        "availability_verified": true,
+        "from": "2025-01-02",
+        "to": "",
+        "source_id": "invented"
+      },
+      {
+        "index": "NDX100",
+        "security_id": "SYNTH:B",
+        "available_at": "2024-12-31T00:00:00Z",
+        "availability_verified": true,
+        "from": "2025-01-02",
+        "to": "",
+        "source_id": "invented"
+      }
+    ],
+    "prices": [
+      {
+        "security_id": "SYNTH:A",
+        "session": "2025-01-02",
+        "open": 10.0,
+        "high": 12.0,
+        "low": 9.0,
+        "close": 11.0,
+        "volume": 100,
+        "adjustment_basis": "unadjusted",
+        "padded": false,
+        "available_at": "2025-01-02T21:15:00Z",
+        "availability_verified": true,
+        "source_id": "invented"
+      },
+      {
+        "security_id": "SYNTH:A",
+        "session": "2025-01-03",
+        "open": 10.0,
+        "high": 12.0,
+        "low": 9.0,
+        "close": 11.0,
+        "volume": 100,
+        "adjustment_basis": "unadjusted",
+        "padded": false,
+        "available_at": "2025-01-03T21:15:00Z",
+        "availability_verified": true,
+        "source_id": "invented"
+      },
+      {
+        "security_id": "SYNTH:B",
+        "session": "2025-01-02",
+        "open": 10.0,
+        "high": 12.0,
+        "low": 9.0,
+        "close": 11.0,
+        "volume": 100,
+        "adjustment_basis": "unadjusted",
+        "padded": false,
+        "available_at": "2025-01-02T21:15:00Z",
+        "availability_verified": true,
+        "source_id": "invented"
+      },
+      {
+        "security_id": "SYNTH:B",
+        "session": "2025-01-03",
+        "open": 10.0,
+        "high": 12.0,
+        "low": 9.0,
+        "close": 11.0,
+        "volume": 100,
+        "adjustment_basis": "unadjusted",
+        "padded": false,
+        "available_at": "2025-01-03T21:15:00Z",
+        "availability_verified": true,
+        "source_id": "invented"
+      },
+      {
+        "security_id": "SYNTH:B",
+        "session": "2025-01-06",
+        "open": 10.0,
+        "high": 12.0,
+        "low": 9.0,
+        "close": 11.0,
+        "volume": 100,
+        "adjustment_basis": "unadjusted",
+        "padded": false,
+        "available_at": "2025-01-06T21:15:00Z",
+        "availability_verified": true,
+        "source_id": "invented"
+      }
+    ],
+    "actions": [
+      {
+        "security_id": "SYNTH:A",
+        "type": "split",
+        "ex_date": "2025-01-03",
+        "ratio": 2.0,
+        "available_at": "2025-01-02T21:00:00Z",
+        "availability_verified": true,
+        "source_id": "invented"
+      },
+      {
+        "security_id": "SYNTH:A",
+        "type": "reverse_split",
+        "ex_date": "2025-01-03",
+        "ratio": 2.0,
+        "available_at": "2025-01-02T21:00:00Z",
+        "availability_verified": true,
+        "source_id": "invented"
+      },
+      {
+        "security_id": "SYNTH:A",
+        "type": "merger",
+        "ex_date": "2025-01-03",
+        "ratio": 2.0,
+        "available_at": "2025-01-02T21:00:00Z",
+        "availability_verified": true,
+        "source_id": "invented"
+      },
+      {
+        "security_id": "SYNTH:A",
+        "type": "delisting",
+        "ex_date": "2025-01-03",
+        "ratio": 2.0,
+        "available_at": "2025-01-02T21:00:00Z",
+        "availability_verified": true,
+        "source_id": "invented"
+      }
+    ],
+    "reference": {
+      "independent": true,
+      "reviewed": true,
+      "members": [
+        {
+          "index": "SP500",
+          "session": "2025-01-02",
+          "security_ids": [
+            "SYNTH:A",
+            "SYNTH:B"
+          ]
+        },
+        {
+          "index": "SP500",
+          "session": "2025-01-03",
+          "security_ids": [
+            "SYNTH:A",
+            "SYNTH:B"
+          ]
+        },
+        {
+          "index": "SP500",
+          "session": "2025-01-06",
+          "security_ids": [
+            "SYNTH:B"
+          ]
+        },
+        {
+          "index": "NDX100",
+          "session": "2025-01-02",
+          "security_ids": [
+            "SYNTH:A",
+            "SYNTH:B"
+          ]
+        },
+        {
+          "index": "NDX100",
+          "session": "2025-01-03",
+          "security_ids": [
+            "SYNTH:A",
+            "SYNTH:B"
+          ]
+        },
+        {
+          "index": "NDX100",
+          "session": "2025-01-06",
+          "security_ids": [
+            "SYNTH:B"
+          ]
+        }
+      ],
+      "source_id": "invented"
+    }
+  }
+}

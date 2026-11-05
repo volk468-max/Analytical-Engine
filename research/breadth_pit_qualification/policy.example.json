@@ -1,0 +1,23 @@
+{
+  "min_coverage": 0.98,
+  "min_departed_coverage": 1.0,
+  "min_member_count": {
+    "SP500": 480,
+    "NDX100": 90
+  },
+  "max_member_count": {
+    "SP500": 600,
+    "NDX100": 150
+  },
+  "require_departed_sample": true,
+  "required_action_types": [
+    "split",
+    "reverse_split",
+    "merger",
+    "delisting"
+  ],
+  "ma_windows": [
+    50,
+    200
+  ]
+}
