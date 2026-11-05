@@ -1,0 +1,12 @@
+{
+  "research/free_historical_index_data/continue_prices.py": "3fe570d43c0eb55e1780008cc41b6694302e06bf1139e8f82008a9ea44855c7e",
+  "research/free_historical_index_data/test_continue_prices.py": "a742424ac226d4cc08e94132ff07a5f231db603e1c25a4e90a6d5d07470ba44c",
+  "reports/free-historical-index-data-v1/continuation/all-ticker-price-coverage.csv": "b6040633e237686dbfb06545170cde850d442c3aedadc5eb44dedadf6b6751c8",
+  "reports/free-historical-index-data-v1/continuation/annual-price-coverage.csv": "6406cbbc2a8ad060d33ef1efd314d8edfb5dd7fe15781e0dd53b3f50d8ec3ea9",
+  "reports/free-historical-index-data-v1/continuation/executive-summary-ru.md": "2678556994e2ccd83eee5e83523b84e8dc691389092414ec3e9a0a60cb01c25a",
+  "reports/free-historical-index-data-v1/continuation/knowledge-update.md": "aee05de0bebbe8458ef7466a1bb6ca5db7e62edd2d513ad09c3a5ddce848f476",
+  "reports/free-historical-index-data-v1/continuation/rejected-price-rows.csv": "4b2582408b3505c5385c272ba9f70be9f1255d5a4e7d09a7df4f428322e368d0",
+  "reports/free-historical-index-data-v1/continuation/source-manifest.json": "dcf2f642d7b7f0cf27e3b5e1537b8ae0a5bbd25a7c7cbe35063f80d4c8de7ed2",
+  "reports/free-historical-index-data-v1/continuation/summary.json": "d001a283c74bae276287da051bec7cdb1cf763d6bdc0fd6c74904bd7ae5295a6",
+  "reports/free-historical-index-data-v1/continuation/verification.json": "08eaf8966a6c50f0ed62107800656ce4cba4470ec099fe52667a4adb640e45f9"
+}

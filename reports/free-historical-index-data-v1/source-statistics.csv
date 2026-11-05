@@ -1,0 +1,5 @@
+source,index,rows,first_date,last_change_date,audited_horizon,family,approx_added,approx_removed,min_study_count,max_study_count
+fja_sp500,SP500,2720,1996-01-02,2026-08-18,2026-09-07,fja_base,,,496,507
+thuning_sp500,SP500,2712,1996-01-02,2026-06-02,2026-06-06,fja_base,,,496,507
+thuning_ndx,NDX100,112,2007-02-01,2026-05-18,2026-06-06,wiki_backward,,,100,108
+lawcal_sp500,SP500,1005,2007-03-05,2026-10-08,2026-10-26,wiki_revisions,257,131,484,506

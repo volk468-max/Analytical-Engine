@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-05",
+  "input_rows": 619040,
+  "input_symbols": 505,
+  "first": "2013-02-08",
+  "last": "2018-02-07",
+  "accepted_session_rows": 618513,
+  "rejected_rows": 527,
+  "rejection_reasons": {
+    "PRE_EFFECTIVE_AAL_IDENTITY": 210,
+    "INVALID_OHLCV": 12,
+    "MISSING_OR_NONNUMERIC": 11,
+    "GOOGLE_PRE_CLASS_SPLIT_IDENTITY_UNRESOLVED": 294
+  },
+  "non_session_rows": 0,
+  "archive_zip_sha256": "4f775195e67179c9c19b63f084e5f2e049fae734023f9d10e233388d6423752a",
+  "archive_csv_sha256": "6aea253cd19de60b568143991aaf1fa482456565c389205658d236e595e716cf",
+  "archive_url": "https://www.kaggle.com/api/v1/datasets/download/camnugent/sandp500?datasetVersionNumber=4",
+  "licence_declared": "CC0-1.0 on dataset page; upstream rights not independently attested",
+  "dataset_page": "https://www.kaggle.com/datasets/camnugent/sandp500",
+  "dataset_version": 4,
+  "selection": "constituents selected at Feb2018 snapshot; survivorship bias remains",
+  "adjustment_basis": "NOT_INDEPENDENTLY_VERIFIED",
+  "security_mapping": "NOT_VERIFIED",
+  "historical_backtest_eligible": false,
+  "sources": [
+    {
+      "source": "fja_sp500",
+      "member_days": 2126329,
+      "original_quote_days": 13660,
+      "new_quote_days": 548450,
+      "union_coverage_pct": 26.435702,
+      "departed_member_days": 567532,
+      "departed_new_quote_days": 155824,
+      "departed_coverage_pct": 27.456425
+    },
+    {
+      "source": "lawcal_sp500",
+      "member_days": 2116199,
+      "original_quote_days": 13661,
+      "new_quote_days": 542381,
+      "union_coverage_pct": 26.275506,
+      "departed_member_days": 596753,
+      "departed_new_quote_days": 160079,
+      "departed_coverage_pct": 26.825001
+    },
+    {
+      "source": "thuning_ndx",
+      "member_days": 435613,
+      "original_quote_days": 13596,
+      "new_quote_days": 100603,
+      "union_coverage_pct": 26.215701,
+      "departed_member_days": 182872,
+      "departed_new_quote_days": 45680,
+      "departed_coverage_pct": 24.97922
+    },
+    {
+      "source": "thuning_sp500",
+      "member_days": 2126328,
+      "original_quote_days": 13660,
+      "new_quote_days": 548450,
+      "union_coverage_pct": 26.435715,
+      "departed_member_days": 545185,
+      "departed_new_quote_days": 149529,
+      "departed_coverage_pct": 27.427204
+    }
+  ]
+}

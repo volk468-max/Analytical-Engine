@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-05",
+  "tests_passed": 15,
+  "tests_failed": 0,
+  "byte_identical_reproduction": {
+    "summary.json": true,
+    "rejected-price-rows.csv": true,
+    "annual-price-coverage.csv": true,
+    "all-ticker-price-coverage.csv": true
+  },
+  "original_27_files_unchanged": true,
+  "annual_accounting_invariants_passed": true,
+  "scope": "Research-only; no full PIT certification, purchases, trading, merge or deploy"
+}

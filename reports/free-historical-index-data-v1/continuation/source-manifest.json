@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-05",
+  "archive_url": "https://www.kaggle.com/api/v1/datasets/download/camnugent/sandp500?datasetVersionNumber=4",
+  "dataset_page": "https://www.kaggle.com/datasets/camnugent/sandp500",
+  "dataset_version": 4,
+  "archive_zip_sha256": "4f775195e67179c9c19b63f084e5f2e049fae734023f9d10e233388d6423752a",
+  "archive_csv_sha256": "6aea253cd19de60b568143991aaf1fa482456565c389205658d236e595e716cf",
+  "licence_declared": "CC0-1.0 on dataset page; upstream rights not independently attested",
+  "selection": "constituents selected at Feb2018 snapshot; survivorship bias remains",
+  "adjustment_basis": "NOT_INDEPENDENTLY_VERIFIED",
+  "security_mapping": "NOT_VERIFIED",
+  "archive_bytes": 20283917,
+  "base_pr": 15,
+  "base_sha": "8cc80cdf31690fd74639b8fc498283d6cca1399d",
+  "raw_redistributed": false,
+  "upstream_embedded_script_provider": "iex",
+  "current_author_script_url": "https://github.com/CNuge/kaggle-code/blob/23045d5b0398ccf5de2d7eb8cc9c3e96d05fff90/stock_data/getSandP.py",
+  "original_member_source_manifest": "../source-manifest.json"
+}

@@ -1,0 +1,9 @@
+source,date,symbol,expected_symbol_present,observed_symbol_present,symbol_check_matches,reason,primary_source,automatic_repair
+fja_sp500,2010-01-04,GOOGL,False,True,False,GOOG class A before 2014-04-03,https://www.nasdaqtrader.com/TraderNews.aspx?id=ETA2014-24,False
+thuning_sp500,2010-01-04,GOOGL,False,True,False,GOOG class A before 2014-04-03,https://www.nasdaqtrader.com/TraderNews.aspx?id=ETA2014-24,False
+lawcal_sp500,2010-01-04,GOOG,True,False,False,Google class A symbol at date; published helper loses row,https://press.spglobal.com/2014-02-03-Treatment-of-Google-Stock-Split-in-the-S-P-100-and-S-P-500,False
+lawcal_sp500,2022-06-08,META,False,True,False,"Symbol effective next trading day, not revision date",https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2022-125,False
+thuning_ndx,2015-12-21,ENDP,True,False,False,Official addition; alternative NDOI is not silently mapped,https://ir.nasdaq.com/news-releases/news-release-details/annual-changes-nasdaq-100-index-4,False
+thuning_ndx,2014-12-22,CMCSK,True,False,False,Official Class A Special addition,https://ir.nasdaq.com/news-releases/news-release-details/annual-changes-nasdaq-100-index-3,False
+thuning_ndx,2010-01-04,NLOK,False,True,False,Symbol became NLOK in November 2019,https://www.nasdaq.com/press-release/symantec-completes-sale-of-enterprise-security-assets-to-broadcom-2019-11-04,False
+thuning_ndx,2017-01-03,QRTEA,False,True,False,Symbol became QRTEA in March 2018,https://investors.qvcgrp.com/news-media/press-releases/detail/14/liberty-interactive-and-gci-liberty-announce-completion-of,False

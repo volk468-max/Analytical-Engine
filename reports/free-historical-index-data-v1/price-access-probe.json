@@ -1,0 +1,8 @@
+{
+  "provider": "Stooq",
+  "url": "https://stooq.com/q/d/l/?s=aapl.us&i=d&d1=20100101&d2=20261103",
+  "retrieved_on": "2026-11-04",
+  "purpose": "single documented CSV access probe; no retries/bypass",
+  "error_type": "HTTPError",
+  "error": "HTTP Error 404: Not Found"
+}
