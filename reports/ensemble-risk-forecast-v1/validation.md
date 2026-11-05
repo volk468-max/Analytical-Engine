@@ -19,3 +19,8 @@ Completed local checks:
 uses real frozen observations. See corrections.md for initial/resolved failures.
 Byte reproduction and online knowledge validation results are recorded in
 verification.json after final checks. No future GitHub CI success is asserted.
+
+Final results:18 numerical artifacts reproduced byte-identically after the9,999-draw
+primary correction. All66 tests passed; knowledge validator passed with live GitHub
+and full PR17 base SHA; git diff --check passed. Full hashes in verification.json.
+No untouched/PIT claim follows from successful software checks.
