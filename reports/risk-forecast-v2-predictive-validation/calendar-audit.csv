@@ -1,0 +1,6 @@
+symbol,reference_calendar,missing_dates,extra_dates,normalised_close_time_mismatches,interpretation
+AMD,exchange_calendars4.11.2/XNYS,,,12,"Fixed6.5h archived closes differ on early close dates; next-midnight availability conservative assumption, not PIT attestation"
+NVDA,exchange_calendars4.11.2/XNYS,,,12,"Fixed6.5h archived closes differ on early close dates; next-midnight availability conservative assumption, not PIT attestation"
+MU,exchange_calendars4.11.2/XNYS,,,12,"Fixed6.5h archived closes differ on early close dates; next-midnight availability conservative assumption, not PIT attestation"
+QQQ,exchange_calendars4.11.2/XNYS,,,12,"Fixed6.5h archived closes differ on early close dates; next-midnight availability conservative assumption, not PIT attestation"
+^SOX,exchange_calendars4.11.2/XNYS,,,12,"Fixed6.5h archived closes differ on early close dates; next-midnight availability conservative assumption, not PIT attestation"

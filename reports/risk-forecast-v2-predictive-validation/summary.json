@@ -1,0 +1,14 @@
+{
+  "source_sha": "366f8cd00e8c228d4796d0abbe9997f717a3b6ad",
+  "protocol_sha256": "bbc48d756173712907bfac6bc0ac1db4f492c85a009213ef9341d2214a1fbdc0",
+  "rows": 66438,
+  "test_rows": 34200,
+  "primary_comparisons": 27,
+  "primary_comparisons_pass": 0,
+  "touch_tasks_meeting_all_baselines": 0,
+  "source_vintage_verified": false,
+  "independent_untouched_holdout": false,
+  "overall_conclusion": "RESEARCH ONLY",
+  "new_model_proposed": false,
+  "synthetic_market_observations_used": false
+}

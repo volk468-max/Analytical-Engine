@@ -347,6 +347,29 @@
       ],
       "report_path": "reports/free-historical-index-data-v1/continuation/executive-summary-ru.md",
       "report_blob": "dab36eaa379712e4bcdba17187eb63cf0a18769d"
+    },
+    {
+      "id": "R16-v1",
+      "pr": 16,
+      "title": "Research: Breadth PIT Data Qualification v1",
+      "branch": "research/breadth-pit-data-qualification-v1",
+      "sha": "848610ff46f125d5369f15852d5daceca53acafa",
+      "base_branch": "docs/project-knowledge-system-v1",
+      "base_sha": "f9288b42e0d58f521b57c420d79477d5aeb10459",
+      "goal": "Breadth PIT data qualification design",
+      "hypothesis": "Windows extractor/private Linux validation may qualify personal-use data",
+      "data_period": "No real Norgate data; synthetic fixtures only;2026-11-05 docs",
+      "method": "Official documentation, contract/validator/synthetic checks",
+      "results": "Design and30synthetic gate tests; real_data_qualified remains false",
+      "limitations": "No actual trial/API/data qualification; personal licence/retention restrictions",
+      "decisions": "No approved purchase/integration",
+      "open_questions": "Real trial/PIT publication evidence/rights",
+      "sources": [
+        "https://github.com/volk468-max/Analytical-Engine/pull/16",
+        "https://github.com/volk468-max/Analytical-Engine/blob/848610ff46f125d5369f15852d5daceca53acafa/reports/breadth-pit-data-qualification-v1/README.md"
+      ],
+      "report_path": "reports/breadth-pit-data-qualification-v1/README.md",
+      "report_blob": "97965d5b55301fdaeb99d4e5dd02bc0ae090b78d"
     }
   ],
   "draft_work": [
@@ -357,6 +380,17 @@
       "pr_reference": "This PR; publication ID and source commit resolved by Git history",
       "card": "research/Q001-v1.md",
       "real_vendor_validation": false
+    },
+    {
+      "id": "Q002-v1",
+      "title": "Risk Forecast v2 — Predictive Validation",
+      "branch": "research/risk-forecast-v2-predictive-validation",
+      "card": "research/Q002-v1.md",
+      "pr_reference": "This Draft PR, final SHA in Git history",
+      "protocol_commit": "b1d43275bb10bc69516e868b625377ceea4119b6",
+      "classification": "RESEARCH ONLY",
+      "real_calculation": true,
+      "independent_holdout": false
     }
   ]
 }

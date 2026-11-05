@@ -13,3 +13,7 @@
 ## Актуализация 2026-11-05
 
 Предшествующий план выше сохранён как checkpoint. Q001 технический проект теперь подготовлен, но реальная data qualification не выполнена. Следующее предложенное действие: human review схемы/прав/изоляции, затем отдельно разрешённый owner trial на Windows (3недели/2года), independent event evidence и deletion plan. Полный2010–2026 gate остаётся закрытым. Не покупать и не интегрировать автоматически. См. [trial-plan](../../reports/breadth-pit-data-qualification-v1/trial-plan.md).
+
+## После Q002
+
+Не заявлять live forecast advantage текущего estimator:0/27newcriteria. Для дальнейшего predictive research — independent prospective log, actual original availability evidence, заранее определённая минимальная полезная loss improvement и power budget. Untouched period отсутствует; не делать feature search на том же2021–2026. Ничего не покупать/не интегрировать автоматически. [Q002](research/Q002-v1.md).

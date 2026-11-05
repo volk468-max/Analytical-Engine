@@ -1,0 +1,15 @@
+# Методика оценки
+
+Протокол в protocol.md неизменен с публикации. PhaseA — точное воспроизведение старой модели/annual fits. PhaseB — независимый код оценки, но НЕ независимые новые рыночные данные; архитектура ProbabilityBank/бины/strength20/C-sensitive фиксированы. Пересчитываются probability estimates на старых training windows, а не изменяются сигналы/модельные hyperparameters.
+
+Для testY: train maturity<=Jan1(Y-1), train anchors раньше20common sessions до boundary. Calibration Y-1 начинается после20-session embargo и заканчивается так, чтобы весь horizon созрел минимум20sessions до test boundary. Calibration — оценка, не подгонка mapping. TestY исключает первые20sessions; bank не обновляется после calibration. Повторное использование более раннего test year как past training в следующем walk-forward не превращает историю в prospective holdout. Fit-audit.csv показывает фактические train/cal/test limits.
+
+TOUCH_DOWN использует Low следующих h stock sessions, TERMINAL_DOWN — close последней. Anchor close и будущая anchor candle исключена. Label maturity требует full window publication, даже при раннем hit. Цены/feature timestamps и рынок не подмешивают future labels в обучение. Cal/test roles отделены, и каждая baseline сравнивается на тех же rows.
+
+Unconditional/volatility baselines используют исходные Beta(1,1), fixedRV20bins/shrinkage; regime baseline заранее определён по known QQQclose/MA200/R20 и shrink20 к той же unconditional rate. Regime не market breadth и не реконструкция скрытых fundamentals. Additional technical_combined/v3_state/v3_score не выбраны победителями после теста.
+
+Каждая из9комбинаций и каждый ticker отдельно, terminal secondary. Primary pooled contrasts27 с Holm across27; block bootstrap1999 draw lengths20/40/60 synchronously across stocks, preserve calendar gaps including embargo, а не IID row bootstrap. Effective N возвращён undefined там, где holes нарушают предпосылку helper: не выдумывать независимую sample size. Intervals conditional on fitted models/history; training/model-design uncertainty и regime instability покрыты не полностью. Reliability bins10fixed, descriptive dependent rates; sparsity не скрывается. Alert thresholds.5/.7 fixed, false-positive rate не путается с false-discovery fraction.
+
+Primary criteria также требуют positive/negative support в>=5calendar40blocks,>=10labels каждого класса и>=10calendar40blocks всего; это конвенция support, не formal power guarantee. Sign stability по каждому stock/year, block interval и>=1%relative Brier improvement не заменяют независимый holdout. Ни calibration/test likelihood, ни экономический результат не используются для feature/threshold/hyperparameter selection.
+
+Таблицы: metrics.csv, baseline-comparison.csv, reliability.csv + calibration-curves.svg, alerts.csv, stability.csv, calibration-period.csv. Error examples — первый chronological false alert/missed touch по stock/task, без cherry-picking; отсутствие примера допускается. Короткие/зависимые strata не объявляются подтверждением отдельного regime effect.

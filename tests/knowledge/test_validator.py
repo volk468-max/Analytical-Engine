@@ -17,9 +17,9 @@ class KnowledgeChecks(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)
         shutil.copytree(ROOT/v.K, self.root/v.K)
-        reports = ROOT/'reports/breadth-pit-data-qualification-v1'
+        reports = ROOT/'reports'
         if reports.exists():
-            shutil.copytree(reports, self.root/'reports/breadth-pit-data-qualification-v1')
+            shutil.copytree(reports, self.root/'reports')
         self.override = patch.object(v, 'ROOT', self.root)
         self.override.start()
 

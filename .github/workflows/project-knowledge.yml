@@ -23,3 +23,8 @@ jobs:
         run: python3 -m unittest discover -s tests/knowledge -v
       - name: Synthetic PIT qualification gates (no vendor access)
         run: python3 -m unittest discover -s research/breadth_pit_qualification -v
+      - name: Forecast validation unit and published-output checks
+        run: |
+          python3 -m venv "$RUNNER_TEMP/forecast-ci"
+          "$RUNNER_TEMP/forecast-ci/bin/pip" install numpy==2.3.5
+          OPENBLAS_NUM_THREADS=1 "$RUNNER_TEMP/forecast-ci/bin/python" -m unittest discover -s research/risk_forecast_validation -v
