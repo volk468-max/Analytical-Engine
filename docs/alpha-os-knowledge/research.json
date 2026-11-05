@@ -301,6 +301,62 @@
       ],
       "report_path": "reports/breadth-data-audit-v1/executive-summary-ru.md",
       "report_blob": "e4b22c7dce35b403edafb1c8f4343a54f776616d"
+    },
+    {
+      "id": "R14-v1",
+      "pr": 14,
+      "title": "Docs: Alpha OS Project Knowledge System v1",
+      "branch": "docs/project-knowledge-system-v1",
+      "sha": "f9288b42e0d58f521b57c420d79477d5aeb10459",
+      "base_branch": "main",
+      "base_sha": "a14ebf9c268bea5cb01de962edfb98b8df94652a",
+      "goal": "Постоянная documentation memory",
+      "hypothesis": "Можно ли получить воспроизводимую проверяемую основу дальнейших работ?",
+      "data_period": "Published GitHub sources; 2026-11-05 status check",
+      "method": "Pinned source review; provenance, tests and limitations in linked report",
+      "results": "46 documentation/validator files; Draft не внедрён",
+      "limitations": "Draft/unmerged; не аттестует production или полную PIT историю",
+      "decisions": "Покупка/внедрение владельцем не утверждены",
+      "open_questions": "Human review и qualification evidence",
+      "sources": [
+        "https://github.com/volk468-max/Analytical-Engine/pull/14",
+        "https://github.com/volk468-max/Analytical-Engine/blob/f9288b42e0d58f521b57c420d79477d5aeb10459/docs/alpha-os-knowledge/README.md"
+      ],
+      "report_path": "docs/alpha-os-knowledge/README.md",
+      "report_blob": "b2c5195311357cba8d422a4afcd6f48a098fb07e"
+    },
+    {
+      "id": "R15-v1",
+      "pr": 15,
+      "title": "Research: Free Historical Index Data Audit v1 — membership and expanded price coverage",
+      "branch": "research/free-historical-index-data-v1",
+      "sha": "90975c0acdda9c502c7b187c54d8d004b8f514b3",
+      "base_branch": "main",
+      "base_sha": "a14ebf9c268bea5cb01de962edfb98b8df94652a",
+      "goal": "Квалификация бесплатных membership/price sources",
+      "hypothesis": "Можно ли получить воспроизводимую проверяемую основу дальнейших работ?",
+      "data_period": "Published GitHub sources; 2026-11-05 status check",
+      "method": "Pinned source review; provenance, tests and limitations in linked report",
+      "results": "Около26% acquired candidate member-day coverage; full certified PIT не установлен",
+      "limitations": "Draft/unmerged; не аттестует production или полную PIT историю",
+      "decisions": "Покупка/внедрение владельцем не утверждены",
+      "open_questions": "Human review и qualification evidence",
+      "sources": [
+        "https://github.com/volk468-max/Analytical-Engine/pull/15",
+        "https://github.com/volk468-max/Analytical-Engine/blob/90975c0acdda9c502c7b187c54d8d004b8f514b3/reports/free-historical-index-data-v1/continuation/executive-summary-ru.md"
+      ],
+      "report_path": "reports/free-historical-index-data-v1/continuation/executive-summary-ru.md",
+      "report_blob": "dab36eaa379712e4bcdba17187eb63cf0a18769d"
+    }
+  ],
+  "draft_work": [
+    {
+      "id": "Q001-v1",
+      "title": "Breadth PIT Data Qualification v1",
+      "branch": "research/breadth-pit-data-qualification-v1",
+      "pr_reference": "This PR; publication ID and source commit resolved by Git history",
+      "card": "research/Q001-v1.md",
+      "real_vendor_validation": false
     }
   ]
 }

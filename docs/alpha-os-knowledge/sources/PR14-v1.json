@@ -1,0 +1,15 @@
+{
+  "number": 14,
+  "title": "Docs: Alpha OS Project Knowledge System v1",
+  "url": "https://github.com/volk468-max/Analytical-Engine/pull/14",
+  "body": "## Purpose\nCodex-prepared project knowledge system: AGENTS.md, docs/alpha-os-knowledge/, source-linked research catalogue, append-only decisions and backtests, read-only validation.\n\n## Review checklist\n- Verify references and status of PR #1–13 against GitHub.\n- Confirm historical results and licensing/privacy claims against primary evidence.\n- Run `python scripts/validate_project_knowledge.py` and CI checks; examine any warnings.\n- Ensure no production/runtime, trading, purchasing, or deployment changes.\n- Verify documentation update rules are feasible and do not misstate automation.\n\n## Safety\nDraft for human review only. Do not merge or deploy automatically. This PR does not implement a ChatGPT–Notion automatic sync.",
+  "head": "docs/project-knowledge-system-v1",
+  "head_sha": "f9288b42e0d58f521b57c420d79477d5aeb10459",
+  "base": "main",
+  "base_sha": "a14ebf9c268bea5cb01de962edfb98b8df94652a",
+  "state": "open",
+  "draft": true,
+  "merged": false,
+  "merged_at": null,
+  "updated_at": "2026-11-04T14:32:43Z"
+}

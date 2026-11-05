@@ -1,0 +1,106 @@
+[
+  {
+    "id": "N1",
+    "url": "https://norgatedata.com/stockmarketpackages.php",
+    "checked_on": "2026-11-05",
+    "kind": "official_documentation",
+    "http_status": 200,
+    "sha256": "41bb4db4eb55d106e7c3ca1b9875294d935caf2e955daf9ca6b2b62af424166d",
+    "bytes": 25346,
+    "receipt_scope": "HTTP response only; full document interpretation uses official page via web connector where necessary"
+  },
+  {
+    "id": "N2",
+    "url": "https://norgatedata.com/data-content-tables.php",
+    "checked_on": "2026-11-05",
+    "kind": "official_documentation",
+    "http_status": 200,
+    "sha256": "e2d13de09566a9404cd884420fbe6dd6cca014765aad6a4a0d46d0a3ddd3e3e3",
+    "bytes": 188268,
+    "receipt_scope": "HTTP response only; full document interpretation uses official page via web connector where necessary"
+  },
+  {
+    "id": "N3",
+    "url": "https://pypi.org/project/norgatedata/",
+    "checked_on": "2026-11-05",
+    "kind": "official_documentation",
+    "http_status": 200,
+    "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+    "bytes": 3038,
+    "receipt_scope": "HTTP response only; full document interpretation uses official page via web connector where necessary",
+    "notes": "SDK reference reviewed via web connector; shell HTTP response may be client challenge. SDK not installed or executed."
+  },
+  {
+    "id": "N4",
+    "url": "https://norgatedata.com/accessibility.php",
+    "checked_on": "2026-11-05",
+    "kind": "official_documentation",
+    "http_status": 200,
+    "sha256": "19b5c055c0bae804a84d1a649378258a5f632cf993d78120df2ac9de0c393e15",
+    "bytes": 21188,
+    "receipt_scope": "HTTP response only; full document interpretation uses official page via web connector where necessary"
+  },
+  {
+    "id": "N5",
+    "url": "https://norgatedata.com/faq.php",
+    "checked_on": "2026-11-05",
+    "kind": "official_documentation",
+    "http_status": 200,
+    "sha256": "ff2977dc3976bbe99501a640dc8b9af10435fc8e5555cfb0a58f74d1ac8cd403",
+    "bytes": 31975,
+    "receipt_scope": "HTTP response only; full document interpretation uses official page via web connector where necessary"
+  },
+  {
+    "id": "N6",
+    "url": "https://norgatedata.com/subscribe/eula.php",
+    "checked_on": "2026-11-05",
+    "kind": "official_documentation",
+    "http_status": 200,
+    "sha256": "95b16336702dce351ca27926b6e99168fc28e84290bd3f736ec238a059d2f82c",
+    "bytes": 21239,
+    "receipt_scope": "HTTP response only; full document interpretation uses official page via web connector where necessary"
+  },
+  {
+    "id": "N7",
+    "url": "https://norgatedata.com/evaluating-norgate-data.php",
+    "checked_on": "2026-11-05",
+    "kind": "official_documentation",
+    "http_status": 200,
+    "sha256": "9dd3d334b1c5ced280690cc9b165c2a32a51f72953430f0df6991ce345855266",
+    "bytes": 14518,
+    "receipt_scope": "HTTP response only; full document interpretation uses official page via web connector where necessary"
+  },
+  {
+    "id": "A1",
+    "url": "https://www.crsp.org/research/crsp-us-stock-databases/",
+    "checked_on": "2026-11-05",
+    "kind": "official_documentation",
+    "http_status": 200,
+    "sha256": "49984e86bbd34468a64c7e3fdf2ba409fdd00d54161ec8240dc454875a630805",
+    "bytes": 955840,
+    "receipt_scope": "HTTP response only; full document interpretation uses official page via web connector where necessary"
+  },
+  {
+    "id": "A2",
+    "url": "https://eodhd.com/financial-apis/indices-constituents-api/",
+    "checked_on": "2026-11-05",
+    "kind": "official_documentation",
+    "fetch_status": "HTTPError",
+    "receipt_scope": "HTTP response only; full document interpretation uses official page via web connector where necessary"
+  },
+  {
+    "id": "A3",
+    "url": "https://algoseek.com/docs/rest-api/reference/endpoint-v-1-data-us-equity-ref-index-comp-get",
+    "checked_on": "2026-11-05",
+    "kind": "official_documentation",
+    "fetch_status": "HTTPError",
+    "receipt_scope": "HTTP response only; full document interpretation uses official page via web connector where necessary"
+  },
+  {
+    "id": "A2-reviewed",
+    "url": "https://eodhd.com/financial-apis-blog/sp-500-historical-constituents-data",
+    "checked_on": "2026-11-05",
+    "kind": "official_documentation",
+    "review_method": "web connector; April2012 start verified; no dataset acquired"
+  }
+]

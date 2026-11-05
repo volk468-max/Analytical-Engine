@@ -21,3 +21,7 @@
 **Восстановление:** Git history + pinned report URLs + sources/ snapshots + research.json. Записи/карточки исследований append-only; status.json обновляемый снимок. Старые report артефакты остаются в исходных ветках/коммитах: для полной автономной offline сохранности нужен отдельно согласованный архив репозитория; эта работа не копирует market raw данные. Проверять доступность pinned commits в CI.
 
 Проверка: `python scripts/validate_project_knowledge.py`; live GitHub verification: `python scripts/validate_project_knowledge.py --online`; PR freshness/history: добавить `--base-ref <base SHA>`. Только stdlib и GitHub API, без платных сервисов, LLM calls или отправки raw данных сторонним сервисам.
+
+## Новый проект
+
+[Q001 — Breadth PIT Data Qualification](research/Q001-v1.md): design/validator/trial plan, реальные данные не валидированы. Актуализация статусов и R14/R15 — 2026-11-05.

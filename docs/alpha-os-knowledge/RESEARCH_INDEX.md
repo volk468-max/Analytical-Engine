@@ -21,3 +21,15 @@
 Канонические поля: [research.json](research.json). Исходные PR descriptions сохранены без пользовательских профилей в sources/. Report links закреплены на commit SHA; branch names не задают версию. Нельзя считать PR1–8 внедрёнными только потому, что они не Draft.
 
 Новый результат = новая запись Rxx-v2 и новая карточка; старые карточки, записи и source snapshots append-only. Изменения статуса ведутся отдельно в status.json. Исправление старой ошибки публикуется новой версией с объяснением и ссылкой на прежнюю.
+
+## Дополнение 2026-11-05
+
+R14/R15 добавлены отдельно; предыдущие 13 карточек и записи неизменны.
+
+| ID | Источник | Карточка |
+|---|---|---|
+| R14-v1 | [PR14](https://github.com/volk468-max/Analytical-Engine/pull/14) | [карточка](research/R14-v1.md) |
+| R15-v1 | [PR15](https://github.com/volk468-max/Analytical-Engine/pull/15) | [карточка](research/R15-v1.md) |
+| Q001-v1 | Текущий отдельный Draft PR, SHA из Git history | [проект](research/Q001-v1.md) |
+
+Начальный блок каталога выше — сохранённый checkpoint 2026-11-04; актуальные статусы в PROJECT_STATUS. Q001 зарегистрирован в research.json/draft_work до публикации, чтобы не изобретать self-referential SHA.

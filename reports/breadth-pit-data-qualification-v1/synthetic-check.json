@@ -1,0 +1,33 @@
+{
+  "gates_passed": true,
+  "codes": [],
+  "data_kind": "synthetic",
+  "status": "SYNTHETIC_TEST_ONLY",
+  "real_data_qualified": false,
+  "metrics": [
+    {
+      "index": "NDX100",
+      "year": "2025",
+      "coverage": 1.0,
+      "departed_coverage": 1.0,
+      "expected": 5,
+      "present": 5,
+      "departed_expected": 2,
+      "departed_present": 2
+    },
+    {
+      "index": "SP500",
+      "year": "2025",
+      "coverage": 1.0,
+      "departed_coverage": 1.0,
+      "expected": 5,
+      "present": 5,
+      "departed_expected": 2,
+      "departed_present": 2
+    }
+  ],
+  "ma_candidate_observations": {
+    "2": 6,
+    "3": 2
+  }
+}

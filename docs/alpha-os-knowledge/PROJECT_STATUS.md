@@ -1,6 +1,6 @@
 # Текущее состояние
 
-Снимок проверки GitHub: 2026-11-04. Репозиторий `volk468-max/Analytical-Engine`, default branch main: [`a14ebf9c268bea5cb01de962edfb98b8df94652a`](https://github.com/volk468-max/Analytical-Engine/commit/a14ebf9c268bea5cb01de962edfb98b8df94652a). Это версия кода main, а не доказательство deployed production SHA. Runtime/data version и реальные портфели UNKNOWN. Источник состояния: GitHub PR API, сохранённые sources/PRxx-v1.json; актуальный машинный снимок [status.json](status.json).
+Проверка 2026-11-05: main `a14ebf9c268bea5cb01de962edfb98b8df94652a`; runtime/deployed SHA UNKNOWN.
 
 | PR | State | Draft | Merged |
 |---|---|---|---|
@@ -17,9 +17,9 @@
 | [#11](https://github.com/volk468-max/Analytical-Engine/pull/11) | open | true | false |
 | [#12](https://github.com/volk468-max/Analytical-Engine/pull/12) | open | true | false |
 | [#13](https://github.com/volk468-max/Analytical-Engine/pull/13) | open | true | false |
+| [#14](https://github.com/volk468-max/Analytical-Engine/pull/14) | open | true | false |
+| [#15](https://github.com/volk468-max/Analytical-Engine/pull/15) | open | true | false |
 
-PR #14 при первоначальной проверке отсутствовал (404); это историческая проверка, не вечное ограничение номера.
+Knowledge PR14 и research PR13/15 остаются Draft/unmerged. Новая Q001 — technical design + synthetic validator, реальный Norgate trial не выполнен. Новая ветка основана на PR14; автоматического merge/deploy нет. Источники состояний: sources/PRxx-v1.json и status.json; original research history сохранена.
 
-Подтверждено: все перечисленные предложения не слиты. Исследовательские ветки могут зависеть друг от друга; см. каталог. Draft research completion означает готовность отчёта по заявлению источника, не внедрение и не доказанную экономическую эффективность.
-
-Данных для полного PIT replay Alpha OS нет (R02, R08–R13). Новая база знаний сама является предложением до human review и merge. Проверки не утверждают решения и не изменяют production.
+Первоначальная проверка отсутствия PR14 2026-11-04 в журнале — историческое событие до его публикации, не текущий статус. Ни одна действующая торговая модель/production data version не выводится из Draft.
