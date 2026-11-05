@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "mode": "SPECIFICATION_ONLY",
+  "infrastructure_started": false,
+  "forecast_record": {
+    "required": ["forecast_id", "recorded_at", "decision_at", "input_available_at_max", "code_sha", "protocol_sha256", "model_version", "input_vintage_id", "input_manifest_sha256", "symbol", "population", "event_definition", "threshold_pct", "horizon_sessions", "probability_raw", "probability_calibrated", "quality_flags", "scheduled_label_maturity", "previous_record_sha256", "record_sha256"],
+    "primary_event_definition": "future_regular_session_low_le_anchor_close_times_0.95_next_10_sessions_anchor_excluded",
+    "probability_range": [0, 1],
+    "code_sha_pattern": "^[a-f0-9]{40}$",
+    "input_time_rule": "input_available_at_max <= decision_at < next_regular_open",
+    "write_rule": "append-only canonical JSON UTF8, immutable object/version and hash chain; no overwriting forecasts",
+    "hash_rule": "sha256(canonical sorted-key JSON of every field except record_sha256); previous_record_sha256 links immutable prior record",
+    "missing_rule": "suppress forecast with explicit UNQUALIFIED_INPUT / DATA_UNAVAILABLE, never substitute future observations"
+  },
+  "label_record": {
+    "required": ["forecast_id", "resolved_at", "full_horizon_available_at", "outcome", "source_vintage_id", "label_sha256"],
+    "maturity_rule": "resolve only after all horizon bars published, including when barrier hit earlier",
+    "write_rule": "separate append-only label record referencing immutable forecast; original forecast unchanged",
+    "correction_rule": "append superseding label with reason, preserve prior label; no retroactive forecast editing"
+  },
+  "prospective_plan": {
+    "start": "next exchange session after PR publication, only after separately authorised actual logging setup",
+    "minimum_calendar_years": 2,
+    "minimum_market_episode_clusters": 30,
+    "independence_of_clusters": "not automatically established",
+    "power": "blinded planning using historical date-block variance for 1% relative Brier improvement; extend duration if insufficient",
+    "multiple_testing": "retain original 33-way Holm family; secondary pure-market addendum family remains separate",
+    "interim_tuning": false,
+    "deployment_gate": "requires actual PIT vintage/publication evidence and independent predictive benefit; economic utility separate later gate"
+  }
+}

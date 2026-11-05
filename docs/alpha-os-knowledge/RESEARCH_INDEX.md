@@ -52,3 +52,12 @@ Q001 остаётся в истории как технический проек
 
 Новый вопрос об ансамблях; прежние записи/карточки сохранены. Q002 теперь опубликован
 как PR17, его старый draft_work checkpoint оставлен в истории.
+
+## Issue19 / Q004 — dedicated market precursor research
+
+| ID | Источник | Карточка |
+|---|---|---|
+| R18-v1 | [PR18](https://github.com/volk468-max/Analytical-Engine/pull/18) | [карточка](research/R18-v1.md) |
+| Q004-v1 | [Issue19](https://github.com/volk468-max/Analytical-Engine/issues/19), текущий отдельный Draft PR | [market precursors](research/Q004-v1.md) |
+
+Новый dedicated market catalogue/forecast вопрос; R08/R17/R18 сохранены.

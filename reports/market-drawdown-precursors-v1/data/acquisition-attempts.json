@@ -1,0 +1,68 @@
+[
+  {
+    "symbol": "SPY",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=946684800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+    "retrieved_at": "2026-11-05T10:39:32.209664+00:00",
+    "requested_first": "2000-01-01",
+    "requested_last": "2026-11-02",
+    "attempts": 1,
+    "status": "DOWNLOADED",
+    "raw_sha256": "4d6c31f85b1b9b10dc20de8143641fd28886d5f71ab12d2739a8f0dfdb559520",
+    "raw_file": "data/fresh-SPY.json.gz"
+  },
+  {
+    "symbol": "QQQ",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?period1=946684800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+    "retrieved_at": "2026-11-05T10:39:32.210785+00:00",
+    "requested_first": "2000-01-01",
+    "requested_last": "2026-11-02",
+    "attempts": 1,
+    "status": "DOWNLOADED",
+    "raw_sha256": "bfc70b8b8c0d1deb1d303dddda663260426d41c3df3de5bcc777264d74979bbd",
+    "raw_file": "data/fresh-QQQ.json.gz"
+  },
+  {
+    "symbol": "SOXX",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/SOXX?period1=946684800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+    "retrieved_at": "2026-11-05T10:39:32.211589+00:00",
+    "requested_first": "2000-01-01",
+    "requested_last": "2026-11-02",
+    "attempts": 1,
+    "status": "DOWNLOADED",
+    "raw_sha256": "5ee13a5bdd647b317ef994f7855ada0a32b710c8843481b6f5d1d11f9013e2c3",
+    "raw_file": "data/fresh-SOXX.json.gz"
+  },
+  {
+    "symbol": "AMD",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?period1=946684800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+    "retrieved_at": "2026-11-05T10:39:32.212310+00:00",
+    "requested_first": "2000-01-01",
+    "requested_last": "2026-11-02",
+    "attempts": 1,
+    "status": "DOWNLOADED",
+    "raw_sha256": "e69153e5ce6f0ffbdc522f57c2972a86b738c66b2e5c81ac401ea52836419e1c",
+    "raw_file": "data/fresh-AMD.json.gz"
+  },
+  {
+    "symbol": "NVDA",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?period1=946684800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+    "retrieved_at": "2026-11-05T10:39:32.213525+00:00",
+    "requested_first": "2000-01-01",
+    "requested_last": "2026-11-02",
+    "attempts": 1,
+    "status": "DOWNLOADED",
+    "raw_sha256": "f76056670bcf5e3570659a19af90b24a22ac6bcd094f868193cadb113afc8ac6",
+    "raw_file": "data/fresh-NVDA.json.gz"
+  },
+  {
+    "symbol": "MU",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?period1=946684800&period2=1793664000&interval=1d&includePrePost=false&events=div%2Csplits",
+    "retrieved_at": "2026-11-05T10:39:32.214086+00:00",
+    "requested_first": "2000-01-01",
+    "requested_last": "2026-11-02",
+    "attempts": 1,
+    "status": "DOWNLOADED",
+    "raw_sha256": "5d6b71ef31fba65be5cad6325dae48345c58079d88d527aeea2d7b933752fb08",
+    "raw_file": "data/fresh-MU.json.gz"
+  }
+]

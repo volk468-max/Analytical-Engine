@@ -24,3 +24,11 @@
 logging после публикации, минимум2года и30 de-overlapped market episodes плюс blinded
 power check для1%Brier gain; прежняя Holm family, PIT и отдельный economic gate.
 Independent event count сейчас UNKNOWN. Ничего не внедрять/покупать автоматически.
+
+## После Q004 / Issue19
+
+Не заявлять validated core:0/33primary. NVDA secondary vsmarket-only не превосходит
+простую regime baseline. Следующий допустимый research gate: original PIT evidence,
+заранее замороженный будущий shadow log и blinded power check, без peeking/tuning.
+Спецификация не запускает live infrastructure. Norgate/Windows acquisition отложен
+до возвращения владельца и его явного разрешения. Economic utility — отдельный gate.

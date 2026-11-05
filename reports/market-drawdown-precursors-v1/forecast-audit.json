@@ -1,0 +1,8 @@
+{
+  "forecast_labels_recomputed": 261888,
+  "probabilities_range_checked": true,
+  "first_future_open_after_decision": true,
+  "full_horizon_maturity_checked": true,
+  "brier_recomputed_groups": 540,
+  "PIT_certification": false
+}

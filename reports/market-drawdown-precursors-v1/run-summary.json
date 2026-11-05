@@ -1,0 +1,9 @@
+{
+  "forecast_rows": 261888,
+  "market_episode_count": 87,
+  "market_overlap_clusters": 25,
+  "independent_events": "UNKNOWN",
+  "first_test_year": 2010,
+  "PIT_certified": false,
+  "untouched_holdout": false
+}

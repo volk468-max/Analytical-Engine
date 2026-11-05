@@ -19,3 +19,12 @@ probability. Предыдущие карточки/источники/число
 
 Численная поправка Q003: bootstrap999→9999 для primary Holm162, без смены моделей
 или критериев; отдельный addendum опубликован до corrected computation.
+
+## 2026-11-05 / Q004 Market drawdown precursors / Issue19
+
+Protocol опубликован до outcome analysis, frozen free2000–2026 price snapshot
+аудирован; strict original PIT certification отсутствует.87market episodes,
+25overlap clusters, causal pre-onset snapshots/controls/full prevalence;0/33primary.
+Отдельный пререгистрированный pure-market stock comparator раскрывает ограниченный
+secondary NVDA эффект, не validated core. Добавлены R18/status/Q004/shadow-log spec.
+Предыдущие исследования/карточки/источники не перезаписаны, production не менялся.
