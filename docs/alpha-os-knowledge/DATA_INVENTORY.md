@@ -17,3 +17,7 @@
 ## 2026-11-05: последующие источники
 
 R15 добавил Kaggle survivor-selected2018 archive: acquired candidate coverage около26%, а не verified PIT. Q001 Norgate exports отсутствуют; test bundle synthetic. Ни AssetID rows, ни цены поставщика не копируются в knowledge/public GitHub. Документационные HTTP receipts — sources.json проекта, не real market dataset.
+
+## Q002 input version
+
+Повторно использован frozenPR7 pack2020-01-02–2026-10-22; по1711OHLCV rows AMD/NVDA/MU/QQQ/SOX.13originalCSV reproduced exactly. Original available_at reconstructed/verified=false, synthetic market rows не использовались. Никакой PR13–16 набор не считается qualified input. [Manifest](../../reports/risk-forecast-v2-predictive-validation/source-manifest.json).

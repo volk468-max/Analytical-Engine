@@ -16,3 +16,7 @@
 R07 forecasting: 0/18 primary incremental tests; R08 anatomy: 0/4 testable hypotheses; R12 sector precision SOX 42.86% и незначимый any-down5 uplift. Это predictive metrics, не returns. R13 эффективность не тестировал.
 
 Нельзя смешивать reset/inherited accounts, realized/open marks, gross proceeds/profit, stock/portfolio capital, price-only/total return, same-bar ambiguity/confirmed fills. Общие ограничения: retrospective provider vintages, repeated history, survivor bias, отсутствующая реальная execution/PIT evidence. Новые расчёты добавлять с новым ID и sources; старые результаты не переписывать.
+
+## Q002 отдельная диагностическая симуляция
+
+2026-11-05: сохранены все прежние таблицы. Для TOUCH10/20,p>=.5,delay1 mean mark per independently reset1share lot /sale-open notional: AMD-5.8553%(21lots),NVDA-4.3458%(15),MU-8.5741%(13). Это не portfolio return, не независимые market trials и не total return; все9tasks/delays отдельно. [Q002](research/Q002-v1.md).

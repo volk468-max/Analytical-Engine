@@ -23,3 +23,11 @@
 Knowledge PR14 и research PR13/15 остаются Draft/unmerged. Новая Q001 — technical design + synthetic validator, реальный Norgate trial не выполнен. Новая ветка основана на PR14; автоматического merge/deploy нет. Источники состояний: sources/PRxx-v1.json и status.json; original research history сохранена.
 
 Первоначальная проверка отсутствия PR14 2026-11-04 в журнале — историческое событие до его публикации, не текущий статус. Ни одна действующая торговая модель/production data version не выводится из Draft.
+
+## Q002: 2026-11-05 update
+
+| PR | State | Draft | Merged |
+|---|---|---|---|
+| [#16](https://github.com/volk468-max/Analytical-Engine/pull/16) | open | true | false |
+
+Q002 новая исследовательская работа в текущем Draft PR: реальный повторный расчёт frozenPR7,13CSV byte-identical, strict historical benchmark0/27primary contrasts meet criterion. RESEARCH ONLY: нет независимого untouched holdout и original verifiedPIT vintages. Не новая trading model и не production deployment. 14new tests/27source tests; источник [Q002](research/Q002-v1.md). PR16 дизайн не используется как источник достоверных цен/составов.

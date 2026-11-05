@@ -16,3 +16,7 @@
 ## Дополнительные блокеры Q001
 
 Неизвестны actual trial/API compatibility, original membership/price publication vintages, полные ticker/security histories и corporate-action ratios, независимый denominator. Двухлетний trial не проверяет2010–2026. Личное/коммерческое назначение, account/Windows readiness и cloud deletion доказательства требуют решения владельца. Источники/контракт: [Q001](research/Q001-v1.md).
+
+## Q002
+
+Нужны untouched future forecasts/outcomes, verified original publication/vintages и adequate event/date-block support. Новый анализ не превращает apparent zero significance в доказательство no effect. Unit-lot scenario не подтверждает portfolio usefulness. Источник [Q002](research/Q002-v1.md).

@@ -1,0 +1,13 @@
+# Ошибки, статистическая мощность и дальнейшая работа
+
+Текущие probability banks с joint technical+v3 sparse. Например TOUCH10/20:95.89%LOW_SUPPORT,1875stock anchors на625observed dates. Daily windows перекрываются и три stocks имеют общие shocks. Число task rows, lots или пересекающихся labels не равно числу независимых испытаний. Effective-N blank в новых таблицах означает невычисленную диагностику из-за embargo holes, не0 и не raw N.
+
+Для unconditional contrast deltaBrier+0.004591,CI[-0.005270,+0.014504]: совместимы и небольшое улучшение, и ухудшение. Нельзя трактовать Holm non-significance как доказанную нулевую способность. Ни marginal class counts, ни выбранное bootstrap правило не доказывают достаточную мощность для редких15%/5session задач. Small-event regimes/year/stock strata должны трактоваться как exploratory. В errors table first chronological examples обозначают неуспешный исход при фиксированном cutoff, а не доказанную экономическую ошибку любого risk action; missed touch — не necessarily warning-before-onset recall.
+
+Baseline regime на этом конкретном reference slice имеет меньший point Brier, но не объявляется оптимальной торговой/прогнозной моделью по выбору после результатов. Нет общего склеенного9-task score; нет нового feature search или выбранного winner. Заявление0/27 относится только к заранее установленной primaryfamily; secondary contrasts не используются как обход multiplicity.
+
+Экономический unit-lot ledger — conditional diagnostic, price-only, без total-return/actual broker evidence. Рост к restoreopen может привести к дефициту восстановленных shares; положительный отдельный mark не гарантирует advantage portfolio. Лоты разных tasks/тикеров повторяют один и тот же рынок. Не складывать разные9tasks/2delays в доходность стратегии. Нельзя выбирать более удачный delay или entry/exit по этим итогам.
+
+Рекомендация: прекратить заявления о live probability reliability текущего fixed estimator. Если развивать research, предварительно определить минимально полезную loss improvement/economic utility, prospective logging start after protocol registration, требуемые mature independent date blocks/events и prospective sample-size/power budget на pilot-training data. Затем заморозить protocol и собирать новые predictions/availability receipts без дальнейшего просмотра final outcomes. Если нового untouched периода/достаточных событий нет — RESEARCH ONLY, а не validated v2.
+
+Missing prerequisites: verified historical publication/vintage evidence, untouched future data, independent macro/identity/action/market data where used, execution/cost/dividend evidence для investment claims. Текущая работа показывает проблемы именно выбранных estimators, не универсальное отсутствие информации у любого risk signal.

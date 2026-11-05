@@ -33,3 +33,12 @@ R14/R15 добавлены отдельно; предыдущие 13 карто�
 | Q001-v1 | Текущий отдельный Draft PR, SHA из Git history | [проект](research/Q001-v1.md) |
 
 Начальный блок каталога выше — сохранённый checkpoint 2026-11-04; актуальные статусы в PROJECT_STATUS. Q001 зарегистрирован в research.json/draft_work до публикации, чтобы не изобретать self-referential SHA.
+
+## Q002 и R16,2026-11-05
+
+| ID | Источник | Карточка |
+|---|---|---|
+| R16-v1 | [PR16](https://github.com/volk468-max/Analytical-Engine/pull/16) | [карточка](research/R16-v1.md) |
+| Q002-v1 | Текущий отдельный Draft PR; protocol b1d43275bb10bc69516e868b625377ceea4119b6 | [Risk Forecast validation](research/Q002-v1.md) |
+
+Q001 остаётся в истории как технический проект, не completed real vendor qualification. Q002 новая independent implementation evaluation на reused history, не переписывает результаты R07/R08/R11/R12.

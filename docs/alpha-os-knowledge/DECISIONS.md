@@ -14,3 +14,7 @@
 ## 2026-11-05 / D003
 
 Owner-approved scope only: выполнить Breadth PIT Data Qualification v1 и отдельный Draft PR с обновлением памяти. Источник — задание текущего чата, GitHub permalink отсутствует. Покупка, trial activation, коммерческая лицензия и внедрение не утверждены. Q001-рекомендации — proposed, не owner-approved.
+
+## D004:2026-11-05
+
+Owner-approved scope only: независимая predictive validation v1, новый research protocol/code и Draft PR без изменения предыдущих исследований/production. Источник — текущее задание чата, permalink отсутствует. RESEARCH ONLY и рекомендация не внедрять fixed estimator — вывод Codex, не новое утверждённое торговое решение владельца.
