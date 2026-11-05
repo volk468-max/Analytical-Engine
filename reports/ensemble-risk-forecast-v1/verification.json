@@ -1,0 +1,42 @@
+{
+  "reproduction": {
+    "numeric_artifacts": 18,
+    "byte_identical": true,
+    "primary_resamples": 9999
+  },
+  "tests": {
+    "ensemble": 16,
+    "PR17_validation": 14,
+    "original_PR7_forecast": 27,
+    "knowledge_regression": 9,
+    "total": 66,
+    "failed_final": 0
+  },
+  "source_labels_checked": 66438,
+  "knowledge_online": "PASSED including live GitHub",
+  "knowledge_base_ref": "7fe91ab87dcda3607863a19074e6d7b2400503e8",
+  "whitespace": "PASSED",
+  "historical_source_code_modified": false,
+  "initial_failures_documented": "corrections.md",
+  "github_CI": "NOT_CLAIMED",
+  "numeric_sha256": {
+    "added-value-strata.csv": "6f55b9ca91feeebe6b49cd2f91c5246b4a408e79be3648fe9a5d0bed090f08b6",
+    "added-value.csv": "39fa9aaf991c352c2096c335208a95c84f9c28af30b8f137d3eb483bd28b3649",
+    "agreement.csv": "5aeaafe1593ffca9080d271153bbce481ceb398c09826ca7483b62d2bcc63309",
+    "comparisons.csv": "55ac0409208aab09a4617016c2b219f211758ecbcd1db802074659e2d6302220",
+    "economic-daily.csv.gz": "243f9ad248d48a3421f8a85c55dc13001460e6d65395aa38b7beb0fc2998fa52",
+    "economic-lots.csv": "4efc2db4acae77292e3cccfa29a9c5bdc8e1ad86f0a81be0a2f3e8c797997985",
+    "economic-summary.csv": "61e1e24baca3e5e04486601b273e11f0eff4b492c8304c1474c32c7439fe7dc6",
+    "economic-trades.csv": "d087f8b7ff64d10af70b78a2ca1e556ea0c9d0c793bb573fa523c7d11c331fb6",
+    "error-correlation-strata.csv": "9cf2d56eb46b90c352e6d3a41a422763b21d2bc0d61f92b5d1627c55663cddaf",
+    "error-correlation.csv": "f834d525ab1cdcdfed26d882e4c498f203ed2762c4ca28cea6271f35f2c040e1",
+    "fit-audit.csv": "a76e9ae4df5ddd93c6d073c4c3ec4b1624a40f7303e6465de2056dbf9ed86657",
+    "label-audit.csv": "06570b956b3ed1729b76b8d7cd8281954623c22b8261250e9a0a7e530ed0eccc",
+    "metrics.csv": "20bccde364e36c8c808ae929968e00532624fa19e7e459931784d7e671d3affa",
+    "model-inventory.csv": "e50475a2fddd2b39b683eb883d03008363bcd495f11e93cd18e0916f58554868",
+    "predictions.csv.gz": "50ce2c7ee5a14189d96427567a13666c9dd757dcca186ec4d149f08da5a3dc56",
+    "reliability.csv": "d55cbfbd1caee4d52e7d34f5ba46b98ec776153f0debfbfc9bf25a50ff78ca05",
+    "summary.json": "029033ba27c850a392af0c5371a626d870b6075f76e6229ae8d8ea9cdb3e7244",
+    "weights.csv": "3b52bbe8e9445eaab5100f9667f1983ff0b52bd16c898e6bcf97d874e2ed628e"
+  }
+}

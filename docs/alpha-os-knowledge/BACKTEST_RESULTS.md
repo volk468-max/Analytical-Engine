@@ -20,3 +20,9 @@ R07 forecasting: 0/18 primary incremental tests; R08 anatomy: 0/4 testable hypot
 ## Q002 отдельная диагностическая симуляция
 
 2026-11-05: сохранены все прежние таблицы. Для TOUCH10/20,p>=.5,delay1 mean mark per independently reset1share lot /sale-open notional: AMD-5.8553%(21lots),NVDA-4.3458%(15),MU-8.5741%(13). Это не portfolio return, не независимые market trials и не total return; все9tasks/delays отдельно. [Q002](research/Q002-v1.md).
+
+## Q003 Ensemble (дополнение)
+
+0/162primary contrasts; TOUCH10/20 Brier B0.228306/C0.236401 vs QQQ0.226822.
+3+голосов48.37%, same-date baseline44.55%, uplift95%CI[-0.34,+9.35]pp.
+RESEARCH ONLY, без подтверждённого экономического превосходства. [Отчёт](../../reports/ensemble-risk-forecast-v1/report-ru.md).

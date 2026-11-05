@@ -1,0 +1,8 @@
+{
+  "commit": "5ddbe68c43f579cc4fe4baa2e758b0bf3f79a21b",
+  "sha256": "ace359a739659f3c19eaf0ba971643e8e9b07e97b9233c2113200cd933e1db3d",
+  "prior_results_read": true,
+  "registered_before_ensemble_calculations": true,
+  "addendum_commit": "aed5911704fff38619dd60ef92562b04b3063e02",
+  "addendum_sha256": "faa0ddbbf43a6b9f29bfe53117b86975f86bbda23d605aaf31348d205e38cbb2"
+}

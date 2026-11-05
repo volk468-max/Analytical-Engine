@@ -20,3 +20,9 @@
 ## Q002
 
 Нужны untouched future forecasts/outcomes, verified original publication/vintages и adequate event/date-block support. Новый анализ не превращает apparent zero significance в доказательство no effect. Unit-lot scenario не подтверждает portfolio usefulness. Источник [Q002](research/Q002-v1.md).
+
+## Q003
+
+Нет надёжно подтверждённого лучшего сочетания. Сколько независимых market episodes
+и original PIT logs будет доступно в будущем? Как обеспечить prospective power
+без повторного выбора по старой истории? Sparse pattern CI может быть NA.

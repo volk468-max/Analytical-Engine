@@ -42,3 +42,13 @@ R14/R15 добавлены отдельно; предыдущие 13 карто�
 | Q002-v1 | Текущий отдельный Draft PR; protocol b1d43275bb10bc69516e868b625377ceea4119b6 | [Risk Forecast validation](research/Q002-v1.md) |
 
 Q001 остаётся в истории как технический проект, не completed real vendor qualification. Q002 новая independent implementation evaluation на reused history, не переписывает результаты R07/R08/R11/R12.
+
+## Ensemble Risk Forecast v1 / Q003
+
+| ID | Источник | Карточка |
+|---|---|---|
+| R17-v1 | [PR17](https://github.com/volk468-max/Analytical-Engine/pull/17) | [карточка](research/R17-v1.md) |
+| Q003-v1 | Отдельный текущий Draft PR; source SHA из Git history | [ансамбли](research/Q003-v1.md) |
+
+Новый вопрос об ансамблях; прежние записи/карточки сохранены. Q002 теперь опубликован
+как PR17, его старый draft_work checkpoint оставлен в истории.

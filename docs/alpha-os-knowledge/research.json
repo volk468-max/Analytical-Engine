@@ -370,6 +370,29 @@
       ],
       "report_path": "reports/breadth-pit-data-qualification-v1/README.md",
       "report_blob": "97965d5b55301fdaeb99d4e5dd02bc0ae090b78d"
+    },
+    {
+      "id": "R17-v1",
+      "pr": 17,
+      "title": "Risk Forecast v2 — Predictive Validation",
+      "branch": "research/risk-forecast-v2-predictive-validation",
+      "sha": "7fe91ab87dcda3607863a19074e6d7b2400503e8",
+      "base_branch": "research/breadth-pit-data-qualification-v1",
+      "base_sha": "848610ff46f125d5369f15852d5daceca53acafa",
+      "goal": "Strict predictive validation of frozen Risk Forecast",
+      "hypothesis": "Frozen Forecast improves same-task baselines",
+      "data_period": "Frozen2020–2026-10-22; test2024–26, reused history",
+      "method": "Exact replay and purged train/cal/test; synchronous block bootstrap; Holm27",
+      "results": "13 original CSV byte-identical;0/27 primary contrasts;RESEARCH ONLY",
+      "limitations": "No untouched holdout/PIT attestation; regime name overwritten by probability in saved rows; new Q003 reconstructs metadata without altering R17 outputs",
+      "decisions": "No approved production integration; research only",
+      "open_questions": "Independent prospective validation and actual PIT evidence",
+      "sources": [
+        "https://github.com/volk468-max/Analytical-Engine/pull/17",
+        "https://github.com/volk468-max/Analytical-Engine/blob/7fe91ab87dcda3607863a19074e6d7b2400503e8/reports/risk-forecast-v2-predictive-validation/README.md"
+      ],
+      "report_path": "reports/risk-forecast-v2-predictive-validation/README.md",
+      "report_blob": "703d6da7a8567090782ee5d46417cdc100d3b94b"
     }
   ],
   "draft_work": [
@@ -388,6 +411,17 @@
       "card": "research/Q002-v1.md",
       "pr_reference": "This Draft PR, final SHA in Git history",
       "protocol_commit": "b1d43275bb10bc69516e868b625377ceea4119b6",
+      "classification": "RESEARCH ONLY",
+      "real_calculation": true,
+      "independent_holdout": false
+    },
+    {
+      "id": "Q003-v1",
+      "title": "Ensemble Risk Forecast v1",
+      "branch": "research/ensemble-risk-forecast-v1",
+      "card": "research/Q003-v1.md",
+      "pr_reference": "This separate Draft PR; final SHA from Git history",
+      "protocol_commit": "5ddbe68c43f579cc4fe4baa2e758b0bf3f79a21b",
       "classification": "RESEARCH ONLY",
       "real_calculation": true,
       "independent_holdout": false

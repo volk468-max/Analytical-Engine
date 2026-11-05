@@ -31,3 +31,13 @@ Knowledge PR14 и research PR13/15 остаются Draft/unmerged. Новая Q
 | [#16](https://github.com/volk468-max/Analytical-Engine/pull/16) | open | true | false |
 
 Q002 новая исследовательская работа в текущем Draft PR: реальный повторный расчёт frozenPR7,13CSV byte-identical, strict historical benchmark0/27primary contrasts meet criterion. RESEARCH ONLY: нет независимого untouched holdout и original verifiedPIT vintages. Не новая trading model и не production deployment. 14new tests/27source tests; источник [Q002](research/Q002-v1.md). PR16 дизайн не используется как источник достоверных цен/составов.
+
+## Q003 / Ensemble, 2026-11-05
+
+| PR | State | Draft | Merged |
+|---|---|---|---|
+| [#17](https://github.com/volk468-max/Analytical-Engine/pull/17) | open | true | false |
+
+Текущая Q003 основана на Draft PR17, не main; Draft не deployment.0/162ensemble
+contrasts meet criteria, RESEARCH ONLY; NO-GO для confirmed advantage/live integration.
+Main и deployed статус выше не переопределяются. [Q003](research/Q003-v1.md).
