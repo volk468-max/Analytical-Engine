@@ -32,3 +32,10 @@ Independent event count сейчас UNKNOWN. Ничего не внедрять
 заранее замороженный будущий shadow log и blinded power check, без peeking/tuning.
 Спецификация не запускает live infrastructure. Norgate/Windows acquisition отложен
 до возвращения владельца и его явного разрешения. Economic utility — отдельный gate.
+
+## После Q005
+
+Сначала actual portfolio contract и total-return/PIT qualification. Не выпускать
+персональные51% и не выбирать news premiums/thresholds из synthetic examples.
+Blinded power feasibility вместо30rare clusters/2years;90days не гарантия.
+Не запускать live log, Norgate, покупки или protective trades автоматически.

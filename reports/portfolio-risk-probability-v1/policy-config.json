@@ -1,0 +1,16 @@
+{
+  "mode": "EXPERIMENTAL_OFFLINE_ONLY",
+  "watch": 0.35,
+  "first": 0.51,
+  "strong": 0.6,
+  "cumulative_trim_first": null,
+  "cumulative_trim_strong": null,
+  "confirmation_sessions": null,
+  "cooldown_sessions": null,
+  "reentry_below": null,
+  "fees": null,
+  "slippage": null,
+  "taxes": null,
+  "combination_with_ladder": "NOT_DONE_NEEDS_PREREGISTRATION",
+  "economic_comparison": "BLOCKED_MISSING_INPUTS"
+}

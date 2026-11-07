@@ -61,3 +61,9 @@ Q001 остаётся в истории как технический проек
 | Q004-v1 | [Issue19](https://github.com/volk468-max/Analytical-Engine/issues/19), текущий отдельный Draft PR | [market precursors](research/Q004-v1.md) |
 
 Новый dedicated market catalogue/forecast вопрос; R08/R17/R18 сохранены.
+
+## Q005 / Issue21
+
+R20-v1 [PR20](https://github.com/volk468-max/Analytical-Engine/pull/20): [карточка](research/R20-v1.md).
+Q005-v1: [Portfolio probability research](research/Q005-v1.md). Предыдущие карточки
+сохранены; новый portfolio target не заменяет market/stock negative findings.

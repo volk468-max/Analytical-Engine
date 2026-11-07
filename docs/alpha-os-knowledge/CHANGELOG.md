@@ -28,3 +28,9 @@ Protocol опубликован до outcome analysis, frozen free2000–2026 pr
 Отдельный пререгистрированный pure-market stock comparator раскрывает ограниченный
 secondary NVDA эффект, не validated core. Добавлены R18/status/Q004/shadow-log spec.
 Предыдущие исследования/карточки/источники не перезаписаны, production не менялся.
+
+## 2026-11-07 / Q005 Issue21
+
+Первым опубликован протокол, затем минимальный Draft с portfolio contract/audit,
+после — isolated synthetic prototypes/registry/tests/log mock. Все реальные metrics
+BLOCKED/NA. R20/status/Q005 added append-only; production/research history unchanged.

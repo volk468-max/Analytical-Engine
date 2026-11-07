@@ -416,6 +416,29 @@
       ],
       "report_path": "reports/ensemble-risk-forecast-v1/report-ru.md",
       "report_blob": "514117a6fdd773b30f71e01777605e6b822b916c"
+    },
+    {
+      "id": "R20-v1",
+      "pr": 20,
+      "title": "Research: Market Drawdown Precursors v1 (Issue #19)",
+      "branch": "research/market-drawdown-precursors-v1",
+      "sha": "8e9aec99c7eee8b384e35a3bc1aa734f2d54800d",
+      "base_branch": "research/ensemble-risk-forecast-v1",
+      "base_sha": "43886c0516b35bcfd61afce583b17112ce94bce0",
+      "goal": "Market correction precursor probabilities",
+      "hypothesis": "Fixed factors add value beyond simple baselines",
+      "data_period": "2000–2026-11-02 retrospective prices; test2010–26",
+      "method": "Pre-onset catalogue, purged chronological models,Holm33",
+      "results": "0/33primary;RESEARCH ONLY;60tests/37byte-identical artifacts per source",
+      "limitations": "No certified PIT/untouched holdout; dependent market clusters",
+      "decisions": "No approved deployment",
+      "open_questions": "Prospective/PIT qualification",
+      "sources": [
+        "https://github.com/volk468-max/Analytical-Engine/pull/20",
+        "https://github.com/volk468-max/Analytical-Engine/blob/8e9aec99c7eee8b384e35a3bc1aa734f2d54800d/reports/market-drawdown-precursors-v1/executive-summary-ru.md"
+      ],
+      "report_path": "reports/market-drawdown-precursors-v1/executive-summary-ru.md",
+      "report_blob": "f729a2a0f3bd89272c92f48eee1962afaca33788"
     }
   ],
   "draft_work": [
@@ -461,6 +484,17 @@
       "real_calculation": true,
       "independent_holdout": false,
       "PIT_certified": false
+    },
+    {
+      "id": "Q005-v1",
+      "title": "Portfolio Risk Probability Engine v1",
+      "branch": "research/portfolio-risk-probability-v1",
+      "card": "research/Q005-v1.md",
+      "pr_reference": "Current Draft PR22; final SHA in Git history",
+      "classification": "RESEARCH ONLY",
+      "real_calculation": false,
+      "synthetic_only": true,
+      "independent_holdout": false
     }
   ]
 }

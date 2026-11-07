@@ -34,3 +34,10 @@ https://github.com/volk468-max/Analytical-Engine/issues/19 и текущее с�
 No trading backtest needed; no production/merge/deploy/paid data. Windows/Norgate
 postponed. RESEARCH-ONLY/prospective plan — вывод/рекомендация Codex, не решение
 владельца о внедрении или разрешение live logging setup.
+
+## D007 /2026-11-07
+
+Owner-approved scope: https://github.com/volk468-max/Analytical-Engine/issues/21 .
+Portfolio TOUCH10/60 и15%HWM risk preference, research-only Draft.35/51/60 — только
+кандидаты. No production/broker/purchases/merge/deploy/live launch. Реальные данные
+не предоставлены. NO-GO и power/logging план — рекомендации, не разрешение торговать.
