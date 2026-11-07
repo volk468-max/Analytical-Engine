@@ -1,0 +1,15 @@
+{
+ "schema_version":1,
+ "required":["snapshot_id","decision_at","valuation_at","base_currency","positions","cash","fx","source_hashes","source_available_at","ingested_at","price_basis","corporate_actions","cash_flows","peak_history","fees_assumptions"],
+ "positions_required":["symbol","shares","currency","price","price_at","source_hash"],
+ "cash":"map currency to settled balances; no invented interest",
+ "fx":"map currency to units of base_currency per unit currency, timestamp and source hash; base currency explicitly1",
+ "price_basis":"RAW_UNADJUSTED, splits explicit; adjusted OHLC rejected to prevent double accounting",
+ "cash_flows":"dated deposits/withdrawals and unitisation for actual HWM; never included in frozen shadow labels",
+ "corporate_actions":"split ratios/ex dates, entitled dividend units, amounts/currency, ex/pay dates, evidence; unknown dates block total-return labels",
+ "peak_history":"flow-adjusted unit NAV observations available at decision; no assumed HWM",
+ "fees_assumptions":"commission, slippage and tax separately known or null; missing blocks economic claims",
+ "missing":"fail closed, no symbol substitution, no missing asset/FX fill; stable id/content hash per decision",
+ "marks":"complete synchronous raw quotes+FX at all valuation timestamps; explicit dividends receivable/paid_cash and split-adjusted units; no external flows; delisted assets require actual recovery/value evidence",
+ "exact_primary":"synchronous intraday coverage required; daily-close proxy separately labelled"
+}
