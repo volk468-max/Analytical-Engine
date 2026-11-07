@@ -52,3 +52,14 @@ Q004 текущая новая research-ветка отDraftPR18.0/33primary con
 NO-GO validated core/deployment. Frozen free2000–2026 source расширен, но original
 PIT gate FAIL.87market proxy episodes/25overlap clusters не независимые trials.
 Market и stock labels разделены; экономика не тестировалась. [Q004](research/Q004-v1.md).
+
+## Q005 /2026-11-07
+
+| PR | State | Draft | Merged |
+|---|---|---|---|
+| [#20](https://github.com/volk468-max/Analytical-Engine/pull/20) | open | true | false |
+
+Q005:protocol/contracts then Draft checkpoint before synthetic-only prototypes.
+No actual portfolio provided:personalised P/CI/DD NA, no calibrated claim.
+NO-GO forecast/trading; RESEARCH ONLY. [Q005](research/Q005-v1.md). Previous status
+checkpoints retained; deployedSHA UNKNOWN, Draft не внедрение.

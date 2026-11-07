@@ -33,3 +33,9 @@
 breadth/holdings/H4 estimate revisions без подмены survivor proxies? Есть ли
 достаточный prospective power budget для33-wayHolm и1%Brier gain? Независимое
 число market events UNKNOWN; positive secondary NVDA не является новым core.
+
+## Q005
+
+Каковы actual shares/cash/base currency/FX/HWM и flows? Есть ли synchronous
+intraday total-return/action evidence, original news/revision/futures vintages?
+Каков feasible independent sample size по blinded power? Portfolio P остаётся NA.

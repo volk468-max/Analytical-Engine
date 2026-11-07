@@ -1,0 +1,12 @@
+{
+  "number": 20,
+  "title": "Research: Market Drawdown Precursors v1 (Issue #19)",
+  "head": "research/market-drawdown-precursors-v1",
+  "head_sha": "8e9aec99c7eee8b384e35a3bc1aa734f2d54800d",
+  "base": "research/ensemble-risk-forecast-v1",
+  "base_sha": "43886c0516b35bcfd61afce583b17112ce94bce0",
+  "url": "https://github.com/volk468-max/Analytical-Engine/pull/20",
+  "state": "open",
+  "draft": true,
+  "merged": false
+}

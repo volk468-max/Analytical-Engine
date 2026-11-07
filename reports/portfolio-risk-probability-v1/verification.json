@@ -1,0 +1,20 @@
+{
+  "tests": {
+    "research": 39,
+    "knowledge": 9,
+    "total": 48
+  },
+  "demo_byte_reproduction": true,
+  "demo_sha256": "82cef206d94445d42aed32b11a81ca0810bedc864e0fae0075d4c6e7c51f2a11",
+  "actual_portfolio_probability": null,
+  "real_model_calibrated": false,
+  "empirical_validation_metrics": null,
+  "CI_status": "NOT_CLAIMED",
+  "source_hashes": {
+    "research/portfolio_risk_probability/test_engine.py": "009bfa12ee1f49791ed2a3d8eee1be37c630c9edf6f3d3d8ce175b59e7058d99",
+    "research/portfolio_risk_probability/engine.py": "c6efdbf13ae7ccdcb66fbcb6905481121fe67432e18b1cb29653d375116022ca",
+    "research/portfolio_risk_probability/demo.py": "0c9bde2f752b40e2f15abb13f75ca60cb1284bd928d100f48ff95c3fbb0e9d93"
+  },
+  "knowledge_online": "PASSED including live GitHub",
+  "knowledge_base": "8e9aec99c7eee8b384e35a3bc1aa734f2d54800d"
+}

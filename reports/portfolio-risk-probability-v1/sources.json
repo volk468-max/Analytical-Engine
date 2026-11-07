@@ -1,0 +1,54 @@
+{
+  "research": [
+    {
+      "number": 8,
+      "title": "Research: Historical Drawdown Anatomy v1 with nested-free events and causal hypothesis validation",
+      "head": "research/historical-drawdown-anatomy-v1",
+      "head_sha": "c228624158068db64fe7e487a5be59281448fcd9",
+      "base": "research/risk-forecast-v1",
+      "base_sha": "366f8cd00e8c228d4796d0abbe9997f717a3b6ad",
+      "url": "https://github.com/volk468-max/Analytical-Engine/pull/8",
+      "state": "open",
+      "draft": false,
+      "merged": false
+    },
+    {
+      "number": 17,
+      "title": "Risk Forecast v2 — Predictive Validation",
+      "head": "research/risk-forecast-v2-predictive-validation",
+      "head_sha": "7fe91ab87dcda3607863a19074e6d7b2400503e8",
+      "base": "research/breadth-pit-data-qualification-v1",
+      "base_sha": "848610ff46f125d5369f15852d5daceca53acafa",
+      "url": "https://github.com/volk468-max/Analytical-Engine/pull/17",
+      "state": "open",
+      "draft": true,
+      "merged": false
+    },
+    {
+      "number": 18,
+      "title": "Ensemble Risk Forecast v1",
+      "head": "research/ensemble-risk-forecast-v1",
+      "head_sha": "43886c0516b35bcfd61afce583b17112ce94bce0",
+      "base": "research/risk-forecast-v2-predictive-validation",
+      "base_sha": "7fe91ab87dcda3607863a19074e6d7b2400503e8",
+      "url": "https://github.com/volk468-max/Analytical-Engine/pull/18",
+      "state": "open",
+      "draft": true,
+      "merged": false
+    },
+    {
+      "number": 20,
+      "title": "Research: Market Drawdown Precursors v1 (Issue #19)",
+      "head": "research/market-drawdown-precursors-v1",
+      "head_sha": "8e9aec99c7eee8b384e35a3bc1aa734f2d54800d",
+      "base": "research/ensemble-risk-forecast-v1",
+      "base_sha": "43886c0516b35bcfd61afce583b17112ce94bce0",
+      "url": "https://github.com/volk468-max/Analytical-Engine/pull/20",
+      "state": "open",
+      "draft": true,
+      "merged": false
+    }
+  ],
+  "issue19": "https://github.com/volk468-max/Analytical-Engine/issues/19",
+  "issue21": "https://github.com/volk468-max/Analytical-Engine/issues/21"
+}

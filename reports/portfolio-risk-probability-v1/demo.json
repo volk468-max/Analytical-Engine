@@ -1,0 +1,96 @@
+{
+  "mode": "SYNTHETIC_NOT_USER_PORTFOLIO",
+  "actual_probability": null,
+  "actual_drawdown": null,
+  "fixture_initial_nav": 120,
+  "fixture_min_nav": 107,
+  "label": {
+    "primary": true,
+    "daily_proxy": true,
+    "status": "DAILY_PROXY_ONLY"
+  },
+  "fixture_budget": {
+    "drawdown": -0.09999999999999998,
+    "used": 10,
+    "residual": 5.0,
+    "residual_fraction": 0.05555555555555555
+  },
+  "synthetic_path_frequency": {
+    "probability": 0.5,
+    "baseline": "EMPIRICAL_JOINT_NAV_PATHS",
+    "interval": null,
+    "expected_shortfall_5pct": 0.19999999999999996,
+    "status": "SYNTHETIC_UNVALIDATED",
+    "calibrated": false,
+    "effective_n": null
+  },
+  "intents": [
+    {
+      "execute_not_before_session": 3,
+      "cumulative_trim_target": 0.1,
+      "delta_original_exposure": 0.1,
+      "mode": "OFFLINE_SYNTHETIC_INTENT"
+    },
+    {
+      "execute_not_before_session": 6,
+      "cumulative_trim_target": 0.2,
+      "delta_original_exposure": 0.1,
+      "mode": "OFFLINE_SYNTHETIC_INTENT"
+    },
+    {
+      "execute_not_before_session": 9,
+      "cumulative_trim_target": 0.0,
+      "delta_original_exposure": -0.2,
+      "mode": "OFFLINE_SYNTHETIC_INTENT"
+    }
+  ],
+  "ladder_original_unit_target_at_120": 0.5,
+  "shadow_log": [
+    {
+      "type": "forecast",
+      "mode": "SYNTHETIC_NOT_USER_PORTFOLIO",
+      "snapshot_hash": "ad70c3b10c070f815664ff2ec5da6386f61287bcd7a87e5d931f21246e12f885",
+      "code_sha": null,
+      "code_content_sha256": "c6efdbf13ae7ccdcb66fbcb6905481121fe67432e18b1cb29653d375116022ca",
+      "model_sha": null,
+      "input_vintage": "SYNTHETIC-v1",
+      "snapshot_id": "SYNTHETIC-ONLY-1",
+      "decision_at": "2030-01-01T22:00:00+00:00",
+      "baseline_probability": null,
+      "final_probability": null,
+      "quality_flags": [
+        "SYNTHETIC_UNVALIDATED"
+      ],
+      "attribution": null,
+      "protocol_sha256": "00f724171409109675314bccd3f29dee72b0704dad5e68f2c1b6dc0d881a5d5a",
+      "probability": null,
+      "interval": null,
+      "actual_forecast": false,
+      "previous_hash": null,
+      "record_hash": "c30740f05f523a5076ba667ace89cddb9e8c67ae65491b92f910334baa425eaf"
+    },
+    {
+      "type": "label",
+      "mode": "SYNTHETIC",
+      "forecast_hash": "c30740f05f523a5076ba667ace89cddb9e8c67ae65491b92f910334baa425eaf",
+      "full_maturity": true,
+      "label": {
+        "primary": true,
+        "daily_proxy": true,
+        "status": "DAILY_PROXY_ONLY"
+      },
+      "previous_hash": "c30740f05f523a5076ba667ace89cddb9e8c67ae65491b92f910334baa425eaf",
+      "record_hash": "ba2c8e46124bfed9d4c4f3fb671d6e411fde19cb23c0fdcc7f1ce6b2c06abf67"
+    }
+  ],
+  "chain_valid": true,
+  "economic_metrics": {
+    "CAGR": null,
+    "max_DD": null,
+    "ES": null,
+    "turnover": null,
+    "trades": null,
+    "missed_upside": null,
+    "recovery": null
+  }
+}
