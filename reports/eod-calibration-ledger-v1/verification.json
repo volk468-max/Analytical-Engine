@@ -1,0 +1,16 @@
+{
+  "tests": {
+    "new": 13,
+    "knowledge": 9,
+    "total": 22
+  },
+  "artifact_sha256": {
+    "evaluation-status.csv": "b68d6dd4b3350ec534fe04d8cdb048522a096dbd12d111cc7a709208fa45654d",
+    "synthetic-calibration-demo.json": "adb7259d4cbbff3d60e63c0189c7c2d8ae6a990e6a26e8a899492b1637b39933",
+    "offline-log-mock.json": "da4a9227fb70009861b57f5d741f6e765bf8e0fd4026ba82ba99a36e2b39fa66"
+  },
+  "byte_identical": true,
+  "empirical_metrics": null,
+  "ledger_implemented": false,
+  "CI": "NOT_CLAIMED"
+}

@@ -38,3 +38,7 @@ BLOCKED/NA. R20/status/Q005 added append-only; production/research history uncha
 ## 2026-11-08 Q006
 
 Issue23 new EOD target/recipes, free-source audit, baselines and tests; no original PR22 changes.
+
+## 2026-11-08 Q007
+
+Issue25 protocol first, sourceaudit evidence, blocked minimal calibration milestone. No empirical/ledger claims. R24/Q007 added; no earlier source changes.

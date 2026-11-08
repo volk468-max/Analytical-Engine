@@ -43,3 +43,7 @@ Blinded power feasibility вместо30rare clusters/2years;90days не гар�
 ## Q006
 
 Independent action/PIT validation, prospective EOD calibration. Separate reviewed ladder repair; no trading.
+
+## Q007
+
+Resolve MUdated record andQQQ dividend precision, independentlyreconcile continuity; review gates before empirical cal/ledger. No trims or ladder use.

@@ -71,3 +71,7 @@ Q005-v1: [Portfolio probability research](research/Q005-v1.md). Предыдущ
 ## Q006
 
 [R22](research/R22-v1.md); [EOD portfolios Q006](research/Q006-v1.md). Prior research preserved.
+
+## Q007
+
+[R24](research/R24-v1.md); [Q007 calibration gate](research/Q007-v1.md). Prior cards preserved.

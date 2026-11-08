@@ -71,3 +71,11 @@ checkpoints retained; deployedSHA UNKNOWN, Draft не внедрение.
 | [#22](https://github.com/volk468-max/Analytical-Engine/pull/22) | open | true | false |
 
 EOD A/B/C price replay only; no calibrated advantage. Intraday unchanged; ladder defect blocked.
+
+## Issue25 / Q007
+
+| PR | State | Draft | Merged |
+|---|---|---|---|
+| [#24](https://github.com/volk468-max/Analytical-Engine/pull/24) | open | true | false |
+
+Q007 first milestone: action gate BLOCKED; minimal syntheticcal code, realP/metricsNA. Ledger nextmilestone.

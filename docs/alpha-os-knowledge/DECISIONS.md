@@ -45,3 +45,7 @@ Portfolio TOUCH10/60 и15%HWM risk preference, research-only Draft.35/51/60 — 
 ## Issue23 scope
 
 Owner chose hypothetical A/B/C, EOD research only. No merge/deploy/trades; 15%not guaranteed.
+
+## Issue25
+
+Owner-approved research scope and explicit stop condition: https://github.com/volk468-max/Analytical-Engine/issues/25 . No automatic probability policy or live infrastructure.

@@ -43,3 +43,7 @@ intraday total-return/action evidence, original news/revision/futures vintages?
 ## Q006
 
 Action adjustment evidence, original publication vintages, rights; future calibration/power and separate ladder fix.
+
+## Q007
+
+Original MUdividend evidence, precision tolerance review, fullsplit/totalreturn continuity, feasible prospective power. Actual ledger/calibration blocked.
