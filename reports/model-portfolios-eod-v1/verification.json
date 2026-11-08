@@ -1,0 +1,25 @@
+{
+  "numeric_artifacts": 8,
+  "byte_identical": true,
+  "hashes": {
+    "summary.csv": "b9b6c28ebda6cea6086502d919151499e8599c0f285aa329f2dba85a35a7e47e",
+    "data-audit.csv": "d1a656f3809c55079b49515d019ab0dc8d06f1fa936dc865cd1d22e973172b23",
+    "labels.csv.gz": "8005981aad8aa286dcdce2c2ddf43fd72d51aa8b7ac52adada3012477a755b51",
+    "metrics.csv": "ffded03b4f3a8ca350edca0ea23db4d977ce7a43a75cdcba8d0c2bf4c6205669",
+    "reliability.csv": "bdde8988e8280c475ef1affb3adfcdcdc151fd29b1074eae766d9d480025b42b",
+    "comparisons.csv": "8c922f62ccd5582ca0f75c7f7afdd5e2d8369429c00675f130ce89a27ddca44b",
+    "forecasts.csv.gz": "c58c0b2f08c232269bb0101dd523db42cb225c955692b277a4f4bb53de3d66b2",
+    "actions.csv": "230b2d43a5f4e4b62ceb23f36416e12a351cd708ce5c5ba3cb8625b3ff915134"
+  },
+  "synthetic_tests_not_predictive_evidence": true,
+  "CI": "NOT_CLAIMED",
+  "tests": {
+    "new": 14,
+    "PR22_regression": 39,
+    "knowledge": 9,
+    "total": 62
+  },
+  "knowledge_online": "PASSED including live GitHub",
+  "protocol_commit": "f02708c4c646c1c1c198b86db123dcb104459033",
+  "protocol_sha256": "1441d23791bed532d83e0b92aa7499dbcf7fae0ccfd0cf7484cbefef6bde4904"
+}

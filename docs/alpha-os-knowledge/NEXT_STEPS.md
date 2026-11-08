@@ -39,3 +39,7 @@ Independent event count сейчас UNKNOWN. Ничего не внедрять
 персональные51% и не выбирать news premiums/thresholds из synthetic examples.
 Blinded power feasibility вместо30rare clusters/2years;90days не гарантия.
 Не запускать live log, Norgate, покупки или protective trades автоматически.
+
+## Q006
+
+Independent action/PIT validation, prospective EOD calibration. Separate reviewed ladder repair; no trading.

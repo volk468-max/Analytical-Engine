@@ -67,3 +67,7 @@ Q001 остаётся в истории как технический проек
 R20-v1 [PR20](https://github.com/volk468-max/Analytical-Engine/pull/20): [карточка](research/R20-v1.md).
 Q005-v1: [Portfolio probability research](research/Q005-v1.md). Предыдущие карточки
 сохранены; новый portfolio target не заменяет market/stock negative findings.
+
+## Q006
+
+[R22](research/R22-v1.md); [EOD portfolios Q006](research/Q006-v1.md). Prior research preserved.

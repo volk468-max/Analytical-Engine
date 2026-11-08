@@ -63,3 +63,11 @@ Q005:protocol/contracts then Draft checkpoint before synthetic-only prototypes.
 No actual portfolio provided:personalised P/CI/DD NA, no calibrated claim.
 NO-GO forecast/trading; RESEARCH ONLY. [Q005](research/Q005-v1.md). Previous status
 checkpoints retained; deployedSHA UNKNOWN, Draft не внедрение.
+
+## Issue23 / Q006
+
+| PR | State | Draft | Merged |
+|---|---|---|---|
+| [#22](https://github.com/volk468-max/Analytical-Engine/pull/22) | open | true | false |
+
+EOD A/B/C price replay only; no calibrated advantage. Intraday unchanged; ladder defect blocked.

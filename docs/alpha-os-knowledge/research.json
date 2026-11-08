@@ -439,6 +439,29 @@
       ],
       "report_path": "reports/market-drawdown-precursors-v1/executive-summary-ru.md",
       "report_blob": "f729a2a0f3bd89272c92f48eee1962afaca33788"
+    },
+    {
+      "id": "R22-v1",
+      "pr": 22,
+      "title": "Portfolio Risk Probability Engine v1",
+      "branch": "research/portfolio-risk-probability-v1",
+      "sha": "9b68d2a9cd5f70d1f50ad430e5f3242bf03ff659",
+      "base_branch": "research/market-drawdown-precursors-v1",
+      "base_sha": "8e9aec99c7eee8b384e35a3bc1aa734f2d54800d",
+      "goal": "Portfolio architecture",
+      "hypothesis": "Gated probability research",
+      "data_period": "Synthetic only",
+      "method": "Contracts,fixtures,registry,log mock",
+      "results": "48tests per source; realP NA",
+      "limitations": "No real portfolio; known ladder defect",
+      "decisions": "No trading approval",
+      "open_questions": "Qualified portfolio/PIT evidence and ladder patch",
+      "sources": [
+        "https://github.com/volk468-max/Analytical-Engine/pull/22",
+        "https://github.com/volk468-max/Analytical-Engine/blob/9b68d2a9cd5f70d1f50ad430e5f3242bf03ff659/reports/portfolio-risk-probability-v1/executive-summary-ru.md"
+      ],
+      "report_path": "reports/portfolio-risk-probability-v1/executive-summary-ru.md",
+      "report_blob": "6dcf930d9b340f16d26534e84ba219f19b15ba48"
     }
   ],
   "draft_work": [
@@ -495,6 +518,13 @@
       "real_calculation": false,
       "synthetic_only": true,
       "independent_holdout": false
+    },
+    {
+      "id": "Q006-v1",
+      "title": "EOD model portfolios",
+      "branch": "research/model-portfolios-eod-v1",
+      "card": "research/Q006-v1.md",
+      "classification": "RESEARCH ONLY"
     }
   ]
 }
