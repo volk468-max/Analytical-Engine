@@ -1,0 +1,19 @@
+name: EOD portfolio research
+on:
+  pull_request:
+    paths:
+      - 'research/model_portfolios_eod/**'
+      - 'reports/model-portfolios-eod-v1/**'
+      - '.github/workflows/model-portfolios-eod.yml'
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy==2.3.5 pandas==2.2.3 exchange-calendars==4.11.2
+      - run: python -m unittest discover -s research/model_portfolios_eod -v

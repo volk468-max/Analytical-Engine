@@ -34,3 +34,7 @@ secondary NVDA эффект, не validated core. Добавлены R18/status/
 Первым опубликован протокол, затем минимальный Draft с portfolio contract/audit,
 после — isolated synthetic prototypes/registry/tests/log mock. Все реальные metrics
 BLOCKED/NA. R20/status/Q005 added append-only; production/research history unchanged.
+
+## 2026-11-08 Q006
+
+Issue23 new EOD target/recipes, free-source audit, baselines and tests; no original PR22 changes.

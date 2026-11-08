@@ -39,3 +39,7 @@ breadth/holdings/H4 estimate revisions без подмены survivor proxies? �
 Каковы actual shares/cash/base currency/FX/HWM и flows? Есть ли synchronous
 intraday total-return/action evidence, original news/revision/futures vintages?
 Каков feasible independent sample size по blinded power? Portfolio P остаётся NA.
+
+## Q006
+
+Action adjustment evidence, original publication vintages, rights; future calibration/power and separate ladder fix.
