@@ -1,0 +1,13 @@
+{
+ "mode":"SPECIFICATION_ONLY_OFFLINE_MOCK",
+ "infrastructure_started":false,
+ "forecast_required":["recorded_at","decision_at","code_sha","protocol_sha256","model_sha","source_hashes","recipe","snapshot_id","snapshot_hash","label_type","raw_probability","calibrated_probability","uncertainty","data_quality","stale","previous_hash","hash"],
+ "label_type":"EOD_CLOSE_TOUCH10_60",
+ "actual_record_rule":"actual UTC release/ingest <= decision < execution; full immutable source vintages; mock/backfill excluded from prospective evaluation",
+ "nullable":"P/CI/model identifiers nullable for blocked or synthetic records; never treated as calibrated forecast",
+ "label_record_required":["forecast_hash","resolved_at","full_horizon_available_at","outcome","source_hashes","correction_of"],
+ "maturity":"all60future sessions published; early touch does not mature window",
+ "corrections":"append only, reference superseded record and reason; never overwrite",
+ "storage":"local mock hash chain is not independently anchored immutable hosted storage",
+ "monitoring":"minimum12months data-quality monitoring; blinded power/precision/arrival rate plan may require years; no efficacy peeking or90day guarantee"
+}

@@ -16,7 +16,8 @@ def review():
   elif row['id']=='QQQ_2024':row['status']='BLOCKED_NO_HISTORICAL_ROWS';row['reason']='Saved Nasdaq page states Data is currently not available; no dated amount/ex date to reconcile'
   else:row['status']='BLOCKED_NO_DATED_DIVIDEND_RECORD';row['reason']='Quarterly-results index is not the original 2024-09-25 dividend release; .115/ex-date record not present in obtained response'
  # Same-source API follow-up yielded an actual dated amount, unlike the HTML shell.
- api=json.loads(gzip.decompress((OUT/'evidence/QQQ_API.gz').read_bytes()))
+ followups=json.loads((OUT/'source-followups.json').read_text());raw_api=gzip.decompress((OUT/'evidence/QQQ_API.gz').read_bytes());assert hashlib.sha256(raw_api).hexdigest()==next(r['sha256'] for r in followups if r['id']=='QQQ_API')
+ api=json.loads(raw_api)
  record=next(r for r in api['data']['dividends']['rows'] if r['exOrEffDate']=='03/18/2024')
  q=next(r for r in a['samples'] if r['id']=='QQQ_2024');q['independent_record']=record;q['independent_amount']=float(record['amount'].strip('$'));q['provider_amount']=.573;q['amount_difference']=q['independent_amount']-q['provider_amount'];q['status']='BLOCKED_AMOUNT_PRECISION_DISCREPANCY';q['reason']='Nasdaq API .57345 vs frozen Yahoo .573. QQQ not a held asset; small discrepancy is not proof of material portfolio error, but requires explicit reconciliation/tolerance review.'
  a['all_actions_reconciled']=all(r['reconciled'] for r in a['samples']);assert not a['all_actions_reconciled'];a['gate']='BLOCKED_MU_QQQ_ACTION_EVIDENCE';(OUT/'action-audit.json').write_text(json.dumps(a,indent=2)+'\n')
