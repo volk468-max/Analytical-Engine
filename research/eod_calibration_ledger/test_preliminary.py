@@ -29,7 +29,7 @@ class QualificationTests(unittest.TestCase):
  def test_record_date_is_not_ex_date(self):
   issuer=b'On September 25, 2024, Micron declared a quarterly dividend of $0.115 per share, payable in cash on October 23, 2024, to shareholders of record on October 7, 2024'
   self.assertTrue(mu_facts(issuer,b'')['issuer_record_payment_amount']);self.assertFalse(mu_facts(issuer,b'')['reconciled'])
- def test_wrong_security_exchange(self):self.assertFalse(mu_facts(b'',b'OTHER US5951121038 0.115 USD 10/07/2024 10/07/2024 10/23/2024')['reconciled'])
+ def test_wrong_security_exchange(self):self.assertFalse(mu_facts(b'',b'MICRON TECHNOLOGY INC US0000000000 0.115 USD 10/07/2024 10/07/2024 10/23/2024')['exchange_ex_record_payment_amount'])
 
 class TemporalTests(unittest.TestCase):
  @classmethod
