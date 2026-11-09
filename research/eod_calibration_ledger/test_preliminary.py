@@ -96,6 +96,12 @@ class LedgerTests(unittest.TestCase):
  def test_continuous_not_anchor_reset(self):
   self.c[2:]=80;r=ledger(self.c,self.d,self.dates,'A_STATIC',start=1);self.assertAlmostEqual(r[1]['nav'],80000);self.assertAlmostEqual(r[-1]['drawdown'],.2)
  def test_episodes_strict15_boundary(self):self.assertEqual(episodes([False,True,True,False,True]),[2,1])
+ def test_exact15_is_not_a_strict_breach(self):
+  self.c[2:]=85;r=ledger(self.c,self.d,self.dates,'A_STATIC',start=1);e=economics(r);self.assertAlmostEqual(e['max_dd'],.15);self.assertEqual(e['breach15_days'],0)
+ def test_scheduled_zero_trade_keeps_decision_date(self):
+  r=ledger(self.c,self.d,self.dates,'A',start=1);by={x['index']:x for x in r}
+  for i in range(3,79):
+   if self.dates[i][:7]!=self.dates[i-1][:7]:self.assertEqual(by[i+1]['execution_decision_date'],self.dates[i])
  def test_invalid_leverage_rejected(self):
   with self.assertRaises(ValueError):rebalance(np.zeros(3),100000,0,self.c[0],np.ones(3),0)
 if __name__=='__main__':unittest.main()

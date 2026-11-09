@@ -221,10 +221,11 @@ def ledger(c,d,dates,recipe,fee_bps=0,spread_bps=0,payments=None,start=253):
    if value:pending.append(dict(amount=value,pay=payments.get((SYMS[j],dates[i]))))
   paid=sum(x['amount'] for x in pending if x['pay'] is not None and x['pay']<=dates[i]);cash+=paid;pending=[x for x in pending if x['pay'] is None or x['pay']>dates[i]];receivable=sum(x['amount'] for x in pending);traded=fee=0.
   if i==start:target=weights(c,d,i-1,recipe[0]);decision=dates[i-1]
+  execution_decision=decision if target is not None else None
   if target is not None:
    units,cash,traded,fee=rebalance(units,cash,receivable,c[i],target,rate);target=None;totalfees+=fee
   nav=float(units@c[i]+cash+receivable);hwm=max(hwm,nav)
-  rows.append(dict(recipe=recipe,fee_bps=fee_bps,spread_bps=spread_bps,date=dates[i],index=i,nav=nav,cash=cash,receivable=receivable,units_AMD=units[0],units_NVDA=units[1],units_MU=units[2],stock_exposure=float(units@c[i])/nav,cash_exposure=cash/nav,receivable_exposure=receivable/nav,dividend_accrued=excredited,dividend_paid=paid,traded_notional=traded,fees=fee,cumulative_fees=totalfees,hwm=hwm,drawdown=1-nav/hwm,daily_return=nav/previous_nav-1,execution_decision_date=decision if traded else None,classification='DESCRIPTIVE_NON_EXECUTABLE'))
+  rows.append(dict(recipe=recipe,fee_bps=fee_bps,spread_bps=spread_bps,date=dates[i],index=i,nav=nav,cash=cash,receivable=receivable,units_AMD=units[0],units_NVDA=units[1],units_MU=units[2],stock_exposure=float(units@c[i])/nav,cash_exposure=cash/nav,receivable_exposure=receivable/nav,dividend_accrued=excredited,dividend_paid=paid,traded_notional=traded,fees=fee,cumulative_fees=totalfees,hwm=hwm,drawdown=1-nav/hwm,daily_return=nav/previous_nav-1,execution_decision_date=execution_decision,classification='DESCRIPTIVE_NON_EXECUTABLE'))
   previous_nav=nav
   # First session close of month decides, next session close executes.
   if not recipe.endswith('_STATIC') and i>start and dates[i][:7]!=dates[i-1][:7]:target=weights(c,d,i,recipe);decision=dates[i]
@@ -239,7 +240,7 @@ def episodes(mask):
  return lengths
 
 def economics(rows,period='FULL',initial=100000.):
- r=pd.DataFrame(rows);nav=r.nav.to_numpy();path=np.r_[initial,nav];dd=1-path/np.maximum.accumulate(path);ret=path[1:]/path[:-1]-1;years=len(nav)/252;breach=episodes(dd[1:]>.15);under=episodes(dd[1:]>1e-12);ratio60=path[60:]/path[:-60]-1
+ r=pd.DataFrame(rows);nav=r.nav.to_numpy();path=np.r_[initial,nav];dd=1-path/np.maximum.accumulate(path);ret=path[1:]/path[:-1]-1;years=len(nav)/252;breach=episodes(dd[1:]>.15+1e-12);under=episodes(dd[1:]>1e-12);ratio60=path[60:]/path[:-60]-1
  return dict(recipe=r.recipe.iloc[0],fee_bps=int(r.fee_bps.iloc[0]),spread_bps=int(r.spread_bps.iloc[0]),period=period,start=r.date.iloc[0],end=r.date.iloc[-1],initial_nav=initial,terminal_nav=float(nav[-1]),cagr=float((nav[-1]/initial)**(1/years)-1),annual_vol=float(np.std(ret,ddof=1)*np.sqrt(252)),max_dd=float(dd.max()),days_below_hwm=int(sum(dd[1:]>1e-12)),longest_hwm_duration=max(under,default=0),breach15_episodes=len(breach),breach15_days=sum(breach),breach15_longest=max(breach,default=0),worst60_return=float(ratio60.min()) if len(ratio60) else None,turnover=float((r.traded_notional/r.nav).sum()),fees=float(r.fees.sum()),mean_stock_exposure=float(r.stock_exposure.mean()),mean_cash_exposure=float(r.cash_exposure.mean()),mean_receivable_exposure=float(r.receivable_exposure.mean()),terminal_receivable=float(r.receivable.iloc[-1]),execution='NON_EXECUTABLE',independent_events='UNKNOWN')
 
 def run():

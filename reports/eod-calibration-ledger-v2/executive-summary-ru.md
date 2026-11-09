@@ -164,6 +164,9 @@ nonspendable receivable навсегда,0%interest. Только MU07.10.2024 �
 Нормализованные shares эквивалентны split-normalized numeraire; split memo не
 изменяет их второй раз. Fractional, no shorts/leverage/flows, sells before buys.
 
+Annualization:252 торговые сессии в году для geometric CAGR и volatility;
+это trading-session convention, не точное число календарных лет. Strict15% boundary
+проверяется с численным tolerance1e-12, чтобы ровно15% не считалось превышением.
 Ниже zero-cost descriptive baseline; **не доходность реального счёта**:
 
 | Рецепт | NAV, USD | CAGR | MaxDD | Пересечений >15% | Сессий >15% | Худшие 60 сессий |
@@ -199,13 +202,15 @@ cash доля дрейфует, а monthlyB удерживает её приме
 
 ## Проверки, статус фаз и следующий этап
 
-44 теста подсистемы (13 прежних+31 новых) и9 knowledge regression PASS локально.
+46 тестов подсистемы (13 прежних+33 новых) и9 knowledge regression PASS локально.
 Усилены Decimal/date/security guards, frozen-source hashes, OHLC/calendar gaps,
 exact60/maturity/purge boundaries, future-label poisoning, C future-price invariance,
 next-close lag, fee conservation, ex/pay receivables, no spending receivables,
 continuous DD и offline/no-network. Полный verify_v2 повторно пересчитывает все
 выходы с запрещённой сетью, сравнивает числа rtol1e-11/atol1e-8 и фиксирует SHA256;
-результат и byte-identity в verification-v2.json. Synthetic tests не evidence efficacy.
+результат и byte-identity в verification-v2.json. Synthetic tests не evidence efficacy. CI первоначально обнаружил зависимость даты
+execution от floating-point zero-fill; метаданные исправлены на scheduled decision,
+добавлен regression test и выполнена повторная проверка.
 
 | Этап | Статус |
 |---|---|

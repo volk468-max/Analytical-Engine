@@ -1,0 +1,17 @@
+{
+  "subsystem_tests": 46,
+  "knowledge_tests": 9,
+  "online_knowledge_validation": "PASS including live GitHub",
+  "full_replay_tables": 12,
+  "full_replay_byte_identical": true,
+  "network_forbidden_during_replay": true,
+  "qualification": "BLOCKED_FULL_HISTORY_PIT_AND_INDEPENDENT_CONTINUITY",
+  "classification": "PRELIMINARY_RESEARCH_PRICE_REPLAY_NOT_PIT",
+  "original_v1_and_PR24_artifacts_changed": false,
+  "code_sha256": {
+    "reconcile_v2.py": "7484f795ee6d11d97683d24a6ddaf8798c4fb0e887649135bce5fe8ec2358982",
+    "continuity_v2.py": "4d9bfb84e0843b9ae9d2f25fcf6366c9ea1c32922cbfbb8cef88f324096f00ad",
+    "verify_v2.py": "df2d8c7d6771c2bba88b143c30ab85e57a2af8dcd429127499109693c4dac2e2",
+    "preliminary.py": "fbb24676875d23a16740d5a6f43601b3857dc7becc44a73181e6762e0e60dbf0"
+  }
+}
