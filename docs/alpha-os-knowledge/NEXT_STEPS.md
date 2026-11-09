@@ -55,3 +55,7 @@ promote lower marginal bias to predictive advantage. Frozen prospective design a
 blinded power/precision review needed; no new calibrator/threshold search on test
 history. No production/launch/trades authorized. PR28 dependency synchronization
 is separate future work, not performed here.
+
+## Q008
+
+Review isolated DB/provider/model/permissions/cost/cron/notifications/retention/backfill/go-live checklist. Obtain separate explicit approval before provisioning, migration, live run or schedule. False Signal Anatomy follow-up preregistration.

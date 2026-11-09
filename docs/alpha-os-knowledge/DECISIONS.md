@@ -56,3 +56,7 @@ Owner supplied Micron/Vienna sources and explicitly authorized a separately labe
 preliminary study if full qualification cannot be completed. This modifies only the
 prior research stop condition; no PIT certification or production/trading approval.
 Use the existing Draft PR26. No threshold-driven protective simulations authorized.
+
+## Issue27
+
+Owner authorized design/code/Draft only: https://github.com/volk468-max/Analytical-Engine/issues/27 . Separate approval required for live deployment, DB mutation, cron and paid resources. New isolated DB, candidate schedule and budget are proposals, not approved decisions.

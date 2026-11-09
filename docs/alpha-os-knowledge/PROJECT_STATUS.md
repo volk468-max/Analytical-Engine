@@ -89,3 +89,11 @@ Q007 first milestone: action gate BLOCKED; minimal syntheticcal code, realP/metr
 Existing PR26 continued; current SHA from Git history (no self-reference). MU sample
 resolved, full qualification BLOCKED. Preliminary historical metrics and descriptive
 ledger available; no demonstrated model advantage, no live/deployed functionality.
+
+## Issue27 / Q008
+
+| PR | State | Draft | Merged |
+|---|---|---|---|
+| [#26](https://github.com/volk468-max/Analytical-Engine/pull/26) | open | true | false |
+
+Q008: daily-shadow code/design, local PostgreSQL16 tests only. NOT RUNNING; no production changes or prospective rows.

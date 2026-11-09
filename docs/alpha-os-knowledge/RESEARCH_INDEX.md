@@ -81,3 +81,7 @@ Q005-v1: [Portfolio probability research](research/Q005-v1.md). Предыдущ
 [Preliminary real calibration and continuous ledger](research/Q007-v2.md), supersedes
 limited Q007-v1 milestone; original card/source/results preserved. Same Draft PR26,
 not a new PR. New owner evidence/authorization is the reason for further research.
+
+## Q008
+
+[R26 source qualification](research/R26-v1.md); [Q008 daily shadow infrastructure](research/Q008-v1.md). Earlier research preserved.

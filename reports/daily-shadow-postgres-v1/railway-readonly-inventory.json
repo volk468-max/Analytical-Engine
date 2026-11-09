@@ -1,0 +1,81 @@
+{
+  "checked_at": "2026-11-09",
+  "project": "skillful-reflection",
+  "read_only": true,
+  "services": [
+    {
+      "service": "Data-collector-1.0",
+      "state": "live",
+      "environment": "production",
+      "source": {
+        "repo": "volk468-max/Data-collector-1.0",
+        "branch": "main",
+        "checkSuites": false
+      },
+      "variable_names": [
+        "ADC_DB_PATH"
+      ],
+      "interface_assessment": "NO_API_OR_DB_ROLE_CONTRACT_VERIFIED; no credentials or production DB connection requested"
+    },
+    {
+      "service": "Analytical 2.0",
+      "state": "live",
+      "environment": "production",
+      "source": {
+        "repo": "volk468-max/Analytical-Engine",
+        "branch": "main",
+        "checkSuites": false
+      },
+      "variable_names": [
+        "ADC_BASE_URL",
+        "DATABASE_URL",
+        "HYPOTHESIS_TRACKER_URL",
+        "KNOWLEDGE_BASE_URL"
+      ],
+      "interface_assessment": "NO_API_OR_DB_ROLE_CONTRACT_VERIFIED; no credentials or production DB connection requested"
+    },
+    {
+      "service": "Postgres",
+      "state": "live",
+      "environment": "production",
+      "source": {
+        "image": "ghcr.io/railwayapp-templates/postgres-ssl:18",
+        "autoUpdates": {
+          "type": "vuln",
+          "tagMode": "sha",
+          "schedule": [
+            {
+              "day": 6,
+              "endHour": 24,
+              "startHour": 10
+            },
+            {
+              "day": 0,
+              "endHour": 18,
+              "startHour": 0
+            }
+          ],
+          "remediationNotice": null
+        }
+      },
+      "variable_names": [
+        "DATABASE_URL",
+        "PGDATA",
+        "PGDATABASE",
+        "PGHOST",
+        "PGPASSWORD",
+        "PGPORT",
+        "PGUSER",
+        "POSTGRES_DB",
+        "POSTGRES_PASSWORD",
+        "POSTGRES_USER",
+        "RAILWAY_DEPLOYMENT_DRAINING_SECONDS",
+        "SSL_CERT_DAYS"
+      ],
+      "interface_assessment": "NO_API_OR_DB_ROLE_CONTRACT_VERIFIED; no credentials or production DB connection requested"
+    }
+  ],
+  "production_database_touched": false,
+  "db_permissions": "UNKNOWN_NOT_QUERIED",
+  "reused_existing_services": false
+}

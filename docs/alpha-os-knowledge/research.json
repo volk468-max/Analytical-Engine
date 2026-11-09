@@ -485,6 +485,29 @@
       ],
       "report_path": "reports/model-portfolios-eod-v1/executive-summary-ru.md",
       "report_blob": "e330f2c9a7b6a1a7eaa09f55a473a122a9576f9b"
+    },
+    {
+      "id": "R26-v1",
+      "pr": 26,
+      "title": "EOD action qualification and synthetic calibration gate",
+      "branch": "research/eod-calibration-ledger-v1",
+      "sha": "82eebbd95579c022040065f67e30c369d0999906",
+      "base_branch": "research/model-portfolios-eod-v1",
+      "base_sha": "51fb1d34ddb7a28e8bbc7b2361dcfc2107890f0b",
+      "goal": "Independent action-source qualification before calibration",
+      "hypothesis": "Qualified lineage is necessary for reliable calibration",
+      "data_period": "Frozen historical research plus synthetic tests; no prospective data",
+      "method": "Independent action audit, explicit blocking gate and synthetic scaffolding",
+      "results": "BLOCKED; real calibrated probabilities and metrics unavailable",
+      "limitations": "MU dividend evidence and QQQ precision reconciliation unresolved; historical archive not PIT",
+      "decisions": "Research only; no live pipeline or validated probability",
+      "open_questions": "Independent action reconciliation, live provider qualification and prospective ledger",
+      "sources": [
+        "https://github.com/volk468-max/Analytical-Engine/pull/26",
+        "https://github.com/volk468-max/Analytical-Engine/blob/82eebbd95579c022040065f67e30c369d0999906/reports/eod-calibration-ledger-v1/executive-summary-ru.md"
+      ],
+      "report_path": "reports/eod-calibration-ledger-v1/executive-summary-ru.md",
+      "report_blob": "69c744d461d3f9ae4ab990c8f63ecde4b5defa20"
     }
   ],
   "draft_work": [
@@ -567,6 +590,13 @@
       "independent_holdout": false,
       "PIT_certified": false,
       "real_calculation": true
+    },
+    {
+      "id": "Q008-v1",
+      "title": "Issue27 daily prospective PostgreSQL shadow infrastructure",
+      "branch": "research/daily-shadow-postgres-v1",
+      "card": "research/Q008-v1.md",
+      "classification": "NOT_RUNNING_DESIGN_AND_LOCAL_TESTS"
     }
   ]
 }

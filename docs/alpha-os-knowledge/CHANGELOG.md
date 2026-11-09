@@ -50,3 +50,7 @@ reconciled; QQQ numeric rounding compatible, not full qualification. Added real
 preliminary nested calibration (0/9primary wins;Holm1), continuous descriptive
 A/B/C/static ledgers/costs/reserve analysis and46subsystem tests. Old v1
 reports/cards/records preserved; full-history/PIT gate remains BLOCKED.
+
+## 2026-11-09 Q008
+
+Issue27 protocol-first daily-shadow infrastructure, append-only SQL design and55local tests. NOT RUNNING, synthetic all222NULL; no production connection/mutation. Added R26/Q008; existing source cards unchanged.
