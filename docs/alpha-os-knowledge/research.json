@@ -555,6 +555,18 @@
       "branch": "research/eod-calibration-ledger-v1",
       "card": "research/Q007-v1.md",
       "classification": "BLOCKED_ACTION_QUALIFICATION"
+    },
+    {
+      "id": "Q007-v2",
+      "title": "Issue25 preliminary real calibration and continuous ledger",
+      "branch": "research/eod-calibration-ledger-v1",
+      "card": "research/Q007-v2.md",
+      "supersedes": "Q007-v1 limited milestone; original record retained",
+      "classification": "PRELIMINARY_RESEARCH_PRICE_REPLAY_NOT_PIT",
+      "pr_reference": "Existing Draft PR26; actual continuation head in Git history",
+      "independent_holdout": false,
+      "PIT_certified": false,
+      "real_calculation": true
     }
   ]
 }

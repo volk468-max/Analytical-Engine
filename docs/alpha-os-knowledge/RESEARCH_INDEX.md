@@ -75,3 +75,9 @@ Q005-v1: [Portfolio probability research](research/Q005-v1.md). Предыдущ
 ## Q007
 
 [R24](research/R24-v1.md); [Q007 calibration gate](research/Q007-v1.md). Prior cards preserved.
+
+## Q007-v2
+
+[Preliminary real calibration and continuous ledger](research/Q007-v2.md), supersedes
+limited Q007-v1 milestone; original card/source/results preserved. Same Draft PR26,
+not a new PR. New owner evidence/authorization is the reason for further research.

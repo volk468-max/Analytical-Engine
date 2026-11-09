@@ -49,3 +49,10 @@ Owner chose hypothetical A/B/C, EOD research only. No merge/deploy/trades; 15%no
 ## Issue25
 
 Owner-approved research scope and explicit stop condition: https://github.com/volk468-max/Analytical-Engine/issues/25 . No automatic probability policy or live infrastructure.
+
+## Owner follow-up 2026-11-09 / Issue25
+
+Owner supplied Micron/Vienna sources and explicitly authorized a separately labelled
+preliminary study if full qualification cannot be completed. This modifies only the
+prior research stop condition; no PIT certification or production/trading approval.
+Use the existing Draft PR26. No threshold-driven protective simulations authorized.

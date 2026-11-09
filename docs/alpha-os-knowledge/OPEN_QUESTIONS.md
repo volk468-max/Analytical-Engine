@@ -47,3 +47,10 @@ Action adjustment evidence, original publication vintages, rights; future calibr
 ## Q007
 
 Original MUdividend evidence, precision tolerance review, fullsplit/totalreturn continuity, feasible prospective power. Actual ledger/calibration blocked.
+
+## Q007-v2
+
+Full independent price/action completeness, original vintages/availability, actual
+dividend payment dates and executable auction alignment remain unknown. QQQ vendor
+rounding policy unverified. EffectiveN descriptive; independent market-event count
+UNKNOWN; no independent holdout or established statistical advantage.

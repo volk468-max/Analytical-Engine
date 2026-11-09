@@ -1,0 +1,94 @@
+{
+  "mode": "OFFLINE_REAL_FROZEN_REPLAY_NOT_PIT",
+  "network_forbidden": true,
+  "files": [
+    {
+      "file": "calibration-metrics.csv",
+      "rows": 21,
+      "sha256": "616223311fefb186c2b1ccad11a18679c727dc24dbc6db47fcb61e83875a3d22",
+      "byte_identical": true,
+      "numeric_match": true
+    },
+    {
+      "file": "cash-reserve-cost.csv",
+      "rows": 12,
+      "sha256": "2b5464bb9190653ecbc61e9fc11a1113ed69aa215a8a5ab980fb3f7ccd752026",
+      "byte_identical": true,
+      "numeric_match": true
+    },
+    {
+      "file": "comparisons.csv",
+      "rows": 18,
+      "sha256": "3b9c3f388996da666b04cf9b752195ae8829165d5881e2796bc412c7bab6eaca",
+      "byte_identical": true,
+      "numeric_match": true
+    },
+    {
+      "file": "continuity-diagnostic.csv",
+      "rows": 4,
+      "sha256": "9c7b5946c4df3b6a62e2ad67a863ca9f0bf0b872c528093aafc63b92b784b0dd",
+      "byte_identical": true,
+      "numeric_match": true
+    },
+    {
+      "file": "ledger-economics.csv",
+      "rows": 90,
+      "sha256": "6671e9baf644521f774494848bece4d0b9f8e283b7eff5d2ebb3cca5a2792146",
+      "byte_identical": true,
+      "numeric_match": true
+    },
+    {
+      "file": "period-regime-metrics.csv",
+      "rows": 105,
+      "sha256": "b3a1970d4a6ef893f6fa7ea550c77bc2308bfc3d3defc9d6e7b2c93a32720c7c",
+      "byte_identical": true,
+      "numeric_match": true
+    },
+    {
+      "file": "ranking-by-year.csv",
+      "rows": 117,
+      "sha256": "6c2846b47a6dc8d8767a8de6235f1cd20b4230110035eb312533fcbde7e171f8",
+      "byte_identical": true,
+      "numeric_match": true
+    },
+    {
+      "file": "reliability.csv",
+      "rows": 210,
+      "sha256": "57207280ce234294d8e662d2ac09f5b9e433af37f4fd5e62e299973ed674d190",
+      "byte_identical": true,
+      "numeric_match": true
+    },
+    {
+      "file": "thresholds.csv",
+      "rows": 63,
+      "sha256": "04b3e4ae7b019c2eddc9d1139fd8ce9c5493cd3683b68107617d97524456b174",
+      "byte_identical": true,
+      "numeric_match": true
+    },
+    {
+      "file": "window-support.csv",
+      "rows": 42,
+      "sha256": "9a7aac1884fdd6647b42417efc452e0fefbf7de67b2360af29153549dcabacf7",
+      "byte_identical": true,
+      "numeric_match": true
+    },
+    {
+      "file": "continuous-ledgers.csv.gz",
+      "rows": 195000,
+      "sha256": "f4f3f6774b97aba63ff91c5436c062a41b24dfb6c5e522cbaafd4d7bbdb983b4",
+      "byte_identical": true,
+      "numeric_match": true
+    },
+    {
+      "file": "forecast-calibration.csv.gz",
+      "rows": 7176,
+      "sha256": "ed0a5e8a531f808aaf4af8b08f07e2ba1dfafcb8f3b204574d866cb866d09131",
+      "byte_identical": true,
+      "numeric_match": true
+    }
+  ],
+  "all_numeric_match": true,
+  "all_byte_identical": true,
+  "model_qualified": false,
+  "production_touched": false
+}

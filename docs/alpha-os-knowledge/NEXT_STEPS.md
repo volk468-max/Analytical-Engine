@@ -47,3 +47,11 @@ Independent action/PIT validation, prospective EOD calibration. Separate reviewe
 ## Q007
 
 Resolve MUdated record andQQQ dividend precision, independentlyreconcile continuity; review gates before empirical cal/ledger. No trims or ladder use.
+
+## Q007-v2
+
+Review preliminary v2 results and independent action/price/settlement gaps. Do not
+promote lower marginal bias to predictive advantage. Frozen prospective design and
+blinded power/precision review needed; no new calibrator/threshold search on test
+history. No production/launch/trades authorized. PR28 dependency synchronization
+is separate future work, not performed here.
