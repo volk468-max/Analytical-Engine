@@ -37,6 +37,7 @@ def quality(v,session,issued):
  try:
   if utc(v['publication_at'])>utc(v['ingestion_at']) or utc(v['ingestion_at'])>utc(issued):return 'LATE_OR_FUTURE_SOURCE'
  except (ValueError,TypeError):return 'INVALID_SOURCE_TIMESTAMPS'
+ if utc(v['publication_at'])<calendar().session_close(pd.Timestamp(session)).to_pydatetime():return 'PRE_CLOSE_SOURCE'
  if any(utc(t)>utc(issued) for t in v.get('feature_available_at',[])):return 'FUTURE_FEATURE'
  if v.get('qualification')!='QUALIFIED_PIT':return 'PIT_UNQUALIFIED'
  if not v.get('actions_qualified'):return 'CORPORATE_ACTIONS_UNQUALIFIED'
@@ -103,4 +104,4 @@ def resolve(f,anchor,observations,now,basis,actions_qualified):
  values=[r.get(key) for r in rows]
  if not math.isfinite(anchor) or anchor<=0 or any(x is None or not math.isfinite(x) or x<0 for x in values):return dict(context,status='UNRESOLVED',reason='INVALID_MARK')
  hit=next((i+1 for i,x in enumerate(values) if x<=anchor*(1-f['threshold_pct']/100)+anchor*1e-12),None)
- return dict(context,status='MATURED',reason=None,completed_sessions=len(rows),last_publication_at=max(r['publication_at'] for r in rows),outcome=hit is not None,mae=1-min(values)/anchor,time_to_hit=hit)
+ return dict(context,status='MATURED',reason=None,completed_sessions=len(rows),last_publication_at=max(r['publication_at'] for r in rows),outcome=hit is not None,mae=max(0.,1-min(values)/anchor),time_to_hit=hit)

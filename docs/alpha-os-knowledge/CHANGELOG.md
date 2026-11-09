@@ -53,4 +53,4 @@ reports/cards/records preserved; full-history/PIT gate remains BLOCKED.
 
 ## 2026-11-09 Q008
 
-Issue27 protocol-first daily-shadow infrastructure, append-only SQL design and55local tests. NOT RUNNING, synthetic all222NULL; no production connection/mutation. Added R26/Q008; existing source cards unchanged.
+Issue27 protocol-first daily-shadow infrastructure, append-only SQL design and57local tests. NOT RUNNING, synthetic all222NULL; no production connection/mutation. Added R26/Q008; existing source cards unchanged.

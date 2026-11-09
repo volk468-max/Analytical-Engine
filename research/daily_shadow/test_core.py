@@ -68,4 +68,8 @@ class Tests(unittest.TestCase):
   self.assertIsNone(raw_estimate(m,'x',self.session,self.now,'UP','SPY')[0])
  def test_future_feature_gate(self):
   self.v['feature_available_at']=['2027-01-01T00:00:00+00:00'];self.assertEqual(quality(self.v,self.session,self.now),'FUTURE_FEATURE')
+ def test_pre_close_publication_rejected(self):
+  self.v['publication_at']='2026-11-06T20:59:00+00:00';self.assertEqual(quality(self.v,self.session,self.now),'PRE_CLOSE_SOURCE')
+ def test_mae_is_zero_for_continued_rally(self):
+  f,r=self.sample();f['label_type']='EOD_CLOSE';self.assertEqual(resolve(f,100,r,'2027-12-31T00:00:00+00:00',f['basis'],True)['mae'],0.)
 if __name__=='__main__':unittest.main()

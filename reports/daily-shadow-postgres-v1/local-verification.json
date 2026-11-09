@@ -1,7 +1,7 @@
 {
   "status": "NOT RUNNING",
   "tested_at": "2026-11-09",
-  "subsystem_tests": 55,
+  "subsystem_tests": 57,
   "integration_tests": 17,
   "integration_skips": 0,
   "knowledge_regression_tests": 9,
@@ -21,7 +21,7 @@
     "database_mutated": false
   },
   "artifacts_sha256": {
-    "research/daily_shadow/core.py": "c7e3e638f480525293d3afe11f67fe3fb78efe5065f6d2855a6208b95d2864c4",
+    "research/daily_shadow/core.py": "06cad11ef4d928817b7d1cfca7783414c6954cc96cd42b08c92fef68cd103f9c",
     "research/daily_shadow/demo.py": "33a836149b1c02891c9d83000db816b6cf4567825e1351fcad340f6b72b83f9e",
     "research/daily_shadow/reporting.py": "1bd5c32f6139491dd86993b624b369456c37bb4ca5b9b7007cb51f6381c04dd2",
     "research/daily_shadow/requirements.txt": "9c2cd7755542f0fee799050b6c89761b6213b6b7f7ba4a8d1f9ddc2a42bc3c04",
@@ -30,7 +30,7 @@
     "research/daily_shadow/sql/001_isolated.sql": "629176e9c919a475b254ef3df23baa04ac504edba1ba91c8338f9c10eb9166ab",
     "research/daily_shadow/sql/002_readonly_reports.sql": "a148427e06ae6be4e9900efb37171f3147972c4eb7a5a69a7a67e6945a404993",
     "research/daily_shadow/store.py": "b39e86b59ca91f54c5d51980fd8370711b27816f8a3aa08e975d3aa05adf6f0d",
-    "research/daily_shadow/test_core.py": "a2a605669e6895cc26990c9a8fd411f7a36a7a4430601f15765386ffa111887b",
+    "research/daily_shadow/test_core.py": "610e091a9280776022a7271c53cef0fa76d7b36f34e2ff42f693e82740458882",
     "research/daily_shadow/test_postgres.py": "834e1c812afc5263a8f61d9a51eaa2a9c73ebd69b46fab2ddfc243395a89efb4",
     "research/daily_shadow/test_reporting.py": "2753377438b74f9dd2971b391936178e46bcfe7e2abf6336e478ae844db03e57"
   }

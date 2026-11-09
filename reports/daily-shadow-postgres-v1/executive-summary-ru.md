@@ -72,10 +72,10 @@ IMMATURE/UNRESOLVED и новые outcome versions добавляются, не 
 
 | Проверка | Результат |
 |---|---|
-| Calendar/DST/holiday/early-close, availability/no-lookahead, labels, model/data gates, fixtures | 34 теста PASS |
+| Calendar/DST/holiday/early-close, availability/no-lookahead, labels, model/data gates, fixtures | 36 тестов PASS |
 | Реальный PostgreSQL16: атомарность, 222-row batch, concurrent retry, privileges, corrections, versions, maturity | 17 тестов PASS |
 | Раздельные серии/метрики, исключение synthetic, недостаточная мощность | 4 теста PASS |
-| Всего subsystem | **55 PASS**, integration skips: 0 |
+| Всего subsystem | **57 PASS**, integration skips: 0 |
 | Offline dry-run два раза | 222 records, одинаковые IDs, все P=NULL; без сети/БД |
 
 Daily SQL-report показывает issuance, latency, diagnostics, backlog и health.
