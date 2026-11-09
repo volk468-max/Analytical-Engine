@@ -33,5 +33,6 @@
     "research/daily_shadow/test_core.py": "610e091a9280776022a7271c53cef0fa76d7b36f34e2ff42f693e82740458882",
     "research/daily_shadow/test_postgres.py": "834e1c812afc5263a8f61d9a51eaa2a9c73ebd69b46fab2ddfc243395a89efb4",
     "research/daily_shadow/test_reporting.py": "2753377438b74f9dd2971b391936178e46bcfe7e2abf6336e478ae844db03e57"
-  }
+  },
+  "knowledge_online_validation": "PASS including live GitHub source/head/blob checks"
 }

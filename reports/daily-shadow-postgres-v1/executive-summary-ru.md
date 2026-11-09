@@ -14,7 +14,7 @@ production PostgreSQL и расписания не изменялись. Реа�
 
 | Источник | Зафиксированный head | Ограничение |
 |---|---|---|
-| [PR20](https://github.com/volk468-max/Analytical-Engine/pull/20) | `8e9aec99c7eee8b384e35a3bc1aa734f2d55800d` | Исторические зависимые наблюдения; не prospective доказательство |
+| [PR20](https://github.com/volk468-max/Analytical-Engine/pull/20) | `8e9aec99c7eee8b384e35a3bc1aa734f2d54800d` | Исторические зависимые наблюдения; не prospective доказательство |
 | [PR24](https://github.com/volk468-max/Analytical-Engine/pull/24) | `51fb1d34ddb7a28e8bbc7b2361dcfc2107890f0b` | A/B/C EOD; Yahoo replay, PIT не подтверждён |
 | [PR26](https://github.com/volk468-max/Analytical-Engine/pull/26) | `82eebbd95579c022040065f67e30c369d0999906` | Corporate-action qualification BLOCKED, validated calibrated P нет |
 
@@ -118,3 +118,7 @@ preregister, затем out-of-time validation. Поздний hit не испр
 backfills, go-live. Плановый бюджет $10–30/месяц — оценка, не актуальная котировка
 и не согласованная трата. Следующий этап — review и отдельное согласование этих
 пунктов; до него статус **NOT RUNNING**, prospective rows отсутствуют.
+
+[Зависимый Draft PR #28](https://github.com/volk468-max/Analytical-Engine/pull/28), base — research/eod-calibration-ledger-v1, не main.
+Knowledge regression: 9 PASS; online knowledge/source validation PASS.
+Результаты локальных проверок и SHA256 артефактов: local-verification.json.
