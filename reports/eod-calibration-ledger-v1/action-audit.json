@@ -1,0 +1,119 @@
+{
+  "frozen_price_hashes": [
+    {
+      "symbol": "AMD",
+      "raw_sha256": "7082a6a948164a9e817cb882decb1632f23c1ab35442b7b03967b56c3aeb9e68",
+      "frozen_file_sha256": "96dfcd85caef7e50a2853f778906dc0e2fbc2f930c315fa10edc610fc3de05cf"
+    },
+    {
+      "symbol": "NVDA",
+      "raw_sha256": "2f5abfe116e1fe63032c432b4dd82206df568a6e5acdf67cc1df23312ca88850",
+      "frozen_file_sha256": "f75a45f75ef7cbd51e298fcf2a63d7982af797ce6a09223c8683f5071e4f10b3"
+    },
+    {
+      "symbol": "MU",
+      "raw_sha256": "aca72655bd79c5889a9e377f77e079c1be4780778db9198b2311002897a37a2a",
+      "frozen_file_sha256": "5bf59f9467d3fe58fcfc6a781f0e717038dc9b1348e185cabed2acc85e50eaff"
+    },
+    {
+      "symbol": "QQQ",
+      "raw_sha256": "2eac41cf24d4012c372c249bd9815169f77f7a45a0dfc4f2aa1a0a6fc922c813",
+      "frozen_file_sha256": "efe26360b57eac2083cc8b09c66c0f0cc3fc6314b017054f0c07ec8cc2837682"
+    }
+  ],
+  "samples": [
+    {
+      "id": "NVDA_2024",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2025",
+      "retrieved_at": "2026-11-08T03:24:33.935204+00:00",
+      "expected_effective_date": "2024-06-10",
+      "expected_ratio_or_dividend": "10:1",
+      "license": "UNKNOWN_NOT_ATTESTED",
+      "reconciled": true,
+      "http_status": 200,
+      "final_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2025",
+      "sha256": "ed91f75c7c7dcc9a8263ec10ee50068b9ba9fbd4dfbfefce662b23685f5dc017",
+      "evidence_file": "evidence/NVDA_2024.html.gz",
+      "status": "PARTIAL_ISSUER_DATE_RATIO_MATCH",
+      "quoted_date_context": "al shares of common stock, to be distributed after the close of market on Friday, June 7, 2024. Trading is expected to commence on a split-adjusted basis at market open on Monday, June 10, 2024. NVIDIA is increasing its quarterly cash dividend by 150% from $0.04 per share to $0.10 per share of common stock. The increased dividend is equivalent to $0.01 per share on a post-split",
+      "provider_matching_ratio_events": [
+        {
+          "date": 1718026200,
+          "numerator": 10.0,
+          "denominator": 1.0,
+          "splitRatio": "10:1"
+        }
+      ],
+      "limits": "2021 release conditional on approval; matches reported event, not independent full price/action history validation"
+    },
+    {
+      "id": "NVDA_2021",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-four-for-one-stock-split-pending-stockholder-approval-at-annual-meeting-set-for-june-3",
+      "retrieved_at": "2026-11-08T03:24:34.560133+00:00",
+      "expected_effective_date": "2021-07-20",
+      "expected_ratio_or_dividend": "4:1",
+      "license": "UNKNOWN_NOT_ATTESTED",
+      "reconciled": true,
+      "http_status": 200,
+      "final_url": "https://nvidianews.nvidia.com/news/nvidia-announces-four-for-one-stock-split-pending-stockholder-approval-at-annual-meeting-set-for-june-3",
+      "sha256": "30885fde7c3ab5febec255fa37a38cd1100aca763bc5e038cf27283e0a336508",
+      "evidence_file": "evidence/NVDA_2021.html.gz",
+      "status": "PARTIAL_ISSUER_DATE_RATIO_MATCH",
+      "quoted_date_context": "ommon stock for every share held on the record date, to be distributed after the close of trading on July 19, 2021. Trading is expected to begin on a stock split-adjusted basis on July 20. NVIDIA&rsquo;s 2021 Annual Meeting of Stockholders will take place virtually at www.virtualshareholdermeeting.com/NVIDIA2021 . Stockholders will need their control number included in their no",
+      "provider_matching_ratio_events": [
+        {
+          "date": 1626787800,
+          "numerator": 4.0,
+          "denominator": 1.0,
+          "splitRatio": "4:1"
+        }
+      ],
+      "limits": "2021 release conditional on approval; matches reported event, not independent full price/action history validation"
+    },
+    {
+      "id": "MU_2024",
+      "url": "https://investors.micron.com/quarterly-results",
+      "retrieved_at": "2026-11-08T03:24:34.874113+00:00",
+      "expected_effective_date": "2024-10-07",
+      "expected_ratio_or_dividend": ".115",
+      "license": "UNKNOWN_NOT_ATTESTED",
+      "reconciled": false,
+      "http_status": 200,
+      "final_url": "https://investors.micron.com/financials/quarterly-results/default.aspx",
+      "sha256": "2d161bf3d6f164e3671175f300179b3983b34c13a2c0e00e4141e0a4bde15c89",
+      "evidence_file": "evidence/MU_2024.html.gz",
+      "status": "BLOCKED_NO_DATED_DIVIDEND_RECORD",
+      "reason": "Quarterly-results index is not the original 2024-09-25 dividend release; .115/ex-date record not present in obtained response"
+    },
+    {
+      "id": "QQQ_2024",
+      "url": "https://www.nasdaq.com/market-activity/etf/qqq/dividend-history",
+      "retrieved_at": "2026-11-08T03:24:37.341839+00:00",
+      "expected_effective_date": "2024-03-18",
+      "expected_ratio_or_dividend": ".573",
+      "license": "UNKNOWN_NOT_ATTESTED",
+      "reconciled": false,
+      "http_status": 200,
+      "final_url": "https://www.nasdaq.com/market-activity/etf/qqq/dividend-history",
+      "sha256": "f04166e413dc5a79ea6f2aff4cf9d95c11f424c18a949c3b952d4fba40df2370",
+      "evidence_file": "evidence/QQQ_2024.html.gz",
+      "status": "BLOCKED_AMOUNT_PRECISION_DISCREPANCY",
+      "reason": "Nasdaq API .57345 vs frozen Yahoo .573. QQQ not a held asset; small discrepancy is not proof of material portfolio error, but requires explicit reconciliation/tolerance review.",
+      "independent_record": {
+        "exOrEffDate": "03/18/2024",
+        "type": "Cash",
+        "amount": "$0.57345",
+        "declarationDate": "N/A",
+        "recordDate": "03/19/2024",
+        "paymentDate": "04/30/2024",
+        "currency": "USD"
+      },
+      "independent_amount": 0.57345,
+      "provider_amount": 0.573,
+      "amount_difference": 0.00045000000000006146
+    }
+  ],
+  "all_actions_reconciled": false,
+  "gate": "BLOCKED_MU_QQQ_ACTION_EVIDENCE",
+  "classification": "RESEARCH_PRICE_REPLAY_NOT_PIT"
+}

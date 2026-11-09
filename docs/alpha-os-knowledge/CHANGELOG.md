@@ -38,3 +38,15 @@ BLOCKED/NA. R20/status/Q005 added append-only; production/research history uncha
 ## 2026-11-08 Q006
 
 Issue23 new EOD target/recipes, free-source audit, baselines and tests; no original PR22 changes.
+
+## 2026-11-08 Q007
+
+Issue25 protocol first, sourceaudit evidence, blocked minimal calibration milestone. No empirical/ledger claims. R24/Q007 added; no earlier source changes.
+
+## 2026-11-09 Q007-v2
+
+Continued existing DraftPR26 after new owner evidence/authorization. MU sample
+reconciled; QQQ numeric rounding compatible, not full qualification. Added real
+preliminary nested calibration (0/9primary wins;Holm1), continuous descriptive
+A/B/C/static ledgers/costs/reserve analysis and46subsystem tests. Old v1
+reports/cards/records preserved; full-history/PIT gate remains BLOCKED.

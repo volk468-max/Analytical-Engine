@@ -1,0 +1,62 @@
+{
+  "classification": "PRELIMINARY_RESEARCH_PRICE_REPLAY_NOT_PIT",
+  "qualified": false,
+  "protocol_sha256": "a60ba2f8afa1e8115c5d4da82d68f3cbb3629685621f41b0e65320efd1178c1f",
+  "price_source_hashes": [
+    {
+      "symbol": "AMD",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?period1=946684800&period2=1794009600&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-08T00:48:44.297470+00:00",
+      "raw_sha256": "7082a6a948164a9e817cb882decb1632f23c1ab35442b7b03967b56c3aeb9e68",
+      "status": "DOWNLOADED"
+    },
+    {
+      "symbol": "NVDA",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?period1=946684800&period2=1794009600&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-08T00:48:44.718899+00:00",
+      "raw_sha256": "2f5abfe116e1fe63032c432b4dd82206df568a6e5acdf67cc1df23312ca88850",
+      "status": "DOWNLOADED"
+    },
+    {
+      "symbol": "MU",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?period1=946684800&period2=1794009600&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-08T00:48:45.214976+00:00",
+      "raw_sha256": "aca72655bd79c5889a9e377f77e079c1be4780778db9198b2311002897a37a2a",
+      "status": "DOWNLOADED"
+    },
+    {
+      "symbol": "QQQ",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?period1=946684800&period2=1794009600&interval=1d&includePrePost=false&events=div%2Csplits",
+      "retrieved_at": "2026-11-08T00:48:45.754959+00:00",
+      "raw_sha256": "2eac41cf24d4012c372c249bd9815169f77f7a45a0dfc4f2aa1a0a6fc922c813",
+      "status": "DOWNLOADED"
+    }
+  ],
+  "reconstruction": {
+    "all_labels_reconstructed": 19320,
+    "label_file_sha256": "8005981aad8aa286dcdce2c2ddf43fd72d51aa8b7ac52adada3012477a755b51"
+  },
+  "common_forecast_dates": 2392,
+  "total_forecasts": 7176,
+  "first_test": "2013-04-01",
+  "last_test": "2026-08-13",
+  "support_exclusions": [
+    {
+      "recipe": "B",
+      "year": 2019,
+      "train_n": 3712,
+      "cal_n": 574,
+      "test_n": 192,
+      "cal_events": 4,
+      "cal_blocks120": 5,
+      "train_last_maturity": "2015-12-31",
+      "cal_last_maturity": "2018-10-03",
+      "status": "INSUFFICIENT_SUPPORT"
+    }
+  ],
+  "independent_market_events": null,
+  "bootstrap_reps": 9999,
+  "bootstrap_interpretation": "CONDITIONAL_ON_FROZEN_FITS; shared date blocks across assets/models; not independent holdout",
+  "unknown_payment_dates": "ALL_EXCEPT_MU_2024_10_07; nonspendable receivables0interest",
+  "real_trades": false
+}

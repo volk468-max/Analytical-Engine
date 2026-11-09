@@ -53,7 +53,10 @@ class KnowledgeChecks(unittest.TestCase):
         st = json.loads((self.root/v.K/'status.json').read_text())
         def fetch(path):
             if path.startswith('pulls/'):
-                p = next(p for p in st['pull_requests'] if p['number'] == int(path.split('/')[1]))
+                p = next((p for p in st['pull_requests'] if p['number'] == int(path.split('/')[1])), None)
+                # Link-only references (including the current PR) need not have a pinned catalogue record.
+                if p is None:
+                    return {'state':'open', 'draft':True, 'merged':False, 'head':{'sha':'a'*40}}
                 return dict(p, draft=not p['draft'], head={'sha':p['head_sha']})
             if path == 'branches/main':
                 return {'commit': {'sha':m['baseline_sha']}}

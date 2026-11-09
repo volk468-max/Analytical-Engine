@@ -1,0 +1,29 @@
+[
+  {
+    "type": "forecast",
+    "mode": "OFFLINE_SYNTHETIC",
+    "recorded_at": "2030-01-01T22:00:00+00:00",
+    "code_sha": null,
+    "model_sha": null,
+    "protocol_sha256": "8422f3edfad7bd5f68d4c8c5278d8487bf219e595fe92de632bcc1e1cb5b7cdf",
+    "source_hashes": [],
+    "snapshot_id": "MOCK_A",
+    "recipe": "A",
+    "label_type": "EOD_CLOSE_TOUCH10_60",
+    "raw_probability": null,
+    "calibrated_probability": null,
+    "uncertainty": null,
+    "data_quality": "UNQUALIFIED",
+    "stale": true,
+    "previous_hash": null,
+    "hash": "6c3bdabc0dcbb513cdaef959866ef0b5a17eeaba227946eb35fb7c864b617ce3"
+  },
+  {
+    "type": "label",
+    "forecast_hash": "6c3bdabc0dcbb513cdaef959866ef0b5a17eeaba227946eb35fb7c864b617ce3",
+    "status": "IMMATURE",
+    "outcome": null,
+    "previous_hash": "6c3bdabc0dcbb513cdaef959866ef0b5a17eeaba227946eb35fb7c864b617ce3",
+    "hash": "0c14fdbfc368e5d43d9c85230efb0eb9423fc28590007e0b3a0a732976adbb5c"
+  }
+]

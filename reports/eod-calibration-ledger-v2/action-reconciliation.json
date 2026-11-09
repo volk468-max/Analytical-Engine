@@ -1,0 +1,68 @@
+{
+  "supersedes": "v1 sample-level MU blocker only; v1 evidence unchanged",
+  "classification": "RESEARCH_PRICE_REPLAY_NOT_PIT",
+  "MU_sample_reconciled": true,
+  "MU": {
+    "issuer_record_payment_amount": true,
+    "exchange_ex_record_payment_amount": true,
+    "reconciled": true,
+    "frozen_provider_event": [
+      {
+        "symbol": "MU",
+        "kind": "dividends",
+        "date": "2024-10-07",
+        "record": {
+          "amount": 0.115,
+          "date": 1728307800
+        }
+      }
+    ]
+  },
+  "QQQ": {
+    "difference": "0.00045",
+    "half_unit": "0.0005",
+    "rounded": "0.573",
+    "compatible": true,
+    "vendor_policy_confirmed": false,
+    "fully_qualified": false,
+    "independent_record": {
+      "exOrEffDate": "03/18/2024",
+      "type": "Cash",
+      "amount": "$0.57345",
+      "declarationDate": "N/A",
+      "recordDate": "03/19/2024",
+      "paymentDate": "04/30/2024",
+      "currency": "USD"
+    },
+    "source": "Official Nasdaq API saved in v1; hash reverified",
+    "raw_sha256": "e656807ac3fb14d7b0218addf935fd55535f78292990b8ec829af3bee477f60b",
+    "not_held_in_ABC": true,
+    "interpretation": "ROUNDING_COMPATIBLE_NOT_VENDOR_POLICY_VERIFIED"
+  },
+  "full_qualification": false,
+  "gate": "BLOCKED_FULL_HISTORY_PIT_AND_INDEPENDENT_CONTINUITY",
+  "provider_dividend_counts": {
+    "AMD": 0,
+    "NVDA": 56,
+    "MU": 21,
+    "QQQ": 90
+  },
+  "facts": {
+    "MU_currency": "USD",
+    "MU_amount": "0.115",
+    "MU_announcement": "2024-09-25",
+    "MU_ex_date": "2024-10-07",
+    "MU_record_date": "2024-10-07",
+    "MU_payment_date": "2024-10-23"
+  },
+  "residual_risks": [
+    "Full independent split/dividend/ex-date completeness unverified",
+    "Independent price/adjustment continuity for full history unverified",
+    "Historical provider vintages and availability unverified",
+    "Most dividend payment dates unknown; liquidity convention only",
+    "Surviving selected basket and reused test history",
+    "Provider licenses not attested; not live/executable input",
+    "Vienna notice is venue-specific; US settlement/API contract not independently audited",
+    "QQQ numeric rounding consistent, vendor rounding specification not independently confirmed"
+  ]
+}

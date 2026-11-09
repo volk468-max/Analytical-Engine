@@ -1,0 +1,20 @@
+[
+  {
+    "id": "QQQ_API",
+    "url": "https://api.nasdaq.com/api/quote/QQQ/dividends?assetclass=etf",
+    "retrieved_at": "2026-11-08T03:26:28.769421+00:00",
+    "role": "same_source_followup_no_new_price_data",
+    "status": 200,
+    "sha256": "e656807ac3fb14d7b0218addf935fd55535f78292990b8ec829af3bee477f60b",
+    "sample": "{\"data\":{\"dividendHeaderValues\":[{\"label\":\"Ex-Dividend Date\",\"value\":\"09/21/2026\"},{\"label\":\"Dividend Yield\",\"value\":\"0.46%\"},{\"label\":\"Annual Dividend\",\"value\":\"$3.00572\"},{\"label\":\"P/E Ratio\",\"value\":\"N/A\"}],\"exDividendDate\":\"09/21/2026\",\"dividendP"
+  },
+  {
+    "id": "MU_RELEASE",
+    "url": "https://investors.micron.com/news-releases/news-release-details/micron-technology-inc-reports-results-fourth-quarter-and-full-8",
+    "retrieved_at": "2026-11-08T03:26:29.062683+00:00",
+    "role": "same_source_followup_no_new_price_data",
+    "status": 200,
+    "sha256": "271e131c7f9d6bcc98cea02fd5b2d22549f506c628ce9d06ec56a1236f011fe5",
+    "sample": "<!DOCTYPE HTML>\r\n<html id=\"06e0559c2d361c39b2796b4358253a0d800544aa\" class=\"StudioBase CanvasPremium\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\" xml:lang=\"en-US\">\r\n<head><title>\r\n\tMicron Technology, Inc. - Micron Technology, Inc., Reports Resu"
+  }
+]

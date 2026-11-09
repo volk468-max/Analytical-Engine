@@ -1,0 +1,9 @@
+{
+  "mode": "SYNTHETIC_ONLY_NOT_PORTFOLIO_EVIDENCE",
+  "n": 300,
+  "p_raw": 0.7,
+  "intercept": -1.5177636722587766,
+  "p_calibrated": 0.3383925455741959,
+  "true_personal_probability": null,
+  "actual_empirical_metrics": null
+}

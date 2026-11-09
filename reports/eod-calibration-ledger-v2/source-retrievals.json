@@ -1,0 +1,22 @@
+[
+  {
+    "id": "MU_ISSUER",
+    "url": "https://investors.micron.com/news/press-release/2024/Micron-Technology-Inc--Reports-Results-for-the-Fourth-Quarter-and-Full-Year-of-Fiscal-2024-09-25-2024/default.aspx",
+    "retrieved_at": "2026-11-09T09:12:49.150924+00:00",
+    "license": "NOT_ATTESTED; public access is not redistribution permission",
+    "status": 200,
+    "final_url": "https://investors.micron.com/news/press-release/2024/Micron-Technology-Inc--Reports-Results-for-the-Fourth-Quarter-and-Full-Year-of-Fiscal-2024-09-25-2024/default.aspx",
+    "sha256": "9905d1a93ff99b32b6b4f77b11c1a4f2b9eec81092df86fbaa4e99d8ee3899b9",
+    "dated_fact_review": "SAMPLE_FACTS_RECONCILED_IN_action-reconciliation.json; FULL_HISTORY_NOT_QUALIFIED"
+  },
+  {
+    "id": "MU_VIENNA",
+    "url": "https://www.wienerborse.at/en/news/vienna-stock-exchange-news/micron-technology-dividends-global-market-10-07-2024/",
+    "retrieved_at": "2026-11-09T09:12:50.002239+00:00",
+    "license": "NOT_ATTESTED; public access is not redistribution permission",
+    "status": 200,
+    "final_url": "https://www.wienerborse.at/en/news/vienna-stock-exchange-news/micron-technology-dividends-global-market-10-07-2024/",
+    "sha256": "958456cf7016bf0105ca4241a9267e6e8562e7fae45320fbcd9510ba5b4f32e5",
+    "dated_fact_review": "SAMPLE_FACTS_RECONCILED_IN_action-reconciliation.json; FULL_HISTORY_NOT_QUALIFIED"
+  }
+]

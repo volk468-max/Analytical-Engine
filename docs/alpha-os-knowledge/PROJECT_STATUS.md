@@ -71,3 +71,21 @@ checkpoints retained; deployedSHA UNKNOWN, Draft не внедрение.
 | [#22](https://github.com/volk468-max/Analytical-Engine/pull/22) | open | true | false |
 
 EOD A/B/C price replay only; no calibrated advantage. Intraday unchanged; ladder defect blocked.
+
+## Issue25 / Q007
+
+| PR | State | Draft | Merged |
+|---|---|---|---|
+| [#24](https://github.com/volk468-max/Analytical-Engine/pull/24) | open | true | false |
+
+Q007 first milestone: action gate BLOCKED; minimal syntheticcal code, realP/metricsNA. Ledger nextmilestone.
+
+## Issue25 continuation / Q007-v2
+
+| PR | State | Draft | Merged |
+|---|---|---|---|
+| [#26](https://github.com/volk468-max/Analytical-Engine/pull/26) | open | true | false |
+
+Existing PR26 continued; current SHA from Git history (no self-reference). MU sample
+resolved, full qualification BLOCKED. Preliminary historical metrics and descriptive
+ledger available; no demonstrated model advantage, no live/deployed functionality.
