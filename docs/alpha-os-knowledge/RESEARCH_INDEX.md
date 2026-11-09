@@ -85,3 +85,8 @@ not a new PR. New owner evidence/authorization is the reason for further researc
 ## Q008
 
 [R26 source qualification](research/R26-v1.md); [Q008 daily shadow infrastructure](research/Q008-v1.md). Earlier research preserved.
+
+## Q008-v2
+
+[R26-v2 preliminary negative findings](research/R26-v2.md); [Q008-v2 PostgreSQL18
+preparation](research/Q008-v2.md). Old source cards and PR26 parent outputs preserved.

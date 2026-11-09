@@ -1,0 +1,14 @@
+{
+  "scope": "DISPOSABLE_LOOPBACK_ONLY",
+  "audit_rows": 992,
+  "original_equals_restored": true,
+  "hash_chain_valid": true,
+  "prospective_rows": 0,
+  "production_touched": false,
+  "supersedes": "restore-rehearsal.json initial disk-capacity attempt; checkpoint retained",
+  "restore_status": "PASS",
+  "postgres_variant": "18.6-alpine local; official16/18 also in CI",
+  "initial_capacity_block_resolved": "Removed only this task owned Debian test image/container; no unrelated resources changed",
+  "dump_sha256": "c41722017840fa9380ea8573f29a1b9f024d421a4feb30055770c5b6f3a78c3d",
+  "cross_host_PITR_WORM_certified": false
+}

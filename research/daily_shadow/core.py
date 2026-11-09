@@ -65,6 +65,18 @@ def raw_estimate(model,task,session,issued,regime,symbol=None):
  if task not in model['supported_tasks']:return None,'UNSUPPORTED_TASK'
  if not model['qualified']:return None,'MODEL_UNQUALIFIED'
  if utc(model['fit_cutoff'])>utc(issued):return None,'FUTURE_MODEL_FIT'
+ if model.get('created_at') and utc(model['created_at'])>utc(issued):return None,'MODEL_NOT_YET_AVAILABLE'
+ if model.get('series') and model['series']['symbol']!=symbol:return None,'WRONG_MODEL_SYMBOL'
+ if model.get('count_bank'):
+  b=model['count_bank']
+  if utc(b['last_maturity'])>=utc(model['fit_cutoff']):return None,'IMMATURE_TRAINING_LABEL'
+  if b['n']<=0 or not 0<=b['hits']<=b['n']:return None,'INVALID_COUNT_BANK'
+  base=(b['hits']+1)/(b['n']+2)
+  if model['name']=='HIST':return base,None
+  if model['name']=='REGIME':
+   if regime not in b['groups']:return None,'MISSING_REGIME_FEATURE'
+   group=b['groups'][regime];return (group['hits']+20*base)/(group['n']+20),None
+  return None,'UNSUPPORTED_MODEL'
  # Frozen counts can only contain full-horizon matured labels before fit_cutoff.
  rows=[r for r in model['training'] if r.get('task')==task and r.get('symbol')==symbol]
  if not rows or any(utc(r['maturity'])>utc(model['fit_cutoff']) for r in rows):return None,'IMMATURE_TRAINING_LABEL'

@@ -60,3 +60,10 @@ Use the existing Draft PR26. No threshold-driven protective simulations authoriz
 ## Issue27
 
 Owner authorized design/code/Draft only: https://github.com/volk468-max/Analytical-Engine/issues/27 . Separate approval required for live deployment, DB mutation, cron and paid resources. New isolated DB, candidate schedule and budget are proposals, not approved decisions.
+
+## PR28 owner-approved continuation, 2026-11-09
+
+Exact task: https://github.com/volk468-max/Analytical-Engine/pull/28#issuecomment-6743417658 .
+Authorized dependency update/code/review/disposable staging only. Not permission to
+write Railway production DB, deploy, schedule, provision paid resources or trade.
+NO-GO live and source-contract findings are research conclusions, not new owner policy.

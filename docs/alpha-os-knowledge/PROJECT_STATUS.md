@@ -97,3 +97,13 @@ ledger available; no demonstrated model advantage, no live/deployed functionalit
 | [#26](https://github.com/volk468-max/Analytical-Engine/pull/26) | open | true | false |
 
 Q008: daily-shadow code/design, local PostgreSQL16 tests only. NOT RUNNING; no production changes or prospective rows.
+
+## PR28 continuation / Q008-v2
+
+| PR | State | Draft | Merged |
+|---|---|---|---|
+| [#26](https://github.com/volk468-max/Analytical-Engine/pull/26) | open | true | false |
+
+Current dependency `291762bb951ce806f7e289bd261e6797664e9dd7`; old status checkpoint remains historical. Q008-v2
+sourcecontract BLOCKED, NOT RUNNING, no prospective rows or production connection.
+PostgreSQL18 local rehearsal is infrastructure proof, not live/model qualification.

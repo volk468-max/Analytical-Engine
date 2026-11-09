@@ -54,3 +54,11 @@ reports/cards/records preserved; full-history/PIT gate remains BLOCKED.
 ## 2026-11-09 Q008
 
 Issue27 protocol-first daily-shadow infrastructure, append-only SQL design and57local tests. NOT RUNNING, synthetic all222NULL; no production connection/mutation. Added R26/Q008; existing source cards unchanged.
+
+## 2026-11-09 Q008-v2
+
+PR28 rebased to current PR26, conflicts resolved preserving source history. R26-v2
+negative evidence catalogued. Collector source-contract audit,222unqualified per-series
+frozen artifacts, explicit external live blocker and PostgreSQL18 synthetic staging
+with own-backend disconnect/recovery and immutable provenance. NOT RUNNING; no live,
+production, deploy, paid provisioning, cron or trades.

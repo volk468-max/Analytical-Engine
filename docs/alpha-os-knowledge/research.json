@@ -508,6 +508,30 @@
       ],
       "report_path": "reports/eod-calibration-ledger-v1/executive-summary-ru.md",
       "report_blob": "69c744d461d3f9ae4ab990c8f63ecde4b5defa20"
+    },
+    {
+      "id": "R26-v2",
+      "pr": 26,
+      "title": "Preliminary real HIST/REGIME/VOL calibration and continuous NAV",
+      "branch": "research/eod-calibration-ledger-v1",
+      "sha": "291762bb951ce806f7e289bd261e6797664e9dd7",
+      "base_branch": "research/model-portfolios-eod-v1",
+      "base_sha": "51fb1d34ddb7a28e8bbc7b2361dcfc2107890f0b",
+      "goal": "Owner-authorized preliminary historical study after new MU evidence",
+      "hypothesis": "Intercept calibration and continuous ledger can be evaluated preliminarily without claiming PIT qualification",
+      "data_period": "2392 common forecast dates2013–2026; continuous ledger2001–2026",
+      "method": "Frozen nested annual fits,60purge, paired calendar bootstrap9999 L60/120/180, Holm9 families",
+      "results": "0/9 primary wins; allHolm1; A/B/C MaxDD86.27/65.85/86.86%; MU sample confirmed",
+      "limitations": "Full history/PIT/independent price/action and settlement qualification BLOCKED; no untouched holdout",
+      "decisions": "RESEARCH ONLY; no predictive superiority or validated35/51/60thresholds",
+      "open_questions": "Independent source/settlement qualification and prospective power plan",
+      "sources": [
+        "https://github.com/volk468-max/Analytical-Engine/pull/26",
+        "https://github.com/volk468-max/Analytical-Engine/blob/291762bb951ce806f7e289bd261e6797664e9dd7/reports/eod-calibration-ledger-v2/executive-summary-ru.md"
+      ],
+      "report_path": "reports/eod-calibration-ledger-v2/executive-summary-ru.md",
+      "report_blob": "c4b9252424254166abfc5e475741f427892da8ef",
+      "supersedes": "R26-v1 limited milestone; original preserved"
     }
   ],
   "draft_work": [
@@ -597,6 +621,14 @@
       "branch": "research/daily-shadow-postgres-v1",
       "card": "research/Q008-v1.md",
       "classification": "NOT_RUNNING_DESIGN_AND_LOCAL_TESTS"
+    },
+    {
+      "id": "Q008-v2",
+      "title": "PR28 operational preparation and disposable PostgreSQL18 rehearsal",
+      "branch": "research/daily-shadow-postgres-v1",
+      "card": "research/Q008-v2.md",
+      "supersedes": "Q008-v1 design checkpoint; original preserved",
+      "classification": "NOT_RUNNING_SOURCE_CONTRACT_BLOCKED"
     }
   ]
 }

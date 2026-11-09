@@ -16,7 +16,7 @@ class Store:
  def job(self,key,session,models,vintage,forecasts,mode='SYNTHETIC'):
   with self.connect() as c:
    c.execute('select pg_advisory_xact_lock(270027)')
-   mids={m['name']:self.append(c,'model',m['name']+':'+m['version'],m) for m in models}
+   mids={(m['name'],m['version']):self.append(c,'model',m['name']+':'+m['version'],m) for m in models}
    old=c.execute("select id from alpha_shadow_v1.audit_events where kind='run' and event_key=%s",(key,)).fetchone()
    if old:
     prior=c.execute('select distinct s.source_hash from alpha_shadow_v1.forecast_records f join alpha_shadow_v1.source_vintages s on f.vintage_id=s.id where f.run_id=%s',(old[0],)).fetchall()
@@ -24,7 +24,12 @@ class Store:
     return [r[0] for r in c.execute('select id from alpha_shadow_v1.forecast_records where run_id=%s order by id',(old[0],)).fetchall()]
    run=self.append(c,'run',key,dict(session=session,mode=mode));vid=self.append(c,'vintage',vintage['source_hash']+':'+key,vintage);ids=[]
    for f in forecasts:
-    row=dict(f);name=row.pop('model_name');row.update(run_id=str(run),vintage_id=str(vid),model_id=str(mids[name]));fkey=':'.join(str(row[k]) for k in ('session','symbol','label_type','threshold_pct','horizon','model_id'))
+    row=dict(f);name=row.pop('model_name');version=row.get('model_version')
+    if version is None:
+     candidates=[v for n,v in mids if n==name]
+     if len(candidates)!=1:raise ValueError('AMBIGUOUS_MODEL_VERSION')
+     version=candidates[0]
+    row.update(run_id=str(run),vintage_id=str(vid),model_id=str(mids[(name,version)]));fkey=':'.join(str(row[k]) for k in ('session','symbol','label_type','threshold_pct','horizon','model_id'))
     ids.append(self.append(c,'forecast',fkey,row))
    return sorted(ids,key=str)
  def read_forecast(self,forecast_id):
@@ -37,8 +42,11 @@ class Store:
    body=dict(payload)
    if vintage is not None:body['source_vintage_id']=str(self.append(c,'vintage',vintage['source_hash']+':outcome:'+key,vintage))
    return self.append(c,'outcome',key,body)
- def correction(self,key,forecast_id,reason,replacement):
-  with self.connect() as c:return self.append(c,'correction',key,dict(forecast_id=str(forecast_id),reason=reason,replacement=replacement))
+ def correction(self,key,forecast_id,reason,replacement,vintage=None):
+  with self.connect() as c:
+   payload=dict(forecast_id=str(forecast_id),reason=reason,replacement=replacement)
+   if vintage is not None:payload['source_vintage_id']=str(self.append(c,'vintage',vintage['source_hash']+':correction:'+key,vintage))
+   return self.append(c,'correction',key,payload)
  def verify(self):
   with self.connect() as c:rows=c.execute('select kind,event_key,body_text,previous_hash,record_hash from alpha_shadow_v1.audit_events order by seq').fetchall()
   prev=None

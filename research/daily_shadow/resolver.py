@@ -13,7 +13,13 @@ def resolve_once(store, forecast_id, provider, now, live_approved=False):
  original=store.read_forecast(forecast_id)
  if original['mode']=='PROSPECTIVE' and not live_approved:
   raise PermissionError('LIVE_REQUIRES_SEPARATE_OWNER_APPROVAL')
- vintage, observations=provider.collect_window(original)
+ for attempt in range(3):
+  try:
+   vintage,observations=provider.collect_window(original);break
+  except (TimeoutError,ConnectionError):
+   if attempt==2:
+    store.health(str(forecast_id)+':OUTCOME_PROVIDER_FAILURE:'+now,'OUTCOME_PROVIDER_FAILURE',attempts=3)
+    return store.outcome(str(forecast_id)+':provider-failure:'+now,dict(forecast_id=str(forecast_id),status='UNRESOLVED',outcome=None,reason='OUTCOME_PROVIDER_RETRIES_EXHAUSTED'))
  if original.get('frozen_anchor') is None:
   result=dict(forecast_id=str(forecast_id),status='UNRESOLVED',outcome=None,reason='NO_FROZEN_ANCHOR')
  elif any(r.get('source_hash')!=vintage['source_hash'] for r in observations):

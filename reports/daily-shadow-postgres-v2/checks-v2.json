@@ -1,0 +1,32 @@
+{
+  "pipeline_tests": 78,
+  "postgres_integration_tests": 25,
+  "pipeline_unit_tests": 53,
+  "parent_research_tests": 180,
+  "knowledge_tests": 9,
+  "root_engine_tests": 2,
+  "total_unique_local_tests": 269,
+  "integration_skips": 0,
+  "source_contract": "BLOCKED_NO_LIVE_CONTRACT",
+  "actual_live_eligible": 0,
+  "registry_series": 222,
+  "parent_v2_replay": "PASS12tables unchanged",
+  "model_artifacts": "222versions reproduced with sockets denied",
+  "local_postgres18_rehearsal": "PASS",
+  "local_backup_restore": "PASS; initial disk-capacity checkpoint retained",
+  "production_touched": false,
+  "code_sha256": {
+    "runner.py": "c085f15098777a367d0b80e9eb4994ebcd1accea3360d47926084d03a76a71c3",
+    "resolver.py": "2be6ff43e00de071fd97d8a723c36232a8caf17fe6c15f02267ae99194eba44c",
+    "verify_preparation.py": "a6f85b7a580e21f280c4534c8ec67842d9d94ee351bcaf6f3911dbc687a35177",
+    "store.py": "af545f785dc03aaba7b00ee3587b41cb5b18ce17e3681170ea6eccbea5a88b76",
+    "demo.py": "33a836149b1c02891c9d83000db816b6cf4567825e1351fcad340f6b72b83f9e",
+    "coverage.py": "1148163fe0510ce4c47b80947bb05d603e8a1ff6a2209fafab85a5acee06de38",
+    "providers.py": "ed2d2a11be90f01936e5e0b03dc9f671ecd86b49956eba898dfe0d62ca8e5cbd",
+    "reporting.py": "1bd5c32f6139491dd86993b624b369456c37bb4ca5b9b7007cb51f6381c04dd2",
+    "core.py": "944a2401e8d1c67ede73fff7fc99c755e95718b95a5b2fedbb8ed7970a4d136c",
+    "backup_restore.py": "ca7aca510f072cc04bff254a26c82d83048be1f1bc29b509d5e219e055d91677",
+    "rehearsal.py": "013fbaaacf22c6efa402196e9fa5456ae01da7b26b2ead70fe05df9691a63aa5",
+    "artifacts.py": "c8b5b58729972fa024d939f3d549397e5fb6782a271a90bb532a467f2f6b3cc5"
+  }
+}

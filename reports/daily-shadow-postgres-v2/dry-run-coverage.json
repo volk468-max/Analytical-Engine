@@ -1,0 +1,17 @@
+{
+  "status": "NOT RUNNING",
+  "mode": "OFFLINE_REGISTRY_AND_QUALIFICATION_DRY_RUN",
+  "not_actual_issuance": true,
+  "requested_series": 222,
+  "numerical_artifacts": 222,
+  "genuine_live_probabilities": 0,
+  "null_probabilities": 222,
+  "models": {
+    "HIST": 111,
+    "REGIME": 111
+  },
+  "provider_blocker": "BLOCKED_NO_LIVE_CONTRACT",
+  "calibrated_models": 0,
+  "source_timestamps_invented": false,
+  "prospective_records_exist": false
+}

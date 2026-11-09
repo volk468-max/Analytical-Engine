@@ -59,3 +59,10 @@ is separate future work, not performed here.
 ## Q008
 
 Review isolated DB/provider/model/permissions/cost/cron/notifications/retention/backfill/go-live checklist. Obtain separate explicit approval before provisioning, migration, live run or schedule. False Signal Anatomy follow-up preregistration.
+
+## Q008-v2
+
+Resolve verified live data/retention/publication/actions contract and training source
+qualification; separate owner approval for exact isolated DB/roles/budget/backup/
+notifications/go-live, then supervised actual-record inspection before any live claim.
+No provision/deploy/cron/trades are authorized by this preparation milestone.

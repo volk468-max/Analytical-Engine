@@ -1,0 +1,10 @@
+{
+  "scope": "DISPOSABLE_LOCAL_POSTGRES18_ONLY",
+  "backup_created": true,
+  "dump_sha256": "79cb78dc7eb5e5684b81594fa8937caeb7d451612f63d66b4f7a1f22bfb3dbdc",
+  "restore_status": "BLOCKED_LOCAL_DISK_CAPACITY",
+  "original_disposable_database_restored_to_original_name": true,
+  "original_hash_chain_still_valid": true,
+  "production_touched": false,
+  "limitation": "Second local container/fresh DB allocation failed: no space left on device. No unrelated resources removed; restore drill remains a launch gate, not a claimed PASS."
+}

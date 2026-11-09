@@ -1,0 +1,2911 @@
+{
+  "classification": "RESEARCH_PRICE_REPLAY_NOT_PIT",
+  "fit_cutoff": "2026-11-09T00:00:00+00:00",
+  "created_at": "2026-11-09T15:30:21.112222+00:00",
+  "requested_series": 222,
+  "artifacts": 222,
+  "qualified": 0,
+  "calibrated": 0,
+  "live_eligible": 0,
+  "source_hashes": {
+    "SPY": "4d6c31f85b1b9b10dc20de8143641fd28886d5f71ab12d2739a8f0dfdb559520",
+    "QQQ": "bfc70b8b8c0d1deb1d303dddda663260426d41c3df3de5bcc777264d74979bbd",
+    "SOXX": "5ee13a5bdd647b317ef994f7855ada0a32b710c8843481b6f5d1d11f9013e2c3",
+    "AMD": "e69153e5ce6f0ffbdc522f57c2972a86b738c66b2e5c81ac401ea52836419e1c",
+    "NVDA": "f76056670bcf5e3570659a19af90b24a22ac6bcd094f868193cadb113afc8ac6",
+    "MU": "5d6b71ef31fba65be5cad6325dae48345c58079d88d527aeea2d7b933752fb08",
+    "PR24_AMD": "7082a6a948164a9e817cb882decb1632f23c1ab35442b7b03967b56c3aeb9e68",
+    "PR24_NVDA": "2f5abfe116e1fe63032c432b4dd82206df568a6e5acdf67cc1df23312ca88850",
+    "PR24_MU": "aca72655bd79c5889a9e377f77e079c1be4780778db9198b2311002897a37a2a",
+    "PR24_QQQ": "2eac41cf24d4012c372c249bd9815169f77f7a45a0dfc4f2aa1a0a6fc922c813",
+    "PR24_LABELS": "8005981aad8aa286dcdce2c2ddf43fd72d51aa8b7ac52adada3012477a755b51"
+  },
+  "models": [
+    {
+      "file": "models/frozen-99089fef60a36feb8e4e29c43ff21eff98178da77d30756c5c778cd641de8518.json",
+      "name": "HIST",
+      "version": "frozen-99089fef60a36feb8e4e29c43ff21eff98178da77d30756c5c778cd641de8518",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-f2ac8e9f1837bdd33634ac3434ea3a889e32867a72532a51668c6c55415f3f9d.json",
+      "name": "REGIME",
+      "version": "frozen-f2ac8e9f1837bdd33634ac3434ea3a889e32867a72532a51668c6c55415f3f9d",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-cfa1c2b9944470f0a0fe1560135869f8952dfb565ee045a3ef936140d79c744e.json",
+      "name": "HIST",
+      "version": "frozen-cfa1c2b9944470f0a0fe1560135869f8952dfb565ee045a3ef936140d79c744e",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-934524ef912fccd207fc293cee2806a61124e9ecc0b7d9514c2c4c323a18a0bb.json",
+      "name": "REGIME",
+      "version": "frozen-934524ef912fccd207fc293cee2806a61124e9ecc0b7d9514c2c4c323a18a0bb",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-e0ba47357e7c9985978f09c222db9565dcba3ae21865f893801f28e8ec997302.json",
+      "name": "HIST",
+      "version": "frozen-e0ba47357e7c9985978f09c222db9565dcba3ae21865f893801f28e8ec997302",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-930830f3f8a78a7b57baa8e10388a6ea62f8ef7268974c51c8fe9f6abeff1985.json",
+      "name": "REGIME",
+      "version": "frozen-930830f3f8a78a7b57baa8e10388a6ea62f8ef7268974c51c8fe9f6abeff1985",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-c6c0f2ac22b5712dfb5e7a84786b5ded1c7309f8d3497d1d840177bcd3fe0a79.json",
+      "name": "HIST",
+      "version": "frozen-c6c0f2ac22b5712dfb5e7a84786b5ded1c7309f8d3497d1d840177bcd3fe0a79",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-6b07c5bb70ba9073a113e77c88e594bc0ea388fd4a677539f4e3ab719d8cbd04.json",
+      "name": "REGIME",
+      "version": "frozen-6b07c5bb70ba9073a113e77c88e594bc0ea388fd4a677539f4e3ab719d8cbd04",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-019e6a1c9a8b73a84c432c2ac86a241a010f47dacfd5fa93fc5e968ffaa256bd.json",
+      "name": "HIST",
+      "version": "frozen-019e6a1c9a8b73a84c432c2ac86a241a010f47dacfd5fa93fc5e968ffaa256bd",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-f48d27e3e05fea7ce61d9d259cf7343f7e1fccea3dee0ae500ac8fb55c05f6d0.json",
+      "name": "REGIME",
+      "version": "frozen-f48d27e3e05fea7ce61d9d259cf7343f7e1fccea3dee0ae500ac8fb55c05f6d0",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-e92d4534512bda13ac9516b580464dd1cc8221de915c5a7a3b85e0af2a385445.json",
+      "name": "HIST",
+      "version": "frozen-e92d4534512bda13ac9516b580464dd1cc8221de915c5a7a3b85e0af2a385445",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-fc27bfad00fbde6262b8265ee99d30cc1d7bac768266a926a3e1185497580853.json",
+      "name": "REGIME",
+      "version": "frozen-fc27bfad00fbde6262b8265ee99d30cc1d7bac768266a926a3e1185497580853",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-06f1b1da9dabedc741896148dd48dd25228562fc113f0dde8d7ecd425053a692.json",
+      "name": "HIST",
+      "version": "frozen-06f1b1da9dabedc741896148dd48dd25228562fc113f0dde8d7ecd425053a692",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-0a355d2652842188d81020f16059afe345b2a782e4f27120c91423c8fe52f277.json",
+      "name": "REGIME",
+      "version": "frozen-0a355d2652842188d81020f16059afe345b2a782e4f27120c91423c8fe52f277",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-c310f6272a3e4ef1e77a8c2d1269eb9e0333856c2a352b658acf01f8b45e778b.json",
+      "name": "HIST",
+      "version": "frozen-c310f6272a3e4ef1e77a8c2d1269eb9e0333856c2a352b658acf01f8b45e778b",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-718963c8ca6bfd459712df4c35c5c275fc55982640f73a112a209a4dc4903fc2.json",
+      "name": "REGIME",
+      "version": "frozen-718963c8ca6bfd459712df4c35c5c275fc55982640f73a112a209a4dc4903fc2",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-058aea26b9fbfc1d7c7b7a07db32c76039d10dcfd1c31129ceeae74be7c10e00.json",
+      "name": "HIST",
+      "version": "frozen-058aea26b9fbfc1d7c7b7a07db32c76039d10dcfd1c31129ceeae74be7c10e00",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-eac64c7240b2951d616161971f3d5c7e56dae915608d417862bef77965964e0d.json",
+      "name": "REGIME",
+      "version": "frozen-eac64c7240b2951d616161971f3d5c7e56dae915608d417862bef77965964e0d",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-afbae4ca30bd68a07e8f6e113322191353847e3689c0264a0b3137b086606169.json",
+      "name": "HIST",
+      "version": "frozen-afbae4ca30bd68a07e8f6e113322191353847e3689c0264a0b3137b086606169",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-e761e41b1612833e9826dd62c0dd0ad9d5a06565be490c6c5e25456e1c3a3b6c.json",
+      "name": "REGIME",
+      "version": "frozen-e761e41b1612833e9826dd62c0dd0ad9d5a06565be490c6c5e25456e1c3a3b6c",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-1766ce87c609a116a70f3179455e2798674c1d6fd4c2718a389d22eb565d56a1.json",
+      "name": "HIST",
+      "version": "frozen-1766ce87c609a116a70f3179455e2798674c1d6fd4c2718a389d22eb565d56a1",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-1591a05ca42566732a2d44078b76bee62eb199e2ef08702e890a48d80d7086f8.json",
+      "name": "REGIME",
+      "version": "frozen-1591a05ca42566732a2d44078b76bee62eb199e2ef08702e890a48d80d7086f8",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-4835402a08b283ba3b43d881a9b680e7543b73f0836341a2bc38c0b4df9bbf4c.json",
+      "name": "HIST",
+      "version": "frozen-4835402a08b283ba3b43d881a9b680e7543b73f0836341a2bc38c0b4df9bbf4c",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-763f8c48caa2a7ab740eaa6e33aa1cf1197b7a55282162f5ef17bc1d5753e085.json",
+      "name": "REGIME",
+      "version": "frozen-763f8c48caa2a7ab740eaa6e33aa1cf1197b7a55282162f5ef17bc1d5753e085",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-06dc44694e27f6d6782a23b2470581e2bcc7c1ba15117e3a0bcb47d015cea6d7.json",
+      "name": "HIST",
+      "version": "frozen-06dc44694e27f6d6782a23b2470581e2bcc7c1ba15117e3a0bcb47d015cea6d7",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-220891e6e20204bef0cea4285187c44542b538097fd0fd77a3478c50a873a68a.json",
+      "name": "REGIME",
+      "version": "frozen-220891e6e20204bef0cea4285187c44542b538097fd0fd77a3478c50a873a68a",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-d0a6aa4734970f896f30d3bad650cb180acdf013bfe0025a5850ac22cfeab99f.json",
+      "name": "HIST",
+      "version": "frozen-d0a6aa4734970f896f30d3bad650cb180acdf013bfe0025a5850ac22cfeab99f",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-c957f0e450068edf7c1840c6904df8dc172ecc913380cf20c14ddcf846585908.json",
+      "name": "REGIME",
+      "version": "frozen-c957f0e450068edf7c1840c6904df8dc172ecc913380cf20c14ddcf846585908",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-3f7af030b3f6a3008ddef93b9cd756ff4eb04508c0ec593eb0617fea6cc1a3dc.json",
+      "name": "HIST",
+      "version": "frozen-3f7af030b3f6a3008ddef93b9cd756ff4eb04508c0ec593eb0617fea6cc1a3dc",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-9768edc886b0c0e51d7810fc7c05e3f3f7b04b6a8fa07d173337ee16c027cd86.json",
+      "name": "REGIME",
+      "version": "frozen-9768edc886b0c0e51d7810fc7c05e3f3f7b04b6a8fa07d173337ee16c027cd86",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-b7720ef13012ab0a789e64abecef4cca73e14102373681a55ccd530fab50a293.json",
+      "name": "HIST",
+      "version": "frozen-b7720ef13012ab0a789e64abecef4cca73e14102373681a55ccd530fab50a293",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-24a29029c29457c2f4863e2c5e2c2c97f1fa03b6b4a47154bd3ea6d9c7e0a9c0.json",
+      "name": "REGIME",
+      "version": "frozen-24a29029c29457c2f4863e2c5e2c2c97f1fa03b6b4a47154bd3ea6d9c7e0a9c0",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-64e022b18969dd4be1013b40733b08efa4947a968dca595a0ac679ca67282ab9.json",
+      "name": "HIST",
+      "version": "frozen-64e022b18969dd4be1013b40733b08efa4947a968dca595a0ac679ca67282ab9",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-66246d9539d5b217753724fb9bc9ccc847be1ef7be9b61a7a010ba7a4ad7608b.json",
+      "name": "REGIME",
+      "version": "frozen-66246d9539d5b217753724fb9bc9ccc847be1ef7be9b61a7a010ba7a4ad7608b",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-df7014d94df131639a6875c5b38b58315309466a76ad75ed7d8c8697e7cd0ec9.json",
+      "name": "HIST",
+      "version": "frozen-df7014d94df131639a6875c5b38b58315309466a76ad75ed7d8c8697e7cd0ec9",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-081c29df93cc893e7b4c87c351c983691e80683ca7657b4061889c6fec6cb996.json",
+      "name": "REGIME",
+      "version": "frozen-081c29df93cc893e7b4c87c351c983691e80683ca7657b4061889c6fec6cb996",
+      "series": {
+        "symbol": "SPY",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-89d78617273f654f0b0bbd4de775b7aad692942d7012a16bb68c15cc2b47f412.json",
+      "name": "HIST",
+      "version": "frozen-89d78617273f654f0b0bbd4de775b7aad692942d7012a16bb68c15cc2b47f412",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-0d90af9eb706d38194cfa116cb14705e7411b71585c4a29d56ed27efa0c74277.json",
+      "name": "REGIME",
+      "version": "frozen-0d90af9eb706d38194cfa116cb14705e7411b71585c4a29d56ed27efa0c74277",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-8c01e322b05971b4af258681487ff864faa879d3468febb9f6f321e86f419658.json",
+      "name": "HIST",
+      "version": "frozen-8c01e322b05971b4af258681487ff864faa879d3468febb9f6f321e86f419658",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-0279e6ea13a2e3a08443e4bcb3072b2d30e58d00b7866eb01e5051f62283412d.json",
+      "name": "REGIME",
+      "version": "frozen-0279e6ea13a2e3a08443e4bcb3072b2d30e58d00b7866eb01e5051f62283412d",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-b7cdef1ffc99d9bc82d0a1ce718387ab1fe8bbe25f78a01d482c03aad72eb87e.json",
+      "name": "HIST",
+      "version": "frozen-b7cdef1ffc99d9bc82d0a1ce718387ab1fe8bbe25f78a01d482c03aad72eb87e",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-b1384ddb3d839b2373207fd4657383dec7fefdd4a79f940b19e628c1ef7f7046.json",
+      "name": "REGIME",
+      "version": "frozen-b1384ddb3d839b2373207fd4657383dec7fefdd4a79f940b19e628c1ef7f7046",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-793198731e973136dd220c30b785bbfb122cd312d4a7d59acf73b9eb363a4e2b.json",
+      "name": "HIST",
+      "version": "frozen-793198731e973136dd220c30b785bbfb122cd312d4a7d59acf73b9eb363a4e2b",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-303f2fd38d8e71432c3c656e7d8d0a5ea91e3cf26fc53688f84f8f2f636d48e6.json",
+      "name": "REGIME",
+      "version": "frozen-303f2fd38d8e71432c3c656e7d8d0a5ea91e3cf26fc53688f84f8f2f636d48e6",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-f4d668222e2f4af3c3853c8034864cdbf66315a7f8aba11bf1ef8e8e4c8e571d.json",
+      "name": "HIST",
+      "version": "frozen-f4d668222e2f4af3c3853c8034864cdbf66315a7f8aba11bf1ef8e8e4c8e571d",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-9774ff4ff20e5547cb589606353dd80cd84296cd5829ff7a066109ced7113379.json",
+      "name": "REGIME",
+      "version": "frozen-9774ff4ff20e5547cb589606353dd80cd84296cd5829ff7a066109ced7113379",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-c531e66ff8f8423fe39f80815cba4190dc3a9f1fc757ffe0ff0b267668650c9d.json",
+      "name": "HIST",
+      "version": "frozen-c531e66ff8f8423fe39f80815cba4190dc3a9f1fc757ffe0ff0b267668650c9d",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-d5c81a666e8eb80d66056fc456fcf9b19e2fec6636cf079ea2e8d844043e2c55.json",
+      "name": "REGIME",
+      "version": "frozen-d5c81a666e8eb80d66056fc456fcf9b19e2fec6636cf079ea2e8d844043e2c55",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-aad49956adfa0f3e0d871302312a7bdd83d198e6a6c0407a6eb19aba2825c51f.json",
+      "name": "HIST",
+      "version": "frozen-aad49956adfa0f3e0d871302312a7bdd83d198e6a6c0407a6eb19aba2825c51f",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-3c0db421c3521301d357c81e96e54243aadc4be55e710fd8b9282378409189cf.json",
+      "name": "REGIME",
+      "version": "frozen-3c0db421c3521301d357c81e96e54243aadc4be55e710fd8b9282378409189cf",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-8e10d52d11758b8451d39a833d9273e238c2980ec48da77c4c8ff9ce942de389.json",
+      "name": "HIST",
+      "version": "frozen-8e10d52d11758b8451d39a833d9273e238c2980ec48da77c4c8ff9ce942de389",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-2dd7cea960333125781145fc74bff89d8649a6de43a56192766fd4bb30a64101.json",
+      "name": "REGIME",
+      "version": "frozen-2dd7cea960333125781145fc74bff89d8649a6de43a56192766fd4bb30a64101",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-2d5337aa3cca8da541262d7d94fddf0ba21c561497eba6373a6832fc4f0d5a70.json",
+      "name": "HIST",
+      "version": "frozen-2d5337aa3cca8da541262d7d94fddf0ba21c561497eba6373a6832fc4f0d5a70",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-79a956e0aec5c3f444ad44a61161970b892bf5024bff0e6add6fbd646c04ace0.json",
+      "name": "REGIME",
+      "version": "frozen-79a956e0aec5c3f444ad44a61161970b892bf5024bff0e6add6fbd646c04ace0",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-faa98a0498aeb9116be80a44eeaf1ba151a614b452a96cf520c4a0ad56c6045a.json",
+      "name": "HIST",
+      "version": "frozen-faa98a0498aeb9116be80a44eeaf1ba151a614b452a96cf520c4a0ad56c6045a",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-3934d6a067e19ac8a86ee20d88ad98843794398442d783fb03758b77163d25dc.json",
+      "name": "REGIME",
+      "version": "frozen-3934d6a067e19ac8a86ee20d88ad98843794398442d783fb03758b77163d25dc",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-f63ec8ecd7f7d02b26aca4616df38ecc57da40a79524d3c134a2111286ba3f69.json",
+      "name": "HIST",
+      "version": "frozen-f63ec8ecd7f7d02b26aca4616df38ecc57da40a79524d3c134a2111286ba3f69",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-708db95bd2b7448a9ddc8f233b34fbea3c2feb0e4f73bfbd8895e97cd7ce5890.json",
+      "name": "REGIME",
+      "version": "frozen-708db95bd2b7448a9ddc8f233b34fbea3c2feb0e4f73bfbd8895e97cd7ce5890",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-95807405b236faed2ab1d830ae49753a4ee0dd1cf6de7f01788f19fd68068f47.json",
+      "name": "HIST",
+      "version": "frozen-95807405b236faed2ab1d830ae49753a4ee0dd1cf6de7f01788f19fd68068f47",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-6b406e2ebc792da0792469d02b4a468b3fe6f4048e09a0508b9f6ea048e1ee13.json",
+      "name": "REGIME",
+      "version": "frozen-6b406e2ebc792da0792469d02b4a468b3fe6f4048e09a0508b9f6ea048e1ee13",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-c31b67c7648c9619e37df8b816203bc38e8f61111574fe6d1689f21774624832.json",
+      "name": "HIST",
+      "version": "frozen-c31b67c7648c9619e37df8b816203bc38e8f61111574fe6d1689f21774624832",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-6ef1ed26395969d699ca0571f1c4f8371797f60948c0d3e2e5c150cebb2d26c5.json",
+      "name": "REGIME",
+      "version": "frozen-6ef1ed26395969d699ca0571f1c4f8371797f60948c0d3e2e5c150cebb2d26c5",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-4c3426277223ac48245bc22185d319ddd0effec5f212216e432bd6d5e7e2ec52.json",
+      "name": "HIST",
+      "version": "frozen-4c3426277223ac48245bc22185d319ddd0effec5f212216e432bd6d5e7e2ec52",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-50dab5be87a65afcc19a0ceaef91cb9580912e4e2201bd1bf065d52756511c38.json",
+      "name": "REGIME",
+      "version": "frozen-50dab5be87a65afcc19a0ceaef91cb9580912e4e2201bd1bf065d52756511c38",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-d837c2f4fea10e500e1cd112f9b661a6d17b4350bde6f5bbe20a444556d9cf86.json",
+      "name": "HIST",
+      "version": "frozen-d837c2f4fea10e500e1cd112f9b661a6d17b4350bde6f5bbe20a444556d9cf86",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-3a2391847477fb4b3bc093b84e83ff2bf35bc4b711ea6207cd0821222c0014c9.json",
+      "name": "REGIME",
+      "version": "frozen-3a2391847477fb4b3bc093b84e83ff2bf35bc4b711ea6207cd0821222c0014c9",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-ed27cb870cdf7eb2f4cff5c7009470c7248c7536a6b842b4d6326879070c69d3.json",
+      "name": "HIST",
+      "version": "frozen-ed27cb870cdf7eb2f4cff5c7009470c7248c7536a6b842b4d6326879070c69d3",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-56026351a4daf2ef88ac905adadd20ead779cb0324c3b442b571511bbc053b89.json",
+      "name": "REGIME",
+      "version": "frozen-56026351a4daf2ef88ac905adadd20ead779cb0324c3b442b571511bbc053b89",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-f955d49b2774fd00c13da33dd2abc44692baa1a6c074bb9cd30262d30f7b476a.json",
+      "name": "HIST",
+      "version": "frozen-f955d49b2774fd00c13da33dd2abc44692baa1a6c074bb9cd30262d30f7b476a",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-184085c64aedcbd998326b6e428930d144f436a877449b2e529356ea245d878b.json",
+      "name": "REGIME",
+      "version": "frozen-184085c64aedcbd998326b6e428930d144f436a877449b2e529356ea245d878b",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-fb0a87b4cd32a7845e0d0c3002843ddc271ea3866a031725f94fe1cae8ca9d62.json",
+      "name": "HIST",
+      "version": "frozen-fb0a87b4cd32a7845e0d0c3002843ddc271ea3866a031725f94fe1cae8ca9d62",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-9ca4d9e9a1a3e09ac06c7ce0f9fb93dc6adaff07b4e9e72e972e1dd36025dabc.json",
+      "name": "REGIME",
+      "version": "frozen-9ca4d9e9a1a3e09ac06c7ce0f9fb93dc6adaff07b4e9e72e972e1dd36025dabc",
+      "series": {
+        "symbol": "QQQ",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-dbb316ca5347295c7037ad43e9860252d7de6d9f15d6e9096d7851066546dd70.json",
+      "name": "HIST",
+      "version": "frozen-dbb316ca5347295c7037ad43e9860252d7de6d9f15d6e9096d7851066546dd70",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6155,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-73e12a18e3fc2ca2e49f85174634cc64995e20e5484df09672520d110f367a40.json",
+      "name": "REGIME",
+      "version": "frozen-73e12a18e3fc2ca2e49f85174634cc64995e20e5484df09672520d110f367a40",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6155,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-5ddea69a9bc68dedfe1ea71698f6047595a2ca39f7f64aac5df05aa0914a2f38.json",
+      "name": "HIST",
+      "version": "frozen-5ddea69a9bc68dedfe1ea71698f6047595a2ca39f7f64aac5df05aa0914a2f38",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6145,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-5ccbaa2d29fb71203cb8d847e0db8d70d42ed5340bbdd4cc3dda006b347fa598.json",
+      "name": "REGIME",
+      "version": "frozen-5ccbaa2d29fb71203cb8d847e0db8d70d42ed5340bbdd4cc3dda006b347fa598",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6145,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-a8e35e58ffd82483090facb5aa16f20e3ac3360cf1a4a3fcf916c80d8325000a.json",
+      "name": "HIST",
+      "version": "frozen-a8e35e58ffd82483090facb5aa16f20e3ac3360cf1a4a3fcf916c80d8325000a",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6105,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-d8c0f00065ad24338f674928a258104a07b1ea35e0e9106025827e2864130817.json",
+      "name": "REGIME",
+      "version": "frozen-d8c0f00065ad24338f674928a258104a07b1ea35e0e9106025827e2864130817",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6105,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-d4cda4645bb5f362ceee7fe392c36d82901a43cc026ab8f8ff4005b608f36331.json",
+      "name": "HIST",
+      "version": "frozen-d4cda4645bb5f362ceee7fe392c36d82901a43cc026ab8f8ff4005b608f36331",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6155,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-3c0abea683557ac7747ce023bb3132d877a2bd1071a69fc7757771402cfd6f8a.json",
+      "name": "REGIME",
+      "version": "frozen-3c0abea683557ac7747ce023bb3132d877a2bd1071a69fc7757771402cfd6f8a",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6155,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-82b6f11959dca1425f4ed15cf5949abc8f4257873f80b02efbe6eaa1783e7f88.json",
+      "name": "HIST",
+      "version": "frozen-82b6f11959dca1425f4ed15cf5949abc8f4257873f80b02efbe6eaa1783e7f88",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6145,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-e257825327412a16a372789e3c5a384c56b6d96cc13b9cd8f87e3ee0af3873d4.json",
+      "name": "REGIME",
+      "version": "frozen-e257825327412a16a372789e3c5a384c56b6d96cc13b9cd8f87e3ee0af3873d4",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6145,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-52249be95e5d6339490f6309cc6f61e173952d6d4c88d43a8f5a87833ee3e890.json",
+      "name": "HIST",
+      "version": "frozen-52249be95e5d6339490f6309cc6f61e173952d6d4c88d43a8f5a87833ee3e890",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6105,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-7e621c6baa02f427a4670be4cdfe05805c4b87b09bf586f4cb706873ede06e0c.json",
+      "name": "REGIME",
+      "version": "frozen-7e621c6baa02f427a4670be4cdfe05805c4b87b09bf586f4cb706873ede06e0c",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6105,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-cef503e4a2519728ff0442381717891aa960f2bc551c486680a6683b644d34f2.json",
+      "name": "HIST",
+      "version": "frozen-cef503e4a2519728ff0442381717891aa960f2bc551c486680a6683b644d34f2",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6155,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-39947c488f988a489fe776be678f6ecf5c68bcaf17264047d010beb8bec821bb.json",
+      "name": "REGIME",
+      "version": "frozen-39947c488f988a489fe776be678f6ecf5c68bcaf17264047d010beb8bec821bb",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6155,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-ef2974c5f3e143fabc88215001daa94fd5350ce28a29c20a371b5f3e7e114616.json",
+      "name": "HIST",
+      "version": "frozen-ef2974c5f3e143fabc88215001daa94fd5350ce28a29c20a371b5f3e7e114616",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6145,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-e23ac2a3d17dd3e682efec541974675b3f591f7be5f8582828b0a802611dbc88.json",
+      "name": "REGIME",
+      "version": "frozen-e23ac2a3d17dd3e682efec541974675b3f591f7be5f8582828b0a802611dbc88",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6145,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-f338c298e9d62c528337315ba01ef05faa76f91336f31ee58db2ae27dc817d5d.json",
+      "name": "HIST",
+      "version": "frozen-f338c298e9d62c528337315ba01ef05faa76f91336f31ee58db2ae27dc817d5d",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6105,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-2ed9149982779fcfc4de9eb19534dc1b3ebc121fdf4c6a3cc10c0b77c5ef722f.json",
+      "name": "REGIME",
+      "version": "frozen-2ed9149982779fcfc4de9eb19534dc1b3ebc121fdf4c6a3cc10c0b77c5ef722f",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6105,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-e8720c95081d0bb0713fd119994feb84a84f467898f3e12adcf479855748f502.json",
+      "name": "HIST",
+      "version": "frozen-e8720c95081d0bb0713fd119994feb84a84f467898f3e12adcf479855748f502",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6155,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-4e37eab84df79e89699fd87b41a877d2bc1df95aef465355c617bb425f51d2cf.json",
+      "name": "REGIME",
+      "version": "frozen-4e37eab84df79e89699fd87b41a877d2bc1df95aef465355c617bb425f51d2cf",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6155,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-1cbccb3cb4b7aff7de9ac057eace3f9dba04b328e5051933521bf73c78892f22.json",
+      "name": "HIST",
+      "version": "frozen-1cbccb3cb4b7aff7de9ac057eace3f9dba04b328e5051933521bf73c78892f22",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6145,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-658b924a0fb791e16c8b2b6372f75933b7cdf69ef0e0f42e75b0f8c45274d1b5.json",
+      "name": "REGIME",
+      "version": "frozen-658b924a0fb791e16c8b2b6372f75933b7cdf69ef0e0f42e75b0f8c45274d1b5",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6145,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-a15c70d4f59d853b39e526740981a2e78a3f1fe8e07d7d5693cfe6fa7b21ae6a.json",
+      "name": "HIST",
+      "version": "frozen-a15c70d4f59d853b39e526740981a2e78a3f1fe8e07d7d5693cfe6fa7b21ae6a",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6105,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-d51d636efe9a9c9b32f0280124d1da6b944e5655ae20986b9ae0f40dde6b6d80.json",
+      "name": "REGIME",
+      "version": "frozen-d51d636efe9a9c9b32f0280124d1da6b944e5655ae20986b9ae0f40dde6b6d80",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6105,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-028d0c609ed2456e3956cbb998bb5dac00984de528bb7c0cb51ffbb28361d937.json",
+      "name": "HIST",
+      "version": "frozen-028d0c609ed2456e3956cbb998bb5dac00984de528bb7c0cb51ffbb28361d937",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6155,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-141a961fe72f706edea0de1972debb42f9e7c7c410b23116729b77f0aecd58f1.json",
+      "name": "REGIME",
+      "version": "frozen-141a961fe72f706edea0de1972debb42f9e7c7c410b23116729b77f0aecd58f1",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6155,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-abdcfc2ffe79708b8a52462045709ee843ae8775f6c45fcda1f427050e28e3e8.json",
+      "name": "HIST",
+      "version": "frozen-abdcfc2ffe79708b8a52462045709ee843ae8775f6c45fcda1f427050e28e3e8",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6145,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-ee66905788d712e2b855d808c7de6a3de77ac4bab74f3c44478b4106298b736b.json",
+      "name": "REGIME",
+      "version": "frozen-ee66905788d712e2b855d808c7de6a3de77ac4bab74f3c44478b4106298b736b",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6145,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-83961f2f1513d8ccaa211bcff483baeeb1832f452a1fbb0e64d0ddedb8bd85eb.json",
+      "name": "HIST",
+      "version": "frozen-83961f2f1513d8ccaa211bcff483baeeb1832f452a1fbb0e64d0ddedb8bd85eb",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6105,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-01bf56c8b0b6e5bef44b9802e6813e9ef5395f560d9fe64106333a651496e081.json",
+      "name": "REGIME",
+      "version": "frozen-01bf56c8b0b6e5bef44b9802e6813e9ef5395f560d9fe64106333a651496e081",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6105,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-79930b9ae077d733bc17742bb03890f8aa2271b31c5c881f777e557cf07b8e61.json",
+      "name": "HIST",
+      "version": "frozen-79930b9ae077d733bc17742bb03890f8aa2271b31c5c881f777e557cf07b8e61",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6155,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-6bfe0566d8e4ee234383d441485c4ab85584b91949b933fafc18849a830891f1.json",
+      "name": "REGIME",
+      "version": "frozen-6bfe0566d8e4ee234383d441485c4ab85584b91949b933fafc18849a830891f1",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6155,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-8445e04ee6dac26815474cce91ed575e170e6682118d48521988ed780f6743f8.json",
+      "name": "HIST",
+      "version": "frozen-8445e04ee6dac26815474cce91ed575e170e6682118d48521988ed780f6743f8",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6145,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-a4e6a5ab985001249a0fa75f8144449bc8b63082e9e4e022f62e3bbfe4f6034a.json",
+      "name": "REGIME",
+      "version": "frozen-a4e6a5ab985001249a0fa75f8144449bc8b63082e9e4e022f62e3bbfe4f6034a",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6145,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-23a2f25fa71c07030a3dc2e52a9417a58835c435cce6e5403ef7c279ef30a805.json",
+      "name": "HIST",
+      "version": "frozen-23a2f25fa71c07030a3dc2e52a9417a58835c435cce6e5403ef7c279ef30a805",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6105,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-a66caa21cf8b555a77ece59ac931b118c661d456079d471c54924bbc9b5f7adc.json",
+      "name": "REGIME",
+      "version": "frozen-a66caa21cf8b555a77ece59ac931b118c661d456079d471c54924bbc9b5f7adc",
+      "series": {
+        "symbol": "SOXX",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6105,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-64dbba9ec8e88ecdf2bde6bef6f6ea36f6bfd6a2875cbdbea8c378fe52ea2c78.json",
+      "name": "HIST",
+      "version": "frozen-64dbba9ec8e88ecdf2bde6bef6f6ea36f6bfd6a2875cbdbea8c378fe52ea2c78",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-1c3e3e346615da43f9e205d570d456626e8a8aedfe5353edfeff9421fb4ed31f.json",
+      "name": "REGIME",
+      "version": "frozen-1c3e3e346615da43f9e205d570d456626e8a8aedfe5353edfeff9421fb4ed31f",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-4835475a34d0c4f126f79f8cd031fd1a3f3919d935bb43d081a280f5345fced5.json",
+      "name": "HIST",
+      "version": "frozen-4835475a34d0c4f126f79f8cd031fd1a3f3919d935bb43d081a280f5345fced5",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-2b1ef44bd839d4e2d9f182e904df3ed9c6d198065b06ae223e3f28de9ae68897.json",
+      "name": "REGIME",
+      "version": "frozen-2b1ef44bd839d4e2d9f182e904df3ed9c6d198065b06ae223e3f28de9ae68897",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-274220d75b9f71578d5082fec97162e2455e82e53a70783e4911d521dcb2199a.json",
+      "name": "HIST",
+      "version": "frozen-274220d75b9f71578d5082fec97162e2455e82e53a70783e4911d521dcb2199a",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-f8686b09984456e461758efdda8fcaca5d7c3ad001c63c7e436dc2aec831d0fa.json",
+      "name": "REGIME",
+      "version": "frozen-f8686b09984456e461758efdda8fcaca5d7c3ad001c63c7e436dc2aec831d0fa",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-6cf7316e12b15ca29d8bec3ff540c0e1536ab069666c8fc2103caecfbbb4f7c5.json",
+      "name": "HIST",
+      "version": "frozen-6cf7316e12b15ca29d8bec3ff540c0e1536ab069666c8fc2103caecfbbb4f7c5",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-020ed0749c81a225b08b1b226001f5c6105ef1b21a0fc06c350a479af0d28d7b.json",
+      "name": "REGIME",
+      "version": "frozen-020ed0749c81a225b08b1b226001f5c6105ef1b21a0fc06c350a479af0d28d7b",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-dc455dd64c5097267a3584cb0b90b949a18336bba35a494d1bfcff8af3d0f7c3.json",
+      "name": "HIST",
+      "version": "frozen-dc455dd64c5097267a3584cb0b90b949a18336bba35a494d1bfcff8af3d0f7c3",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-a27dc0b26984fb7cb0464f2ba0747bb076a4442902530ef651581eeec020e6af.json",
+      "name": "REGIME",
+      "version": "frozen-a27dc0b26984fb7cb0464f2ba0747bb076a4442902530ef651581eeec020e6af",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-9b6503e329fc97d3ca7f8a3f6b47f215b9bcdf940f90cffd52cb4ca20f2b2632.json",
+      "name": "HIST",
+      "version": "frozen-9b6503e329fc97d3ca7f8a3f6b47f215b9bcdf940f90cffd52cb4ca20f2b2632",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-4ea62776b089f8db8bc6950932114ccddbe24e332695060745fcc53fa149c983.json",
+      "name": "REGIME",
+      "version": "frozen-4ea62776b089f8db8bc6950932114ccddbe24e332695060745fcc53fa149c983",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-4a837be7e773e33d9832658c33b85cdc0daa856559a5c1ec3a1845e07d68aa56.json",
+      "name": "HIST",
+      "version": "frozen-4a837be7e773e33d9832658c33b85cdc0daa856559a5c1ec3a1845e07d68aa56",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-f2b1663c036a6d68d4efc3a8f2db36daac3ca9320cd664223b247a7ef0e96533.json",
+      "name": "REGIME",
+      "version": "frozen-f2b1663c036a6d68d4efc3a8f2db36daac3ca9320cd664223b247a7ef0e96533",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-e62e29f064354270e61adc3d6b0af1f056a5c3f08fe6dd5c38a673ba4a6bbd10.json",
+      "name": "HIST",
+      "version": "frozen-e62e29f064354270e61adc3d6b0af1f056a5c3f08fe6dd5c38a673ba4a6bbd10",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-832c8e047323e410f0680295edcbe3c12ea16152136c8212eb77a56f572962be.json",
+      "name": "REGIME",
+      "version": "frozen-832c8e047323e410f0680295edcbe3c12ea16152136c8212eb77a56f572962be",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-6f22e4d965d8e1c3fb0949bcf3d7081a11d8dd8e414316e50ea6b8f15e9b138c.json",
+      "name": "HIST",
+      "version": "frozen-6f22e4d965d8e1c3fb0949bcf3d7081a11d8dd8e414316e50ea6b8f15e9b138c",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-9edf5374bdfadc3fae72cb2809ff38966a58ad6dd73dff0c0474540c83ece682.json",
+      "name": "REGIME",
+      "version": "frozen-9edf5374bdfadc3fae72cb2809ff38966a58ad6dd73dff0c0474540c83ece682",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-b7fd4d66000177ecdef59eab58d3ca802a498b2c9d47c1fe2c13a96206a6deac.json",
+      "name": "HIST",
+      "version": "frozen-b7fd4d66000177ecdef59eab58d3ca802a498b2c9d47c1fe2c13a96206a6deac",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-bb715eb74f2c9cd0e96b7dce7b30a07b1ee74decdc88615a8e65772e0dc5926d.json",
+      "name": "REGIME",
+      "version": "frozen-bb715eb74f2c9cd0e96b7dce7b30a07b1ee74decdc88615a8e65772e0dc5926d",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-9ad53d2c8e5e29e448b48312b354bd8ca9d1276b177c450fa19c386291cbe909.json",
+      "name": "HIST",
+      "version": "frozen-9ad53d2c8e5e29e448b48312b354bd8ca9d1276b177c450fa19c386291cbe909",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-c0d49684caf6f9abb011fd943f1cba4250836482c00c521fe981e449087e67af.json",
+      "name": "REGIME",
+      "version": "frozen-c0d49684caf6f9abb011fd943f1cba4250836482c00c521fe981e449087e67af",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-aee406fbc551126077f4f8925d0fcec69c83632768bd969a473da9b08215f259.json",
+      "name": "HIST",
+      "version": "frozen-aee406fbc551126077f4f8925d0fcec69c83632768bd969a473da9b08215f259",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-77ffdb5c8abab19896d79eb0ec570a1c1288d9a2fe21b95abfcaa9df5515baac.json",
+      "name": "REGIME",
+      "version": "frozen-77ffdb5c8abab19896d79eb0ec570a1c1288d9a2fe21b95abfcaa9df5515baac",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-7a7f007f4565a22ed330a8b8b58648097a8410d3dfd2768ca72d28e8127c4089.json",
+      "name": "HIST",
+      "version": "frozen-7a7f007f4565a22ed330a8b8b58648097a8410d3dfd2768ca72d28e8127c4089",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-38d8e755caa430a99d8d92af33b9f48d7eccdf0ef7b0dfc9dbd8a42e87a4a2a7.json",
+      "name": "REGIME",
+      "version": "frozen-38d8e755caa430a99d8d92af33b9f48d7eccdf0ef7b0dfc9dbd8a42e87a4a2a7",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-a47bbdbb7d1e8d7664cf72f970a6bf3b557ce341423146ce5edad3e00d494225.json",
+      "name": "HIST",
+      "version": "frozen-a47bbdbb7d1e8d7664cf72f970a6bf3b557ce341423146ce5edad3e00d494225",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-41c0e72184d587cf68a3d761294fb70e6f80f47ffbf0216fd730bd00e4644ab8.json",
+      "name": "REGIME",
+      "version": "frozen-41c0e72184d587cf68a3d761294fb70e6f80f47ffbf0216fd730bd00e4644ab8",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-25dc372e63366d6dc5d8ff670709b873be25e1964a21e0566d27fd854523389d.json",
+      "name": "HIST",
+      "version": "frozen-25dc372e63366d6dc5d8ff670709b873be25e1964a21e0566d27fd854523389d",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-c39c9b4ef4a9b96e93e99deedfeb9dc421f3f88d904886784f9e34d506792152.json",
+      "name": "REGIME",
+      "version": "frozen-c39c9b4ef4a9b96e93e99deedfeb9dc421f3f88d904886784f9e34d506792152",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-f3a83fc6ec3f475ce7573568a4eccd23fe1f6726ea4ab234d47e0ce7dc1b4f60.json",
+      "name": "HIST",
+      "version": "frozen-f3a83fc6ec3f475ce7573568a4eccd23fe1f6726ea4ab234d47e0ce7dc1b4f60",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-bf50211ad8808e7f67c72e1bce05dcab5062b033c6b8723b2a5785e9ba6d2ff2.json",
+      "name": "REGIME",
+      "version": "frozen-bf50211ad8808e7f67c72e1bce05dcab5062b033c6b8723b2a5785e9ba6d2ff2",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-a884ffd42273a026eef9879a5c6a55b3011527fca0f7e697d3526c88dbe3e5fb.json",
+      "name": "HIST",
+      "version": "frozen-a884ffd42273a026eef9879a5c6a55b3011527fca0f7e697d3526c88dbe3e5fb",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-b588cd0df38e87e517d13204949caaaa742fb0298b4dc428514d1aef9d773740.json",
+      "name": "REGIME",
+      "version": "frozen-b588cd0df38e87e517d13204949caaaa742fb0298b4dc428514d1aef9d773740",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-3a900f6115ca1dee357cd0f732eb51b2c322f55515148c3882d2c7fcd31f670e.json",
+      "name": "HIST",
+      "version": "frozen-3a900f6115ca1dee357cd0f732eb51b2c322f55515148c3882d2c7fcd31f670e",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-d7445c4c02b7e657205fe9b49e65439762c68b8068e4863804970874f9a0c701.json",
+      "name": "REGIME",
+      "version": "frozen-d7445c4c02b7e657205fe9b49e65439762c68b8068e4863804970874f9a0c701",
+      "series": {
+        "symbol": "AMD",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-80926afb5c76cae4787296cb925cea9811286f4f0dd98b55942f0aacc497b9c8.json",
+      "name": "HIST",
+      "version": "frozen-80926afb5c76cae4787296cb925cea9811286f4f0dd98b55942f0aacc497b9c8",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-9602fb6a3ffe6312a64749c962193b6cffecc4acdfa43ab20b881ff54a5a2b33.json",
+      "name": "REGIME",
+      "version": "frozen-9602fb6a3ffe6312a64749c962193b6cffecc4acdfa43ab20b881ff54a5a2b33",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-f96b3f6278505664bbdfc737a5fe8dedde46495f006e55e1309b263236233b4b.json",
+      "name": "HIST",
+      "version": "frozen-f96b3f6278505664bbdfc737a5fe8dedde46495f006e55e1309b263236233b4b",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-394c4d79a96958b574f3fb40d40169367713655ddddb268632c0f921ef37d349.json",
+      "name": "REGIME",
+      "version": "frozen-394c4d79a96958b574f3fb40d40169367713655ddddb268632c0f921ef37d349",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-d201db37d1112e5065dc7b435ea180edb98bae4dd727f5d312b28514530aa7b5.json",
+      "name": "HIST",
+      "version": "frozen-d201db37d1112e5065dc7b435ea180edb98bae4dd727f5d312b28514530aa7b5",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-6ae35a61e711de45dc64309654b4c289cc571b7014f16a819914737e671b3a68.json",
+      "name": "REGIME",
+      "version": "frozen-6ae35a61e711de45dc64309654b4c289cc571b7014f16a819914737e671b3a68",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-26944cbe0758fe6ef4864c81e24c4ae267dabe342a84fa087d8173b7cb682fa5.json",
+      "name": "HIST",
+      "version": "frozen-26944cbe0758fe6ef4864c81e24c4ae267dabe342a84fa087d8173b7cb682fa5",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-41157104479d63bfa50182f9f8dd31fa3086e88474d07a89eb3f7f9c18ec4e31.json",
+      "name": "REGIME",
+      "version": "frozen-41157104479d63bfa50182f9f8dd31fa3086e88474d07a89eb3f7f9c18ec4e31",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-46937547c19e1c8225ab2177d5090670232a65a3fd39c9925675308e173da3b7.json",
+      "name": "HIST",
+      "version": "frozen-46937547c19e1c8225ab2177d5090670232a65a3fd39c9925675308e173da3b7",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-97be3550dc602c07cffd5b037640705a30844e289e352393ca06c35c6ab30078.json",
+      "name": "REGIME",
+      "version": "frozen-97be3550dc602c07cffd5b037640705a30844e289e352393ca06c35c6ab30078",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-9d73c56b6158fa29bcc4dc676456c6275d31ff67670af35b81a4edbd38ab40ab.json",
+      "name": "HIST",
+      "version": "frozen-9d73c56b6158fa29bcc4dc676456c6275d31ff67670af35b81a4edbd38ab40ab",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-aff81eee2a01a071dabe61c764e6c3c6bad4977eea777f43f1d04de5a158d099.json",
+      "name": "REGIME",
+      "version": "frozen-aff81eee2a01a071dabe61c764e6c3c6bad4977eea777f43f1d04de5a158d099",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-e6f95f4355c9163dceca581d91ee9455acbf86ab172504773749461cf9221c4d.json",
+      "name": "HIST",
+      "version": "frozen-e6f95f4355c9163dceca581d91ee9455acbf86ab172504773749461cf9221c4d",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-b3de8a4b10e910e23f8d6a6f0542c522483313b9675c4012598eb87b2f193323.json",
+      "name": "REGIME",
+      "version": "frozen-b3de8a4b10e910e23f8d6a6f0542c522483313b9675c4012598eb87b2f193323",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-b5e74fe4240927aaac4fd3d8fb65a5219c15a6cdc8d4c24aaa41e24a0a5312c4.json",
+      "name": "HIST",
+      "version": "frozen-b5e74fe4240927aaac4fd3d8fb65a5219c15a6cdc8d4c24aaa41e24a0a5312c4",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-604b1081f5eb9dc617bac96ef4c82cf2b730e5674ae82cad630d62a9c6f87778.json",
+      "name": "REGIME",
+      "version": "frozen-604b1081f5eb9dc617bac96ef4c82cf2b730e5674ae82cad630d62a9c6f87778",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-b346ab22ad061a659c06c1032017f9c2228e1bb3faae97d562bae6903cbc0ed6.json",
+      "name": "HIST",
+      "version": "frozen-b346ab22ad061a659c06c1032017f9c2228e1bb3faae97d562bae6903cbc0ed6",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-8c7ecf06b586c488991792ca7d7925ed35a58c19304cdbb0402e291827941bd4.json",
+      "name": "REGIME",
+      "version": "frozen-8c7ecf06b586c488991792ca7d7925ed35a58c19304cdbb0402e291827941bd4",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-99a34e818f27693fbc413087f37c6f3bf234124a657e942c4881f359859b87ee.json",
+      "name": "HIST",
+      "version": "frozen-99a34e818f27693fbc413087f37c6f3bf234124a657e942c4881f359859b87ee",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-e6c7ec984cf8bb25491bc896dc45980da340ddeef468a64cb9608f6de002e557.json",
+      "name": "REGIME",
+      "version": "frozen-e6c7ec984cf8bb25491bc896dc45980da340ddeef468a64cb9608f6de002e557",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-a05f721ff8e7a5bd055ba05f58b81e78d821e6b1bf715b7df2b8b792b2b69da0.json",
+      "name": "HIST",
+      "version": "frozen-a05f721ff8e7a5bd055ba05f58b81e78d821e6b1bf715b7df2b8b792b2b69da0",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-b56772305970a5f9722624fdfa7ab52ac4c69ab0751b3989eb4ceeddde89b1bb.json",
+      "name": "REGIME",
+      "version": "frozen-b56772305970a5f9722624fdfa7ab52ac4c69ab0751b3989eb4ceeddde89b1bb",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-39ee975b9994d70df523acb0af7d4ecf97a7e4d30df0850ac3c6e0e50a967e7f.json",
+      "name": "HIST",
+      "version": "frozen-39ee975b9994d70df523acb0af7d4ecf97a7e4d30df0850ac3c6e0e50a967e7f",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-b3e9628976f76011dd0948901d8f6d45d5829667b0b06a1668ffd93c0b0023b3.json",
+      "name": "REGIME",
+      "version": "frozen-b3e9628976f76011dd0948901d8f6d45d5829667b0b06a1668ffd93c0b0023b3",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-36c638df6094f86862f91ef313c9cd6e8b7dd4a5b0ffb2c3f66e385b4bdb7c3a.json",
+      "name": "HIST",
+      "version": "frozen-36c638df6094f86862f91ef313c9cd6e8b7dd4a5b0ffb2c3f66e385b4bdb7c3a",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-791e908b1c448f3bf6ea1ba9617ce8337070232f1818a4e846cb63d10b5ca785.json",
+      "name": "REGIME",
+      "version": "frozen-791e908b1c448f3bf6ea1ba9617ce8337070232f1818a4e846cb63d10b5ca785",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-a0053aaee9d63a4e047bb8c03b708a91fd35187d8436b1670f8dfb05906c9dec.json",
+      "name": "HIST",
+      "version": "frozen-a0053aaee9d63a4e047bb8c03b708a91fd35187d8436b1670f8dfb05906c9dec",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-10151743f80a5ec73914d6d28a924c5acd9028717f317d49bff5c86a083abc0c.json",
+      "name": "REGIME",
+      "version": "frozen-10151743f80a5ec73914d6d28a924c5acd9028717f317d49bff5c86a083abc0c",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-fd3ce446f76e61fc583681c2c7d1927a311f4ecd18121597daf1bf098288b197.json",
+      "name": "HIST",
+      "version": "frozen-fd3ce446f76e61fc583681c2c7d1927a311f4ecd18121597daf1bf098288b197",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-e536fb388e96493e10c281733b2a564b7dd3c32ca5e316e66a859d62b63761ed.json",
+      "name": "REGIME",
+      "version": "frozen-e536fb388e96493e10c281733b2a564b7dd3c32ca5e316e66a859d62b63761ed",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-0c80a3d6e3b1f10aee74eefa4e256638bbbe95f443d51fc0aec70890ea70c66c.json",
+      "name": "HIST",
+      "version": "frozen-0c80a3d6e3b1f10aee74eefa4e256638bbbe95f443d51fc0aec70890ea70c66c",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-8d116255192695e52fceb452ec8bf0b8bd3c43407842842b3001f79effc4b409.json",
+      "name": "REGIME",
+      "version": "frozen-8d116255192695e52fceb452ec8bf0b8bd3c43407842842b3001f79effc4b409",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-c34f048ac72847c42546bb457be2969d343082137f152552a2fc11291d6a7121.json",
+      "name": "HIST",
+      "version": "frozen-c34f048ac72847c42546bb457be2969d343082137f152552a2fc11291d6a7121",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-caf8979698427878eba9dd8a1da47fe98c4e0173ea914d8828af3e5beb436ab7.json",
+      "name": "REGIME",
+      "version": "frozen-caf8979698427878eba9dd8a1da47fe98c4e0173ea914d8828af3e5beb436ab7",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-c911c0043d4de4f45e262d020f314f15f80c30989351a769deb72a0af4776890.json",
+      "name": "HIST",
+      "version": "frozen-c911c0043d4de4f45e262d020f314f15f80c30989351a769deb72a0af4776890",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-e9cfbe25297705d8b28285354d23fa8736e5ec7f9fde5956d63f61be442179f0.json",
+      "name": "REGIME",
+      "version": "frozen-e9cfbe25297705d8b28285354d23fa8736e5ec7f9fde5956d63f61be442179f0",
+      "series": {
+        "symbol": "NVDA",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-2c9a09819a0dec132665967bf5e0e41bef4eb91cee944aacc996689d402414b6.json",
+      "name": "HIST",
+      "version": "frozen-2c9a09819a0dec132665967bf5e0e41bef4eb91cee944aacc996689d402414b6",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-8196eff60b10985d391c42a64bd72c1ae3a715e551be3533dd40b4b270485683.json",
+      "name": "REGIME",
+      "version": "frozen-8196eff60b10985d391c42a64bd72c1ae3a715e551be3533dd40b4b270485683",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-7d17a727d573163c9203025671f43a0ad0a4fc2d3a834bdf41fab348a9cea660.json",
+      "name": "HIST",
+      "version": "frozen-7d17a727d573163c9203025671f43a0ad0a4fc2d3a834bdf41fab348a9cea660",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-73a75278c8575be35c0b971bd6c8103204a3a081de457695aad76c6d4b8b31b0.json",
+      "name": "REGIME",
+      "version": "frozen-73a75278c8575be35c0b971bd6c8103204a3a081de457695aad76c6d4b8b31b0",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-16f546721e47124d96b924194df1979b9e85b180da354ce6c7c98d203b87832b.json",
+      "name": "HIST",
+      "version": "frozen-16f546721e47124d96b924194df1979b9e85b180da354ce6c7c98d203b87832b",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-63be7019d8db7ce89a2d216accd058950fba463ff40c144e1f2e082281d32f02.json",
+      "name": "REGIME",
+      "version": "frozen-63be7019d8db7ce89a2d216accd058950fba463ff40c144e1f2e082281d32f02",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-0f5d335f5526ab71a1bf68cf81084c2997dab8601b881cec4e0af4a987b38ef0.json",
+      "name": "HIST",
+      "version": "frozen-0f5d335f5526ab71a1bf68cf81084c2997dab8601b881cec4e0af4a987b38ef0",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-ea38f9ad38ed4c6888e43b69dda11a8dd31055eafb75cf558bca2790d12a7727.json",
+      "name": "REGIME",
+      "version": "frozen-ea38f9ad38ed4c6888e43b69dda11a8dd31055eafb75cf558bca2790d12a7727",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-2f708d7a211744b74d28309b64351af28bf2c6598bb02ea045978db80102d634.json",
+      "name": "HIST",
+      "version": "frozen-2f708d7a211744b74d28309b64351af28bf2c6598bb02ea045978db80102d634",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-d2a0b4ac5e38f7a491fc7caf08b161f29579ac79ed72207ae2a3840261d70e89.json",
+      "name": "REGIME",
+      "version": "frozen-d2a0b4ac5e38f7a491fc7caf08b161f29579ac79ed72207ae2a3840261d70e89",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-ea17828e400e3fccd42bc9dd45b7a51d1ca51b1f699077474ba34980d25a7b83.json",
+      "name": "HIST",
+      "version": "frozen-ea17828e400e3fccd42bc9dd45b7a51d1ca51b1f699077474ba34980d25a7b83",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-96c47056ed42ebad80a686bfa0f782cfaf4364224890ee5efd354dbc97ff3cc7.json",
+      "name": "REGIME",
+      "version": "frozen-96c47056ed42ebad80a686bfa0f782cfaf4364224890ee5efd354dbc97ff3cc7",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-a11381eb25543801fb9a86c45a4ca047bd28ee97e6e186b45e58b26f6dbb713d.json",
+      "name": "HIST",
+      "version": "frozen-a11381eb25543801fb9a86c45a4ca047bd28ee97e6e186b45e58b26f6dbb713d",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-fe1110f2ee75216a1839e6ca671aed09ebbddbb02eb5fd3f172c2ed42c109ead.json",
+      "name": "REGIME",
+      "version": "frozen-fe1110f2ee75216a1839e6ca671aed09ebbddbb02eb5fd3f172c2ed42c109ead",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-13a16dbadacb1a10ca4a451002a22ff03a556b8957dd79c92b1d0002a41d1751.json",
+      "name": "HIST",
+      "version": "frozen-13a16dbadacb1a10ca4a451002a22ff03a556b8957dd79c92b1d0002a41d1751",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-2504d29ee0d6a85153b9c5a16d67eeec750b8a502020e8ea1dda5a08ee888148.json",
+      "name": "REGIME",
+      "version": "frozen-2504d29ee0d6a85153b9c5a16d67eeec750b8a502020e8ea1dda5a08ee888148",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-e6dcdb2d13d7b4d055de4fcc4bcb58b3200e60fc7d75cfee91df8dc9d4bfaa2b.json",
+      "name": "HIST",
+      "version": "frozen-e6dcdb2d13d7b4d055de4fcc4bcb58b3200e60fc7d75cfee91df8dc9d4bfaa2b",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-54c21d67a86324b6c73cea7e0fd6d6ca0bb88665d8187f1d248c42174649dfaa.json",
+      "name": "REGIME",
+      "version": "frozen-54c21d67a86324b6c73cea7e0fd6d6ca0bb88665d8187f1d248c42174649dfaa",
+      "series": {
+        "symbol": "MU",
+        "label_type": "LOW_INTRADAY",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-a3d3576ed839d8c444935a986fb1ff0db4e10a6581b68851d58c0501f0b4c5cf.json",
+      "name": "HIST",
+      "version": "frozen-a3d3576ed839d8c444935a986fb1ff0db4e10a6581b68851d58c0501f0b4c5cf",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-8caff65d0bea2272c5ae7ecd61563fb5ddbe8cb99938a48810159c2afa0d5a02.json",
+      "name": "REGIME",
+      "version": "frozen-8caff65d0bea2272c5ae7ecd61563fb5ddbe8cb99938a48810159c2afa0d5a02",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-b01ce5e04e420acd7e5988228dee315ee53265910903beee7a1f4aa34f92573d.json",
+      "name": "HIST",
+      "version": "frozen-b01ce5e04e420acd7e5988228dee315ee53265910903beee7a1f4aa34f92573d",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-fd09b7f9033bc8da1c08f97e62df63dfdb464d5a02235db62b39468274803aac.json",
+      "name": "REGIME",
+      "version": "frozen-fd09b7f9033bc8da1c08f97e62df63dfdb464d5a02235db62b39468274803aac",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-22c80048ff10e671ac257d1959315ff9e10901d8082de90d0afc6aa2f89f29fe.json",
+      "name": "HIST",
+      "version": "frozen-22c80048ff10e671ac257d1959315ff9e10901d8082de90d0afc6aa2f89f29fe",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-7813b80681bca4b5e623ee0323a54cb3b54246d29bb1470ecebc964d0b2de96d.json",
+      "name": "REGIME",
+      "version": "frozen-7813b80681bca4b5e623ee0323a54cb3b54246d29bb1470ecebc964d0b2de96d",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 5,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-076070fc511016d48e579b199a82f8ba6453969ffd07bc3c4dd11806aaf615e4.json",
+      "name": "HIST",
+      "version": "frozen-076070fc511016d48e579b199a82f8ba6453969ffd07bc3c4dd11806aaf615e4",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-df0ab83f754f35c82dac79ab486b21ecccec20e9e465b1f46df3d9f889a4fb61.json",
+      "name": "REGIME",
+      "version": "frozen-df0ab83f754f35c82dac79ab486b21ecccec20e9e465b1f46df3d9f889a4fb61",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-15c1db82a21e2437d83d12ba711e60e980d66db988600a253c532ab4736dba42.json",
+      "name": "HIST",
+      "version": "frozen-15c1db82a21e2437d83d12ba711e60e980d66db988600a253c532ab4736dba42",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-5ef5373dc95c42d3bdf22c725e0a8bc9a6d97a5e145c7f7aab47734c1928021c.json",
+      "name": "REGIME",
+      "version": "frozen-5ef5373dc95c42d3bdf22c725e0a8bc9a6d97a5e145c7f7aab47734c1928021c",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-0303974f388522a3997ae979b69e0d63a16dcd1ba821f68f3f7920d61ccc1cca.json",
+      "name": "HIST",
+      "version": "frozen-0303974f388522a3997ae979b69e0d63a16dcd1ba821f68f3f7920d61ccc1cca",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-f5354f004d164dcc2a1de5a13c32967b7888023d69a6b15967054fab8b103ed3.json",
+      "name": "REGIME",
+      "version": "frozen-f5354f004d164dcc2a1de5a13c32967b7888023d69a6b15967054fab8b103ed3",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-138b14d3cc11b7dabc212a9394f0642affb99ca9d6cad0ad5a3209b35ece298b.json",
+      "name": "HIST",
+      "version": "frozen-138b14d3cc11b7dabc212a9394f0642affb99ca9d6cad0ad5a3209b35ece298b",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-5ba174962d9a32086291cc2e25fad7a5a8dfd94d79649775a24cb477827a7193.json",
+      "name": "REGIME",
+      "version": "frozen-5ba174962d9a32086291cc2e25fad7a5a8dfd94d79649775a24cb477827a7193",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 10
+      },
+      "n": 6540,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-c1695bc93fe4464f4c187c32932b2b6bf2a721b0eee8d85002305c1352b1aeab.json",
+      "name": "HIST",
+      "version": "frozen-c1695bc93fe4464f4c187c32932b2b6bf2a721b0eee8d85002305c1352b1aeab",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-3c61f394e6b47e5a55acd79f1f14f71e28c7c4cbfecacbe2d9dd9a7067e86079.json",
+      "name": "REGIME",
+      "version": "frozen-3c61f394e6b47e5a55acd79f1f14f71e28c7c4cbfecacbe2d9dd9a7067e86079",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 20
+      },
+      "n": 6530,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-8e61132b6845f5997af8b02921b94343b33c57300e939b0b827c33d4fc2b78cf.json",
+      "name": "HIST",
+      "version": "frozen-8e61132b6845f5997af8b02921b94343b33c57300e939b0b827c33d4fc2b78cf",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-438a4da0f8c979395acefbfb69357f65dd02a80dcf91515117d5be726bd4d52a.json",
+      "name": "REGIME",
+      "version": "frozen-438a4da0f8c979395acefbfb69357f65dd02a80dcf91515117d5be726bd4d52a",
+      "series": {
+        "symbol": "MU",
+        "label_type": "EOD_CLOSE",
+        "threshold_pct": 15,
+        "horizon": 60
+      },
+      "n": 6490,
+      "last_maturity": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-8ea688b3adf4e37ea0025a72e1bed1295026c55c9bdc0fedc741ac025b88a711.json",
+      "name": "HIST",
+      "version": "frozen-8ea688b3adf4e37ea0025a72e1bed1295026c55c9bdc0fedc741ac025b88a711",
+      "series": {
+        "symbol": "A",
+        "label_type": "PORTFOLIO_EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6440,
+      "last_maturity": "2026-11-07T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-f4f06be970345bbf028294596c0659826aebf5389ff27b8177eb181cb3c9fa86.json",
+      "name": "REGIME",
+      "version": "frozen-f4f06be970345bbf028294596c0659826aebf5389ff27b8177eb181cb3c9fa86",
+      "series": {
+        "symbol": "A",
+        "label_type": "PORTFOLIO_EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6440,
+      "last_maturity": "2026-11-07T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-fefde20d19810798095e4fd279b0028549e440c325685aa662dad216b14c9a8a.json",
+      "name": "HIST",
+      "version": "frozen-fefde20d19810798095e4fd279b0028549e440c325685aa662dad216b14c9a8a",
+      "series": {
+        "symbol": "B",
+        "label_type": "PORTFOLIO_EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6440,
+      "last_maturity": "2026-11-07T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-fe51405814d466de8c4a185268808efd5ad867cb9b2573800846dd33a51f42d7.json",
+      "name": "REGIME",
+      "version": "frozen-fe51405814d466de8c4a185268808efd5ad867cb9b2573800846dd33a51f42d7",
+      "series": {
+        "symbol": "B",
+        "label_type": "PORTFOLIO_EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6440,
+      "last_maturity": "2026-11-07T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-5f81026f7621514053622a93c818cd1b5e1148c4ab3ae61429388832cbe6167c.json",
+      "name": "HIST",
+      "version": "frozen-5f81026f7621514053622a93c818cd1b5e1148c4ab3ae61429388832cbe6167c",
+      "series": {
+        "symbol": "C",
+        "label_type": "PORTFOLIO_EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6440,
+      "last_maturity": "2026-11-07T00:00:00+00:00"
+    },
+    {
+      "file": "models/frozen-78a4724b31caf830b74b935ef5e8abc44d1b358f119b00101b2f6f77a377d8c0.json",
+      "name": "REGIME",
+      "version": "frozen-78a4724b31caf830b74b935ef5e8abc44d1b358f119b00101b2f6f77a377d8c0",
+      "series": {
+        "symbol": "C",
+        "label_type": "PORTFOLIO_EOD_CLOSE",
+        "threshold_pct": 10,
+        "horizon": 60
+      },
+      "n": 6440,
+      "last_maturity": "2026-11-07T00:00:00+00:00"
+    }
+  ]
+}
