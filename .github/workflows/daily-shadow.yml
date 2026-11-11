@@ -4,6 +4,8 @@ on:
     paths:
       - 'research/daily_shadow/**'
       - 'research/daily_shadow_v3/**'
+      - 'research/daily_shadow_live/**'
+      - 'reports/daily-shadow-live-v4/**'
       - 'reports/daily-shadow-postgres-v3/**'
       - 'reports/daily-shadow-postgres-v2/**'
       - '.github/workflows/daily-shadow.yml'
@@ -44,11 +46,11 @@ jobs:
       - run: pip install -r research/daily_shadow_v3/requirements.txt
       - name: Apply migration only to disposable local CI database
         run: |
-          python -m research.daily_shadow_v3.setup_fixture_db
+          python -m research.daily_shadow_live.setup_fixture_db
       - name: Offline fixtures and actual PostgreSQL permission/concurrency checks
         run: python -m unittest research.daily_shadow.test_core research.daily_shadow.test_postgres research.daily_shadow.test_reporting research.daily_shadow.test_preparation -v
       - name: Research mode, legal gates and TTL tests
-        run: python -m unittest research.daily_shadow_v3.test_unit research.daily_shadow_v3.test_postgres -v
+        run: python -m unittest research.daily_shadow_v3.test_unit research.daily_shadow_v3.test_postgres research.daily_shadow_live.test_live -v
       - name: Separate synthetic research rehearsal
         run: python -m research.daily_shadow_v3.rehearsal
       - name: Verify frozen model artifacts (network forbidden)
@@ -60,11 +62,12 @@ jobs:
           CI_POSTGRES_CONTAINER: ${{ job.services.postgres.id }}
           ALPHA_SHADOW_RESTORE_DSN: host=127.0.0.1 port=5432 dbname=alpha_shadow_restore user=alpha_shadow_test_app password=synthetic-local-only
         run: |
-          docker exec "$CI_POSTGRES_CONTAINER" pg_dump -U postgres -d alpha_shadow_research -n alpha_shadow_v1 -n alpha_research_v3 -n alpha_licensed_v3 -Fc > "$RUNNER_TEMP/shadow.dump"
+          docker exec "$CI_POSTGRES_CONTAINER" pg_dump -U postgres -d alpha_shadow_research -n alpha_shadow_v1 -n alpha_research_v3 -n alpha_licensed_v3 -n alpha_operations_v4 -Fc > "$RUNNER_TEMP/shadow.dump"
           docker exec "$CI_POSTGRES_CONTAINER" createdb -U postgres alpha_shadow_restore
           docker exec -i "$CI_POSTGRES_CONTAINER" pg_restore -U postgres -d alpha_shadow_restore --no-owner --exit-on-error < "$RUNNER_TEMP/shadow.dump"
           python -m research.daily_shadow.backup_restore
           python -m research.daily_shadow_v3.backup_restore
+          python -m research.daily_shadow_live.backup_restore
   full-research-regression:
     runs-on: ubuntu-latest
     timeout-minutes: 15

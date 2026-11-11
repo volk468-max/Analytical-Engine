@@ -75,3 +75,13 @@ authorized6symbol/actions/recent2026API and finalization timing. Tiingo retentio
 exception outside Power/50cap is unresolved. Separate purchase/isolated migration/
 first actual one-shot approvals and human evidence review precede any real launch;
 no scheduler/production/trading authorized. Full checklist in v3 report.
+
+## Q008-v4
+
+Follow exact v4 Railway handover after deployment approval is actually granted.
+Create isolated DB/service instance, configure dedicated worker paths and pinned
+CI-passing SHA, never start root production app. Verify EODHD actual API, migrations,
+real models and same-session readiness, then actual SQL count/first issue and active
+cron. Currently all operational acceptance items remain unfulfilled. No backdate.
+Address credential separation/key rotation/native backup/notification/revision review
+limitations; private historical comparison only, no public licensed series.

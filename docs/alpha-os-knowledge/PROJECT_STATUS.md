@@ -116,3 +116,12 @@ real222series allNULL; synthetic216numerical+6portfolioNULL not real observation
 Personal-only use confirmed; written permissions absent. NO-GO provider/firstlive,
 GO disposable fixtures/review. NOT RUNNING; source training flags false; PR26
 0/9 negative findings preserved. [Q008-v3](research/Q008-v3.md).
+
+## PR28 / Q008-v4, 2026-11-11
+
+Owner authorizes isolated Railway launch and confirms paid personal EODHD/current
+terms acceptance. Operational code prepared, but accept-deploy rejected by approval
+control (user did not approve); no deployment. Both services staged-create, real
+forecasts written0, first issueNULL, SQL acceptanceNOT_RUN, cronNOT_ACTIVE. Data API
+and actual new-source comparison NOT_RUN. This is not a completed daily launch.
+[Q008-v4](research/Q008-v4.md); old negative PR26 findings preserved.

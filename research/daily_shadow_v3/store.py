@@ -27,7 +27,7 @@ class ResearchStore:
     @staticmethod
     def append(c,kind,key,body):
         return c.execute('select alpha_research_v3.append(%s,%s,%s,%s)',(uuid.uuid4(),kind,key,canonical(body))).fetchone()[0]
-    def forecasts(self,key,rows,models,cid,anchor_ref,snapshot,run_mode='SYNTHETIC'):
+    def forecasts(self,key,rows,models,cid,anchor_ref,snapshot,run_mode='SYNTHETIC',*,baselines=None,baseline_cutoff=None):
         if run_mode not in ('SYNTHETIC','RESEARCH_FORECAST'):raise ValueError('NO_VALIDATED_TRADING_OR_BACKFILL_ROUTE')
         from .engine import complete_models
         models=complete_models(models)
@@ -38,7 +38,10 @@ class ResearchStore:
             for row in rows:
                 b=dict(row);b.update(contract_id=str(cid),model_id=str(mids[(b.pop('model_name'),b.pop('model_version'))]),run_mode=run_mode,anchor_ref=str(anchor_ref) if anchor_ref else None,source_fixture=snapshot.fixture,source_revision=snapshot.revision)
                 ek=key+':'+':'.join(str(b[k]) for k in ('symbol','label_type','threshold_pct','horizon','model_id'))
-                ids.append(self.append(c,'FORECAST',ek,b))
+                fid=self.append(c,'FORECAST',ek,b);ids.append(fid)
+                if baselines is not None and b['status']=='RESEARCH_FORECAST':
+                    p,n=baselines[tuple(b[k] for k in ('symbol','label_type','threshold_pct','horizon'))]
+                    c.execute('select alpha_operations_v4.baseline(%s,%s,%s,%s)',(fid,p,n,baseline_cutoff))
         return ids
     def outcome(self,key,body):
         with self.connect() as c:return self.append(c,'OUTCOME',key,body)

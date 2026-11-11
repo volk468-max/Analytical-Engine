@@ -1,0 +1,48 @@
+{
+  "operational_acceptance": "NOT_COMPLETE",
+  "railway_deploy": "APPROVAL_REJECTED_NO_DEPLOYMENT",
+  "railway_data_api": "NOT_RUN",
+  "railway_forecasts_written": 0,
+  "railway_sql_acceptance": "NOT_RUN",
+  "first_issue_utc": null,
+  "cron_active": false,
+  "staged_bootstrap_image": "python:3.12-slim",
+  "unique_tests": 355,
+  "local_pipeline_pg18": 164,
+  "new_live_tests": 22,
+  "parent_seven_suites": 180,
+  "root_tests": 2,
+  "knowledge_tests": 9,
+  "skips_final": 0,
+  "offline_pr26_replay": "PASS",
+  "frozen_artifacts_reproduced": 222,
+  "synthetic_local_backup_restore": "FOUR_SCHEMAS_CONTENT_VERIFIED",
+  "actual_historical_eodhd_comparison": "NOT_RUN",
+  "exact_provider_invoice": "UNKNOWN_NO_PURCHASES",
+  "logs": {
+    "v4-final-tests.log": {
+      "bytes": 21486,
+      "sha256": "bf51ca7eccaf34652a960b9a11da41e82402fd151f63305e7ce36948bd760f5c"
+    },
+    "v4-new-tests.log": {
+      "bytes": 98,
+      "sha256": "6da57d45afcaa543dde948154d9e4146e1b533bf1f88647aee69289a18c59f0f"
+    },
+    "v4-parent-checks.log": {
+      "bytes": 18370,
+      "sha256": "36c277c76103a7cbcbe83cf12660f2356b1d23a3b41fbb47c580052af499e24c"
+    },
+    "v4-backup.log": {
+      "bytes": 3296,
+      "sha256": "e6a08b9176ec030919a025165ad345c2c8cb02ddd109081af9913ec13d59ab81"
+    },
+    "v4-knowledge-tests.log": {
+      "bytes": 914,
+      "sha256": "a0db0587a595faed183584b8c40a7c18b710a7f8024ac9688424d1a940011d27"
+    },
+    "v4-online.log": {
+      "bytes": 52,
+      "sha256": "a922f2900b8218297589ac223cff1dec6dfe21087cc60beb969fdba69cea37f6"
+    }
+  }
+}

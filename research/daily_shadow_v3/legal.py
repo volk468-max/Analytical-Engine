@@ -21,6 +21,8 @@ class Permit:
     backups:bool=False
     finalization_verified:bool=False
     revoked:bool=False
+    existing_paid_owner_authorized:bool=False
+    authorized_vendor_cap_usd:str|None=None
 
     def reason(self,now,*,fixture=False,horizon_end=None):
         if self.revoked:return 'VENDOR_OFFBOARDED'
@@ -28,8 +30,8 @@ class Permit:
         if fixture != (self.scope=='FIXTURE_ONLY'):return 'FIXTURE_LIVE_SCOPE_MISMATCH'
         if not self.paid:return 'TRIAL_DURABLE_STORAGE_FORBIDDEN'
         if not self.reviewer_evidence or self.operator_class=='UNKNOWN':return 'MISSING_APPLICABLE_LICENSE_REVIEW'
-        if self.total_monthly_usd is None:return 'TOTAL_PRICE_TAXES_UNCONFIRMED'
-        try:cost=Decimal(self.total_monthly_usd)
+        if self.total_monthly_usd is None and not self.existing_paid_owner_authorized:return 'TOTAL_PRICE_TAXES_UNCONFIRMED'
+        try:cost=Decimal(self.total_monthly_usd if self.total_monthly_usd is not None else self.authorized_vendor_cap_usd)
         except (InvalidOperation,TypeError,ValueError):return 'INVALID_TOTAL_PRICE'
         if not cost.is_finite() or not 0<=cost<=50:return 'VENDOR_BUDGET_EXCEEDED'
         if not self.access_until or utc(now)>=utc(self.access_until):return 'SUBSCRIPTION_EXPIRED'

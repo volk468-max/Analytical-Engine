@@ -159,5 +159,13 @@
   ],
   "not_found_at_initial_check": [
     14
-  ]
+  ],
+  "last_task": {
+    "id": "Q008-v4",
+    "operational_status": "NOT_RUNNING_DEPLOYMENT_APPROVAL_BLOCKED",
+    "real_forecasts_written": 0,
+    "first_issue_utc": null,
+    "sql_acceptance": "NOT_RUN",
+    "cron_active": false
+  }
 }

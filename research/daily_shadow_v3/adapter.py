@@ -101,8 +101,8 @@ def issuance_gate(session,issued,permit):
     except (ValueError,TypeError):return 'INVALID_UTC_OR_SESSION'
 
 class EODHDAdapter:
-    def __init__(self,permit,transport=None,clock=None,network_approved=False):
-        self.permit=permit;self.transport=transport or HTTPTransport();self.clock=clock or (lambda:datetime.now(timezone.utc));self.network_approved=network_approved
+    def __init__(self,permit,transport=None,clock=None,network_approved=False,history_start=None):
+        self.permit=permit;self.transport=transport or HTTPTransport();self.clock=clock or (lambda:datetime.now(timezone.utc));self.network_approved=network_approved;self.history_start=date_only(history_start) if history_start else None
 
     def collect(self,session):
         date_only(session);fixture=bool(self.transport.fixture);start_time=self.clock().isoformat()
@@ -126,7 +126,8 @@ class EODHDAdapter:
         metadata=get('/api/exchange-symbol-list/US',{'fmt':'json'})
         if not isinstance(metadata,list):raise VendorError('INVALID_SYMBOL_METADATA')
         bycode={r.get('Code'):r for r in metadata if isinstance(r,dict)};bars={};splits={};dividends={};currency={}
-        since=(datetime.strptime(session,'%Y-%m-%d')-timedelta(days=400)).date().isoformat()
+        since=self.history_start or (datetime.strptime(session,'%Y-%m-%d')-timedelta(days=400)).date().isoformat()
+        if since>session:raise VendorError('INVALID_HISTORY_START')
         for symbol,mapped in MAPPING.items():
             if bycode.get(symbol,{}).get('Currency')!='USD':raise VendorError('CURRENCY_OR_SYMBOL_NOT_VERIFIED')
             currency[symbol]='USD';params={'from':since,'to':session,'fmt':'json'}

@@ -77,3 +77,12 @@ personal research and no written provider permissions. No subscription, paid
 provisioning, actual forecast, Railway production mutation, schedule, merge/deploy
 or trade authorized. Conditional vendor choice/NO-GO are research conclusions,
 not approval to buy or launch.
+
+## Owner daily-launch request, 2026-11-11 / Q008-v4
+
+Owner explicitly authorizes deployment/migration/first real forecast/daily schedule
+in project73fc59d1-8aaf-480d-bc33-313cbdf428e6/environmenteb43b87d-7d51-46a6-829d-cd0c5b68e0f2.
+Owner confirms existing paid EODHD personal subscription and accepts current terms
+for private Railway/backups. This supersedes previous preparation-only scope for
+these isolated resources, not production or trading. The platform approval tool
+rejected accept-deploy; that is a tool result, not an inferred owner policy.

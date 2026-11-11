@@ -96,3 +96,8 @@ preparation](research/Q008-v2.md). Old source cards and PR26 parent outputs pres
 [Separate research forecast/source-licence milestone](research/Q008-v3.md). Existing
 Draft PR28, EODHD conditional primary, no qualified provider or real launch. Historical
 Q008/R26 records and negative results preserved.
+
+## Q008-v4
+
+[Daily EODHD worker / blocked Railway launch](research/Q008-v4.md). New owner scope
+allows isolated deployment; tool approval rejected, NOT RUNNING. Old cards retained.

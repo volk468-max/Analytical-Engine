@@ -41,3 +41,12 @@ revised vintage, never original PIT. Preregister2000–2026 six symbols, minimum
 sessions features, beta1/1/shrink20, fit expanding annually only matured labels,
 no tuning; report results/coverage only if actual licensed fetch succeeds. Raw
 history private Railway vault only, never public repo; no empirical result fabricated.
+
+Before actual API evaluation: annual historical comparison requires >=252joint mature
+training anchors, >=200QQQ sessions for features, same common valid dates per-source,
+no compressed calendar gaps. /api/user primary docs expose subscriptionType=monthly/
+yearly and dailyRateLimit, NOT product/paid-through/invoice. Check these metadata
+against owner declaration; actual six-symbol long-history fetch verifies dataset
+access. Do not label the user API response an independently verified invoice.
+Operational readiness is dynamic per session after two stable snapshots, not a
+static claim that no future provider correction can occur. Publication remains NULL.

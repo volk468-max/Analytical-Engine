@@ -71,3 +71,12 @@ operator confirmed. Separate research-mode/legal gates, EODHD fixture adapter,
 deletable encrypted payload plane, immutable safe audit, TTL/offboard/restore and
 paired full-horizon outcomes. Currentreal0/222, synthetic216+6NULL. New card/report,
 old artifacts/source cards/negative PR26 findings retained. NO-GO live/provider.
+
+## 2026-11-11 Q008-v4
+
+Expanded owner authorization and paid personal EODHD acceptance recorded. Added
+separate worker/Dockerfile/Railway config, hash migrations, real artifact loader,
+session readiness, atomic baseline, outcomes/weekly/private historical comparison.
+Railway accept-deploy denied (user did not approve), services remain staged; real0,
+firstNULL, croninactive, actual API/comparisonNOT_RUN. Exact handover supplied;
+NOT RUNNING and not accepted. No production/trades/merge, old findings retained.

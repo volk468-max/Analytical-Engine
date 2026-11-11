@@ -637,6 +637,14 @@
       "card": "research/Q008-v3.md",
       "supersedes": "Q008-v2 preparation checkpoint; original preserved",
       "classification": "SYNTHETIC_STAGING_ONLY_PROVIDER_NO_GO"
+    },
+    {
+      "id": "Q008-v4",
+      "title": "Daily EODHD worker and Railway handover; launch approval blocked",
+      "branch": "research/daily-shadow-postgres-v1",
+      "card": "research/Q008-v4.md",
+      "supersedes": "Q008-v3 owner scope/preparation; all old records preserved",
+      "classification": "CODE_PREPARED_NOT_RUNNING_DEPLOYMENT_APPROVAL_BLOCKED"
     }
   ]
 }

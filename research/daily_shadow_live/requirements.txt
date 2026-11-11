@@ -1,0 +1,1 @@
+-r ../daily_shadow_v3/requirements.txt
