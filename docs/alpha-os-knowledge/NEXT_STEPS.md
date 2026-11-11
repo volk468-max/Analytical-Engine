@@ -55,3 +55,33 @@ promote lower marginal bias to predictive advantage. Frozen prospective design a
 blinded power/precision review needed; no new calibrator/threshold search on test
 history. No production/launch/trades authorized. PR28 dependency synchronization
 is separate future work, not performed here.
+
+## Q008
+
+Review isolated DB/provider/model/permissions/cost/cron/notifications/retention/backfill/go-live checklist. Obtain separate explicit approval before provisioning, migration, live run or schedule. False Signal Anatomy follow-up preregistration.
+
+## Q008-v2
+
+Resolve verified live data/retention/publication/actions contract and training source
+qualification; separate owner approval for exact isolated DB/roles/budget/backup/
+notifications/go-live, then supervised actual-record inspection before any live claim.
+No provision/deploy/cron/trades are authorized by this preparation milestone.
+
+## Q008-v3
+
+Obtain applicable dated EODHD retention/cloud/backup clarification; personal-only
+classification is confirmed, written permissions absent. Verify total invoice<=50,
+authorized6symbol/actions/recent2026API and finalization timing. Tiingo retention
+exception outside Power/50cap is unresolved. Separate purchase/isolated migration/
+first actual one-shot approvals and human evidence review precede any real launch;
+no scheduler/production/trading authorized. Full checklist in v3 report.
+
+## Q008-v4
+
+Follow exact v4 Railway handover after deployment approval is actually granted.
+Create isolated DB/service instance, configure dedicated worker paths and pinned
+CI-passing SHA, never start root production app. Verify EODHD actual API, migrations,
+real models and same-session readiness, then actual SQL count/first issue and active
+cron. Currently all operational acceptance items remain unfulfilled. No backdate.
+Address credential separation/key rotation/native backup/notification/revision review
+limitations; private historical comparison only, no public licensed series.

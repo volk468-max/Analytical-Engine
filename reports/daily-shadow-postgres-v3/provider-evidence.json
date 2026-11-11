@@ -1,0 +1,81 @@
+[
+  {
+    "id": "eodhd-storage",
+    "url": "https://eodhd.com/help/storage",
+    "retrieved_at": "2026-11-11T07:50:17.039259+00:00",
+    "scope": "PUBLIC_DOCUMENT_NOT_DATA_API",
+    "raw_document_committed": false,
+    "status": 200,
+    "final_url": "https://eodhd.com/help/storage",
+    "sha256": "2183b412141d34a055a79b1b020dd919c74892f8f9f9018e34c9c9bb0ed7680b",
+    "last_modified": null
+  },
+  {
+    "id": "eodhd-terms",
+    "url": "https://eodhd.com/financial-apis/terms-conditions",
+    "retrieved_at": "2026-11-11T07:50:17.696645+00:00",
+    "scope": "PUBLIC_DOCUMENT_NOT_DATA_API",
+    "raw_document_committed": false,
+    "status": 200,
+    "final_url": "https://eodhd.com/financial-apis/terms-conditions",
+    "sha256": "ff3537431be6e2ef28a2417e233dc04eb7a860a522253987dba1f354cb6f22b5",
+    "last_modified": null,
+    "delete_word_present": false,
+    "one_month_termination_deletion_found": false
+  },
+  {
+    "id": "eodhd-pricing",
+    "url": "https://eodhd.com/pricing",
+    "retrieved_at": "2026-11-11T07:50:18.488260+00:00",
+    "scope": "PUBLIC_DOCUMENT_NOT_DATA_API",
+    "raw_document_committed": false,
+    "status": 200,
+    "final_url": "https://eodhd.com/pricing",
+    "sha256": "9ddda710ecb538b0067d84426dbbf7296ab3b4637274b46ed656cb86d5301f7a",
+    "last_modified": null
+  },
+  {
+    "id": "tiingo-tos",
+    "url": "https://www.tiingo.com/tos/",
+    "retrieved_at": "2026-11-11T07:50:18.973353+00:00",
+    "scope": "PUBLIC_DOCUMENT_NOT_DATA_API",
+    "raw_document_committed": false,
+    "status": 200,
+    "final_url": "https://www.tiingo.com/tos/",
+    "sha256": "0cdc74c597f4ac04634877d385f575afbc00a6a177818ba584d05012718f6fe3",
+    "last_modified": null
+  },
+  {
+    "id": "tiingo-pricing",
+    "url": "https://www.tiingo.com/about/pricing",
+    "retrieved_at": "2026-11-11T07:50:19.563415+00:00",
+    "scope": "PUBLIC_DOCUMENT_NOT_DATA_API",
+    "raw_document_committed": false,
+    "status": 200,
+    "final_url": "https://www.tiingo.com/about/pricing",
+    "sha256": "be2991bbe025abac1e2cafd6c1be5654fe4ea1f79f88f03cf4dd6c44868ee52a",
+    "last_modified": null
+  },
+  {
+    "id": "massive-pricing",
+    "url": "https://massive.com/stocks",
+    "retrieved_at": "2026-11-11T07:50:19.837134+00:00",
+    "scope": "PUBLIC_DOCUMENT_NOT_DATA_API",
+    "raw_document_committed": false,
+    "status": 200,
+    "final_url": "https://massive.com/stocks",
+    "sha256": "1fd97ee4cd3b219395d4b7c40bd655aba2c80489c5941938ede2a285f2574879",
+    "last_modified": null
+  },
+  {
+    "id": "massive-terms",
+    "url": "https://massive.com/legal/individuals-terms-of-service",
+    "retrieved_at": "2026-11-11T07:50:20.357389+00:00",
+    "scope": "PUBLIC_DOCUMENT_NOT_DATA_API",
+    "raw_document_committed": false,
+    "status": 200,
+    "final_url": "https://massive.com/legal/individuals-terms-of-service",
+    "sha256": "3a128fbb2aafd677a5729bd292549a29efbf2ee43e9a0d02f61f8d6f316a7879",
+    "last_modified": null
+  }
+]

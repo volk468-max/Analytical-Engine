@@ -1,0 +1,5 @@
+{
+  "$schema": "https://railway.com/railway.schema.json",
+  "build": {"builder":"DOCKERFILE","dockerfilePath":"research/daily_shadow_live/Dockerfile","watchPatterns":["research/daily_shadow*/**","reports/daily-shadow-postgres-v2/**","research/daily_shadow_live/**"]},
+  "deploy": {"preDeployCommand":["python -m research.daily_shadow_live.bootstrap"],"startCommand":"python -m research.daily_shadow_live.runtime","cronSchedule":"0 2 * * 2-6","restartPolicyType":"NEVER"}
+}

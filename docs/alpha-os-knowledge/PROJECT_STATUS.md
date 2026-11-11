@@ -89,3 +89,39 @@ Q007 first milestone: action gate BLOCKED; minimal syntheticcal code, realP/metr
 Existing PR26 continued; current SHA from Git history (no self-reference). MU sample
 resolved, full qualification BLOCKED. Preliminary historical metrics and descriptive
 ledger available; no demonstrated model advantage, no live/deployed functionality.
+
+## Issue27 / Q008
+
+| PR | State | Draft | Merged |
+|---|---|---|---|
+| [#26](https://github.com/volk468-max/Analytical-Engine/pull/26) | open | true | false |
+
+Q008: daily-shadow code/design, local PostgreSQL16 tests only. NOT RUNNING; no production changes or prospective rows.
+
+## PR28 continuation / Q008-v2
+
+| PR | State | Draft | Merged |
+|---|---|---|---|
+| [#26](https://github.com/volk468-max/Analytical-Engine/pull/26) | open | true | false |
+
+Current dependency `291762bb951ce806f7e289bd261e6797664e9dd7`; old status checkpoint remains historical. Q008-v2
+sourcecontract BLOCKED, NOT RUNNING, no prospective rows or production connection.
+PostgreSQL18 local rehearsal is infrastructure proof, not live/model qualification.
+
+## PR28 / Q008-v3, 2026-11-11
+
+[Draft PR28](https://github.com/volk468-max/Analytical-Engine/pull/28) remains open/unmerged;
+base is current Draft PR26. EODHD adapter and separate RESEARCH_FORECAST prepared,
+real222series allNULL; synthetic216numerical+6portfolioNULL not real observations.
+Personal-only use confirmed; written permissions absent. NO-GO provider/firstlive,
+GO disposable fixtures/review. NOT RUNNING; source training flags false; PR26
+0/9 negative findings preserved. [Q008-v3](research/Q008-v3.md).
+
+## PR28 / Q008-v4, 2026-11-11
+
+Owner authorizes isolated Railway launch and confirms paid personal EODHD/current
+terms acceptance. Operational code prepared, but accept-deploy rejected by approval
+control (user did not approve); no deployment. Both services staged-create, real
+forecasts written0, first issueNULL, SQL acceptanceNOT_RUN, cronNOT_ACTIVE. Data API
+and actual new-source comparison NOT_RUN. This is not a completed daily launch.
+[Q008-v4](research/Q008-v4.md); old negative PR26 findings preserved.

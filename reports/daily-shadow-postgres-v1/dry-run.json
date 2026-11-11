@@ -1,0 +1,10 @@
+{
+  "status": "NOT RUNNING",
+  "mode": "OFFLINE_SYNTHETIC",
+  "requested_series": 222,
+  "records": 222,
+  "all_probabilities_null": true,
+  "idempotent": true,
+  "live_forecasts_exist": false,
+  "database_mutated": false
+}

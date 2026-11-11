@@ -54,3 +54,14 @@ Full independent price/action completeness, original vintages/availability, actu
 dividend payment dates and executable auction alignment remain unknown. QQQ vendor
 rounding policy unverified. EffectiveN descriptive; independent market-event count
 UNKNOWN; no independent holdout or established statistical advantage.
+
+## Q008
+
+Collector API and source terms/availability, independent action reconciliation, qualified frozen models, staging PostgreSQL18 permissions/restore, WORM anchoring and power analysis remain unresolved. No live forecasts exist.
+
+## Q008-v2
+
+Collector deployed SHA/API freshness and owner-specific source terms remain unknown.
+No source publication timestamps, corporate-action lineage or original raw vintages
+in the inspected contract; SOXX absent. Full training/PIT qualification and calibrated
+advantage unresolved. WORM/offsite signer, backup retention and alerts need approval.

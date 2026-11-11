@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-09",
+  "checked_at": "2026-11-11",
   "baseline_sha": "a14ebf9c268bea5cb01de962edfb98b8df94652a",
   "pull_requests": [
     {
@@ -148,9 +148,24 @@
       "draft": true,
       "merged": false,
       "head_sha": "51fb1d34ddb7a28e8bbc7b2361dcfc2107890f0b"
+    },
+    {
+      "number": 26,
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "291762bb951ce806f7e289bd261e6797664e9dd7"
     }
   ],
   "not_found_at_initial_check": [
     14
-  ]
+  ],
+  "last_task": {
+    "id": "Q008-v4",
+    "operational_status": "NOT_RUNNING_DEPLOYMENT_APPROVAL_BLOCKED",
+    "real_forecasts_written": 0,
+    "first_issue_utc": null,
+    "sql_acceptance": "NOT_RUN",
+    "cron_active": false
+  }
 }

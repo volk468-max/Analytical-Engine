@@ -50,3 +50,33 @@ reconciled; QQQ numeric rounding compatible, not full qualification. Added real
 preliminary nested calibration (0/9primary wins;Holm1), continuous descriptive
 A/B/C/static ledgers/costs/reserve analysis and46subsystem tests. Old v1
 reports/cards/records preserved; full-history/PIT gate remains BLOCKED.
+
+## 2026-11-09 Q008
+
+Issue27 protocol-first daily-shadow infrastructure, append-only SQL design and57local tests. NOT RUNNING, synthetic all222NULL; no production connection/mutation. Added R26/Q008; existing source cards unchanged.
+
+## 2026-11-09 Q008-v2
+
+PR28 rebased to current PR26, conflicts resolved preserving source history. R26-v2
+negative evidence catalogued. Collector source-contract audit,222unqualified per-series
+frozen artifacts, explicit external live blocker and PostgreSQL18 synthetic staging
+with own-backend disconnect/recovery and immutable provenance. NOT RUNNING; no live,
+production, deploy, paid provisioning, cron or trades.
+
+## 2026-11-11 Q008-v3
+
+Due diligence/protocol first; current EODHD deletion clause not reproduced, individual
+permission absent; Tiingo Power postcancel retention incompatible. Personal-only
+operator confirmed. Separate research-mode/legal gates, EODHD fixture adapter,
+deletable encrypted payload plane, immutable safe audit, TTL/offboard/restore and
+paired full-horizon outcomes. Currentreal0/222, synthetic216+6NULL. New card/report,
+old artifacts/source cards/negative PR26 findings retained. NO-GO live/provider.
+
+## 2026-11-11 Q008-v4
+
+Expanded owner authorization and paid personal EODHD acceptance recorded. Added
+separate worker/Dockerfile/Railway config, hash migrations, real artifact loader,
+session readiness, atomic baseline, outcomes/weekly/private historical comparison.
+Railway accept-deploy denied (user did not approve), services remain staged; real0,
+firstNULL, croninactive, actual API/comparisonNOT_RUN. Exact handover supplied;
+NOT RUNNING and not accepted. No production/trades/merge, old findings retained.

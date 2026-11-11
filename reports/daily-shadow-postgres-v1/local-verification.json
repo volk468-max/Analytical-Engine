@@ -1,0 +1,38 @@
+{
+  "status": "NOT RUNNING",
+  "tested_at": "2026-11-09",
+  "subsystem_tests": 57,
+  "integration_tests": 17,
+  "integration_skips": 0,
+  "knowledge_regression_tests": 9,
+  "postgres_version": "16.15 (Debian 16.15-1.pgdg13+2)",
+  "database_scope": "DISPOSABLE_LOOPBACK_CONTAINER_ONLY",
+  "production_database_connected": false,
+  "railway_migration_applied": false,
+  "network_forbidden_fixture_test": true,
+  "dry_run": {
+    "status": "NOT RUNNING",
+    "mode": "OFFLINE_SYNTHETIC",
+    "requested_series": 222,
+    "records": 222,
+    "all_probabilities_null": true,
+    "idempotent": true,
+    "live_forecasts_exist": false,
+    "database_mutated": false
+  },
+  "artifacts_sha256": {
+    "research/daily_shadow/core.py": "06cad11ef4d928817b7d1cfca7783414c6954cc96cd42b08c92fef68cd103f9c",
+    "research/daily_shadow/demo.py": "33a836149b1c02891c9d83000db816b6cf4567825e1351fcad340f6b72b83f9e",
+    "research/daily_shadow/reporting.py": "1bd5c32f6139491dd86993b624b369456c37bb4ca5b9b7007cb51f6381c04dd2",
+    "research/daily_shadow/requirements.txt": "9c2cd7755542f0fee799050b6c89761b6213b6b7f7ba4a8d1f9ddc2a42bc3c04",
+    "research/daily_shadow/resolver.py": "fc206158c98f0d310455803267d52a34bc6ae9016afbae3d3977526330d49824",
+    "research/daily_shadow/runner.py": "61001e1d3db8b5f754f5492655d48b9c25561ce52ef1833c8a758c82bd7c97b0",
+    "research/daily_shadow/sql/001_isolated.sql": "629176e9c919a475b254ef3df23baa04ac504edba1ba91c8338f9c10eb9166ab",
+    "research/daily_shadow/sql/002_readonly_reports.sql": "a148427e06ae6be4e9900efb37171f3147972c4eb7a5a69a7a67e6945a404993",
+    "research/daily_shadow/store.py": "b39e86b59ca91f54c5d51980fd8370711b27816f8a3aa08e975d3aa05adf6f0d",
+    "research/daily_shadow/test_core.py": "610e091a9280776022a7271c53cef0fa76d7b36f34e2ff42f693e82740458882",
+    "research/daily_shadow/test_postgres.py": "834e1c812afc5263a8f61d9a51eaa2a9c73ebd69b46fab2ddfc243395a89efb4",
+    "research/daily_shadow/test_reporting.py": "2753377438b74f9dd2971b391936178e46bcfe7e2abf6336e478ae844db03e57"
+  },
+  "knowledge_online_validation": "PASS including live GitHub source/head/blob checks"
+}

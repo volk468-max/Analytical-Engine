@@ -1,0 +1,64 @@
+{
+  "checked_at": "2026-11-09",
+  "mode": "READ_ONLY_SOURCE_CODE_ONLY",
+  "collector_repository": "volk468-max/Data-collector-1.0",
+  "collector_commit": "ef80df85b5faead5068854afbf9517f97cf9ba00",
+  "deployed_sha": "UNKNOWN_NOT_INFERRED_FROM_MAIN",
+  "pins": [
+    {
+      "path": "adc/providers/models.py",
+      "blob": "4977a6497b957d8bba1c32ba9faa967e9a0802ac",
+      "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/adc/providers/models.py"
+    },
+    {
+      "path": "adc/api/server.py",
+      "blob": "7bf211e832102d08dee7518b3f99c126dfcb96ac",
+      "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/adc/api/server.py"
+    },
+    {
+      "path": "adc/history/collector.py",
+      "blob": "8c251f15db40d1f376426dc1396693f0060f6eea",
+      "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/adc/history/collector.py"
+    },
+    {
+      "path": "adc/providers/yahoo.py",
+      "blob": "8f8b41720726e0feca4cbc1aa6edec6f14ac9374",
+      "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/adc/providers/yahoo.py"
+    },
+    {
+      "path": "adc/storage/database.py",
+      "blob": "53f8d22169669346d012af1569a3eaabb0d73b5c",
+      "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/adc/storage/database.py"
+    },
+    {
+      "path": "adc/storage/repository.py",
+      "blob": "5b9b51bceb7b51fe69a35fa99befc0b53b83c41f",
+      "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/adc/storage/repository.py"
+    },
+    {
+      "path": "adc/config/market_sources.json",
+      "blob": "d18ee8307acf61fb245056a296b0b80aaba03608",
+      "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/adc/config/market_sources.json"
+    },
+    {
+      "path": "requirements.txt",
+      "blob": "5f550f392f20d04234da4e2e54cabf5e337463f6",
+      "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/requirements.txt"
+    },
+    {
+      "path": "README.md",
+      "blob": "39a8f112d58ae699409d1107857a0f95da4d7a34",
+      "url": "https://github.com/volk468-max/Data-collector-1.0/blob/ef80df85b5faead5068854afbf9517f97cf9ba00/README.md"
+    }
+  ],
+  "endpoints_not_called": true,
+  "hosted_database_connected": false,
+  "collector_imported_or_started": false,
+  "source_qualification": "BLOCKED_NO_LIVE_CONTRACT",
+  "yfinance_notice": {
+    "url": "https://github.com/ranaroussi/yfinance/blob/main/README.md",
+    "blob": "1a88866061ee62abf6722ef068029aefcf419fc4",
+    "checked_at": "2026-11-09",
+    "facts": "Library Apache license is not a data license; README directs users to Yahoo terms and describes personal-use scope. No owner-specific right or durable archival/redistribution retention grant verified."
+  }
+}

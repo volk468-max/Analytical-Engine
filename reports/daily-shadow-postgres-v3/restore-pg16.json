@@ -1,0 +1,19 @@
+{
+  "daily_shadow": {
+    "scope": "DISPOSABLE_LOOPBACK_ONLY",
+    "audit_rows": 8624,
+    "original_equals_restored": true,
+    "hash_chain_valid": true,
+    "prospective_rows": 0,
+    "production_touched": false
+  },
+  "daily_shadow_v3": {
+    "classification": "SYNTHETIC_DISPOSABLE_RESTORE_ONLY",
+    "research_journal_rows": 7338,
+    "original_equals_restored": true,
+    "hash_chain_verified": true,
+    "actual_research_forecasts": 0,
+    "fresh_license_authority_required_before_real_backup_restore": true,
+    "production_touched": false
+  }
+}

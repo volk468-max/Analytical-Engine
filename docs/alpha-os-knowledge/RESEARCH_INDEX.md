@@ -81,3 +81,23 @@ Q005-v1: [Portfolio probability research](research/Q005-v1.md). Предыдущ
 [Preliminary real calibration and continuous ledger](research/Q007-v2.md), supersedes
 limited Q007-v1 milestone; original card/source/results preserved. Same Draft PR26,
 not a new PR. New owner evidence/authorization is the reason for further research.
+
+## Q008
+
+[R26 source qualification](research/R26-v1.md); [Q008 daily shadow infrastructure](research/Q008-v1.md). Earlier research preserved.
+
+## Q008-v2
+
+[R26-v2 preliminary negative findings](research/R26-v2.md); [Q008-v2 PostgreSQL18
+preparation](research/Q008-v2.md). Old source cards and PR26 parent outputs preserved.
+
+## Q008-v3
+
+[Separate research forecast/source-licence milestone](research/Q008-v3.md). Existing
+Draft PR28, EODHD conditional primary, no qualified provider or real launch. Historical
+Q008/R26 records and negative results preserved.
+
+## Q008-v4
+
+[Daily EODHD worker / blocked Railway launch](research/Q008-v4.md). New owner scope
+allows isolated deployment; tool approval rejected, NOT RUNNING. Old cards retained.

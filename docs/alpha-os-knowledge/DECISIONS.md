@@ -56,3 +56,33 @@ Owner supplied Micron/Vienna sources and explicitly authorized a separately labe
 preliminary study if full qualification cannot be completed. This modifies only the
 prior research stop condition; no PIT certification or production/trading approval.
 Use the existing Draft PR26. No threshold-driven protective simulations authorized.
+
+## Issue27
+
+Owner authorized design/code/Draft only: https://github.com/volk468-max/Analytical-Engine/issues/27 . Separate approval required for live deployment, DB mutation, cron and paid resources. New isolated DB, candidate schedule and budget are proposals, not approved decisions.
+
+## PR28 owner-approved continuation, 2026-11-09
+
+Exact task: https://github.com/volk468-max/Analytical-Engine/pull/28#issuecomment-6743417658 .
+Authorized dependency update/code/review/disposable staging only. Not permission to
+write Railway production DB, deploy, schedule, provision paid resources or trade.
+NO-GO live and source-contract findings are research conclusions, not new owner policy.
+
+## PR28 owner task, 2026-11-11
+
+https://github.com/volk468-max/Analytical-Engine/pull/28#issuecomment-6788172712
+authorizes due diligence, EODHD-first adapter, distinct RESEARCH_FORECAST and local
+disposable testing; vendor budget<=50/month. Owner subsequently confirmed only
+personal research and no written provider permissions. No subscription, paid
+provisioning, actual forecast, Railway production mutation, schedule, merge/deploy
+or trade authorized. Conditional vendor choice/NO-GO are research conclusions,
+not approval to buy or launch.
+
+## Owner daily-launch request, 2026-11-11 / Q008-v4
+
+Owner explicitly authorizes deployment/migration/first real forecast/daily schedule
+in project73fc59d1-8aaf-480d-bc33-313cbdf428e6/environmenteb43b87d-7d51-46a6-829d-cd0c5b68e0f2.
+Owner confirms existing paid EODHD personal subscription and accepts current terms
+for private Railway/backups. This supersedes previous preparation-only scope for
+these isolated resources, not production or trading. The platform approval tool
+rejected accept-deploy; that is a tool result, not an inferred owner policy.

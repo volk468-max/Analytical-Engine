@@ -1,0 +1,29 @@
+[
+  {
+    "document": "storage",
+    "url": "https://eodhd.com/help/storage",
+    "status": 200,
+    "retrieved_at": "2026-11-11T13:49:50.796982+00:00",
+    "sha256": "fb7b869c9ab2fdbcd26ebf20b34c8408fc056a98e8a6f335cc29aeb6f00050ba",
+    "individual_provider_reply": false,
+    "raw_committed": false
+  },
+  {
+    "document": "terms",
+    "url": "https://eodhd.com/financial-apis/terms-conditions",
+    "status": 200,
+    "retrieved_at": "2026-11-11T13:49:51.503987+00:00",
+    "sha256": "ec9c56d57d9b96d4f83c150981bb32f4eaa1d93630f551c1620c3ac7e72f873f",
+    "individual_provider_reply": false,
+    "raw_committed": false
+  },
+  {
+    "document": "personal",
+    "url": "https://eodhd.com/help/personal-use",
+    "status": 200,
+    "retrieved_at": "2026-11-11T13:49:51.757850+00:00",
+    "sha256": "5f437cc7e9e1281257b54dcef0d033f6ed06e4a947379335d25cc526eb8d25f0",
+    "individual_provider_reply": false,
+    "raw_committed": false
+  }
+]
