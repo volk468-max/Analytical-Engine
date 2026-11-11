@@ -62,3 +62,12 @@ negative evidence catalogued. Collector source-contract audit,222unqualified per
 frozen artifacts, explicit external live blocker and PostgreSQL18 synthetic staging
 with own-backend disconnect/recovery and immutable provenance. NOT RUNNING; no live,
 production, deploy, paid provisioning, cron or trades.
+
+## 2026-11-11 Q008-v3
+
+Due diligence/protocol first; current EODHD deletion clause not reproduced, individual
+permission absent; Tiingo Power postcancel retention incompatible. Personal-only
+operator confirmed. Separate research-mode/legal gates, EODHD fixture adapter,
+deletable encrypted payload plane, immutable safe audit, TTL/offboard/restore and
+paired full-horizon outcomes. Currentreal0/222, synthetic216+6NULL. New card/report,
+old artifacts/source cards/negative PR26 findings retained. NO-GO live/provider.

@@ -67,3 +67,13 @@ Exact task: https://github.com/volk468-max/Analytical-Engine/pull/28#issuecommen
 Authorized dependency update/code/review/disposable staging only. Not permission to
 write Railway production DB, deploy, schedule, provision paid resources or trade.
 NO-GO live and source-contract findings are research conclusions, not new owner policy.
+
+## PR28 owner task, 2026-11-11
+
+https://github.com/volk468-max/Analytical-Engine/pull/28#issuecomment-6788172712
+authorizes due diligence, EODHD-first adapter, distinct RESEARCH_FORECAST and local
+disposable testing; vendor budget<=50/month. Owner subsequently confirmed only
+personal research and no written provider permissions. No subscription, paid
+provisioning, actual forecast, Railway production mutation, schedule, merge/deploy
+or trade authorized. Conditional vendor choice/NO-GO are research conclusions,
+not approval to buy or launch.

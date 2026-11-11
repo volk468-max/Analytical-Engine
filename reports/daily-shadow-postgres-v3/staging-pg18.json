@@ -1,0 +1,41 @@
+{
+  "actual_prospective_forecasts": 0,
+  "actual_qualified_sources": 0,
+  "actual_vendor_requests": 0,
+  "calibrated_probabilities": 0,
+  "classification": "SYNTHETIC_OFFLINE_NOT_VENDOR_QUALIFICATION",
+  "event_definitions": 111,
+  "external_backup_purge": "NOT_CLAIMED; separate independent receipt required",
+  "fixture_candidate_probabilities": 216,
+  "fixture_portfolio_null": 6,
+  "frozen_original_anchor": true,
+  "full_horizon_outcome": "MATURED",
+  "idempotent_retry": true,
+  "legacy_chain_verified": true,
+  "legal_blocked_null": 222,
+  "model_qualified_changed": false,
+  "offboard_active_payloads_deleted": 2,
+  "own_backend_failure_recovered": true,
+  "paired_live_metrics": {
+    "confidence_interval": null,
+    "independent_events": null,
+    "metrics": {
+      "HIST": {
+        "brier": null,
+        "logloss": null
+      },
+      "REGIME": {
+        "brier": null,
+        "logloss": null
+      }
+    },
+    "paired_dates": 0,
+    "statistical_power": "NOT_ESTABLISHED",
+    "status": "UNVALIDATED_RESEARCH_ONLY"
+  },
+  "postgres_major": 18,
+  "requested_series": 222,
+  "research_chain_verified": true,
+  "source_publication_at": null,
+  "source_revisions": 2
+}

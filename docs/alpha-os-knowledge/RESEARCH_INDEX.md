@@ -90,3 +90,9 @@ not a new PR. New owner evidence/authorization is the reason for further researc
 
 [R26-v2 preliminary negative findings](research/R26-v2.md); [Q008-v2 PostgreSQL18
 preparation](research/Q008-v2.md). Old source cards and PR26 parent outputs preserved.
+
+## Q008-v3
+
+[Separate research forecast/source-licence milestone](research/Q008-v3.md). Existing
+Draft PR28, EODHD conditional primary, no qualified provider or real launch. Historical
+Q008/R26 records and negative results preserved.

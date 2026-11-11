@@ -1,0 +1,2 @@
+-r ../daily_shadow/requirements.txt
+cryptography==50.0.0

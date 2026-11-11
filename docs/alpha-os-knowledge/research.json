@@ -629,6 +629,14 @@
       "card": "research/Q008-v2.md",
       "supersedes": "Q008-v1 design checkpoint; original preserved",
       "classification": "NOT_RUNNING_SOURCE_CONTRACT_BLOCKED"
+    },
+    {
+      "id": "Q008-v3",
+      "title": "PR28 EODHD licence review, isolated RESEARCH_FORECAST and deletable licensed vault",
+      "branch": "research/daily-shadow-postgres-v1",
+      "card": "research/Q008-v3.md",
+      "supersedes": "Q008-v2 preparation checkpoint; original preserved",
+      "classification": "SYNTHETIC_STAGING_ONLY_PROVIDER_NO_GO"
     }
   ]
 }

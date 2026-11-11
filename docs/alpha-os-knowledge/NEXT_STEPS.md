@@ -66,3 +66,12 @@ Resolve verified live data/retention/publication/actions contract and training s
 qualification; separate owner approval for exact isolated DB/roles/budget/backup/
 notifications/go-live, then supervised actual-record inspection before any live claim.
 No provision/deploy/cron/trades are authorized by this preparation milestone.
+
+## Q008-v3
+
+Obtain applicable dated EODHD retention/cloud/backup clarification; personal-only
+classification is confirmed, written permissions absent. Verify total invoice<=50,
+authorized6symbol/actions/recent2026API and finalization timing. Tiingo retention
+exception outside Power/50cap is unresolved. Separate purchase/isolated migration/
+first actual one-shot approvals and human evidence review precede any real launch;
+no scheduler/production/trading authorized. Full checklist in v3 report.

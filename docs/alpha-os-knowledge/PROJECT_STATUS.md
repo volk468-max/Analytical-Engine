@@ -107,3 +107,12 @@ Q008: daily-shadow code/design, local PostgreSQL16 tests only. NOT RUNNING; no p
 Current dependency `291762bb951ce806f7e289bd261e6797664e9dd7`; old status checkpoint remains historical. Q008-v2
 sourcecontract BLOCKED, NOT RUNNING, no prospective rows or production connection.
 PostgreSQL18 local rehearsal is infrastructure proof, not live/model qualification.
+
+## PR28 / Q008-v3, 2026-11-11
+
+[Draft PR28](https://github.com/volk468-max/Analytical-Engine/pull/28) remains open/unmerged;
+base is current Draft PR26. EODHD adapter and separate RESEARCH_FORECAST prepared,
+real222series allNULL; synthetic216numerical+6portfolioNULL not real observations.
+Personal-only use confirmed; written permissions absent. NO-GO provider/firstlive,
+GO disposable fixtures/review. NOT RUNNING; source training flags false; PR26
+0/9 negative findings preserved. [Q008-v3](research/Q008-v3.md).

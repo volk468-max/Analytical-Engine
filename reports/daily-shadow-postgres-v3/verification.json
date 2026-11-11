@@ -1,0 +1,54 @@
+{
+  "scope": "OFFLINE_AND_DISPOSABLE_ONLY",
+  "unique_tests": 333,
+  "pipeline_old": 78,
+  "pipeline_new": 64,
+  "pipeline_per_pg_major": 142,
+  "postgres_majors": [
+    16,
+    18
+  ],
+  "skips_final": 0,
+  "parent_seven_suites": 180,
+  "root_tests": 2,
+  "knowledge_tests": 9,
+  "parent_pr26_full_replay": {
+    "status": "PASS",
+    "forecasts": 7176,
+    "common_dates": 2392,
+    "ledger_rows": 195000,
+    "supported_years": 41
+  },
+  "frozen_artifacts": 222,
+  "qualified_flags_promoted": 0,
+  "actual_research_forecasts": 0,
+  "actual_vendor_requests": 0,
+  "licensed_api_action_price_crosschecks": "BLOCKED_NO_AUTHORIZED_CREDENTIALS_OR_CONTRACT",
+  "live_license": "NOT_CONFIRMED",
+  "operator_class": "PERSONAL_ONLY_OWNER_CONFIRMED",
+  "provider_written_responses": "ABSENT_OWNER_CONFIRMED",
+  "raw_vendor_data_committed": false,
+  "ci_status": "SEE_HEAD_CHECKS_AND_PR_BODY",
+  "local_log_hashes": {
+    "v3-final-tests-pg18.log": {
+      "sha256": "b6a8f081111b10bb805044d8025afe4fb25387f0ba8e657f2b70ab7093b648ec",
+      "bytes": 18168
+    },
+    "v3-final-tests-pg16.log": {
+      "sha256": "0d50caf162537dc74788d30a5c5d60f07fec55e3a88fb30f0d146f38a292d310",
+      "bytes": 18168
+    },
+    "v3-parent-tests.log": {
+      "sha256": "437577cc34ff890df360238b4f827dc05841cd734082ff76b30cd5d27a2f1a2e",
+      "bytes": 17837
+    },
+    "v3-knowledge-tests.log": {
+      "sha256": "5341d3a957c38edb995a36f5beb1f3e7b975fa1bae6638d450bbd17d2deb6942",
+      "bytes": 914
+    },
+    "v3-knowledge-online.log": {
+      "sha256": "a922f2900b8218297589ac223cff1dec6dfe21087cc60beb969fdba69cea37f6",
+      "bytes": 52
+    }
+  }
+}
