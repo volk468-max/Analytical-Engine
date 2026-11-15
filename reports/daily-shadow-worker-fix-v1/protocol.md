@@ -33,3 +33,8 @@ Keep immutable model/version/date uniqueness and transaction atomicity. Existing
 partial batches are not success; missing optional history is partial, not swallowed.
 Expand read-only persistence audit by actual schema/columns. All real acceptance
 items remain UNVERIFIED until approved deployment and independent SQL/live inspection.
+
+Evidence qualification: the old second snapshot legal_reason was not checked before
+revision comparison. A blocked second snapshot/revisionNULL is another possible
+path to the same error, not excluded by logs. Do not assert two completed HTTP
+bundles for the failed run. New per-fetch checks keep the specific legal error.

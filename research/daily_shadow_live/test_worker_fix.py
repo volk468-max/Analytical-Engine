@@ -86,6 +86,9 @@ class ReadinessTests(unittest.TestCase):
  def test_missing_or_stale_data_never_becomes_ready(self):
   adapter=MagicMock();adapter.permit=fixture_permit();adapter.collect.side_effect=VendorError('STALE_OR_MISSING_BAR')
   with self.assertRaisesRegex(VendorError,'STALE_OR_MISSING_BAR'):collect_stable(adapter,MagicMock(),uuid.uuid4(),SESSION,sleeper=lambda _:None,clock=clock)
+  blocked=copy.deepcopy(self.snapshot);blocked.legal_reason='SUBSCRIPTION_EXPIRED';blocked.revision=None
+  adapter.collect.side_effect=[self.snapshot,blocked]
+  with self.assertRaisesRegex(VendorError,'SUBSCRIPTION_EXPIRED'):collect_stable(adapter,MagicMock(),uuid.uuid4(),SESSION,sleeper=lambda _:None,clock=clock)
  def test_next_local_day_never_backdates_readiness(self):
   adapter=MagicMock();adapter.permit=fixture_permit()
   with self.assertRaisesRegex(VendorError,'STALE_OR_BACKDATED_SESSION'):collect_stable(adapter,MagicMock(),uuid.uuid4(),SESSION,clock=lambda:datetime(2025,1,4,2,tzinfo=timezone.utc))
