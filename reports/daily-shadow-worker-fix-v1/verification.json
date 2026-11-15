@@ -39,9 +39,9 @@
       "sha256": "0f5f010f2a94690dff716ba0243446a38a01b9ac63ba3e438163384b9f388829",
       "bytes": 914
     },
-    "worker-fix-online.log": {
-      "sha256": "c05be932031d0bf62d3aa48e6d52d04914269af41c331909930032957197fd1f",
-      "bytes": 203
+    "worker-fix-online-final.log": {
+      "sha256": "a922f2900b8218297589ac223cff1dec6dfe21087cc60beb969fdba69cea37f6",
+      "bytes": 52
     }
   }
 }
