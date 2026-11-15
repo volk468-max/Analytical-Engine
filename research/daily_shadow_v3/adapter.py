@@ -1,12 +1,13 @@
 """EODHD adapter. Credentials injected, no networking until an explicit reviewed gate.
 Fixtures are handcrafted; no source payload is written to Git or to immutable audit.
 """
-import json,os,hashlib,math
+import json,os,hashlib,math,time,socket
+from email.utils import parsedate_to_datetime
 from dataclasses import dataclass
 from datetime import datetime,timezone,timedelta
 from urllib.parse import urlencode
 from urllib.request import Request,build_opener,HTTPRedirectHandler
-from urllib.error import HTTPError
+from urllib.error import HTTPError,URLError
 from zoneinfo import ZoneInfo
 import pandas as pd
 from research.daily_shadow.core import calendar,utc
@@ -14,23 +15,52 @@ from research.daily_shadow.core import calendar,utc
 SYMBOLS=('SPY','QQQ','SOXX','AMD','NVDA','MU')
 MAPPING={s:s+'.US' for s in SYMBOLS}
 
-class VendorError(Exception):pass
+class VendorError(Exception):
+    def __init__(self,code,*,http_status=None):
+        super().__init__(code);self.code=code;self.http_status=http_status
 class NoRedirect(HTTPRedirectHandler):
     def redirect_request(self,*args,**kwargs):return None
 
 class HTTPTransport:
     fixture=False
+    def __init__(self,*,max_attempts=3,timeout=20,sleeper=None,observer=None,deadline=None):
+        if not 1<=max_attempts<=3 or not 0<timeout<=20:raise ValueError('INVALID_HTTP_RETRY_BOUNDS')
+        self.max_attempts=max_attempts;self.timeout=timeout;self.sleeper=sleeper or time.sleep;self.observer=observer;self.deadline=deadline
+    def emit(self,**fields):
+        if self.observer:self.observer(phase='HTTP',**fields)
     def get(self,path,query,secret):
-        # Host is fixed. No redirects, custom caller URI or secret in returned metadata/errors.
-        url='https://eodhd.com'+path+'?'+urlencode(dict(query,api_token=secret))
-        try:
-            with build_opener(NoRedirect).open(Request(url,headers={'User-Agent':'AlphaOS isolated research adapter'}),timeout=20) as response:
-                body=response.read(8*1024*1024+1)
-                if len(body)>8*1024*1024:raise VendorError('RESPONSE_TOO_LARGE')
-                return body
-        except HTTPError as exc:raise VendorError('HTTP_'+str(exc.code)) from None
-        except VendorError:raise
-        except Exception:raise VendorError('TRANSPORT_FAILURE') from None
+        # Never log URL/query/headers. HTTP errors do not expose the token-bearing URL.
+        url='https://eodhd.com'+path+'?'+urlencode(dict(query,api_token=secret));endpoint=path.split('?',1)[0]
+        for attempt in range(1,self.max_attempts+1):
+            if self.deadline is not None and time.monotonic()>=self.deadline:raise VendorError('RUN_DEADLINE_EXCEEDED')
+            started=time.monotonic();status=None;retry=False;delay=min(2**(attempt-1),5)
+            try:
+                timeout=self.timeout if self.deadline is None else min(self.timeout,max(.01,self.deadline-started))
+                with build_opener(NoRedirect).open(Request(url,headers={'User-Agent':'AlphaOS isolated research adapter'}),timeout=timeout) as response:
+                    status=response.status;body=response.read(8*1024*1024+1)
+                    if len(body)>8*1024*1024:raise VendorError('RESPONSE_TOO_LARGE')
+                    self.emit(status='RESPONSE',endpoint=endpoint,http_status=status,http_attempt=attempt,duration_ms=round((time.monotonic()-started)*1000))
+                    return body
+            except HTTPError as exc:
+                kind=type(exc).__name__;status=exc.code;code='HTTP_'+str(status);retry=status in (429,500,502,503,504)
+                retry_after=exc.headers.get('Retry-After') if exc.headers else None
+                if retry_after:
+                    try:delay=max(0,float(retry_after))
+                    except ValueError:
+                        try:delay=max(0,(parsedate_to_datetime(retry_after)-datetime.now(timezone.utc)).total_seconds())
+                        except (ValueError,TypeError,OverflowError):retry=False
+                if not math.isfinite(delay) or delay>30:retry=False # Do not retry EARLIER than a long Retry-After.
+            except (TimeoutError,socket.timeout) as exc:kind=type(exc).__name__;code='TRANSPORT_TIMEOUT';retry=True
+            except URLError as exc:kind=type(exc).__name__;code='TRANSPORT_TIMEOUT' if isinstance(exc.reason,TimeoutError) else 'TRANSPORT_CONNECTION_FAILURE';retry=True
+            except (ConnectionError,OSError) as exc:kind=type(exc).__name__;code='TRANSPORT_CONNECTION_FAILURE';retry=True
+            except VendorError as exc:
+                self.emit(status='ERROR',endpoint=endpoint,http_status=status,http_attempt=attempt,error_code=exc.code,exception_type=type(exc).__name__);raise
+            except Exception as exc:kind=type(exc).__name__;code='TRANSPORT_FAILURE';retry=False
+            self.emit(status='ERROR',endpoint=endpoint,http_status=status,http_attempt=attempt,error_code=code,exception_type=kind,duration_ms=round((time.monotonic()-started)*1000))
+            if not retry or attempt==self.max_attempts:raise VendorError(code,http_status=status) from None
+            if self.deadline is not None and time.monotonic()+delay>=self.deadline:raise VendorError('RUN_DEADLINE_EXCEEDED')
+            self.emit(status='RETRY',endpoint=endpoint,http_status=status,http_attempt=attempt,retry_delay_seconds=delay)
+            self.sleeper(delay)
 
 @dataclass(repr=False)
 class Snapshot:

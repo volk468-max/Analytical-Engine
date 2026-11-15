@@ -80,3 +80,12 @@ session readiness, atomic baseline, outcomes/weekly/private historical compariso
 Railway accept-deploy denied (user did not approve), services remain staged; real0,
 firstNULL, croninactive, actual API/comparisonNOT_RUN. Exact handover supplied;
 NOT RUNNING and not accepted. No production/trades/merge, old findings retained.
+
+## 2026-11-15 Q008-v5
+
+Read-only actual Railway investigation found structured attributes hidden by blank
+message, first SOURCE_STILL_REVISING failure and later application SQL432/firstUTC.
+Exact raw changed field/direct SQL unverified. Prepared semantic six-symbol readiness,
+private failed-pair retention, bounded network retries, run UUID/UTC/message/safe
+traceback and partial-failure diagnostics, additive005 and readonly audit. No deploy
+or historical edits. Old cards/data/source/negative research results preserved.

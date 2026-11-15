@@ -1,0 +1,220 @@
+{
+  "source": "Railway get-logs structured attributes; read-only observation 2026-11-15",
+  "deployed_sha": "f066a5ecc4dc8c1984905b748d5781fe7235bb94",
+  "deployment_id": "1b636903-0f6c-4aa2-9fc8-be27f9c632ff",
+  "cron": "0 2 * * 2-6",
+  "independent_sql": "UNVERIFIED_PRIVATE_DB_NO_QUERY_TRANSPORT",
+  "http_codes": "UNVERIFIED_NOT_LOGGED_BY_DEPLOYED_CODE",
+  "events": [
+    {
+      "timestamp": "2026-11-11T15:34:38.157011219Z",
+      "message": "",
+      "fields": {
+        "phase": "BOOTSTRAP",
+        "status": "READY",
+        "real_forecasts": 0
+      }
+    },
+    {
+      "timestamp": "2026-11-11T15:37:05.124159380Z",
+      "message": "",
+      "fields": {
+        "phase": "BOOTSTRAP",
+        "status": "READY",
+        "real_forecasts": 0
+      }
+    },
+    {
+      "timestamp": "2026-11-11T15:37:22.172474550Z",
+      "message": "",
+      "fields": {
+        "first_issue_at": null,
+        "phase": "ACCEPTANCE_SQL",
+        "real_forecasts": 0,
+        "status": "NO_REAL_FORECAST_YET"
+      }
+    },
+    {
+      "timestamp": "2026-11-11T15:37:24.352805920Z",
+      "message": "",
+      "fields": {
+        "checked": 4,
+        "phase": "PREFLIGHT",
+        "session": "2026-11-10",
+        "status": "REAL_ACCESS_AND_ACTION_SAMPLES_VERIFIED"
+      }
+    },
+    {
+      "timestamp": "2026-11-11T15:37:24.352811237Z",
+      "message": "",
+      "fields": {
+        "phase": "ISSUE",
+        "session": "2026-11-11",
+        "status": "WAITING_VALID_SESSION_WINDOW"
+      }
+    },
+    {
+      "timestamp": "2026-11-11T15:37:24.509401715Z",
+      "message": "",
+      "fields": {
+        "checked": 0,
+        "pending": 0,
+        "phase": "EVALUATION",
+        "status": "RESEARCH_ONLY"
+      }
+    },
+    {
+      "timestamp": "2026-11-11T15:37:44.514725781Z",
+      "message": "",
+      "fields": {
+        "phase": "HISTORICAL_COMPARISON",
+        "status": "PRIVATE_COMPARISON_RECORDED"
+      }
+    },
+    {
+      "timestamp": "2026-11-11T15:37:44.514728620Z",
+      "message": "",
+      "fields": {
+        "first_issue_at": null,
+        "phase": "ACCEPTANCE_SQL",
+        "real_forecasts": 0,
+        "status": "NO_REAL_FORECAST_YET"
+      }
+    },
+    {
+      "timestamp": "2026-11-11T15:39:28.248249124Z",
+      "message": "",
+      "fields": {
+        "phase": "BOOTSTRAP",
+        "status": "READY",
+        "real_forecasts": 0
+      }
+    },
+    {
+      "timestamp": "2026-11-12T02:02:28.080354584Z",
+      "message": "",
+      "fields": {
+        "first_issue_at": null,
+        "phase": "ACCEPTANCE_SQL",
+        "real_forecasts": 0,
+        "status": "NO_REAL_FORECAST_YET"
+      }
+    },
+    {
+      "timestamp": "2026-11-12T02:03:38.700210717Z",
+      "message": "",
+      "fields": {
+        "error_code": "SOURCE_STILL_REVISING",
+        "phase": "DAILY",
+        "status": "ERROR"
+      }
+    },
+    {
+      "timestamp": "2026-11-13T02:02:50.769262562Z",
+      "message": "",
+      "fields": {
+        "phase": "BOOTSTRAP",
+        "status": "READY",
+        "real_forecasts": 0
+      }
+    },
+    {
+      "timestamp": "2026-11-13T02:04:36.843986044Z",
+      "message": "",
+      "fields": {
+        "first_issue_at": null,
+        "phase": "ACCEPTANCE_SQL",
+        "real_forecasts": 0,
+        "status": "NO_REAL_FORECAST_YET"
+      }
+    },
+    {
+      "timestamp": "2026-11-13T02:05:47.809539766Z",
+      "message": "",
+      "fields": {
+        "blocked": 6,
+        "issued": 216,
+        "phase": "ISSUE",
+        "session": "2026-11-12",
+        "status": "RECORDED"
+      }
+    },
+    {
+      "timestamp": "2026-11-13T02:05:47.809552915Z",
+      "message": "",
+      "fields": {
+        "checked": 0,
+        "pending": 216,
+        "phase": "EVALUATION",
+        "status": "RESEARCH_ONLY"
+      }
+    },
+    {
+      "timestamp": "2026-11-13T02:05:47.809561552Z",
+      "message": "",
+      "fields": {
+        "phase": "HISTORICAL_COMPARISON",
+        "status": "ALREADY_COMPLETED"
+      }
+    },
+    {
+      "timestamp": "2026-11-13T02:05:47.809568540Z",
+      "message": "",
+      "fields": {
+        "first_issue_at": "2026-11-13T02:05:45.498639+00:00",
+        "phase": "ACCEPTANCE_SQL",
+        "real_forecasts": 216,
+        "status": "FIRST_REAL_RECORDED"
+      }
+    },
+    {
+      "timestamp": "2026-11-14T02:04:22.908551754Z",
+      "message": "",
+      "fields": {
+        "first_issue_at": "2026-11-13T02:05:45.498639+00:00",
+        "phase": "ACCEPTANCE_SQL",
+        "real_forecasts": 216,
+        "status": "FIRST_REAL_RECORDED"
+      }
+    },
+    {
+      "timestamp": "2026-11-14T02:05:33.499912014Z",
+      "message": "",
+      "fields": {
+        "blocked": 6,
+        "issued": 216,
+        "phase": "ISSUE",
+        "session": "2026-11-13",
+        "status": "RECORDED"
+      }
+    },
+    {
+      "timestamp": "2026-11-14T02:05:33.499916261Z",
+      "message": "",
+      "fields": {
+        "checked": 0,
+        "pending": 432,
+        "phase": "EVALUATION",
+        "status": "RESEARCH_ONLY"
+      }
+    },
+    {
+      "timestamp": "2026-11-14T02:05:33.499922086Z",
+      "message": "",
+      "fields": {
+        "phase": "HISTORICAL_COMPARISON",
+        "status": "ALREADY_COMPLETED"
+      }
+    },
+    {
+      "timestamp": "2026-11-14T02:05:33.499927399Z",
+      "message": "",
+      "fields": {
+        "first_issue_at": "2026-11-13T02:05:45.498639+00:00",
+        "phase": "ACCEPTANCE_SQL",
+        "real_forecasts": 432,
+        "status": "FIRST_REAL_RECORDED"
+      }
+    }
+  ]
+}

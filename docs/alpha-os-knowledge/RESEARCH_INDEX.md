@@ -101,3 +101,8 @@ Q008/R26 records and negative results preserved.
 
 [Daily EODHD worker / blocked Railway launch](research/Q008-v4.md). New owner scope
 allows isolated deployment; tool approval rejected, NOT RUNNING. Old cards retained.
+
+## Q008-v5
+
+[Daily worker diagnostics/readiness fix](research/Q008-v5.md): new dependent fix PR,
+actual old application log observations, direct SQL/new execution UNVERIFIED.

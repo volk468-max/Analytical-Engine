@@ -1,0 +1,47 @@
+{
+  "base_sha": "f066a5ecc4dc8c1984905b748d5781fe7235bb94",
+  "local_pipeline_pg18": 188,
+  "new_mock_and_sql_tests": 24,
+  "parent_suites": 180,
+  "root_tests": 2,
+  "knowledge_tests": 9,
+  "unique_tests": 379,
+  "skips_final": 0,
+  "synthetic_backup_restore": "FOUR_SCHEMAS_PASS",
+  "frozen_models": 222,
+  "model_flags_promoted": 0,
+  "cron_changed": false,
+  "railway_mutated": false,
+  "new_fix_live_execution": "UNVERIFIED_APPROVAL_PENDING",
+  "independent_sql": "UNVERIFIED_NO_AUTHENTICATED_PRIVATE_TRANSPORT",
+  "http_status_codes_live": "UNVERIFIED_NOT_IN_OLD_LOGS",
+  "historical_changed_field": "UNVERIFIED_LOST_SNAPSHOTS",
+  "application_log_observation": {
+    "asof": "2026-11-14T02:05:33.499927399Z",
+    "numeric_count": 432,
+    "first_issue_utc": "2026-11-13T02:05:45.498639+00:00",
+    "source": "DEPLOYED_APPLICATION_ACCEPTANCE_SQL_LOG_NOT_FRESH_INDEPENDENT_SQL"
+  },
+  "logs": {
+    "worker-fix-final-tests.log": {
+      "sha256": "2e257ed6dad9893b03473caf225217a01153b89ba2aa8a4581302d34539950a8",
+      "bytes": 26450
+    },
+    "worker-fix-parent.log": {
+      "sha256": "323d78adba565a5feae3d343df23fc3f1327cd03c7e03c5b42389865a8b69605",
+      "bytes": 18370
+    },
+    "worker-fix-backup.log": {
+      "sha256": "501fd7499ac3600d10622619d460c19dd7ca4b7b55b5f22ee26b4248148c1db4",
+      "bytes": 3091
+    },
+    "worker-fix-knowledge-tests.log": {
+      "sha256": "0f5f010f2a94690dff716ba0243446a38a01b9ac63ba3e438163384b9f388829",
+      "bytes": 914
+    },
+    "worker-fix-online-final.log": {
+      "sha256": "a922f2900b8218297589ac223cff1dec6dfe21087cc60beb969fdba69cea37f6",
+      "bytes": 52
+    }
+  }
+}

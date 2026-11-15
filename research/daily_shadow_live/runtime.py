@@ -13,6 +13,8 @@ from research.daily_shadow_v3.resolver import resolve_once
 from research.daily_shadow_v3.actions import REFERENCES,check_event
 from .config import identity,dsn,vault_key,models,ConfigurationError
 from .bootstrap import CONTRACT,permit as configured_permit
+from .diagnostics import ACTIVE,RunAudit,observe
+from .readiness import collect_stable
 CRON='0 2 * * 2-6'
 
 def latest_completed(now):
@@ -34,15 +36,19 @@ def paid_status(transport=None):
  if not active:raise VendorError('PAID_EOD_ENTITLEMENT_NOT_VERIFIED')
  return True
 
+def _persist_record(store,record):
+ with store.connect() as c:c.execute('select alpha_operations_v4.receipt(%s,%s::jsonb)',(uuid.uuid4(),canonical(record)))
+
 def receipt(store,**body):
- with store.connect() as c:c.execute('select alpha_operations_v4.receipt(%s,%s::jsonb)',(uuid.uuid4(),canonical(body)))
- # Only pre-defined diagnostic fields; no exception text, DSN, token or payload.
- print(canonical(body),flush=True)
+ audit=ACTIVE.get() or RunAudit()
+ record=audit.emit(persist=False,**body)
+ _persist_record(store,record)
+ return record
 
 def acceptance(store):
  with store.connect() as c:
-  n,first=c.execute("select count(*),min(issued_at) from alpha_research_v3.forecasts where run_mode='RESEARCH_FORECAST' and status='RESEARCH_FORECAST'").fetchone()
- return dict(phase='ACCEPTANCE_SQL',status='FIRST_REAL_RECORDED' if n else 'NO_REAL_FORECAST_YET',real_forecasts=n,first_issue_at=first.isoformat() if first else None,schedule=CRON)
+  n,first,last=c.execute("select count(*),min(issued_at),max(issued_at) from alpha_research_v3.forecasts where run_mode='RESEARCH_FORECAST' and status='RESEARCH_FORECAST'").fetchone()
+ return dict(phase='ACCEPTANCE_SQL',status='FIRST_REAL_RECORDED' if n else 'NO_REAL_FORECAST_YET',real_forecasts=n,first_issue_at=first.isoformat() if first else None,latest_issue_at=last.isoformat() if last else None,schedule=CRON)
 
 def effective_permit(store):
  p=store.permit(CONTRACT)
@@ -50,9 +56,9 @@ def effective_permit(store):
  if r and r>utc(p.access_until):p=replace(p,access_until=r.isoformat())
  return p
 
-def continue_paid_access(url):
+def continue_paid_access(url,transport=None):
  # API check renews bounded access continuity only, never grants new legal rights.
- paid_status();expiry=datetime.now(timezone.utc)+timedelta(days=30)
+ paid_status(transport);expiry=datetime.now(timezone.utc)+timedelta(days=30)
  with psycopg.connect(url) as c:
   c.execute('set role alpha_shadow_legal_reviewer')
   c.execute('select alpha_operations_v4.renew(%s,%s,%s)',(CONTRACT,expiry,'EODHD_USER_API_PAID_ACTIVE:'+datetime.now(timezone.utc).isoformat()))
@@ -80,96 +86,115 @@ def resolve_due(store,adapter,session,now):
  with store.connect() as c:
   rows=c.execute("""select f.id,f.session_date from alpha_research_v3.forecasts f where run_mode='RESEARCH_FORECAST' and status='RESEARCH_FORECAST' and horizon_end_at<=%s
    and coalesce((select o.status from alpha_research_v3.outcomes o join alpha_research_v3.journal e on e.id=o.id where o.forecast_id=f.id order by e.seq desc limit 1),'UNRESOLVED')<>'MATURED' order by horizon_end_at limit 1000""",(now,)).fetchall()
- if not rows:return 0
+ if not rows:return dict(checked=0,unresolved=0)
  earliest=min(r[1] for r in rows).isoformat()
- historical_adapter=EODHDAdapter(adapter.permit,network_approved=True,history_start=earliest) if earliest<(now-timedelta(days=400)).date().isoformat() else adapter
- window=historical_adapter.collect(session);checked=0
+ historical_adapter=EODHDAdapter(adapter.permit,transport=adapter.transport,network_approved=True,history_start=earliest) if earliest<(now-timedelta(days=400)).date().isoformat() else adapter
+ window=historical_adapter.collect(session);checked=0;unresolved=0
  for fid,_ in rows:
   r=resolve_once(store,fid,window,datetime.now(timezone.utc).isoformat(),data_reviewed=True);checked+=r['status']=='MATURED'
- return checked
+  if r['status']!='MATURED':
+   unresolved+=1;receipt(store,phase='OUTCOME',status='UNRESOLVED',reason=r['reason'])
+ return dict(checked=checked,unresolved=unresolved)
 
-def issue_once(store,adapter,bank,session,now=None,*,ready_gap=60):
- # Session-level lock spans collection, baseline cutoff and atomic forecast append.
+def batch_result(session,total,numeric,*,retry=False):
+ expected_total=222;expected_numeric=216
+ complete=total==expected_total and numeric==expected_numeric
+ return dict(phase='ISSUE',status=('IDEMPOTENT_ALREADY_RECORDED' if retry else 'RECORDED') if complete else 'PARTIAL_FAILURE',session=session,issued=numeric,blocked=total-numeric,reason=None if complete else 'INCOMPLETE_EXPECTED_FORECAST_BATCH')
+
+def issue_once(store,adapter,bank,session,now=None,*,ready_gap=60,clock=None):
+ clock=clock or (lambda:datetime.now(timezone.utc))
+ # Transaction-scoped lock is released on commit/rollback/disconnect; no cleanup
+ # SQL may mask the original exception. Existing forecast rows are never updated.
  with store.connect() as lock:
-  if not lock.execute('select pg_try_advisory_lock(280004)').fetchone()[0]:return dict(phase='ISSUE',status='ALREADY_RUNNING',session=session)
-  try:
-   prior,issued_count=lock.execute("select count(*),count(*) filter(where status='RESEARCH_FORECAST') from alpha_research_v3.forecasts where session_date=%s and run_mode='RESEARCH_FORECAST'",(session,)).fetchone()
-   if prior:return dict(phase='ISSUE',status='IDEMPOTENT_ALREADY_RECORDED',session=session,issued=issued_count,blocked=prior-issued_count)
-   stamp=(now or datetime.now(timezone.utc)).isoformat();gate=issuance_gate(session,stamp,replace(adapter.permit,finalization_verified=True))
-   if gate:return dict(phase='ISSUE',status='STATUS_BLOCKED',reason=gate,session=session)
-   first=adapter.collect(session)
-   if first.legal_reason:raise VendorError(first.legal_reason)
-   # A stable bundle after a bounded wait is operational evidence, not a provider SLA.
-   time.sleep(ready_gap)
-   second=adapter.collect(session)
-   if first.revision!=second.revision:raise VendorError('SOURCE_STILL_REVISING')
-   base_revision=second.revision
-   store.payload(CONTRACT,first,adapter.permit.raw_until)
-   extra,checks=verify_actions(adapter,session)
-   second.raw_responses.update(extra)
-   second.revision=hashlib.sha256(b''.join(k.encode()+b'\0'+second.raw_responses[k] for k in sorted(second.raw_responses))).hexdigest()
-   # Retrieval is re-stamped after the last action response. Never invent publication.
-   second.retrieved_at=datetime.now(timezone.utc).isoformat()
-   with store.connect() as c:c.execute('select alpha_operations_v4.ready(%s,%s,%s,%s,%s,%s,%s)',(CONTRACT,session,second.revision,first.revision,base_revision,first.retrieved_at,second.retrieved_at))
-   with store.connect() as c:issued=c.execute('select clock_timestamp()').fetchone()[0].isoformat()
-   if utc(issued)<utc(second.retrieved_at):raise VendorError('CLOCK_SKEW_SOURCE_AHEAD_OF_DATABASE')
-   rows=candidates(session,issued,issued,second,bank,replace(adapter.permit,finalization_verified=True),data_reviewed=True)
-   baseline={}
-   # Baseline uses only outcomes already recorded BEFORE issuance; no future labels.
-   for r in rows:
-    if r['status']!='RESEARCH_FORECAST':continue
-    key=tuple(r[k] for k in ('symbol','label_type','threshold_pct','horizon'))
-    if key in baseline:continue
-    n,k=lock.execute("""select count(*),coalesce(sum(o.outcome::int),0) from alpha_research_v3.forecasts f join alpha_shadow_v1.model_registry m on m.id=f.model_id
-     join lateral(select o.outcome,o.status,e.recorded_at from alpha_research_v3.outcomes o join alpha_research_v3.journal e on e.id=o.id where o.forecast_id=f.id and e.recorded_at<%s order by e.seq desc limit 1)o on true
-     where o.status='MATURED' and f.run_mode='RESEARCH_FORECAST' and f.status='RESEARCH_FORECAST' and m.model_name='HIST' and f.symbol=%s and f.label_type=%s and f.threshold_pct=%s and f.horizon=%s and f.horizon_end_at<%s""",(issued,*key,issued)).fetchone()
-    baseline[key]=((k+1)/(n+2),n)
-   ref=store.payload(CONTRACT,second,adapter.permit.raw_until)
-   ids=store.forecasts('LIVE:'+session,rows,bank,CONTRACT,ref,second,run_mode='RESEARCH_FORECAST',baselines=baseline,baseline_cutoff=issued)
-   return dict(phase='ISSUE',status='RECORDED',session=session,issued=sum(r['probability_raw'] is not None for r in rows),blocked=sum(r['probability_raw'] is None for r in rows),source_quality='SIX_SYMBOL_SCHEMA_CALENDAR_AND_PRIMARY_ACTION_SAMPLES_REVIEWED',revision=second.revision)
-  finally:lock.execute('select pg_advisory_unlock(280004)')
+  if not lock.execute('select pg_try_advisory_xact_lock(280004)').fetchone()[0]:return dict(phase='ISSUE',status='ALREADY_RUNNING',session=session)
+  prior,issued_count=lock.execute("select count(*),count(*) filter(where status='RESEARCH_FORECAST') from alpha_research_v3.forecasts where session_date=%s and run_mode='RESEARCH_FORECAST'",(session,)).fetchone()
+  if prior:return batch_result(session,prior,issued_count,retry=True)
+  stamp=(now or clock()).isoformat();gate=issuance_gate(session,stamp,replace(adapter.permit,finalization_verified=True))
+  if gate:return dict(phase='ISSUE',status='STATUS_BLOCKED',reason=gate,session=session)
+  first,second,first_hash,second_hash=collect_stable(adapter,store,CONTRACT,session,gap=ready_gap,clock=clock)
+  extra,checks=verify_actions(adapter,session)
+  second.raw_responses.update(extra)
+  second.revision=hashlib.sha256(b''.join(k.encode()+b'\0'+second.raw_responses[k] for k in sorted(second.raw_responses))).hexdigest()
+  second.retrieved_at=clock().isoformat()
+  with store.connect() as c:c.execute('select alpha_operations_v4.ready(%s,%s,%s,%s,%s,%s,%s)',(CONTRACT,session,second.revision,first_hash,second_hash,first.retrieved_at,second.retrieved_at))
+  with store.connect() as c:issued=c.execute('select clock_timestamp()').fetchone()[0].isoformat()
+  if utc(issued)<utc(second.retrieved_at):raise VendorError('CLOCK_SKEW_SOURCE_AHEAD_OF_DATABASE')
+  rows=candidates(session,issued,issued,second,bank,replace(adapter.permit,finalization_verified=True),data_reviewed=True)
+  baseline={}
+  # Baseline uses only outcomes already recorded BEFORE issuance; no future labels.
+  for r in rows:
+   if r['status']!='RESEARCH_FORECAST':continue
+   key=tuple(r[k] for k in ('symbol','label_type','threshold_pct','horizon'))
+   if key in baseline:continue
+   n,k=lock.execute("""select count(*),coalesce(sum(o.outcome::int),0) from alpha_research_v3.forecasts f join alpha_shadow_v1.model_registry m on m.id=f.model_id
+    join lateral(select o.outcome,o.status,e.recorded_at from alpha_research_v3.outcomes o join alpha_research_v3.journal e on e.id=o.id where o.forecast_id=f.id and e.recorded_at<%s order by e.seq desc limit 1)o on true
+    where o.status='MATURED' and f.run_mode='RESEARCH_FORECAST' and f.status='RESEARCH_FORECAST' and m.model_name='HIST' and f.symbol=%s and f.label_type=%s and f.threshold_pct=%s and f.horizon=%s and f.horizon_end_at<%s""",(issued,*key,issued)).fetchone()
+   baseline[key]=((k+1)/(n+2),n)
+  ref=store.payload(CONTRACT,second,adapter.permit.raw_until)
+  ids=store.forecasts('LIVE:'+session,rows,bank,CONTRACT,ref,second,run_mode='RESEARCH_FORECAST',baselines=baseline,baseline_cutoff=issued)
+  result=batch_result(session,len(ids),sum(r['probability_raw'] is not None for r in rows))
+  result.update(issued_at=issued,source_quality='SIX_SYMBOL_SCHEMA_CALENDAR_AND_PRIMARY_ACTION_SAMPLES_REVIEWED',revision=second.revision)
+  return result
 
 def run_daily():
- identity();url=dsn();store=ResearchStore(url,vault_key(url));now=datetime.now(timezone.utc)
- receipt(store,**acceptance(store))
+ audit=RunAudit();token=ACTIVE.set(audit);store=None;exit_code=1;partial=[];phase='STARTUP'
+ audit.emit(phase=phase,status='RUN_STARTED',persist=False)
  try:
-  continue_paid_access(url);p=effective_permit(store)
-  adapter=EODHDAdapter(p,network_approved=True);session=latest_completed(now)
-  # Pre-close first deployment can verify paid access/schema/actions without issuing.
-  ny=now.astimezone(ZoneInfo('America/New_York'));day=ny.date().isoformat()
+  identity();url=dsn();store=ResearchStore(url,vault_key(url))
+  audit.persister=lambda record:_persist_record(store,record)
+  receipt(store,phase='CONFIGURATION',status='VALIDATED')
+  receipt(store,**acceptance(store))
+  transport=HTTPTransport(observer=observe,deadline=time.monotonic()+900)
+  phase='SUBSCRIPTION';continue_paid_access(url,transport);p=effective_permit(store)
+  receipt(store,phase=phase,status='ACCOUNT_METADATA_MATCHED',subscription_active=True)
+  now=datetime.now(timezone.utc);adapter=EODHDAdapter(p,transport=transport,network_approved=True);session=latest_completed(now)
+  ny=now.astimezone(ZoneInfo('America/New_York'));day=ny.date().isoformat();phase='ISSUE'
   if not calendar().is_session(pd.Timestamp(day)):
-   receipt(store,phase='ISSUE',status='NON_TRADING_DAY',session=day)
+   receipt(store,phase=phase,status='NON_TRADING_DAY',session=day)
   elif issuance_gate(day,now.isoformat(),replace(p,finalization_verified=True)):
-   sample=adapter.collect(session);extra,checks=verify_actions(adapter,session)
+   sample=adapter.collect(session)
+   if sample.legal_reason:raise VendorError(sample.legal_reason)
+   extra,checks=verify_actions(adapter,session)
    sample.raw_responses.update(extra);sample.retrieved_at=datetime.now(timezone.utc).isoformat();sample.revision=hashlib.sha256(b''.join(k.encode()+b'\0'+sample.raw_responses[k] for k in sorted(sample.raw_responses))).hexdigest();store.payload(CONTRACT,sample,p.raw_until)
    receipt(store,phase='PREFLIGHT',status='REAL_ACCESS_AND_ACTION_SAMPLES_VERIFIED',session=session,models=len(models()),checked=len(checks),subscription_active=True)
-   receipt(store,phase='ISSUE',status='WAITING_VALID_SESSION_WINDOW',session=day,reason=issuance_gate(day,now.isoformat(),replace(p,finalization_verified=True)))
-  else:receipt(store,**issue_once(store,adapter,models(),day))
-  checked=resolve_due(store,adapter,session,now)
+   receipt(store,phase=phase,status='WAITING_VALID_SESSION_WINDOW',session=day,reason=issuance_gate(day,now.isoformat(),replace(p,finalization_verified=True)))
+  else:
+   result=issue_once(store,adapter,models(),day);receipt(store,**result)
+   if result['status'] in ('PARTIAL_FAILURE','STATUS_BLOCKED','ALREADY_RUNNING'):partial.append('ISSUE')
+  phase='EVALUATION';resolution=resolve_due(store,adapter,session,now)
+  if resolution['unresolved']:partial.append('OUTCOME_RESOLUTION')
   from .reporting import weekly_report
   report=weekly_report(store,now)
-  receipt(store,phase='EVALUATION',status='RESEARCH_ONLY',checked=checked,pending=report['pending'],report_week=report['week'])
+  receipt(store,phase=phase,status='RESEARCH_ONLY',checked=resolution['checked'],unresolved=resolution['unresolved'],pending=report['pending'],report_week=report['week'])
   if os.environ.get('ALPHA_COMPARE_HISTORY_ONCE')=='true':
+   phase='HISTORICAL_COMPARISON'
    try:
     from .historical import run_once
-    status=run_once(store,p);receipt(store,phase='HISTORICAL_COMPARISON',status=status)
-   except Exception as exc:receipt(store,phase='HISTORICAL_COMPARISON',status='BLOCKED',error_code=type(exc).__name__.upper())
-  receipt(store,**acceptance(store))
+    status=run_once(store,p,transport=transport);receipt(store,phase=phase,status=status)
+   except Exception as exc:
+    audit.failure(phase,exc);partial.append(phase)
+  phase='VERIFICATION';receipt(store,**acceptance(store))
   if not store.verify():raise RuntimeError('RESEARCH_CHAIN_BROKEN')
-  return 0
+  exit_code=2 if partial else 0
  except Exception as exc:
-  # VendorError messages are our constant codes, never raw transport/DB messages.
-  code=str(exc) if isinstance(exc,(VendorError,ConfigurationError)) else type(exc).__name__.upper()
-  receipt(store,phase='DAILY',status='ERROR',error_code=code)
-  return 1
+  exit_code=1
+  try:audit.failure(phase,exc,persist=store is not None)
+  except Exception as audit_error:audit.failure('AUDIT_PERSISTENCE',audit_error,persist=False)
  finally:
-  try:store.expire()
+  if store is not None:
+   try:store.expire()
+   except Exception as exc:
+    exit_code=1
+    try:audit.failure('RETENTION',exc)
+    except Exception as audit_error:audit.failure('AUDIT_PERSISTENCE',audit_error,persist=False)
+  status='SUCCESS' if exit_code==0 else ('PARTIAL_FAILURE' if exit_code==2 else 'FAILED')
+  try:audit.emit(phase='RUN_COMPLETED',status=status,exit_code=exit_code,partial_phases=partial,persist=store is not None,persist_first=True,**audit.http_summary())
   except Exception as exc:
-   print(canonical(dict(phase='RETENTION',status='ERROR',error_code=type(exc).__name__.upper())),flush=True)
-   return 1
+   exit_code=1;audit.failure('AUDIT_PERSISTENCE',exc,persist=False)
+   audit.emit(phase='RUN_COMPLETED',status='FAILED',exit_code=1,partial_phases=partial,persist=False,**audit.http_summary())
+  ACTIVE.reset(token)
+ return exit_code
 
 if __name__=='__main__':
  import sys
- try:sys.exit(run_daily())
- except Exception as exc:
-  print(canonical(dict(phase='STARTUP',status='ERROR',error_code=type(exc).__name__.upper())),flush=True);sys.exit(1)
+ sys.exit(run_daily())
