@@ -86,3 +86,11 @@ Owner confirms existing paid EODHD personal subscription and accepts current ter
 for private Railway/backups. This supersedes previous preparation-only scope for
 these isolated resources, not production or trading. The platform approval tool
 rejected accept-deploy; that is a tool result, not an inferred owner policy.
+
+## Worker-fix task, 2026-11-15
+
+Owner requests a new fix branch/PR into research/daily-shadow-postgres-v1, read-only
+Railway diagnosis, sanitized diagnostics, reliability tests and actual SQL evidence
+if accessible. Explicitly no deployment or environment mutation without separate
+approval. No Railway configuration was changed in this fix task. Existing deployed
+state observed now is not attributed to an unauthorized action by this task.

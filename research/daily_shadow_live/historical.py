@@ -63,11 +63,11 @@ def compare_frames(old,new):
      results.append(dict(symbol=symbol,label_type='EOD_CLOSE' if field=='close' else 'LOW_INTRADAY',threshold_pct=t,horizon=h,common_eligible_labels=int(valid.sum()),label_disagreements=int(np.sum(yo[valid]!=yn[valid])),metrics={source+'_'+model:scores(data) for (source,model),data in forecast.items()}))
  return dict(classification='EXPLORATORY_REVISED_HISTORY_NOT_ORIGINAL_PIT',source_quality=quality,events=results,fit='ANNUAL_EXPANDING_SAME_COMMON_ANCHORS; LABEL_MATURITY_LT_JAN1; MIN252; BETA1_1; SHRINK20',confidence_intervals=None,independent_events=None,no_validated_advantage_claim=True)
 
-def run_once(store,permit):
+def run_once(store,permit,*,transport=None):
  with store.connect() as c:
   if c.execute("select exists(select 1 from alpha_operations_v4.reports where week='2000-01-01')").fetchone()[0]:return 'ALREADY_COMPLETED'
  old=old_frames();end=min(max(f.index) for f in old.values())
- adapter=EODHDAdapter(permit,network_approved=True,history_start='2000-01-01');snap=adapter.collect(end)
+ adapter=EODHDAdapter(permit,transport=transport,network_approved=True,history_start='2000-01-01');snap=adapter.collect(end)
  if snap.legal_reason:raise ValueError('HISTORICAL_ACCESS_BLOCKED')
  ref=store.payload(CONTRACT,snap,permit.raw_until)
  new={s:pd.DataFrame(normalized_prefix(snap.bars[s],snap.splits[s],end)).set_index('date') for s in SYMBOLS}

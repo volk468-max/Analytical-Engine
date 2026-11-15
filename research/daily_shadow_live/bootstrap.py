@@ -24,7 +24,7 @@ def apply(url,*,isolated_test=False):
   c.execute('select pg_advisory_lock(280104)')
   c.execute('create table if not exists public.alpha_shadow_migrations(name text primary key,sha256 text not null)')
   c.execute('revoke all on public.alpha_shadow_migrations from public')
-  paths=[ROOT/'research/daily_shadow/sql'/n for n in ('001_isolated.sql','002_contract_hardening.sql','003_research_forecast.sql')]+[Path(__file__).with_name('004_operations.sql')]
+  paths=[ROOT/'research/daily_shadow/sql'/n for n in ('001_isolated.sql','002_contract_hardening.sql','003_research_forecast.sql')]+[Path(__file__).with_name(n) for n in ('004_operations.sql','005_diagnostics.sql')]
   for path in paths:
    code=path.read_text();digest=hashlib.sha256(code.encode()).hexdigest();old=c.execute('select sha256 from public.alpha_shadow_migrations where name=%s',(path.name,)).fetchone()
    if old:
@@ -45,6 +45,17 @@ def register(url,p,bank):
  with Store(url).connect() as c:
   for m in bank:Store.append(c,'model',m['name']+':'+m['version'],m)
 
+def main():
+ from .diagnostics import RunAudit
+ audit=RunAudit();audit.emit(phase='BOOTSTRAP',status='STARTED',persist=False)
+ try:
+  identity();url=dsn();apply(url);bank=models();register(url,permit(),bank)
+  audit.emit(phase='BOOTSTRAP',status='READY',models=len(bank),forecasts_created_by_bootstrap=0,persist=False)
+  audit.emit(phase='RUN_COMPLETED',status='SUCCESS',exit_code=0,persist=False);return 0
+ except Exception as exc:
+  audit.failure('BOOTSTRAP',exc,persist=False)
+  audit.emit(phase='RUN_COMPLETED',status='FAILED',exit_code=1,persist=False);return 1
+
 if __name__=='__main__':
- identity();url=dsn();apply(url);bank=models();register(url,permit(),bank)
- print(json.dumps(dict(phase='BOOTSTRAP',status='READY',models=len(bank),real_forecasts=0)))
+ import sys
+ sys.exit(main())

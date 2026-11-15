@@ -85,3 +85,11 @@ real models and same-session readiness, then actual SQL count/first issue and ac
 cron. Currently all operational acceptance items remain unfulfilled. No backdate.
 Address credential separation/key rotation/native backup/notification/revision review
 limitations; private historical comparison only, no public licensed series.
+
+## Q008-v5
+
+Review dependent fix PR and additive005. Request explicit approval before pinning
+fix SHA only in research worker. Preserve cron; verify new run UUID/completion/HTTP
+status and independent read-only persistence audit. Historical432/first timestamp
+are app-log observations, not fresh SQL. Sunday skip is not forecast-generation
+acceptance; do not backdate the failed historical session. No merge/production.

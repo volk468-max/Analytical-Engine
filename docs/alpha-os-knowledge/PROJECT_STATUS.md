@@ -125,3 +125,13 @@ control (user did not approve); no deployment. Both services staged-create, real
 forecasts written0, first issueNULL, SQL acceptanceNOT_RUN, cronNOT_ACTIVE. Data API
 and actual new-source comparison NOT_RUN. This is not a completed daily launch.
 [Q008-v4](research/Q008-v4.md); old negative PR26 findings preserved.
+
+## Daily worker / Q008-v5, 2026-11-15
+
+Railway now live on f066a5ecc4dc8c1984905b748d5781fe7235bb94, cron unchanged. Nov13/14
+application logs report216each/432total and first2026-11-13T02:05:45.498639+00:00.
+This supersedes the earlier NOT_RUNNING snapshot as a new observation, not rewriting
+it. Fresh independent SQL UNVERIFIED; no direct count/distribution assertion. Nov12
+failed raw-bundle readiness comparison; underlying changed field unavailable. Fix
+code/readiness/diagnostics prepared in dependent branch, no deploy/production/trades.
+[Q008-v5](research/Q008-v5.md); new real execution pending explicit owner approval.

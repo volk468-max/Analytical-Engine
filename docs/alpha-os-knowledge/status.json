@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-11",
+  "checked_at": "2026-11-15",
   "baseline_sha": "a14ebf9c268bea5cb01de962edfb98b8df94652a",
   "pull_requests": [
     {
@@ -161,11 +161,13 @@
     14
   ],
   "last_task": {
-    "id": "Q008-v4",
-    "operational_status": "NOT_RUNNING_DEPLOYMENT_APPROVAL_BLOCKED",
-    "real_forecasts_written": 0,
-    "first_issue_utc": null,
-    "sql_acceptance": "NOT_RUN",
-    "cron_active": false
+    "id": "Q008-v5",
+    "operational_status": "EXISTING_RUNS_OBSERVED_FIX_NOT_DEPLOYED",
+    "application_sql_log_count": 432,
+    "application_sql_log_first_issue_utc": "2026-11-13T02:05:45.498639+00:00",
+    "application_log_asof": "2026-11-14T02:05:33.499927399Z",
+    "independent_sql": "UNVERIFIED",
+    "fix_live_execution": "UNVERIFIED_APPROVAL_PENDING",
+    "cron": "0 2 * * 2-6"
   }
 }
