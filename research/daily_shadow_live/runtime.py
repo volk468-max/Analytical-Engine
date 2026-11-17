@@ -150,18 +150,21 @@ def run_daily():
   receipt(store,phase=phase,status='ACCOUNT_METADATA_MATCHED',subscription_active=True)
   now=datetime.now(timezone.utc);adapter=EODHDAdapter(p,transport=transport,network_approved=True);session=latest_completed(now)
   ny=now.astimezone(ZoneInfo('America/New_York'));day=ny.date().isoformat();phase='ISSUE'
-  if not calendar().is_session(pd.Timestamp(day)):
-   receipt(store,phase=phase,status='NON_TRADING_DAY',session=day)
-  elif issuance_gate(day,now.isoformat(),replace(p,finalization_verified=True)):
-   sample=adapter.collect(session)
-   if sample.legal_reason:raise VendorError(sample.legal_reason)
-   extra,checks=verify_actions(adapter,session)
-   sample.raw_responses.update(extra);sample.retrieved_at=datetime.now(timezone.utc).isoformat();sample.revision=hashlib.sha256(b''.join(k.encode()+b'\0'+sample.raw_responses[k] for k in sorted(sample.raw_responses))).hexdigest();store.payload(CONTRACT,sample,p.raw_until)
-   receipt(store,phase='PREFLIGHT',status='REAL_ACCESS_AND_ACTION_SAMPLES_VERIFIED',session=session,models=len(models()),checked=len(checks),subscription_active=True)
-   receipt(store,phase=phase,status='WAITING_VALID_SESSION_WINDOW',session=day,reason=issuance_gate(day,now.isoformat(),replace(p,finalization_verified=True)))
-  else:
-   result=issue_once(store,adapter,models(),day);receipt(store,**result)
-   if result['status'] in ('PARTIAL_FAILURE','STATUS_BLOCKED','ALREADY_RUNNING'):partial.append('ISSUE')
+  try:
+   if not calendar().is_session(pd.Timestamp(day)):
+    receipt(store,phase=phase,status='NON_TRADING_DAY',session=day)
+   elif issuance_gate(day,now.isoformat(),replace(p,finalization_verified=True)):
+    sample=adapter.collect(session)
+    if sample.legal_reason:raise VendorError(sample.legal_reason)
+    extra,checks=verify_actions(adapter,session)
+    sample.raw_responses.update(extra);sample.retrieved_at=datetime.now(timezone.utc).isoformat();sample.revision=hashlib.sha256(b''.join(k.encode()+b'\0'+sample.raw_responses[k] for k in sorted(sample.raw_responses))).hexdigest();store.payload(CONTRACT,sample,p.raw_until)
+    receipt(store,phase='PREFLIGHT',status='REAL_ACCESS_AND_ACTION_SAMPLES_VERIFIED',session=session,models=len(models()),checked=len(checks),subscription_active=True)
+    receipt(store,phase=phase,status='WAITING_VALID_SESSION_WINDOW',session=day,reason=issuance_gate(day,now.isoformat(),replace(p,finalization_verified=True)))
+   else:
+    result=issue_once(store,adapter,models(),day);receipt(store,**result)
+    if result['status'] in ('PARTIAL_FAILURE','STATUS_BLOCKED','ALREADY_RUNNING'):partial.append('ISSUE')
+  except Exception as exc:
+   audit.failure('LEGACY_ISSUE',exc);partial.append('LEGACY_ISSUE')
   from .vol_runtime import enabled,run_vol,preflight,inspect_vol
   if enabled():
    phase='VOL'

@@ -105,3 +105,10 @@ Local PostgreSQL17.11:210tests PASS,0skips (includes22new VOL tests). This is
 code/SQL evidence, not real VOL issuance. Final integration/live acceptance still
 pending deployment and actual source/SQL checks. Old research records untouched.
 [Q009](research/Q009-v1.md).
+
+
+### Q009 final code checkpoint
+Published Draft PR34; fixed knowledge test-fixture scope and isolated legacy
+issuance errors from VOL. One extra runtime regression passes:211distinct pipeline
+tests across local runs, plus9knowledge tests; four-schema backup/restore passes.
+No VOL live issuance asserted. Deployment/source preflight remain next gate.

@@ -164,7 +164,7 @@
     "id": "Q009-v1",
     "operational_status": "IMPLEMENTED_PENDING_ISOLATED_DEPLOYMENT_REAL_ISSUANCE",
     "base_sha": "fe834c77cbadf4baa3eab68135cbdee1ecdad1f0",
-    "local_tests": 210,
+    "local_tests": 211,
     "local_postgres": "17.11",
     "real_vol_issuance": "NOT_VERIFIED"
   }

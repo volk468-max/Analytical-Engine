@@ -100,3 +100,10 @@ Publish/review feature/vol-daily-ten-stocks on pinned PR29 base, verify CI and
 source/schema/asof/support. Enable only authorised isolated worker. Capture real
 10-stock preflight then actual future valid-window issue+read-only SQL; no backdate.
 Save actual status in Notion, distinguish deployed/scheduled from first issuance.
+
+
+### Q009 final code checkpoint
+Published Draft PR34; fixed knowledge test-fixture scope and isolated legacy
+issuance errors from VOL. One extra runtime regression passes:211distinct pipeline
+tests across local runs, plus9knowledge tests; four-schema backup/restore passes.
+No VOL live issuance asserted. Deployment/source preflight remain next gate.

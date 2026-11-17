@@ -152,3 +152,11 @@ class RuntimeTests(unittest.TestCase):
             adapter.return_value.collect.side_effect=[sample(s) for s in vol.SYMBOLS]
             report=preflight(store,fixture_permit(),MagicMock(),SESSION,clock=lambda:datetime.fromisoformat(NOW))
         self.assertEqual(receipt.call_count,10);self.assertEqual(report['models'],120);self.assertEqual(report['checked']+report['blocked'],120);store.forecasts.assert_not_called();store.append.assert_not_called()
+
+    def test_legacy_failure_does_not_suppress_vol(self):
+        from .test_worker_fix import DiagnosticTests
+        from research.daily_shadow_v3.adapter import VendorError
+        import os
+        with patch.dict(os.environ,{'ALPHA_VOL_ENABLED':'true','ALPHA_VOL_PREFLIGHT_ONCE':'false'}),patch('research.daily_shadow_live.vol_runtime.run_vol',return_value=dict(phase='VOL',status='RECORDED',issued=120,blocked=0)) as issuer,patch('research.daily_shadow_live.vol_runtime.inspect_vol',return_value=dict(phase='VOL_SQL_AUDIT',status='DIRECT_READ_ONLY_SQL')):
+            code,records,_=DiagnosticTests().run_mock(issue_error=VendorError('SOURCE_STILL_REVISING'))
+        issuer.assert_called_once();self.assertEqual(code,2);self.assertTrue(any(r.get('phase')=='VOL' and r.get('status')=='RECORDED' for r in records))
