@@ -162,3 +162,25 @@ research fix deployment and repeat audit/preflight are next, already within owne
 authorisation. No production/trading/merge/purchases. Project list-services read
 confirms only one environment, research; no other environment could receive a
 service source update. After acceptance verify first real next valid cron issue.
+
+
+## 2026-11-17 — Q009-v4 / operational preflight accepted, first issue pending
+
+Actual deployed/pinned source `a2855b5107eb02946cb6e7e1dc41ab69db61ecfb`,
+deploymentd20392cf-7044-4ac5-8264-d050168bbefd SUCCESS. No pending patch.
+After minimal audit-transaction fix, actual run8688b6b2-7b50-465b-93d6-b04f67ff93a7
+ended SUCCESS/exit0 at2026-11-17T10:19:12UTC:108/120targets ready,12NBIS blocked
+INSUFFICIENT_MATURE_TRAINING_SUPPORT; other9stocks12/12ready.63HTTP200/0failures.
+Read-only SQL audit inside worker reports0VOLrecords/0numeric/NULLfirst/lastissue,
+DUPLICATES=0. These are SQL results read from application logs, not an independent
+SQL session. BEFORE_OFFICIAL_CLOSE prevented a daytime/backdated forecast.
+[Sanitised evidence](../../reports/vol-daily-v1/operational-acceptance.json).
+
+Cron0 2 * * 2-6 remains05:00Moscow Tue–Sat. First real VOL issue expected2026-11-18
+05:00Moscow (USsession2026-11-17); pending, not claimed as issued. One-time
+automation for05:30Moscow will audit actual manifest/timestamps/duplicates/blocks
+and save in Notion; IDAutomation_a3be3fb079a881918909c1cd592c1d7c.
+Notion Alpha OS history saved including old failures and successful resolution.
+Next: first prospective issuance acceptance, then mature10/30session scoring;
+NBIS remains explicitly blocked until protocol support is sufficient.
+No production/trading/broker/merge/new purchases. PR34 remains Draft/unmerged.
