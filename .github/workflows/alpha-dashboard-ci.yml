@@ -1,0 +1,25 @@
+name: Alpha Forecast Dashboard CI
+on:
+  pull_request:
+    paths:
+      - 'research/forecast_dashboard/**'
+      - '.github/workflows/alpha-dashboard-ci.yml'
+  push:
+    branches:
+      - 'feature/alpha-forecast-dashboard-v1'
+    paths:
+      - 'research/forecast_dashboard/**'
+      - '.github/workflows/alpha-dashboard-ci.yml'
+jobs:
+  dashboard:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'psycopg[binary]>=3.2,<4'
+      - run: python -m unittest research.forecast_dashboard.test_server -v
+      - run: python -m compileall -q research/forecast_dashboard
