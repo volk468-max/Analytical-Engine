@@ -699,6 +699,13 @@
       "card": "research/Q010-v2.md",
       "classification": "DEPLOYED_SCHEDULED_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
       "supersedes": "Q010-v1 implementation checkpoint; original retained"
+    },
+    {
+      "id": "Q011-v1",
+      "title": "Daily Ensemble B five-component integration",
+      "branch": "feature/ensemble-daily-ten-stocks",
+      "card": "research/Q011-v1.md",
+      "classification": "IMPLEMENTED_PENDING_RESEARCH_DEPLOYMENT"
     }
   ]
 }

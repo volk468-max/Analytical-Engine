@@ -185,6 +185,16 @@ def run_daily():
     receipt(store,**inspect_risk_forecast(store))
     if result['status'] in ('PARTIAL_FAILURE','ALREADY_RUNNING'):partial.append('RISK_FORECAST')
    except Exception as exc:audit.failure('RISK_FORECAST',exc);partial.append('RISK_FORECAST')
+  from .ensemble_runtime import enabled as ens_enabled,run_ensemble,preflight as ens_preflight,inspect_ensemble
+  if ens_enabled():
+   phase='ENSEMBLE_RISK'
+   try:
+    if os.environ.get('ALPHA_ENSEMBLE_RISK_PREFLIGHT_ONCE')=='true' and issuance_gate(day,datetime.now(timezone.utc).isoformat(),replace(p,finalization_verified=True)):
+     receipt(store,**ens_preflight(store,p,transport,session))
+    result=run_ensemble(store,p,transport,day);receipt(store,**result)
+    receipt(store,**inspect_ensemble(store))
+    if result['status'] in ('PARTIAL_FAILURE','ALREADY_RUNNING'):partial.append('ENSEMBLE_RISK')
+   except Exception as exc:audit.failure('ENSEMBLE_RISK',exc);partial.append('ENSEMBLE_RISK')
   phase='EVALUATION';resolution=resolve_due(store,adapter,session,now)
   if resolution['unresolved']:partial.append('OUTCOME_RESOLUTION')
   from .reporting import weekly_report

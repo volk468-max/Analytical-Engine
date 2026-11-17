@@ -9,6 +9,7 @@ on:
       - 'reports/daily-shadow-worker-fix-v1/**'
       - 'reports/vol-daily-v1/**'
       - 'reports/risk-forecast-daily-v1/**'
+      - 'reports/ensemble-daily-v1/**'
       - 'reports/daily-shadow-postgres-v3/**'
       - 'reports/daily-shadow-postgres-v2/**'
       - '.github/workflows/daily-shadow.yml'
@@ -53,7 +54,7 @@ jobs:
       - name: Offline fixtures and actual PostgreSQL permission/concurrency checks
         run: python -m unittest research.daily_shadow.test_core research.daily_shadow.test_postgres research.daily_shadow.test_reporting research.daily_shadow.test_preparation -v
       - name: Research mode, legal gates and TTL tests
-        run: python -m unittest research.daily_shadow_v3.test_unit research.daily_shadow_v3.test_postgres research.daily_shadow_live.test_live research.daily_shadow_live.test_worker_fix research.daily_shadow_live.test_vol research.daily_shadow_live.test_risk_forecast_daily -v
+        run: python -m unittest research.daily_shadow_v3.test_unit research.daily_shadow_v3.test_postgres research.daily_shadow_live.test_live research.daily_shadow_live.test_worker_fix research.daily_shadow_live.test_vol research.daily_shadow_live.test_risk_forecast_daily research.daily_shadow_live.test_ensemble_daily -v
       - name: Separate synthetic research rehearsal
         run: python -m research.daily_shadow_v3.rehearsal
       - name: Verify frozen model artifacts (network forbidden)
