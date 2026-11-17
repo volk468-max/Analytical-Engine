@@ -23,3 +23,7 @@ jobs:
       - run: python -m pip install 'psycopg[binary]>=3.2,<4'
       - run: python -m unittest research.forecast_dashboard.test_server -v
       - run: python -m compileall -q research/forecast_dashboard
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check research/forecast_dashboard/app.js
