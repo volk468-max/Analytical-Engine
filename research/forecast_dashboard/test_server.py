@@ -22,7 +22,8 @@ class DashboardTests(unittest.TestCase):
         self.assertNotIn("alpha_licensed_v3",server.QUERY)
         self.assertNotIn("SELECT *",server.QUERY.upper())
     def test_field_count(self):
-        self.assertEqual(len(server.FIELDS),13)
+        self.assertEqual(len(server.FIELDS),14)
+        self.assertIn("model_id", server.FIELDS)
 
 if __name__ == "__main__":
     unittest.main()
