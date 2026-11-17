@@ -52,18 +52,24 @@ function score(rows){
  return {n,brier,frequency};
 }
 function accuracy(rows){
- const ready=rows.filter(r=>r.outcome_status==="MATURED"&&typeof r.outcome==="boolean");
- const h=score(ready.filter(r=>r.model==="HIST"));
- const g=score(ready.filter(r=>r.model==="REGIME"));
- const baseline=ready.filter(r=>r.model==="HIST"&&r.baseline!=null);
- const b=baseline.length?baseline.reduce((s,r)=>s+(r.baseline-Number(r.outcome))**2,0)/baseline.length:null;
- if(!h&&!g)return '<div class="empty"><strong>Подтверждённой точности пока нет.</strong><p>Для этого сценария ещё нет завершённых горизонтов с проверенным исходом. Вероятности остаются исследовательскими оценками.</p></div>';
+ // Score HIST and REGIME on exactly the same completed event dates.
+ const byDay=new Map();
+ for(const r of rows){
+  if(r.outcome_status!=="MATURED"||typeof r.outcome!=="boolean")continue;
+  if(!byDay.has(r.session))byDay.set(r.session,{});
+  byDay.get(r.session)[r.model]=r;
+ }
+ const pairs=[...byDay.values()].filter(v=>v.HIST&&v.REGIME&&v.HIST.outcome===v.REGIME.outcome);
+ const h=score(pairs.map(v=>v.HIST)),g=score(pairs.map(v=>v.REGIME));
+ const baseline=pairs.map(v=>v.HIST).filter(r=>r.baseline!=null);
+ const b=baseline.length?baseline.reduce((s,r)=>s+(Number(r.baseline)-Number(r.outcome))**2,0)/baseline.length:null;
+ if(!pairs.length)return '<div class="empty"><strong>Подтверждённой точности пока нет.</strong><p>Для этого сценария ещё нет парных завершённых прогнозов с проверенным исходом. Вероятности остаются исследовательскими оценками.</p></div>';
  return '<table><thead><tr><th>Метрика</th><th>HIST</th><th>REGIME</th></tr></thead><tbody>'+
- '<tr><td>Завершено</td><td>'+(h?.n??0)+'</td><td>'+(g?.n??0)+'</td></tr>'+
- '<tr><td>Brier ↓</td><td>'+(h?h.brier.toFixed(3):"—")+'</td><td>'+(g?g.brier.toFixed(3):"—")+'</td></tr>'+
- '<tr><td>Частота события</td><td>'+(h?percent(h.frequency*100):"—")+'</td><td>'+(g?percent(g.frequency*100):"—")+'</td></tr>'+
+ '<tr><td>Парных завершённых событий</td><td>'+h.n+'</td><td>'+g.n+'</td></tr>'+
+ '<tr><td>Brier ↓</td><td>'+h.brier.toFixed(3)+'</td><td>'+g.brier.toFixed(3)+'</td></tr>'+
+ '<tr><td>Частота события</td><td>'+percent(h.frequency*100)+'</td><td>'+percent(g.frequency*100)+'</td></tr>'+
  '<tr><td>Базовая модель Brier</td><td colspan="2">'+(b==null?"Нет сопоставимых наблюдений":b.toFixed(3)+" (n="+baseline.length+")")+'</td></tr></tbody></table>'+
- '<p class="small muted">Это предварительная диагностика, а не доказательство превосходства. Brier корректно сравнивать на совпадающих исходах; горизонты пересекаются, наблюдения зависимы. До достаточной выборки не использовать для выбора торговой стратегии.</p>';
+ '<p class="small muted">Сравнение только на совпадающих событиях. Пересекающиеся горизонты зависимы; без достаточной выборки, доверительных интервалов и проверки калибровки нельзя делать вывод о превосходстве модели или использовать её как торговый сигнал.</p>';
 }
 function comparison(p,date){
  const rs=state.rows.filter(r=>r.session===date&&r.label===p.label&&r.horizon===p.horizon&&r.threshold===p.threshold&&r.model===p.model);
