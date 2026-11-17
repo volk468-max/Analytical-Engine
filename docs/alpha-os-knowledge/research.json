@@ -660,6 +660,14 @@
       "branch": "feature/vol-daily-ten-stocks",
       "card": "research/Q009-v1.md",
       "classification": "IMPLEMENTED_PENDING_ISOLATED_DEPLOYMENT_REAL_ISSUANCE"
+    },
+    {
+      "id": "Q009-v2",
+      "title": "Verified VOL code, deployment approval rejected",
+      "branch": "feature/vol-daily-ten-stocks",
+      "card": "research/Q009-v2.md",
+      "classification": "CODE_VERIFIED_STAGED_DEPLOYMENT_APPROVAL_REJECTED",
+      "supersedes": "Q009-v1 code-preparation checkpoint; original retained"
     }
   ]
 }

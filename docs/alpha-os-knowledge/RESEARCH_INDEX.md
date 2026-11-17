@@ -122,3 +122,26 @@ Local PostgreSQL17.11:210tests PASS,0skips (includes22new VOL tests). This is
 code/SQL evidence, not real VOL issuance. Final integration/live acceptance still
 pending deployment and actual source/SQL checks. Old research records untouched.
 [Q009](research/Q009-v1.md).
+
+
+## 2026-11-17 — Q009-v2 / code verified, platform deployment rejected
+
+[PR34](https://github.com/volk468-max/Analytical-Engine/pull/34) calculation SHA
+`84fcc8dff22d08ce186eaf0d8753a9700b428e15`: final GitHub
+[daily pipeline](https://github.com/volk468-max/Analytical-Engine/actions/runs/44060183233)
+and [online knowledge](https://github.com/volk468-max/Analytical-Engine/actions/runs/44060183208)
+completed SUCCESS, including PostgreSQL16/18, full parent regression/replay and restore.
+Local211distinct pipeline tests+9knowledge, four-schema synthetic restore pass.
+
+Owner repeated connection request after platform rejection. Both accept-deploy
+attempts returned: Cancelled — the user did not approve this action. No changes
+were made. This is a platform result, not an assertion owner intentionally refused.
+No bypass attempted. Patch0bc08fd0-33af-4f97-b3ee-03ca1c0a73ea remains STAGED,
+worker-only. Current live source stays fe834c77cbadf4baa3eab68135cbdee1ecdad1f0.
+VOL not enabled; migration006/live10-symbol preflight/realVOL issuance NOT RUN.
+Notion Alpha OS received decisions, exact universe, implementation and this
+blocked operational checkpoint. No production/trading/merge/purchases.
+
+Next: approve/apply existing research patch, observe terminal deploy SUCCESS,
+bootstrap/migration006 and actual10-symbol preflight, direct read-only SQL, cron.
+Do not call code/CI/staging a completed connection; no historical backfill.

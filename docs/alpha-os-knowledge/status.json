@@ -161,11 +161,15 @@
     14
   ],
   "last_task": {
-    "id": "Q009-v1",
-    "operational_status": "IMPLEMENTED_PENDING_ISOLATED_DEPLOYMENT_REAL_ISSUANCE",
+    "id": "Q009-v2",
+    "operational_status": "CODE_VERIFIED_STAGED_DEPLOYMENT_APPROVAL_REJECTED",
     "base_sha": "fe834c77cbadf4baa3eab68135cbdee1ecdad1f0",
     "local_tests": 211,
     "local_postgres": "17.11",
-    "real_vol_issuance": "NOT_VERIFIED"
+    "real_vol_issuance": "NOT_RUN",
+    "candidate_sha": "84fcc8dff22d08ce186eaf0d8753a9700b428e15",
+    "deployment_attempts": 2,
+    "railway_migration006": "NOT_APPLIED",
+    "notion_history": "SAVED"
   }
 }
