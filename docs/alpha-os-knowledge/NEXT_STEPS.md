@@ -223,3 +223,75 @@ separate05:40audit; existing firstVOL audit Automation_a3be3fb079a881918909c1cd5
 was extended to BOTH models at existing05:30Moscow, preserving original VOL scope
 and schedule. Notion history updated/corrected. Next real first-manifest audit,
 then mature10/30session scoring. No production/trades/broker/merge/purchases.
+
+
+## 2026-11-17 — Q011 / daily Ensemble Risk Forecast B
+
+Owner requested Ensemble Risk Forecast on the same ten stocks and 10/30-session
+grid. [Issue37](https://github.com/volk468-max/Analytical-Engine/issues/37).
+Protocol frozen at12afba72735363868dae7b0f7c6c3a6809974420 before actual fits;
+branch feature/ensemble-daily-ten-stocks based on RF metadata
+f2e17ec10d90326edaf7baf0328d345c40a08c71. Actual worker still pins
+261cf92ef3466934a2c3a9f4a56603f5fa00c925 at this implementation checkpoint.
+
+Ensemble B is the mean of FIVE original same-target probabilities:
+technical_combined, v3_state, technical_plus_v3, empirical volatility, QQQ regime.
+Original RiskForecast/v3 source366f8cd00e8c228d4796d0abbe9997f717a3b6ad preserved,
+v3 C/sensitive evaluator exact except UTC import. Required QQQ causal features;
+optional VIX/SOX/support unavailable explicitly, no zero fill. Daily refit,
+new30 horizon and CloseTOUCH form a NEW daily variant. Original PR18 result
+0/162 primary advantages remains unchanged; no superiority claim.
+
+120 immutable atomic series, DOWN5/10/15%, Low/Close TOUCH, warmup252/min252
+mature labels/min10 each global class, LOW_SUPPORT if any sparse component.
+NBIS starts2024-10-21. SQL008 additive,001–007 unchanged. No price forecast or
+terminal return; no calibrated probabilities. NOT YET DEPLOYED. Next local SQL
+acceptance, GitHub CI, authorised research-only update and actual preflight,
+then first prospective manifest audit. Production/trades/merge unchanged.
+
+[Q011](research/Q011-v1.md).
+
+
+## 2026-11-17 — Q011-v2 / Ensemble B connected; real preflight and SQL audit PASS
+
+[PR38](https://github.com/volk468-max/Analytical-Engine/pull/38) Draft/unmerged,
+actual pinned sourcee581a0af10467ebc7720af8a3fdeac126199a6a3, deployment
+79c1aabd-1c00-4914-8280-095c1b3b36c4 SUCCESS. Bootstrap READY/exit0 at11:10:14UTC
+(run6ea2c412-a0ef-4b0f-9a04-4e240e92e29e); this source applies SQL001–008.
+Existing001–007 unchanged. Research remains the sole environment, no staged
+changes. Cron unchanged0 2 * * 2-6 =05:00Moscow Tue–Sat.
+
+Actual run8c90266a-9d15-4b5f-890e-8c0841e10a55 completedSUCCESS/exit0
+11:11:30UTC,93HTTP200/0failures/partial_phases empty. All10stocks checked:
+ANET/NVDA/AMD/CRWD/GOOG/GS/META/MU/LRCX ready12targets each,
+NBIS12BLOCKED INSUFFICIENT_MATURE_TRAINING_SUPPORT;108ready/12blocked.
+Ensemble read-only SQL inside worker:0records/firstNULL/latestNULL/duplicates0.
+VOL/RF audits also passed. These are application-log SQL observations, not an
+independent SQL connection. BEFORE_OFFICIAL_CLOSE correctly prevented a daytime
+backdated forecast. Original HIST/REGIME648 numerical forecasts still present.
+
+133local tests on disposable PostgreSQL17 passed with0skips,9knowledge tests
+and offline validator PASS;4-schema backup/restore exact content hashes match.
+Online knowledge CI44070680112 SUCCESS, full CI44070680070 still running at
+this checkpoint. Same five-component B raw uncalibrated daily variant, explicit
+missing optional VIX/SOX/support, sparse components LOW_SUPPORT; no accuracy
+advantage claimed. Original PR18 negative result preserved.
+
+First actual daily Ensemble issue is pending2026-11-18 around05:00Moscow,
+for USsession2026-11-17; not claimed as issued. Existing05:30Moscow first-issue
+audit extended to Ensemble as well as VOL/RF, preserving original scopes/time;
+Automation_a3be3fb079a881918909c1cd592c1d7c. Next verify actual immutable120row
+manifest, blocks/reasons/LOW_SUPPORT/issuedUTC/duplicates, then mature10/30
+session scoring. Operational status DEPLOYED_SCHEDULED_PREFLIGHT_AUDIT_PASS,
+FIRST_PROSPECTIVE_ENSEMBLE_ISSUANCE_PENDING. Production/trades/merge unchanged.
+
+[Q011-v2](research/Q011-v2.md).
+
+
+### Q011 final deployed-source CI acceptance
+
+On actual deployed sourcee581a0af10467ebc7720af8a3fdeac126199a6a3, full
+[CI44070680070](https://github.com/volk468-max/Analytical-Engine/actions/runs/44070680070)
+completedSUCCESS: PostgreSQL16/18, all parent research regression/replay and
+backup/restore drills. Online knowledge CI44070680112 also SUCCESS. Previous
+running status is historical. Prospective first issuance still pending.

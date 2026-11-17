@@ -13,3 +13,15 @@ belong in Git. Historical comparison is private, exploratory revised-history rep
 
 Deployment approval was rejected during this task. Staged config is not live;
 no actual first forecast has been accepted. Read the handover before any apply.
+
+## Ensemble B daily v1
+
+`ALPHA_ENSEMBLE_RISK_ENABLED=true` enables the separate atomic 120-series
+ENSEMBLE_RISK manifest; `ALPHA_ENSEMBLE_RISK_PREFLIGHT_ONCE=true` performs
+non-issuing readiness checks outside the official issuance window. Original
+five component arithmetic mean, empirical volatility (not VOL logistic),
+frozen v3 C/sensitive. Required QQQ; optional VIX/SOX/support unavailable.
+Same owner ten stocks,10/30sessions,DOWN5/10/15 Low/Close touch.
+SQL008 additive. Independent phase/lock280008/keyENS_B_V1/read-only audit.
+Raw/uncalibrated/NOT_PIT replay training; sparse cells LOW_SUPPORT; insufficient
+global mature labels BLOCKED. No change to HIST/REGIME/VOL/RF or trading.

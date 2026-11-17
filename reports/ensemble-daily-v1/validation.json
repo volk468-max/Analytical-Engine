@@ -1,0 +1,30 @@
+{
+  "source_sha": "e581a0af10467ebc7720af8a3fdeac126199a6a3",
+  "local_postgres_major": 17,
+  "local_relevant_tests": 133,
+  "local_tests_passed": true,
+  "local_tests_skipped": 0,
+  "knowledge_tests": 9,
+  "offline_knowledge_pass": true,
+  "online_knowledge_ci_run": 44070680112,
+  "online_knowledge_ci_conclusion": "success",
+  "four_schema_backup_restore_exact_content_hash_match": true,
+  "full_ci_run": 44070680070,
+  "full_ci_status": "COMPLETED_SUCCESS",
+  "file_sha256": {
+    "reports/ensemble-daily-v1/protocol.txt": "4153ecfe35f542e77ccfbcb832deb61857f181b6dd01b8546ee89c8d5a71ae40",
+    "reports/ensemble-daily-v1/reference_v3.py.txt": "3d6235f0d71efe0c2e0f2095f1eb8406cd9fa0140f90796df0760fcaa54bb69c",
+    "reports/ensemble-daily-v1/reference_ensemble_study.py.txt": "87f4c11e490b2272e1e8ef8c54b645c3302acf6e32422d57275df5f756a30014",
+    "research/daily_shadow_live/ensemble_daily.py": "7eb6ee018a0fa5495a80ad269cfb8a9de8737c7eefe9fd4ddb97fc2e87db0b89",
+    "research/daily_shadow_live/frozen_v3.py": "3e7236bf5567fe30e125c9a9888cd823f52d23a70ec4987ee7266b8838c0af2a"
+  },
+  "limitations": [
+    "SYNTHETIC_SQL_FIXTURE_TESTS_ARE_NOT_PROSPECTIVE_FORECASTS",
+    "UNVALIDATED_UNCALIBRATED_NEW_DAILY_VARIANT",
+    "OPTIONAL_VIX_SOX_SUPPORT_UNAVAILABLE",
+    "REVISED_VENDOR_TRAINING_REPLAY_NOT_PIT",
+    "FIRST_PROSPECTIVE_ISSUANCE_PENDING"
+  ],
+  "local_online_validator": "UNAVAILABLE_URLERROR",
+  "online_check_available_via_authenticated_github_ci": true
+}
