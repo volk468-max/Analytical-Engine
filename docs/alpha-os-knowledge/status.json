@@ -161,10 +161,24 @@
     14
   ],
   "last_task": {
-    "id": "Q013-v1",
-    "operational_status": "IMPLEMENTED_PENDING_RESEARCH_DEPLOYMENT",
-    "actual_deployed_sha": "da216e5ab9025d0df1881cfcdcd14901b4e2e09a",
-    "replacement": "NBIS_TO_AVGO",
-    "active_universe_deployed": false
+    "id": "Q013-v2",
+    "operational_status": "AVGO_DEPLOYED_ALL_FOUR_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
+    "deployed_sha": "9e93e9a4914db95bc41d127afa19e2b3b96ca436",
+    "deployment": "34e22c16-c498-412a-ae66-780eb5859aca",
+    "run": "59dc1994-fc1b-4553-99e3-ef3dee24d21a",
+    "run_exit": 0,
+    "ready_counts": {
+      "VOL": 120,
+      "RISK_FORECAST": 120,
+      "ENSEMBLE_RISK": 120,
+      "MARKET_PRECURSORS": 156
+    },
+    "blocked": 0,
+    "AVGO_ready_per_model": 12,
+    "first_AVGO_issuance": "PENDING",
+    "notion_history": "SAVED",
+    "first_issue_audit_updated": true,
+    "periodic_audit_updated": true,
+    "deployed_source_full_ci": "SUCCESS"
   }
 }

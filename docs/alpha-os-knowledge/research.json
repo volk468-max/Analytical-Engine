@@ -736,6 +736,14 @@
       "branch": "feature/portfolio-avgo",
       "card": "research/Q013-v1.md",
       "classification": "IMPLEMENTED_PENDING_RESEARCH_DEPLOYMENT"
+    },
+    {
+      "id": "Q013-v2",
+      "title": "AVGO deployed and all four real preflights pass without blocks",
+      "branch": "feature/portfolio-avgo",
+      "card": "research/Q013-v2.md",
+      "classification": "AVGO_DEPLOYED_ALL_FOUR_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
+      "supersedes": "Q013-v1 implementation checkpoint; original retained"
     }
   ]
 }

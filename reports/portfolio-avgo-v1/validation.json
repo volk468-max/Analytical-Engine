@@ -1,0 +1,27 @@
+{
+  "source_sha": "9e93e9a4914db95bc41d127afa19e2b3b96ca436",
+  "local_postgres_major": 17,
+  "local_relevant_tests": 31,
+  "local_tests_passed": true,
+  "local_tests_skipped": 0,
+  "knowledge_tests": 9,
+  "offline_knowledge_pass": true,
+  "local_online_validator": "TIMED_OUT_90_SECONDS",
+  "online_knowledge_ci_run": 44104725436,
+  "online_knowledge_ci_conclusion": "success",
+  "four_schema_backup_restore_exact_content_hash_match": true,
+  "full_ci_run": 44104725516,
+  "full_ci_status": "COMPLETED_SUCCESS",
+  "file_sha256": {
+    "reports/portfolio-avgo-v1/protocol.txt": "399877248ef60097a87d5d25e727c5b505e1feff548a68ee2627aca536c91e88",
+    "research/daily_shadow_live/portfolio.py": "f023ccb3b35fc8bbf12c5de935a60c91db351af89ad9e83a35a5285e997171a6",
+    "research/daily_shadow_live/010_portfolio_avgo.sql": "a7970a48a684cb3476d0005a8c4cd89c4ecff5b8129017b3d79349fcf6b25832"
+  },
+  "limitations": [
+    "FIRST_PROSPECTIVE_ISSUANCE_PENDING",
+    "NO_BACKFILL_OR_HISTORICAL_NBIS_RELABELLING",
+    "MODEL_ACCURACY_NOT_VALIDATED"
+  ],
+  "real_avgo_ready_per_model": 12,
+  "real_all_four_preflight_pass": true
+}
