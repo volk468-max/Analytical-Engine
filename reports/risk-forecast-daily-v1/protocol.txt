@@ -1,0 +1,10 @@
+Risk Forecast daily v1 protocol, frozen before actual source fitting,2026-11-17.
+Owner request: add Risk Forecast daily for ANET NVDA AMD CRWD NBIS GOOG GS META MU LRCX, same10/30sessions as VOL.
+Choose existing technical_combined estimator from source366f8cd00e8c228d4796d0abbe9997f717a3b6ad, aae/research/risk_forecast.py. Not technical_plus_v3 or a new logistic estimator.
+Cells: prior20close peak drawdown bins5/10/15/25; annualisedRV20% bins20/40/60/80/120; belowSMA50 boolean; WilderRSI14 bins30/45/55/70, all bisect_right boundaries. Source dd excludes current anchor from prior peak. No imputed v3 scores/states/VIX/SOX.
+Probability exact empirical technical_combined: global Beta1/1 base=(hits+1)/(n+2); p=(cellhits+20*base)/(celln+20). Emptycell backoff tobase. LOW_SUPPORT unless celln>=60, bothclasses>=10 and>=5 distinct40session blocks. LOW_SUPPORT numeric is explicitly marked, not validated.
+Dailyrefit variant, not identical annual historical backtest. Warmup252;>=252fully mature training labels and>=10eachglobalclass; otherwise BLOCKED. Day00UTCfitcutoff, extra horizon anchorpurge, nextUTCmidnight maturity assumption, currentrevisedvendorarchiveNOT_PIT.
+Targets sameasVOL: DOWN5/10/15%, separately futureLow/futureClose anytouch within10/30nextXNYSsessions, excludinganchor; EOD_CLOSEtouch differsfrom original terminaltarget and is separately declared.120series/day. Not point-return/priceforecast, not updirection.
+NBIS onlysince2024-10-21. No zero-filled gaps or YNDXsplice. Actualdataonly, samepaid/TTL/splits/currency/readiness checks. Keep LOW_SUPPORT and BLOCKED explicit.
+Independent atomicmanifest/idempotency/runphase/lock; originalHIST/REGIME/VOL unchanged. Immutableforecasts, genuineissueUTC, no backfill. Shared exactwindowresolver. No trades/production/broker/merge/purchases.
+Prerequisite tests: exactcell/probability parity vs pinnedoriginal, causalprefix/futurepoisoning, splitunits, maturity30, SQL007guard/legacyregression/atomicrollback/readonlyinspection. Preserve priorresearchnegativefindings, no superiorityclaim.

@@ -179,3 +179,47 @@ Notion Alpha OS history saved including old failures and successful resolution.
 Next: first prospective issuance acceptance, then mature10/30session scoring;
 NBIS remains explicitly blocked until protocol support is sufficient.
 No production/trading/broker/merge/new purchases. PR34 remains Draft/unmerged.
+
+
+## 2026-11-17 — Q010 / daily Risk Forecast
+
+Owner requests daily Risk Forecast for same10stocks/10&30sessions as VOL. Chosen
+existing technical_combined from source366f8cd00e8c228d4796d0abbe9997f717a3b6ad:
+exact empirical Beta1/1+shrink20 cell model, drawdown20/RV20/belowSMA50/WilderRSI14.
+Not technical_plus_v3; no fabricated v3/VIX/SOX. Dailyrefit/30session/CloseTOUCH
+adaptation explicitly versioned. LOW_SUPPORT numerical backoff is labelled, not
+validated/calibrated. NBIS since2024-10-21 only; global support may block.
+
+[Issue35](https://github.com/volk468-max/Analytical-Engine/issues/35), newbranch
+feature/risk-forecast-daily-ten-stocks from VOL metadata headf4042bf070c9d8ef1640d82bf72b5117a25484f1;
+actual research deployed source remainsa2855b5107eb02946cb6e7e1dc41ab69db61ecfb.
+Protocol frozen before real source fits.122local tests on PostgreSQL17 PASS,0skips,
+including newRF/SQL007 and VOL/runtime regression; original formula/cells parity
+confirmed against archived exact source. Production/trading/merge/purchases absent.
+Implementation prepared; NOT YET DEPLOYED. Actual10-stock preflight/SQLaudit and
+first future valid-window issuance remain to verify. [Q010](research/Q010-v1.md).
+
+
+## 2026-11-17 — Q010-v2 / Risk Forecast operational preflight PASS
+
+Actual pinned source261cf92ef3466934a2c3a9f4a56603f5fa00c925, deployment
+4381f0a4-3236-4161-a8f3-7d716c9b132b SUCCESS. Bootstrap READY/exit0 includes007.
+Real runc78f6dbd-e55d-40c6-8d0e-a78c44ffad9a completedSUCCESS/exit0 at10:40:44UTC,
+63HTTP200/0failures, partial_phases empty. Same10stock universe:9stocks12targets
+ready each,12NBIS blocked INSUFFICIENT_MATURE_TRAINING_SUPPORT. RF read-only SQL
+audit inside worker:0records/firstNULL/latestNULL/duplicates0; VOL audit also
+passed. These are application-log SQL observations, not an independent SQL session.
+No real RF forecast before close; gate BEFORE_OFFICIAL_CLOSE. No backfill.
+
+[PR36](https://github.com/volk468-max/Analytical-Engine/pull/36) Draft/unmerged.
+Raw technical_combined daily v1, explicit LOW_SUPPORT for sparse cells; not
+technical_plus_v3, not calibrated, no proven forecast advantage. Local122tests
+PostgreSQL17+9knowledge PASS;4schema backup/restore hashes match. Online knowledge
+CI passed; full repeated pipeline still pending at this checkpoint.
+
+Cron05:00Moscow Tue–Sat unchanged; first real RF issue2026-11-18 for USsession
+2026-11-17 is pending, not claimed as issued. Active-task limit prevented a new
+separate05:40audit; existing firstVOL audit Automation_a3be3fb079a881918909c1cd592c1d7c
+was extended to BOTH models at existing05:30Moscow, preserving original VOL scope
+and schedule. Notion history updated/corrected. Next real first-manifest audit,
+then mature10/30session scoring. No production/trades/broker/merge/purchases.
