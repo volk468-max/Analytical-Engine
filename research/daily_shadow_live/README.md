@@ -25,3 +25,16 @@ Same owner ten stocks,10/30sessions,DOWN5/10/15 Low/Close touch.
 SQL008 additive. Independent phase/lock280008/keyENS_B_V1/read-only audit.
 Raw/uncalibrated/NOT_PIT replay training; sparse cells LOW_SUPPORT; insufficient
 global mature labels BLOCKED. No change to HIST/REGIME/VOL/RF or trading.
+
+## Market Drawdown Precursors daily RAW v1
+
+`ALPHA_MARKET_PRECURSORS_ENABLED=true` enables separate156series/session,
+10/30sessions,DOWN5/10/15 Low/Close TOUCH; original marketSPY/QQQ/SOXX plus
+owner10stocks. Raw MINIMAL market / PLUS_X stock feature families, exact source
+PR20 price features/ridgeC0.1 raw fit. New expanding daily refit, NO original
+annual intercept calibration. No calibrated/validated superiority claim.
+`ALPHA_MARKET_PRECURSORS_PREFLIGHT_ONCE=true` readiness-only, never backdates.
+Required real SPY/QQQ/SOXX; warmup252/min252mature labels/min10eachclass; NBIS
+since2024-10-21 only. Replay training NOT_PIT. Missing inputs/support BLOCKED.
+Additive009, atomic156, lock280009, MDP_V1, separate phase/read-only SQLaudit.
+All earlier model/history/production/trading boundaries preserved.

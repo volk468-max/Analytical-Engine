@@ -195,6 +195,16 @@ def run_daily():
     receipt(store,**inspect_ensemble(store))
     if result['status'] in ('PARTIAL_FAILURE','ALREADY_RUNNING'):partial.append('ENSEMBLE_RISK')
    except Exception as exc:audit.failure('ENSEMBLE_RISK',exc);partial.append('ENSEMBLE_RISK')
+  from .market_precursors_runtime import enabled as mdp_enabled,run_market_precursors,preflight as mdp_preflight,inspect_market_precursors
+  if mdp_enabled():
+   phase='MARKET_PRECURSORS'
+   try:
+    if os.environ.get('ALPHA_MARKET_PRECURSORS_PREFLIGHT_ONCE')=='true' and issuance_gate(day,datetime.now(timezone.utc).isoformat(),replace(p,finalization_verified=True)):
+     receipt(store,**mdp_preflight(store,p,transport,session))
+    result=run_market_precursors(store,p,transport,day);receipt(store,**result)
+    receipt(store,**inspect_market_precursors(store))
+    if result['status'] in ('PARTIAL_FAILURE','ALREADY_RUNNING'):partial.append('MARKET_PRECURSORS')
+   except Exception as exc:audit.failure('MARKET_PRECURSORS',exc);partial.append('MARKET_PRECURSORS')
   phase='EVALUATION';resolution=resolve_due(store,adapter,session,now)
   if resolution['unresolved']:partial.append('OUTCOME_RESOLUTION')
   from .reporting import weekly_report
