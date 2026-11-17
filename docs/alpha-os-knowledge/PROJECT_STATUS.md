@@ -230,3 +230,22 @@ Notion Alpha OS history saved including old failures and successful resolution.
 Next: first prospective issuance acceptance, then mature10/30session scoring;
 NBIS remains explicitly blocked until protocol support is sufficient.
 No production/trading/broker/merge/new purchases. PR34 remains Draft/unmerged.
+
+
+## 2026-11-17 — Q010 / daily Risk Forecast
+
+Owner requests daily Risk Forecast for same10stocks/10&30sessions as VOL. Chosen
+existing technical_combined from source366f8cd00e8c228d4796d0abbe9997f717a3b6ad:
+exact empirical Beta1/1+shrink20 cell model, drawdown20/RV20/belowSMA50/WilderRSI14.
+Not technical_plus_v3; no fabricated v3/VIX/SOX. Dailyrefit/30session/CloseTOUCH
+adaptation explicitly versioned. LOW_SUPPORT numerical backoff is labelled, not
+validated/calibrated. NBIS since2024-10-21 only; global support may block.
+
+[Issue35](https://github.com/volk468-max/Analytical-Engine/issues/35), newbranch
+feature/risk-forecast-daily-ten-stocks from VOL metadata headf4042bf070c9d8ef1640d82bf72b5117a25484f1;
+actual research deployed source remainsa2855b5107eb02946cb6e7e1dc41ab69db61ecfb.
+Protocol frozen before real source fits.122local tests on PostgreSQL17 PASS,0skips,
+including newRF/SQL007 and VOL/runtime regression; original formula/cells parity
+confirmed against archived exact source. Production/trading/merge/purchases absent.
+Implementation prepared; NOT YET DEPLOYED. Actual10-stock preflight/SQLaudit and
+first future valid-window issuance remain to verify. [Q010](research/Q010-v1.md).

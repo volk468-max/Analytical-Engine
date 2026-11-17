@@ -175,6 +175,16 @@ def run_daily():
     receipt(store,**inspect_vol(store))
     if result['status'] in ('PARTIAL_FAILURE','ALREADY_RUNNING'):partial.append('VOL')
    except Exception as exc:audit.failure('VOL',exc);partial.append('VOL')
+  from .risk_forecast_runtime import enabled as rf_enabled,run_risk_forecast,preflight as rf_preflight,inspect_risk_forecast
+  if rf_enabled():
+   phase='RISK_FORECAST'
+   try:
+    if os.environ.get('ALPHA_RISK_FORECAST_PREFLIGHT_ONCE')=='true' and issuance_gate(day,datetime.now(timezone.utc).isoformat(),replace(p,finalization_verified=True)):
+     receipt(store,**rf_preflight(store,p,transport,session))
+    result=run_risk_forecast(store,p,transport,day);receipt(store,**result)
+    receipt(store,**inspect_risk_forecast(store))
+    if result['status'] in ('PARTIAL_FAILURE','ALREADY_RUNNING'):partial.append('RISK_FORECAST')
+   except Exception as exc:audit.failure('RISK_FORECAST',exc);partial.append('RISK_FORECAST')
   phase='EVALUATION';resolution=resolve_due(store,adapter,session,now)
   if resolution['unresolved']:partial.append('OUTCOME_RESOLUTION')
   from .reporting import weekly_report

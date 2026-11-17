@@ -102,3 +102,10 @@ Notion history. This authorises isolated research VOL integration/deployment, no
 production/broker/trading/merge/purchases. Preserve actual timestamps/history.
 Daily-refit implementation/support thresholds are implementation choices, not
 owner claims of model accuracy. Source Issue33 + current chat (no permalink).
+
+
+## 2026-11-17 — Risk Forecast connection
+Owner explicitly asks daily Risk Forecast on same portfolio. In context this
+authorises integration/deployment in existing isolated research worker, not
+production/trades/merge/purchases. technical_combined is an implementation choice
+explained to owner; not owner claim of superiority or approval of trading rules.
