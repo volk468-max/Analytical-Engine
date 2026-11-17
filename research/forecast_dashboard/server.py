@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parent
 SESSION_SECONDS = 8 * 3600
 QUERY = """
 SELECT f.session_date::text, f.symbol, f.label_type, f.threshold_pct,
-       f.horizon, m.model_name, round((f.probability_raw*100)::numeric,1)::float,
+       f.horizon, m.model_name, f.model_id::text, round((f.probability_raw*100)::numeric,1)::float,
        f.model_status, f.training_status, f.issued_at::text,
        o.status, o.outcome, b.probability
 FROM alpha_research_v3.forecasts f
@@ -34,7 +34,7 @@ WHERE f.run_mode='RESEARCH_FORECAST' AND f.status='RESEARCH_FORECAST'
 ORDER BY f.session_date DESC,f.symbol,f.label_type,f.horizon,f.threshold_pct,m.model_name
 LIMIT 25000
 """
-FIELDS = ("session","symbol","label","threshold","horizon","model","probability",
+FIELDS = ("session","symbol","label","threshold","horizon","model","model_id","probability",
           "model_status","training_status","issued_at","outcome_status","outcome","baseline")
 PASSWORD = os.getenv("DASHBOARD_PASSWORD", "")
 KEY = os.getenv("DASHBOARD_SESSION_KEY", "").encode()
