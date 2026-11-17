@@ -130,3 +130,30 @@ blocked operational checkpoint. No production/trading/merge/purchases.
 Next: approve/apply existing research patch, observe terminal deploy SUCCESS,
 bootstrap/migration006 and actual10-symbol preflight, direct read-only SQL, cron.
 Do not call code/CI/staging a completed connection; no historical backfill.
+
+
+## 2026-11-17 — Q009-v3 / deployment and actual preflight
+
+Owner applied the research patch manually. Source84fcc8dff22d08ce186eaf0d8753a9700b428e15
+deployment8b87b0b1-8d8a-484e-97f3-b96963756390 reached SUCCESS. Bootstrap READY/exit0
+run d4a3036b-175b-49b6-9974-bc3c80846e4a confirms migration/setup completed; no
+independent migration-catalog SQL yet. Existing cron unchanged, no staged changes.
+
+An authorised worker-only restart ran real preflight89344101-1cdd-4ce5-b7f7-e3676fcdd0c8:
+63HTTP200/0failures,10stock checks completed108ready/12blocked. All12NBIS targets
+blocked INSUFFICIENT_MATURE_TRAINING_SUPPORT; other9names12/12ready each. No
+actual VOL forecast published: daytime gate BEFORE_OFFICIAL_CLOSE. This is not
+prospective forecast acceptance/model validation. Old forecast total648 is old
+HIST/REGIME application SQL-log evidence, not VOL.
+
+Run ended PARTIAL_FAILURE/exit2 because inspect_vol selected repeatable-read after
+Store.connect had already queried database identity in the same transaction. New
+three-line fix commits the setup transaction before the read-only snapshot,
+retaining the restricted session role. Real disposable PostgreSQL17 regression
+plus6runtime tests PASS7/7. No estimator/targets/threshold/model changes.
+
+[PR34](https://github.com/volk468-max/Analytical-Engine/pull/34) continues; isolated
+research fix deployment and repeat audit/preflight are next, already within owner
+authorisation. No production/trading/merge/purchases. Project list-services read
+confirms only one environment, research; no other environment could receive a
+service source update. After acceptance verify first real next valid cron issue.

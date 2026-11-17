@@ -668,6 +668,14 @@
       "card": "research/Q009-v2.md",
       "classification": "CODE_VERIFIED_STAGED_DEPLOYMENT_APPROVAL_REJECTED",
       "supersedes": "Q009-v1 code-preparation checkpoint; original retained"
+    },
+    {
+      "id": "Q009-v3",
+      "title": "Deployed VOL, actual preflight108/12, SQL audit fix",
+      "branch": "feature/vol-daily-ten-stocks",
+      "card": "research/Q009-v3.md",
+      "classification": "DEPLOYED_PREFLIGHT_PASSED_AUDIT_FIX_PREPARED",
+      "supersedes": "Q009-v2 platform block resolved by owner; old records retained"
     }
   ]
 }

@@ -132,6 +132,9 @@ def preflight(store,permit,transport,session,*,clock=None):
 def inspect_vol(store):
     """Direct read-only SQL, emitted in worker context without credentials/raw data."""
     with store.connect() as c:
+        # Store.connect checks identity and installs the restricted session role.
+        # Finish that setup transaction before selecting snapshot isolation.
+        c.commit()
         c.execute('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY')
         n,numeric,first,last=c.execute("""select count(*),count(*) filter(where f.status='RESEARCH_FORECAST'),min(issued_at),max(issued_at)
           from alpha_research_v3.forecasts f join alpha_shadow_v1.model_registry m on m.id=f.model_id

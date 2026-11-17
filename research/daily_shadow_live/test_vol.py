@@ -120,6 +120,12 @@ class SQLTests(unittest.TestCase):
     def test_fixture_cannot_be_promoted_to_live(self):
         import psycopg
         with self.assertRaises(psycopg.Error):self.store.forecasts(self.key,self.rows,self.models,self.cid,self.ref,self.snap,run_mode='RESEARCH_FORECAST')
+    def test_inspector_starts_readonly_after_store_setup_transaction(self):
+        from .vol_runtime import inspect_vol
+        result=inspect_vol(self.store)
+        self.assertEqual(result['status'],'DIRECT_READ_ONLY_SQL')
+        self.assertEqual(result['checked'],0) # only synthetic rows in disposable DB
+        self.assertEqual(result['reason'],'DUPLICATES=0')
     def test_model_allowlist_and_no_raw_immutable_fields(self):
         import psycopg
         bad=[dict(r) for r in self.rows];bad[-1]['price']=123
