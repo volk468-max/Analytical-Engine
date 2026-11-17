@@ -1,0 +1,30 @@
+{
+  "source_sha": "da216e5ab9025d0df1881cfcdcd14901b4e2e09a",
+  "local_postgres_major": 17,
+  "local_relevant_tests": 62,
+  "local_tests_passed": true,
+  "local_tests_skipped": 0,
+  "knowledge_tests": 9,
+  "offline_knowledge_pass": true,
+  "four_schema_backup_restore_exact_content_hash_match": true,
+  "online_knowledge_ci_run": 44094734299,
+  "online_knowledge_ci_conclusion": "success",
+  "full_ci_run": 44094734515,
+  "full_ci_status": "COMPLETED_SUCCESS",
+  "file_sha256": {
+    "reports/market-precursors-daily-v1/protocol.txt": "8d544b16e6ce8e87421b8c352bd86b79340feee04b8da9564ec5b1de38fa3108",
+    "reports/market-precursors-daily-v1/reference_common.py.txt": "657dce5cc324f61169f0585eb0bb8c8484cc0d8cc48881b97b36ba078f6f3323",
+    "reports/market-precursors-daily-v1/reference_study.py.txt": "9ecbf3426b25b32e31251d9100f6b16410c98d40e5518301c8042ccc11a53bfa",
+    "research/daily_shadow_live/market_precursors_daily.py": "ae448870afe118dfb1bebbae1c92b86e1b6c7c1cb56707db07f7dc6f2011b3bd",
+    "research/daily_shadow_live/market_precursors_reference.py": "00855db692717ceda037a81c4fb3283a314b6e4d23dc143a01e8c1be67bac724"
+  },
+  "limitations": [
+    "NEW_RAW_DAILY_VARIANT_NOT_ORIGINAL_ANNUAL_CALIBRATED_OUTPUT",
+    "RAW_UNVALIDATED_UNCALIBRATED",
+    "REVISED_VENDOR_TRAINING_REPLAY_NOT_PIT",
+    "FIRST_PROSPECTIVE_ISSUANCE_PENDING",
+    "ORIGINAL_ZERO_OF_33_PRIMARY_SUCCESSES_RETAINED"
+  ],
+  "local_online_validator": "COULD_NOT_COMPLETE_VALUEERROR",
+  "authenticated_online_knowledge_ci_passed": true
+}

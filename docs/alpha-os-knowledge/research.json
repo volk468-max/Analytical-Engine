@@ -721,6 +721,14 @@
       "branch": "feature/market-precursors-daily",
       "card": "research/Q012-v1.md",
       "classification": "IMPLEMENTED_PENDING_RESEARCH_DEPLOYMENT"
+    },
+    {
+      "id": "Q012-v2",
+      "title": "Market Drawdown Precursors deployed and real preflight144/12",
+      "branch": "feature/market-precursors-daily",
+      "card": "research/Q012-v2.md",
+      "classification": "DEPLOYED_SCHEDULED_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
+      "supersedes": "Q012-v1 implementation checkpoint; original retained"
     }
   ]
 }

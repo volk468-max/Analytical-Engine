@@ -328,3 +328,48 @@ rollback/fixturelive/readonly/oldVOLmanifest guards passed in disposablePG17.
 Remaining local regression/CI and actual research deployment/preflight/SQLaudit
 are pending at this checkpoint. First future issue must not be backdated.
 [Q012](research/Q012-v1.md). No production/trades/merge/new purchases.
+
+
+## 2026-11-17 — Q012-v2 / Market Drawdown Precursors operational acceptance
+
+[PR40](https://github.com/volk468-max/Analytical-Engine/pull/40), Draft/unmerged.
+Actual pinned sourceda216e5ab9025d0df1881cfcdcd14901b4e2e09a, deployment
+74f84b49-d296-4736-b39f-47b025d3090f SUCCESS. Bootstrap READY/exit0
+13:39:29UTC, run2e7cae06-f5e4-4c61-9078-447914e92317, applies additive009;
+001–008 unchanged. Sole environment research, no staged changes.
+
+Actual run046162ce-2d00-459b-a9e0-07ba3b5dc627 completedSUCCESS/exit0
+13:41:01UTC,183HTTP200/0failures/partial_phases empty.156targets checked:
+9ownerstocks plusSPY/QQQ/SOXX12ready each=144ready; NBIS12blocked
+INSUFFICIENT_MATURE_TRAINING_SUPPORT. Worker read-onlySQL:MDP0records,
+first/latestNULL,DUPLICATES=0; priorVOL/RF/Ensemble audits pass. Original
+HIST/REGIME648numerical forecasts preserved. SQL from application logs is not
+an independent SQL session. BEFORE_OFFICIAL_CLOSE prevented backdated issue.
+
+Original MINIMAL market/PLUS_X stock features and rawridgeC0.1 preserved. NEW
+expanding dailyrefit/noannualinterceptcalibration/10&30/Low&CloseTOUCH variant,
+not identical original calibrated backtest. Raw/uncalibrated/unvalidated/NOT_PIT;
+original PR20 result0/33 primary advantages remains negative. No missingfactor
+imputation or pooledstock/market labels.
+
+62local tests on disposablePG17 with0skips+9knowledge/offline validation PASS;
+4-schema backuprestore exact hashes match. OnlineknowledgeCI44094734299 SUCCESS;
+fullCI44094734515 running at this checkpoint. Notion Alpha OS saved and panel
+requested. Cron0 2 * * 2-6 unchanged05:00MoscowTue–Sat; first issuePENDING
+2026-11-18 around05:00Moscow,USsession2026-11-17. Existing05:30Moscow audit
+Automation_a3be3fb079a881918909c1cd592c1d7c extended to MDP156manifest alongside
+VOL/RF/Ensemble with scopes/time preserved. Next actual156manifest/timestamps/
+blocks/duplicates then mature10/30session scoring. No production/trades/merge.
+
+[Q012-v2](research/Q012-v2.md).
+
+
+### Q012 final deployed-source CI acceptance
+
+Actual deployed sourceda216e5ab9025d0df1881cfcdcd14901b4e2e09a passed full
+[CI44094734515](https://github.com/volk468-max/Analytical-Engine/actions/runs/44094734515):
+PostgreSQL16/18, old and new model suites, all parent research regressions/replay
+and backup/restore drills SUCCESS. Authenticated onlineknowledge44094734299
+also SUCCESS. Earlier running status is historical. Source stays SHA-pinned;
+subsequent commits are evidence/knowledge only. First prospective issue remains
+pending2026-11-18 around05:00Moscow; common acceptance05:30Moscow.
