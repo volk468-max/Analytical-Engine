@@ -38,3 +38,12 @@ Required real SPY/QQQ/SOXX; warmup252/min252mature labels/min10eachclass; NBIS
 since2024-10-21 only. Replay training NOT_PIT. Missing inputs/support BLOCKED.
 Additive009, atomic156, lock280009, MDP_V1, separate phase/read-only SQLaudit.
 All earlier model/history/production/trading boundaries preserved.
+
+## Active portfolio revision2026-11-17
+
+Owner replaces NBIS with AVGO for VOL/RF/Ensemble/MDP. Shared `portfolio.py`
+contains ANET,NVDA,AMD,CRWD,AVGO,GOOG,GS,META,MU,LRCX; each manifest includes
+`universe_revision_sha256` of reports/portfolio-avgo-v1/protocol.txt. Original
+model protocols retained, superseded only for active universe. Additive010
+changes future SQL allowlists, never relabels/deletes old NBIS records.
+HIST/REGIME,SPY/QQQ/SOXX,120/120/120/156sizes,models/horizons/gates unchanged.

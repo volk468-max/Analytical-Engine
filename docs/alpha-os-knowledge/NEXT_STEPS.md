@@ -368,3 +368,70 @@ and backup/restore drills SUCCESS. Authenticated onlineknowledge44094734299
 also SUCCESS. Earlier running status is historical. Source stays SHA-pinned;
 subsequent commits are evidence/knowledge only. First prospective issue remains
 pending2026-11-18 around05:00Moscow; common acceptance05:30Moscow.
+
+
+## 2026-11-17 — Q013 / owner replaces NBIS with AVGO
+
+Owner explicitly requests AVGO instead of NBIS in current chat. New active order:
+ANET,NVDA,AMD,CRWD,AVGO,GOOG,GS,META,MU,LRCX. Applies to four new daily models
+VOL/RISK_FORECAST/ENSEMBLE_RISK/MARKET_PRECURSORS. HIST/REGIME unchanged; market
+SPY/QQQ/SOXX retained. [Issue41](https://github.com/volk468-max/Analytical-Engine/issues/41).
+BasePR40 metadatafef6da030befa977ed352473482f8eec040e835a; actual worker still
+pinsda216e5ab9025d0df1881cfcdcd14901b4e2e09a at implementation checkpoint.
+
+Shared active portfolio and universe-revision hash added to all four manifests.
+Original estimator protocols/reports/oldNBIS records preserved; only current
+universe superseded by reports/portfolio-avgo-v1/protocol.txt. AdditiveSQL010
+updates the two future target guards, no existing rows modified.001–009
+unchanged. Counts120/120/120/156,10/30sessions,labels/thresholds/estimators/gates
+and cron unchanged. NBIS retrospective numerical cutoff retained; no backfill.
+
+Replacement implementation prepared, not yet deployed. Local numerical tests
+and actualSQL010 guard validation/CI are pending; AVGO real data/support must
+be checked in all four models before claiming ready. Notion and first-issue
+audit must supersede old NBIS universe prospectively. Research only, no trades/
+production/mainmerge/new purchases. [Q013](research/Q013-v1.md).
+
+
+## 2026-11-17 — Q013-v2 / AVGO deployed and ready in all four models
+
+[PR42](https://github.com/volk468-max/Analytical-Engine/pull/42) Draft/unmerged.
+Actual pinned source9e93e9a4914db95bc41d127afa19e2b3b96ca436, deployment
+34e22c16-c498-412a-ae66-780eb5859aca SUCCESS. Bootstrap READY/exit0
+14:37:04UTC run139f07a5-235a-404d-91b6-efb75b2db46d applies010.001–009 unchanged.
+Active order ANET,NVDA,AMD,CRWD,AVGO,GOOG,GS,META,MU,LRCX. HIST/REGIME and
+SPY/QQQ/SOXX unchanged. OldNBIS history/protocols retained, not relabelled/deleted.
+
+Actual run59dc1994-fc1b-4553-99e3-ef3dee24d21a SUCCESS/exit0 at14:41:07UTC,
+333HTTP200/0failures,partial_phases empty. VOL120ready,RF120ready,Ensemble120ready,
+MDP156ready,0blocked. AVGO12/12targets ready in EACH model. All four worker
+read-onlySQLaudits0records/firstNULL/duplicates0; oldHIST/REGIME648numbers intact.
+These are application-log SQL observations, not independent SQL acceptance.
+BEFORE_OFFICIAL_CLOSE prevents daytime/backdated issue. Readiness is not a real
+forecast or predictive accuracy validation.
+
+31local tests on disposablePG17 passed0skips+9knowledge/offlinevalidatorPASS.
+Four-schema backuprestore exact hashes match. Onlineknowledge44104725436 SUCCESS;
+fullCI44104725516 running at checkpoint. Local --online timed out at90seconds;
+no localonline success claimed. Notion Alpha OS history saved.
+
+First-issue05:30Moscow audit Automation_a3be3fb079a881918909c1cd592c1d7c updated
+with explicit prospectiveAVGOoverride and historicalNBISnotes retained. Regular
+five-day ForecastLab audit Automation_cc9778a7a54081918db93b4da1726ce0 updated
+only its scope/currentcoverage/universe; schedule retained. After real success
+all four *_PREFLIGHT_ONCE flags disabled, daily enabled flags remain true.
+Cron05:00MoscowTue–Sat unchanged, first AVGOissuePENDING2026-11-18 around05:00,
+USsessionNov17. Next actual120/120/120/156manifest/time/no duplicates/AVGO checks,
+then mature scoring. Modelformulas/support thresholds/10&30/labels unchanged.
+No trading/production/mainmerge/new purchases.
+
+[Q013-v2](research/Q013-v2.md).
+
+
+### Q013 final deployed-source CI acceptance
+Actual deployed source9e93e9a4914db95bc41d127afa19e2b3b96ca436 passed full
+[CI44104725516](https://github.com/volk468-max/Analytical-Engine/actions/runs/44104725516):
+PostgreSQL16/18, prior and new model suites, parent regressions/replay/restore
+SUCCESS. Authenticated onlineknowledge44104725436 also SUCCESS. Earlier running
+status is historical. AVGO universe deployed, all four real preflights passed
+516ready0blocked; first prospective issue still pending2026-11-18.

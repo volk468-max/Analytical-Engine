@@ -24,7 +24,7 @@ def apply(url,*,isolated_test=False):
   c.execute('select pg_advisory_lock(280104)')
   c.execute('create table if not exists public.alpha_shadow_migrations(name text primary key,sha256 text not null)')
   c.execute('revoke all on public.alpha_shadow_migrations from public')
-  paths=[ROOT/'research/daily_shadow/sql'/n for n in ('001_isolated.sql','002_contract_hardening.sql','003_research_forecast.sql')]+[Path(__file__).with_name(n) for n in ('004_operations.sql','005_diagnostics.sql','006_vol.sql','007_risk_forecast.sql','008_ensemble.sql','009_market_precursors.sql')]
+  paths=[ROOT/'research/daily_shadow/sql'/n for n in ('001_isolated.sql','002_contract_hardening.sql','003_research_forecast.sql')]+[Path(__file__).with_name(n) for n in ('004_operations.sql','005_diagnostics.sql','006_vol.sql','007_risk_forecast.sql','008_ensemble.sql','009_market_precursors.sql','010_portfolio_avgo.sql')]
   for path in paths:
    code=path.read_text();digest=hashlib.sha256(code.encode()).hexdigest();old=c.execute('select sha256 from public.alpha_shadow_migrations where name=%s',(path.name,)).fetchone()
    if old:

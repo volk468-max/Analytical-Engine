@@ -117,3 +117,10 @@ supersedes Q004 preparation-only scope ONLY for isolated research Forecast Lab.
 MINIMAL/PLUS_X raw daily adaptation,3market+10stock grid and versioning are
 implementation choices explained to owner, not owner claims of validated
 accuracy or trading approval. No production/broker/trades/main merge/purchases.
+
+
+## 2026-11-17 / owner NBIS to AVGO replacement
+Owner explicitly asks to replace NBIS with AVGO. In context this authorises
+updating and deploying the current four-model daily research universe and its
+future audits, preserving existing history. Not authorisation to trade or to
+change HIST/REGIME horizons/universe, model formulas, main or production.

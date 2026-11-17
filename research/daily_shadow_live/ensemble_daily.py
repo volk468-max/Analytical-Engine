@@ -9,14 +9,14 @@ import pandas as pd
 from research.daily_shadow.core import canonical, sha, utc, calendar, future_sessions
 from research.daily_shadow_v3.adapter import normalized_prefix
 
-SYMBOLS=('ANET','NVDA','AMD','CRWD','NBIS','GOOG','GS','META','MU','LRCX')
+from .portfolio import SYMBOLS,UNIVERSE_REVISION
 HORIZONS=(10,30)
 LABELS=('LOW_INTRADAY','EOD_CLOSE')
 THRESHOLDS=(5,10,15)
 NBIS_START='2024-10-21'
 PROTOCOL=Path(__file__).resolve().parents[2]/'reports/ensemble-daily-v1/protocol.txt'
 CODE_HASH=sha(Path(__file__).read_bytes())
-MANIFEST=dict(name='ENSEMBLE_RISK_DAILY_B_V1',symbols=SYMBOLS,horizons=HORIZONS,labels=LABELS,thresholds=THRESHOLDS,protocol_sha256=sha(PROTOCOL.read_bytes()))
+MANIFEST=dict(name='ENSEMBLE_RISK_DAILY_B_V1',symbols=SYMBOLS,horizons=HORIZONS,labels=LABELS,thresholds=THRESHOLDS,protocol_sha256=sha(PROTOCOL.read_bytes()),universe_revision_sha256=UNIVERSE_REVISION)
 MANIFEST_HASH=sha(canonical(MANIFEST).encode())
 
 

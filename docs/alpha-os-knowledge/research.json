@@ -729,6 +729,21 @@
       "card": "research/Q012-v2.md",
       "classification": "DEPLOYED_SCHEDULED_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
       "supersedes": "Q012-v1 implementation checkpoint; original retained"
+    },
+    {
+      "id": "Q013-v1",
+      "title": "Replace daily NBIS with AVGO without rewriting history",
+      "branch": "feature/portfolio-avgo",
+      "card": "research/Q013-v1.md",
+      "classification": "IMPLEMENTED_PENDING_RESEARCH_DEPLOYMENT"
+    },
+    {
+      "id": "Q013-v2",
+      "title": "AVGO deployed and all four real preflights pass without blocks",
+      "branch": "feature/portfolio-avgo",
+      "card": "research/Q013-v2.md",
+      "classification": "AVGO_DEPLOYED_ALL_FOUR_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
+      "supersedes": "Q013-v1 implementation checkpoint; original retained"
     }
   ]
 }
