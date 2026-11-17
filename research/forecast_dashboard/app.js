@@ -7,31 +7,33 @@ const safe = v => String(v).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":
 function params(){
  return {symbol:$("symbol").value,label:$("label").value,
  threshold:Number($("threshold").value),horizon:Number($("horizon").value),
- model:$("model").value};
+ model:$("model").value, alternative:$("showAlternative").checked};
 }
-function subset(p, includeModel=false) {
- return state.rows.filter(r=>r.symbol===p.symbol&&r.label===p.label&&r.threshold===p.threshold&&r.horizon===p.horizon&&(!includeModel||r.model===p.model));
+function subset(p) {
+ return state.rows.filter(r=>r.symbol===p.symbol&&r.label===p.label&&r.threshold===p.threshold&&r.horizon===p.horizon);
 }
-function latest(rows,model){return rows.find(r=>r.session===state.latest&&r.model===model);}
-function lineChart(rows){
- const dates=[...new Set(rows.map(r=>r.session))].sort();
- if(!dates.length) return '<div class="empty">Пока нет сохранённых прогнозов</div>';
+function latest(rows,model){return rows.find(r=>r.model===model);}
+function lineChart(rows,p){
+ const visible=rows.filter(r=>r.model===p.model||(p.alternative&&r.model!==p.model));
+ const dates=[...new Set(visible.map(r=>r.session))].sort();
+ if(!dates.length) return '<div class="empty">Для выбранного сценария пока нет прогнозов</div>';
  const W=680,H=260,L=44,R=16,T=15,B=42;
  const x=i=>L+(W-L-R)*(dates.length===1?.5:i/(dates.length-1));
  const y=v=>T+(H-T-B)*(1-v/100);
  const grid=[0,25,50,75,100].map(n=>'<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(n)+'" y2="'+y(n)+'" class="gridline"/><text x="'+(L-9)+'" y="'+(y(n)+4)+'" text-anchor="end" class="axis">'+n+'%</text>').join("");
- const paths=["REGIME","HIST"].map((m,i)=>{
-  const vals=dates.map(d=>rows.find(r=>r.session===d&&r.model===m)?.probability);
+ const models=p.alternative?[p.model,p.model==="HIST"?"REGIME":"HIST"]:[p.model];
+ const paths=models.map((m,i)=>{
+  const vals=dates.map(d=>visible.find(r=>r.session===d&&r.model===m)?.probability);
   const pts=vals.map((v,k)=>v==null?null:[x(k),y(v)]).filter(Boolean);
   const poly=pts.length>1?'<polyline points="'+pts.map(v=>v.join(",")).join(" ")+'" class="curve '+(i?"hist":"regime")+'"/>':"";
   const circles=pts.map(pt=>'<circle cx="'+pt[0]+'" cy="'+pt[1]+'" r="4" class="point '+(i?"hist":"regime")+'"/>').join("");
   return poly+circles;
  }).join("");
  const labels=[0,Math.floor((dates.length-1)/2),dates.length-1].filter((v,i,a)=>a.indexOf(v)===i).map(i=>'<text x="'+x(i)+'" y="'+(H-12)+'" text-anchor="middle" class="axis">'+dates[i].slice(5)+'</text>').join("");
- return '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="История прогнозов HIST и REGIME">'+grid+paths+labels+'</svg>';
+ return '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="История выбранного прогноза">'+grid+paths+labels+'</svg>';
 }
-function matrix(p) {
- const modelRows=state.rows.filter(r=>r.session===state.latest&&r.symbol===p.symbol&&r.label===p.label&&r.model===p.model);
+function matrix(p,date) {
+ const modelRows=state.rows.filter(r=>r.session===date&&r.symbol===p.symbol&&r.label===p.label&&r.model===p.model);
  let out='<table><thead><tr><th>Сессий</th><th>−5%</th><th>−10%</th><th>−15%</th></tr></thead><tbody>';
  for(const h of [10,20,60]){
   out+='<tr><th>'+h+'</th>';
@@ -41,7 +43,7 @@ function matrix(p) {
   }
   out+='</tr>';
  }
- return out+'</tbody></table><p class="small muted">Вероятность хотя бы одного касания порога в течение горизонта, не доходность на последнюю дату.</p>';
+ return out+'</tbody></table><p class="small muted">Событие — хотя бы одно достижение порога за весь период, а не падение цены ровно в последний день.</p>';
 }
 function score(rows){
  if(!rows.length)return null;
@@ -55,45 +57,56 @@ function accuracy(rows){
  const g=score(ready.filter(r=>r.model==="REGIME"));
  const baseline=ready.filter(r=>r.model==="HIST"&&r.baseline!=null);
  const b=baseline.length?baseline.reduce((s,r)=>s+(r.baseline-Number(r.outcome))**2,0)/baseline.length:null;
- if(!h&&!g)return '<div class="empty"><strong>Оценивать точность пока рано.</strong><p>Нет завершённых прогнозных горизонтов с подтверждёнными исходами. Это ожидаемо для новой системы.</p></div>';
+ if(!h&&!g)return '<div class="empty"><strong>Подтверждённой точности пока нет.</strong><p>Для этого сценария ещё нет завершённых горизонтов с проверенным исходом. Вероятности остаются исследовательскими оценками.</p></div>';
  return '<table><thead><tr><th>Метрика</th><th>HIST</th><th>REGIME</th></tr></thead><tbody>'+
- '<tr><td>Проверено прогнозов</td><td>'+(h?.n??0)+'</td><td>'+(g?.n??0)+'</td></tr>'+
+ '<tr><td>Завершено</td><td>'+(h?.n??0)+'</td><td>'+(g?.n??0)+'</td></tr>'+
  '<tr><td>Brier ↓</td><td>'+(h?h.brier.toFixed(3):"—")+'</td><td>'+(g?g.brier.toFixed(3):"—")+'</td></tr>'+
  '<tr><td>Частота события</td><td>'+(h?percent(h.frequency*100):"—")+'</td><td>'+(g?percent(g.frequency*100):"—")+'</td></tr>'+
- '<tr><td>Базовая модель Brier</td><td colspan="2">'+(b==null?"Нет зрелых наблюдений":b.toFixed(3)+" (n="+baseline.length+")")+'</td></tr></tbody></table>'+
- '<p class="small muted">Меньший Brier лучше. Пересекающиеся горизонты зависимы: без независимой проверки и интервалов неопределённости нельзя утверждать, что одна модель превосходит другую.</p>';
+ '<tr><td>Базовая модель Brier</td><td colspan="2">'+(b==null?"Нет сопоставимых наблюдений":b.toFixed(3)+" (n="+baseline.length+")")+'</td></tr></tbody></table>'+
+ '<p class="small muted">Это предварительная диагностика, а не доказательство превосходства. Brier корректно сравнивать на совпадающих исходах; горизонты пересекаются, наблюдения зависимы. До достаточной выборки не использовать для выбора торговой стратегии.</p>';
 }
-function comparison(p){
- const rs=state.rows.filter(r=>r.session===state.latest&&r.label===p.label&&r.horizon===p.horizon&&r.threshold===p.threshold&&r.model===p.model);
+function comparison(p,date){
+ const rs=state.rows.filter(r=>r.session===date&&r.label===p.label&&r.horizon===p.horizon&&r.threshold===p.threshold&&r.model===p.model);
  return '<div class="bars">'+symbols.map(t=>{
   const n=rs.find(r=>r.symbol===t)?.probability;
   return '<div class="barrow"><strong>'+t+'</strong><div class="track"><div class="fill" style="width:'+(Number.isFinite(n)?Math.max(0,Math.min(100,n)):0)+'%"></div></div><span>'+percent(n)+'</span></div>';
- }).join("")+'</div>';
+ }).join("")+'</div><p class="small muted">Сравнение вероятности одинакового процентного падения. Различия волатильности не нормализованы; это не рейтинг покупок или продаж.</p>';
 }
-function historyTable(rows){
- const days=[...new Set(rows.map(r=>r.session))].sort().reverse();
- if(!days.length)return '<div class="empty">Данных нет</div>';
- return '<div class="scroll"><table><thead><tr><th>Сессия</th><th>HIST</th><th>REGIME</th><th>Исход</th></tr></thead><tbody>'+days.slice(0,40).map(day=>{
-  const a=rows.find(r=>r.session===day&&r.model==="HIST"),b=rows.find(r=>r.session===day&&r.model==="REGIME");
+function historyTable(rows,p){
+ const dates=[...new Set(rows.map(r=>r.session))].sort().reverse();
+ if(!dates.length)return '<div class="empty">Данных нет</div>';
+ const alt=p.model==="HIST"?"REGIME":"HIST";
+ return '<div class="scroll"><table><thead><tr><th>Сессия</th><th>'+p.model+'</th>'+(p.alternative?'<th>'+alt+'</th>':"")+'<th>Исход</th></tr></thead><tbody>'+dates.slice(0,40).map(day=>{
+  const a=rows.find(r=>r.session===day&&r.model===p.model),b=rows.find(r=>r.session===day&&r.model===alt);
   const status=a?.outcome_status==="MATURED"?(a.outcome?"Событие":"Не было"):"Ожидается";
-  return '<tr><td>'+safe(day)+'</td><td>'+percent(a?.probability)+'</td><td>'+percent(b?.probability)+'</td><td>'+status+'</td></tr>';
+  return '<tr><td>'+safe(day)+'</td><td>'+percent(a?.probability)+'</td>'+(p.alternative?'<td>'+percent(b?.probability)+'</td>':"")+'<td>'+status+'</td></tr>';
  }).join("")+'</tbody></table></div>';
 }
 function render(){
- const p=params(), rows=subset(p), a=latest(rows,"HIST"),b=latest(rows,"REGIME");
- $("hist").textContent=percent(a?.probability);
- $("regime").textContent=percent(b?.probability);
- $("delta").textContent=a&&b?(b.probability-a.probability>0?"+":"")+(b.probability-a.probability).toFixed(1).replace(".",",")+" п.п.":"—";
- $("sessions").textContent=new Set(state.rows.map(r=>r.session)).size;
- $("recordCount").textContent=state.rows.length+" числовых прогнозов в окне 120 дней";
- $("historyChart").innerHTML=lineChart(rows);
+ const p=params(),rows=subset(p),selected=latest(rows,p.model);
+ const date=selected?.session??null;
+ const series=rows.filter(r=>r.model===p.model);
+ const prior=series.find(r=>r.session!==date);
+ $("forecast").textContent=percent(selected?.probability);
+ $("modelName").textContent=p.model;
+ $("dayChange").textContent=selected&&prior?(selected.probability-prior.probability>0?"+":"")+(selected.probability-prior.probability).toFixed(1).replace(".",",")+" п.п.":"—";
+ $("previousDate").textContent=prior?"По сравнению с "+prior.session:"Нет предыдущего выпуска для сравнения";
+ $("sessionDate").textContent=date?date.slice(8,10)+"."+date.slice(5,7)+"."+date.slice(0,4):"—";
+ $("issuedAt").textContent=selected?.issued_at?"Выпущен "+new Date(selected.issued_at).toLocaleString("ru-RU",{timeZone:"Europe/Moscow",day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})+" МСК":"Нет выпуска";
+ const matured=series.filter(r=>r.outcome_status==="MATURED"&&typeof r.outcome==="boolean").length;
+ $("matureCount").textContent=matured;
+ $("recordCount").textContent="Из "+series.length+" выпусков для выбранного сценария";
+ $("scenario").textContent="Вероятность хотя бы одного падения на "+p.threshold+"% или более за "+p.horizon+" торговых сессий · "+(p.label==="LOW_INTRADAY"?"внутридневной минимум":"цена закрытия");
+ $("freshness").textContent=!date?"Нет данных по выбранному сценарию":date!==state.latest?"Внимание: последний выпуск этого сценария ("+date+") старше последней сессии в базе ("+state.latest+"). Проверить полноту данных.":"Последняя доступная торговая сессия: "+date+". Прогноз относится к будущему периоду от этой даты, а не к текущей цене в момент просмотра.";
+ $("historyChart").innerHTML=lineChart(rows,p);
+ $("legend").innerHTML='<span><i class="dot a"></i>'+p.model+'</span>'+(p.alternative?'<span><i class="dot b"></i>'+(p.model==="HIST"?"REGIME":"HIST")+'</span>':"");
  $("matrixModel").textContent=p.model;
- $("matrix").innerHTML=matrix(p);
+ $("matrix").innerHTML=matrix(p,date);
  $("accuracy").innerHTML=accuracy(rows);
- $("compare").innerHTML=comparison(p);
- $("historyTable").innerHTML=historyTable(rows);
- $("status").textContent=state.latest?"Сессия "+state.latest:"Нет данных";
- $("asof").textContent=state.asof?"Получено "+new Date(state.asof).toLocaleString("ru-RU"):"";
+ $("compare").innerHTML=comparison(p,date);
+ $("historyTable").innerHTML=historyTable(rows,p);
+ $("status").textContent=state.latest?"Данные по "+state.latest:"Нет данных";
+ $("asof").textContent=state.asof?"Проверено "+new Date(state.asof).toLocaleString("ru-RU"):"";
 }
 async function refresh(){
  $("status").textContent="Загрузка…";
@@ -116,7 +129,7 @@ $("loginForm").addEventListener("submit",async e=>{
   await refresh();
  }catch(err){$("loginError").textContent=err.message;}
 });
-for(const id of ["symbol","threshold","horizon","label","model"])$(id).addEventListener("change",render);
+for(const id of ["symbol","threshold","horizon","label","model","showAlternative"])$(id).addEventListener("change",render);
 $("refresh").addEventListener("click",refresh);
 refresh();
 setInterval(()=>{if(!$("dashboard").hidden)refresh();},5*60*1000);
