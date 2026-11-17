@@ -93,10 +93,12 @@ function render(){
  const date=selected?.session??null;
  const series=rows.filter(r=>r.model===p.model);
  const prior=series.find(r=>r.session!==date);
+ const comparable=selected&&prior&&selected.model_id===prior.model_id;
+ const versionChange=selected&&series.some(r=>r.model_id!==selected.model_id);
  $("forecast").textContent=percent(selected?.probability);
  $("modelName").textContent=p.model;
- $("dayChange").textContent=selected&&prior?(selected.probability-prior.probability>0?"+":"")+(selected.probability-prior.probability).toFixed(1).replace(".",",")+" п.п.":"—";
- $("previousDate").textContent=prior?"По сравнению с "+prior.session:"Нет предыдущего выпуска для сравнения";
+ $("dayChange").textContent=comparable?(selected.probability-prior.probability>0?"+":"")+(selected.probability-prior.probability).toFixed(1).replace(".",",")+" п.п.":"—";
+ $("previousDate").textContent=prior?(comparable?"По сравнению с "+prior.session:"Сменилась версия модели: прямое сравнение некорректно"):"Нет предыдущего выпуска для сравнения";
  $("sessionDate").textContent=date?date.slice(8,10)+"."+date.slice(5,7)+"."+date.slice(0,4):"—";
  $("issuedAt").textContent=selected?.issued_at?"Выпущен "+new Date(selected.issued_at).toLocaleString("ru-RU",{timeZone:"Europe/Moscow",day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})+" МСК":"Нет выпуска";
  const matured=series.filter(r=>r.outcome_status==="MATURED"&&typeof r.outcome==="boolean").length;
