@@ -105,7 +105,7 @@ class DiagnosticTests(unittest.TestCase):
   for forbidden in ('SYNTHETIC_TOKEN','p@ss','p%40ss','OTHER','NEVER_CAPTURE_LOCALS','https://host'):self.assertNotIn(forbidden,text)
   self.assertEqual(redact({'X-API-Key':'UNKNOWN_PRIVATE_API_KEY'}),{'X-API-Key':'[REDACTED]'})
   record=json.loads(text);self.assertEqual(record['exception_type'],'ValueError');self.assertIn('test_worker_fix.py',record['traceback']);self.assertTrue(record['message']);uuid.UUID(record['run_id']);self.assertIsNotNone(datetime.fromisoformat(record['timestamp']).tzinfo)
- def run_mock(self,*,now=None,issue=None,history_error=None,connection_error=None):
+ def run_mock(self,*,now=None,issue=None,history_error=None,connection_error=None,issue_error=None):
   store=MagicMock();store.verify.return_value=True
   if connection_error:store.connect.side_effect=connection_error
   now=now or datetime(2026,11,13,2,tzinfo=timezone.utc)
@@ -113,6 +113,7 @@ class DiagnosticTests(unittest.TestCase):
    for name,value in [('identity',None),('dsn','SYNTHETIC'),('vault_key',Fernet.generate_key()),('ResearchStore',store),('acceptance',{}),('continue_paid_access',True),('effective_permit',fixture_permit()),('models',fixture_models()),('resolve_due',dict(checked=0,unresolved=0))]:stack.enter_context(patch('research.daily_shadow_live.runtime.'+name,return_value=value))
    date=stack.enter_context(patch('research.daily_shadow_live.runtime.datetime'));date.now.return_value=now
    issue_mock=stack.enter_context(patch('research.daily_shadow_live.runtime.issue_once',return_value=issue or batch_result('2026-11-12',222,216)))
+   issue_mock.side_effect=issue_error
    stack.enter_context(patch('research.daily_shadow_live.reporting.weekly_report',return_value=dict(pending=216,week='2026-11-09')))
    stack.enter_context(patch.dict(os.environ,{'ALPHA_COMPARE_HISTORY_ONCE':'true' if history_error else 'false'}))
    if history_error:stack.enter_context(patch('research.daily_shadow_live.historical.run_once',side_effect=history_error))

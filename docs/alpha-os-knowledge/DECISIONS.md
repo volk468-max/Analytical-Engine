@@ -94,3 +94,11 @@ Railway diagnosis, sanitized diagnostics, reliability tests and actual SQL evide
 if accessible. Explicitly no deployment or environment mutation without separate
 approval. No Railway configuration was changed in this fix task. Existing deployed
 state observed now is not attributed to an unauthorized action by this task.
+
+
+## 2026-11-17 / owner VOL integration
+Owner supplied10tickers, then explicitly requested implementation/connection and
+Notion history. This authorises isolated research VOL integration/deployment, not
+production/broker/trading/merge/purchases. Preserve actual timestamps/history.
+Daily-refit implementation/support thresholds are implementation choices, not
+owner claims of model accuracy. Source Issue33 + current chat (no permalink).

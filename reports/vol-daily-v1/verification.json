@@ -1,0 +1,34 @@
+{
+  "classification": "LOCAL_SYNTHETIC_VERIFICATION_NOT_LIVE_FORECAST",
+  "base_sha": "fe834c77cbadf4baa3eab68135cbdee1ecdad1f0",
+  "owner_universe": [
+    "ANET",
+    "NVDA",
+    "AMD",
+    "CRWD",
+    "NBIS",
+    "GOOG",
+    "GS",
+    "META",
+    "MU",
+    "LRCX"
+  ],
+  "horizons": [
+    10,
+    30
+  ],
+  "requested_series": 120,
+  "local_pipeline_tests_distinct": 211,
+  "local_database": "PostgreSQL17.11",
+  "knowledge_regression_tests": 9,
+  "local_sql_batch_tests": "PASS_120_ROWS_60_HORIZON30_ATOMIC_ROLLBACK_FIXTURE_LIVE_BOUNDARY",
+  "synthetic_backup_restore": "PASS_FOUR_SCHEMAS_CONTENT_HASH_MATCH",
+  "real_vol_forecasts": "NOT_YET_ISSUED",
+  "deployment": "PENDING_CI_AND_AUTHORISED_APPLY",
+  "hashes": {
+    "research/daily_shadow_live/vol.py": "01cc92937221592eed141f5674083ae83f0b381b20b449a018859b1fe73504d1",
+    "research/daily_shadow_live/vol_runtime.py": "7ac20bdde612551083592b17fcc192c7b297b98b10cc2461fcc6e914fac6313e",
+    "research/daily_shadow_live/006_vol.sql": "251a207f5655de6492d38ca8b868e537b53704f5c88d44defc4da1401880fb22",
+    "reports/vol-daily-v1/protocol.txt": "b9054dcea79a40751bcd4ed2a1d7c587f4ea9b1e728e9635f486e69610686d37"
+  }
+}

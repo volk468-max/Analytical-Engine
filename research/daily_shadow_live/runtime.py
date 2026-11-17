@@ -84,13 +84,14 @@ def verify_actions(adapter,session):
 
 def resolve_due(store,adapter,session,now):
  with store.connect() as c:
-  rows=c.execute("""select f.id,f.session_date from alpha_research_v3.forecasts f where run_mode='RESEARCH_FORECAST' and status='RESEARCH_FORECAST' and horizon_end_at<=%s
+  rows=c.execute("""select f.id,f.session_date,f.symbol from alpha_research_v3.forecasts f where run_mode='RESEARCH_FORECAST' and status='RESEARCH_FORECAST' and horizon_end_at<=%s
    and coalesce((select o.status from alpha_research_v3.outcomes o join alpha_research_v3.journal e on e.id=o.id where o.forecast_id=f.id order by e.seq desc limit 1),'UNRESOLVED')<>'MATURED' order by horizon_end_at limit 1000""",(now,)).fetchall()
  if not rows:return dict(checked=0,unresolved=0)
  earliest=min(r[1] for r in rows).isoformat()
- historical_adapter=EODHDAdapter(adapter.permit,transport=adapter.transport,network_approved=True,history_start=earliest) if earliest<(now-timedelta(days=400)).date().isoformat() else adapter
+ wanted=tuple(sorted({r[2] for r in rows}))
+ historical_adapter=EODHDAdapter(adapter.permit,transport=adapter.transport,network_approved=True,history_start=earliest,symbols=wanted)
  window=historical_adapter.collect(session);checked=0;unresolved=0
- for fid,_ in rows:
+ for fid,_,symbol in rows:
   r=resolve_once(store,fid,window,datetime.now(timezone.utc).isoformat(),data_reviewed=True);checked+=r['status']=='MATURED'
   if r['status']!='MATURED':
    unresolved+=1;receipt(store,phase='OUTCOME',status='UNRESOLVED',reason=r['reason'])
@@ -107,7 +108,7 @@ def issue_once(store,adapter,bank,session,now=None,*,ready_gap=60,clock=None):
  # SQL may mask the original exception. Existing forecast rows are never updated.
  with store.connect() as lock:
   if not lock.execute('select pg_try_advisory_xact_lock(280004)').fetchone()[0]:return dict(phase='ISSUE',status='ALREADY_RUNNING',session=session)
-  prior,issued_count=lock.execute("select count(*),count(*) filter(where status='RESEARCH_FORECAST') from alpha_research_v3.forecasts where session_date=%s and run_mode='RESEARCH_FORECAST'",(session,)).fetchone()
+  prior,issued_count=lock.execute("select count(*),count(*) filter(where status='RESEARCH_FORECAST') from alpha_research_v3.forecasts where session_date=%s and run_mode='RESEARCH_FORECAST' and model_id in (select id from alpha_shadow_v1.model_registry where model_name in ('HIST','REGIME'))",(session,)).fetchone()
   if prior:return batch_result(session,prior,issued_count,retry=True)
   stamp=(now or clock()).isoformat();gate=issuance_gate(session,stamp,replace(adapter.permit,finalization_verified=True))
   if gate:return dict(phase='ISSUE',status='STATUS_BLOCKED',reason=gate,session=session)
@@ -149,18 +150,31 @@ def run_daily():
   receipt(store,phase=phase,status='ACCOUNT_METADATA_MATCHED',subscription_active=True)
   now=datetime.now(timezone.utc);adapter=EODHDAdapter(p,transport=transport,network_approved=True);session=latest_completed(now)
   ny=now.astimezone(ZoneInfo('America/New_York'));day=ny.date().isoformat();phase='ISSUE'
-  if not calendar().is_session(pd.Timestamp(day)):
-   receipt(store,phase=phase,status='NON_TRADING_DAY',session=day)
-  elif issuance_gate(day,now.isoformat(),replace(p,finalization_verified=True)):
-   sample=adapter.collect(session)
-   if sample.legal_reason:raise VendorError(sample.legal_reason)
-   extra,checks=verify_actions(adapter,session)
-   sample.raw_responses.update(extra);sample.retrieved_at=datetime.now(timezone.utc).isoformat();sample.revision=hashlib.sha256(b''.join(k.encode()+b'\0'+sample.raw_responses[k] for k in sorted(sample.raw_responses))).hexdigest();store.payload(CONTRACT,sample,p.raw_until)
-   receipt(store,phase='PREFLIGHT',status='REAL_ACCESS_AND_ACTION_SAMPLES_VERIFIED',session=session,models=len(models()),checked=len(checks),subscription_active=True)
-   receipt(store,phase=phase,status='WAITING_VALID_SESSION_WINDOW',session=day,reason=issuance_gate(day,now.isoformat(),replace(p,finalization_verified=True)))
-  else:
-   result=issue_once(store,adapter,models(),day);receipt(store,**result)
-   if result['status'] in ('PARTIAL_FAILURE','STATUS_BLOCKED','ALREADY_RUNNING'):partial.append('ISSUE')
+  try:
+   if not calendar().is_session(pd.Timestamp(day)):
+    receipt(store,phase=phase,status='NON_TRADING_DAY',session=day)
+   elif issuance_gate(day,now.isoformat(),replace(p,finalization_verified=True)):
+    sample=adapter.collect(session)
+    if sample.legal_reason:raise VendorError(sample.legal_reason)
+    extra,checks=verify_actions(adapter,session)
+    sample.raw_responses.update(extra);sample.retrieved_at=datetime.now(timezone.utc).isoformat();sample.revision=hashlib.sha256(b''.join(k.encode()+b'\0'+sample.raw_responses[k] for k in sorted(sample.raw_responses))).hexdigest();store.payload(CONTRACT,sample,p.raw_until)
+    receipt(store,phase='PREFLIGHT',status='REAL_ACCESS_AND_ACTION_SAMPLES_VERIFIED',session=session,models=len(models()),checked=len(checks),subscription_active=True)
+    receipt(store,phase=phase,status='WAITING_VALID_SESSION_WINDOW',session=day,reason=issuance_gate(day,now.isoformat(),replace(p,finalization_verified=True)))
+   else:
+    result=issue_once(store,adapter,models(),day);receipt(store,**result)
+    if result['status'] in ('PARTIAL_FAILURE','STATUS_BLOCKED','ALREADY_RUNNING'):partial.append('ISSUE')
+  except Exception as exc:
+   audit.failure('LEGACY_ISSUE',exc);partial.append('LEGACY_ISSUE')
+  from .vol_runtime import enabled,run_vol,preflight,inspect_vol
+  if enabled():
+   phase='VOL'
+   try:
+    if os.environ.get('ALPHA_VOL_PREFLIGHT_ONCE')=='true' and issuance_gate(day,datetime.now(timezone.utc).isoformat(),replace(p,finalization_verified=True)):
+     receipt(store,**preflight(store,p,transport,session))
+    result=run_vol(store,p,transport,day);receipt(store,**result)
+    receipt(store,**inspect_vol(store))
+    if result['status'] in ('PARTIAL_FAILURE','ALREADY_RUNNING'):partial.append('VOL')
+   except Exception as exc:audit.failure('VOL',exc);partial.append('VOL')
   phase='EVALUATION';resolution=resolve_due(store,adapter,session,now)
   if resolution['unresolved']:partial.append('OUTCOME_RESOLUTION')
   from .reporting import weekly_report

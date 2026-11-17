@@ -1,0 +1,13 @@
+Daily VOL integration v1 protocol, frozen before fitting: 2026-11-17
+Universe: ANET NVDA AMD CRWD NBIS GOOG GS META MU LRCX, order owner-approved.
+Targets: DOWN TOUCH5/10/15, separately future Low and future Close, next10/30 XNYS sessions, excluding anchor.
+Estimator: raw L2 logistic C0.1 / log annualized RV20 of split-only daily log returns / ddof1 / training-only standardization / max_iter2000 tol1e-9. No calibration.
+New prospective daily-fit version, not a claim of identical annual historical estimator.
+Input trailing history from2000, but NBIS only its independently confirmed resumed-trading period. Use latest uninterrupted exchange-session segment; no zero-fill or stitching across gaps.
+Warmup252 observations; >=252 complete mature training labels and >=10 samples each class; otherwise BLOCKED, no constant-probability backoff.
+Full maturity + conservative nextUTCmidnight assumption before session00UTC fit cutoff; extra horizon anchor purge; no future labels, no current-day training label.
+Live inputs must pass same-session/paid/TTL/actions/basis/calendar and two stable retrieval gates. Vendor current revised training archive NOT_PIT.
+One atomic120row manifest/day separate from legacy222, true actual issueUTC, no historical backfill. Genuine absent data use BLOCKED.
+Freeze once prior issued records exist; retries read same manifest and cannot publish new model versions for same session.
+Scores only full-horizon mature data; overlapping labels nonindependent; no calibrated/superior/trading claim.
+Implementation clarification (before any real source fit): reject gaps rather than automatically trim to a latest suffix; preserve errors explicitly. NBIS start2024-10-21 per Nasdaq announcement https://ir.nasdaq.com/news-releases/news-release-details/nasdaq-resumes-trading-nebius-group-nv . Actual daily-fit version and unavailable models remain unqualified research.

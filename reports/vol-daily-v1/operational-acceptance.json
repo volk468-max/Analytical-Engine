@@ -1,0 +1,183 @@
+{
+  "classification": "APPLICATION_LOG_EVIDENCE_NOT_INDEPENDENT_SQL",
+  "deployed_sha": "a2855b5107eb02946cb6e7e1dc41ab69db61ecfb",
+  "deployment": "d20392cf-7044-4ac5-8264-d050168bbefd",
+  "first_prospective_issuance": "PENDING_NEXT_VALID_CRON",
+  "records": [
+    {
+      "level": "info",
+      "exit_code": 0,
+      "phase": "RUN_COMPLETED",
+      "run_id": "129c1cc8-5571-4674-aac6-99c7d1a0e8dc",
+      "status": "SUCCESS",
+      "timestamp": "2026-11-17T10:17:02.522566+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "VOL_PREFLIGHT",
+      "reason": "ANET:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:18:01.913005+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "VOL_PREFLIGHT",
+      "reason": "NVDA:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:18:11.687159+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "VOL_PREFLIGHT",
+      "reason": "AMD:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:18:21.347322+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "VOL_PREFLIGHT",
+      "reason": "CRWD:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:18:24.960002+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 12,
+      "checked": 0,
+      "models": 12,
+      "phase": "VOL_PREFLIGHT",
+      "reason": "NBIS:INSUFFICIENT_MATURE_TRAINING_SUPPORT",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "session": "2026-11-16",
+      "status": "PARTIAL_SUPPORT",
+      "timestamp": "2026-11-17T10:18:26.489840+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "VOL_PREFLIGHT",
+      "reason": "GOOG:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:18:35.178993+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "VOL_PREFLIGHT",
+      "reason": "GS:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:18:45.584839+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "VOL_PREFLIGHT",
+      "reason": "META:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:18:51.600687+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "VOL_PREFLIGHT",
+      "reason": "MU:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:19:01.615538+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "VOL_PREFLIGHT",
+      "reason": "LRCX:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:19:11.696338+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 12,
+      "checked": 108,
+      "models": 120,
+      "phase": "VOL_PREFLIGHT",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "session": "2026-11-16",
+      "status": "COMPLETED_NO_FORECAST_ISSUED",
+      "timestamp": "2026-11-17T10:19:11.742973+00:00"
+    },
+    {
+      "level": "info",
+      "phase": "VOL",
+      "reason": "BEFORE_OFFICIAL_CLOSE",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "session": "2026-11-17",
+      "status": "WAITING_VALID_SESSION_WINDOW",
+      "timestamp": "2026-11-17T10:19:11.759856+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 0,
+      "first_issue_at": null,
+      "issued": 0,
+      "latest_issue_at": null,
+      "phase": "VOL_SQL_AUDIT",
+      "reason": "DUPLICATES=0",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "status": "DIRECT_READ_ONLY_SQL",
+      "timestamp": "2026-11-17T10:19:11.789878+00:00"
+    },
+    {
+      "level": "info",
+      "exit_code": 0,
+      "http_failures": 0,
+      "http_responses": 63,
+      "http_status_counts": {
+        "200": 63
+      },
+      "partial_phases": [],
+      "phase": "RUN_COMPLETED",
+      "run_id": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+      "status": "SUCCESS",
+      "timestamp": "2026-11-17T10:19:12.124753+00:00"
+    }
+  ]
+}

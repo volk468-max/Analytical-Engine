@@ -653,6 +653,37 @@
       "card": "research/Q008-v5.md",
       "supersedes": "Q008-v4 historical checkpoint; original retained",
       "classification": "FIX_PREPARED_EXISTING_RUNS_APP_LOG_OBSERVED_DIRECT_SQL_UNVERIFIED"
+    },
+    {
+      "id": "Q009-v1",
+      "title": "Daily VOL10stock integration",
+      "branch": "feature/vol-daily-ten-stocks",
+      "card": "research/Q009-v1.md",
+      "classification": "IMPLEMENTED_PENDING_ISOLATED_DEPLOYMENT_REAL_ISSUANCE"
+    },
+    {
+      "id": "Q009-v2",
+      "title": "Verified VOL code, deployment approval rejected",
+      "branch": "feature/vol-daily-ten-stocks",
+      "card": "research/Q009-v2.md",
+      "classification": "CODE_VERIFIED_STAGED_DEPLOYMENT_APPROVAL_REJECTED",
+      "supersedes": "Q009-v1 code-preparation checkpoint; original retained"
+    },
+    {
+      "id": "Q009-v3",
+      "title": "Deployed VOL, actual preflight108/12, SQL audit fix",
+      "branch": "feature/vol-daily-ten-stocks",
+      "card": "research/Q009-v3.md",
+      "classification": "DEPLOYED_PREFLIGHT_PASSED_AUDIT_FIX_PREPARED",
+      "supersedes": "Q009-v2 platform block resolved by owner; old records retained"
+    },
+    {
+      "id": "Q009-v4",
+      "title": "Deployed/scheduled VOL, real preflight and SQL audit pass",
+      "branch": "feature/vol-daily-ten-stocks",
+      "card": "research/Q009-v4.md",
+      "classification": "DEPLOYED_SCHEDULED_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
+      "supersedes": "Q009-v3 audit-fix preparation; prior evidence preserved"
     }
   ]
 }

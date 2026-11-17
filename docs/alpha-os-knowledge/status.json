@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-15",
+  "checked_at": "2026-11-17",
   "baseline_sha": "a14ebf9c268bea5cb01de962edfb98b8df94652a",
   "pull_requests": [
     {
@@ -161,13 +161,19 @@
     14
   ],
   "last_task": {
-    "id": "Q008-v5",
-    "operational_status": "EXISTING_RUNS_OBSERVED_FIX_NOT_DEPLOYED",
-    "application_sql_log_count": 432,
-    "application_sql_log_first_issue_utc": "2026-11-13T02:05:45.498639+00:00",
-    "application_log_asof": "2026-11-14T02:05:33.499927399Z",
-    "independent_sql": "UNVERIFIED",
-    "fix_live_execution": "UNVERIFIED_APPROVAL_PENDING",
-    "cron": "0 2 * * 2-6"
+    "id": "Q009-v4",
+    "operational_status": "DEPLOYED_SCHEDULED_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
+    "deployed_sha": "a2855b5107eb02946cb6e7e1dc41ab69db61ecfb",
+    "deployment": "d20392cf-7044-4ac5-8264-d050168bbefd",
+    "actual_run": "8688b6b2-7b50-465b-93d6-b04f67ff93a7",
+    "actual_run_exit": 0,
+    "preflight_ready": 108,
+    "preflight_blocked": 12,
+    "blocked_symbol": "NBIS",
+    "application_sql_vol_records": 0,
+    "application_sql_duplicates": 0,
+    "independent_sql": "NOT_RUN",
+    "first_vol_issuance": "PENDING",
+    "notion_history": "SAVED"
   }
 }
