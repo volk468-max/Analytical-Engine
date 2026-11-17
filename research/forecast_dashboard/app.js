@@ -114,9 +114,9 @@ $("loginForm").addEventListener("submit",async e=>{
   $("password").value="";
   if(!res.ok)throw new Error("Неверный пароль или ошибка входа");
   await refresh();
-setInterval(()=>{if(!$("dashboard").hidden)refresh();},5*60*1000);
  }catch(err){$("loginError").textContent=err.message;}
 });
 for(const id of ["symbol","threshold","horizon","label","model"])$(id).addEventListener("change",render);
 $("refresh").addEventListener("click",refresh);
 refresh();
+setInterval(()=>{if(!$("dashboard").hidden)refresh();},5*60*1000);
