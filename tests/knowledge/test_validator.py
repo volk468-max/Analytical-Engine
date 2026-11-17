@@ -20,6 +20,8 @@ class KnowledgeChecks(unittest.TestCase):
         reports = ROOT/'reports'
         if reports.exists():
             shutil.copytree(reports, self.root/'reports')
+        # Knowledge cards may link to checked-in implementation contracts too.
+        shutil.copytree(ROOT/'research', self.root/'research', ignore=shutil.ignore_patterns('__pycache__'))
         self.override = patch.object(v, 'ROOT', self.root)
         self.override.start()
 
