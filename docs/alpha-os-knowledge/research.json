@@ -691,6 +691,14 @@
       "branch": "feature/risk-forecast-daily-ten-stocks",
       "card": "research/Q010-v1.md",
       "classification": "IMPLEMENTED_TESTED_PENDING_RESEARCH_DEPLOYMENT"
+    },
+    {
+      "id": "Q010-v2",
+      "title": "Risk Forecast operational preflight/audit pass",
+      "branch": "feature/risk-forecast-daily-ten-stocks",
+      "card": "research/Q010-v2.md",
+      "classification": "DEPLOYED_SCHEDULED_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
+      "supersedes": "Q010-v1 implementation checkpoint; original retained"
     }
   ]
 }

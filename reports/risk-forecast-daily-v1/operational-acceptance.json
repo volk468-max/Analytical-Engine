@@ -1,0 +1,196 @@
+{
+  "classification": "APPLICATION_LOG_EVIDENCE_NOT_INDEPENDENT_SQL",
+  "deployed_sha": "261cf92ef3466934a2c3a9f4a56603f5fa00c925",
+  "deployment": "4381f0a4-3236-4161-a8f3-7d716c9b132b",
+  "first_prospective_issuance": "PENDING_NEXT_VALID_CRON",
+  "records": [
+    {
+      "level": "info",
+      "exit_code": 0,
+      "phase": "RUN_COMPLETED",
+      "run_id": "83e955ee-305e-4a78-b177-632d523dd403",
+      "status": "SUCCESS",
+      "timestamp": "2026-11-17T10:39:02.780845+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 0,
+      "first_issue_at": null,
+      "issued": 0,
+      "latest_issue_at": null,
+      "phase": "VOL_SQL_AUDIT",
+      "reason": "DUPLICATES=0",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "status": "DIRECT_READ_ONLY_SQL",
+      "timestamp": "2026-11-17T10:40:20.313837+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "RISK_FORECAST_PREFLIGHT",
+      "reason": "ANET:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:40:22.403092+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "RISK_FORECAST_PREFLIGHT",
+      "reason": "NVDA:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:40:25.101661+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "RISK_FORECAST_PREFLIGHT",
+      "reason": "AMD:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:40:27.887417+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "RISK_FORECAST_PREFLIGHT",
+      "reason": "CRWD:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:40:29.456396+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 12,
+      "checked": 0,
+      "models": 12,
+      "phase": "RISK_FORECAST_PREFLIGHT",
+      "reason": "NBIS:INSUFFICIENT_MATURE_TRAINING_SUPPORT",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "session": "2026-11-16",
+      "status": "PARTIAL_SUPPORT",
+      "timestamp": "2026-11-17T10:40:30.558729+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "RISK_FORECAST_PREFLIGHT",
+      "reason": "GOOG:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:40:33.211328+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "RISK_FORECAST_PREFLIGHT",
+      "reason": "GS:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:40:36.308225+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "RISK_FORECAST_PREFLIGHT",
+      "reason": "META:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:40:38.816719+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "RISK_FORECAST_PREFLIGHT",
+      "reason": "MU:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:40:41.717157+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 12,
+      "models": 12,
+      "phase": "RISK_FORECAST_PREFLIGHT",
+      "reason": "LRCX:SCHEMA_CALENDAR_SPLIT_BASIS_AND_FIT_CHECKED_NOT_PIT_NOT_ISSUED",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "session": "2026-11-16",
+      "status": "READY",
+      "timestamp": "2026-11-17T10:40:44.472273+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 12,
+      "checked": 108,
+      "models": 120,
+      "phase": "RISK_FORECAST_PREFLIGHT",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "session": "2026-11-16",
+      "status": "COMPLETED_NO_FORECAST_ISSUED",
+      "timestamp": "2026-11-17T10:40:44.519648+00:00"
+    },
+    {
+      "level": "info",
+      "phase": "RISK_FORECAST",
+      "reason": "BEFORE_OFFICIAL_CLOSE",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "session": "2026-11-17",
+      "status": "WAITING_VALID_SESSION_WINDOW",
+      "timestamp": "2026-11-17T10:40:44.537033+00:00"
+    },
+    {
+      "level": "info",
+      "blocked": 0,
+      "checked": 0,
+      "first_issue_at": null,
+      "issued": 0,
+      "latest_issue_at": null,
+      "phase": "RISK_FORECAST_SQL_AUDIT",
+      "reason": "DUPLICATES=0",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "status": "DIRECT_READ_ONLY_SQL",
+      "timestamp": "2026-11-17T10:40:44.570209+00:00"
+    },
+    {
+      "level": "info",
+      "exit_code": 0,
+      "http_failures": 0,
+      "http_responses": 63,
+      "http_status_counts": {
+        "200": 63
+      },
+      "partial_phases": [],
+      "phase": "RUN_COMPLETED",
+      "run_id": "c78f6dbd-e55d-40c6-8d0e-a78c44ffad9a",
+      "status": "SUCCESS",
+      "timestamp": "2026-11-17T10:40:44.927179+00:00"
+    }
+  ]
+}
