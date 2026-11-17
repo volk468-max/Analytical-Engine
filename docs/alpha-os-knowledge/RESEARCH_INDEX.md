@@ -106,3 +106,19 @@ allows isolated deployment; tool approval rejected, NOT RUNNING. Old cards retai
 
 [Daily worker diagnostics/readiness fix](research/Q008-v5.md): new dependent fix PR,
 actual old application log observations, direct SQL/new execution UNVERIFIED.
+
+
+## 2026-11-17 — Q009 / daily VOL10 stocks
+
+Owner explicitly requests implementation/connection and preservation in Notion.
+Universe ANET/NVDA/AMD/CRWD/NBIS/GOOG/GS/META/MU/LRCX; horizons10/30.
+New daily-refit raw VOL,120series; not calibrated annual historical estimator.
+Pinned research base [PR29](https://github.com/volk468-max/Analytical-Engine/pull/29)
+@ fe834c77cbadf4baa3eab68135cbdee1ecdad1f0; isolated Railway configuration read
+confirmed this deployed source2026-11-17, deploymentad829a06-9089-40b5-99f0-bd8056561c74 SUCCESS.
+Implementation prepared with additive006, independent manifest, strict complete
+training labels/support/asof, same-session publishing, NBIS only since2024-10-21.
+Local PostgreSQL17.11:210tests PASS,0skips (includes22new VOL tests). This is
+code/SQL evidence, not real VOL issuance. Final integration/live acceptance still
+pending deployment and actual source/SQL checks. Old research records untouched.
+[Q009](research/Q009-v1.md).

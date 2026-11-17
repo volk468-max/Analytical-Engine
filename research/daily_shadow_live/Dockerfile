@@ -8,5 +8,6 @@ RUN pip install --no-cache-dir -r research/daily_shadow_live/requirements.txt
 COPY research/ research/
 COPY reports/daily-shadow-postgres-v2/ reports/daily-shadow-postgres-v2/
 COPY reports/market-drawdown-precursors-v1/data/ reports/market-drawdown-precursors-v1/data/
+COPY reports/vol-daily-v1/ reports/vol-daily-v1/
 COPY reports/daily-shadow-live-v4/ reports/daily-shadow-live-v4/
 CMD ["python", "-m", "research.daily_shadow_live.runtime"]

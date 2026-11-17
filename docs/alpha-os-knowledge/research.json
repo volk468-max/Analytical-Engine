@@ -653,6 +653,13 @@
       "card": "research/Q008-v5.md",
       "supersedes": "Q008-v4 historical checkpoint; original retained",
       "classification": "FIX_PREPARED_EXISTING_RUNS_APP_LOG_OBSERVED_DIRECT_SQL_UNVERIFIED"
+    },
+    {
+      "id": "Q009-v1",
+      "title": "Daily VOL10stock integration",
+      "branch": "feature/vol-daily-ten-stocks",
+      "card": "research/Q009-v1.md",
+      "classification": "IMPLEMENTED_PENDING_ISOLATED_DEPLOYMENT_REAL_ISSUANCE"
     }
   ]
 }

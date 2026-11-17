@@ -3,7 +3,7 @@ import math
 
 def paired_metrics(rows):
     # Fixture/backfill/blocked records cannot masquerade as genuine prospective evidence.
-    eligible=[r for r in rows if r['run_mode']=='RESEARCH_FORECAST' and not r.get('fixture',False) and r['status']=='RESEARCH_FORECAST' and r.get('outcome_status')=='MATURED']
+    eligible=[r for r in rows if r['run_mode']=='RESEARCH_FORECAST' and not r.get('fixture',False) and r['status']=='RESEARCH_FORECAST' and r.get('outcome_status')=='MATURED' and r['model_name'] in ('HIST','REGIME')]
     pairs={}
     for r in eligible:
         key=tuple(r[k] for k in ('session','symbol','label_type','threshold_pct','horizon'))

@@ -93,3 +93,10 @@ fix SHA only in research worker. Preserve cron; verify new run UUID/completion/H
 status and independent read-only persistence audit. Historical432/first timestamp
 are app-log observations, not fresh SQL. Sunday skip is not forecast-generation
 acceptance; do not backdate the failed historical session. No merge/production.
+
+
+## Q009
+Publish/review feature/vol-daily-ten-stocks on pinned PR29 base, verify CI and
+source/schema/asof/support. Enable only authorised isolated worker. Capture real
+10-stock preflight then actual future valid-window issue+read-only SQL; no backdate.
+Save actual status in Notion, distinguish deployed/scheduled from first issuance.
