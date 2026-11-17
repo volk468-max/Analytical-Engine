@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alpha OS — прогнозы</title><link rel="stylesheet" href="/style.css"></head>
+<body><div class="shell">
+<header><div><div class="eyebrow">ALPHA OS / RESEARCH INTELLIGENCE</div><h1>Прогноз вероятности снижения</h1><p>Сохранённые выпуски, история и проверка фактических исходов</p></div><div class="right"><span id="status" class="pill">Подключение…</span><div id="asof" class="muted"></div></div></header>
+<section id="login" class="panel login"><h2>Закрытая аналитическая панель</h2><p>Введите пароль доступа к исследовательским прогнозам.</p><form id="loginForm"><input type="password" id="password" autocomplete="current-password" placeholder="Пароль" required><button type="submit">Открыть панель</button></form><p id="loginError" class="error"></p></section>
+<main id="dashboard" hidden>
+<div class="notice"><strong>Исследовательский режим.</strong> Модели HIST и REGIME пока не валидированы, вероятности не откалиброваны. Значения нельзя трактовать как подтверждённые торговые сигналы.</div>
+<section class="controls panel"><label>Инструмент<select id="symbol"><option>NVDA</option><option>AMD</option><option>MU</option><option>SOXX</option><option>QQQ</option><option>SPY</option></select></label>
+<label>Порог падения<select id="threshold"><option value="5">−5%</option><option value="10" selected>−10%</option><option value="15">−15%</option></select></label>
+<label>Горизонт<select id="horizon"><option value="10" selected>10 сессий</option><option value="20">20 сессий</option><option value="60">60 сессий</option></select></label>
+<label>Критерий события<select id="label"><option value="LOW_INTRADAY">Минимум внутри дня</option><option value="EOD_CLOSE">Цена закрытия</option></select></label>
+<label>Модель для графика<select id="model"><option value="REGIME">REGIME</option><option value="HIST">HIST</option></select></label>
+<button id="refresh" type="button" class="secondary">Обновить</button></section>
+<section class="stats">
+<div class="panel metric"><div class="eyebrow">REGIME / ПОСЛЕДНИЙ ВЫПУСК</div><div class="number" id="regime">—</div><div class="muted">Учитывает состояние рынка</div></div>
+<div class="panel metric"><div class="eyebrow">HIST / ПОСЛЕДНИЙ ВЫПУСК</div><div class="number" id="hist">—</div><div class="muted">Историческая частота</div></div>
+<div class="panel metric"><div class="eyebrow">РАЗНИЦА МОДЕЛЕЙ</div><div class="number" id="delta">—</div><div class="muted">Процентных пунктов</div></div>
+<div class="panel metric"><div class="eyebrow">ВЫПУСКИ В БАЗЕ</div><div class="number" id="sessions">—</div><div class="muted" id="recordCount">По всем инструментам</div></div>
+</section>
+<section class="twocol">
+<div class="panel"><h2>Динамика прогнозов</h2><p class="muted">Вероятность события на выбранном горизонте, по датам выпусков</p><div id="historyChart" class="chart"></div><div class="legend"><span><i class="dot a"></i>REGIME</span><span><i class="dot b"></i>HIST</span></div></div>
+<div class="panel"><h2>Матрица вероятностей</h2><p class="muted">Последний выпуск · <span id="matrixModel"></span></p><div id="matrix"></div></div>
+</section>
+<section class="twocol">
+<div class="panel"><h2>Проверка точности</h2><p class="muted">Только завершённые горизонты с подтверждённым исходом</p><div id="accuracy"></div></div>
+<div class="panel"><h2>Сравнение инструментов</h2><p class="muted">Тот же горизонт и порог, последний выпуск</p><div id="compare"></div></div>
+</section>
+<section class="panel"><h2>История выпусков</h2><p class="muted">Не редактируется задним числом; новые прогнозы появляются после завершения очередной сессии.</p><div id="historyTable"></div></section>
+<footer>Alpha OS · только исследовательские данные · без торговли и доступа к необработанным котировкам</footer>
+</main></div><script src="/app.js" defer></script></body></html>
