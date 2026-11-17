@@ -161,19 +161,10 @@
     14
   ],
   "last_task": {
-    "id": "Q012-v2",
-    "operational_status": "DEPLOYED_SCHEDULED_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
-    "deployed_sha": "da216e5ab9025d0df1881cfcdcd14901b4e2e09a",
-    "deployment": "74f84b49-d296-4736-b39f-47b025d3090f",
-    "run": "046162ce-2d00-459b-a9e0-07ba3b5dc627",
-    "run_exit": 0,
-    "preflight_ready": 144,
-    "preflight_blocked": 12,
-    "blocked_symbol": "NBIS",
-    "market_precursors_application_sql_count": 0,
-    "market_precursors_application_sql_duplicates": 0,
-    "first_market_precursors_issuance": "PENDING",
-    "notion_history": "SAVED",
-    "deployed_source_full_ci": "SUCCESS"
+    "id": "Q013-v1",
+    "operational_status": "IMPLEMENTED_PENDING_RESEARCH_DEPLOYMENT",
+    "actual_deployed_sha": "da216e5ab9025d0df1881cfcdcd14901b4e2e09a",
+    "replacement": "NBIS_TO_AVGO",
+    "active_universe_deployed": false
   }
 }

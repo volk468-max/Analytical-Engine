@@ -18,7 +18,7 @@ def sample(symbol='AMD',count=1400):
 
 class NumericalTests(unittest.TestCase):
     def test_manifest_exact_owner_order(self):
-        self.assertEqual(vol.SYMBOLS,('ANET','NVDA','AMD','CRWD','NBIS','GOOG','GS','META','MU','LRCX'))
+        self.assertEqual(vol.SYMBOLS,('ANET','NVDA','AMD','CRWD','AVGO','GOOG','GS','META','MU','LRCX'))
         tasks=vol.series();self.assertEqual(len(tasks),120);self.assertEqual(len({canonical(t) for t in tasks}),120)
         self.assertEqual({t['horizon'] for t in tasks},{10,30})
     def test_each_task_has_independent_fit(self):

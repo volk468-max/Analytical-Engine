@@ -13,7 +13,7 @@ from .test_vol import sample,SESSION,NOW
 
 def bundle():
  s=sample()
- for symbol in mdp.SYMBOLS:
+ for symbol in mdp.SYMBOLS+('NBIS',):
   s.bars[symbol]=copy.deepcopy(s.bars['AMD']);s.currency[symbol]='USD';s.splits[symbol]=[];s.dividends[symbol]=[]
  return s
 
@@ -53,7 +53,8 @@ class MarketPrecursorsTests(unittest.TestCase):
   for k in ('n','hits','params','training_rows_sha256','last_maturity'):self.assertEqual(a[k],b[k])
   self.assertLess(a['last_maturity'],a['fit_cutoff']);self.assertFalse(a['calibrated'])
  def test_block_nbis_short_history_and_asof_gates(self):
-  s=bundle();m=mdp.artifact(mdp.frame(s,'NBIS'),mdp.series(('NBIS',))[0],SESSION+'T00:00:00+00:00',NOW,'a'*64);self.assertTrue(m['unavailable'])
+  s=bundle()
+  with self.assertRaisesRegex(ValueError,'UNSUPPORTED_MDP_SYMBOL'):mdp.artifact(mdp.frame(s,'NBIS'),mdp.series(('NBIS',))[0],SESSION+'T00:00:00+00:00',NOW,'a'*64)
   task=mdp.series(('AMD',))[0];m=mdp.artifact(mdp.frame(s,'AMD'),task,SESSION+'T00:00:00+00:00',NOW,s.revision,fixture=True);r=mdp.rows(SESSION,NOW,s,[m],fixture_permit(),reviewed=True)[0];self.assertIsNotNone(r['probability_raw']);self.assertEqual(r['model_name'],'MARKET_PRECURSORS')
   s.retrieved_at='2026-11-18T00:00:00+00:00';self.assertEqual(mdp.rows(SESSION,NOW,s,[m],fixture_permit(),reviewed=True)[0]['reason'],'FUTURE_SOURCE_RETRIEVAL')
  def test_preclose_idempotency_and_partial_manifest(self):
