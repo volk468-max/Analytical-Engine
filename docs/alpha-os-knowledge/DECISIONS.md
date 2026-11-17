@@ -109,3 +109,11 @@ Owner explicitly asks daily Risk Forecast on same portfolio. In context this
 authorises integration/deployment in existing isolated research worker, not
 production/trades/merge/purchases. technical_combined is an implementation choice
 explained to owner; not owner claim of superiority or approval of trading rules.
+
+
+## 2026-11-17 / Market Drawdown Precursors deployment
+Owner explicitly requests daily research deployment in current chat. This
+supersedes Q004 preparation-only scope ONLY for isolated research Forecast Lab.
+MINIMAL/PLUS_X raw daily adaptation,3market+10stock grid and versioning are
+implementation choices explained to owner, not owner claims of validated
+accuracy or trading approval. No production/broker/trades/main merge/purchases.

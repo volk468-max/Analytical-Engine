@@ -300,3 +300,31 @@ On actual deployed sourcee581a0af10467ebc7720af8a3fdeac126199a6a3, full
 completedSUCCESS: PostgreSQL16/18, all parent research regression/replay and
 backup/restore drills. Online knowledge CI44070680112 also SUCCESS. Previous
 running status is historical. Prospective first issuance still pending.
+
+
+## 2026-11-17 — Q012 / Market Drawdown Precursors daily deployment preparation
+
+Owner explicitly requests daily deployment in existing isolated research Railway.
+[Issue39](https://github.com/volk468-max/Analytical-Engine/issues/39); base
+5ded52b0f309874e3ca08016be9bb87cd8fdffd3 (PR38 metadata), actual deployed source
+e581a0af10467ebc7720af8a3fdeac126199a6a3. Source [PR20](https://github.com/volk468-max/Analytical-Engine/pull/20)
+head8e9aec99c7eee8b384e35a3bc1aa734f2d54800d remains Draft/unmerged; original
+0/33primary contrasts and unqualified PIT/missing factors findings preserved.
+
+New daily RAW variant preserves exact original price feature_frame and ridge raw
+fit mean/scale/coef/intercept C0.1. MINIMAL for SPY/QQQ/SOXX, PLUS_X for owner
+ANET/NVDA/AMD/CRWD/NBIS/GOOG/GS/META/MU/LRCX.156series/session:13instruments,
+10/30sessions,DOWN5/10/15 Low/Close TOUCH. Labels never pooled across instruments.
+Daily expanding refit/no original annual intercept calibration/new30/CloseTOUCH
+are EXPLICIT adaptations, not identical original annual calibrated forecasts.
+Required SPY/QQQ/SOXX prices; no Breadth/VIX/macro/H4 or missing-value imputation.
+Warmup252 and min252fullymature trainingrows/min10eachglobalclass; NBIS only
+since2024-10-21. Raw unvalidated/uncalibrated/NOT_PIT probabilities.
+
+Protocol702d8edffd198809b1635786b48874ea97684b79 committed before real fits.
+Separate MARKET_PRECURSORS model/MDP_V1 manifest/lock280009, additiveSQL009;
+001–008 and all previous models/history unchanged. SQL156atomic/idempotency/
+rollback/fixturelive/readonly/oldVOLmanifest guards passed in disposablePG17.
+Remaining local regression/CI and actual research deployment/preflight/SQLaudit
+are pending at this checkpoint. First future issue must not be backdated.
+[Q012](research/Q012-v1.md). No production/trades/merge/new purchases.

@@ -161,19 +161,9 @@
     14
   ],
   "last_task": {
-    "id": "Q011-v2",
-    "operational_status": "DEPLOYED_SCHEDULED_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
-    "deployed_sha": "e581a0af10467ebc7720af8a3fdeac126199a6a3",
-    "deployment": "79c1aabd-1c00-4914-8280-095c1b3b36c4",
-    "run": "8c90266a-9d15-4b5f-890e-8c0841e10a55",
-    "run_exit": 0,
-    "preflight_ready": 108,
-    "preflight_blocked": 12,
-    "blocked_symbol": "NBIS",
-    "ensemble_application_sql_count": 0,
-    "ensemble_application_sql_duplicates": 0,
-    "ensemble_first_issuance": "PENDING",
-    "notion_history": "SAVED",
-    "deployed_source_full_ci": "SUCCESS"
+    "id": "Q012-v1",
+    "operational_status": "IMPLEMENTED_PENDING_RESEARCH_DEPLOYMENT",
+    "actual_deployed_sha": "e581a0af10467ebc7720af8a3fdeac126199a6a3",
+    "first_market_precursors_issuance": "PENDING"
   }
 }
