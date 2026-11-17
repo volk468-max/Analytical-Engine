@@ -6,14 +6,15 @@ Private, responsive Russian dashboard for the **existing** isolated `alpha_shado
 
 - Read-only `RESEARCH_FORECAST` rows, rolling 120 calendar days (maximum 25,000 rows), six symbols: SPY, QQQ, SOXX, AMD, NVDA, MU.
 - Switch symbol, threshold (-5/-10/-15%), horizon (10/20/60 trading sessions), target (`LOW_INTRADAY` or `EOD_CLOSE`), model (`HIST` or `REGIME`).
-- Latest forecast comparison, forecast history, 3x3 risk matrix, cross-symbol comparison.
-- Matured outcomes only: Brier score and empirical hit rate for each model; prequential baseline Brier on comparable HIST rows. No score or inferred accuracy when zero matured observations.
+- **Investor-first display**: one selected model's forecast probability, change since previous issuance of the **same model/scenario**, session date, issuance time, and matured-event count. No meaningless headline difference between HIST and REGIME.
+- History defaults to the selected model only; alternative model overlay is an optional diagnostic toggle. 3x3 risk matrix and cross-symbol comparison are secondary.
+- Matured outcomes only: Brier score and empirical hit rate for **paired** HIST/REGIME predictions of the same matured events; prequential baseline Brier on matched HIST rows. No score or inferred accuracy when zero matched matured observations.
 - Model probabilities are **raw, uncalibrated, not validated**. Forecast means **at least one threshold touch within N trading sessions**, not return at end of horizon. Neither model is a trading signal. Overlapping events are not independent.
-- Snapshot refresh on button; daily job writes to the same database; dashboard reads it without scheduled synchronization.
+- Automatic refresh every five minutes while the page is open, plus manual refresh. Daily job writes to the same database; dashboard reads it without scheduled synchronization.
 
 ## Secure deployment prerequisites
 
-**Deploy as a separate Railway service in the isolated `alpha-os-shadow-research / research` project. Do not replace the daily worker. Do not expose a public domain until authentication is configured and reviewed.**
+**Personal-use first.** Deploy as a separate Railway service in the isolated `alpha-os-shadow-research / research` project. Do not replace the daily worker. Do not expose a public domain until authentication is configured and reviewed. The link is not a security boundary: enforce HTTPS, password, secure cookie, edge authentication and rate limiting. Do not enable additional accounts yet; when sharing is needed, replace the single-password scheme with per-user identities, revocable access, and audit logs.
 
 Set the following **secrets** on the new service, never in GitHub:
 
