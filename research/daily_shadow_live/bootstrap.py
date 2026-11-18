@@ -50,6 +50,13 @@ def main():
  audit=RunAudit();audit.emit(phase='BOOTSTRAP',status='STARTED',persist=False)
  try:
   identity();url=dsn();apply(url);bank=models();register(url,permit(),bank)
+  initial_export=os.environ.get('ALPHA_INITIAL_EXPORT_SESSION')
+  if initial_export:
+   try:
+    from .forecast_export import export_session
+    export_session(Store(url),audit,initial_export)
+   except Exception as exc:
+    audit.failure('FORECAST_EXPORT',exc,persist=False)
   audit.emit(phase='BOOTSTRAP',status='READY',models=len(bank),forecasts_created_by_bootstrap=0,persist=False)
   audit.emit(phase='RUN_COMPLETED',status='SUCCESS',exit_code=0,persist=False);return 0
  except Exception as exc:
