@@ -219,6 +219,11 @@ def run_daily():
     audit.failure(phase,exc);partial.append(phase)
   phase='VERIFICATION';receipt(store,**acceptance(store))
   if not store.verify():raise RuntimeError('RESEARCH_CHAIN_BROKEN')
+  try:
+   from .forecast_export import export_session
+   export_session(store,audit,session)
+  except Exception as exc:
+   audit.failure('FORECAST_EXPORT',exc,persist=False)
   exit_code=2 if partial else 0
  except Exception as exc:
   exit_code=1
