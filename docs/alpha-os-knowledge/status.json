@@ -161,14 +161,14 @@
     14
   ],
   "last_task": {
-    "id": "Q015-v1",
-    "status": "IMPLEMENTED_TESTING_NOT_DEPLOYED",
-    "base_sha": "5139544ea6e5673b209d61b0088bfa9802e57373",
-    "model": "ALPHA_FULL",
-    "row_count": 120,
+    "id": "Q016-v1",
+    "status": "IMPLEMENTED_TESTED_PUBLICATION_DEPLOYMENT_PENDING",
+    "base_sha": "4304b731a33b0115fbd197d6ae8bd7602d35ea63",
+    "row_count": 118,
+    "market_rows": 6,
     "live_forecast_observed": false,
-    "weights": "EXPERT_PRIOR_NOT_LEARNED",
-    "sa_delivery": "NOT_CONFIGURED"
+    "context_weights": "EXPERT_PRIOR_NOT_LEARNED",
+    "source_delivery": "AUTOMATIONS_CONFIGURED_NOT_OBSERVED"
   },
   "task_history": [
     {
@@ -216,6 +216,16 @@
       "bootstrap_run": "2bdd5d0e-4653-4163-8252-44940dde28be",
       "bootstrap_exit_code": 0,
       "context_runtime_event_observed": false
+    },
+    {
+      "id": "Q015-v1",
+      "status": "IMPLEMENTED_TESTING_NOT_DEPLOYED",
+      "base_sha": "5139544ea6e5673b209d61b0088bfa9802e57373",
+      "model": "ALPHA_FULL",
+      "row_count": 120,
+      "live_forecast_observed": false,
+      "weights": "EXPERT_PRIOR_NOT_LEARNED",
+      "sa_delivery": "NOT_CONFIGURED"
     }
   ]
 }

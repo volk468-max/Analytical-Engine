@@ -569,3 +569,12 @@ missingness masks and shared numerical learning heads.252session per-stock gate
 does not apply. Additive011 append-only archive; original516CSV/HIST/REGIME and
 old SQL001–010 unchanged. No real Full issue/accuracy/SA delivery asserted yet.
 See [Q015](research/Q015-v1.md) and [report](../../reports/alpha-full-v1/README.md).
+
+## 2026-11-20 — Q016 signed price implementation
+
+Owner workflow2.0 is implemented on separate research/alpha-full-price-v1, base
+4304b731a33b0115fbd197d6ae8bd7602d35ea63 (PR46 risk prototype).118 portfolio
+price outputs plus6 market outputs, isolated missing inputs, immutable actual
+returns and prospective learning. Publication/deployment/first real price issue
+remain pending at this checkpoint. No measured price forecasting accuracy exists.
+[Details](research/Q016-v1.md). Q015 is auxiliary risk, not final price forecast.

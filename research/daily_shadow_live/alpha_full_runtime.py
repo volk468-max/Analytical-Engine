@@ -3,6 +3,7 @@ import base64
 import hashlib
 import gzip
 import json
+import io
 import os
 import uuid
 from datetime import datetime, timezone
@@ -24,6 +25,9 @@ def load_bundle():
     if encoded:
         if len(encoded)>2_000_000:raise ValueError('FULL_BUNDLE_TOO_LARGE')
         raw=base64.b64decode(encoded,validate=True)
+        if raw.startswith(b'\x1f\x8b'):
+            with gzip.GzipFile(fileobj=io.BytesIO(raw)) as stream:raw=stream.read(1_500_001)
+            if len(raw)>1_500_000:raise ValueError('FULL_BUNDLE_TOO_LARGE')
     else:
         p=Path(path)
         if p.suffix!='.json' or p.stat().st_size>1_500_000:raise ValueError('FULL_BUNDLE_SIZE_OR_TYPE')
