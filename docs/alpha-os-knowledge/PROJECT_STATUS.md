@@ -520,3 +520,22 @@ is preserved as history. Shell push lacked credentials; connected GitHub service
 published the approved identical net changes. No merge/deploy or runtime
 activation; actual worker remains fd37ef2d347663aaf24b086c6db8d41928a6ea12.
 Context remains BASELINE_ONLY pending verified inputs/delivery/training.
+
+
+### Q014 research deployment requested — 2026-11-20
+Owner explicitly requests integration and deployment. Isolated research worker
+patch a7c2c135-8bdc-4884-81c9-1b5e5198920c stages only branch/source pin to
+5ed43e13e6f97665918a459063dcba067683b9c0 and ALPHA_CONTEXT_RESEARCH_ENABLED=true.
+Cron0 2 * * 2-6 preserved; no other service/configuration changes staged.
+accept-deploy returned: Cancelled — the user did not approve this action.
+No changes were made. This is the platform result, not an assertion that the
+owner intentionally refused. No alternative activation path attempted.
+Read-back confirms STAGED3, previous deployment e244eb8e-4dfa-4754-a037-66a07ee1221b
+SUCCESS/source fd37ef2d347663aaf24b086c6db8d41928a6ea12 remains live.
+New code NOT DEPLOYED and coefficients NOT CONSUMED. Missing verified SA bundle,
+private delivery and trained prospective artifacts remain separate blockers even
+after eventual deployment. Knowledge CI44740330195 SUCCESS; new context tests
+pass on PG16/18, full parent SQL CI44740330191 still in progress at checkpoint.
+Next concrete action: owner applies the existing staged research patch; then
+observe terminal deployment SUCCESS and genuine runtime CONTEXT_EXPORT evidence.
+Do not call deployment SUCCESS a real enhanced forecast.

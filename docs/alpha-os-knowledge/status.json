@@ -162,7 +162,7 @@
   ],
   "last_task": {
     "id": "Q014-v1",
-    "operational_status": "PUBLISHED_NOT_DEPLOYED_BASELINE_ONLY",
+    "operational_status": "STAGED_ACCEPT_DEPLOY_CANCELLED_BASELINE_ONLY",
     "deployed_sha": "fd37ef2d347663aaf24b086c6db8d41928a6ea12",
     "deployment": "e244eb8e-4dfa-4754-a037-66a07ee1221b",
     "deployed_observation": "READ_ONLY_CONFIG_NOT_NEW_CRON_OR_SQL_AUDIT",
@@ -173,7 +173,11 @@
     "local_checks": "32_CONTEXT_PLUS_9_KNOWLEDGE_PASS;56_PARENT_PASS_24_DB_SKIP",
     "notion_history": "SAVED",
     "publication_pr": 45,
-    "published_implementation_sha": "dc93b42e7d636b3a7494a20cbce0c692008f1b95"
+    "published_implementation_sha": "dc93b42e7d636b3a7494a20cbce0c692008f1b95",
+    "staged_patch": "a7c2c135-8bdc-4884-81c9-1b5e5198920c",
+    "staged_change_count": 3,
+    "deploy_requested_by_owner": true,
+    "deploy_attempt": "CANCELLED_USER_DID_NOT_APPROVE_PLATFORM_RESULT"
   },
   "task_history": [
     {

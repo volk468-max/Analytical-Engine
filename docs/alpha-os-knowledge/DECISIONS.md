@@ -138,3 +138,10 @@ retirement are expert recommendations, not pre-existing owner decisions.
 Owner says publication is authorized for the prepared context branch/code and
 sanitized report. Draft PR45 published. This approval is not a merge, deployment
 or evidence that context features are consumed by the running worker.
+
+
+## 2026-11-20 — explicit research deployment approval
+Owner requests integration and deployment of prepared context code in the
+existing isolated research worker. Platform accept-deploy was cancelled; staged
+patch retained. Authorization does not turn absent input data or weights into
+verified forecasts, nor authorize trading or deletion of baseline histories.
