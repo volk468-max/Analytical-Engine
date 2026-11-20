@@ -189,3 +189,23 @@ pass on PG16/18, full parent SQL CI44740330191 still in progress at checkpoint.
 Next concrete action: owner applies the existing staged research patch; then
 observe terminal deployment SUCCESS and genuine runtime CONTEXT_EXPORT evidence.
 Do not call deployment SUCCESS a real enhanced forecast.
+
+
+### Q014 operational deployment observed — 2026-11-20
+Owner manually confirmed the staged research patch. Actual deployment
+6d58fe48-1148-42c2-9abe-ec926dbe7cb0 reached SUCCESS, created13:05:26.909UTC.
+Read-back service live/stagedNULL, cron0 2 * * 2-6 unchanged, context flag name
+present. Source config pin5ed43e13e6f97665918a459063dcba067683b9c0 differs from
+deployment metadata commit ffbe50b486a6ced48c99a19e84c479f3b6d56b36. GitHub compare
+confirms only nine documentation/status/report files changed; executable code
+is identical. No runtime-emitted SHA was available, so both observations are
+retained explicitly rather than silently selecting config as deployed fact.
+Bootstrap run2bdd5d0e-4653-4163-8252-44940dde28be READY at13:05:55.533989UTC,
+RUN_COMPLETED SUCCESS/exit0, forecasts_created_by_bootstrap0. Log evidence only,
+not an independent SQL audit or actual enhanced forecast. No CONTEXT_EXPORT
+runtime event observed in this deployment's current bounded logs.
+Context data delivery/bundle path and trained prospective artifact are still
+absent; new factors have not been shown to influence real probabilities.
+State DEPLOYED_BOOTSTRAP_PASS_CONTEXT_CONSUMPTION_UNVERIFIED_BASELINE_ONLY.
+This supersedes the cancelled/staged operational checkpoint above, not its
+history. No merge/trading/backfill or forced daytime forecast was performed.
