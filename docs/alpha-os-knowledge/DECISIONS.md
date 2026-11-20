@@ -145,3 +145,10 @@ Owner requests integration and deployment of prepared context code in the
 existing isolated research worker. Platform accept-deploy was cancelled; staged
 patch retained. Authorization does not turn absent input data or weights into
 verified forecasts, nor authorize trading or deletion of baseline histories.
+
+
+## 2026-11-20 — create Alpha Full
+Owner accepts launching a separate experimental broad-input model and says
+create Alpha Full. Prespecified expert weights,20date support gate, architecture
+and explicit coherence repair are engineering choices, not proven owner facts.
+Existing publication/research integration context persists; no trading approval.

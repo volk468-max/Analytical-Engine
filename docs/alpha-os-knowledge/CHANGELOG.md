@@ -513,3 +513,13 @@ absent; new factors have not been shown to influence real probabilities.
 State DEPLOYED_BOOTSTRAP_PASS_CONTEXT_CONSUMPTION_UNVERIFIED_BASELINE_ONLY.
 This supersedes the cancelled/staged operational checkpoint above, not its
 history. No merge/trading/backfill or forced daytime forecast was performed.
+
+
+## 2026-11-20 — Q015 / Alpha Full creation
+Owner requests Alpha Full: launch experimental forecasts using available sources
+and learn prospectively. Base PR45 source5139544ea6e5673b209d61b0088bfa9802e57373.
+New separate120-target model, explicit untrained expert prior, optional-source
+missingness masks and shared numerical learning heads.252session per-stock gate
+does not apply. Additive011 append-only archive; original516CSV/HIST/REGIME and
+old SQL001–010 unchanged. No real Full issue/accuracy/SA delivery asserted yet.
+See [Q015](research/Q015-v1.md) and [report](../../reports/alpha-full-v1/README.md).

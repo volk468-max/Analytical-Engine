@@ -1,0 +1,82 @@
+{
+  "protocol": "ALPHA_FULL_EXPERIMENT_V1",
+  "date": "2026-11-20",
+  "new_question": "Can a partial-input shared model launch now and learn from prospective mature outcomes?",
+  "targets": {
+    "model_name": "ALPHA_FULL",
+    "model_version": "ALPHA_FULL_V1-1094006d00968a2c",
+    "symbols": [
+      "ANET",
+      "NVDA",
+      "AMD",
+      "CRWD",
+      "AVGO",
+      "GOOG",
+      "GS",
+      "META",
+      "MU",
+      "LRCX"
+    ],
+    "horizons": [
+      10,
+      30
+    ],
+    "thresholds": [
+      5,
+      10,
+      15
+    ],
+    "labels": [
+      "LOW_INTRADAY",
+      "EOD_CLOSE"
+    ],
+    "row_count": 120,
+    "universe_revision_sha256": "399877248ef60097a87d5d25e727c5b505e1feff548a68ee2627aca536c91e88",
+    "features": [
+      "rf_logit_difference",
+      "market_logit_difference",
+      "monetary_policy",
+      "financial_conditions",
+      "macro_surprises",
+      "politics_regulation",
+      "market_sector",
+      "company_events",
+      "sa_eps_revision",
+      "sa_revenue_revision",
+      "sa_revision_breadth",
+      "sa_profitability",
+      "sa_valuation"
+    ],
+    "feature_schema_sha256": "d3036717a8e239ee93c6040895d12a6780e6486ee9384dc650c108f51fb89cf1",
+    "missing_masks": true,
+    "qualified": false
+  },
+  "expert_prior": {
+    "rf_logit_difference": 0.15,
+    "market_logit_difference": 0.2,
+    "monetary_policy": -0.05,
+    "financial_conditions": -0.05,
+    "macro_surprises": -0.05,
+    "politics_regulation": -0.05,
+    "market_sector": -0.05,
+    "company_events": -0.05,
+    "sa_eps_revision": -0.1,
+    "sa_revenue_revision": -0.05,
+    "sa_revision_breadth": -0.1,
+    "sa_profitability": -0.03,
+    "sa_valuation": -0.03
+  },
+  "intercept_prior": 0,
+  "missing_mask_prior": 0,
+  "delta_logit_cap": 0.6,
+  "training": {
+    "min_distinct_dates": 20,
+    "min_distinct_dates_per_class": 5,
+    "date_weight": "ONE_TOTAL_WEIGHT_PER_SESSION_ACROSS_SYMBOLS",
+    "ridge_penalty": 10,
+    "prior_center": "EXPERT_PRIOR",
+    "feature_schema_sha256": "d3036717a8e239ee93c6040895d12a6780e6486ee9384dc650c108f51fb89cf1"
+  },
+  "qualified": false,
+  "calibrated": false
+}

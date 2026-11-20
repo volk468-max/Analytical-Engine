@@ -1,0 +1,30 @@
+{
+  "classification": "SYNTHETIC_ISOLATED_ONLY",
+  "operation_counts": {
+    "receipts": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "reports": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "baselines": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "renewals": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "readiness": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "alpha_full_runs": {
+      "rows": 1,
+      "sha256": "175a444df5a2f6173041bb826470ac9ee04470c05e9eae27385ff450bb1901f9"
+    }
+  },
+  "exact_content_hash_match": true
+}

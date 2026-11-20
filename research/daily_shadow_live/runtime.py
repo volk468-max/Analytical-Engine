@@ -221,7 +221,13 @@ def run_daily():
   if not store.verify():raise RuntimeError('RESEARCH_CHAIN_BROKEN')
   try:
    from .forecast_export import export_session
-   export_session(store,audit,session)
+   blob=export_session(store,audit,session)
+   if blob is not None and os.environ.get('ALPHA_FULL_ENABLED')=='true':
+    try:
+     from .alpha_full_runtime import run_full
+     run_full(store,audit,blob,session)
+    except Exception as exc:
+     audit.failure('ALPHA_FULL',exc,persist=False);partial.append('ALPHA_FULL')
   except Exception as exc:
    audit.failure('FORECAST_EXPORT',exc,persist=False)
   exit_code=2 if partial else 0

@@ -12,6 +12,8 @@ def verify():
    for table in ('receipts','reports','baselines','renewals','readiness'):
     rows=sorted(r[0] for r in c.execute('select to_jsonb(t)::text from alpha_operations_v4.'+table+' t').fetchall())
     snapshot[table]=dict(rows=len(rows),sha256=hashlib.sha256(json.dumps(rows).encode()).hexdigest())
+   rows=sorted(r[0] for r in c.execute('select to_jsonb(t)::text from alpha_full_v1.runs t').fetchall())
+   snapshot['alpha_full_runs']=dict(rows=len(rows),sha256=hashlib.sha256(json.dumps(rows).encode()).hexdigest())
   snapshots.append(snapshot)
  assert snapshots[0]==snapshots[1]
  result=dict(classification='SYNTHETIC_ISOLATED_ONLY',operation_counts=snapshots[0],exact_content_hash_match=True);print(json.dumps(result,indent=2));return result
