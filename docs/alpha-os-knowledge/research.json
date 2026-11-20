@@ -744,6 +744,13 @@
       "card": "research/Q013-v2.md",
       "classification": "AVGO_DEPLOYED_ALL_FOUR_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
       "supersedes": "Q013-v1 implementation checkpoint; original retained"
+    },
+    {
+      "id": "Q016-v1",
+      "title": "Alpha Full signed terminal price workflow2.0",
+      "branch": "research/alpha-full-price-v1",
+      "card": "research/Q016-v1.md",
+      "classification": "IMPLEMENTED_TESTED_PUBLICATION_DEPLOYMENT_PENDING"
     }
   ]
 }

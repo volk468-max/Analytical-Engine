@@ -524,3 +524,8 @@ missingness masks and shared numerical learning heads.252session per-stock gate
 does not apply. Additive011 append-only archive; original516CSV/HIST/REGIME and
 old SQL001–010 unchanged. No real Full issue/accuracy/SA delivery asserted yet.
 See [Q015](research/Q015-v1.md) and [report](../../reports/alpha-full-v1/README.md).
+
+## Q016 — owner Alpha Full price workflow2.0
+
+[Q016-v1](research/Q016-v1.md): separate59-position signed price forecast;
+supersedes Q015 product scope, preserves auxiliary risk/history.

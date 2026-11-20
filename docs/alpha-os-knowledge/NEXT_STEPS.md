@@ -514,3 +514,12 @@ missingness masks and shared numerical learning heads.252session per-stock gate
 does not apply. Additive011 append-only archive; original516CSV/HIST/REGIME and
 old SQL001–010 unchanged. No real Full issue/accuracy/SA delivery asserted yet.
 See [Q015](research/Q015-v1.md) and [report](../../reports/alpha-full-v1/README.md).
+
+## Q016 acceptance
+
+Publish reviewed price branch, stage/apply isolated research source and PRICE flag,
+verify deployedSHA/bootstrap and first normal post-close118-output issue. Verify
+00/02/04 private source delivery and actual input consumption, not just schedules.
+Check missing59 names, issuer mappings, splits, source timestamps, no duplicates;
+retain baseline516. No historical context reconstruction. Score mature10/30 results
+weekly, then evaluate proposed weight changes out of sample; no accuracy promises.

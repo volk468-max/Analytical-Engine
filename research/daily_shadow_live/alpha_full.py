@@ -61,7 +61,11 @@ def parse_baseline(blob,session,issued):
 
 def context(bundle,symbol,session,horizon,issued,*,fixture=False):
     values={}; reasons={k:'SOURCE_MISSING' for k in NAMES[2:]}; refs={}
-    c=(bundle or {}).get('coefficients_by_horizon',{}).get(str(horizon),(bundle or {}).get('coefficients',{}))
+    root=bundle if isinstance(bundle,dict) else {}
+    by_horizon=root.get('coefficients_by_horizon',{})
+    if not isinstance(by_horizon,dict):by_horizon={}
+    c=by_horizon.get(str(horizon),root.get('coefficients',{}))
+    if not isinstance(c,dict):c={}
     try:
         if c.get('fixture',False)!=fixture:raise ValueError('FIXTURE_MISMATCH')
         cutoff=utc(c['information_cutoff_utc']);created=utc(c['created_at_utc'])
@@ -70,7 +74,7 @@ def context(bundle,symbol,session,horizon,issued,*,fixture=False):
         if (c['last_completed_session']!=session or c['horizon_sessions']!=horizon
                 or c['forecast_sessions']!=future_sessions(session,horizon)):
             raise ValueError('SESSION_OR_HORIZON_MISMATCH')
-        entries=[e for e in c['instruments'] if e['symbol']==symbol]
+        entries=[e for e in c['instruments'] if isinstance(e,dict) and e.get('symbol')==symbol]
         if len(entries)!=1:raise ValueError('SYMBOL_NOT_UNIQUE')
         e=entries[0]
         if e['data_status'] not in ('PARTIAL','SUFFICIENT'):raise ValueError('INSUFFICIENT')
@@ -82,20 +86,21 @@ def context(bundle,symbol,session,horizon,issued,*,fixture=False):
         for k in FACTORS:
             try:
                 v=number(e['factor_scores'].get(k),-100,100)
-                values[k]=v/100*reliability;reasons.pop(k,None)
-                refs[k]=dict(value=v,confidence=e['confidence_level'],cutoff_utc=c['information_cutoff_utc'],
-                             source_record_sha256=digest(c),run_id=c['run_id'])
+                ref=dict(value=v,confidence=e['confidence_level'],cutoff_utc=c['information_cutoff_utc'],
+                         source_record_sha256=digest(c),run_id=c['run_id'])
+                values[k]=v/100*reliability;refs[k]=ref;reasons.pop(k,None)
             except (ValueError,KeyError,TypeError):reasons[k]='FACTOR_UNAVAILABLE'
     except (ValueError,KeyError,TypeError) as exc:
         why=str(exc) if isinstance(exc,ValueError) else 'COEFFICIENT_SCHEMA'
         reasons.update({k:why for k in FACTORS})
-    s=(bundle or {}).get('seeking',{})
+    s=root.get('seeking',{})
+    if not isinstance(s,dict):s={}
     fields={}
     try:
         if s.get('fixture',False)!=fixture:raise ValueError('FIXTURE_MISMATCH')
         if s['schema_version']!='SA_CONTEXT_V1' or s['use_scope']!='PRIVATE_RESEARCH':
             raise ValueError('SEEKING_SCHEMA_OR_SCOPE')
-        entries=[e for e in s['instruments'] if e['symbol']==symbol]
+        entries=[e for e in s['instruments'] if isinstance(e,dict) and e.get('symbol')==symbol]
         if len(entries)!=1:raise ValueError('SYMBOL_NOT_UNIQUE')
         if entries[0]['data_status']!='VERIFIED_OBSERVATION':raise ValueError('UNVERIFIED')
         fields=entries[0]['fields']
