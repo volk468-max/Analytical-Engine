@@ -60,3 +60,14 @@ def export_session(store, audit, session):
                    csv_sha256=digest, chunk_index=index, chunk_count=len(chunks), csv_b64=chunk)
     audit.emit(persist=False, phase='FORECAST_EXPORT', status='READY', session=session,
                csv_sha256=digest, chunk_count=len(chunks), row_count=len(rows))
+    # Separate research output, after the immutable baseline CSV has completed.
+    # No DB mutations and no replacement of the established 516-row contract.
+    try:
+        from .context_runtime import export_context
+        export_context(blob, audit, session)
+    except Exception as exc:
+        # Do not emit input strings, paths, vendor data, or credentials in errors.
+        reason = str(exc) if isinstance(exc, ValueError) else ''
+        if not re.fullmatch(r'[A-Z][A-Z0-9_]{0,95}', reason):
+            reason = 'CONTEXT_BUNDLE_NOT_FOUND' if isinstance(exc, FileNotFoundError) else 'CONTEXT_INPUT_OR_CALCULATION_INVALID'
+        audit.emit(persist=False, phase='CONTEXT_EXPORT', status='FAILED', session=session, reason=reason)

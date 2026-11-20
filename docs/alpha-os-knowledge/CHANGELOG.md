@@ -440,3 +440,26 @@ PostgreSQL16/18, prior and new model suites, parent regressions/replay/restore
 SUCCESS. Authenticated onlineknowledge44104725436 also SUCCESS. Earlier running
 status is historical. AVGO universe deployed, all four real preflights passed
 516ready0blocked; first prospective issue still pending2026-11-18.
+
+
+## 2026-11-20 — Q014-v1 / context integration and redundancy audit
+
+Actual Railway source fd37ef2d347663aaf24b086c6db8d41928a6ea12, deployment
+e244eb8e-4dfa-4754-a037-66a07ee1221b SUCCESS observed read-only. This supersedes
+the Q013 deployed-source snapshot as a new observation only; no new cron/SQL
+acceptance is inferred. New opt-in, separate contextual research adapter and
+learned L2 logit-offset path prepared. NOT DEPLOYED, baseline unchanged.
+No model removed: RF is one Ensemble component, complete models not identical.
+MDP nesting violations require investigation before enhanced promotion. Current
+coefficient/SA/archive/delivery readiness is insufficient: BASELINE_ONLY; no
+trained live context weights. 10-session coefficient never reused for30.
+See [Q014](research/Q014-v1.md) and [implementation report](../../reports/context-factors-v1/README.md).
+
+
+### Q014 publication checkpoint
+Implementation is LOCAL_ONLY. External git push was rejected by automatic
+approval review (external-publication authorization and artifact privacy).
+No connector workaround attempted, no PR created. 32new+9knowledge tests PASS,
+56parent tests PASS/24database SKIP. Full online validation not yet confirmed.
+Notion Alpha OS history saved. Explicit publication approval is next gate;
+this does not activate context inputs or authorize a deployment.

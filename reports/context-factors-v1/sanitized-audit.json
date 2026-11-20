@@ -1,0 +1,33 @@
+{
+  "csv_sha256": "5decfd013b46dc8f95f50c861a635d64eeccd1159d1217221d2a3de4b1884fdd",
+  "row_count": 516,
+  "sessions": [
+    "2026-11-17"
+  ],
+  "coherence_violations": {
+    "ENSEMBLE_RISK": {
+      "threshold": 0,
+      "horizon": 0,
+      "low_vs_close": 0
+    },
+    "MARKET_PRECURSORS": {
+      "threshold": 3,
+      "horizon": 0,
+      "low_vs_close": 0
+    },
+    "RISK_FORECAST": {
+      "threshold": 0,
+      "horizon": 0,
+      "low_vs_close": 0
+    },
+    "VOL": {
+      "threshold": 0,
+      "horizon": 0,
+      "low_vs_close": 0
+    }
+  },
+  "accuracy": "NOT_EVALUATED_NO_MATURE_OUTCOMES",
+  "retirement_decision": "NOT_SUPPORTED_BY_SINGLE_SESSION_SIMILARITY",
+  "all_six_model_pairs_have_zero_exact_equal_predictions": true,
+  "no_raw_prices_or_forecast_rows_in_repository": true
+}

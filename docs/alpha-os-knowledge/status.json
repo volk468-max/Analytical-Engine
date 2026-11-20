@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-17",
+  "checked_at": "2026-11-20",
   "baseline_sha": "a14ebf9c268bea5cb01de962edfb98b8df94652a",
   "pull_requests": [
     {
@@ -161,24 +161,39 @@
     14
   ],
   "last_task": {
-    "id": "Q013-v2",
-    "operational_status": "AVGO_DEPLOYED_ALL_FOUR_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
-    "deployed_sha": "9e93e9a4914db95bc41d127afa19e2b3b96ca436",
-    "deployment": "34e22c16-c498-412a-ae66-780eb5859aca",
-    "run": "59dc1994-fc1b-4553-99e3-ef3dee24d21a",
-    "run_exit": 0,
-    "ready_counts": {
-      "VOL": 120,
-      "RISK_FORECAST": 120,
-      "ENSEMBLE_RISK": 120,
-      "MARKET_PRECURSORS": 156
-    },
-    "blocked": 0,
-    "AVGO_ready_per_model": 12,
-    "first_AVGO_issuance": "PENDING",
-    "notion_history": "SAVED",
-    "first_issue_audit_updated": true,
-    "periodic_audit_updated": true,
-    "deployed_source_full_ci": "SUCCESS"
-  }
+    "id": "Q014-v1",
+    "operational_status": "CODE_PREPARED_NOT_DEPLOYED_BASELINE_ONLY",
+    "deployed_sha": "fd37ef2d347663aaf24b086c6db8d41928a6ea12",
+    "deployment": "e244eb8e-4dfa-4754-a037-66a07ee1221b",
+    "deployed_observation": "READ_ONLY_CONFIG_NOT_NEW_CRON_OR_SQL_AUDIT",
+    "context_consumed": false,
+    "model_retirements": 0,
+    "independent_accuracy_test": "NOT_RUN_NO_MATURE_CONTEXT_OUTCOMES",
+    "publication": "AUTO_REVIEW_REJECTED_NOT_PUBLISHED",
+    "local_checks": "32_CONTEXT_PLUS_9_KNOWLEDGE_PASS;56_PARENT_PASS_24_DB_SKIP",
+    "notion_history": "SAVED"
+  },
+  "task_history": [
+    {
+      "id": "Q013-v2",
+      "operational_status": "AVGO_DEPLOYED_ALL_FOUR_PREFLIGHT_AUDIT_PASS_FIRST_ISSUANCE_PENDING",
+      "deployed_sha": "9e93e9a4914db95bc41d127afa19e2b3b96ca436",
+      "deployment": "34e22c16-c498-412a-ae66-780eb5859aca",
+      "run": "59dc1994-fc1b-4553-99e3-ef3dee24d21a",
+      "run_exit": 0,
+      "ready_counts": {
+        "VOL": 120,
+        "RISK_FORECAST": 120,
+        "ENSEMBLE_RISK": 120,
+        "MARKET_PRECURSORS": 156
+      },
+      "blocked": 0,
+      "AVGO_ready_per_model": 12,
+      "first_AVGO_issuance": "PENDING",
+      "notion_history": "SAVED",
+      "first_issue_audit_updated": true,
+      "periodic_audit_updated": true,
+      "deployed_source_full_ci": "SUCCESS"
+    }
+  ]
 }

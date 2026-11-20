@@ -124,3 +124,11 @@ Owner explicitly asks to replace NBIS with AVGO. In context this authorises
 updating and deploying the current four-model daily research universe and its
 future audits, preserving existing history. Not authorisation to trade or to
 change HIST/REGIME horizons/universe, model formulas, main or production.
+
+
+## 2026-11-20 — owner context integration request
+Owner requests model redundancy analysis before integrating calculated coefficients
+and Seeking Alpha into mathematical models. This authorizes code/research changes
+and review, not a declaration of specific model superiority or a deletion of
+history. Preserving baselines, separate research augmentation and delaying model
+retirement are expert recommendations, not pre-existing owner decisions.
