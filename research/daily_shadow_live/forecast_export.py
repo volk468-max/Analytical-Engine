@@ -71,3 +71,4 @@ def export_session(store, audit, session):
         if not re.fullmatch(r'[A-Z][A-Z0-9_]{0,95}', reason):
             reason = 'CONTEXT_BUNDLE_NOT_FOUND' if isinstance(exc, FileNotFoundError) else 'CONTEXT_INPUT_OR_CALCULATION_INVALID'
         audit.emit(persist=False, phase='CONTEXT_EXPORT', status='FAILED', session=session, reason=reason)
+    return blob

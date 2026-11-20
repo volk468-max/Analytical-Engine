@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-11-20",
+  "classification": "SYNTHETIC_LOCAL_ONLY",
+  "postgres_version": "16.2",
+  "new_full_tests": 29,
+  "context_regression_tests": 32,
+  "knowledge_tests": 9,
+  "total_passed": 70,
+  "skips": 0,
+  "sql011": "APPLIED_TO_DISPOSABLE_DB",
+  "immutable_atomic120": "PASS",
+  "no_backfill_guard": "PASS",
+  "prior_table_preservation": "PASS",
+  "backup_restore": "EXACT_ALPHA_FULL_BODY_HASH_MATCH",
+  "online_knowledge": "ATTEMPTED_URLERROR_NOT_PASS",
+  "full_parent_database_regression": "RUNNING_NOT_CLAIMED",
+  "live_issuance": "NOT_RUN",
+  "real_sa_or_llm_consumption": "NOT_RUN",
+  "real_learned_weights": "NONE_COLD_START_EXPERT_PRIOR"
+}

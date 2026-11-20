@@ -161,29 +161,14 @@
     14
   ],
   "last_task": {
-    "id": "Q014-v1",
-    "operational_status": "DEPLOYED_BOOTSTRAP_PASS_CONTEXT_CONSUMPTION_UNVERIFIED_BASELINE_ONLY",
-    "deployed_sha": "ffbe50b486a6ced48c99a19e84c479f3b6d56b36",
-    "deployment": "6d58fe48-1148-42c2-9abe-ec926dbe7cb0",
-    "deployed_observation": "READ_ONLY_CONFIG_NOT_NEW_CRON_OR_SQL_AUDIT",
-    "context_consumed": false,
-    "model_retirements": 0,
-    "independent_accuracy_test": "NOT_RUN_NO_MATURE_CONTEXT_OUTCOMES",
-    "publication": "PUBLISHED_DRAFT_PR45",
-    "local_checks": "32_CONTEXT_PLUS_9_KNOWLEDGE_PASS;56_PARENT_PASS_24_DB_SKIP",
-    "notion_history": "SAVED",
-    "publication_pr": 45,
-    "published_implementation_sha": "dc93b42e7d636b3a7494a20cbce0c692008f1b95",
-    "staged_patch": null,
-    "staged_change_count": 0,
-    "deploy_requested_by_owner": true,
-    "deploy_attempt": "CANCELLED_USER_DID_NOT_APPROVE_PLATFORM_RESULT",
-    "configured_source_pin": "5ed43e13e6f97665918a459063dcba067683b9c0",
-    "runtime_sha_emitted": false,
-    "code_equivalence": "GITHUB_COMPARE_DOCS_ONLY",
-    "bootstrap_run": "2bdd5d0e-4653-4163-8252-44940dde28be",
-    "bootstrap_exit_code": 0,
-    "context_runtime_event_observed": false
+    "id": "Q015-v1",
+    "status": "IMPLEMENTED_TESTING_NOT_DEPLOYED",
+    "base_sha": "5139544ea6e5673b209d61b0088bfa9802e57373",
+    "model": "ALPHA_FULL",
+    "row_count": 120,
+    "live_forecast_observed": false,
+    "weights": "EXPERT_PRIOR_NOT_LEARNED",
+    "sa_delivery": "NOT_CONFIGURED"
   },
   "task_history": [
     {
@@ -206,6 +191,31 @@
       "first_issue_audit_updated": true,
       "periodic_audit_updated": true,
       "deployed_source_full_ci": "SUCCESS"
+    },
+    {
+      "id": "Q014-v1",
+      "operational_status": "DEPLOYED_BOOTSTRAP_PASS_CONTEXT_CONSUMPTION_UNVERIFIED_BASELINE_ONLY",
+      "deployed_sha": "ffbe50b486a6ced48c99a19e84c479f3b6d56b36",
+      "deployment": "6d58fe48-1148-42c2-9abe-ec926dbe7cb0",
+      "deployed_observation": "READ_ONLY_CONFIG_NOT_NEW_CRON_OR_SQL_AUDIT",
+      "context_consumed": false,
+      "model_retirements": 0,
+      "independent_accuracy_test": "NOT_RUN_NO_MATURE_CONTEXT_OUTCOMES",
+      "publication": "PUBLISHED_DRAFT_PR45",
+      "local_checks": "32_CONTEXT_PLUS_9_KNOWLEDGE_PASS;56_PARENT_PASS_24_DB_SKIP",
+      "notion_history": "SAVED",
+      "publication_pr": 45,
+      "published_implementation_sha": "dc93b42e7d636b3a7494a20cbce0c692008f1b95",
+      "staged_patch": null,
+      "staged_change_count": 0,
+      "deploy_requested_by_owner": true,
+      "deploy_attempt": "CANCELLED_USER_DID_NOT_APPROVE_PLATFORM_RESULT",
+      "configured_source_pin": "5ed43e13e6f97665918a459063dcba067683b9c0",
+      "runtime_sha_emitted": false,
+      "code_equivalence": "GITHUB_COMPARE_DOCS_ONLY",
+      "bootstrap_run": "2bdd5d0e-4653-4163-8252-44940dde28be",
+      "bootstrap_exit_code": 0,
+      "context_runtime_event_observed": false
     }
   ]
 }

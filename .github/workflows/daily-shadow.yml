@@ -57,6 +57,8 @@ jobs:
       - name: Apply migration only to disposable local CI database
         run: |
           python -m research.daily_shadow_live.setup_fixture_db
+      - name: Alpha Full synthetic forecasts, pooled learning and immutable SQL archive
+        run: python -m pytest research/daily_shadow_live/test_alpha_full.py -q
       - name: Offline fixtures and actual PostgreSQL permission/concurrency checks
         run: python -m unittest research.daily_shadow.test_core research.daily_shadow.test_postgres research.daily_shadow.test_reporting research.daily_shadow.test_preparation -v
       - name: Research mode, legal gates and TTL tests
@@ -72,7 +74,7 @@ jobs:
           CI_POSTGRES_CONTAINER: ${{ job.services.postgres.id }}
           ALPHA_SHADOW_RESTORE_DSN: host=127.0.0.1 port=5432 dbname=alpha_shadow_restore user=alpha_shadow_test_app password=synthetic-local-only
         run: |
-          docker exec "$CI_POSTGRES_CONTAINER" pg_dump -U postgres -d alpha_shadow_research -n alpha_shadow_v1 -n alpha_research_v3 -n alpha_licensed_v3 -n alpha_operations_v4 -Fc > "$RUNNER_TEMP/shadow.dump"
+          docker exec "$CI_POSTGRES_CONTAINER" pg_dump -U postgres -d alpha_shadow_research -n alpha_shadow_v1 -n alpha_research_v3 -n alpha_licensed_v3 -n alpha_operations_v4 -n alpha_full_v1 -Fc > "$RUNNER_TEMP/shadow.dump"
           docker exec "$CI_POSTGRES_CONTAINER" createdb -U postgres alpha_shadow_restore
           docker exec -i "$CI_POSTGRES_CONTAINER" pg_restore -U postgres -d alpha_shadow_restore --no-owner --exit-on-error < "$RUNNER_TEMP/shadow.dump"
           python -m research.daily_shadow.backup_restore
