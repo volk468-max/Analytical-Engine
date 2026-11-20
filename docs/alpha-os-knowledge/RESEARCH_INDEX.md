@@ -464,3 +464,14 @@ MDP nesting violations require investigation before enhanced promotion. Current
 coefficient/SA/archive/delivery readiness is insufficient: BASELINE_ONLY; no
 trained live context weights. 10-session coefficient never reused for30.
 See [Q014](research/Q014-v1.md) and [implementation report](../../reports/context-factors-v1/README.md).
+
+
+### Q014 publication approved — 2026-11-20
+Owner explicitly approved publishing the prepared branch to GitHub.
+[Draft PR45](https://github.com/volk468-max/Analytical-Engine/pull/45) is open,
+unmerged; published implementation dc93b42e7d636b3a7494a20cbce0c692008f1b95.
+This supersedes LOCAL_ONLY/publication-block status above; previous rejection
+is preserved as history. Shell push lacked credentials; connected GitHub service
+published the approved identical net changes. No merge/deploy or runtime
+activation; actual worker remains fd37ef2d347663aaf24b086c6db8d41928a6ea12.
+Context remains BASELINE_ONLY pending verified inputs/delivery/training.

@@ -22,6 +22,9 @@
   "deploy": "NOT_RUN",
   "real_sql": "NOT_RUN",
   "real_coefficient_consumption": "NOT_OCCURRED",
-  "publication": "AUTO_REVIEW_REJECTED_GITHUB_PUSH_NOT_PUBLISHED",
-  "publication_reason": "External GitHub publication authorization/privacy concerns; no connector workaround attempted"
+  "publication": "PUBLISHED_DRAFT_PR45_OWNER_APPROVED",
+  "publication_history": [
+    "AUTO_REVIEW_REJECTED_GITHUB_PUSH_NOT_PUBLISHED",
+    "External GitHub publication authorization/privacy concerns; no connector workaround attempted"
+  ]
 }

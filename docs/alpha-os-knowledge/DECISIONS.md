@@ -132,3 +132,9 @@ and Seeking Alpha into mathematical models. This authorizes code/research change
 and review, not a declaration of specific model superiority or a deletion of
 history. Preserving baselines, separate research augmentation and delaying model
 retirement are expert recommendations, not pre-existing owner decisions.
+
+
+## 2026-11-20 — explicit publication approval
+Owner says publication is authorized for the prepared context branch/code and
+sanitized report. Draft PR45 published. This approval is not a merge, deployment
+or evidence that context features are consumed by the running worker.

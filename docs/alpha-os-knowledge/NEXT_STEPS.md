@@ -454,3 +454,14 @@ Next: review Q014 code; resolve MDP coherence in a new version; archive complete
 verified SA revisions and sufficient LLM factor records before worker issue,
 provision private normalized-bundle delivery, then prospective evaluation with
 purged untouched holdout. No automatic model retirement or runtime activation.
+
+
+### Q014 publication approved — 2026-11-20
+Owner explicitly approved publishing the prepared branch to GitHub.
+[Draft PR45](https://github.com/volk468-max/Analytical-Engine/pull/45) is open,
+unmerged; published implementation dc93b42e7d636b3a7494a20cbce0c692008f1b95.
+This supersedes LOCAL_ONLY/publication-block status above; previous rejection
+is preserved as history. Shell push lacked credentials; connected GitHub service
+published the approved identical net changes. No merge/deploy or runtime
+activation; actual worker remains fd37ef2d347663aaf24b086c6db8d41928a6ea12.
+Context remains BASELINE_ONLY pending verified inputs/delivery/training.
