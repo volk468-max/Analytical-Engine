@@ -440,3 +440,76 @@ PostgreSQL16/18, prior and new model suites, parent regressions/replay/restore
 SUCCESS. Authenticated onlineknowledge44104725436 also SUCCESS. Earlier running
 status is historical. AVGO universe deployed, all four real preflights passed
 516ready0blocked; first prospective issue still pending2026-11-18.
+
+
+## 2026-11-20 — Q014-v1 / context integration and redundancy audit
+
+Actual Railway source fd37ef2d347663aaf24b086c6db8d41928a6ea12, deployment
+e244eb8e-4dfa-4754-a037-66a07ee1221b SUCCESS observed read-only. This supersedes
+the Q013 deployed-source snapshot as a new observation only; no new cron/SQL
+acceptance is inferred. New opt-in, separate contextual research adapter and
+learned L2 logit-offset path prepared. NOT DEPLOYED, baseline unchanged.
+No model removed: RF is one Ensemble component, complete models not identical.
+MDP nesting violations require investigation before enhanced promotion. Current
+coefficient/SA/archive/delivery readiness is insufficient: BASELINE_ONLY; no
+trained live context weights. 10-session coefficient never reused for30.
+See [Q014](research/Q014-v1.md) and [implementation report](../../reports/context-factors-v1/README.md).
+
+
+### Q014 publication checkpoint
+Implementation is LOCAL_ONLY. External git push was rejected by automatic
+approval review (external-publication authorization and artifact privacy).
+No connector workaround attempted, no PR created. 32new+9knowledge tests PASS,
+56parent tests PASS/24database SKIP. Full online validation not yet confirmed.
+Notion Alpha OS history saved. Explicit publication approval is next gate;
+this does not activate context inputs or authorize a deployment.
+
+
+### Q014 publication approved — 2026-11-20
+Owner explicitly approved publishing the prepared branch to GitHub.
+[Draft PR45](https://github.com/volk468-max/Analytical-Engine/pull/45) is open,
+unmerged; published implementation dc93b42e7d636b3a7494a20cbce0c692008f1b95.
+This supersedes LOCAL_ONLY/publication-block status above; previous rejection
+is preserved as history. Shell push lacked credentials; connected GitHub service
+published the approved identical net changes. No merge/deploy or runtime
+activation; actual worker remains fd37ef2d347663aaf24b086c6db8d41928a6ea12.
+Context remains BASELINE_ONLY pending verified inputs/delivery/training.
+
+
+### Q014 research deployment requested — 2026-11-20
+Owner explicitly requests integration and deployment. Isolated research worker
+patch a7c2c135-8bdc-4884-81c9-1b5e5198920c stages only branch/source pin to
+5ed43e13e6f97665918a459063dcba067683b9c0 and ALPHA_CONTEXT_RESEARCH_ENABLED=true.
+Cron0 2 * * 2-6 preserved; no other service/configuration changes staged.
+accept-deploy returned: Cancelled — the user did not approve this action.
+No changes were made. This is the platform result, not an assertion that the
+owner intentionally refused. No alternative activation path attempted.
+Read-back confirms STAGED3, previous deployment e244eb8e-4dfa-4754-a037-66a07ee1221b
+SUCCESS/source fd37ef2d347663aaf24b086c6db8d41928a6ea12 remains live.
+New code NOT DEPLOYED and coefficients NOT CONSUMED. Missing verified SA bundle,
+private delivery and trained prospective artifacts remain separate blockers even
+after eventual deployment. Knowledge CI44740330195 SUCCESS; new context tests
+pass on PG16/18, full parent SQL CI44740330191 still in progress at checkpoint.
+Next concrete action: owner applies the existing staged research patch; then
+observe terminal deployment SUCCESS and genuine runtime CONTEXT_EXPORT evidence.
+Do not call deployment SUCCESS a real enhanced forecast.
+
+
+### Q014 operational deployment observed — 2026-11-20
+Owner manually confirmed the staged research patch. Actual deployment
+6d58fe48-1148-42c2-9abe-ec926dbe7cb0 reached SUCCESS, created13:05:26.909UTC.
+Read-back service live/stagedNULL, cron0 2 * * 2-6 unchanged, context flag name
+present. Source config pin5ed43e13e6f97665918a459063dcba067683b9c0 differs from
+deployment metadata commit ffbe50b486a6ced48c99a19e84c479f3b6d56b36. GitHub compare
+confirms only nine documentation/status/report files changed; executable code
+is identical. No runtime-emitted SHA was available, so both observations are
+retained explicitly rather than silently selecting config as deployed fact.
+Bootstrap run2bdd5d0e-4653-4163-8252-44940dde28be READY at13:05:55.533989UTC,
+RUN_COMPLETED SUCCESS/exit0, forecasts_created_by_bootstrap0. Log evidence only,
+not an independent SQL audit or actual enhanced forecast. No CONTEXT_EXPORT
+runtime event observed in this deployment's current bounded logs.
+Context data delivery/bundle path and trained prospective artifact are still
+absent; new factors have not been shown to influence real probabilities.
+State DEPLOYED_BOOTSTRAP_PASS_CONTEXT_CONSUMPTION_UNVERIFIED_BASELINE_ONLY.
+This supersedes the cancelled/staged operational checkpoint above, not its
+history. No merge/trading/backfill or forced daytime forecast was performed.

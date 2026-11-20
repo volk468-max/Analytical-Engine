@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-11-20",
+  "new_context_tests": {
+    "passed": 32,
+    "failed": 0
+  },
+  "knowledge_tests": {
+    "passed": 9,
+    "failed": 0
+  },
+  "parent_model_unittest": {
+    "ran": 80,
+    "passed": 56,
+    "skipped": 24,
+    "failed": 0,
+    "skip_reason": "NO_LOCAL_TEST_DATABASE"
+  },
+  "offline_knowledge_validator": "PASS",
+  "online_knowledge_validator": "INTERRUPTED_EXIT130_WITHOUT_CONFIRMED_COMPLETION",
+  "broader_pytest_attempt": "FAILED_DUE_TO_EXISTING_PACKAGE_IMPORT_ALIAS_PATCH_TARGETS; proper-package unittest run passes",
+  "new_real_context_fit": "NOT_RUN_NO_PROSPECTIVE_TRAINING_DATA",
+  "deploy": "SUCCESS_6d58fe48_2026_11_20",
+  "real_sql": "NOT_RUN",
+  "real_coefficient_consumption": "NOT_OBSERVED_BASELINE_ONLY",
+  "publication": "PUBLISHED_DRAFT_PR45_OWNER_APPROVED",
+  "publication_history": [
+    "AUTO_REVIEW_REJECTED_GITHUB_PUSH_NOT_PUBLISHED",
+    "External GitHub publication authorization/privacy concerns; no connector workaround attempted"
+  ],
+  "knowledge_ci_44740330195": "SUCCESS",
+  "context_tests_ci_pg16_pg18": "PASS",
+  "full_daily_ci_44740330191": "IN_PROGRESS_AT_CHECKPOINT",
+  "bootstrap": "SUCCESS_EXIT0_NO_FORECASTS_CREATED",
+  "context_runtime_event": "NOT_OBSERVED"
+}

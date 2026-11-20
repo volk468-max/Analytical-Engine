@@ -50,6 +50,10 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -r research/daily_shadow_live/requirements.txt
+      - name: Separate context adapter and offset-model research checks
+        run: |
+          pip install pytest
+          python -m pytest research/daily_shadow_live/test_context_factors.py -q
       - name: Apply migration only to disposable local CI database
         run: |
           python -m research.daily_shadow_live.setup_fixture_db

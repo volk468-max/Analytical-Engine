@@ -124,3 +124,24 @@ Owner explicitly asks to replace NBIS with AVGO. In context this authorises
 updating and deploying the current four-model daily research universe and its
 future audits, preserving existing history. Not authorisation to trade or to
 change HIST/REGIME horizons/universe, model formulas, main or production.
+
+
+## 2026-11-20 — owner context integration request
+Owner requests model redundancy analysis before integrating calculated coefficients
+and Seeking Alpha into mathematical models. This authorizes code/research changes
+and review, not a declaration of specific model superiority or a deletion of
+history. Preserving baselines, separate research augmentation and delaying model
+retirement are expert recommendations, not pre-existing owner decisions.
+
+
+## 2026-11-20 — explicit publication approval
+Owner says publication is authorized for the prepared context branch/code and
+sanitized report. Draft PR45 published. This approval is not a merge, deployment
+or evidence that context features are consumed by the running worker.
+
+
+## 2026-11-20 — explicit research deployment approval
+Owner requests integration and deployment of prepared context code in the
+existing isolated research worker. Platform accept-deploy was cancelled; staged
+patch retained. Authorization does not turn absent input data or weights into
+verified forecasts, nor authorize trading or deletion of baseline histories.
