@@ -68,3 +68,10 @@ No backfill/trade/production/merge/API purchase or secret access is part of this
 Observed Railway before this price publication: PR46 risk prototype pin
 4304b731a33b0115fbd197d6ae8bd7602d35ea63, deployment
 38359e4d-e7a0-4dbf-97e8-78c58aaef359 SUCCESS. This is not price deployment proof.
+
+Final pure/knowledge recheck75passed/15DBskips; all15DBtests had passed in
+the90test nativePG run. Optional identity guard separately20price tests passed
+with nativePG/no skips. Six-schema exact content hashes match. Online required
+validator attempted, timed out45seconds; offline validation passed. Published
+PR47 implementation725f04df62bebca059cb7fc5fdb6680e89663835; isolated patch staged,
+not proof of deployed price functionality or first real forecast.

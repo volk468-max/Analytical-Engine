@@ -578,3 +578,12 @@ price outputs plus6 market outputs, isolated missing inputs, immutable actual
 returns and prospective learning. Publication/deployment/first real price issue
 remain pending at this checkpoint. No measured price forecasting accuracy exists.
 [Details](research/Q016-v1.md). Q015 is auxiliary risk, not final price forecast.
+
+### Q016 publication checkpoint
+
+[PR47](https://github.com/volk468-max/Analytical-Engine/pull/47), draft/unmerged,
+implementation725f04df62bebca059cb7fc5fdb6680e89663835. Source plus
+ALPHA_FULL_PRICE_ENABLED staged in isolated research patch; deployment not yet
+applied at this checkpoint.90tests passed nativePG16.2, exact six-schema restore;
+offline knowledge passes, required online validator exceeded45seconds.
+First actual price118 issue and real source consumption remain unverified.
