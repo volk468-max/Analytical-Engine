@@ -1,7 +1,8 @@
 """Independent per-instrument collection, signed close forecasts and mature scoring."""
 import os,json,uuid,time,base64,gzip,hashlib
 from datetime import datetime,timezone,timedelta
-from concurrent.futures import ThreadPoolExecutor,as_completed
+import resource
+from pathlib import Path
 from dataclasses import replace
 from . import alpha_full_price as model
 from .alpha_full_runtime import load_bundle
@@ -11,7 +12,23 @@ from .context_factors import utc
 import pandas as pd
 
 
-def collect_frames(permit,session,*,collector=None,identities=None):
+def memory_checkpoint(audit, session, step, **counts):
+    """Record process and container memory when exposed by the runtime."""
+    metrics = {'peak_rss_bytes': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024}
+    for key, path in (
+        ('container_bytes', '/sys/fs/cgroup/memory.current'),
+        ('container_limit_bytes', '/sys/fs/cgroup/memory.max'),
+        ('container_peak_bytes', '/sys/fs/cgroup/memory.peak'),
+    ):
+        try:
+            metrics[key] = int(Path(path).read_text().strip())
+        except (OSError, ValueError):
+            continue
+    audit.emit(persist=False, phase='ALPHA_FULL_PRICE_MEMORY', status=step,
+               session=session, **metrics, **counts)
+
+
+def collect_frames(permit,session,*,collector=None,identities=None,archive=None):
     frames={};failures={};snapshots={}
     start=(datetime.fromisoformat(session)-timedelta(days=5*366)).date().isoformat()
     def collect(symbol):
@@ -33,11 +50,20 @@ def collect_frames(permit,session,*,collector=None,identities=None):
         except Exception as exc:
             reason=str(exc) if __import__('re').fullmatch(r'[A-Z][A-Z0-9_]{0,95}',str(exc)) else 'PRICE_SOURCE_UNAVAILABLE'
             return symbol,None,None,reason
-    with ThreadPoolExecutor(max_workers=6) as pool:
-        for job in as_completed([pool.submit(collect,s) for s in model.SYMBOLS+model.MARKET]):
-            symbol,frame,snapshot,reason=job.result()
-            if reason:failures[symbol]=reason
-            else:frames[symbol]=frame;snapshots[symbol]=snapshot
+    for symbol in model.SYMBOLS + model.MARKET:
+        symbol, frame, snapshot, reason = collect(symbol)
+        if reason:
+            failures[symbol] = reason
+            continue
+        try:
+            snapshots[symbol] = archive(symbol, snapshot) if archive is not None else snapshot
+        except Exception:
+            failures[symbol] = 'SOURCE_ARCHIVE_UNAVAILABLE'
+        else:
+            frames[symbol] = frame
+        finally:
+            # Drop the raw snapshot before fetching the next instrument.
+            del snapshot
     model.attach_market(frames)
     return frames,failures,snapshots
 
@@ -138,20 +164,27 @@ def run_price(store,audit,permit,session,*,now=None,collector=None):
     if old:export_body(audit,old[0],old[1],already=True);return
     try:bundle=load_bundle()
     except Exception:bundle=None
-    frames,failures,snapshots=collect_frames(permit,session,collector=collector,identities=(bundle or {}).get('instrument_identity'))
-    # Raw histories remain in the existing encrypted/expiring payload plane only.
     from .bootstrap import CONTRACT
-    refs={}
-    for s,snapshot in snapshots.items():
-        try:refs[s]=str(store.payload(CONTRACT,snapshot,permit.raw_until))
-        except Exception:
-            frames.pop(s,None);failures[s]='SOURCE_ARCHIVE_UNAVAILABLE'
+
+    def archive(symbol, snapshot):
+        ref = str(store.payload(CONTRACT, snapshot, permit.raw_until))
+        return ref, snapshot.revision, snapshot.retrieved_at
+
+    memory_checkpoint(audit, session, 'BEFORE_COLLECTION')
+    frames, failures, sources = collect_frames(
+        permit, session, collector=collector,
+        identities=(bundle or {}).get('instrument_identity'), archive=archive,
+    )
+    memory_checkpoint(audit, session, 'AFTER_COLLECTION',
+                      frames=len(frames), failures=len(failures))
     cutoff=datetime.now(timezone.utc).isoformat()
     if issuance_gate(session,cutoff,replace(permit,finalization_verified=True)):
         audit.emit(persist=False,phase='ALPHA_FULL_PRICE',status='SKIPPED',session=session,reason='SOURCE_COLLECTION_OUTSIDE_ISSUE_WINDOW');return
     matured=resolve_mature(store,frames,cutoff)
     cutoff=datetime.now(timezone.utc).isoformat()
+    memory_checkpoint(audit, session, "BEFORE_FORECAST")
     body=model.forecast(frames,failures,session,cutoff,bundle=bundle,records=training_records(store,cutoff))
+    memory_checkpoint(audit, session, "AFTER_FORECAST")
     completed=datetime.now(timezone.utc).isoformat()
     for group in ('technical_heads','context_heads'):
         for head in body[group].values():
@@ -176,9 +209,9 @@ def run_price(store,audit,permit,session,*,now=None,collector=None):
             r['license_reason']=why
             if r['status']=='EXPERIMENTAL_PRICE_FORECAST':r.update(status='STATUS_BLOCKED',reason=why,expected_return_pct=None,band_low_pct=None,band_high_pct=None,direction=None)
     body['resolved_at_this_run']=matured
-    body['source_revision_sha256']={s:snapshots[s].revision for s in frames}
-    body['source_payload_refs']={s:refs[s] for s in frames}
-    body['source_retrieved_at_utc']={s:snapshots[s].retrieved_at for s in frames}
+    body['source_revision_sha256']={s:sources[s][1] for s in frames}
+    body['source_payload_refs']={s:sources[s][0] for s in frames}
+    body['source_retrieved_at_utc']={s:sources[s][2] for s in frames}
     body['source_quality']='SINGLE_RESEARCH_SNAPSHOT_NOT_INDEPENDENTLY_FINALIZED'
     with store.connect() as c:
         rid=c.execute('SELECT alpha_full_price_v1.record(%s,%s)',(uuid.uuid4(),canonical(body))).fetchone()[0]

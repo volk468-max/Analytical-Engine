@@ -530,3 +530,5 @@ Added signed terminal price118 heads plus6market outputs, independent source
 collection, masked broad inputs, expert/prior and prospective context learning,
 additive immutableSQL012 forecasts/outcomes, weekly metrics and source provenance,
 six-schema backup coverage. Prior model histories and516CSV preserved.
+
+2026-11-21: Added PRICE memory checkpoints, per-symbol archiving and bounded training allocations. See [Q016-v2](research/Q016-v2.md).

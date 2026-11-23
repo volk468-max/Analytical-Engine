@@ -161,20 +161,12 @@
     14
   ],
   "last_task": {
-    "id": "Q016-v1",
-    "status": "PUBLISHED_PR47_RESEARCH_PATCH_STAGED",
-    "base_sha": "4304b731a33b0115fbd197d6ae8bd7602d35ea63",
-    "row_count": 118,
-    "market_rows": 6,
-    "live_forecast_observed": false,
-    "context_weights": "EXPERT_PRIOR_NOT_LEARNED",
-    "source_delivery": "AUTOMATIONS_CONFIGURED_NOT_OBSERVED",
-    "published_sha": "725f04df62bebca059cb7fc5fdb6680e89663835",
-    "pr": 47,
-    "staged_patch": "0d08989c-3d77-4459-a851-3914067f90cd",
-    "latest_observed_runtime_sha": "4304b731a33b0115fbd197d6ae8bd7602d35ea63",
-    "latest_observed_deployment": "38359e4d-e7a0-4dbf-97e8-78c58aaef359",
-    "online_validator": "TIMEOUT_45_SECONDS"
+    "id": "Q016-v2",
+    "status": "LOCAL_MEMORY_FIX_TESTED_NOT_DEPLOYED",
+    "observed_deployed_sha": "0085c96351bc82ac947f5e1ba811698103ce21e2",
+    "railway_root_cause": "UNCONFIRMED",
+    "local_tests_passed": 76,
+    "local_sql_skipped": 15
   },
   "task_history": [
     {
@@ -232,6 +224,22 @@
       "live_forecast_observed": false,
       "weights": "EXPERT_PRIOR_NOT_LEARNED",
       "sa_delivery": "NOT_CONFIGURED"
+    },
+    {
+      "id": "Q016-v1",
+      "status": "PUBLISHED_PR47_RESEARCH_PATCH_STAGED",
+      "base_sha": "4304b731a33b0115fbd197d6ae8bd7602d35ea63",
+      "row_count": 118,
+      "market_rows": 6,
+      "live_forecast_observed": false,
+      "context_weights": "EXPERT_PRIOR_NOT_LEARNED",
+      "source_delivery": "AUTOMATIONS_CONFIGURED_NOT_OBSERVED",
+      "published_sha": "725f04df62bebca059cb7fc5fdb6680e89663835",
+      "pr": 47,
+      "staged_patch": "0d08989c-3d77-4459-a851-3914067f90cd",
+      "latest_observed_runtime_sha": "4304b731a33b0115fbd197d6ae8bd7602d35ea63",
+      "latest_observed_deployment": "38359e4d-e7a0-4dbf-97e8-78c58aaef359",
+      "online_validator": "TIMEOUT_45_SECONDS"
     }
   ]
 }

@@ -1,6 +1,7 @@
 """Alpha Full price-return heads: separate from historical TOUCH probabilities."""
 from collections import Counter
 from pathlib import Path
+import hashlib
 import math
 import numpy as np
 import pandas as pd
@@ -9,7 +10,7 @@ from .portfolio import SYMBOLS as DISPLAY
 from .alpha_full import context,FEATURE_SCHEMA,NAMES,EXPERT
 from .context_factors import digest,utc,number
 from .vol import frame as prices
-from research.daily_shadow.core import future_sessions,calendar
+from research.daily_shadow.core import future_sessions,calendar,canonical
 
 EXTRA=tuple('ADI AEIS AGQ ALAB ALLT ALNY AMAT AMZN AUGO B BABA BBIO BE BILI CDE CQQQ CRDO CSCO CYBR FMCC FNLPF FNMA GDX GE GEV KLAC LI LITE LLY MKSI MRVL NBIS NET NFLX NUGT OCUL ORCL PAAS RDDT RTX SCZM SEZL STRIP SYM TSM TWLO U UGL UPST'.split())
 SYMBOLS=DISPLAY+EXTRA
@@ -59,7 +60,12 @@ def technical_vector(row):
 
 def fit_prices(frames,horizon,issued):
     """Causal historical price-only training; revised vendor history is NOT PIT."""
-    training=[]
+    capacity = sum(max(0, len(df) - horizon - 20) for df in frames.values())
+    width = 1 + 2 * len(PRICE_NAMES)
+    x = np.empty((capacity, width))
+    y = np.empty(capacity)
+    training_days = []
+    training_hash = hashlib.sha256(b'[')
     matured={d:calendar().session_close(pd.Timestamp(d)).to_pydatetime()<utc(issued)
              for d in sorted({d for df in frames.values() for d in df.index})}
     for symbol in sorted(frames):
@@ -69,19 +75,32 @@ def fit_prices(frames,horizon,issued):
             if not math.isfinite(v) or v<=0:continue
             end=df.index[i+horizon]
             if not matured[end]:continue
-            y=(float(df.iloc[i+horizon].close)/float(anchor.close)-1)/v
-            training.append((str(df.index[i]),technical_vector(anchor),float(np.clip(y,-10,10))))
-    dates=Counter(r[0] for r in training)
-    if len(dates)<40 or len(training)<60:return None
-    x=np.array([r[1] for r in training]);y=np.array([r[2] for r in training]);w=np.array([1/dates[r[0]] for r in training])
+            target=(float(df.iloc[i+horizon].close)/float(anchor.close)-1)/v
+            day = str(df.index[i])
+            features = technical_vector(anchor)
+            clipped = float(np.clip(target, -10, 10))
+            index = len(training_days)
+            if index:
+                training_hash.update(b',')
+            training_hash.update(canonical((day, features, clipped)).encode())
+            training_days.append(day)
+            x[index] = features
+            y[index] = clipped
+    training_hash.update(b']')
+    dates = Counter(training_days)
+    count = len(training_days)
+    if len(dates)<40 or count<60:return None
+    x = x[:count]
+    y = y[:count]
+    w = np.fromiter((1 / dates[day] for day in training_days), dtype=float, count=count)
     penalty=np.eye(x.shape[1])*10;penalty[0,0]=1
     beta=np.linalg.solve(x.T@(w[:,None]*x)+penalty,x.T@(w*y))
     residual=y-x@beta
     # Weighted empirical residual bands, explicitly not calibrated coverage.
     order=np.argsort(residual);q=np.cumsum(w[order]);q=q/q[-1]
     band=np.interp([.1,.9],q,residual[order]).tolist()
-    return dict(horizon=horizon,beta=beta.tolist(),residual_band=band,n=len(training),distinct_dates=len(dates),
-                trained_at=issued,training_status='REVISED_PRICE_HISTORY_NOT_PIT',training_sha256=digest(training),qualified=False)
+    return dict(horizon=horizon,beta=beta.tolist(),residual_band=band,n=count,distinct_dates=len(dates),
+                trained_at=issued,training_status='REVISED_PRICE_HISTORY_NOT_PIT',training_sha256=training_hash.hexdigest(),qualified=False)
 
 
 def context_vector(bundle,symbol,session,h,issued,*,fixture=False):

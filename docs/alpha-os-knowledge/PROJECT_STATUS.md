@@ -587,3 +587,7 @@ ALPHA_FULL_PRICE_ENABLED staged in isolated research patch; deployment not yet
 applied at this checkpoint.90tests passed nativePG16.2, exact six-schema restore;
 offline knowledge passes, required online validator exceeded45seconds.
 First actual price118 issue and real source consumption remain unverified.
+
+## 2026-11-21 — Alpha Full Price incident
+
+Research worker crashed after baseline and risk export. Local memory mitigation tested. Railway root cause and first price release remain unverified. [Investigation](research/Q016-v2.md).

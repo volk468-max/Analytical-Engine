@@ -523,3 +523,5 @@ verify deployedSHA/bootstrap and first normal post-close118-output issue. Verify
 Check missing59 names, issuer mappings, splits, source timestamps, no duplicates;
 retain baseline516. No historical context reconstruction. Score mature10/30 results
 weekly, then evaluate proposed weight changes out of sample; no accuracy promises.
+
+For the next research release, verify the Railway termination reason if available, track peak memory and elapsed collection time, then confirm the normal PRICE export and input provenance. See [Q016-v2](research/Q016-v2.md).

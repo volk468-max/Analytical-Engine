@@ -529,3 +529,5 @@ See [Q015](research/Q015-v1.md) and [report](../../reports/alpha-full-v1/README.
 
 [Q016-v1](research/Q016-v1.md): separate59-position signed price forecast;
 supersedes Q015 product scope, preserves auxiliary risk/history.
+
+[Q016-v2](research/Q016-v2.md) documents the crash investigation and synthetic memory comparison.

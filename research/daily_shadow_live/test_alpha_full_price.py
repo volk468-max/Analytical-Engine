@@ -36,13 +36,36 @@ def test_missing_market_proxy_or_one_stock_does_not_stop_other_forecasts():
     assert all(not r['qualified'] for r in result['rows'])
 
 
-def test_concurrent_collection_isolates_failure_and_unverified_identity():
+def test_collection_isolates_failure_and_unverified_identity():
     def collector(s):
         if s=='AMD':raise VendorError('SOURCE_TIMEOUT')
         return sample(s,count=80)
     f,failed,snapshots=collect_frames(fixture_permit(),SESSION,collector=collector)
     assert failed['AMD']=='SOURCE_TIMEOUT' and failed['STRIP']=='INSTRUMENT_IDENTITY_UNVERIFIED'
     assert 'NVDA' in f and 'QQQ' in f and 'SCZM' in failed
+
+
+def test_collection_archives_each_snapshot_before_fetching_next():
+    events = []
+
+    def collect(symbol):
+        events.append(('collect', symbol))
+        return sample(symbol, count=80)
+
+    def archive(symbol, snapshot):
+        events.append(('archive', symbol))
+        if symbol == 'AMD':
+            raise RuntimeError('archive unavailable')
+        return ('ref', snapshot.revision, snapshot.retrieved_at)
+
+    frames, failures, sources = collect_frames(
+        fixture_permit(), SESSION, collector=collect, archive=archive,
+    )
+    assert events[::2] == [('collect', symbol) for _, symbol in events[1::2]]
+    assert all(kind == 'archive' for kind, _ in events[1::2])
+    assert failures['AMD'] == 'SOURCE_ARCHIVE_UNAVAILABLE'
+    assert 'AMD' not in sources and 'AMD' not in frames
+    assert sources['NVDA'][0] == 'ref'
 
 
 def test_verified_identity_can_unblock_without_renaming_portfolio():
