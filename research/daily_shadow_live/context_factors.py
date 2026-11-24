@@ -28,6 +28,7 @@ def digest(obj):
 
 
 def utc(value):
+    if not isinstance(value,str):raise ValueError('UTC_TIMESTAMP_REQUIRED')
     d = datetime.fromisoformat(value.replace('Z', '+00:00'))
     if d.tzinfo is None:
         raise ValueError('TIMEZONE_REQUIRED')
@@ -43,6 +44,7 @@ def number(value, lower, upper):
 
 
 def source_url(value):
+    if not isinstance(value,str):raise ValueError('CANONICAL_SOURCE_URL_REQUIRED')
     u = urlsplit(value)
     # Never accept tracking / email authentication links or embedded credentials.
     if (u.scheme != 'https' or u.hostname not in ('seekingalpha.com', 'www.seekingalpha.com')
@@ -80,7 +82,7 @@ def feature_record(coefficients, seeking, symbol, session, issued_at, *, fixture
                 or coefficients['forecast_sessions'] != future_sessions(session, 10)
                 or coefficients['horizon_sessions'] != 10):
             raise ValueError('COEFFICIENT_SESSION_OR_HORIZON_MISMATCH')
-        entries = [x for x in coefficients['instruments'] if x['symbol'] == symbol]
+        entries = [x for x in coefficients['instruments'] if isinstance(x,dict) and x.get('symbol') == symbol]
         if len(entries) != 1:
             raise ValueError('COEFFICIENT_SYMBOL_NOT_UNIQUE')
         entry = entries[0]
@@ -102,7 +104,7 @@ def feature_record(coefficients, seeking, symbol, session, issued_at, *, fixture
             raise ValueError('SEEKING_FIXTURE_MISMATCH')
         if seeking['use_scope'] != 'PRIVATE_RESEARCH':
             raise ValueError('SEEKING_USE_SCOPE')
-        records = [x for x in seeking['instruments'] if x['symbol'] == symbol]
+        records = [x for x in seeking['instruments'] if isinstance(x,dict) and x.get('symbol') == symbol]
         if len(records) != 1:
             raise ValueError('SEEKING_SYMBOL_NOT_UNIQUE')
         r = records[0]

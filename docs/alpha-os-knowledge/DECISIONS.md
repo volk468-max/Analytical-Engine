@@ -152,3 +152,11 @@ Owner accepts launching a separate experimental broad-input model and says
 create Alpha Full. Prespecified expert weights,20date support gate, architecture
 and explicit coherence repair are engineering choices, not proven owner facts.
 Existing publication/research integration context persists; no trading approval.
+
+## Owner decision2026-11-20 — Alpha Full workflow2.0
+
+00:00 market;02:00 companies, monthly fundamental baseline and daily ratings/alerts;
+separate signed10/30 factors; numerical terminal price forecast; immutable archive;
+core10 display; interpretation; weekly mature scoring/error analysis and learning.
+Per-position failure must not stop others. Expert priors are hypotheses, not trained
+weights. Entire pipeline configured; first actual delivery/issuance still unverified.

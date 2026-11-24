@@ -230,6 +230,13 @@ def run_daily():
      audit.failure('ALPHA_FULL',exc,persist=False);partial.append('ALPHA_FULL')
   except Exception as exc:
    audit.failure('FORECAST_EXPORT',exc,persist=False)
+  if os.environ.get('ALPHA_FULL_PRICE_ENABLED')=='true':
+   try:
+    audit.emit(persist=False,phase='ALPHA_FULL_PRICE',status='STARTING',session=session)
+    from .alpha_full_price_runtime import run_price
+    run_price(store,audit,p,session)
+   except Exception as exc:
+    audit.failure('ALPHA_FULL_PRICE',exc,persist=False);partial.append('ALPHA_FULL_PRICE')
   exit_code=2 if partial else 0
  except Exception as exc:
   exit_code=1

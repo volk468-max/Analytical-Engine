@@ -523,3 +523,12 @@ missingness masks and shared numerical learning heads.252session per-stock gate
 does not apply. Additive011 append-only archive; original516CSV/HIST/REGIME and
 old SQL001–010 unchanged. No real Full issue/accuracy/SA delivery asserted yet.
 See [Q015](research/Q015-v1.md) and [report](../../reports/alpha-full-v1/README.md).
+
+## 2026-11-20 — Q016 owner workflow implementation
+
+Added signed terminal price118 heads plus6market outputs, independent source
+collection, masked broad inputs, expert/prior and prospective context learning,
+additive immutableSQL012 forecasts/outcomes, weekly metrics and source provenance,
+six-schema backup coverage. Prior model histories and516CSV preserved.
+
+2026-11-21: Added PRICE memory checkpoints, per-symbol archiving and bounded training allocations. See [Q016-v2](research/Q016-v2.md).
