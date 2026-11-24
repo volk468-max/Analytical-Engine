@@ -229,3 +229,25 @@ class TestPriceSQL:
         with self.connect() as c:rid=c.execute('select alpha_full_price_v1.record(%s,%s)',(uuid.uuid4(),canonical(b))).fetchone()[0]
         with pytest.raises(psycopg.Error),self.connect() as c:
             c.execute('select alpha_full_price_v1.resolve(%s,%s,%s,%s,%s)',(rid,'AMD',10,1.,datetime.now(timezone.utc).isoformat()))
+
+
+def test_manual_preview_uses_separate_export_without_archiving(monkeypatch):
+    from . import manual_price
+
+    monkeypatch.setattr(manual_price, 'latest_completed', lambda now: SESSION)
+    monkeypatch.setattr(manual_price, 'load_bundle', lambda: None)
+    monkeypatch.setattr(manual_price, 'training_records', lambda store, cutoff: [])
+    exported = []
+    monkeypatch.setattr(manual_price, 'export_body',
+                        lambda audit, run_id, body, **kwargs: exported.append(kwargs['phase']))
+    permit = type('Permit', (), {'reason': lambda self, *args, **kwargs: None})()
+
+    result = manual_price.run_preview(
+        object(), object(), permit, collector=lambda symbol: sample(symbol, count=180),
+    )
+
+    assert result['run_mode'] == 'MANUAL_PREVIEW'
+    assert result['session'] == SESSION
+    assert len(result['rows']) == 50 and len(result['market_rows']) == 6
+    assert 'source_payload_refs' not in result
+    assert exported == ['ALPHA_FULL_PRICE_MANUAL_EXPORT']
