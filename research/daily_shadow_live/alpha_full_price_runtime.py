@@ -151,7 +151,7 @@ def export_body(audit,rid,body,*,already=False):
     raw=canonical(body).encode();checksum=hashlib.sha256(raw).hexdigest()
     encoded=base64.b64encode(gzip.compress(raw,mtime=0)).decode();chunks=[encoded[i:i+2000] for i in range(0,len(encoded),2000)]
     for i,chunk in enumerate(chunks):audit.emit(persist=False,phase='ALPHA_FULL_PRICE_EXPORT',status='CHUNK',session=body['session'],full_run_id=str(rid),json_sha256=checksum,chunk_index=i,chunk_count=len(chunks),payload_b64=chunk,encoding='gzip+base64')
-    audit.emit(persist=False,phase='ALPHA_FULL_PRICE_EXPORT',status='READY',session=body['session'],full_run_id=str(rid),json_sha256=checksum,chunk_count=len(chunks),row_count=118,numeric=sum(r['expected_return_pct'] is not None for r in body['rows']),already_recorded=already,encoding='gzip+base64')
+    audit.emit(persist=False,phase='ALPHA_FULL_PRICE_EXPORT',status='READY',session=body['session'],full_run_id=str(rid),json_sha256=checksum,chunk_count=len(chunks),row_count=len(body['rows']),numeric=sum(r['expected_return_pct'] is not None for r in body['rows']),already_recorded=already,encoding='gzip+base64')
 
 
 def run_price(store,audit,permit,session,*,now=None,collector=None):

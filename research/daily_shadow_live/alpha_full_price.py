@@ -12,7 +12,7 @@ from .context_factors import digest,utc,number
 from .vol import frame as prices
 from research.daily_shadow.core import future_sessions,calendar,canonical
 
-EXTRA=tuple('ADI AEIS AGQ ALAB ALLT ALNY AMAT AMZN AUGO B BABA BBIO BE BILI CDE CQQQ CRDO CSCO CYBR FMCC FNLPF FNMA GDX GE GEV KLAC LI LITE LLY MKSI MRVL NBIS NET NFLX NUGT OCUL ORCL PAAS RDDT RTX SCZM SEZL STRIP SYM TSM TWLO U UGL UPST'.split())
+EXTRA=tuple('ADI ALAB AMAT AMZN CRDO CSCO GE GEV KLAC LLY MRVL NET ORCL RTX TSM'.split())
 SYMBOLS=DISPLAY+EXTRA
 MARKET=('SPY','QQQ','SOXX')
 ENTITY_START={'B':'2025-05-09','NBIS':'2024-10-21'}
@@ -21,7 +21,7 @@ CONTEXT_NAMES=NAMES[2:]+('fundamental_assessment','analyst_assessment')
 PRIOR=np.r_[-EXPERT[2:],.05,.03]
 SCHEMA=digest(dict(version='FULL_PRICE_FEATURES_V1',prices=PRICE_NAMES,context=CONTEXT_NAMES,context_schema=FEATURE_SCHEMA,price_clip=5,return_basis='SPLIT_ONLY_EX_DIVIDENDS'))
 VERSION='ALPHA_FULL_PRICE_V1-'+digest(dict(code=Path(__file__).read_text(),schema=SCHEMA))[:16]
-MANIFEST=dict(model_name='ALPHA_FULL_PRICE',model_version=VERSION,symbols=list(SYMBOLS),market_symbols=list(MARKET),display_symbols=list(DISPLAY),horizons=[10,30],row_count=118,market_row_count=6,price_features=list(PRICE_NAMES),context_features=list(CONTEXT_NAMES),label='TERMINAL_CLOSE_PRICE_RETURN_SPLIT_ADJUSTED_EX_DIVIDENDS',feature_schema_sha256=SCHEMA,qualified=False)
+MANIFEST=dict(model_name='ALPHA_FULL_PRICE',model_version=VERSION,symbols=list(SYMBOLS),market_symbols=list(MARKET),display_symbols=list(DISPLAY),horizons=[10,30],row_count=len(SYMBOLS)*2,market_row_count=6,price_features=list(PRICE_NAMES),context_features=list(CONTEXT_NAMES),label='TERMINAL_CLOSE_PRICE_RETURN_SPLIT_ADJUSTED_EX_DIVIDENDS',feature_schema_sha256=SCHEMA,qualified=False)
 
 
 def price_frame(snapshot,symbol):
@@ -197,6 +197,6 @@ def forecast(frames,failures,session,issued,*,bundle=None,records=(),fixture=Fal
                         weights_mode='LEARNED_CONTEXT_EXPERIMENTAL' if a else 'EXPERT_CONTEXT_PRIOR')
             rows.append(r)
     return dict(schema_version='ALPHA_FULL_PRICE_RUN_V1',manifest=MANIFEST,model_name='ALPHA_FULL_PRICE',model_version=VERSION,
-                session=session,issued_at=issued,fixture=fixture,qualified=False,rows=rows[:118],market_rows=rows[118:],
+                session=session,issued_at=issued,fixture=fixture,qualified=False,rows=rows[:MANIFEST['row_count']],market_rows=rows[MANIFEST['row_count']:],
                 technical_heads=heads,context_heads=overlays,source_coverage=dict(available=sorted(frames),blocked=failures),
                 label_definition='TERMINAL_CLOSE_T_PLUS_N_PRICE_RETURN_SPLIT_ONLY_EX_DIVIDENDS')

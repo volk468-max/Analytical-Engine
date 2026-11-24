@@ -17,10 +17,10 @@ def frames(symbols=('AMD','NVDA','QQQ','SPY','SOXX'),count=180):
     price.attach_market(result);return result
 
 
-def test_signed_price_targets59_times2_distinct_from_touch():
+def test_signed_price_targets25_times2_distinct_from_touch():
     result=price.forecast(frames(),{},SESSION,NOW,fixture=True)
-    assert len(price.SYMBOLS)==len(set(price.SYMBOLS))==59
-    assert len(result['rows'])==118 and len(result['market_rows'])==6
+    assert len(price.SYMBOLS)==len(set(price.SYMBOLS))==25
+    assert len(result['rows'])==50 and len(result['market_rows'])==6
     numeric=[r for r in result['rows'] if r['expected_return_pct'] is not None]
     assert len(numeric)==4 and {r['symbol'] for r in numeric}=={'AMD','NVDA'}
     assert all(r['band_low_pct']<=r['expected_return_pct']<=r['band_high_pct'] for r in numeric)
@@ -41,8 +41,8 @@ def test_collection_isolates_failure_and_unverified_identity():
         if s=='AMD':raise VendorError('SOURCE_TIMEOUT')
         return sample(s,count=80)
     f,failed,snapshots=collect_frames(fixture_permit(),SESSION,collector=collector)
-    assert failed['AMD']=='SOURCE_TIMEOUT' and failed['STRIP']=='INSTRUMENT_IDENTITY_UNVERIFIED'
-    assert 'NVDA' in f and 'QQQ' in f and 'SCZM' in failed
+    assert failed['AMD']=='SOURCE_TIMEOUT'
+    assert 'NVDA' in f and 'QQQ' in f and 'SCZM' not in failed
 
 
 def test_collection_archives_each_snapshot_before_fetching_next():
@@ -68,11 +68,11 @@ def test_collection_archives_each_snapshot_before_fetching_next():
     assert sources['NVDA'][0] == 'ref'
 
 
-def test_verified_identity_can_unblock_without_renaming_portfolio():
+def test_verified_identity_cannot_extend_portfolio():
     identity={'SCZM':dict(provider_symbol='SCZM.US',currency='USD',status='VERIFIED',
                          source_url='https://eodhd.com/',verified_at_utc=datetime.now(timezone.utc).isoformat())}
     f,failed,_=collect_frames(fixture_permit(),SESSION,collector=lambda s:sample(s,count=80),identities=identity)
-    assert 'SCZM' in f and 'STRIP' in failed
+    assert 'SCZM' not in f and 'STRIP' not in failed
 
 
 def test_signed_llm_scores_affect_price_and_no10_to30_reuse():
@@ -197,14 +197,14 @@ class TestPriceSQL:
         for r in body['rows']:r['model_version']=version
         return body
 
-    def test_atomic118_and_evaluation_pending_no_fake_accuracy(self):
+    def test_atomic50_and_evaluation_pending_no_fake_accuracy(self):
         from research.daily_shadow.core import canonical
         b=self.body()
         with self.connect() as c:
             count=c.execute('select count(*) from alpha_research_v3.forecasts').fetchone()[0]
             rid=c.execute('select alpha_full_price_v1.record(%s,%s)',(uuid.uuid4(),canonical(b))).fetchone()[0]
             assert rid==c.execute('select alpha_full_price_v1.record(%s,%s)',(uuid.uuid4(),canonical(b))).fetchone()[0]
-            assert c.execute('select jsonb_array_length(body->\'rows\') from alpha_full_price_v1.runs where id=%s',(rid,)).fetchone()[0]==118
+            assert c.execute('select jsonb_array_length(body->\'rows\') from alpha_full_price_v1.runs where id=%s',(rid,)).fetchone()[0]==50
             assert c.execute('select count(*) from alpha_research_v3.forecasts').fetchone()[0]==count
         metrics=evaluation(SimpleNamespace(connect=self.connect),datetime.now(timezone.utc).isoformat())
         assert all(m['matured']==0 for m in metrics['by_horizon'].values())
